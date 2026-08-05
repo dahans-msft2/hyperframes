@@ -1,0 +1,66 @@
+{
+  "_purpose": "Shared caption lexicon for Microsoft Learn companion videos. Applied by tools/make_vtt.py BEFORE cue grouping, so these names can never be split across a cue boundary and Whisper's lowercasing is corrected.",
+  "_why_before_grouping": "A post-hoc text substitution cannot repair a name split across two cues - the halves live in different cues with different timestamps. Merging into one token makes splitting impossible.",
+
+  "phrases": [
+    "Microsoft Entra ID",
+    "Microsoft Entra",
+    "Microsoft Intune",
+    "Microsoft Purview",
+    "Microsoft Defender",
+    "Microsoft Graph PowerShell",
+    "Microsoft Graph",
+    "Microsoft 365",
+    "Microsoft Authenticator",
+    "Authentication methods policy",
+    "Authentication Policy Administrator",
+    "Combined Registration",
+    "Registration Campaign",
+    "Temporary Access Pass",
+    "Windows Hello for Business",
+    "self-service password reset",
+    "FIDO2",
+    "AAGUID allowlist",
+    "Relecloud",
+    "Privileged Identity Management",
+    "Privileged Role Administrator",
+    "Global Administrator",
+    "Global Reader",
+    "User Administrator",
+    "Helpdesk Administrator",
+    "Security Administrator",
+    "Intune Administrator",
+    "Compliance Data Administrator",
+    "Cloud Device Administrator",
+    "Application Administrator",
+    "Conditional Access",
+    "administrative unit",
+    "administrative units",
+    "emergency access account",
+    "role group",
+    "role groups",
+    "mobile device management",
+    "mobile application management",
+    "role-based access control",
+    "Windows Autopilot",
+    "Endpoint Analytics",
+    "Cloud PC",
+    "Windows 365",
+    "Azure Virtual Desktop"
+  ],
+
+  "hyphenate": [
+    ["eligible", "only"],
+    ["just", "in", "time"],
+    ["read", "only"],
+    ["break", "glass"]
+  ],
+
+  "respell": {
+    "multi-factor": "multifactor",
+    "Multi-factor": "Multifactor",
+    "on-premise": "on-premises",
+    "co-management": "co-management",
+    "sign-on": "sign-on"
+  }
+}
