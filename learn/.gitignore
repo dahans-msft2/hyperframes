@@ -1,0 +1,26 @@
+# --- Azure Speech config -----------------------------------------------------
+# Holds only resource IDs + region + tenant (NOT secrets); real auth is an
+# ephemeral Entra token from `az login`. Still belongs OUTSIDE the repo.
+*.env
+config.env
+
+# --- Segoe UI (licensed, NOT redistributable) --------------------------------
+# Each machine regenerates its own WOFF2 from its local Windows install:
+#   py tools/sync_fonts.py --css
+# CI / non-Windows renders use Selawik (SIL OFL, metric-compatible) -- see the
+# learn-ilt frame preset. Never commit these.
+fonts/*.woff2
+fonts/fonts.css
+
+# --- Regenerable icon catalog index ------------------------------------------
+#   py tools/icon_index.py build
+assets/icon-index.json
+
+# --- Render artefacts produced inside project folders ------------------------
+*.mp4
+*.wav
+
+# EXCEPTION: the AI disclosure end card is a MANDATORY shared asset -- every
+# Learn video must end with it, and a missing disclosure is a rubric
+# disqualifier. The blanket *.mp4 above would otherwise exclude it.
+!assets/AI_End_Card.mp4
