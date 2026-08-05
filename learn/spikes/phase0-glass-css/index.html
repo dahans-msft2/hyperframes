@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Learn ILT — CSS frosted glass band (the correct Learn glass)</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Segoe UI Semibold"; src: local("Segoe UI Semibold"), local("Segoe UI"); font-weight: 600; font-display: swap; }
+      @font-face { font-family: "Segoe UI"; src: local("Segoe UI"); font-weight: 400; font-display: swap; }
+      * { box-sizing: border-box; }
+      html, body { margin: 0; padding: 0; width: 1920px; height: 1080px; overflow: hidden; background: #eef2f8; font-family: "Segoe UI", system-ui, sans-serif; color: #091f2e; }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #eef2f8; }
+      .clip { position: absolute; inset: 0; }
+
+      /* section-field ground + mandatory dither */
+      .field { position: absolute; inset: 0; z-index: 0; background: linear-gradient(105deg, #fef9f5 0%, #c7daec 42%, #9bb5e2 66%, #bcb3e5 84%, #ced7e8 100%); }
+      .field::after {
+        content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0.035; mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      /* the frosted glass band — DOM/CSS, runs off the left edge, rounded on the right only */
+      .glass-band {
+        position: absolute; z-index: 2; top: 150px; left: -60px; width: 980px; padding: 40px 64px 40px 120px;
+        background: rgba(255, 255, 255, 0.42);
+        -webkit-backdrop-filter: blur(28px) saturate(1.25); backdrop-filter: blur(28px) saturate(1.25);
+        border-radius: 0 120px 120px 0; border: 1px solid rgba(255, 255, 255, 0.55);
+        box-shadow: 0 2px 8px rgba(9, 31, 46, 0.1);
+      }
+      .band-kicker { font-family: "Segoe UI Semibold", "Segoe UI", sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.10em; text-transform: uppercase; color: #091f2e; margin: 0 0 12px; }
+      .band-title { font-family: "Segoe UI Semibold", "Segoe UI", sans-serif; font-weight: 600; font-size: 60px; line-height: 1.04; color: #091f2e; margin: 0; }
+
+      /* frosted glass stat cards */
+      .cards { position: absolute; z-index: 2; top: 470px; left: 120px; display: flex; gap: 44px; }
+      .card {
+        width: 400px; height: 340px; padding: 44px; border-radius: 28px;
+        background: rgba(255, 255, 255, 0.42);
+        -webkit-backdrop-filter: blur(24px) saturate(1.2); backdrop-filter: blur(24px) saturate(1.2);
+        border: 1px solid rgba(255, 255, 255, 0.55); box-shadow: 0 2px 10px rgba(9, 31, 46, 0.12);
+        display: flex; flex-direction: column; justify-content: space-between;
+      }
+      .card-label { font-size: 22px; font-weight: 600; color: #091f2e; }
+      .card-num { font-family: "Segoe UI Semibold", "Segoe UI", sans-serif; font-weight: 600; font-size: 96px; line-height: 1; color: #091f2e; }
+      .card-note { font-size: 20px; color: #091f2e; opacity: 0.78; }
+      .accent-rule { width: 64px; height: 6px; border-radius: 3px; background: #389a91; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-width="1920" data-height="1080" data-duration="6.0">
+      <section id="scene" class="clip" data-start="0" data-duration="6.0" data-track-index="1">
+        <div class="field"></div>
+
+        <div class="glass-band" id="band" data-layout-allow-overflow>
+          <p class="band-kicker">Microsoft Intune</p>
+          <h1 class="band-title">Device readiness at a glance</h1>
+        </div>
+
+        <div class="cards">
+          <div class="card cardi">
+            <div class="accent-rule"></div>
+            <div class="card-num">92%</div>
+            <div><div class="card-label">Compliant devices</div><div class="card-note">Up 6 points this month</div></div>
+          </div>
+          <div class="card cardi">
+            <div class="accent-rule"></div>
+            <div class="card-num">1,240</div>
+            <div><div class="card-label">Enrolled this week</div><div class="card-note">Autopilot + hybrid join</div></div>
+          </div>
+          <div class="card cardi">
+            <div class="accent-rule"></div>
+            <div class="card-num">6m</div>
+            <div><div class="card-label">Median setup time</div><div class="card-note">Down from 14 minutes</div></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // band slides in from the left edge it lives on
+      tl.from("#band", { x: -80, opacity: 0, duration: 0.7, ease: "power3.out" }, 0.2);
+      // cards: waterfall entry from below, staggered by weight
+      tl.from(".cardi", { y: 90, opacity: 0, duration: 0.7, ease: "power3.out", stagger: 0.12 }, 0.55);
+      // numbers settle a beat after their cards
+      tl.from(".card-num", { y: 24, opacity: 0, duration: 0.5, ease: "power2.out", stagger: 0.12 }, 0.95);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
