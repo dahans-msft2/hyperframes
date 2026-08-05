@@ -1,8 +1,0 @@
-{
-  // Learn-video pipeline reliability: disable the experimental Copilot terminal
-  // sandbox for this workspace. On this machine the sandbox backend returns
-  // E_NOTIMPL, which fails every agent terminal command and forces a re-run.
-  // "off" runs commands directly (no sandbox). Applies when this fork is opened
-  // as its own single-root workspace.
-  "github.copilot.chat.cli.sandbox.enabled": "off"
-}
