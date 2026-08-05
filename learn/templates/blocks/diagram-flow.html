@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+  </head>
+  <body>
+    <template>
+      <style>
+        /* === Learn-ILT kit block: flowchart (decision tree — white nodes, blue connectors). ===
+           Rebuilt on the kit foundation: no hardcoded colours/fonts/px type — tokens only.
+           Connectors + emphasis border + selection + the "You" cursor chip carry ONE blue
+           accent (var(--accent-2)) as a GRAPHIC; all node text stays var(--ink). The lone
+           non-brand colour is the intentional semantic-red spellcheck squiggle. Node/connector
+           geometry (absolute .canvas space + scale/transform-origin) and the node-then-connector
+           reveal + cursor/typing/emoji choreography are unchanged; no root fade-out. */
+
+        /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+        #root,
+        #root *,
+        #root *::before,
+        #root *::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size;
+
+          --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
+          --ink: #091f2e;
+          --ink-soft: #59636e;
+          --paper: #ffffff;
+          --paper-veil: rgba(255, 255, 255, 0.9);
+          --border: rgba(9, 31, 46, 0.16);
+          --border-soft: rgba(9, 31, 46, 0.12);
+          --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
+
+          --accent: #8661c5;
+          --accent-2: #0078d4;
+          --accent-3: #389a91;
+          --accent-4: #bf3ac4;
+          --accent-ink: #ffffff;
+
+          --fs-display: 11cqw;
+          --fs-h1: 4.6cqw;
+          --fs-h2: 3.4cqw;
+          --fs-h3: 2.4cqw;
+          --fs-lead: 2cqw;
+          --fs-body: 1.75cqw;
+          --fs-caption: 1.5cqw;
+          --fs-kicker: 1.55cqw;
+          --fs-micro: 1.25cqw;
+
+          --radius: 16px;
+          --radius-sm: 10px;
+          --radius-pill: 999px;
+          --stroke: 5px;
+          --rule: 3px;
+
+          font-family: "Segoe UI", system-ui, sans-serif;
+          color: var(--ink);
+          background: var(--ground);
+        }
+        #root[data-ground="hero-swoosh"] {
+          --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+        }
+        #root[data-ground="section-field"] {
+          --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
+        }
+        #root[data-ground="dark-field"] {
+          --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
+          --ink: #ffffff;
+          --ink-soft: rgba(255, 255, 255, 0.72);
+          --paper: rgba(255, 255, 255, 0.08);
+          --paper-veil: rgba(255, 255, 255, 0.1);
+          --border: rgba(255, 255, 255, 0.24);
+          --border-soft: rgba(255, 255, 255, 0.14);
+          --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+        /* ==== END _foundation.css ==== */
+
+        .canvas {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          transform: scale(1.2);
+          transform-origin: 960px 300px;
+        }
+
+        /* White ILT panel node (translucent paper-veil so it reads on a busy ground).
+           Geometry unchanged; only colours/type are tokenised. Node text stays --ink. */
+        .node {
+          position: absolute;
+          transform: translate(-50%, -50%) scale(0);
+          padding: 16px 24px;
+          max-width: 340px;
+          border-radius: 12px;
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-size: var(--fs-body);
+          font-weight: 600;
+          line-height: 1.25;
+          text-align: center;
+          color: var(--ink);
+          background: var(--paper-veil);
+          border: 1.5px solid var(--border);
+          box-shadow: 0 6px 20px rgba(9, 31, 46, 0.08);
+          white-space: normal;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          z-index: 10;
+        }
+
+        /* Emphasis / decision node — the central question. Accent lives on the border
+           (a graphic); the label itself stays ink. */
+        .node.emphasis {
+          border: 2.5px solid var(--accent-2);
+        }
+
+        .connectors {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 5;
+          pointer-events: none;
+        }
+
+        .connector {
+          stroke: var(--accent-2); /* blue connector = graphic, never text */
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+        }
+
+        .connector-label {
+          position: absolute;
+          font-family: "Segoe UI", sans-serif;
+          font-size: var(--fs-caption);
+          font-weight: 600;
+          color: var(--ink);
+          background: var(--paper);
+          border: 1px solid var(--border);
+          padding: 4px 12px;
+          border-radius: 8px;
+          opacity: 0;
+          z-index: 6;
+          transform: translate(-50%, -50%);
+        }
+
+        #label-yes {
+          left: 780px;
+          top: 230px;
+        }
+        #label-not-sure {
+          left: 1140px;
+          top: 230px;
+        }
+
+        .cursor-container {
+          position: absolute;
+          left: 1920px;
+          top: 1080px;
+          z-index: 100;
+          pointer-events: none;
+          display: flex;
+          align-items: flex-start;
+        }
+
+        /* "You" cursor chip — an accent-filled badge; --accent-ink is the sanctioned
+           text colour that rides ON an accent fill (chips/badges). */
+        .cursor-tag {
+          background-color: var(--accent-2);
+          color: var(--accent-ink);
+          padding: 4px 12px;
+          border-radius: 6px;
+          font-size: var(--fs-caption);
+          font-weight: 600;
+          margin-left: 6px;
+          margin-top: 16px;
+        }
+
+        .squiggle-container {
+          position: absolute;
+          right: 0;
+          bottom: -6px;
+          opacity: 0;
+        }
+
+        .emoji {
+          position: absolute;
+          font-size: var(--fs-h3);
+          left: 510px;
+          top: 500px;
+          transform: translate(-50%, -50%) scale(0);
+          z-index: 20;
+        }
+
+        .selection-border {
+          position: absolute;
+          top: -4px;
+          left: -4px;
+          right: -4px;
+          bottom: -4px;
+          border: 2.5px solid var(--accent-2);
+          border-radius: 16px;
+          pointer-events: none;
+          opacity: 0;
+        }
+
+        /* Text-selection tint during the typing correction — a translucent wash derived from
+           the blue accent (a graphic); the corrected word stays --ink on top. */
+        .text-highlight {
+          background-color: color-mix(in srgb, var(--accent-2) 20%, transparent);
+        }
+      </style>
+
+      <div id="root" data-composition-id="diagram-flow" data-width="1920" data-height="1080">
+        <div class="canvas">
+          <svg class="connectors" width="1920" height="1080" viewBox="0 0 1920 1080">
+            <!-- Level 1 to 2 -->
+            <path
+              id="path-1-L"
+              class="connector"
+              d="M 960 130 L 960 200 L 600 200 L 600 270"
+              fill="none"
+              stroke-width="4"
+            />
+            <path
+              id="path-1-R"
+              class="connector"
+              d="M 960 130 L 960 200 L 1320 200 L 1320 270"
+              fill="none"
+              stroke-width="4"
+            />
+
+            <!-- Level 2 to 3 (Left side) -->
+            <path
+              id="path-2-LL"
+              class="connector"
+              d="M 600 330 L 600 400 L 400 400 L 400 470"
+              fill="none"
+              stroke-width="4"
+            />
+            <path
+              id="path-2-LR"
+              class="connector"
+              d="M 600 330 L 600 400 L 800 400 L 800 470"
+              fill="none"
+              stroke-width="4"
+            />
+
+            <!-- Level 2 to 3 (Right side) -->
+            <path
+              id="path-2-RL"
+              class="connector"
+              d="M 1320 330 L 1320 400 L 1120 400 L 1120 470"
+              fill="none"
+              stroke-width="4"
+            />
+            <path
+              id="path-2-RR"
+              class="connector"
+              d="M 1320 330 L 1320 400 L 1520 400 L 1520 470"
+              fill="none"
+              stroke-width="4"
+            />
+          </svg>
+
+          <div id="label-yes" class="connector-label">Yes</div>
+          <div id="label-not-sure" class="connector-label">Not sure</div>
+
+          <!-- Level 1 -->
+          <div id="node-root" class="node emphasis" style="left: 960px; top: 100px">
+            Should I learn to code?
+          </div>
+
+          <!-- Level 2 -->
+          <div id="node-yes" class="node" style="left: 600px; top: 300px">Yes</div>
+          <div id="node-not-sure" class="node" style="left: 1320px; top: 300px">Not sure</div>
+
+          <!-- Level 3 -->
+          <div id="node-python" class="node" style="left: 400px; top: 500px">
+            <div style="position: relative; display: inline-block">
+              <span id="python-text">Start with Pythom</span>
+              <!-- squiggle stroke #E53935 is an intentional SEMANTIC red (spelling error) —
+                   a deliberate exception to the brand palette; do not tokenize or remove. -->
+              <svg class="squiggle-container" width="105" height="8" viewBox="0 0 64 6" preserveAspectRatio="none">
+                <path
+                  id="squiggle"
+                  d="M 0 3 Q 2 0 4 3 T 8 3 T 12 3 T 16 3 T 20 3 T 24 3 T 28 3 T 32 3 T 36 3 T 40 3 T 44 3 T 48 3 T 52 3 T 56 3 T 60 3 T 64 3"
+                  fill="none"
+                  stroke="#E53935"
+                  stroke-width="2"
+                />
+              </svg>
+            </div>
+          </div>
+          <div id="node-nocode" class="node" style="left: 800px; top: 500px">
+            Try no-code first
+          </div>
+          <div id="node-website" class="node" style="left: 1120px; top: 500px">
+            Build a personal website
+          </div>
+          <div id="node-course" class="node" style="left: 1520px; top: 500px">
+            Take a free intro course
+          </div>
+
+          <!-- Cursor -->
+          <div id="cursor" class="cursor-container">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M5.65376 12.3673H5.46026L5.31717 12.4976L0.500002 16.8829L0.500002 1.19841L11.7841 12.3673H5.65376Z"
+                fill="#FFFFFF"
+                stroke="#091F2E"
+              />
+            </svg>
+            <div class="cursor-tag">You</div>
+          </div>
+
+          <!-- Emoji -->
+          <div id="emoji-thumb" class="emoji">👍</div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          window.__timelines = window.__timelines || {};
+
+          const tl = gsap.timeline({ paused: true });
+          const S = '[data-composition-id="diagram-flow"]';
+          const nodePython = document.querySelector(S + " #node-python");
+          const pythonText = document.querySelector(S + " #python-text");
+
+          // 1. Root question node scales in.
+          tl.to(S + " #node-root", { scale: 1, duration: 0.4, ease: "back.out(1.6)" }, 0);
+
+          // 2. Level 2 NODES appear first, THEN their connectors draw down to them
+          //    (node-then-connector: a link never precedes the two things it links).
+          tl.addLabel("lvl2", "+=0.5");
+          tl.to(S + " #node-yes", { scale: 1, duration: 0.4, ease: "back.out(1.7)" }, "lvl2");
+          tl.to(
+            S + " #node-not-sure",
+            { scale: 1, duration: 0.4, ease: "back.out(1.7)" },
+            "lvl2+=0.2",
+          );
+          tl.to(
+            S + " .connector#path-1-L, " + S + " .connector#path-1-R",
+            { strokeDashoffset: 0, duration: 0.5, ease: "none" },
+            "lvl2+=0.6",
+          );
+          tl.to(
+            S + " #label-yes, " + S + " #label-not-sure",
+            { opacity: 1, duration: 0.2 },
+            "lvl2+=0.85",
+          );
+
+          // 3. Level 3 leaf NODES appear first, THEN their connectors draw down.
+          tl.addLabel("lvl3", "+=0.5");
+          const leafNodes = [
+            S + " #node-python",
+            S + " #node-nocode",
+            S + " #node-website",
+            S + " #node-course",
+          ];
+          leafNodes.forEach((id, i) => {
+            tl.to(id, { scale: 1, duration: 0.4, ease: "back.out(1.7)" }, `lvl3+=${i * 0.15}`);
+          });
+          tl.to(S + " .squiggle-container", { opacity: 1, duration: 0.1 }, "lvl3+=0.85");
+          tl.to(
+            S +
+              " .connector#path-2-LL, " +
+              S +
+              " .connector#path-2-LR, " +
+              S +
+              " .connector#path-2-RL, " +
+              S +
+              " .connector#path-2-RR",
+            { strokeDashoffset: 0, duration: 0.4, ease: "none" },
+            "lvl3+=0.85",
+          );
+
+          // 4. Cursor drifts in toward the "Start with Pythom" node.
+          tl.addLabel("cursor1", "+=0.7");
+          tl.to(S + " #cursor", { x: -1470, y: -540, duration: 1, ease: "power1.inOut" }, "cursor1");
+
+          // 5. Click — selection border on node-python.
+          tl.add(() => {
+            if (!nodePython) return;
+            if (!nodePython.querySelector(".selection-border")) {
+              const border = document.createElement("div");
+              border.className = "selection-border";
+              nodePython.appendChild(border);
+            }
+            gsap.set(S + " .selection-border", { opacity: 1 });
+          }, "cursor1+=1");
+          tl.to(
+            S + " #cursor",
+            { scale: 0.8, duration: 0.05, yoyo: true, repeat: 1, overwrite: "auto" },
+            "cursor1+=1",
+          );
+
+          // 6. Double-click to select the misspelled word.
+          tl.addLabel("edit1", "+=0.3");
+          tl.to(
+            S + " #cursor",
+            { scale: 0.8, duration: 0.05, yoyo: true, repeat: 3, overwrite: "auto" },
+            "edit1",
+          );
+          tl.add(() => {
+            if (pythonText)
+              pythonText.innerHTML = 'Start with <span class="text-highlight">Pythom</span>';
+          }, "edit1+=0.1");
+
+          // 7. Type the correction Pythom -> Python.
+          tl.addLabel("type1", "+=0.2");
+          const words = ["P", "Py", "Pyt", "Pyth", "Pytho", "Python"];
+          words.forEach((word, i) => {
+            tl.add(() => {
+              if (pythonText)
+                pythonText.innerHTML = `Start with <span class="text-highlight">${word}</span>`;
+            }, `type1+=${i * 0.05}`);
+          });
+          const typingEnd = words.length * 0.05;
+          tl.add(() => {
+            if (pythonText) pythonText.innerHTML = "Start with Python";
+            gsap.set(S + " .squiggle-container", { opacity: 0 });
+          }, `type1+=${typingEnd}`);
+
+          // 8. Cursor clicks away to deselect, then a thumbs-up pops. No exit fade —
+          //    the block hands off on its final held frame.
+          tl.addLabel("done1", `type1+=${typingEnd + 0.5}`);
+          tl.to(S + " #cursor", { x: -1420, y: -500, duration: 0.3, overwrite: "auto" }, "done1");
+          tl.to(
+            S + " #cursor",
+            { scale: 0.8, duration: 0.05, yoyo: true, repeat: 1, overwrite: "auto" },
+            "done1+=0.3",
+          );
+          tl.to(S + " .selection-border", { opacity: 0, duration: 0.1 }, "done1+=0.3");
+          tl.to(
+            S + " #emoji-thumb",
+            { scale: 1, duration: 0.15, ease: "back.out(2)" },
+            "done1+=0.4",
+          );
+
+          window.__timelines["diagram-flow"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

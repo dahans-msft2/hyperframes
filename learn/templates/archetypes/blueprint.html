@@ -1,0 +1,25 @@
+<section class="clip beat beat-blueprint" data-start="{{start}}" data-duration="{{duration}}" data-track-index="{{track}}">
+  <header class="beat-head">
+    <p class="beat-kicker">{{kicker}}</p>
+    <h2 class="beat-title">{{title}}</h2>
+  </header>
+
+  <div class="bp-canvas panel">
+    <div class="bp-grid" aria-hidden="true"></div>
+
+    <svg class="bp-links" viewBox="0 0 100 60" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M 22 18 L 50 30 L 78 18" />
+      <path d="M 50 30 L 50 46" />
+    </svg>
+
+    <div class="bp-node bp-node-a">{{node_one}}</div>
+    <div class="bp-node bp-node-b">{{node_two}}</div>
+    <div class="bp-node bp-node-c">{{node_three}}</div>
+    <div class="bp-node bp-node-d">{{node_four}}</div>
+
+    <div class="bp-chips">
+      <span class="chip">{{chip_one}}</span>
+      <span class="chip">{{chip_two}}</span>
+    </div>
+  </div>
+</section>

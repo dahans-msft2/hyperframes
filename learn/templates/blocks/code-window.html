@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+  </head>
+  <body>
+    <template>
+      <style>
+        /* === Learn-ILT kit block: code-window (light code card, line-by-line reveal). ===
+           Built on the kit foundation: no hardcoded colours/fonts/px chrome type — tokens only.
+           Ground is host-selectable via #root[data-ground]; dark-field auto-inverts ink. */
+
+        /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+        #root,
+        #root *,
+        #root *::before,
+        #root *::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size;
+
+          --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
+          --ink: #091f2e;
+          --ink-soft: #59636e;
+          --paper: #ffffff;
+          --paper-veil: rgba(255, 255, 255, 0.9);
+          --border: rgba(9, 31, 46, 0.16);
+          --border-soft: rgba(9, 31, 46, 0.12);
+          --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
+
+          --accent: #8661c5;
+          --accent-2: #0078d4;
+          --accent-3: #389a91;
+          --accent-4: #bf3ac4;
+          --accent-ink: #ffffff;
+
+          --fs-display: 11cqw;
+          --fs-h1: 4.6cqw;
+          --fs-h2: 3.4cqw;
+          --fs-h3: 2.4cqw;
+          --fs-lead: 2cqw;
+          --fs-body: 1.75cqw;
+          --fs-caption: 1.5cqw;
+          --fs-kicker: 1.55cqw;
+          --fs-micro: 1.25cqw;
+
+          --radius: 16px;
+          --radius-sm: 10px;
+          --radius-pill: 999px;
+          --stroke: 5px;
+          --rule: 3px;
+
+          font-family: "Segoe UI", system-ui, sans-serif;
+          color: var(--ink);
+          background: var(--ground);
+        }
+        #root[data-ground="hero-swoosh"] {
+          --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+        }
+        #root[data-ground="section-field"] {
+          --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
+        }
+        #root[data-ground="dark-field"] {
+          --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
+          --ink: #ffffff;
+          --ink-soft: rgba(255, 255, 255, 0.72);
+          --paper: rgba(255, 255, 255, 0.08);
+          --paper-veil: rgba(255, 255, 255, 0.1);
+          --border: rgba(255, 255, 255, 0.24);
+          --border-soft: rgba(255, 255, 255, 0.14);
+          --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+        /* ---- primitives used by this block (verbatim from foundation) ---- */
+        .ilt-kicker {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-kicker);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+        .ilt-panel {
+          background: var(--paper);
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow);
+        }
+        .ilt-chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6em;
+          padding: 0.5em 1.1em;
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius-pill);
+          font-size: var(--fs-micro);
+          font-weight: 600;
+          color: var(--ink);
+          background: var(--paper-veil);
+        }
+        .ilt-tab {
+          width: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent);
+        }
+        /* ==== END _foundation.css ==== */
+
+        /* ---- block-specific: compose primitives + tokens only ---- */
+        #mk-cw-stage {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #mk-cw-window {
+          width: 60cqw;
+          overflow: hidden; /* clip children to the panel radius */
+          transform-origin: center center;
+        }
+        #mk-cw-titlebar {
+          display: flex;
+          align-items: center;
+          gap: 1.1cqw;
+          padding: 1.4cqw 2cqw;
+          border-bottom: 1.5px solid var(--border-soft);
+        }
+        #mk-cw-tab {
+          /* .ilt-tab is a thin vertical accent marker — a graphic, not text */
+          height: 2.2cqw;
+        }
+        #mk-cw-spacer {
+          flex: 1;
+        }
+        #mk-cw-body {
+          position: relative;
+          padding: 2cqw 2cqw 2.2cqw;
+          /* mono font is allowed HERE ONLY — code needs tabular alignment. */
+          font-family: "Cascadia Code", "Consolas", ui-monospace, monospace;
+        }
+        /* accent "active line" highlight — a graphic beat, tint of --accent + accent edge. */
+        #mk-cw-active {
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 2.7cqw;
+          z-index: 0;
+          border-left: var(--rule) solid var(--accent);
+          background: color-mix(in srgb, var(--accent) 12%, transparent);
+        }
+        .mk-cw-line {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          gap: 1.4cqw;
+          min-height: 2.7cqw;
+        }
+        .mk-cw-ln {
+          width: 2.2cqw;
+          flex: none;
+          text-align: right;
+          /* fixed, large, legible code size — the one place a px/clamp code size is allowed */
+          font-size: clamp(20px, 1.7cqw, 40px);
+          line-height: 2.7cqw;
+          color: var(--ink-soft); /* line numbers — secondary ink */
+          user-select: none;
+        }
+        .mk-cw-code {
+          white-space: pre;
+          font-size: clamp(20px, 1.7cqw, 40px);
+          line-height: 2.7cqw;
+          color: var(--ink); /* default code text — primary ink */
+        }
+        /* CODE SYNTAX COLOUR IS AN INTENTIONAL SEMANTIC EXCEPTION to the contrast law:
+           like a compiler, colour here carries meaning, so a restrained/muted palette is
+           allowed on code TOKENS ONLY (never chrome). keyword→accent, string→accent-3(teal),
+           comment→ink-soft, everything else→ink. Muted + legible on white; no rainbow. */
+        .tok-kw {
+          color: var(--accent);
+          font-weight: 600;
+        }
+        .tok-str {
+          color: var(--accent-3);
+        }
+        .tok-com {
+          color: var(--ink-soft);
+          font-style: italic;
+        }
+      </style>
+
+      <div id="root" data-composition-id="code-window" data-width="1920" data-height="1080">
+        <!-- host may set data-ground="section-field" | "hero-swoosh" | "dark-field" on #root -->
+        <div id="mk-cw-stage">
+          <div id="mk-cw-window" class="ilt-panel">
+            <div id="mk-cw-titlebar">
+              <div id="mk-cw-tab" class="ilt-tab"></div>
+              <span id="mk-cw-file" class="ilt-chip">app.py</span>
+              <div id="mk-cw-spacer"></div>
+              <span id="mk-cw-lang" class="ilt-kicker">Python</span>
+            </div>
+            <div id="mk-cw-body">
+              <div id="mk-cw-active"></div>
+              <div class="mk-cw-line"><span class="mk-cw-ln">1</span><code class="mk-cw-code"><span class="tok-com"># Check a device's compliance state</span></code></div>
+              <div class="mk-cw-line"><span class="mk-cw-ln">2</span><code class="mk-cw-code"><span class="tok-kw">import</span> requests</code></div>
+              <div class="mk-cw-line"><span class="mk-cw-ln">3</span><code class="mk-cw-code">&nbsp;</code></div>
+              <div class="mk-cw-line"><span class="mk-cw-ln">4</span><code class="mk-cw-code"><span class="tok-kw">def</span> get_status(device_id):</code></div>
+              <div class="mk-cw-line"><span class="mk-cw-ln">5</span><code class="mk-cw-code">    url = <span class="tok-str">f"/devices/{device_id}"</span></code></div>
+              <div class="mk-cw-line"><span class="mk-cw-ln">6</span><code class="mk-cw-code">    resp = requests.get(url)</code></div>
+              <div class="mk-cw-line"><span class="mk-cw-ln">7</span><code class="mk-cw-code">    <span class="tok-kw">return</span> resp.json()[<span class="tok-str">"state"</span>]</code></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          window.__timelines = window.__timelines || {};
+
+          // Edit per use. filename → title-bar chip, lang → kicker, keyLine → 1-based line the
+          // accent "active line" bar slides to (the payoff). The code itself is authored in the
+          // markup above (with syntax token spans) so indentation + colouring stay exact.
+          var CONFIG = {
+            filename: "app.py",
+            lang: "Python",
+            keyLine: 7,
+          };
+
+          document.getElementById("mk-cw-file").textContent = CONFIG.filename;
+          document.getElementById("mk-cw-lang").textContent = CONFIG.lang;
+
+          var win = document.getElementById("mk-cw-window");
+          var active = document.getElementById("mk-cw-active");
+          var lines = Array.prototype.slice.call(document.querySelectorAll("#mk-cw-body .mk-cw-line"));
+          var keyIndex = Math.min(Math.max(CONFIG.keyLine - 1, 0), lines.length - 1);
+          var yFirst = lines[0].offsetTop;
+          var yKey = lines[keyIndex].offsetTop;
+
+          var tl = gsap.timeline({ paused: true });
+
+          // Scene-relative, seek-safe. Window scales/fades in, code reveals top-to-bottom,
+          // then the accent active-line bar fades in and slides to the payoff line.
+          tl.fromTo(win, { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, 0.15);
+          tl.fromTo(
+            lines,
+            { opacity: 0, y: 14 },
+            { opacity: 1, y: 0, duration: 0.5, ease: "power2.out", stagger: 0.11 },
+            0.5,
+          );
+
+          gsap.set(active, { y: yFirst, opacity: 0 });
+          tl.to(active, { opacity: 1, duration: 0.35, ease: "power1.out" }, 1.35);
+          tl.to(active, { y: yKey, duration: 0.55, ease: "power2.inOut" }, 1.45);
+
+          window.__timelines["code-window"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

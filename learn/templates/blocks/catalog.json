@@ -1,0 +1,178 @@
+{
+  "version": "2026-08-05",
+  "description": "Learn-ILT kit blocks — pre-built, pre-animated, on-brand sub-composition scenes. PREFER a kit block over a hand-authored archetype whenever a beat matches one: a block ships a finished, brand-correct, seek-safe timeline, so it removes the hand-authoring that produced flat, small-type, out-of-sync beats. Fall back to an archetype only when no block fits the teaching relationship. Every block is built on templates/blocks/_foundation.css (one token contract, one cqw type scale, four grounds via #root[data-ground], shared primitives). To use one: copy templates/blocks/<id>.html into <project>/scenes/, edit its CONFIG object, set data-ground on #root, add it to scenes.json. File name = data-composition-id = window.__timelines key = <id>.",
+  "naming": "<category>-<variant>. category = scene archetype; variant = style. Categories: stat, chart, list, diagram, lower-third, title, section, code, callout, media. Reserved: quote, compare.",
+  "grounds": {
+    "content-wash": "default — warm paper wash, ink text. Most content beats.",
+    "hero-swoosh": "warm sweep — title / opening / closing only.",
+    "section-field": "cool pale-blue — segment openers only.",
+    "dark-field": "navy, WHITE ink (auto-inverted) — the dramatic exception, at most one scene."
+  },
+  "blocks": [
+    {
+      "id": "title-hero",
+      "category": "title",
+      "summary": "Opening title card: kicker + big two-line title + subtitle + accent rule, waterfall entrance.",
+      "content_shape": "The video's title, or a closing/major divider — one headline statement that owns the frame.",
+      "best_for": "Opener, closer, top-of-video title, major act break.",
+      "avoid_when": "The beat teaches content, peers, steps, or data — that is a content block, not a title.",
+      "default_ground": "hero-swoosh",
+      "config": "kicker, title (2 lines), subtitle",
+      "file": "templates/blocks/title-hero.html"
+    },
+    {
+      "id": "section-opener",
+      "category": "section",
+      "summary": "Numbered segment divider: big section number + vertical accent divider + title + one-line description.",
+      "content_shape": "A transition between major parts of the video, labeled with a number and a section title.",
+      "best_for": "Segment openers, act breaks, 'Part 02' dividers.",
+      "avoid_when": "It is the video's title (use title-hero) or an actual content beat.",
+      "default_ground": "section-field",
+      "config": "number, title, description",
+      "file": "templates/blocks/section-opener.html"
+    },
+    {
+      "id": "stat-count",
+      "category": "stat",
+      "summary": "Big single count-up figure with label + caption.",
+      "content_shape": "One headline number that impresses by its magnitude.",
+      "best_for": "A single total, scale, or reach figure on the light ground.",
+      "avoid_when": "The number is dramatic enough to carry a whole beat (use stat-spotlight) or it tracks toward a target (use stat-progress).",
+      "default_ground": "content-wash",
+      "config": "value, prefix, suffix, label, caption",
+      "file": "templates/blocks/stat-count.html"
+    },
+    {
+      "id": "stat-progress",
+      "category": "stat",
+      "summary": "Count-up numeral + accent progress track filling to value/max, with label + caption.",
+      "content_shape": "One metric progressing toward a goal or ceiling.",
+      "best_for": "Adoption %, completion toward a target, progress against a max.",
+      "avoid_when": "There is no target/ceiling — a bare figure is stat-count.",
+      "default_ground": "content-wash",
+      "config": "value, max, suffix, label, caption",
+      "file": "templates/blocks/stat-progress.html"
+    },
+    {
+      "id": "stat-spotlight",
+      "category": "stat",
+      "summary": "The dramatic single-stat beat on the dark ground: huge white count-up + glow + accent underline. The 'WOW'.",
+      "content_shape": "One number that deserves the entire frame, in negative space, for impact.",
+      "best_for": "The video's most impressive metric — used at most once, as the dramatic exception.",
+      "avoid_when": "You have already spent the dark-field scene, or the number is routine (use stat-count).",
+      "default_ground": "dark-field",
+      "config": "value, prefix, suffix, label, caption",
+      "file": "templates/blocks/stat-spotlight.html"
+    },
+    {
+      "id": "chart-bar",
+      "category": "chart",
+      "summary": "Animated bar chart with a secondary trend line drawing on; headline + legend.",
+      "content_shape": "Values compared across categories, plus one overlaid trend or conversion line.",
+      "best_for": "Monthly/quarterly magnitudes, before/after bars, a count with a rate line.",
+      "avoid_when": "Only a trend matters with no categories (use chart-line) or there is one number (use a stat block).",
+      "default_ground": "content-wash",
+      "config": "headline, subtitle, bar data, line data, legend",
+      "file": "templates/blocks/chart-bar.html"
+    },
+    {
+      "id": "chart-line",
+      "category": "chart",
+      "summary": "Dual-line trend chart drawing on, with dots, value labels, legend, x-labels.",
+      "content_shape": "Two series changing over an ordered sequence.",
+      "best_for": "Growth trends, two-metric comparison over time.",
+      "avoid_when": "Categories not time carry the meaning (use chart-bar).",
+      "default_ground": "content-wash",
+      "config": "two series (labels + points), x-labels, legend",
+      "file": "templates/blocks/chart-line.html"
+    },
+    {
+      "id": "list-specs",
+      "category": "list",
+      "summary": "Labeled spec rows (label + value) with accent underline rules, staggered reveal.",
+      "content_shape": "A set of attributes expressed as label/value pairs.",
+      "best_for": "Module specs, config values, at-a-glance fact sheets.",
+      "avoid_when": "The rows are ordered steps (use list-steps) or peers being chosen among (catalog archetype).",
+      "default_ground": "content-wash",
+      "config": "rows [{label, value}]",
+      "file": "templates/blocks/list-specs.html"
+    },
+    {
+      "id": "list-steps",
+      "category": "list",
+      "summary": "Numbered process steps: accent number badges + connector line + title/detail, top-to-bottom stagger.",
+      "content_shape": "An ordered procedure of 3-4 steps.",
+      "best_for": "Setup sequences, how-to procedures, ordered workflows.",
+      "avoid_when": "The items are unordered attributes (use list-specs) or a branching decision (use diagram-flow).",
+      "default_ground": "content-wash",
+      "config": "steps [{number, title, detail}]",
+      "file": "templates/blocks/list-steps.html"
+    },
+    {
+      "id": "diagram-flow",
+      "category": "diagram",
+      "summary": "Decision-tree flowchart: white nodes + blue connectors + emphasis node + 'You' cursor, node-then-connector reveal.",
+      "content_shape": "Branching decision logic or a chosen path through options.",
+      "best_for": "If/then decisions, choose-a-branch logic, a walked decision path.",
+      "avoid_when": "A linear sequence (use list-steps) or an architecture graph (blueprint archetype).",
+      "default_ground": "content-wash",
+      "config": "nodes + edges + the emphasized decision + chosen branch",
+      "file": "templates/blocks/diagram-flow.html"
+    },
+    {
+      "id": "code-window",
+      "category": "code",
+      "summary": "Light IDE window: filename chip + muted semantic syntax + line numbers + active-line highlight, line-by-line reveal.",
+      "content_shape": "A short code snippet the learner should read.",
+      "best_for": "Dev content — API/CLI/SDK examples, a config file, a short function.",
+      "avoid_when": "The idea is conceptual, not literal code.",
+      "default_ground": "content-wash",
+      "config": "filename, language label, code lines, active line",
+      "file": "templates/blocks/code-window.html"
+    },
+    {
+      "id": "callout-note",
+      "category": "callout",
+      "summary": "Learn-style key-point card: accent tab + glyph + label + term + body, panel scale-in with tab wipe.",
+      "content_shape": "One takeaway, definition, or note to emphasize.",
+      "best_for": "KEY POINT, NOTE, DEFINITION, a single emphasized fact.",
+      "avoid_when": "The content is a list, a stat, or a full beat of explanation.",
+      "default_ground": "content-wash",
+      "config": "label, term, body",
+      "file": "templates/blocks/callout-note.html"
+    },
+    {
+      "id": "media-screenshot",
+      "category": "media",
+      "summary": "A still screenshot in a neutral browser window, with a slow Ken Burns push and an optional accent callout box over a region.",
+      "content_shape": "A single portal/app screenshot the learner should look at, optionally with one region highlighted.",
+      "best_for": "Portal/admin-center stills, a settings blade, a result screen, any UI the narration points at.",
+      "avoid_when": "The action needs to be seen happening (use media-screen-recording), or it is a code file (use code-window).",
+      "default_ground": "content-wash",
+      "config": "src (project-local png in assets/media/), url label, caption, callout region {x,y,w,h} in %",
+      "file": "templates/blocks/media-screenshot.html"
+    },
+    {
+      "id": "media-screen-recording",
+      "category": "media",
+      "summary": "A screen recording that PLAYS in a neutral browser window (framework-owned video), with a REC indicator and caption.",
+      "content_shape": "A short screen-capture demo the learner should watch happen.",
+      "best_for": "Portal walkthroughs, click-throughs, demos, a change shown in motion.",
+      "avoid_when": "A single still makes the point (use media-screenshot); a long-form demo that IS the whole video (that is the demo-walkthrough profile, not one beat).",
+      "default_ground": "content-wash",
+      "config": "src (project-local mp4 in assets/media/), duration (= scene length), url label, caption",
+      "file": "templates/blocks/media-screen-recording.html"
+    },
+    {
+      "id": "lower-third-bar",
+      "category": "lower-third",
+      "summary": "Name/role overlay card: white panel + accent tab + name + role, wipe-in.",
+      "content_shape": "A brief identifier overlaid on another scene — a speaker, tool, or term.",
+      "best_for": "Introduce a person, product, or term as a lower-third overlay.",
+      "avoid_when": "It is a full-frame beat, not an overlay.",
+      "default_ground": "content-wash",
+      "config": "name, role",
+      "file": "templates/blocks/lower-third-bar.html"
+    }
+  ]
+}

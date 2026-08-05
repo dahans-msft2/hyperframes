@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+  </head>
+  <body>
+    <template>
+      <style>
+        /* === Learn-ILT kit block: apple-money-count (count-up numeral + accent particle burst + label/caption). ===
+           Built on the kit foundation: no hardcoded colours/fonts/px type — tokens only.
+           Ground is host-selectable via #root[data-ground]; dark-field auto-inverts ink. */
+
+        /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+        #root,
+        #root *,
+        #root *::before,
+        #root *::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size;
+
+          --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
+          --ink: #091f2e;
+          --ink-soft: #59636e;
+          --paper: #ffffff;
+          --paper-veil: rgba(255, 255, 255, 0.9);
+          --border: rgba(9, 31, 46, 0.16);
+          --border-soft: rgba(9, 31, 46, 0.12);
+          --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
+
+          --accent: #8661c5;
+          --accent-2: #0078d4;
+          --accent-3: #389a91;
+          --accent-4: #bf3ac4;
+          --accent-ink: #ffffff;
+
+          --fs-display: 11cqw;
+          --fs-h1: 4.6cqw;
+          --fs-h2: 3.4cqw;
+          --fs-h3: 2.4cqw;
+          --fs-lead: 2cqw;
+          --fs-body: 1.75cqw;
+          --fs-caption: 1.5cqw;
+          --fs-kicker: 1.55cqw;
+          --fs-micro: 1.25cqw;
+
+          --radius: 16px;
+          --radius-sm: 10px;
+          --radius-pill: 999px;
+          --stroke: 5px;
+          --rule: 3px;
+
+          font-family: "Segoe UI", system-ui, sans-serif;
+          color: var(--ink);
+          background: var(--ground);
+        }
+        #root[data-ground="hero-swoosh"] {
+          --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+        }
+        #root[data-ground="section-field"] {
+          --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
+        }
+        #root[data-ground="dark-field"] {
+          --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
+          --ink: #ffffff;
+          --ink-soft: rgba(255, 255, 255, 0.72);
+          --paper: rgba(255, 255, 255, 0.08);
+          --paper-veil: rgba(255, 255, 255, 0.1);
+          --border: rgba(255, 255, 255, 0.24);
+          --border-soft: rgba(255, 255, 255, 0.14);
+          --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+        .ilt-caption {
+          font-weight: 400;
+          font-size: var(--fs-caption);
+          line-height: 1.3;
+          color: var(--ink-soft);
+        }
+        .ilt-display {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-display);
+          line-height: 0.95;
+          letter-spacing: -0.03em;
+          color: var(--ink);
+          font-variant-numeric: tabular-nums;
+        }
+        /* ==== END _foundation.css ==== */
+
+        /* ---- block-specific: compose primitives + tokens only ---- */
+        .stage-content {
+          position: absolute;
+          inset: 0;
+          z-index: 5;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 22px;
+          padding: 120px 160px;
+        }
+
+        /* the big count-up numeral composes .ilt-display; keep only layout extras */
+        .amount {
+          text-align: center;
+          white-space: nowrap;
+          will-change: transform, opacity;
+        }
+
+        /* prominent label — h3 role, ink text */
+        .amount-label {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h3);
+          letter-spacing: -0.01em;
+          color: var(--ink);
+          text-align: center;
+        }
+
+        /* caption composes .ilt-caption; keep only alignment */
+        .amount-caption {
+          text-align: center;
+        }
+
+        /* Accent particle burst (purple) — a graphic celebration, never text. */
+        .money-burst {
+          position: absolute;
+          inset: 0;
+          z-index: 2;
+          pointer-events: none;
+        }
+
+        .spark {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          opacity: 0;
+          will-change: transform, opacity;
+        }
+
+        .spark.pill {
+          width: 84px;
+          height: 30px;
+          border-radius: var(--radius-pill);
+          background: var(--accent);
+          box-shadow: 0 14px 26px rgba(134, 97, 197, 0.26);
+        }
+
+        .spark.dot {
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          background: var(--accent);
+          box-shadow: 0 14px 24px rgba(134, 97, 197, 0.24);
+        }
+      </style>
+
+      <div id="root" data-composition-id="stat-count" data-width="1920" data-height="1080">
+        <div class="money-burst" id="moneyBurst"></div>
+        <div class="stage-content">
+          <div class="amount ilt-display" id="amount">0</div>
+          <div class="amount-label" id="amountLabel"></div>
+          <div class="amount-caption ilt-caption" id="amountCaption"></div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          window.__timelines = window.__timelines || {};
+
+          // Edit per use. A big count-up numeral (money or plain) + label + caption,
+          // celebrated with a single-accent particle burst.
+          var CONFIG = {
+            prefix: "",
+            suffix: "",
+            target: 12480,
+            label: "Learners reached",
+            caption: "A new milestone for the program.",
+          };
+
+          var amount = document.getElementById("amount");
+          var moneyBurst = document.getElementById("moneyBurst");
+          var label = document.getElementById("amountLabel");
+          var caption = document.getElementById("amountCaption");
+          var countState = { value: 0 };
+
+          function renderValue(value) {
+            var rounded = Math.max(0, Math.round(value));
+            amount.textContent = CONFIG.prefix + rounded.toLocaleString("en-US") + CONFIG.suffix;
+          }
+
+          label.textContent = CONFIG.label;
+          caption.textContent = CONFIG.caption;
+
+          // Build the accent burst — same radial spec math as the source, retheme only.
+          var sparks = [];
+          var specs = [];
+          for (var i = 0; i < 48; i += 1) {
+            var icon = document.createElement("div");
+            var isDot = i % 3 === 0;
+            icon.className = "spark " + (isDot ? "dot" : "pill");
+            moneyBurst.appendChild(icon);
+            sparks.push(icon);
+
+            var angle = i * 2.399963229728653;
+            var ring = i % 5;
+            var radiusX = 260 + ring * 145 + (i % 7) * 12;
+            var radiusY = 160 + ring * 78 + (i % 6) * 12;
+            var offsetX = (i % 4) * 24 - 36;
+            var offsetY = (i % 5) * 18 - 36;
+            var x = Math.max(-865, Math.min(865, Math.cos(angle) * radiusX + offsetX));
+            var y = Math.max(-465, Math.min(465, Math.sin(angle * 1.13) * radiusY + offsetY));
+
+            specs.push({
+              x: x,
+              y: y,
+              delay: (i % 8) * 0.025,
+              duration: 0.74 + (i % 5) * 0.045,
+              fadeDelay: (i % 5) * 0.05,
+              rotation: ((i * 43) % 160) - 80,
+              scale: isDot ? 0.72 + (i % 4) * 0.08 : 0.68 + (i % 5) * 0.07,
+            });
+          }
+
+          renderValue(0);
+
+          var tl = gsap.timeline({ paused: true, defaults: { ease: "power3.out" } });
+
+          gsap.set(sparks, {
+            x: 0,
+            y: 0,
+            xPercent: -50,
+            yPercent: -50,
+            opacity: 0,
+            scale: 0.18,
+            transformOrigin: "50% 50%",
+          });
+          gsap.set([label, caption], { opacity: 0, y: 18 });
+
+          // Entrance.
+          tl.from("#amount", { y: 26, opacity: 0, scale: 0.985, duration: 0.45, ease: "power2.out" }, 0);
+
+          // Count-up driver tween (kept intact — proxy state + onUpdate).
+          tl.to(
+            countState,
+            {
+              value: CONFIG.target,
+              duration: 3.16,
+              ease: "none",
+              onUpdate: function () {
+                renderValue(countState.value);
+              },
+              onComplete: function () {
+                renderValue(CONFIG.target);
+              },
+            },
+            0,
+          );
+
+          // Celebratory scale pop when the number lands — stays ink, no colour flip.
+          tl.to("#amount", { scale: 1.06, duration: 0.16, ease: "back.out(2.2)" }, 3.16);
+          tl.to("#amount", { scale: 1, duration: 0.23, ease: "power2.out" }, 3.33);
+
+          // Label + caption resolve after the figure lands.
+          tl.to(label, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 3.3);
+          tl.to(caption, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 3.5);
+
+          // Accent particle burst.
+          sparks.forEach(function (icon, i) {
+            var spec = specs[i];
+            tl.to(
+              icon,
+              {
+                x: spec.x,
+                y: spec.y,
+                rotation: spec.rotation,
+                scale: spec.scale,
+                opacity: 1,
+                duration: spec.duration,
+                ease: "power4.out",
+              },
+              3.28 + spec.delay,
+            );
+            tl.to(
+              icon,
+              {
+                y: spec.y + (spec.y < 0 ? -58 : 58),
+                scale: spec.scale * 0.54,
+                opacity: 0,
+                duration: 0.38,
+                ease: "power2.in",
+              },
+              4.18 + spec.fadeDelay,
+            );
+          });
+
+          window.__timelines["stat-count"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+{
+  "$comment": "Shared defaults for every Learn companion video built with this harness. Per-video overrides live in the project's own hyperframes.json / BRIEF.md.",
+  "version": "2026-08-03",
+
+  "composition": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "resolution": "landscape"
+  },
+
+  "brand": {
+    "frame_preset": "learn-ilt",
+    "preset_path": "frame-presets/learn-ilt/FRAME.md",
+    "source_of_truth": "brand/BRAND-SOURCE.md",
+    "default_ground": "content-wash",
+    "fonts": ["Segoe UI", "Segoe UI Semibold"]
+  },
+
+  "narration": {
+    "engine": "tools/azure_tts.py",
+    "default_voice": "en-US-Ava:DragonHDLatestNeural",
+    "words_per_second": 2.3,
+    "output": "narration.wav",
+    "transcribe": "npx hyperframes transcribe narration.wav"
+  },
+
+  "profile": {
+    "registry": "profiles/profiles.json",
+    "default": "companion-short"
+  },
+
+  "endcard": {
+    "asset": "assets/AI_End_Card.mp4",
+    "seconds": 10.667,
+    "mandatory": true,
+    "authored_in": true,
+    "seam_exempt": true,
+    "$note": "Only one end card ships. A ~17x-compressed 'normalized' copy used to sit beside it for the old ffmpeg-concat flow; it was deleted because the card is now authored into the composition as the final clip, and having both invited a double-compression mistake."
+  },
+
+  "output": {
+    "root": "output",
+    "project": "output/<Video-Title>",
+    "renders": "renders",
+    "deliverables": ["<slug>.mp4", "<slug>.vtt", "<slug>_thumbnail.png"]
+  },
+
+  "gates": {
+    "rubric": "learn-video-rubric",
+    "min_total": 18,
+    "min_per_criterion": 3,
+    "max_disqualifiers": 0,
+    "run_before": ["tts-spend", "render"]
+  },
+
+  "checks": {
+    "composition": "npx hyperframes check",
+    "contrast": "py tools/contrast_gate.py brand/_extract/palette.json --min 3.0",
+    "seams": "node <motion-doctrine>/scripts/seam-gate.mjs verify --ledger ledger.json --project .",
+    "choreography": "node <hyperframes-animation>/scripts/animation-map.mjs"
+  },
+
+  "cli": {
+    "published_version": "0.7.77",
+    "$note": "The local c:\\Repos\\hyperframes checkout is main @ 0.7.90, AHEAD of npm. Repo skills may document unreleased flags — pin a published version in each project's package.json."
+  }
+}

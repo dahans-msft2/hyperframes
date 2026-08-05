@@ -1,0 +1,84 @@
+:root {
+  --hf-ink: #091f2e;
+  --hf-ink-soft: #59636e;
+  --hf-border: rgba(9, 31, 46, 0.16);
+  --hf-panel: rgba(255, 255, 255, 0.72);
+  --hf-panel-strong: rgba(255, 255, 255, 0.86);
+  --hf-card: rgba(255, 255, 255, 0.62);
+  --hf-primary: #8661c5;
+  --hf-blue: #0078d4;
+  --hf-track: #ced7e8;
+  --hf-grid: #e7e3eb;
+}
+
+/* Type scale sized for 1080p legibility: body ~34px, title ~85px at 1920 wide.
+   1cqw = 1% of the 1920px root = 19.2px. Keep body >= 1.6cqw; never below. */
+.beat {
+  position: absolute;
+  inset: 0;
+  padding: 2.6cqw;
+  box-sizing: border-box;
+  color: var(--hf-ink);
+  font-family: "Segoe UI", sans-serif;
+}
+
+.beat-head {
+  max-width: 74%;
+  margin-bottom: 1.8cqw;
+}
+
+.beat-kicker {
+  margin: 0 0 0.7cqw;
+  color: var(--hf-ink-soft);
+  font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+  font-size: 1.55cqw;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.beat-title {
+  margin: 0;
+  font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+  font-size: 4.4cqw;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+.beat-caption {
+  margin: 0.7cqw 0 0;
+  color: var(--hf-ink-soft);
+  font-size: 1.75cqw;
+  line-height: 1.4;
+}
+
+.panel {
+  border: 1.5px solid var(--hf-border);
+  border-radius: 14px;
+  background: var(--hf-panel);
+  backdrop-filter: blur(16px) saturate(1.15);
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5cqw;
+  padding: 0.55cqw 1.05cqw;
+  border: 1px solid var(--hf-border);
+  border-radius: 999px;
+  background: var(--hf-panel-strong);
+  font-size: 1.45cqw;
+  font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+}
+
+/* Icons should read from across a room. Default big; never below 2cqw (~38px). */
+.beat-icon {
+  width: 3cqw;
+  height: 3cqw;
+  flex: none;
+}
+
+.beat-icon-lg {
+  width: 5cqw;
+  height: 5cqw;
+  flex: none;
+}

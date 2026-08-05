@@ -1,0 +1,54 @@
+.beat-console {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1.2cqw;
+}
+
+.console-grid {
+  display: grid;
+  grid-template-columns: 22cqw 1fr;
+  gap: 1cqw;
+}
+
+.console-rail,
+.console-panel {
+  padding: 1.5cqw;
+}
+
+.console-rail-label {
+  margin: 0;
+  font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+  font-size: 1.5cqw;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--hf-ink-soft);
+}
+
+.console-rail-sub {
+  margin: 0.5cqw 0 0;
+  font-size: 2.1cqw;
+  line-height: 1.2;
+}
+
+.console-row {
+  display: grid;
+  grid-template-columns: 16cqw 1fr;
+  gap: 1cqw;
+  align-items: center;
+  padding: 0.85cqw 0;
+  border-bottom: 1px solid var(--hf-border);
+}
+
+.console-row:last-child {
+  border-bottom: 0;
+}
+
+.console-key {
+  color: var(--hf-ink-soft);
+  font-size: 1.45cqw;
+  font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+}
+
+.console-value {
+  font-size: 1.65cqw;
+}

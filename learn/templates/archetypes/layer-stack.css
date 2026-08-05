@@ -1,0 +1,42 @@
+.beat-layer-stack {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1.2cqw;
+}
+
+.stack-wrap {
+  position: relative;
+  width: 72cqw;
+  height: 40cqw;
+  margin: 0 auto;
+}
+
+.stack-layer,
+.stack-core {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--hf-border);
+  border-radius: 14px;
+  background: var(--hf-panel);
+  font-size: 1.6cqw;
+}
+
+.stack-layer-outer {
+  inset: 0;
+}
+
+.stack-layer-mid {
+  inset: 4cqw;
+}
+
+.stack-layer-inner {
+  inset: 8cqw;
+}
+
+.stack-core {
+  inset: 14cqw 19cqw;
+  border-color: rgba(134, 97, 197, 0.45);
+  background: var(--hf-panel-strong);
+  font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+}

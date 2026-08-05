@@ -1,0 +1,184 @@
+{
+  "$comment": "Video-type profiles. The rubric defers to 'recommended length for the video type' but never supplies it \u2014 this file does. Locked at routing time and threaded to every downstream agent; a mismatch between the routed profile and the scorecard profile is a hard error. Vary these inputs, never the 18/20 bar.",
+  "version": "2026-08-03",
+  "defaults": {
+    "wpm": 145,
+    "words_per_second": 2.42,
+    "pace_source": "measured 2026-08-03 across all 41 shipped MD-102 narrations (~68 min, Dragon HD, mostly en-US-Davis). Mean 145 wpm, range 124-156. Per-voice rates differ by up to 27%; re-derive with tools/audition_voices.py when the voice changes.",
+    "end_card_seconds": 10.667,
+    "end_card_counts_toward_target": false,
+    "required_elements": [
+      "opening.bumper",
+      "opening.title",
+      "opening.objectives",
+      "closing.recap",
+      "closing.cta",
+      "endcard.ai-disclosure"
+    ],
+    "chapters_required": false,
+    "max_static_stretch_seconds": 4.0,
+    "scene_seconds": { "min": 12, "target": 20 },
+    "dead_zone_exempt_segment_kinds": [],
+    "rubric": {
+      "min_total": 18,
+      "min_per_criterion": 3,
+      "max_disqualifiers": 0
+    }
+  },
+  "profiles": {
+    "companion-short": {
+      "label": "Learn companion video (short)",
+      "source": "the 44 shipped MD-102 videos measured 75\u2013130s",
+      "default": true,
+      "content_seconds": {
+        "target": 105,
+        "min": 60,
+        "max": 180
+      }
+    },
+    "unit-fy27": {
+      "label": "Unit video (unitFY27 bounds)",
+      "source": "Synthesia unitFY27 template runtime bounds",
+      "content_seconds": {
+        "target": 120,
+        "min": 60,
+        "max": 180
+      }
+    },
+    "unit-video": {
+      "label": "Unit video (~4 min)",
+      "source": "Synthesia unit-video template target",
+      "content_seconds": {
+        "target": 240,
+        "min": 180,
+        "max": 300
+      },
+      "max_static_stretch_seconds": 5.0,
+      "scene_seconds": { "min": 14, "target": 24 }
+    },
+    "skilling-session": {
+      "label": "Skilling session",
+      "source": "Synthesia skilling-session template bounds 15\u201320 min",
+      "content_seconds": {
+        "target": 1050,
+        "min": 900,
+        "max": 1200
+      },
+      "scene_seconds": { "min": 20, "target": 45 },
+      "end_card_counts_toward_target": true,
+      "chapters_required": true,
+      "max_static_stretch_seconds": 8.0,
+      "dead_zone_exempt_segment_kinds": [
+        "screen-recording",
+        "demo",
+        "code-walkthrough"
+      ],
+      "required_elements_add": [
+        "body.chapter-markers",
+        "body.per-chapter-recap"
+      ]
+    },
+    "skilling-session-long": {
+      "label": "Skilling session (multi-topic)",
+      "source": "Synthesia skilling-session-FY27, 2\u20134 topic blocks",
+      "content_seconds": {
+        "target": 1350,
+        "min": 900,
+        "max": 1500
+      },
+      "scene_seconds": { "min": 20, "target": 45 },
+      "end_card_counts_toward_target": true,
+      "chapters_required": true,
+      "max_static_stretch_seconds": 8.0,
+      "dead_zone_exempt_segment_kinds": [
+        "screen-recording",
+        "demo",
+        "code-walkthrough"
+      ],
+      "required_elements_add": [
+        "body.chapter-markers",
+        "body.per-chapter-recap"
+      ]
+    },
+    "demo-walkthrough": {
+      "label": "Process walkthrough / demo",
+      "source": "playbook video type: Walkthrough of a Process",
+      "content_seconds": {
+        "target": 300,
+        "min": 90,
+        "max": 900
+      },
+      "scene_seconds": { "min": 12, "target": 30 },
+      "max_static_stretch_seconds": 12.0,
+      "dead_zone_exempt_segment_kinds": [
+        "screen-recording",
+        "demo",
+        "portal-capture"
+      ],
+      "$note": "Holding on a screen recording is correct behaviour here, not a defect. Short-form dead-zone thresholds would falsely fail this profile."
+    },
+    "launch-promo": {
+      "label": "Product launch / promo",
+      "source": "upstream /product-launch-video",
+      "content_seconds": {
+        "target": 60,
+        "min": 30,
+        "max": 90
+      },
+      "max_static_stretch_seconds": 2.5,
+      "scene_seconds": { "min": 5, "target": 9 }
+    },
+    "explainer": {
+      "label": "Faceless explainer",
+      "source": "upstream /faceless-explainer",
+      "content_seconds": {
+        "target": 60,
+        "min": 30,
+        "max": 90
+      },
+      "max_static_stretch_seconds": 2.5,
+      "scene_seconds": { "min": 5, "target": 9 }
+    },
+    "code-change": {
+      "label": "Code-change explainer",
+      "source": "upstream /pr-to-video",
+      "content_seconds": {
+        "target": 120,
+        "min": 45,
+        "max": 180
+      },
+      "max_static_stretch_seconds": 6.0,
+      "scene_seconds": { "min": 10, "target": 16 },
+      "dead_zone_exempt_segment_kinds": [
+        "code-walkthrough",
+        "diff"
+      ]
+    },
+    "motion-graphic": {
+      "label": "Motion graphic (no narration)",
+      "source": "upstream /motion-graphics",
+      "content_seconds": {
+        "target": 8,
+        "min": 3,
+        "max": 30
+      },
+      "narrated": false,
+      "max_static_stretch_seconds": 1.0,
+      "required_elements": [
+        "endcard.ai-disclosure"
+      ],
+      "$note": "C1 and C2 read differently with no narration: the motion IS the message. Objectives/recap requirements do not apply; the disclosure still does."
+    },
+    "slideshow": {
+      "label": "Interactive deck",
+      "source": "upstream /slideshow",
+      "content_seconds": {
+        "target": null,
+        "min": null,
+        "max": null
+      },
+      "rendered_video": false,
+      "$note": "Not a linear video. C5 length/pacing and C2 dead-zone checks do not apply. Disclosure still required on the final slide."
+    }
+  }
+}
