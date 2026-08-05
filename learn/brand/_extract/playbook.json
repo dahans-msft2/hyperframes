@@ -1,0 +1,3197 @@
+{
+  "source": "c:\\learn-pr\\MD-102-Refresh-Working\\md102-companion-videos\\_source\\ilt-templates\\Video Content Playbook Synthesia.pptx",
+  "slide_count": 58,
+  "slides": [
+    {
+      "number": 1,
+      "layout": "Blank",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Lab "
+            },
+            {
+              "level": 0,
+              "text": "Video Content Playbook \u2013Synthesia Process"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 18",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "October 2025"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 2,
+      "layout": "Title Only",
+      "title": "What is the purpose and who is the intended audience for the playbook?",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "What is the purpose and who is the intended audience for the playbook?"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Purpose"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Intended audience"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 15",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "The purpose of this playbook is to provide comprehensive standards for creating 1\u20133-minute* technical videos for the Learn platform**. The playbook outlines the end-to-end process, with clear guidance on each step of creating a video."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 15",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "The intended audience for this playbook is technical content developers in the Learning Lab team as well as other WWL teams involved in video production and publishing (i.e.\u00a0Worldwide Learning Studios, Learning Product, LEO Engineering, and PDETs.)"
+            }
+          ]
+        }
+      ],
+      "notes": "*Median Watched Time of videos in the Microsoft Learn platform as per the C+ E Skilling Video Dashboard: Power BI\n**These videos are also being leveraged in the Microsoft Learn Microlearning playlist in YouTube: Microsoft Learn - YouTube\nLEO: Learning Engineering and Operations\nPDETS: Product Development Engineering & Tool Services"
+    },
+    {
+      "number": 3,
+      "layout": "Title Only",
+      "title": "Cloud, AI & Security Monthly Goal (Synthesia)",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Cloud, AI & Security Monthly Goal (Synthesia)"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "AI/Developer"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Infra"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 15",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "3 videos"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 15",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "2 videos"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Security"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 15",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "2 videos"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Data"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 15",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "2 videos"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 16",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "FY26 Synthesia video forecast: 90 videos based on capacity starting October 2025"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 11",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Q1: 9 videos; Q2: 27 videos; Q3: 27 videos ; Q4: 27 videos"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 4,
+      "layout": "Title Only",
+      "title": "AI Business Solutions Monthly Goal (Synthesia)",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "AI Business Solutions Monthly Goal (Synthesia)"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Business User"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "AI Powered Apps"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 15",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "3 videos"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 15",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "3 videos"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Agents"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 15",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "3 videos"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 16",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "FY26 Synthesia video forecast: 80 videos based on capacity starting October 2025"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Q1: 8 videos; Q2: 24 videos; Q3: 24 videos ; Q4: 24 videos"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 5,
+      "layout": "Title Only",
+      "title": "Best Practices to Create Effective Educational Videos",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Best Practices to Create Effective Educational Videos"
+            }
+          ]
+        },
+        {
+          "kind": "table",
+          "name": "Table 24",
+          "rows": [
+            [
+              "Best Practice",
+              "Considerations"
+            ],
+            [
+              "Define the Training Goal and Audience",
+              "Understand who the learners are and what you want them to learn or do"
+            ],
+            [
+              "Choose the Right Type of Video",
+              "Select the style that will communicate the content most clearly"
+            ],
+            [
+              "Plan and Script the Content",
+              "Scripting helps keep the video concise and not forget crucial steps"
+            ],
+            [
+              "Storyboard the Visuals",
+              "Describe what will be on screen for each segment of the script"
+            ],
+            [
+              "Record the Video Content",
+              "Use both the visuals and audio narration to show, not just tell"
+            ],
+            [
+              "Edit and Enhance the Video",
+              "Editing is crucial; Add titles, include visuals, zoom or highlight, adjust audio"
+            ],
+            [
+              "Add Interactivity and Publish",
+              "Incorporate knowledge checks and prompt active engagement from learners"
+            ]
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 6,
+      "layout": "Title Only",
+      "title": "Instructional Design Principles for Educational Videos",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Instructional Design Principles for Educational Videos"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Focus on Learner Needs"
+            },
+            {
+              "level": 1,
+              "text": "Use terminology the learners know (or explain it when introduced)"
+            },
+            {
+              "level": 1,
+              "text": "Address learners specific use cases"
+            },
+            {
+              "level": 1,
+              "text": "Explain why the topic matters and how it solves the learner\u2019s problem"
+            },
+            {
+              "level": 0,
+              "text": "Set Clear Objectives and Expectations"
+            },
+            {
+              "level": 1,
+              "text": "State what learners will learn or be able to do"
+            },
+            {
+              "level": 1,
+              "text": "All content in the video should support these objectives"
+            },
+            {
+              "level": 0,
+              "text": "Segment Content to Manage Cognitive Load"
+            },
+            {
+              "level": 1,
+              "text": "Content must be well-structured"
+            },
+            {
+              "level": 1,
+              "text": "Chunk content into bite-sized segments or steps"
+            },
+            {
+              "level": 1,
+              "text": "Use clear transitions or sections for each subtopic or task"
+            },
+            {
+              "level": 0,
+              "text": "Apply Multimedia Principles"
+            },
+            {
+              "level": 1,
+              "text": "Coherence Principle"
+            },
+            {
+              "level": 1,
+              "text": "Signaling Principle"
+            },
+            {
+              "level": 1,
+              "text": "Modality Principle"
+            },
+            {
+              "level": 1,
+              "text": "Spatial Contiguity Principle*"
+            }
+          ]
+        }
+      ],
+      "notes": "*See slides on Richard Mayer\u2019s Principles of Multimedia Design for the full 12 multimedia principles\n"
+    },
+    {
+      "number": 7,
+      "layout": "Title Only",
+      "title": "Instructional Design Principles for Educational Videos",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Instructional Design Principles for Educational Videos"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Ensure Accessibility and Inclusion"
+            },
+            {
+              "level": 1,
+              "text": "Include closed captions"
+            },
+            {
+              "level": 1,
+              "text": "Provide transcripts"
+            },
+            {
+              "level": 1,
+              "text": "Important information conveyed visually must be communicated via audio or text"
+            },
+            {
+              "level": 1,
+              "text": "Avoid cultural references or humor"
+            },
+            {
+              "level": 1,
+              "text": "Consider localization for multilingual audiences"
+            },
+            {
+              "level": 0,
+              "text": "Encourage Active Learning"
+            },
+            {
+              "level": 1,
+              "text": "Find ways to make learners engage mentally (i.e. ask a reflective question)"
+            },
+            {
+              "level": 1,
+              "text": "Embed a quick quiz or clickable interaction if the platform allows it"
+            },
+            {
+              "level": 0,
+              "text": "Feedback and Assessment"
+            },
+            {
+              "level": 1,
+              "text": "Give the correct answer and explanation in clickable interactive videos"
+            },
+            {
+              "level": 1,
+              "text": "Collect learner feedback to improve future iterations"
+            },
+            {
+              "level": 0,
+              "text": "Continuous Improvement"
+            },
+            {
+              "level": 1,
+              "text": "Monitor metrics (completion rates, etc.)"
+            },
+            {
+              "level": 1,
+              "text": "Apply an iterative design mindset"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 8,
+      "layout": "Title Only",
+      "title": "Richard Mayer\u2019s Principles of Multimedia Design",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Richard Mayer\u2019s Principles of Multimedia Design"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Coherence Principle"
+            },
+            {
+              "level": 1,
+              "text": "Humans learn best when extraneous, distracting material is not included"
+            },
+            {
+              "level": 0,
+              "text": "Signaling Principle"
+            },
+            {
+              "level": 1,
+              "text": "Humans learn best when they are shown exactly what to pay attention to on the screen"
+            },
+            {
+              "level": 0,
+              "text": "Redundancy Principle"
+            },
+            {
+              "level": 1,
+              "text": "Humans learn best with narration and graphics, as opposed to narration, graphics, and text"
+            },
+            {
+              "level": 0,
+              "text": "Spatial Contiguity Principle"
+            },
+            {
+              "level": 1,
+              "text": "Humans learn best when relevant text and visuals are physically close together"
+            },
+            {
+              "level": 0,
+              "text": "Temporal Contiguity Principle"
+            },
+            {
+              "level": 1,
+              "text": "Humans learn best when corresponding words and visuals are presented together, instead of in consecutive order"
+            },
+            {
+              "level": 0,
+              "text": "Segmenting Principle"
+            },
+            {
+              "level": 1,
+              "text": "Humans learn best when information is presented in segments, rather than one long continuous stream"
+            }
+          ]
+        }
+      ],
+      "notes": "How to Use Mayer\u2019s 12 Principles of Multimedia Learning [Examples Included] - Water Bear Learning"
+    },
+    {
+      "number": 9,
+      "layout": "Title Only",
+      "title": "Richard Mayer\u2019s Principles of Multimedia Design",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Richard Mayer\u2019s Principles of Multimedia Design"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Pre-Training Principle"
+            },
+            {
+              "level": 1,
+              "text": "Humans learn more efficiently if they already know some of the basics"
+            },
+            {
+              "level": 0,
+              "text": "Modality Principle"
+            },
+            {
+              "level": 1,
+              "text": "Humans learn best from visuals and spoken words than from visuals and printed words"
+            },
+            {
+              "level": 0,
+              "text": "Multimedia Principle"
+            },
+            {
+              "level": 1,
+              "text": "Humans learn best from words and pictures than just words alone"
+            },
+            {
+              "level": 0,
+              "text": " Personalization Principle"
+            },
+            {
+              "level": 1,
+              "text": "Humans learn best from a more informal, conversational voice than an overly formal voice"
+            },
+            {
+              "level": 0,
+              "text": " Voice Principle"
+            },
+            {
+              "level": 1,
+              "text": "Humans learn best from a human voice than a computer voice"
+            },
+            {
+              "level": 0,
+              "text": " Image Principle"
+            },
+            {
+              "level": 1,
+              "text": "Humans do not necessarily learn better from a talking head video. (If there is important information to be learned, relevant visuals on the screen will be more effective than showing a talking head of an instructor.)"
+            }
+          ]
+        }
+      ],
+      "notes": "How to Use Mayer\u2019s 12 Principles of Multimedia Learning [Examples Included] - Water Bear Learning"
+    },
+    {
+      "number": 10,
+      "layout": "Title Only",
+      "title": "Overall Video Creation Timeline in Synthesia",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Overall Video Creation Timeline in Synthesia"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Total time required by CDL = 5 hours per video\u00a0"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 32",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Select, create and add visuals assets  (60 minutes*)"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 41",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Create video project, select template and avatar, and add script "
+            },
+            {
+              "level": 0,
+              "text": "(30 minutes)\u00a0"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 42",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Create closed captions,"
+            },
+            {
+              "level": 0,
+              "text": "\u00a0thumbnail, and publish video in Synthesia. Move video to workspace and tag Loc team in ADO."
+            },
+            {
+              "level": 0,
+              "text": "\u00a0(60 minutes)\u00a0"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 40",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Generate script with Copilot and add to script & storyboard template (15 minutes)\u00a0"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 43",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Select module unit and video type and complete AI prompt (30 minutes)"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 44",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Run the script through PoliCheck and update as necessary (15 minutes)\u00a0"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 45",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Edit video, including titles, visuals, pronunciation, etc.\u00a0 (60 minutes)\u00a0"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 46",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Sign off CCL, kick off publishing and store video assets (25 minutes)\u00a0"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Total time distributed across 1 or more weeks"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Create video work item in AzDO and update metadata"
+            },
+            {
+              "level": 0,
+              "text": "(15 minutes)"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 13",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "(Loc Team) "
+            },
+            {
+              "level": 0,
+              "text": "Create Localized "
+            },
+            {
+              "level": 0,
+              "text": "versions, closed captions,\u00a0thumbnail, and publish video in Synthesia."
+            }
+          ]
+        }
+      ],
+      "notes": "*More time may be required depending on the availability and complexity of the visuals."
+    },
+    {
+      "number": 11,
+      "layout": "Title Only",
+      "title": "",
+      "content": [
+        {
+          "kind": "table",
+          "name": "Table 7",
+          "rows": [
+            [
+              "Pre-Production ",
+              "CDL"
+            ],
+            [
+              "Select module unit and video type, and complete AI prompt for script \n",
+              "X"
+            ],
+            [
+              "Generate script with Copilot and add to script & storyboard template \n",
+              "X"
+            ],
+            [
+              "Create a Video Work Item in ADO/Courseware\n",
+              "X"
+            ],
+            [
+              "Update video work item with required metadata \n",
+              "X"
+            ],
+            [
+              "Upload script into ADO video content repo \n",
+              "X"
+            ],
+            [
+              "Run the script through PoliCheck in ADO video content repo and update as necessary\n",
+              "X"
+            ]
+          ]
+        }
+      ],
+      "notes": "*While it is not mandatory, it is highly recommended to store your video visuals in the Video Assets & Templates folder so other team members can leverage them for their videos as applicable. "
+    },
+    {
+      "number": 12,
+      "layout": "Title Only",
+      "title": "",
+      "content": [
+        {
+          "kind": "table",
+          "name": "Table 7",
+          "rows": [
+            [
+              "Production ",
+              "CDL",
+              "Loc Team"
+            ],
+            [
+              "Create video project in Synthesia",
+              "X",
+              ""
+            ],
+            [
+              "\nSelect Learning Lab video template, avatar (if applicable) and corresponding voiceover narration",
+              "X",
+              ""
+            ],
+            [
+              "Add script to video project",
+              "X",
+              ""
+            ],
+            [
+              "Add visuals and relevant text to video project\nVisual assets that can be leveraged include icons, diagrams, screenshots and screen recordings.\nSave all visuals in your OneDrive to later store them in the Video Assets & Templates folder so other team members can leverage them for their videos as applicable. ",
+              "X",
+              ""
+            ],
+            [
+              "Create video version 1 according to Video Structure Template and Learning Lab Template in Synthesia.",
+              "X",
+              ""
+            ],
+            [
+              "   Review video version 1 against the Video Quality Checklist and make any necessary adjustments\nReview avatar, voiceover narration, visuals, animations and text ",
+              "X",
+              ""
+            ],
+            [
+              "Generate video and add description in Synthesia",
+              "X",
+              ""
+            ],
+            [
+              "Download MP4 and closed captions",
+              "X",
+              ""
+            ],
+            [
+              "Create video thumbnail",
+              "X",
+              ""
+            ],
+            [
+              "Move video to corresponding Solution Area folder in the Synthesia Learning Lab Workspace and tag Loc team in the ADO video work item using WWLGRandLoc@microsoft.com to request localization of the video.",
+              "X",
+              ""
+            ],
+            [
+              "Localize video into target languages, create corresponding closed captions, and localized thumbnail",
+              "",
+              "X"
+            ]
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 13,
+      "layout": "Title Only",
+      "title": "",
+      "content": [
+        {
+          "kind": "table",
+          "name": "Table 7",
+          "rows": [
+            [
+              "Post-Production ",
+              "CDL",
+              "Loc Team"
+            ],
+            [
+              "Sign off Learning Lab Quality Assurance Checklist and store in compliance folder in ADO",
+              "X",
+              ""
+            ],
+            [
+              "Follow publication workflow in contributor guide for detailed guidance:\nHandoff video (mp4), thumbnail (png) and closed captions (.vtt) to publishing team via OneDrive\nEngage with publishing team to generate customer-ready link through the Learn Video Service\nNavigate to your work item and insert the URL and Learn Video Services ID\nEmbed the video in Markdown \nNote: CDL will complete for English versions and Loc team will complete for localization versions",
+              "X",
+              "X"
+            ],
+            [
+              "Store these assets in ADO video content repo\nScript & Storyboard (docx)\nThumbnail (png)\nClosed Captions (vtt)\nVisuals (png)\nNote: CDL will complete for English version and Loc team will complete for localization versions",
+              "X",
+              "X"
+            ],
+            [
+              "Store visual assets in Learning Lab SharePoint*\nDiagrams\nIcons\nScreenshots\nScreen recordings ",
+              "X",
+              ""
+            ]
+          ]
+        }
+      ],
+      "notes": "*While it is not mandatory, it is highly recommended to store your video visuals in the Video Assets & Templates folder so other team members can leverage them for their videos as applicable. "
+    },
+    {
+      "number": 14,
+      "layout": "Title Only",
+      "title": "Video Types for Learn Modules",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Video Types for Learn Modules"
+            }
+          ]
+        },
+        {
+          "kind": "table",
+          "name": "Table 24",
+          "rows": [
+            [
+              "Video Type\u200b",
+              "Learning Objective",
+              "Recommended Learn Unit\u200b",
+              "Mandatory Elements\u200b",
+              "Optional Elements\u200b"
+            ],
+            [
+              "Introduction to Product/Feature\u200b",
+              "Highlight the key functionalities and benefits of a new product or feature.\u200b",
+              "Introduction, Concept\u200b",
+              "Script, voiceover, graphics + animations, AI disclosure,\u200b logo end card",
+              "Presenter\u200b"
+            ],
+            [
+              "Walkthrough of a Process\u200b",
+              "Step-by-step guide through a specific process, showcasing each action and its purpose.\u200b",
+              "Concept, Exercise\u200b",
+              "Script, voiceover, graphics + animations, AI disclosure\u200b, logo end card",
+              "Presenter\u200b"
+            ],
+            [
+              "Explanation \u000bof a Technical Concept\u200b",
+              "Simplify and explain complex technical concepts.\u200b",
+              "Concept, Exercise\u200b",
+              "Script, voiceover, graphics + animations, AI disclosure\u200b, logo end card",
+              "Presenter\u200b"
+            ],
+            [
+              "Case studies/\u000bUse cases\u200b",
+              "Present real-world examples or scenarios showcasing the application of a product, feature, or concept.\u200b",
+              "Introduction, Concept, Prepare\u200b",
+              "Script, voiceover, graphics + animations, AI disclosure\u200b, logo end card",
+              "Presenter\u200b"
+            ],
+            [
+              "Architecture and Design Patterns\u200b",
+              "Focus on how to structure applications, services, or systems using best practices and design patterns.\u200b",
+              "Concept, Exercise\u200b",
+              "Script, voiceover, graphics + animations, AI disclosure\u200b, logo end card",
+              "Presenter\u200b"
+            ],
+            [
+              "Troubleshooting Tips\u200b",
+              "Provide solutions to common issues and how to troubleshoot them.\u200b",
+              "Concept, Exercise\u200b",
+              "Script, voiceover, graphics + animations, AI disclosure\u200b, logo end card",
+              "Presenter\u200b"
+            ]
+          ]
+        }
+      ],
+      "notes": "Creating Video for Modules | Microsoft Learn\nMore video types can be included, as necessary."
+    },
+    {
+      "number": 15,
+      "layout": "Title Only",
+      "title": "Copilot Prompts to Create Scripts",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Copilot Prompts to Create Scripts"
+            }
+          ]
+        },
+        {
+          "kind": "table",
+          "name": "Table 9",
+          "rows": [
+            [
+              "Video Type\u200b",
+              "Prompt to create video",
+              "Considerations"
+            ],
+            [
+              "Introduction to Product/Feature",
+              "You\u2019re a creative script writer with vast experience writing scripts for educational videos on Microsoft technologies and tools. You\u2019re tasked with creating a short 1\u20133-minute video on\u00a0[add main topic]. The video should be engaging, entertaining, and effective to help learners\u00a0[add video purpose]. For the script, use the content in\u00a0[attach document or link]\u00a0that would be more applicable for the video, suggest relevant images and animations, and indicate what portions of the content you wouldn\u2019t include in the video and why.\u202f Organize the script into scenes.",
+              "Adding a role in your prompt, \u201dyou\u2019re a creative script writer\u2026\u201d"
+            ],
+            [
+              "Walkthrough of a Process\u200b",
+              "Create a short 1\u20133-minute video script with a step-by-step guide through\u00a0[add main topic]\u00a0showcasing each action and its purpose. The video should be engaging, entertaining, and effective to help learners\u00a0[add video purpose]. \u000bUse the content in\u00a0[attach document or link]\u00a0that would be more applicable for the video script.\u202f Organize the script into scenes.",
+              ""
+            ],
+            [
+              "Explanation \u000bof a Technical Concept\u200b",
+              "You\u2019re a creative script writer with vast experience writing scripts for educational videos on Microsoft technologies and tools. You\u2019re tasked with creating a short 1\u20133-minute video on\u00a0[add main topic]. The video should be engaging, entertaining, and effective to help learners\u00a0[add video purpose]. For the script, use the content in\u00a0[attach document or link]\u00a0that would be more applicable for the video, excluding the section called\u00a0[add section name], suggest relevant images and animations, and indicate what portions of the content you wouldn\u2019t include in the video \u000band why.\u202f Organize the script into scenes.",
+              "Excluding a section of content from being pulled into the script, \u201cexcluding the section called\u00a0[add section name],\u201d"
+            ],
+            [
+              "Case Studies/\u000bUse Cases\u200b",
+              "You\u2019re a creative script writer with vast experience writing scripts for educational videos on Microsoft technologies and tools. You\u2019re tasked with creating a short 1\u20133-minute video to provide an overview of a project learners complete in a module and show them an example of how the result look like. The video should be engaging, entertaining, and effective to help learners understand the goal of the project they\u2019re going to complete. For the script, use the content in\u00a0[attach document or link to introduction unit]\u00a0to establish the goal of the project and what they\u2019re going to do, and then make a short introduction to a sample showcase that be presented on screen for a few seconds.\u202f Organize the script into scenes.",
+              "Use with a \u201cprepare unit\u201d."
+            ]
+          ]
+        }
+      ],
+      "notes": "Creating Video for Modules | Microsoft Learn\nMore prompts can be included in accordance with new video types, as necessary.\n"
+    },
+    {
+      "number": 16,
+      "layout": "Title Only",
+      "title": "Copilot Prompts to Create Scripts Continued",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Copilot Prompts to Create Scripts Continued"
+            }
+          ]
+        },
+        {
+          "kind": "table",
+          "name": "Table 9",
+          "rows": [
+            [
+              "Video Type\u200b",
+              "Prompt to create video",
+              "Considerations"
+            ],
+            [
+              "Case Studies/\u000bUse Cases\u202f",
+              "Create a short 1\u20133-minute video script to present a real-world scenario showcasing\u00a0[add main topic]. The video should be engaging, entertaining, and effective to help learners understand the application of\u00a0[add video purpose]. Use the content in\u00a0[attach document or link]\u00a0that would be more applicable for the video script. Organize the script into scenes",
+              "Use with a \u201cintroduction or content unit\u201d."
+            ],
+            [
+              "Architecture and design patterns\u202f",
+              "Create a short 1\u20133-minute video script to explain the architecture and design patterns of\u00a0[add main topic]\u00a0using best practices. The video should be engaging, entertaining, and effective to help learners\u00a0[add video purpose]. Use the content in\u00a0[attach document or link]\u00a0that would be more applicable for the video script.\u202f Organize the script into scenes.",
+              ""
+            ],
+            [
+              "Troubleshooting Tips\u202f",
+              "Create a short 1\u20133-minute video script to provide solutions to common issues\u00a0[add main topic]. The video should be engaging, entertaining, and effective to help learners troubleshoot\u00a0[add video purpose]. Use the content in\u00a0[attach document or link]\u00a0that would be more applicable for the video script.\u202f Organize the script into scenes.",
+              ""
+            ]
+          ]
+        }
+      ],
+      "notes": "Creating Video for Modules | Microsoft Learn\nMore prompts can be included in accordance with new video types, as necessary.\n"
+    },
+    {
+      "number": 17,
+      "layout": "Title Only",
+      "title": "Script and Storyboard Template",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Script and Storyboard Template"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Create Script: Use the corresponding Copilot prompt to generate the script for your video type, then copy and paste it into the Video Script & Storyboard template. Copilot generates input for narration and visuals."
+            },
+            {
+              "level": 0,
+              "text": "Refine Storyboard: Copilot\u2019s input for visuals is very generic and not as detailed as ideal. Review and update it as much necessary but adding clear guidance on the visuals you would like to be shown along the narration for each of the scenes in the script."
+            },
+            {
+              "level": 0,
+              "text": "Define Video Title:\u00a0Give a title* to your video that is representative of its content and learning objectives."
+            }
+          ]
+        }
+      ],
+      "notes": "*Follow the guidelines for titles in About authoring | Microsoft Learn and adjust to <250 characters per title.\nVideo Script & Storyboard Template.docx\n\n\n"
+    },
+    {
+      "number": 18,
+      "layout": "Title Only",
+      "title": "Sample Scripts & Storyboards",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 13",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Sample Scripts & Storyboards"
+            }
+          ]
+        }
+      ],
+      "notes": "Sample Scripts & Storyboards"
+    },
+    {
+      "number": 19,
+      "layout": "Title Only",
+      "title": "Create ADO Video Work Item & Repo",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Create ADO Video Work Item & Repo"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Create work item: Now that you know the name of your video, create a video work item* in ADO Courseware and update it with the required metadata. "
+            },
+            {
+              "level": 0,
+              "text": "PoliCheck:\u00a0Upload the script into the ADO video content repo and run\u00a0PoliCheck on it. "
+            },
+            {
+              "level": 0,
+              "text": "Update script: Fix any issues on the narrator column of the script before creation of your video. Disregard issues on the scenes column as that won\u2019t be narrated."
+            }
+          ]
+        }
+      ],
+      "notes": "*Follow STEP 1 in Add videos | Microsoft Learn. Content codes in video work items are assigned by the publishing team. Don\u2019t add or modify them.\nVideo Script & Storyboard Template.docx\n\n"
+    },
+    {
+      "number": 20,
+      "layout": "Title Only",
+      "title": "Video Structure",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 13",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Video Structure"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Opening scene: "
+            },
+            {
+              "level": 0,
+              "text": "Learn bumper"
+            },
+            {
+              "level": 0,
+              "text": "Video title"
+            },
+            {
+              "level": 0,
+              "text": "Learning objectives"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Scenes 1\u20138 are different scenes"
+            },
+            {
+              "level": 0,
+              "text": "Scenarios "
+            },
+            {
+              "level": 0,
+              "text": "Icons, animation, stock footage, subtitles "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Closing scene "
+            },
+            {
+              "level": 0,
+              "text": "Refresh on what was learned"
+            },
+            {
+              "level": 0,
+              "text": "Call to Action (Learn more link to Microsoft Learn)"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "End slide "
+            },
+            {
+              "level": 0,
+              "text": "AI disclosure + MS logo end card"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Opening scene"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Scene 1\u20138"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Closing Scene "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "End Slide"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 21,
+      "layout": "Title Only",
+      "title": "Video Structure Template",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Video Structure Template"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Follow the guidance in Video Structure Template for the structure and flow of your video and use its adapted Synthesia template to create your video. "
+            },
+            {
+              "level": 0,
+              "text": "Synthesia template explainer video"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 22,
+      "layout": "Title Only",
+      "title": "AI Avatar Presenters and Voiceover Narration",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "AI Avatar Presenters and Voiceover Narration"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "You can add an AI avatar presenter to your video with its corresponding custom AI voiceover narration."
+            },
+            {
+              "level": 0,
+              "text": "The presenters selected to create AI avatars meet these criteria: "
+            },
+            {
+              "level": 1,
+              "text": "Inclusive and representative of our global audience "
+            },
+            {
+              "level": 1,
+              "text": "Knowledgeable of the topic that they represent "
+            },
+            {
+              "level": 1,
+              "text": "With prior camera training "
+            },
+            {
+              "level": 1,
+              "text": "Vetted on socials to ensure alignment with Microsoft brand"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 23,
+      "layout": "Title Only",
+      "title": "Available AI Avatars",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Available AI Avatars"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Generalist Avatars \u2013 Any topic"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Subject Specific Avatars "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "AI Business Solutions"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Azure Cloud & AI"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Security"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Currently, we have:"
+            },
+            {
+              "level": 0,
+              "text": "3 Generalist avatars (Fundamental level topics)"
+            },
+            {
+              "level": 0,
+              "text": "3 Subject Specific avatars"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Narration only:"
+            },
+            {
+              "level": 0,
+              "text": "Use voice from generic Synthesia avatars (not from these Microsoft custom avatars)"
+            }
+          ]
+        }
+      ],
+      "notes": "More AI avatars are in progress to be included. Check with WLS which avatars are available for your video. If the real person whose image was used to create the avatar decides to opt out from being an avatar in the future, WLS will remove the avatar from the catalog and notify CDLs if any videos leveraging the avatar must be updated to replace the avatar. If that is the case, there is a 30-day SLA to track down the videos and replace the avatar.\n"
+    },
+    {
+      "number": 24,
+      "layout": "Title Only",
+      "title": "Brand Guidance and Visuals",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Brand Guidance and Visuals"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Use the Microsoft Learn primary color palette for illustrations, icons, glyphs, and diagrams"
+            },
+            {
+              "level": 0,
+              "text": "Microsoft Learn Style Guide"
+            },
+            {
+              "level": 0,
+              "text": "Microsoft Learn illustrations"
+            },
+            {
+              "level": 0,
+              "text": "Microsoft Learn Figma File"
+            },
+            {
+              "level": 0,
+              "text": "WWL Learning Lab icons"
+            },
+            {
+              "level": 0,
+              "text": "WWL Learning Lab diagrams"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Other visuals that can be adapted as necessary:"
+            },
+            {
+              "level": 0,
+              "text": "Microsoft IconCloud"
+            },
+            {
+              "level": 0,
+              "text": "Fluent Icon Collections"
+            },
+            {
+              "level": 0,
+              "text": "Azure Course Blueprints"
+            }
+          ]
+        }
+      ],
+      "notes": "Other types of visuals that can also be used include screenshots, screen recordings, images, and stock video footage. "
+    },
+    {
+      "number": 25,
+      "layout": "Title Only",
+      "title": "Video Production in Synthesia",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Video Production in Synthesia"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 32",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Create closed captions in English"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 41",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Review and edit video"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 42",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Create "
+            },
+            {
+              "level": 0,
+              "text": "English thumbnail"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 40",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Select Learning Lab video template, avatar and voiceover "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 43",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Create video project in Synthesia"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 44",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add visuals and text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 45",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "*Localization team"
+            },
+            {
+              "level": 0,
+              "text": "Localize video, create localized closed captions, localized thumbnail"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 46",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Publish video in Synthesia"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add script to "
+            },
+            {
+              "level": 0,
+              "text": "video project"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 26,
+      "layout": "Title Only",
+      "title": "Learning Lab Video Structure Template",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Lab Video Structure Template"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "In Synthesia from the Home screen select New video > Workspace > Learning Lab Video Structure Template > Use Template."
+            },
+            {
+              "level": 0,
+              "text": "Do not use \u201cCreate with AI\u201d."
+            },
+            {
+              "level": 0,
+              "text": "Synthesia documentation on using templates."
+            },
+            {
+              "level": 0,
+              "text": "Explainer video built in Synthesia"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 27,
+      "layout": "Title Only",
+      "title": "Adding scenes",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Adding scenes"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "After selecting\u00a0the template, you will create scenes in Synthesia for each of the scenes in your storyboard. "
+            },
+            {
+              "level": 0,
+              "text": "Select the scene layout that most closely matches with the content that you want to display. Select \u201c+ Add scene\u201c."
+            },
+            {
+              "level": 0,
+              "text": "Synthesia documentation on new scenes and scene elements."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 28,
+      "layout": "Title Only",
+      "title": "Adding your script",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Adding your script"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add a scene, then paste your script narration below the video for each scene that has voice narration."
+            },
+            {
+              "level": 0,
+              "text": "Synthesia documentation for script editing features and voice over."
+            },
+            {
+              "level": 0,
+              "text": "Use the pronunciation feature to control the pronunciation of words and phrases in the script."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 29,
+      "layout": "1_Blank 2",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Select AI Avatar Presenter with voiceover narration\u00a0"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add an avatar to the scene with the Avatar button in the top toolbar."
+            },
+            {
+              "level": 0,
+              "text": "Use one of the six approved avatars."
+            },
+            {
+              "level": 0,
+              "text": "When using the Learning Lab Video Structure Template, you can also switch the default avatar."
+            },
+            {
+              "level": 0,
+              "text": "Synthesia documentation on using Avatars for the full range of features."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 30,
+      "layout": "1_Blank 2",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Select Voiceover Narration "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Narration only:"
+            },
+            {
+              "level": 0,
+              "text": "If you\u2019re not adding an avatar on screen, select voiceover narration from generic Synthesia speakers."
+            },
+            {
+              "level": 0,
+              "text": "Select the default speaker."
+            },
+            {
+              "level": 0,
+              "text": "Select + New speaker."
+            },
+            {
+              "level": 0,
+              "text": "Choose from the options available."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 31,
+      "layout": "1_Blank 2",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Adding Visual Objects"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add scene. Then insert your visual objects on the slide and animate them, as necessary."
+            },
+            {
+              "level": 0,
+              "text": "Objects are animated by triggers, and those triggers are connected to words in your script."
+            },
+            {
+              "level": 0,
+              "text": "Synthesia timeline and animation guidance documentation."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 32,
+      "layout": "1_Blank 2",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Editing in Synthesia"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Review the full Synthesia documentation for all the available video editing features."
+            },
+            {
+              "level": 0,
+              "text": "Once you are finished editing, select \u201cGenerate\u201d in the upper right corner to create your video."
+            },
+            {
+              "level": 0,
+              "text": "Review the Generated video and if you need to edit more, select Edit above the video to go back into editing mode of your video."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 33,
+      "layout": "1_Blank 2",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Create the Video Thumbnail"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Create your video thumbnail by using one of the thumbnail slides from the Appendix in this deck."
+            },
+            {
+              "level": 0,
+              "text": "Choose the avatar that you are using in your video."
+            },
+            {
+              "level": 0,
+              "text": "If you are not using an avatar, use the blank avatar thumbnail slide. "
+            },
+            {
+              "level": 0,
+              "text": "Capture the thumbnail screen shot at 1280 x 720 pixels."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 34,
+      "layout": "Title - Square Photo 2",
+      "title": "Publishing in Synthesia",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Publishing in Synthesia"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "To publish the video in Synthesia, select \"Generate\" from the left-side\u00a0menu."
+            },
+            {
+              "level": 0,
+              "text": "Once the video has been generated, add a description to it. "
+            },
+            {
+              "level": 0,
+              "text": "For videos for the Learn platform, add "
+            },
+            {
+              "level": 0,
+              "text": "Learn Video in the description."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 35,
+      "layout": "Title - Square Photo 2",
+      "title": "Downloading\u00a0assets",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Downloading\u00a0assets"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Once your video has been generated, download these\u00a0source files by selecting the ellipsis next to the Share button.\u00a0"
+            },
+            {
+              "level": 0,
+              "text": "Download video as .mp4"
+            },
+            {
+              "level": 0,
+              "text": "Download captions as .vtt "
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 36,
+      "layout": "1_Blank 2",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Sharing with the Localization Team"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Go to \u201cMy Videos\u201d and select the ellipsis over the video you want to share with Localization team."
+            },
+            {
+              "level": 0,
+              "text": "Select \u201cMove to\u201d, then > to \u201cWorkspace\u201d, then next > to \u201cLearning Lab\u201d, then next > to the solution area folder for your video."
+            },
+            {
+              "level": 0,
+              "text": "Navigate to \u201cWorkspace\u201d and locate your video in the solution area folder you moved it to."
+            },
+            {
+              "level": 0,
+              "text": "Copy the URL form the browser."
+            },
+            {
+              "level": 0,
+              "text": "Open the ADO video work item, paste the Synthesia video URL, and tag WWLGRandLoc@microsoft.com to let them know the video is ready for localization."
+            }
+          ]
+        }
+      ],
+      "notes": "* Ask Bernadette what the localization process is for Synthesia videos\n"
+    },
+    {
+      "number": 37,
+      "layout": "1_Blank 2",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Sharing with the Localization Team cont."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 11",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Step 2: Select \u201cMove to\u201d, then \u201c>\u201d next to \u201cWorkspace\u201d, then \u201c>\u201d next to \u201cLearning Lab\u201d, and then \u201c>\u201d next to the solution area folder more applicable to your video. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 17",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "A."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 18",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "B."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 19",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "C."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 20",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "D."
+            }
+          ]
+        }
+      ],
+      "notes": "* Ask Bernadette what the localization process is for Synthesia videos\n"
+    },
+    {
+      "number": 38,
+      "layout": "1_Blank 2",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Sharing with the Localization Team cont."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Step 4: Copy its URL from the browser. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 11",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Step 3: Navigate to \u201cWorkspace\u201d and locate your video in the solution area folder you moved it to. "
+            }
+          ]
+        }
+      ],
+      "notes": "* Ask Bernadette what the localization process is for Synthesia videos\n"
+    },
+    {
+      "number": 39,
+      "layout": "1_Blank 2",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Sharing with the Localization Team cont."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 11",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Step 5: Open the ADO video workitem, paste the Synthesia video URL, and tag WWLGRandLoc@microsoft.com to let them know the video is ready for localization. "
+            }
+          ]
+        }
+      ],
+      "notes": "* Ask Bernadette what the localization process is for Synthesia videos\n"
+    },
+    {
+      "number": 40,
+      "layout": "1_Blank 2",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Localization in Synthesia"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "The Localization team will handle all translation tasks."
+            },
+            {
+              "level": 0,
+              "text": "Videos will be localized into 12 languages. "
+            },
+            {
+              "level": 0,
+              "text": "Top Priority 6 (premium): German (de-de),  Spanish (es-es), French (fr-fr), Japanese (ja-jp),  Brazilian Portuguese (pt-br), Simplified Chinese (zh-cn)"
+            },
+            {
+              "level": 0,
+              "text": "Lower priority 6 (basic):Arabic (ar-sa), Indonesian (id-id), Italian (it-it), Korean (ko-kr), Russian (ru-ru), Traditional Chinese (zh-tw)"
+            }
+          ]
+        }
+      ],
+      "notes": "* Ask Bernadette what the localization process is for Synthesia videos\n"
+    },
+    {
+      "number": 41,
+      "layout": "Title Only",
+      "title": "Post-Production Publishing Workflow",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Post-Production Publishing Workflow"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 16",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Sign off E&O content compliance checklist and store in compliance folder in ADO\u00a0repo"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 17",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Engage with the publishing team to generate customer-ready link through the Learn Video Service**\u00a0"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 18",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Handoff video (mp4), thumbnail (png) and closed captions (.vtt) to the publishing team* "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 19",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Insert the Learn Video Services ID URL into your work item and embed the video in Markdown*** "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 20",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Store assets in ADO video content repo****"
+            },
+            {
+              "level": 1,
+              "text": "Storyboard & Scripts (docx) "
+            },
+            {
+              "level": 1,
+              "text": "Thumbnail (png) "
+            },
+            {
+              "level": 1,
+              "text": "Closed Captions (vtt) "
+            },
+            {
+              "level": 1,
+              "text": "Visuals (png)"
+            }
+          ]
+        }
+      ],
+      "notes": "*Follow Step 2 in Add videos | Microsoft Learn\n**Follow Step 3 in Add videos | Microsoft Learn\n***Follow Step 4 in Add videos | Microsoft Learn\n**** You can also store visual assets in The Learning Lab Team \u2013 Documents as an optional step to share your video visuals with other team members who may leverage them for their videos. \n\nThe Loc team will follow the same workflow as the handoff process and the storing of the assets."
+    },
+    {
+      "number": 42,
+      "layout": "Title Only",
+      "title": "Release & Publication",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Release & Publication"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Content ComplianceFollow these guidelines, and complete and upload the required checklists to the video work item repo to comply with all Worldwide Learning (WWL) and Microsoft corporate policies regarding compliance when creating or curating content. "
+            },
+            {
+              "level": 1,
+              "text": "Create Inclusive Videos"
+            },
+            {
+              "level": 1,
+              "text": "Content Compliance Checklist"
+            },
+            {
+              "level": 0,
+              "text": "Work ItemsThe video pipeline and lifecycle are managed through ADO work items. It is recommended that you add this\u00a0query\u00a0to your favorites."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 43,
+      "layout": "Title Only",
+      "title": "Video Asset Management",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Video Asset Management"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "ADO repo for\u00a0individual video assets"
+            },
+            {
+              "level": 1,
+              "text": "Signed off compliance checklist, scripts & storyboards, thumbnail, closed captions, visuals"
+            },
+            {
+              "level": 1,
+              "text": "Modeled after ILT, leverages PoliCheck automation and supports existing localization workflow"
+            },
+            {
+              "level": 0,
+              "text": "Video (mp4) storage"
+            },
+            {
+              "level": 1,
+              "text": "Utilize OneDrive for Business for handoff"
+            },
+            {
+              "level": 1,
+              "text": "Not necessary for maintenance or video refresh"
+            },
+            {
+              "level": 1,
+              "text": "Long-term storage solution TBD"
+            },
+            {
+              "level": 0,
+              "text": "Learning Lab SharePoint for organization-wide visuals"
+            },
+            {
+              "level": 1,
+              "text": "Diagrams, icons, screenshots and screen recordings"
+            },
+            {
+              "level": 1,
+              "text": "Aids search; content re-use"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 44,
+      "layout": "Title Only",
+      "title": "Video Dashboard",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Video Dashboard"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Video Dashboard provides a unified view to allow teams to:  "
+            },
+            {
+              "level": 0,
+              "text": "Track all video releases and query various stages of a video's lifecycle. "
+            },
+            {
+              "level": 0,
+              "text": "Assess video content success, identify trends, and optimize future releases for better engagement and impact."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 45,
+      "layout": "Title Only",
+      "title": "Next Steps",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 17",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Next Steps"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Video Training Sessions & Office Hours,"
+            },
+            {
+              "level": 1,
+              "text": "Learning Lab video office house Thursday 1pm est."
+            },
+            {
+              "level": 1,
+              "text": "Starting Q2 - Synthesia team training and office hours"
+            },
+            {
+              "level": 0,
+              "text": "DAM"
+            },
+            {
+              "level": 0,
+              "text": "Content Lifecycle Hub"
+            },
+            {
+              "level": 1,
+              "text": "Centralized location for video guidance for WWL teams"
+            },
+            {
+              "level": 0,
+              "text": "Video Content Refresh "
+            },
+            {
+              "level": 0,
+              "text": "AI-generated visuals"
+            },
+            {
+              "level": 0,
+              "text": "Video agents"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 46,
+      "layout": "Title Only",
+      "title": "Frequently Asked Questions (FAQs)",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Frequently Asked Questions (FAQs)"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Submit your questions to the Content Transformation team through the Video FAQs spreadsheet"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Join the weekly Video Office hours"
+            },
+            {
+              "level": 0,
+              "text": "Learning Lab video office house Thursday's @ 1pm est."
+            },
+            {
+              "level": 0,
+              "text": "Starting Q2 - Synthesia team training and office hours"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 47,
+      "layout": "Blank",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Thank you"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Box 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved. "
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 48,
+      "layout": "Section Title 1",
+      "title": "Appendix",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Appendix"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 49,
+      "layout": "Title Only",
+      "title": "Resources",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Resources"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "C + E Skilling Video Dashboard"
+            },
+            {
+              "level": 0,
+              "text": "Microsoft Learn Microlearning Playlist in YouTube"
+            },
+            {
+              "level": 0,
+              "text": "How to Use Mayer\u2019s 12 Principles of Multimedia Learning"
+            },
+            {
+              "level": 0,
+              "text": "Video Work Item in ADO Courseware"
+            },
+            {
+              "level": 0,
+              "text": "Video Quality Checklist"
+            },
+            {
+              "level": 0,
+              "text": "Video Publishing Process in WWL Contributor Guide"
+            },
+            {
+              "level": 0,
+              "text": "Learning Lab SharePoint (icons, diagrams, templates, etc.)"
+            },
+            {
+              "level": 0,
+              "text": "Creating Video for Modules in WWL Contributor Guide"
+            },
+            {
+              "level": 0,
+              "text": "Title Guidelines in WWL Contributor Guide"
+            },
+            {
+              "level": 0,
+              "text": "Video Script & Storyboard Template"
+            },
+            {
+              "level": 0,
+              "text": "Sample Scripts & Storyboards"
+            },
+            {
+              "level": 0,
+              "text": "Video Structure Template"
+            },
+            {
+              "level": 0,
+              "text": "Worldwide Learning Studios Intake Form"
+            },
+            {
+              "level": 0,
+              "text": "Video Project Brief Template"
+            },
+            {
+              "level": 0,
+              "text": "WLS Video and Audio Production Roles & Responsibilities"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 50,
+      "layout": "Title Only",
+      "title": "Resources Continued",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Resources Continued"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "ADO Video Work Item Query"
+            },
+            {
+              "level": 0,
+              "text": "Create Inclusive Videos Checklist"
+            },
+            {
+              "level": 0,
+              "text": "E&O Content Compliance Checklist"
+            },
+            {
+              "level": 0,
+              "text": "ADO Video Dashboard"
+            },
+            {
+              "level": 0,
+              "text": "Microsoft Learn Style Guide"
+            },
+            {
+              "level": 0,
+              "text": "Microsoft Learn Illustrations"
+            },
+            {
+              "level": 0,
+              "text": "Microsoft Learn Figma File"
+            },
+            {
+              "level": 0,
+              "text": "Microsoft IconCloud"
+            },
+            {
+              "level": 0,
+              "text": "Fluent Icon Collections"
+            },
+            {
+              "level": 0,
+              "text": "Azure Course Blueprints"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 51,
+      "layout": "Title Only",
+      "title": "Research Studies on Video Elements and AI",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Research Studies on Video Elements and AI"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "AI Generated Videos Instructional Design Component"
+            },
+            {
+              "level": 1,
+              "text": "Video Efficacy"
+            },
+            {
+              "level": 1,
+              "text": "AI Perception and Acceptance"
+            },
+            {
+              "level": 0,
+              "text": "AI Avatar Comparison Test"
+            },
+            {
+              "level": 1,
+              "text": "Perceptions of an AI avatar and AI narration with a technical audience"
+            },
+            {
+              "level": 1,
+              "text": "Effectiveness of video teaching a technical concept"
+            },
+            {
+              "level": 0,
+              "text": "Video Preferences in-depth research"
+            },
+            {
+              "level": 1,
+              "text": "Technical professionals\u2019 preferences on technical video"
+            },
+            {
+              "level": 1,
+              "text": "A/B tests on video delivery and format options"
+            },
+            {
+              "level": 1,
+              "text": "Learner preferences on video production, format, branding, content and AI"
+            },
+            {
+              "level": 1,
+              "text": "Standalone tests to assess resonance of training videos"
+            },
+            {
+              "level": 0,
+              "text": "Video Preference Study"
+            },
+            {
+              "level": 2,
+              "text": "Learner preferences on course elements and modalities"
+            },
+            {
+              "level": 2,
+              "text": "Types of training applications that video would be most useful for"
+            },
+            {
+              "level": 2,
+              "text": "Optimal length of video content in a course"
+            },
+            {
+              "level": 0,
+              "text": "Video Localization Comparison Test in Brazil & Japan"
+            },
+            {
+              "level": 1,
+              "text": "Preferred localization elements for technical training videos"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 52,
+      "layout": "Title Only",
+      "title": "Video Prioritization Criteria",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Video Prioritization Criteria"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Video prioritization should be based on two major principles: "
+            },
+            {
+              "level": 0,
+              "text": "Alignment with strategic goals, such as supporting new product/feature launches, key marketing campaigns and Microsoft Solution Plays in that FY. "
+            },
+            {
+              "level": 0,
+              "text": "Data-driven decisions tied to WWL OKRs, including skilling 100M+ learners and 50M+ AI learners."
+            },
+            {
+              "level": 0,
+              "text": "Video prioritization should leverage existing WWL tools and processes to minimize disruptions and avoid adding extra steps to the video creation workflow."
+            }
+          ]
+        }
+      ],
+      "notes": "Videos that have pre-aligned production timelines with WWL Studios/ Content Dev etc. should be given higher priority for production within those scheduled dates. \n(For instance, if a VTD video is slated for February 2026 and has been approved by WWL Studios, it should be prioritized for production accordingly)\n"
+    },
+    {
+      "number": 53,
+      "layout": "1_Blank 2",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "TextBox 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Describe Azure identity, access, and security"
+            }
+          ]
+        }
+      ],
+      "notes": "Thumbnail without presenter\nThumbnail Title:\nNeeds to be short and fit into the box\nAdapt from original video title as necessary"
+    },
+    {
+      "number": 54,
+      "layout": "1_Blank 2",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "TextBox 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Describe "
+            },
+            {
+              "level": 0,
+              "text": "Azure identity, "
+            },
+            {
+              "level": 0,
+              "text": "access, and "
+            },
+            {
+              "level": 0,
+              "text": "security"
+            }
+          ]
+        }
+      ],
+      "notes": "Thumbnail Title:\nNeeds to be short and fit into the box\nAdapt from original video title as necessary"
+    },
+    {
+      "number": 55,
+      "layout": "1_Blank 2",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "TextBox 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Describe"
+            },
+            {
+              "level": 0,
+              "text": "Azure Cloud"
+            },
+            {
+              "level": 0,
+              "text": "Computing"
+            }
+          ]
+        }
+      ],
+      "notes": "Fonts Guidance:\nVideo title: Segoe UI Semibold (66 pts)\nMicrolearning Title: Segoe UI (24 pts)"
+    },
+    {
+      "number": 56,
+      "layout": "1_Blank 2",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "TextBox 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Design an"
+            },
+            {
+              "level": 0,
+              "text": "Azure Compute"
+            },
+            {
+              "level": 0,
+              "text": "Solution"
+            }
+          ]
+        }
+      ],
+      "notes": "Fonts Guidance:\nVideo title: Segoe UI Semibold (66 pts)\nMicrolearning Title: Segoe UI (24 pts)"
+    },
+    {
+      "number": 57,
+      "layout": "1_Blank 2",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "TextBox 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Describe"
+            },
+            {
+              "level": 0,
+              "text": "Azure Cloud"
+            },
+            {
+              "level": 0,
+              "text": "Computing"
+            }
+          ]
+        }
+      ],
+      "notes": "Fonts Guidance:\nVideo title: Segoe UI Semibold (66 pts)\nMicrolearning Title: Segoe UI (24 pts)"
+    },
+    {
+      "number": 58,
+      "layout": "Title Only",
+      "title": "Change Log",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Change Log"
+            }
+          ]
+        },
+        {
+          "kind": "table",
+          "name": "Table 9",
+          "rows": [
+            [
+              "Date",
+              "Changes made"
+            ],
+            [
+              "8-12-2025",
+              "Lower third title for avatars in opening scene should indicate \"AI Virtual Trainer\" instead of people's role at Microsoft."
+            ],
+            [
+              "11-20-2025",
+              "Lower third for avatars in opening scene updated to \"First Name + AI Virtual Presenter\". Updated images with Synthesia avatars. \u00a0"
+            ],
+            [
+              "11-21-2025",
+              "Updated avatar and voiceover narration guidelines."
+            ],
+            [
+              "03-03-2026",
+              "Added link to Learning Lab Quality Assurance Checklist to record compliance."
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ],
+            [
+              "",
+              ""
+            ]
+          ]
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,7504 @@
+{
+  "source": "c:\\learn-pr\\MD-102-Refresh-Working\\md102-companion-videos\\_source\\ilt-templates\\Microsoft ILT course content.pptx",
+  "slide_count": 84,
+  "slides": [
+    {
+      "number": 1,
+      "layout": "Title_Gradient_Dark Blue",
+      "title": "Microsoft ILT course content \u000bmaster template",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Microsoft ILT course content master template"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "PowerPoint presentation template for ILT courses"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "June 2026"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Microsoft confidential"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Trapezoid 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "REMOVE SECTION BEFORE PUBLISHING"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 2,
+      "layout": "Blank_with Head",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "TextBox 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Delete these slides before distribution. They are intended only for guidance. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "How to use the ILT course PowerPoint templateFollow these tips to help transition slides to this template from previous designs."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 11",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "TIP 1"
+            },
+            {
+              "level": 0,
+              "text": "Copying content"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "When inserting content into the new template from another deck, copy the slide(s) and choose \u201cUse Destination Theme\u201d when pasting. This is the safest way to ensure you\u2019re not creating extra masters (and bloating the file size). "
+            },
+            {
+              "level": 0,
+              "text": "After pasting, you may need to adjust the formatting to fit the new template's layout. Pay attention to font sizes, line spacing, alignment, and any other formatting elements that may need fine-tuning."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 13",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "TIP 2"
+            },
+            {
+              "level": 0,
+              "text": "Apply a master to your slides"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "To apply a master layout to a slide, click Home > Layout and choose from the available options. If the copied content doesn't fit correctly into the new placeholders, you may need to copy and paste the content into the corresponding placeholders manually. "
+            },
+            {
+              "level": 0,
+              "text": "To restore a slide\u2019s placeholders, go to Home > Slides > Reset. Reset only restores placeholders defined by the layout. Custom text boxes, shapes, and pictures you added aren\u2019t restored or removed."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "TIP 3"
+            },
+            {
+              "level": 0,
+              "text": "Icons and illustration"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 15",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Use icons sparingly as visual cues or to break up large amounts of text. A full glyph library is included in the appendix, organized by theme. "
+            },
+            {
+              "level": 0,
+              "text": "A simple set of monoline icons is available at the end of this deck, with links to the full Monoline icon set on Brand Central. "
+            },
+            {
+              "level": 0,
+              "text": "For additional resources, refer to the last page of this deck."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Footer Placeholder 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Delete these slides before distribution. They are intended only for guidance. "
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 3,
+      "layout": "Title Only",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "TextBox 35",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Delete these slides before distribution. They are intended only for guidance. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Contrast",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Focus on strategy"
+            },
+            {
+              "level": 1,
+              "text": "This should be strategy for taking the exam, not teaching the concepts. Assume viewers already have working knowledge and experience."
+            },
+            {
+              "level": 1,
+              "text": "Use the phrasing patterns in the band below to emphasize what to watch for."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 63",
+          "paragraphs": [
+            {
+              "level": 1,
+              "text": "Make sure you know X\u2026"
+            },
+            {
+              "level": 1,
+              "text": "This is a potential issue\u2026"
+            },
+            {
+              "level": 1,
+              "text": "Be aware of X\u2026"
+            },
+            {
+              "level": 1,
+              "text": "Don\u2019t mistake the difference between X and Y\u2026"
+            },
+            {
+              "level": 1,
+              "text": "This is easy to confuse\u2026"
+            },
+            {
+              "level": 1,
+              "text": "This would be a great exercise to practice in a lab\u2026"
+            },
+            {
+              "level": 1,
+              "text": "This is one of the most important concepts for the exam\u2026"
+            },
+            {
+              "level": 1,
+              "text": "This is similar to X, but here\u2019s what is different\u2026"
+            },
+            {
+              "level": 1,
+              "text": "This just changed recently, so make sure you understand\u2026"
+            },
+            {
+              "level": 1,
+              "text": "Remember this can be done in X number of ways\u2026"
+            },
+            {
+              "level": 1,
+              "text": "One thing you need to remember here is\u2026"
+            },
+            {
+              "level": 1,
+              "text": "This is important\u2026"
+            },
+            {
+              "level": 1,
+              "text": "Here\u2019s an example of how we use this feature at Microsoft\u2026"
+            },
+            {
+              "level": 1,
+              "text": "The main thing I want to call out here is\u2026"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 64",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Inclusive language"
+            },
+            {
+              "level": 1,
+              "text": "Replace non-inclusive verbs in your delivery. A find-and-replace pass on your script will catch most of them."
+            },
+            {
+              "level": 1,
+              "text": "Use: observe, go to, refer to, show, notice, note, select, enter."
+            },
+            {
+              "level": 1,
+              "text": "Avoid: see, as you see here, look, view, click, right-click, walk through, type, hit."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 65",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Scripts"
+            },
+            {
+              "level": 1,
+              "text": "For series intros and outros, use the intro-outro script provided."
+            },
+            {
+              "level": 1,
+              "text": "For the remaining slides, use the guiding points to prepare your own script."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 66",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Timing"
+            },
+            {
+              "level": 1,
+              "text": "Keep within the duration shown on each slide. Slide durations roll up to the functional group (FG) total."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 67",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Visual emphasis"
+            },
+            {
+              "level": 1,
+              "text": "Highlight parts of a slide with arrows or boxes during delivery."
+            },
+            {
+              "level": 1,
+              "text": "Recommended tool: ZoomIt (Windows Sysinternals)."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Contrast",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Helpful phrases"
+            },
+            {
+              "level": 0,
+              "text": "Because we want to focus on exam strategy not training (assuming knowledge and experience of our viewers), these kinds of phrases could be helpful:"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Notes for MTTs"
+            },
+            {
+              "level": 0,
+              "text": "Use these guidelines when preparing your script and delivering the video."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": "Note to MTT: This deck is split into sections based on the functional groups of this exam. The first functional groups include introduction slides which have a specific script which we recommend you follow. \nSimilarly, the first slide of each section also has a specific script. This has been provided to you in a separate intro-outro script.\nFor other slides, you will have to create your own script based on the \u201cguidelines for script\u201d added in the notes section.\n"
+    },
+    {
+      "number": 4,
+      "layout": "Title Only",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Ensure slide content is accessible"
+            },
+            {
+              "level": 0,
+              "text": "Take the following steps to create content that everyone can consume effectively."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Contrast",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Contrast"
+            },
+            {
+              "level": 1,
+              "text": "Use high contrast colors for maximum readability. The recommended contrast is 4.5:1. "
+            },
+            {
+              "level": 1,
+              "text": "Download the Color Contrast Analyzer to determine the legibility of text and the contrast of visual elements"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 63",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Shape and color"
+            },
+            {
+              "level": 1,
+              "text": "Use different shapes with a legend to indicate statuses to accommodate for color blindness.Example:"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Background and text",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Subject 1"
+            },
+            {
+              "level": 0,
+              "text": "Subject 2"
+            },
+            {
+              "level": 0,
+              "text": "Subject 3"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Legend black X label",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "C3"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Legend blue triangle label",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "C2"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Legend light blue circle label",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "C1"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 64",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Alt text"
+            },
+            {
+              "level": 1,
+              "text": "Alt text helps people with screen readers understand the content of slides. You should create alternate text for shapes, pictures, charts, tables, SmartArt graphics, or other objects.Here\u2019s how: "
+            },
+            {
+              "level": 1,
+              "text": "Right-click on item"
+            },
+            {
+              "level": 1,
+              "text": "Select Edit Alt Text"
+            },
+            {
+              "level": 1,
+              "text": "Enter a Description"
+            },
+            {
+              "level": 1,
+              "text": "If an object is meant to add visual styling and doesn\u2019t contain meaning, do not add alt text and instead check Mark as decorative"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 65",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Slide layouts"
+            },
+            {
+              "level": 1,
+              "text": "Using built-in slide layout that matches your content ensures a hierarchical reading order of text blocks. Example: If a new slide will have a title, rather than starting with a blank layout and adding a text block for the title, choose one of the built-in layouts with a title placeholder."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 66",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Reading order"
+            },
+            {
+              "level": 1,
+              "text": "Screen readers describe content on the screen in the order it was created. To ensure your content is read back in the order you prefer, arrange your objects in the Selection Pane appropriately. Objects on the bottom of the selection pane are read first. Here\u2019s how: "
+            },
+            {
+              "level": 1,
+              "text": "Click Home tab"
+            },
+            {
+              "level": 1,
+              "text": "In the Drawing group, select the Arrange drop-down menu"
+            },
+            {
+              "level": 1,
+              "text": "Click Selection Pane"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 67",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Additional tips"
+            },
+            {
+              "level": 1,
+              "text": "Be sure to run the Accessibility Checker:"
+            },
+            {
+              "level": 1,
+              "text": "Go to File"
+            },
+            {
+              "level": 1,
+              "text": "Click the Check for Issues drop down menu"
+            },
+            {
+              "level": 1,
+              "text": "Click Check Accessibility"
+            },
+            {
+              "level": 1,
+              "text": "Videos need to be accessible: if your presentation includes a video, ensure it is captioned and audio described (if appropriate)Visit the Office Accessibility Center to learn more about accessibility in PowerPoint."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 18",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 20",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 18",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 35",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Delete these slides before distribution. They are intended only for guidance. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 5,
+      "layout": "Headline with Text 3-Col",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Accent palette: light mode"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Aa"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Standard type: Black"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Light mode type colors"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Light mode accent colors"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Accent 1Purple"
+            },
+            {
+              "level": 0,
+              "text": "HEX 8661C5"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Accent 3Blue"
+            },
+            {
+              "level": 0,
+              "text": "HEX 0078D4"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Accent 4"
+            },
+            {
+              "level": 0,
+              "text": "Magenta"
+            },
+            {
+              "level": 0,
+              "text": "HEX C03BC4"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Accent 5"
+            },
+            {
+              "level": 0,
+              "text": "Teal"
+            },
+            {
+              "level": 0,
+              "text": "HEX 49C5B1"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Accent 6"
+            },
+            {
+              "level": 0,
+              "text": "Light Purple"
+            },
+            {
+              "level": 0,
+              "text": "HEX C5B4E3 "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Accent 2"
+            },
+            {
+              "level": 0,
+              "text": "Expanded Teal"
+            },
+            {
+              "level": 0,
+              "text": "HEX 389A91"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Light mode background: Light gradient "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Light mode accent color usage examples"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Aa"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Aa"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Detail type: Dark Purple, Deep Teal,"
+            },
+            {
+              "level": 0,
+              "text": "Dark Blue"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Light mode accent colors follow accessibility standards for graphic objects. Only use the two specified accent colors, Dark Purple, Deep Teal, and Dark Blue, for type."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Group 1"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Group 1"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Group 1"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Containers:Gradient Purple,Gradient Teal, Gradient Blue"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Aa"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 6,
+      "layout": "Title_Gradient_Light",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "[Update with course title]"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Flowchart: Off-page Connector 44",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Designer note: "
+            },
+            {
+              "level": 0,
+              "text": "Use this title slide for all decks. Be sure to remove any overlapping graphics when transferring decks to the new template. Delete this note before publishing. "
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 7,
+      "layout": "Section",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 20",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Section title"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Flowchart: Off-page Connector 44",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Designer note: "
+            },
+            {
+              "level": 0,
+              "text": "Use this section title slide only. Be sure to remove any overlapping graphics when transferring decks to the new template. Delete this note before publishing. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 8,
+      "layout": "Section_Image",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Section title"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Flowchart: Off-page Connector 44",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Designer note: "
+            },
+            {
+              "level": 0,
+              "text": "Use this section title slide only. Be sure to remove any overlapping graphics when transferring decks to the new template. Delete this note before publishing. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 9,
+      "layout": "Agenda_1-column",
+      "title": "Agenda",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Introduction"
+            },
+            {
+              "level": 0,
+              "text": "Project overview"
+            },
+            {
+              "level": 0,
+              "text": "Timeline"
+            },
+            {
+              "level": 0,
+              "text": "Next steps"
+            },
+            {
+              "level": 0,
+              "text": "Questions"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Agenda"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 10,
+      "layout": "Agenda_2-column",
+      "title": "Agenda",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Agenda"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 11,
+      "layout": "Title and Subtitle / 28 pt",
+      "title": "Certification journey",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 73",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Certification journey"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 76",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Your path to [Update with certification title]"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Label1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Build your skills"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 88",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Exam XX-X00: Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 110",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Microsoft training "
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Label3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Practice"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 90",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Practical experience"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.."
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Label3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Prep for the exam"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 92",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Exam Prep XX-X00: Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Label4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Schedule and pass"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 94",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Exam XX-X00: Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Label4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Become certified"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 96",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Microsoft Certified: Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 97",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Self-study resources"
+            },
+            {
+              "level": 0,
+              "text": "Hands-on Labs"
+            },
+            {
+              "level": 0,
+              "text": "Microsoft Docs"
+            },
+            {
+              "level": 0,
+              "text": "Microsoft Official Practice Test"
+            },
+            {
+              "level": 0,
+              "text": "Focus placed on skills identified during the Exam Prep course\u00a0"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Flowchart: Off-page Connector 44",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Designer note: "
+            },
+            {
+              "level": 0,
+              "text": "This is a sample slide, update with content information. Be sure to remove any overlapping graphics when transferring decks to the new template. Delete this note before publishing. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 12,
+      "layout": "Title and Subtitle / 28 pt",
+      "title": "Objective Domain (OD) Breakdown",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Objective Domain (OD) Breakdown"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Weighting of skills measured on the exam"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Card1Pill",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Episode 1"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Card1Pct",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "30\u201335%"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Card1Desc",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Card2Pill",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Episode 2"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Card2Pct",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "30\u201335%"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Card2Desc",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Card3Pill",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Episode 3"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Card3Pct",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "30\u201335%"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Card3Desc",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Flowchart: Off-page Connector 44",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Designer note: "
+            },
+            {
+              "level": 0,
+              "text": "This is a sample slide, update with content information. Be sure to remove any overlapping graphics when transferring decks to the new template. Delete this note before publishing. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 13,
+      "layout": "Title and Subtitle / 28 pt",
+      "title": "Exam prep series objectives",
+      "content": [
+        {
+          "kind": "text",
+          "name": "TextBox 19",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "After watching this video series, you will be able to:\u00a0"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 20",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u2022   Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            },
+            {
+              "level": 0,
+              "text": "\u2022   Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            },
+            {
+              "level": 0,
+              "text": "\u2022   Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Exam prep series objectives"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Flowchart: Off-page Connector 44",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Designer note: "
+            },
+            {
+              "level": 0,
+              "text": "This is a sample slide, update with content information. Be sure to remove any overlapping graphics when transferring decks to the new template. Delete this note before publishing. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 14,
+      "layout": "Quote",
+      "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u201c\u201d"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "AUTHOR NAME"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 15,
+      "layout": "Text with Photo",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 25",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Header here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 26",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Subhead here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 27",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur. Morbi turpis adipiscing pharetra id sed tortor lacus aliquam. Diam mi condimentum pulvinar malesuada. Ut adipiscing pharetra purus amet nisl leo. Arcu aenean viverra eu magna donec imperdiet posuere urna."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "50/50 slide"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 16,
+      "layout": "Statement",
+      "title": "Short impactful\u000bstatement would\u000bgo here",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Short impactfulstatement wouldgo here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 17,
+      "layout": "Headline with Text 3-Col",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Subhead one here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur. Morbi turpis adipiscing pharetra id sed tortor lacus aliquam. Diam mi condimentum pulvinar malesuada. Ut adipiscing pharetra purus amet nisl leo. Arcu aenean viverra eu magna donec imperdiet posuere urna."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Subhead two here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur. Morbi turpis adipiscing pharetra id sed tortor lacus aliquam. Diam mi condimentum pulvinar malesuada. Ut adipiscing pharetra purus amet nisl leo. Arcu aenean viverra eu magna donec imperdiet posuere urna."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Subhead three here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur. Morbi turpis adipiscing pharetra id sed tortor lacus aliquam. Diam mi condimentum pulvinar malesuada. Ut adipiscing pharetra purus amet nisl leo. Arcu aenean viverra eu magna donec imperdiet posuere urna."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Header goes here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Headline w/text 3 column"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 18,
+      "layout": "Title & Non-bulleted text",
+      "title": "Text layout without bullet points",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 16",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text layout without bullet points"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Main topic: Segoe UI, size 28pt"
+            },
+            {
+              "level": 1,
+              "text": "Segoe UI, size 20pt for second level"
+            },
+            {
+              "level": 2,
+              "text": "Segoe UI, size 16pt for third level"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 19,
+      "layout": "Agenda_1-column",
+      "title": "One text column",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 15",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 0,
+              "text": "It\u2019s easy to remove bullets "
+            },
+            {
+              "level": 0,
+              "text": "Select the text, then on the Home menu, click the bullet list icon"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "One text column"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 20,
+      "layout": "Agenda_1-column",
+      "title": "One text column with animation icon",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 0,
+              "text": "It\u2019s easy to remove bullets "
+            },
+            {
+              "level": 0,
+              "text": "Select the text, then on the Home menu, click the bullet list icon"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "One text column with animation icon"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 21,
+      "layout": "Agenda_1-column",
+      "title": "One text column",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This placeholder is designed for a subheading"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "One text column"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 22,
+      "layout": "2-column_Text_with Subheads",
+      "title": "Two text columns with subheads",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Two text columns with subheads"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Keep subheads short and to one line"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 0,
+              "text": "It\u2019s easy to remove bullets "
+            },
+            {
+              "level": 0,
+              "text": "Select the text, then on the Home menu, click the bullet list icon"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Find other text layouts with subheads"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Click Home > Layout to find text layouts with subheads for two, three, and four columns with subheads"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 23,
+      "layout": "3-column_Text_with Subheads",
+      "title": "Three text columns with subheads",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Three text columns with subheads"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Space for a 2-linesubhead here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 0,
+              "text": "It\u2019s easy to remove bullets "
+            },
+            {
+              "level": 0,
+              "text": "Select the text, then on the Home menu, click the bullet list icon"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Find other text layouts with subheads"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Click Home > Layout to find text layouts with subheads for two, three, and four columns with subheads"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Adjust lower text blocks up "
+            },
+            {
+              "level": 0,
+              "text": "if subheads are all 1-line"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Keep the top edge of text blocks\u00a0aligned"
+            },
+            {
+              "level": 0,
+              "text": "More text"
+            },
+            {
+              "level": 0,
+              "text": "More text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 24,
+      "layout": "Four Column Bullet with Subtitles",
+      "title": "Four text columns with subheads",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 46",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Four text columns with subheads"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Space for a two-line subhead here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 0,
+              "text": "It\u2019s easy to remove bullets"
+            },
+            {
+              "level": 0,
+              "text": "Select the text, then on the Home menu, click the bullet list icon"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Wrap short "
+            },
+            {
+              "level": 0,
+              "text": "subheads"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Keep the top edge of text blocks\u00a0aligned"
+            },
+            {
+              "level": 0,
+              "text": "More text"
+            },
+            {
+              "level": 0,
+              "text": "More text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 13",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Consistent line wraps look better"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Keep the top edge of text blocks\u00a0aligned"
+            },
+            {
+              "level": 0,
+              "text": "More text"
+            },
+            {
+              "level": 0,
+              "text": "More text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 15",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Adjust lower text up or down as needed"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 16",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Keep the top edge of text blocks\u00a0aligned"
+            },
+            {
+              "level": 0,
+              "text": "More text"
+            },
+            {
+              "level": 0,
+              "text": "More text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 25,
+      "layout": "Title and Content",
+      "title": "Text layout with bulleted text",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 16",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text layout with bulleted text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learn how to adjust list levels"
+            },
+            {
+              "level": 0,
+              "text": "Follow the steps on the right"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Use the \u201cDecrease List Level\u201d and \u201cIncrease List Level\u201d tools on the Home menu to change text levels."
+            },
+            {
+              "level": 0,
+              "text": "Try this:  "
+            },
+            {
+              "level": 0,
+              "text": "Place your cursor in the line of text that says \u201cSegoe UI, size 20pt for second level\u201d"
+            },
+            {
+              "level": 0,
+              "text": "Next click the Home tab, and then on the \u201cDecrease List level\u201d tool. Notice how the line moves up one level."
+            },
+            {
+              "level": 0,
+              "text": "Now try placing your cursor in one of the top  \u201cMain topic\u2026\u201d line of text. Click the \u201cIncrease List Level\u201d tool and see how the text is pushed in one level."
+            },
+            {
+              "level": 0,
+              "text": "Use these 2 tools to adjust your text levels as you work"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 26,
+      "layout": "3-column_Text_with Subheads and Icons",
+      "title": "Three text columns with subheads and monoline icons",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Three text columns with subheads and monoline icons"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Space for a 2-linesubhead here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This placeholder is designed with bulleted\u00a0text and placeholder for icons"
+            },
+            {
+              "level": 0,
+              "text": "It\u2019s easy to remove bullets "
+            },
+            {
+              "level": 0,
+              "text": "Select the text, then on the Home menu, click the bullet list icon"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Find other iconsin the appendix"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Select the icon from the Microsoft Monoline icon library that you wish to use. Copy and paste the icon to the slide. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Change the icon color to white and center on the circle"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Select the icon"
+            },
+            {
+              "level": 0,
+              "text": "Under Shape Format, select White. "
+            },
+            {
+              "level": 0,
+              "text": "Align the icon to the center of the colored circle."
+            },
+            {
+              "level": 0,
+              "text": "To enable guides to assist with centering, choose View > Guides to turn on the guides feature. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 27,
+      "layout": "Title and Subtitle / 28 pt",
+      "title": "Exam preparation resources",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Col1Header",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Col1Body",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Col2Header",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Col2Body",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Col3Header",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Col3Body",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 18",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Exam preparation resources"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Subhead"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 28,
+      "layout": "Text option_3 rows",
+      "title": "Three text columns with subheads and monoline icons",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Three text columns with subheads and monoline icons"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 29,
+      "layout": "Text option_4 rows",
+      "title": "Three text columns with subheads and monoline icons",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Three text columns with subheads and monoline icons"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 30,
+      "layout": "Text option_5 rows",
+      "title": "Three text columns with subheads and monoline icons",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Three text columns with subheads and monoline icons"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 31,
+      "layout": "Title and Subtitle / 20 pt",
+      "title": "Four text columns with numbers or monoline iconss",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Four text columns with numbers or monoline iconss"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "1"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "2"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 11",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "3"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 15",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "4"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 19",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 20",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 21",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Subhead"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 32,
+      "layout": "Title and Subtitle / 28 pt",
+      "title": "Table layout",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Table layout"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Subhead"
+            }
+          ]
+        },
+        {
+          "kind": "table",
+          "name": "Table Placeholder 9",
+          "rows": [
+            [
+              "",
+              "Column 1",
+              "Column 2",
+              "Column 3"
+            ],
+            [
+              "Row 1",
+              "Table text",
+              "Table text",
+              "Table text"
+            ],
+            [
+              "Row 2",
+              "Table text",
+              "Table text",
+              "Table text"
+            ],
+            [
+              "Row 3",
+              "Table text",
+              "Table text",
+              "Table text"
+            ],
+            [
+              "Row 4",
+              "Table text\n",
+              "Table text\n",
+              "Table text\n"
+            ]
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 33,
+      "layout": "Title only 60% gradient",
+      "title": "Blank slide light gradient background",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Blank slide light gradient background"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 29",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 32",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 37",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 41",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 44",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 47",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "01"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "02"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "03"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 34,
+      "layout": "Title only 60% gradient",
+      "title": "Blank slide light gradient background",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Blank slide light gradient background"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 24",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "01"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 29",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 32",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 35",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "02"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 37",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 39",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "03"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 41",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 44",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 47",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Text"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 35,
+      "layout": "Closing / CTA",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Example content slide layout\u20144 pillars"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 26",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Content pillar 1"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 26",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Content pillar 2"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 26",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Content pillar 3"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 26",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Content pillar 4"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Footer or citation copy"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 36,
+      "layout": "Title and Subtitle / 28 pt",
+      "title": "Key technical concepts",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Key technical concepts"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur "
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur adipiscing"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet "
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 37,
+      "layout": "1-column_Text_with Image",
+      "title": "50/50 layout",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "50/50 layout"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Keep subheads short and to one line"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 0,
+              "text": "It\u2019s easy to remove bullets "
+            },
+            {
+              "level": 0,
+              "text": "Select the text, then on the Home menu, click the bullet list icon"
+            },
+            {
+              "level": 0,
+              "text": "Click Home > Layout to find other layout options for images and diagrams. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Footer Placeholder 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 38,
+      "layout": "1-column_Callout_with Image",
+      "title": "Diagram layout example",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Diagram layout example"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add short subhead here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 0,
+              "text": "It\u2019s easy to remove bullets "
+            },
+            {
+              "level": 0,
+              "text": "Select the text, then on the Home menu, click the bullet list icon"
+            },
+            {
+              "level": 0,
+              "text": "Click Home > Layout to find other layout options for images and diagrams. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Footer Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 39,
+      "layout": "Top horizontal photo",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 13",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Click Home > Layout to find other photos layouts."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Short description (3-4 lines). Support text paragraph, bullets, or additional details."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Footer Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 40,
+      "layout": "Top horizontal photo and subheads",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Keep subheads short and to one line"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Short description (3-4 lines). Support text paragraph, bullets, or additional details."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Find other photo layouts"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 13",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Click Home > Layout to find layouts using one, two, three, or four photos."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Footer Placeholder 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 41,
+      "layout": "Top horizontal photo, subheads, and title",
+      "title": "Diagram slide with heading and copy",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Diagram slide with heading and copy"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add short one line subhead here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Short description (3-4 lines). Support text paragraph, bullets, or additional details."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Find other photo layouts"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 10",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Click Home > Layout to find layouts using one, two, three, or four photos."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Footer Placeholder 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 42,
+      "layout": "2-column_Callout_with Image",
+      "title": "Diagram layout example",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Diagram layout example"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 20",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add subhead or supporting copy here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 18",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add one line subhead here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 19",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Short description (3-4 lines). Support text paragraph, bullets, or additional details. "
+            },
+            {
+              "level": 0,
+              "text": "For other photo layouts, click Home > Layout. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Footer Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 43,
+      "layout": "Two photos with captions",
+      "title": "Two photo layout",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Two photo layout"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add short one line subhead here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Short description (3-4 lines). Support text paragraph, bullets, or additional details."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Find other photo layouts"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Footer Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 18",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Click Home > Layout to find layouts using one, two, three, or four photos."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 44,
+      "layout": "Three photos with captions",
+      "title": "Three photo layout",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 18",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Three photo layout"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 38",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add short one line subhead here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 32",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Short description (3-4 lines). Support text paragraph, bullets, or additional details."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 42",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Find other photo layouts"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 44",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Click Home > Layout to find layouts using one, two, three, or four photos."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 43",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add subhead here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 45",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Keep the top edge of text blocks aligned."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Footer Placeholder 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 45,
+      "layout": "Four photos with captions",
+      "title": "Four photo layout",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Four photo layout"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add short one line subhead here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Short description (3-4 lines). Support text paragraph, bullets, or additional details."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Find other photo layouts"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Click Home > Layout to find layouts using one, two, three, or four photos."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add subhead here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 10",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Keep the top edge of text blocks aligned."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add subhead here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 13",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add text here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Footer Placeholder 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 46,
+      "layout": "Device frame",
+      "title": "Device frame layout",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Device frame layout"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Footer Placeholder 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 47,
+      "layout": "Developer code right",
+      "title": "Code layout",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Code layout"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Footer Placeholder 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 48,
+      "layout": "Developer code full page",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "TextBox 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Code layout"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 49,
+      "layout": "Title and Subtitle / 28 pt",
+      "title": "Recap",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Rectangle 5",
+          "paragraphs": [
+            {
+              "level": 1,
+              "text": "1.1 Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            },
+            {
+              "level": 1,
+              "text": "1.2 Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            },
+            {
+              "level": 1,
+              "text": "1.3 Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            },
+            {
+              "level": 1,
+              "text": "1.4 Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Update with course title"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Recap"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 50,
+      "layout": "Section_Image",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Frequently used slides"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 51,
+      "layout": "Agenda_1-column",
+      "title": "Introduction",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            },
+            {
+              "level": 0,
+              "text": "Agenda item"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Introduction"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rounded Rectangle 3_1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Name of course, customizable, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+            },
+            {
+              "level": 0,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 0,
+              "text": "It\u2019s easy to remove or add bullets "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 52,
+      "layout": "Agenda_1-column",
+      "title": "Learning Objectives",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "After completing this module, you will be able to:"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Objectives"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Describe what customer engagement is and why it matters"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Explain what Microsoft Dataverse is and how it is leveraged"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 10",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Explore and access Dynamics 365 customer engagement apps"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Oval 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "1"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Oval 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "2"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Oval 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "3"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 53,
+      "layout": "Knowledge Check",
+      "title": "Knowledge check",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Footer Placeholder 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 67",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 43",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Azure"
+            },
+            {
+              "level": 0,
+              "text": "Office 365"
+            },
+            {
+              "level": 0,
+              "text": "Dynamics 365 Field Service"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 77",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 46",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Microsoft Dynamics 365 Project Operations"
+            },
+            {
+              "level": 0,
+              "text": "Dynamics 365 Sales"
+            },
+            {
+              "level": 0,
+              "text": "Dynamics 365 Customer Service"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 69",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsun"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 78",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Dynamics 365 Customer Engagement apps are built on the Power Platform"
+            },
+            {
+              "level": 0,
+              "text": "The Power Platform is a separate product that is not integrated with Dynamics 365"
+            },
+            {
+              "level": 0,
+              "text": "The Power Platform is a replacement for Dynamics 365 Customer Engagement apps"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Oval 55",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "1"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Oval 58",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "2"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Oval 60",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "3"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 89",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Knowledge check"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 54,
+      "layout": "Title and Subtitle / 28 pt",
+      "title": "Learning Path Recap",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Rounded Rectangle 3_1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Introduced the Dynamics 365 customer engagement apps and discussed common features."
+            },
+            {
+              "level": 0,
+              "text": "Explored Microsoft Dataverse and how it is leveraged. "
+            },
+            {
+              "level": 0,
+              "text": "Examined how to work with customers and manage activities your activities."
+            },
+            {
+              "level": 0,
+              "text": "Described the different reporting options in Dynamics 365. "
+            },
+            {
+              "level": 0,
+              "text": "Reviewed the options for integrating other Microsoft products with Dynamics 365 customer engagement applications. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "In this learning path, we:"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Path Recap"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 55,
+      "layout": "Summary",
+      "title": "Knowledge check alt layout",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Knowledge check alt layout"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Subheading goes here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 23",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 0,
+              "text": "It\u2019s easy to remove or add bullets "
+            },
+            {
+              "level": 0,
+              "text": "Select the text, then on the Home menu, click the bullet list icon"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 18",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add short subhead or additional supporting copy here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 56,
+      "layout": "Summary",
+      "title": "Summary",
+      "content": [
+        {
+          "kind": "text",
+          "name": "TextBox 17",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 13",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Summary"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "What you learned"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 23",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 0,
+              "text": "It\u2019s easy to remove or add bullets "
+            },
+            {
+              "level": 0,
+              "text": "Select the text, then on the Home menu, click the bullet list icon"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 30",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add short subhead or additional supporting copy here"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 57,
+      "layout": "Summary",
+      "title": "Lab",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lab"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Subheading goes here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 23",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 0,
+              "text": "It\u2019s easy to remove or add bullets"
+            },
+            {
+              "level": 0,
+              "text": "Select the text, then on the Home menu, click the bullet list icon "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 33",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Add short subhead or additional supporting copy here:"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 58,
+      "layout": "Summary",
+      "title": "Preparing for the labs",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 23",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Preparing for the labs"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 22",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Subheading goes here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 0,
+              "text": "It\u2019s easy to remove or add bullets"
+            },
+            {
+              "level": 0,
+              "text": "Select the text, then on the Home menu, click the bullet list icon "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 24",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Additional notes or comments here"
+            },
+            {
+              "level": 0,
+              "text": "Lab lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 59,
+      "layout": "Small title - half page",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Warning \u2013 You may experience UI lab discrepancies "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Subheading goes here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 0,
+              "text": "It\u2019s easy to remove or add bullets"
+            },
+            {
+              "level": 0,
+              "text": "Select the text, then on the Home menu, click the bullet list icon "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 60,
+      "layout": "Small title - half page",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Pricing"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Subheading goes here"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 0,
+              "text": "It\u2019s easy to remove or add bullets"
+            },
+            {
+              "level": 0,
+              "text": "Select the text, then on the Home menu, click the bullet list icon "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 61,
+      "layout": "Title and Subtitle / 28 pt",
+      "title": "What is next on your learning journey?",
+      "content": [
+        {
+          "kind": "text",
+          "name": "TextBox 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Content Devs: "
+            },
+            {
+              "level": 0,
+              "text": "Customize these slides with next steps and courses participants should consider taking. "
+            },
+            {
+              "level": 0,
+              "text": "Delete this note before publishing. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 32",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\ue095"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 17",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "What is next on your learning journey?"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 21",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Name of course, customizable, 1 to 2 lines of copy - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 43",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Description"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 41",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "EXAMPLE: This course covers methods and practices for performing advanced data analytics at scale."
+            },
+            {
+              "level": 0,
+              "text": "Students will build on existing analytics knowledge (PL-300 or equivalent) and will learn to implement and manage a data analytics environment, query and transform data, implement and manage data models, and explore and visualize.\u00a0"
+            },
+            {
+              "level": 0,
+              "text": "While PL-300 was focused on self-service and department level analytics, DP-500 focuses on the enterprise."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 45",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Topics covered"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 46",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "EXAMPLE"
+            },
+            {
+              "level": 1,
+              "text": "Implement and manage a data analytics environment"
+            },
+            {
+              "level": 1,
+              "text": "Query and transform data"
+            },
+            {
+              "level": 1,
+              "text": "Implement and manage data models"
+            },
+            {
+              "level": 1,
+              "text": "Explore and visualize data"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 33",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Find more information about this course at: learn.microsoft.com/training/courses/browse"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 62,
+      "layout": "Title and Subtitle / 28 pt",
+      "title": "What is next on your learning journey? ",
+      "content": [
+        {
+          "kind": "text",
+          "name": "TextBox 17",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\ue095"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "What is next on your learning journey? "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 11",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Name of course, customizable, 1 to 2 lines of copy - Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 20",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "This course covers methods and practices for performing advanced data analytics at scale."
+            },
+            {
+              "level": 0,
+              "text": "Students will build on existing analytics knowledge (PL-300 or equivalent) and will learn to implement and manage a data analytics environment, query and transform data, implement and manage data models, and explore and visualize. "
+            },
+            {
+              "level": 0,
+              "text": "While PL-300 was focused on self-service and department level analytics, DP-500 focuses on the enterprise."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 21",
+          "paragraphs": [
+            {
+              "level": 1,
+              "text": "Topics covered: "
+            },
+            {
+              "level": 1,
+              "text": "Implement and manage a data analytics environment"
+            },
+            {
+              "level": 1,
+              "text": "Query and transform data"
+            },
+            {
+              "level": 1,
+              "text": "Implement and manage data models"
+            },
+            {
+              "level": 1,
+              "text": "Explore and visualize data"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 18",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Find more information about this course at: learn.microsoft.com/training/courses/browse"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 63,
+      "layout": "Title and Subtitle / 28 pt",
+      "title": "What is next on your learning journey?  ",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "What is next on your learning journey?  "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 13",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Path 1:"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 10",
+          "paragraphs": [
+            {
+              "level": 1,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 1,
+              "text": "It\u2019s easy to remove or add bullets "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Path 2:"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 12",
+          "paragraphs": [
+            {
+              "level": 1,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 1,
+              "text": "It\u2019s easy to remove or add bullets "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 64,
+      "layout": "Title and Subtitle / 28 pt",
+      "title": "What is next on your learning journey?   ",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "What is next on your learning journey?   "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Path 1:"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 33",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Path 2:"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 34",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Path 3:"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 9",
+          "paragraphs": [
+            {
+              "level": 1,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 1,
+              "text": "It\u2019s easy to remove or add bullets "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 31",
+          "paragraphs": [
+            {
+              "level": 1,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 1,
+              "text": "It\u2019s easy to remove or add bullets "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 32",
+          "paragraphs": [
+            {
+              "level": 1,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 1,
+              "text": "It\u2019s easy to remove or add bullets "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 65,
+      "layout": "Title and Subtitle / 28 pt",
+      "title": "What is next on your learning journey?     ",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 16",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "What is next on your learning journey?     "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Path 1:"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 5",
+          "paragraphs": [
+            {
+              "level": 1,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 1,
+              "text": "It\u2019s easy to remove or add bullets "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 27",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Path 2:"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 26",
+          "paragraphs": [
+            {
+              "level": 1,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 1,
+              "text": "It\u2019s easy to remove or add bullets "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 29",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Path 3:"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 28",
+          "paragraphs": [
+            {
+              "level": 1,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 1,
+              "text": "It\u2019s easy to remove or add bullets "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 31",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Path 4:"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 30",
+          "paragraphs": [
+            {
+              "level": 1,
+              "text": "This placeholder is designed with bulleted\u00a0text"
+            },
+            {
+              "level": 1,
+              "text": "It\u2019s easy to remove or add bullets "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 66,
+      "layout": "Title and Subtitle / 28 pt",
+      "title": "Resources",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Resources"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Topic title"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Main topic: Segoe UI, size 16pt"
+            },
+            {
+              "level": 0,
+              "text": "Main topic: Segoe UI, size 16pt"
+            },
+            {
+              "level": 0,
+              "text": "Main topic: Segoe UI, size 16pt"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Topic title"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Main topic: Segoe UI, size 16pt"
+            },
+            {
+              "level": 0,
+              "text": "Main topic: Segoe UI, size 16pt"
+            },
+            {
+              "level": 0,
+              "text": "Main topic: Segoe UI, size 16pt"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Footer Placeholder 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 67,
+      "layout": "Closing / CTA",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Thanks for watching"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "EXAM PREP \u00b7 XX-XXX"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Subtitle 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "For more information, visit aka.ms/XXXX "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 68,
+      "layout": "Section",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Subtitle 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "SKILLS MEASURED"
+            },
+            {
+              "level": 0,
+              "text": "1.1 Lorem ipsum dolor sit amet consectetur "
+            },
+            {
+              "level": 0,
+              "text": "1.2 Lorem ipsum dolor sit amet consectetur "
+            },
+            {
+              "level": 0,
+              "text": "1.3 Lorem ipsum dolor sit amet consectetur "
+            },
+            {
+              "level": 0,
+              "text": "1.4 Lorem ipsum dolor sit amet consectetur "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "SectionNumber",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "01"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Subtitle 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Episode 1 | ~20 minutes"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Exam XX-X00: Lorem ipsum dolor sit amet consectetur adipiscing eli"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Section slide"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Section slide"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 69,
+      "layout": "Section",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Subtitle 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "SKILLS MEASURED"
+            },
+            {
+              "level": 0,
+              "text": "1.1 Lorem ipsum dolor sit amet consectetur "
+            },
+            {
+              "level": 0,
+              "text": "1.2 Lorem ipsum dolor sit amet consectetur "
+            },
+            {
+              "level": 0,
+              "text": "1.3 Lorem ipsum dolor sit amet consectetur "
+            },
+            {
+              "level": 0,
+              "text": "1.4 Lorem ipsum dolor sit amet consectetur "
+            },
+            {
+              "level": 0,
+              "text": "1.5 Space for more skills"
+            },
+            {
+              "level": 0,
+              "text": "1.6 Space for more skills"
+            },
+            {
+              "level": 0,
+              "text": "1.7 Space for more skills"
+            },
+            {
+              "level": 0,
+              "text": "1.8 Space for more skills"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "SectionNumber",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "01"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Subtitle 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Episode 1 | ~20 minutes"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Exam XX-X00: Lorem ipsum dolor sit amet consectetur adipiscing eli"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Section slide"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 70,
+      "layout": "Section",
+      "title": "Section slide",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "01"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 20",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Episode 1 | ~20 minutes"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Skills Measured"
+            },
+            {
+              "level": 0,
+              "text": "1.1 Lorem ipsum dolor sit amet consectetur "
+            },
+            {
+              "level": 0,
+              "text": "1.2 Lorem ipsum dolor sit amet consectetur "
+            },
+            {
+              "level": 0,
+              "text": "1.3 Lorem ipsum dolor sit amet consectetur "
+            },
+            {
+              "level": 0,
+              "text": "1.4 Lorem ipsum dolor sit amet consectetur "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Exam XX-X00: Lorem ipsum dolor sit amet consectetur adipiscing eli"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Section slide"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 71,
+      "layout": "Section_Gradient Only",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Preparing for XX-X00"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 48",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Microsoft Official"
+            },
+            {
+              "level": 0,
+              "text": "Exam Prep Video Series"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 47",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Continue with "
+            },
+            {
+              "level": 0,
+              "text": "Episode 02"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 11",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": "<No audio needed. This will just be displayed at the end of each video to encourage the learners to take the next video.>\n"
+    },
+    {
+      "number": 72,
+      "layout": "Blank 100%",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "TextBox 36",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Microsoft Official"
+            },
+            {
+              "level": 0,
+              "text": "Exam Prep Video Series"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Preparing for SC-X00 "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Continue with "
+            },
+            {
+              "level": 0,
+              "text": "Episode 02"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 27",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 29",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 31",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": "<No audio needed. This will just be displayed at the end of each video to encourage the learners to take the next video.>\n"
+    },
+    {
+      "number": 73,
+      "layout": "Section_Gradient Only",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Preparing for SC-X00:"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Microsoft Official"
+            },
+            {
+              "level": 0,
+              "text": "Exam Prep Video Series"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle 13",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Continue with"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Rectangle: Rounded Corners 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Episode 02"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Manage a security operations environment "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 71",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 72",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 73",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": "<No audio needed. This will just be displayed at the end of each video to encourage the learners to take the next video.>\n"
+    },
+    {
+      "number": 74,
+      "layout": "Section",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Continue with Episode 2: "
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Subtitle 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "EP. 1 - COMPLETED"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Subtitle 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "EP. 2 - NEXT"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Subtitle 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "EP. 3"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "PREPARING FOR EXAM XX-X00: "
+            },
+            {
+              "level": 0,
+              "text": "LOREM IPSUM DOLOR SIT AMET CONSECTETUR ADIPISCING ELIT"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": "<No audio needed. This will just be displayed at the end of each video to encourage the learners to take the next video.>\n"
+    },
+    {
+      "number": 75,
+      "layout": "Section_Gradient with container",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Preparing for Exam XX-X00:"
+            },
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur adipiscing elit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 60",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Continue with Episode 2: Implement authentication and access management "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "EP. 1"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "EP. 2"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "EP. 3"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text Placeholder 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "EP. 4"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 11",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Lorem ipsum dolor sit amet consectetur"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": "<No audio needed. This will just be displayed at the end of each video to encourage the learners to take the next video.>\n"
+    },
+    {
+      "number": 76,
+      "layout": "Title_Gradient_Dark Blue",
+      "title": "Appendix",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Appendix"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Trapezoid 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "REMOVE SECTION BEFORE PUBLISHING"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Flowchart: Off-page Connector 44",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Note: "
+            },
+            {
+              "level": 0,
+              "text": "The appendix contains icon/glyph resources and guidance for reference. Remember to remove this section before publishing."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 77,
+      "layout": "Glyph library - 18 up",
+      "title": "Glyph library: Learning, training and people",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Glyph library: Learning, training and people"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Certification"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learn"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Path"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Exam"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Learning Lab"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Training"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Training Virtual"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Instructor"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Research"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 10",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Badge"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 11",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Calendar"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Community"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 13",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Support"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Time"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 15",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Trophy"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 16",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Trophy CSC"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 17",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "User"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 19",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Delete these slides before distribution. They are intended only for guidance. "
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 78,
+      "layout": "Glyph library - 18 up",
+      "title": "Glyph library: Technical, data and security",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Glyph library: Technical, data and security"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Architecture"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Coding"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Connectivity"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Data BarChart"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Network"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Process"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Tools"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Transform"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Shield Privacy"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 10",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Shield Security"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 11",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Speed"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Results"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 13",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Unit"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 15",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Delete these slides before distribution. They are intended only for guidance. "
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 79,
+      "layout": "Glyph library - 18 up",
+      "title": "Glyph library: Content and resources",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Glyph library: Content and resources"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Blog"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Cloud Video"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 3",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Documents"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 4",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Folder Bookmark"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 5",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Folder Resources"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 6",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Folder Video"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Format"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 8",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Guides"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 9",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Link"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 10",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "New"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 11",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Overview"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Resources Details"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 13",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Video"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Text 14",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Video Search"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 16",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Delete these slides before distribution. They are intended only for guidance. "
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 80,
+      "layout": "Small title - half page",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Microsoft monoline icons"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 12",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Looking for icon resources?"
+            },
+            {
+              "level": 0,
+              "text": "The Monoline icon library for PowerPoint is a slide deck that provides a library of icons for use in PowerPoint presentations. "
+            },
+            {
+              "level": 0,
+              "text": "The Monoline icon style guide for PowerPoint is a pdf with additional guidelines. "
+            },
+            {
+              "level": 0,
+              "text": "Download both from Brand Central."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Delete these slides before distribution. They are intended only for guidance. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Copyright Footer",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "\u00a9 Copyright Microsoft Corporation. All rights reserved."
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 81,
+      "layout": "Small title - half page",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Line weight and sizing"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 7",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Delete these slides before distribution. They are intended only for guidance. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 33",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Make sure you have No fill selected on your icon"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 36",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Solid line should be selected"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Oval 40",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "2"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Oval 41",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "3"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 42",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Use these drop-down menus to change the Color and line Width"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Oval 44",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "4"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 51",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "To edit the style of your icon, right-click on the object and select Format Shape\u2026"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Oval 50",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "1"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 54",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "The size of an icon is dictated by its largest dimension. For example: if an icon is 0.43\u201d tall, and 0.35\u201d wide, the line weight should be 1.25 pt. Each icon should be no thinner than 1.25 pt., and no thicker than 1.75 pt. line weight. Additionally, an icon typically shouldn\u2019t be larger than 1\u201d or smaller than 0.25\u201d."
+            },
+            {
+              "level": 0,
+              "text": "Download the style guide from Brand Central for additional guidance. "
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 82,
+      "layout": "Blank",
+      "title": "",
+      "content": [
+        {
+          "kind": "table",
+          "name": "Table 2",
+          "rows": [
+            [
+              "INDUSTRY SECTORS",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Aeronautics",
+              "Agriculture",
+              "Architecture",
+              "Automotive",
+              "Construction",
+              "Education and research",
+              "Energy",
+              "Financial services",
+              "Healthcare",
+              "Engineering and manufacturing",
+              "Professional services, media",
+              "Sports"
+            ],
+            [
+              "Government",
+              "Retail",
+              "Technology",
+              "Media and broadcasting",
+              "Travel and transportation",
+              "Education",
+              "Law",
+              "Science",
+              " -",
+              " -",
+              " -",
+              " -"
+            ]
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Icons should be primarily used as a visual aid, as a way to break up large amounts of text and content, or as a visual cue of the content that follows.Get the full set of icons for presentations"
+            }
+          ]
+        },
+        {
+          "kind": "table",
+          "name": "Table 3",
+          "rows": [
+            [
+              "MAPS  /  LOCATION",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Globe, global, earth",
+              "Globe, global, earth",
+              "Navigation, GPS, POI, location, map",
+              "Map, location, GPS, directions, navigation",
+              "Navigation, GPS, POI, location, map",
+              "Map, location, route, quest, destination, journey",
+              "Download map, receive location",
+              " -",
+              " -",
+              " -",
+              " -",
+              " -"
+            ]
+          ]
+        },
+        {
+          "kind": "table",
+          "name": "Table 4",
+          "rows": [
+            [
+              "MONEY  /  FINANACE  / RETAIL  /  CONSUMER",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Shopping cart, store",
+              "Store, bag, shop",
+              "Money, dollar sign, cash, revenue, currency",
+              "Revenue, financial report, funds",
+              "Money, currency, coins",
+              "Bank, piggybank",
+              "Compare, balance, finance, justice",
+              "Credit card, payment, charge, debit card",
+              "Mobile payment, digital payment, e-commerce",
+              "Barcode scanner",
+              "Tag, sale, shopping",
+              "Bank "
+            ]
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 47",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Delete these slides before distribution. They are intended only for guidance. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Trapezoid 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "EXAMPLES FROM MONOLINE ICON LIBRARY"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 83,
+      "layout": "Blank",
+      "title": "",
+      "content": [
+        {
+          "kind": "table",
+          "name": "Table 45",
+          "rows": [
+            [
+              "OBJECTS  /  TOOLS",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            [
+              "Alarm clock",
+              "Hourglass, timer",
+              "Clock",
+              "Flashlight",
+              "Funnel",
+              "Calculator",
+              "Binoculars",
+              "Scissors",
+              "Camera",
+              "Battery, power, charge",
+              "Magnifying glass",
+              "Tools, screwdriver, wrench"
+            ],
+            [
+              "Paperclip",
+              "Pushpin, thumbtack",
+              "Key",
+              "Lock",
+              "Safe",
+              "Piggybank",
+              "Bag",
+              "Ballot box, drop box",
+              "Box, archive, storage",
+              "Present, giftbox",
+              "Box, package, shipping",
+              "Briefcase, business, work, job"
+            ],
+            [
+              "Books, reading",
+              "Book, dictionary, novel",
+              "Notebook, journal",
+              "Pencil",
+              "Paintbrush",
+              "Paint palette, color",
+              "3D, hologram",
+              "Trophy, award",
+              "Ribbon, award, reward, accomplishment",
+              "Ribbon, award, reward, accomplishment",
+              "Flag, finish line ",
+              "Flags, finish line, win, race"
+            ],
+            [
+              "Open door, entryway, opportunity",
+              "Clipboard",
+              "Megaphone, speaker, speech, announcement",
+              "Microphone",
+              "CD, music album",
+              "Headphones",
+              "Headset",
+              "Eye glasses",
+              "Bike, bicycle",
+              "Umbrella, bumbershoot",
+              "Balloon, party, celebration",
+              "Rocking chair"
+            ],
+            [
+              "Remote control",
+              "Robotic, manufacturing, mechanical, automation",
+              "Forklift",
+              "Gears",
+              "Traffic cone, construction",
+              "Flask, chemistry, science, beaker",
+              "Maze, puzzle",
+              "Target, bullseye, aim, arrow, dartboard, darts, archery",
+              "Games, strategy, chess, poker",
+              "Musical instrument, drums",
+              "Pizza, food",
+              "Lightbulb"
+            ]
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Get the full set of icons for presentations"
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 107",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Delete these slides before distribution. They are intended only for guidance. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Trapezoid 1",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "EXAMPLES FROM MONOLINE ICON LIBRARY"
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "number": 84,
+      "layout": "Blank",
+      "title": "",
+      "content": [
+        {
+          "kind": "text",
+          "name": "Text Placeholder 21",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Microsoft content style guides >"
+            },
+            {
+              "level": 0,
+              "text": "CELA Self-Service Tool >"
+            },
+            {
+              "level": 0,
+              "text": "Accessibility assessment tool"
+            },
+            {
+              "level": 0,
+              "text": "To download photography and other assets, visit Brand Central."
+            },
+            {
+              "level": 0,
+              "text": "The Monoline icon library and Monoline icon style guide PowerPoints are on Brand Central."
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "TextBox 23",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Delete these slides before distribution. They are intended only for guidance. "
+            }
+          ]
+        },
+        {
+          "kind": "text",
+          "name": "Title 2",
+          "paragraphs": [
+            {
+              "level": 0,
+              "text": "Quick links"
+            },
+            {
+              "level": 0,
+              "text": "Below are some useful quick links. "
+            }
+          ]
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

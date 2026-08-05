@@ -1,0 +1,279 @@
+{
+  "tally": {
+    "blueprint": 12,
+    "console": 6,
+    "spotlight": 7,
+    "drafting": 9,
+    "editorial": 4,
+    "dashboard": 3,
+    "layer-stack": 1,
+    "timeline": 1,
+    "?? undeclared": 1
+  },
+  "videos": [
+    {
+      "project": "lp1m01-u02-overview",
+      "lp": "lp1",
+      "declared": "C \u2014 Blueprint",
+      "layout": "blueprint"
+    },
+    {
+      "project": "lp1m01-u03-comanage",
+      "lp": "lp1",
+      "declared": "A \u2014 Console",
+      "layout": "console"
+    },
+    {
+      "project": "lp1m01-u04-jointypes",
+      "lp": "lp1",
+      "declared": "B \u2014 Spotlight",
+      "layout": "spotlight"
+    },
+    {
+      "project": "lp1m02-u02-strategy",
+      "lp": "lp1",
+      "declared": "B \u2014 Spotlight",
+      "layout": "spotlight"
+    },
+    {
+      "project": "lp1m02-u07-restrictions",
+      "lp": "lp1",
+      "declared": "C \u2014 Blueprint (schematic node-and-wire flow)",
+      "layout": "blueprint"
+    },
+    {
+      "project": "lp1m02-u08-troubleshoot",
+      "lp": "lp1",
+      "declared": "A \u2014 Console",
+      "layout": "console"
+    },
+    {
+      "project": "lp1m03-u04-whfb-trust",
+      "lp": "lp1",
+      "declared": "C \u2014 Blueprint (schematic node-and-wire flow + decision tree)",
+      "layout": "blueprint"
+    },
+    {
+      "project": "lp1m04-u06-dynamic-groups",
+      "lp": "lp1",
+      "declared": "Blueprint (schematic \u2014 assemble a rule node-by-node)",
+      "layout": "blueprint"
+    },
+    {
+      "project": "lp1m05-u02-deploy-modes",
+      "lp": "lp1",
+      "declared": "Console (left rail + spine, mono-forward, authoritative reference)",
+      "layout": "console"
+    },
+    {
+      "project": "lp1m05-u05-preprovision",
+      "lp": "lp1",
+      "declared": "Spotlight (Fraunces serif scenario line, single focal idea, cinematic)",
+      "layout": "spotlight"
+    },
+    {
+      "project": "lp2m01-u02-config-compliance",
+      "lp": "lp2",
+      "declared": "Engineering Drafting (technical schematic)",
+      "layout": "drafting"
+    },
+    {
+      "project": "lp2m01-u07-gp-analytics",
+      "lp": "lp2",
+      "declared": "Blueprint (node-and-wire schematic, print variant)",
+      "layout": "blueprint"
+    },
+    {
+      "project": "lp2m02-u03-update-rings",
+      "lp": "lp2",
+      "declared": "Editorial (Swiss/print data-explainer \u2014 staggered Gantt over a ruled time axis)",
+      "layout": "editorial"
+    },
+    {
+      "project": "lp2m03-u03-endpoint-analytics",
+      "lp": "lp2",
+      "declared": "Dashboard / Scorecard (NEW)",
+      "layout": "dashboard"
+    },
+    {
+      "project": "lp2m03-u04-remediations",
+      "lp": "lp2",
+      "declared": "Blueprint (print) \u2014 drawn as a **closed loop**, not a linear flow",
+      "layout": "blueprint"
+    },
+    {
+      "project": "lp2m04-u02-troubleshooting-workflow",
+      "lp": "lp2",
+      "declared": "Engineering Drafting (rendered as a triage flowchart)",
+      "layout": "drafting"
+    },
+    {
+      "project": "lp3m01-u02-app-types",
+      "lp": "lp3",
+      "declared": "DRAFTING dialogue (two-narrator: Priya = Ava, Marcus = Davis)",
+      "layout": "drafting"
+    },
+    {
+      "project": "lp3m02-u06-data-containment",
+      "lp": "lp3",
+      "declared": "LAYER-STACK (NEW template-j)",
+      "layout": "layer-stack"
+    },
+    {
+      "project": "lp3m02-u07-conditional-launch",
+      "lp": "lp3",
+      "declared": "TIMELINE scrubber (NEW template-i)",
+      "layout": "timeline"
+    },
+    {
+      "project": "lp3m03-u02-app-lifecycle",
+      "lp": "lp3",
+      "declared": "BLUEPRINT loop",
+      "layout": "blueprint"
+    },
+    {
+      "project": "lp3m05-u04-supersedence",
+      "lp": "lp3",
+      "declared": "EDITORIAL (Swiss print)",
+      "layout": "editorial"
+    },
+    {
+      "project": "lp4m01-u02-defender-intune",
+      "lp": "lp4",
+      "declared": "Blueprint (dark node-and-wire schematic)",
+      "layout": "blueprint"
+    },
+    {
+      "project": "lp4m01-u06-investigate-respond",
+      "lp": "lp4",
+      "declared": "",
+      "layout": "?? undeclared"
+    },
+    {
+      "project": "lp4m02-u02-encryption",
+      "lp": "lp4",
+      "declared": "Spotlight (dark) \u2014 single cinematic scenario, Fraunces serif scenario line, hero backdrop",
+      "layout": "spotlight"
+    },
+    {
+      "project": "lp4m03-u03-shadow-it",
+      "lp": "lp4",
+      "declared": "Dashboard / Scorecard (template-h-dashboard \u2014 graphite instrument panel)",
+      "layout": "dashboard"
+    },
+    {
+      "project": "lp4m04-u05-compliance-countdown",
+      "lp": "lp4",
+      "declared": "Editorial-timeline (DARK security-ops re-skin) \u2014 horizontal countdown timeline, big tabular day numbers, action milestones at day offsets",
+      "layout": "editorial"
+    },
+    {
+      "project": "lp4m05-u03-tunnel-mam",
+      "lp": "lp4",
+      "declared": "Spotlight (dark) \u2014 Fraunces serif scenario line, single cinematic focal idea, hero backdrop",
+      "layout": "spotlight"
+    },
+    {
+      "project": "lp4m06-u03-cloud-pki",
+      "lp": "lp4",
+      "declared": "Blueprint (dark, node-and-wire **sequence** schematic \u2014 maps to the SCEP issuance/renewal flow)",
+      "layout": "blueprint"
+    },
+    {
+      "project": "lp5m01-u02-automation-options",
+      "lp": "lp5",
+      "declared": "CONSOLE ledger",
+      "layout": "console"
+    },
+    {
+      "project": "lp5m02-u02-ai-layer",
+      "lp": "lp5",
+      "declared": "BLUEPRINT",
+      "layout": "blueprint"
+    },
+    {
+      "project": "lp5m02-u05-defender-insights",
+      "lp": "lp5",
+      "declared": "DRAFTING (decision: management state + security state \u2192 endpoint action)",
+      "layout": "drafting"
+    },
+    {
+      "project": "lp6m01-u02-reporting-options",
+      "lp": "lp6",
+      "declared": "CONSOLE",
+      "layout": "console"
+    },
+    {
+      "project": "lp6m02-u02-rbac",
+      "lp": "lp6",
+      "declared": "BLUEPRINT",
+      "layout": "blueprint"
+    },
+    {
+      "project": "lp6m03-u02-tenant-health",
+      "lp": "lp6",
+      "declared": "DRAFTING (dialogue / dual-speaker variant \u2014 FIRST two-narrator pilot)",
+      "layout": "drafting"
+    },
+    {
+      "project": "lp6m03-u05-operational-baselines",
+      "lp": "lp6",
+      "declared": "DASHBOARD",
+      "layout": "dashboard"
+    },
+    {
+      "project": "lp7m01-u03-suite-components",
+      "lp": "lp7",
+      "declared": "CONSOLE ledger",
+      "layout": "console"
+    },
+    {
+      "project": "lp7m01-u05-licensing",
+      "lp": "lp7",
+      "declared": "SPOTLIGHT (3 option cards + trial callout)",
+      "layout": "spotlight"
+    },
+    {
+      "project": "lp7m02-u02-epm-jit",
+      "lp": "lp7",
+      "declared": "DRAFTING flow",
+      "layout": "drafting"
+    },
+    {
+      "project": "lp7m03-u03-anomaly-detection",
+      "lp": "lp7",
+      "declared": "EDITORIAL",
+      "layout": "editorial"
+    },
+    {
+      "project": "lp7m04-u02-remote-help-consent",
+      "lp": "lp7",
+      "declared": "DRAFTING swimlane (support agent / device user / Intune)",
+      "layout": "drafting"
+    },
+    {
+      "project": "lp8m01-u02-cloud-pc",
+      "lp": "lp8",
+      "declared": "Spotlight (dark) \u2014 single cinematic scenario, Fraunces serif scenario line, hero backdrop image",
+      "layout": "spotlight"
+    },
+    {
+      "project": "lp8m03-u02-avd-architecture",
+      "lp": "lp8",
+      "declared": "Blueprint (dark node-and-wire schematic)",
+      "layout": "blueprint"
+    },
+    {
+      "project": "lp8m03-u03-w365-vs-avd",
+      "lp": "lp8",
+      "declared": "Drafting (sepia engineering decision flowchart with a fork)",
+      "layout": "drafting"
+    },
+    {
+      "project": "lp8m03-u04-host-pool-scaling",
+      "lp": "lp8",
+      "declared": "**Drafting** (sepia graph-paper decision-stack \u2014 three stacked decisions read as a PART A \u2192 PART B \u2192 PART C assembly)",
+      "layout": "drafting"
+    }
+  ]
+}

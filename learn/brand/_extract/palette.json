@@ -1,0 +1,34 @@
+{
+  "_source": "ILT-Course-Content-Neutral-Template.potx -> ppt/theme/theme1.xml (\"Light Mode\")",
+  "_grounds_note": "Image grounds are exported from the same deck and judged on their worst pixel, not a representative hex. Paths are relative to this file.",
+  "grounds": {
+    "paper": "#FFF8F3",
+    "white": "#FFFFFF",
+    "ink-ground": "#091F2E",
+    "content-wash": "../../assets/grounds/ground-content-wash.png",
+    "section-field": "../../assets/grounds/ground-section-field.png",
+    "hero-swoosh": "../../assets/grounds/ground-hero-swoosh.png"
+  },
+  "inks": {
+    "ink": "#091F2E",
+    "black": "#000000",
+    "paper-on-dark": "#FFF8F3"
+  },
+  "accents": {
+    "purple": "#8661C5",
+    "teal": "#389A91",
+    "blue": "#0078D4",
+    "magenta": "#BF3AC4",
+    "teal-light": "#49C5B1",
+    "purple-light": "#C5B4E3"
+  },
+  "_text_on_note": "Only these pairings are gated. No accent appears on any image ground: measured worst case is 1.20-2.18, which fails even AA-large. Accents are decorative there.",
+  "text_on": {
+    "paper": ["ink", "black"],
+    "white": ["ink", "black"],
+    "ink-ground": ["paper-on-dark", "purple-light", "teal-light"],
+    "content-wash": ["ink", "black"],
+    "section-field": ["ink", "black"],
+    "hero-swoosh": ["ink", "black"]
+  }
+}

@@ -1,0 +1,2443 @@
+{
+  "source": "c:\\learn-pr\\MD-102-Refresh-Working\\md102-companion-videos\\_source\\ilt-templates\\Microsoft ILT course content.pptx",
+  "theme": {
+    "ppt/theme/theme1.xml": {
+      "name": "Light Mode",
+      "colors": {
+        "dk1": "#000000",
+        "lt1": "#FFFFFF",
+        "dk2": "#091F2E",
+        "lt2": "#FFF8F3",
+        "accent1": "#8661C5",
+        "accent2": "#389A91",
+        "accent3": "#0078D4",
+        "accent4": "#BF3AC4",
+        "accent5": "#49C5B1",
+        "accent6": "#C5B4E3",
+        "hlink": "#0078D4",
+        "folHlink": "#0078D4"
+      },
+      "fonts": {
+        "majorFont": {
+          "latin": "Segoe UI Semibold",
+          "ea": "",
+          "cs": ""
+        },
+        "minorFont": {
+          "latin": "Segoe UI",
+          "ea": "",
+          "cs": ""
+        }
+      }
+    },
+    "ppt/theme/theme2.xml": {
+      "name": "Office Theme",
+      "colors": {
+        "dk1": "#000000",
+        "lt1": "#FFFFFF",
+        "dk2": "#44546A",
+        "lt2": "#E7E6E6",
+        "accent1": "#4472C4",
+        "accent2": "#ED7D31",
+        "accent3": "#A5A5A5",
+        "accent4": "#FFC000",
+        "accent5": "#5B9BD5",
+        "accent6": "#70AD47",
+        "hlink": "#0563C1",
+        "folHlink": "#954F72"
+      },
+      "fonts": {
+        "majorFont": {
+          "latin": "Calibri Light",
+          "ea": "",
+          "cs": ""
+        },
+        "minorFont": {
+          "latin": "Calibri",
+          "ea": "",
+          "cs": ""
+        }
+      }
+    },
+    "ppt/theme/theme3.xml": {
+      "name": "Office Theme",
+      "colors": {
+        "dk1": "#000000",
+        "lt1": "#FFFFFF",
+        "dk2": "#44546A",
+        "lt2": "#E7E6E6",
+        "accent1": "#4472C4",
+        "accent2": "#ED7D31",
+        "accent3": "#A5A5A5",
+        "accent4": "#FFC000",
+        "accent5": "#5B9BD5",
+        "accent6": "#70AD47",
+        "hlink": "#0563C1",
+        "folHlink": "#954F72"
+      },
+      "fonts": {
+        "majorFont": {
+          "latin": "Calibri Light",
+          "ea": "",
+          "cs": ""
+        },
+        "minorFont": {
+          "latin": "Calibri",
+          "ea": "",
+          "cs": ""
+        }
+      }
+    }
+  },
+  "layouts": {
+    "slide_size_emu": {
+      "w": 12188825,
+      "h": 6858000
+    },
+    "slide_size_in": {
+      "w": 13.33,
+      "h": 7.5
+    },
+    "masters": [
+      {
+        "master_index": 0,
+        "master_name": "Microsoft ILT Course Content Neutral",
+        "layouts": [
+          {
+            "name": "Title_Gradient_Light",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.67,
+                "top_pct": 40.38,
+                "width_pct": 67.2,
+                "height_pct": 17.95
+              },
+              {
+                "idx": 12,
+                "type": "BODY (2)",
+                "name": "Subtitle",
+                "left_pct": 4.77,
+                "top_pct": 61.47,
+                "width_pct": 67.2,
+                "height_pct": 3.6
+              },
+              {
+                "idx": 13,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 4.77,
+                "top_pct": 94.0,
+                "width_pct": 13.5,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 14,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 20.27,
+                "top_pct": 94.0,
+                "width_pct": 51.98,
+                "height_pct": 2.24
+              }
+            ],
+            "shape_count": 6
+          },
+          {
+            "name": "Section",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.67,
+                "top_pct": 49.35,
+                "width_pct": 67.2,
+                "height_pct": 8.98
+              },
+              {
+                "idx": 12,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 4.77,
+                "top_pct": 61.47,
+                "width_pct": 67.2,
+                "height_pct": 3.59
+              }
+            ],
+            "shape_count": 3
+          },
+          {
+            "name": "Section_Gradient Only",
+            "placeholders": [],
+            "shape_count": 1
+          },
+          {
+            "name": "Section_Gradient with container",
+            "placeholders": [],
+            "shape_count": 2
+          },
+          {
+            "name": "Section_Image",
+            "placeholders": [
+              {
+                "idx": 10,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 5",
+                "left_pct": 4.26,
+                "top_pct": 21.04,
+                "width_pct": 88.4,
+                "height_pct": 20.81
+              },
+              {
+                "idx": 11,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 1",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 3
+          },
+          {
+            "name": "Statement",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.26,
+                "top_pct": 15.75,
+                "width_pct": 88.28,
+                "height_pct": 55.62
+              },
+              {
+                "idx": 10,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 2",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 3
+          },
+          {
+            "name": "Text with Photo",
+            "placeholders": [
+              {
+                "idx": 11,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder 9",
+                "left_pct": 49.58,
+                "top_pct": 0.0,
+                "width_pct": 50.42,
+                "height_pct": 100.0
+              },
+              {
+                "idx": 10,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 5",
+                "left_pct": 4.32,
+                "top_pct": 22.02,
+                "width_pct": 42.1,
+                "height_pct": 15.35
+              },
+              {
+                "idx": 12,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 5",
+                "left_pct": 4.82,
+                "top_pct": 40.7,
+                "width_pct": 42.0,
+                "height_pct": 5.89
+              },
+              {
+                "idx": 13,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 5",
+                "left_pct": 4.82,
+                "top_pct": 47.22,
+                "width_pct": 35.91,
+                "height_pct": 28.74
+              },
+              {
+                "idx": 14,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 1",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 6
+          },
+          {
+            "name": "Headline with Text 3-Col",
+            "placeholders": [
+              {
+                "idx": 12,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 5",
+                "left_pct": 4.79,
+                "top_pct": 47.57,
+                "width_pct": 26.23,
+                "height_pct": 4.54
+              },
+              {
+                "idx": 13,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 5",
+                "left_pct": 4.79,
+                "top_pct": 52.55,
+                "width_pct": 26.12,
+                "height_pct": 28.74
+              },
+              {
+                "idx": 14,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 5",
+                "left_pct": 32.94,
+                "top_pct": 47.57,
+                "width_pct": 26.23,
+                "height_pct": 4.54
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 5",
+                "left_pct": 32.94,
+                "top_pct": 52.55,
+                "width_pct": 26.12,
+                "height_pct": 28.74
+              },
+              {
+                "idx": 16,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 5",
+                "left_pct": 61.08,
+                "top_pct": 47.57,
+                "width_pct": 26.23,
+                "height_pct": 4.54
+              },
+              {
+                "idx": 17,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 5",
+                "left_pct": 61.08,
+                "top_pct": 52.55,
+                "width_pct": 26.12,
+                "height_pct": 28.74
+              },
+              {
+                "idx": 18,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 24",
+                "left_pct": 4.1,
+                "top_pct": 26.43,
+                "width_pct": 87.09,
+                "height_pct": 15.71
+              },
+              {
+                "idx": 19,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 1",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 8
+          },
+          {
+            "name": "Quote",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title Placeholder 1",
+                "left_pct": 11.61,
+                "top_pct": 7.8,
+                "width_pct": 58.22,
+                "height_pct": 84.4
+              },
+              {
+                "idx": 10,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 1",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 3
+          },
+          {
+            "name": "Title & Non-bulleted text",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 6",
+                "left_pct": 4.82,
+                "top_pct": 6.67,
+                "width_pct": 90.38,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 10,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 20.92,
+                "width_pct": 90.38,
+                "height_pct": 15.44
+              },
+              {
+                "idx": 11,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 1",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 3
+          },
+          {
+            "name": "Title and Content",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 6.67,
+                "width_pct": 90.38,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 10,
+                "type": "OBJECT (7)",
+                "name": "Content Placeholder 3",
+                "left_pct": 4.79,
+                "top_pct": 20.93,
+                "width_pct": 90.38,
+                "height_pct": 15.44
+              },
+              {
+                "idx": 11,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 2",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 3
+          },
+          {
+            "name": "Four Column Bullet with Subtitles",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 2",
+                "left_pct": 4.82,
+                "top_pct": 6.67,
+                "width_pct": 90.38,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 16,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 4.79,
+                "top_pct": 20.97,
+                "width_pct": 20.77,
+                "height_pct": 7.18
+              },
+              {
+                "idx": 14,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 7",
+                "left_pct": 4.79,
+                "top_pct": 33.29,
+                "width_pct": 20.77,
+                "height_pct": 13.91
+              },
+              {
+                "idx": 17,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 27.99,
+                "top_pct": 20.97,
+                "width_pct": 20.78,
+                "height_pct": 7.18
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 9",
+                "left_pct": 27.99,
+                "top_pct": 33.19,
+                "width_pct": 20.77,
+                "height_pct": 13.91
+              },
+              {
+                "idx": 18,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 51.22,
+                "top_pct": 20.97,
+                "width_pct": 20.77,
+                "height_pct": 7.18
+              },
+              {
+                "idx": 19,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 7",
+                "left_pct": 51.22,
+                "top_pct": 33.29,
+                "width_pct": 20.77,
+                "height_pct": 13.91
+              },
+              {
+                "idx": 20,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 74.42,
+                "top_pct": 20.97,
+                "width_pct": 20.78,
+                "height_pct": 7.18
+              },
+              {
+                "idx": 21,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 9",
+                "left_pct": 74.42,
+                "top_pct": 33.19,
+                "width_pct": 20.77,
+                "height_pct": 13.91
+              },
+              {
+                "idx": 22,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 1",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 10
+          },
+          {
+            "name": "Title only 60% gradient",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 6.67,
+                "width_pct": 90.38,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 10,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 2",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 2
+          },
+          {
+            "name": "Small title - half page",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 2",
+                "left_pct": 4.79,
+                "top_pct": 6.67,
+                "width_pct": 45.18,
+                "height_pct": 5.43
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 2
+          },
+          {
+            "name": "Blank",
+            "placeholders": [
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 1
+          },
+          {
+            "name": "Blank_with Head",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 2
+          },
+          {
+            "name": "Title Only",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 85.55,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 10,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 2",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 2
+          },
+          {
+            "name": "Agenda_1-column",
+            "placeholders": [
+              {
+                "idx": 18,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.82,
+                "top_pct": 26.51,
+                "width_pct": 37.78,
+                "height_pct": 4.05
+              },
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.77,
+                "top_pct": 7.37,
+                "width_pct": 69.76,
+                "height_pct": 6.28
+              },
+              {
+                "idx": 19,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 1",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 3
+          },
+          {
+            "name": "Agenda_2-column",
+            "placeholders": [
+              {
+                "idx": 19,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.82,
+                "top_pct": 26.51,
+                "width_pct": 37.78,
+                "height_pct": 4.05
+              },
+              {
+                "idx": 20,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 45.23,
+                "top_pct": 26.51,
+                "width_pct": 37.78,
+                "height_pct": 4.05
+              },
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.77,
+                "top_pct": 7.37,
+                "width_pct": 78.24,
+                "height_pct": 6.28
+              },
+              {
+                "idx": 21,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 1",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 4
+          },
+          {
+            "name": "2-column_Text_with Subheads",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 16,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 4.79,
+                "top_pct": 23.25,
+                "width_pct": 42.81,
+                "height_pct": 3.59
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 30.41,
+                "width_pct": 42.79,
+                "height_pct": 10.59
+              },
+              {
+                "idx": 19,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 51.22,
+                "top_pct": 23.25,
+                "width_pct": 42.81,
+                "height_pct": 3.59
+              },
+              {
+                "idx": 20,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 51.29,
+                "top_pct": 30.41,
+                "width_pct": 42.55,
+                "height_pct": 10.59
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 6
+          },
+          {
+            "name": "3-column_Text_with Subheads",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 16,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 4.79,
+                "top_pct": 23.25,
+                "width_pct": 28.54,
+                "height_pct": 3.59
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 33.33,
+                "width_pct": 28.52,
+                "height_pct": 10.59
+              },
+              {
+                "idx": 22,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 35.74,
+                "top_pct": 23.25,
+                "width_pct": 28.54,
+                "height_pct": 3.59
+              },
+              {
+                "idx": 23,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 35.76,
+                "top_pct": 33.33,
+                "width_pct": 28.52,
+                "height_pct": 10.59
+              },
+              {
+                "idx": 24,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 66.69,
+                "top_pct": 23.25,
+                "width_pct": 28.54,
+                "height_pct": 3.59
+              },
+              {
+                "idx": 25,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 66.71,
+                "top_pct": 33.33,
+                "width_pct": 28.52,
+                "height_pct": 10.59
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 8
+          },
+          {
+            "name": "1-column_Text_with Image",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 38.64,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 16,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 4.79,
+                "top_pct": 23.25,
+                "width_pct": 38.67,
+                "height_pct": 3.59
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 30.41,
+                "width_pct": 38.65,
+                "height_pct": 10.59
+              },
+              {
+                "idx": 19,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 50.0,
+                "top_pct": 0.0,
+                "width_pct": 50.0,
+                "height_pct": 100.0
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 5
+          },
+          {
+            "name": "1-column_Callout_with Image",
+            "placeholders": [
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 33.33,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              },
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 20,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 33.33,
+                "top_pct": 23.06,
+                "width_pct": 61.81,
+                "height_pct": 64.61
+              },
+              {
+                "idx": 16,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 4.79,
+                "top_pct": 23.25,
+                "width_pct": 26.03,
+                "height_pct": 3.59
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 30.41,
+                "width_pct": 26.02,
+                "height_pct": 10.59
+              }
+            ],
+            "shape_count": 5
+          },
+          {
+            "name": "Top horizontal photo",
+            "placeholders": [
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 72.6,
+                "width_pct": 42.79,
+                "height_pct": 10.59
+              },
+              {
+                "idx": 20,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 51.29,
+                "top_pct": 72.6,
+                "width_pct": 42.55,
+                "height_pct": 10.59
+              },
+              {
+                "idx": 21,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 0.0,
+                "top_pct": 0.0,
+                "width_pct": 100.0,
+                "height_pct": 67.04
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 4
+          },
+          {
+            "name": "Top horizontal photo and subheads",
+            "placeholders": [
+              {
+                "idx": 16,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 4.79,
+                "top_pct": 72.27,
+                "width_pct": 44.0,
+                "height_pct": 2.69
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 78.12,
+                "width_pct": 43.98,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 22,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 51.21,
+                "top_pct": 72.27,
+                "width_pct": 43.93,
+                "height_pct": 2.69
+              },
+              {
+                "idx": 33,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 51.28,
+                "top_pct": 78.12,
+                "width_pct": 43.94,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 21,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 0.0,
+                "top_pct": 0.0,
+                "width_pct": 100.0,
+                "height_pct": 66.67
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 7
+          },
+          {
+            "name": "Top horizontal photo, subheads, and title",
+            "placeholders": [
+              {
+                "idx": 16,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 4.79,
+                "top_pct": 72.27,
+                "width_pct": 44.0,
+                "height_pct": 2.69
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 78.12,
+                "width_pct": 43.98,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 22,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 51.21,
+                "top_pct": 72.27,
+                "width_pct": 43.93,
+                "height_pct": 2.69
+              },
+              {
+                "idx": 33,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 51.28,
+                "top_pct": 78.12,
+                "width_pct": 43.94,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 21,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 0.0,
+                "top_pct": 16.81,
+                "width_pct": 100.0,
+                "height_pct": 50.23
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 7
+          },
+          {
+            "name": "2-column_Callout_with Image",
+            "placeholders": [
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 33.33,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              },
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 20,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 33.33,
+                "top_pct": 18.84,
+                "width_pct": 61.81,
+                "height_pct": 47.82
+              },
+              {
+                "idx": 22,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 33.33,
+                "top_pct": 70.43,
+                "width_pct": 61.81,
+                "height_pct": 2.69
+              },
+              {
+                "idx": 33,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 33.41,
+                "top_pct": 76.29,
+                "width_pct": 61.74,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 34,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 4.82,
+                "top_pct": 32.23,
+                "width_pct": 17.33,
+                "height_pct": 7.18
+              }
+            ],
+            "shape_count": 7
+          },
+          {
+            "name": "Summary",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 35.73,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              },
+              {
+                "idx": 17,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 35.73,
+                "top_pct": 28.09,
+                "width_pct": 44.0,
+                "height_pct": 3.59
+              },
+              {
+                "idx": 35,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 35.75,
+                "top_pct": 37.59,
+                "width_pct": 43.98,
+                "height_pct": 10.59
+              },
+              {
+                "idx": 34,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 4.82,
+                "top_pct": 37.07,
+                "width_pct": 16.63,
+                "height_pct": 7.18
+              }
+            ],
+            "shape_count": 6
+          },
+          {
+            "name": "Two photos with captions",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 19,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 4.79,
+                "top_pct": 23.2,
+                "width_pct": 44.01,
+                "height_pct": 39.18
+              },
+              {
+                "idx": 16,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 4.79,
+                "top_pct": 66.71,
+                "width_pct": 44.0,
+                "height_pct": 2.69
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 72.56,
+                "width_pct": 43.98,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 20,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 51.2,
+                "top_pct": 23.2,
+                "width_pct": 43.95,
+                "height_pct": 39.18
+              },
+              {
+                "idx": 22,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 51.21,
+                "top_pct": 66.71,
+                "width_pct": 43.93,
+                "height_pct": 2.69
+              },
+              {
+                "idx": 33,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 51.28,
+                "top_pct": 72.56,
+                "width_pct": 43.94,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 8
+          },
+          {
+            "name": "Three photos with captions",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 19,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 4.79,
+                "top_pct": 23.2,
+                "width_pct": 28.55,
+                "height_pct": 39.18
+              },
+              {
+                "idx": 16,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 4.79,
+                "top_pct": 66.71,
+                "width_pct": 28.54,
+                "height_pct": 2.69
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 72.56,
+                "width_pct": 28.52,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 20,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 35.71,
+                "top_pct": 23.2,
+                "width_pct": 28.55,
+                "height_pct": 39.18
+              },
+              {
+                "idx": 22,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 35.88,
+                "top_pct": 66.71,
+                "width_pct": 28.52,
+                "height_pct": 2.69
+              },
+              {
+                "idx": 33,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 35.96,
+                "top_pct": 72.56,
+                "width_pct": 28.52,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 21,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 66.67,
+                "top_pct": 23.2,
+                "width_pct": 28.59,
+                "height_pct": 39.14
+              },
+              {
+                "idx": 24,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 66.71,
+                "top_pct": 66.67,
+                "width_pct": 28.59,
+                "height_pct": 2.74
+              },
+              {
+                "idx": 34,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 66.67,
+                "top_pct": 72.53,
+                "width_pct": 28.59,
+                "height_pct": 2.28
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 11
+          },
+          {
+            "name": "Four photos with captions",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 19,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 4.79,
+                "top_pct": 33.31,
+                "width_pct": 20.82,
+                "height_pct": 29.12
+              },
+              {
+                "idx": 16,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 4.79,
+                "top_pct": 66.71,
+                "width_pct": 20.8,
+                "height_pct": 2.69
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 72.56,
+                "width_pct": 20.79,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 29,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 28.13,
+                "top_pct": 33.31,
+                "width_pct": 20.82,
+                "height_pct": 29.12
+              },
+              {
+                "idx": 22,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 27.99,
+                "top_pct": 66.71,
+                "width_pct": 20.79,
+                "height_pct": 2.69
+              },
+              {
+                "idx": 33,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 28.07,
+                "top_pct": 72.56,
+                "width_pct": 20.79,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 30,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 51.25,
+                "top_pct": 33.31,
+                "width_pct": 20.82,
+                "height_pct": 29.12
+              },
+              {
+                "idx": 24,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 51.18,
+                "top_pct": 66.71,
+                "width_pct": 20.79,
+                "height_pct": 2.69
+              },
+              {
+                "idx": 34,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 51.14,
+                "top_pct": 72.56,
+                "width_pct": 20.79,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 31,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 74.38,
+                "top_pct": 33.31,
+                "width_pct": 20.82,
+                "height_pct": 29.12
+              },
+              {
+                "idx": 26,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 74.44,
+                "top_pct": 66.71,
+                "width_pct": 20.79,
+                "height_pct": 2.69
+              },
+              {
+                "idx": 35,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 74.49,
+                "top_pct": 72.56,
+                "width_pct": 20.79,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 14
+          },
+          {
+            "name": "Device frame",
+            "placeholders": [
+              {
+                "idx": 20,
+                "type": "PICTURE (18)",
+                "name": "Picture Placeholder",
+                "left_pct": 63.36,
+                "top_pct": 29.77,
+                "width_pct": 36.64,
+                "height_pct": 48.29
+              },
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 46.36,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 16,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 4.79,
+                "top_pct": 23.25,
+                "width_pct": 46.38,
+                "height_pct": 3.59
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 30.41,
+                "width_pct": 46.36,
+                "height_pct": 10.59
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.06,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 8
+          },
+          {
+            "name": "Developer code right",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 33.16,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 23.25,
+                "width_pct": 33.16,
+                "height_pct": 10.59
+              },
+              {
+                "idx": 11,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 47.58,
+                "top_pct": 8.5,
+                "width_pct": 47.57,
+                "height_pct": 3.14
+              },
+              {
+                "idx": 16,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 1",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 5
+          },
+          {
+            "name": "Developer code full page",
+            "placeholders": [
+              {
+                "idx": 13,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 14",
+                "left_pct": 0.0,
+                "top_pct": 0.0,
+                "width_pct": 31.07,
+                "height_pct": 6.51
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.06,
+                "height_pct": 2.89
+              },
+              {
+                "idx": 11,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 4.75,
+                "top_pct": 15.8,
+                "width_pct": 90.39,
+                "height_pct": 3.14
+              }
+            ],
+            "shape_count": 4
+          },
+          {
+            "name": "3-column_Text_with Subheads and Icons",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 16,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 4.79,
+                "top_pct": 35.11,
+                "width_pct": 28.54,
+                "height_pct": 3.59
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 45.2,
+                "width_pct": 28.52,
+                "height_pct": 10.59
+              },
+              {
+                "idx": 22,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 35.74,
+                "top_pct": 35.11,
+                "width_pct": 28.54,
+                "height_pct": 3.59
+              },
+              {
+                "idx": 23,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 35.76,
+                "top_pct": 45.2,
+                "width_pct": 28.52,
+                "height_pct": 10.59
+              },
+              {
+                "idx": 24,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 66.69,
+                "top_pct": 35.11,
+                "width_pct": 28.54,
+                "height_pct": 3.59
+              },
+              {
+                "idx": 25,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 66.71,
+                "top_pct": 45.2,
+                "width_pct": 28.52,
+                "height_pct": 10.59
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 8
+          },
+          {
+            "name": "Text option_3 rows",
+            "placeholders": [
+              {
+                "idx": 11,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 11.4,
+                "top_pct": 21.24,
+                "width_pct": 83.75,
+                "height_pct": 11.33
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 11.4,
+                "top_pct": 36.44,
+                "width_pct": 83.75,
+                "height_pct": 11.39
+              },
+              {
+                "idx": 17,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 11.4,
+                "top_pct": 51.7,
+                "width_pct": 83.75,
+                "height_pct": 11.39
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              },
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 4.49
+              }
+            ],
+            "shape_count": 7
+          },
+          {
+            "name": "Text option_4 rows",
+            "placeholders": [
+              {
+                "idx": 11,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 11.4,
+                "top_pct": 21.24,
+                "width_pct": 83.75,
+                "height_pct": 11.33
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 11.4,
+                "top_pct": 36.44,
+                "width_pct": 83.75,
+                "height_pct": 11.39
+              },
+              {
+                "idx": 17,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 11.4,
+                "top_pct": 51.7,
+                "width_pct": 83.75,
+                "height_pct": 11.39
+              },
+              {
+                "idx": 19,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 11.4,
+                "top_pct": 66.95,
+                "width_pct": 83.75,
+                "height_pct": 11.39
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              },
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 4.49
+              }
+            ],
+            "shape_count": 9
+          },
+          {
+            "name": "Text option_5 rows",
+            "placeholders": [
+              {
+                "idx": 11,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 11.4,
+                "top_pct": 21.24,
+                "width_pct": 83.75,
+                "height_pct": 9.41
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 11.4,
+                "top_pct": 33.67,
+                "width_pct": 83.75,
+                "height_pct": 9.46
+              },
+              {
+                "idx": 17,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 11.4,
+                "top_pct": 46.15,
+                "width_pct": 83.75,
+                "height_pct": 9.46
+              },
+              {
+                "idx": 19,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 11.4,
+                "top_pct": 58.63,
+                "width_pct": 83.75,
+                "height_pct": 9.46
+              },
+              {
+                "idx": 21,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 11.4,
+                "top_pct": 71.11,
+                "width_pct": 83.75,
+                "height_pct": 9.46
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              },
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 4.49
+              }
+            ],
+            "shape_count": 11
+          },
+          {
+            "name": "Knowledge Check",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 6.28
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              },
+              {
+                "idx": 17,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 10.13,
+                "top_pct": 23.25,
+                "width_pct": 72.0,
+                "height_pct": 3.14
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 10.15,
+                "top_pct": 29.08,
+                "width_pct": 71.97,
+                "height_pct": 3.14
+              },
+              {
+                "idx": 20,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 10.13,
+                "top_pct": 65.51,
+                "width_pct": 72.0,
+                "height_pct": 3.14
+              },
+              {
+                "idx": 21,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 10.15,
+                "top_pct": 71.43,
+                "width_pct": 71.97,
+                "height_pct": 3.14
+              },
+              {
+                "idx": 22,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 11",
+                "left_pct": 10.13,
+                "top_pct": 44.37,
+                "width_pct": 72.0,
+                "height_pct": 3.14
+              },
+              {
+                "idx": 23,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 10.15,
+                "top_pct": 50.29,
+                "width_pct": 71.97,
+                "height_pct": 3.14
+              }
+            ],
+            "shape_count": 9
+          },
+          {
+            "name": "Resources",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 67.2,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 15,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 23.2,
+                "width_pct": 67.2,
+                "height_pct": 3.59
+              },
+              {
+                "idx": 19,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 30.35,
+                "width_pct": 67.2,
+                "height_pct": 13.28
+              },
+              {
+                "idx": 20,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 52.31,
+                "width_pct": 67.2,
+                "height_pct": 3.59
+              },
+              {
+                "idx": 21,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.81,
+                "top_pct": 59.46,
+                "width_pct": 67.2,
+                "height_pct": 13.28
+              },
+              {
+                "idx": 3,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 10",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 6
+          },
+          {
+            "name": "Title and Subtitle / 28 pt",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 90.32,
+                "height_pct": 6.28
+              },
+              {
+                "idx": 14,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.75,
+                "top_pct": 17.05,
+                "width_pct": 90.32,
+                "height_pct": 3.48
+              },
+              {
+                "idx": 15,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 4",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 3
+          },
+          {
+            "name": "Title and Subtitle / 20 pt",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 8.53,
+                "width_pct": 90.32,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 14,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 3",
+                "left_pct": 4.75,
+                "top_pct": 15.05,
+                "width_pct": 90.32,
+                "height_pct": 3.48
+              },
+              {
+                "idx": 15,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 2",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 3
+          },
+          {
+            "name": "Title only 100% gradient",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 6.67,
+                "width_pct": 90.38,
+                "height_pct": 4.49
+              },
+              {
+                "idx": 10,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 3",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 3
+          },
+          {
+            "name": "Blank slide full gradient",
+            "placeholders": [
+              {
+                "idx": 10,
+                "type": "FOOTER (15)",
+                "name": "Footer Placeholder 2",
+                "left_pct": 4.75,
+                "top_pct": 93.63,
+                "width_pct": 34.05,
+                "height_pct": 2.89
+              }
+            ],
+            "shape_count": 2
+          },
+          {
+            "name": "Closing logo slide",
+            "placeholders": [],
+            "shape_count": 3
+          },
+          {
+            "name": "Closing / CTA",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.82,
+                "top_pct": 23.19,
+                "width_pct": 46.37,
+                "height_pct": 6.28
+              }
+            ],
+            "shape_count": 2
+          },
+          {
+            "name": "Blank 100%",
+            "placeholders": [],
+            "shape_count": 1
+          },
+          {
+            "name": "Glyph library - 18 up",
+            "placeholders": [
+              {
+                "idx": 16,
+                "type": "BODY (2)",
+                "name": "Text 1",
+                "left_pct": 9.43,
+                "top_pct": 30.99,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 17,
+                "type": "BODY (2)",
+                "name": "Text 2",
+                "left_pct": 24.05,
+                "top_pct": 30.99,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 18,
+                "type": "BODY (2)",
+                "name": "Text 3",
+                "left_pct": 38.68,
+                "top_pct": 30.99,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 19,
+                "type": "BODY (2)",
+                "name": "Text 4",
+                "left_pct": 53.3,
+                "top_pct": 30.99,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 20,
+                "type": "BODY (2)",
+                "name": "Text 5",
+                "left_pct": 67.92,
+                "top_pct": 30.99,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 21,
+                "type": "BODY (2)",
+                "name": "Text 6",
+                "left_pct": 82.54,
+                "top_pct": 30.99,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 34,
+                "type": "BODY (2)",
+                "name": "Text 1",
+                "left_pct": 9.43,
+                "top_pct": 49.6,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 35,
+                "type": "BODY (2)",
+                "name": "Text 2",
+                "left_pct": 24.05,
+                "top_pct": 49.6,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 36,
+                "type": "BODY (2)",
+                "name": "Text 3",
+                "left_pct": 38.67,
+                "top_pct": 49.6,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 37,
+                "type": "BODY (2)",
+                "name": "Text 4",
+                "left_pct": 53.29,
+                "top_pct": 49.6,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 38,
+                "type": "BODY (2)",
+                "name": "Text 5",
+                "left_pct": 67.92,
+                "top_pct": 49.6,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 39,
+                "type": "BODY (2)",
+                "name": "Text 6",
+                "left_pct": 82.54,
+                "top_pct": 49.6,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 40,
+                "type": "BODY (2)",
+                "name": "Text 1",
+                "left_pct": 9.43,
+                "top_pct": 68.22,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 41,
+                "type": "BODY (2)",
+                "name": "Text 2",
+                "left_pct": 24.05,
+                "top_pct": 68.22,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 42,
+                "type": "BODY (2)",
+                "name": "Text 3",
+                "left_pct": 38.67,
+                "top_pct": 68.22,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 43,
+                "type": "BODY (2)",
+                "name": "Text 4",
+                "left_pct": 53.29,
+                "top_pct": 68.22,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 44,
+                "type": "BODY (2)",
+                "name": "Text 5",
+                "left_pct": 67.92,
+                "top_pct": 68.22,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 45,
+                "type": "BODY (2)",
+                "name": "Text 6",
+                "left_pct": 82.54,
+                "top_pct": 68.22,
+                "width_pct": 14.06,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title",
+                "left_pct": 9.44,
+                "top_pct": 84.76,
+                "width_pct": 86.12,
+                "height_pct": 5.61
+              }
+            ],
+            "shape_count": 19
+          },
+          {
+            "name": "Title_Gradient_Dark Blue",
+            "placeholders": [
+              {
+                "idx": 0,
+                "type": "TITLE (1)",
+                "name": "Title 1",
+                "left_pct": 4.67,
+                "top_pct": 40.38,
+                "width_pct": 67.2,
+                "height_pct": 17.95
+              },
+              {
+                "idx": 12,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 4.77,
+                "top_pct": 61.47,
+                "width_pct": 67.2,
+                "height_pct": 3.59
+              },
+              {
+                "idx": 13,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 4.77,
+                "top_pct": 94.0,
+                "width_pct": 13.5,
+                "height_pct": 2.24
+              },
+              {
+                "idx": 14,
+                "type": "BODY (2)",
+                "name": "Text Placeholder 4",
+                "left_pct": 20.27,
+                "top_pct": 94.0,
+                "width_pct": 51.98,
+                "height_pct": 2.24
+              }
+            ],
+            "shape_count": 6
+          }
+        ]
+      }
+    ]
+  }
+}
