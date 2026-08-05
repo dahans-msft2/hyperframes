@@ -248,8 +248,8 @@ Never concatenate it after render. Authored in, it survives re-render by constru
 Write the vector ledger **before** the timeline. Then stamp seams from it, then verify:
 
 ```
-node tools/seam-stamp.mjs --ledger ledger.json --write index.html
-node tools/seam-gate.mjs  verify --ledger ledger.json --project .
+node <motion-doctrine>/scripts/seam-stamp.mjs --ledger ledger.json --write index.html
+node <motion-doctrine>/scripts/seam-gate.mjs  verify --ledger ledger.json --project .
 ```
 
 Motion must **perform**, not breathe. No idle wobble. Each move visibly caused by the last.
