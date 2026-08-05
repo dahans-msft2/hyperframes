@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Learn ILT — Phase 0 brand spike</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      /* OS-bundled brand faces — local() satisfies the render contract; the shipping
+         build embeds .woff2 from fonts/ per learn-ilt brand doctrine. */
+      @font-face { font-family: "Segoe UI Semibold"; src: local("Segoe UI Semibold"), local("Segoe UI"); font-weight: 600; font-display: swap; }
+      @font-face { font-family: "Segoe UI"; src: local("Segoe UI"); font-weight: 400; font-display: swap; }
+      * { box-sizing: border-box; }
+      html, body {
+        margin: 0; padding: 0; width: 1920px; height: 1080px; overflow: hidden;
+        /* opaque stage ground — keeps the cut-the-curve seam from flashing white */
+        background: #fff9f5;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        color: #091f2e;
+      }
+      #root { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #fff9f5; }
+
+      .clip { position: absolute; inset: 0; }
+      .scene-inner { position: absolute; inset: 0; }
+
+      /* --- gradient fields (never a fill on the root) + mandatory dither --- */
+      .field { position: absolute; inset: 0; z-index: 0; }
+      .field.wash { background: radial-gradient(120% 120% at 12% 4%, #fffcfa 0%, #fff9f5 46%, #f7f2f9 100%); }
+      .field.hero { background: radial-gradient(92% 125% at 92% 6%, #ce88df 0%, #86a0eb 20%, #78a6ed 38%, #b1dbde 56%, #fcebe6 74%, #fdf5f1 100%); }
+      .field::after {
+        content: ""; position: absolute; inset: 0; pointer-events: none;
+        opacity: 0.035; mix-blend-mode: overlay;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      .content { position: relative; z-index: 2; height: 100%; padding: 0 115px; display: flex; flex-direction: column; justify-content: center; }
+      .kicker { font-family: "Segoe UI Semibold", "Segoe UI", sans-serif; font-weight: 600; font-size: 14px; letter-spacing: 0.10em; text-transform: uppercase; color: #091f2e; margin: 0 0 18px; }
+      h1 { font-family: "Segoe UI Semibold", "Segoe UI", sans-serif; font-weight: 600; font-size: 72px; line-height: 1.05; letter-spacing: -0.01em; color: #091f2e; margin: 0; max-width: 60%; }
+      h2 { font-family: "Segoe UI Semibold", "Segoe UI", sans-serif; font-weight: 600; font-size: 42px; line-height: 1.1; color: #091f2e; margin: 0 0 46px; }
+      .sub { font-size: 22px; line-height: 1.5; color: #091f2e; margin: 26px 0 0; opacity: 0.82; }
+
+      /* --- scene B chart (bars = HTML divs, line = SVG polyline; accents on MARKS only) --- */
+      .plot { position: relative; width: 760px; height: 300px; }
+      .bars { position: absolute; inset: 0; display: flex; align-items: flex-end; justify-content: space-between; }
+      .bar { width: 96px; border-radius: 8px 8px 0 0; box-shadow: 0 2px 8px rgba(9, 31, 46, 0.1); }
+      .trend { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+      .months { width: 760px; display: flex; justify-content: space-between; margin-top: 16px; }
+      .month { width: 96px; text-align: center; font-size: 18px; font-weight: 600; color: #091f2e; }
+      .legend { display: flex; gap: 40px; margin-top: 40px; }
+      .legend span { display: inline-flex; align-items: center; gap: 12px; font-size: 18px; color: #091f2e; }
+      .sw { width: 20px; height: 20px; border-radius: 5px; }
+      .sw-line { width: 26px; height: 4px; border-radius: 2px; background: #0078d4; }
+    </style>
+  </head>
+  <body>
+    <div id="root"
+         data-composition-id="main"
+         data-start="0" data-width="1920" data-height="1080" data-duration="6.6">
+
+      <!-- Scene 1: title spotlight on hero-swoosh -->
+      <section id="sceneA" class="clip" data-start="0" data-duration="3.0" data-track-index="1">
+        <div class="scene-inner" id="sceneA-inner">
+          <div class="field hero"></div>
+          <div class="content">
+            <p class="kicker" id="a-kicker">Microsoft Learn</p>
+            <h1 id="a-title">Configure Windows Autopilot deployment</h1>
+            <p class="sub" id="a-sub">How device enrollment scales across your fleet</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scene 2: branded data viz on content-wash -->
+      <section id="sceneB" class="clip" data-start="2.6" data-duration="4.0" data-track-index="2">
+        <div class="scene-inner" id="sceneB-inner">
+          <div class="field wash"></div>
+          <div class="content">
+            <p class="kicker">Enrollment trend</p>
+            <h2>Autopilot enrollments climbed steadily</h2>
+            <div class="plot">
+              <div class="bars">
+                <div class="bar" style="height:96px;  background:#8661c5"></div>
+                <div class="bar" style="height:144px; background:#8661c5"></div>
+                <div class="bar" style="height:180px; background:#389a91"></div>
+                <div class="bar" style="height:132px; background:#8661c5"></div>
+                <div class="bar" style="height:216px; background:#389a91"></div>
+                <div class="bar" style="height:264px; background:#389a91"></div>
+              </div>
+              <svg class="trend" id="trend-line" viewBox="0 0 720 300" preserveAspectRatio="none" aria-hidden="true">
+                <polyline points="60,174 180,132 300,110 420,127 540,73 660,50" fill="none" stroke="#0078d4" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
+              </svg>
+            </div>
+            <div class="months">
+              <span class="month">Jan</span><span class="month">Feb</span><span class="month">Mar</span>
+              <span class="month">Apr</span><span class="month">May</span><span class="month">Jun</span>
+            </div>
+            <div class="legend">
+              <span><i class="sw" style="background:#8661c5"></i>Enrollments</span>
+              <span><i class="sw" style="background:#389a91"></i>Peak months</span>
+              <span><i class="sw-line"></i>Conversion rate</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      // initial states — set here, never in CSS (avoids gsap_css_transform_conflict)
+      gsap.set("#sceneB-inner", { x: 230, opacity: 0 });
+      gsap.set(".bar", { scaleY: 0, transformOrigin: "50% 100%" });
+      gsap.set("#trend-line", { opacity: 0 });
+
+      // Scene A — staggered arrival
+      tl.from("#a-kicker", { y: 40, opacity: 0, duration: 0.5, ease: "power3.out" }, 0.2);
+      tl.from("#a-title",  { y: 60, opacity: 0, duration: 0.7, ease: "power3.out" }, 0.35);
+      tl.from("#a-sub",    { y: 40, opacity: 0, duration: 0.6, ease: "power3.out" }, 0.62);
+
+      // Seam — cut-the-curve LEFT (the current): mirrored power4, fade dies at the cut,
+      // entry ignites mid-path at ~0.35 opacity.
+      tl.to("#sceneA-inner", { x: -230, duration: 0.34, ease: "power4.in" }, 2.56);
+      tl.to("#sceneA-inner", { opacity: 0, duration: 0.22, ease: "none" }, 2.56);
+      tl.set("#sceneB-inner", { opacity: 0.35 }, 2.72);
+      tl.to("#sceneB-inner", { x: 0, duration: 0.34, ease: "power4.out" }, 2.72);
+      tl.to("#sceneB-inner", { opacity: 1, duration: 0.30, ease: "none" }, 2.72);
+
+      // Scene B — bars grow from the baseline, then the trend line resolves
+      tl.to(".bar", { scaleY: 1, duration: 0.7, ease: "power2.out", stagger: 0.08 }, 3.28);
+      tl.to("#trend-line", { opacity: 1, duration: 0.5, ease: "none" }, 4.0);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
