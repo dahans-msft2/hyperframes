@@ -21,6 +21,31 @@ law.** `motion-doctrine` is the gateway; it routes to `cut-the-curve`, `seam-cra
 `PROFILE` · `FRAME_PRESET` · approved `script.md` · approved `design-plan.md` ·
 `narration.wav` · `transcript.json` · `OUTPUT_DIR` · `RUN_ID`
 
+## The project arrives pre-scaffolded — fill it, don't rebuild it
+
+`tools/new_project.py` has already stamped the project before you get it. Do NOT re-create what is
+already there:
+
+- **Chrome scenes are already stamped and wired.** The required opening/closing beats — `01-bumper`,
+  `02-title`, `03-objectives`, `90-recap`, `91-cta` — exist in `scenes/` (copied fresh from the kit)
+  and are already listed in `scenes.json`, each carrying `__FILL__` placeholder CONFIG. Your job for
+  chrome is to **fill those placeholders** with the real values from the approved `script.md` (title
+  lines, objective chips, recap payoff, CTA) — NOT to re-copy the kit block or re-add the
+  `scenes.json` entry. Re-time them to the narration anchors like any scene, and swap a chrome
+  block's default only if the design plan says so (e.g. a custom dark-field recap).
+- **The body is an empty slot.** `scenes.json` carries a `body_slot` marker (`insert_after` /
+  `before` / `target_scene_count`) between the opening and closing chrome. Author the teaching-body
+  scenes there — block beats and custom beats per the design plan — and insert them into the
+  `scenes` array in that region.
+- **Frozen assets are already in place** (`fonts/`, `assets/grounds/`, `assets/vendor/gsap.min.js`,
+  `assets/AI_End_Card.mp4`). Don't re-copy them.
+- **`__FILL__` is a hard stop.** Before you declare the build done, run
+  `py tools/check_placeholders.py --project <dir>` — it must exit clean. A surviving `__FILL__` is an
+  unfilled chrome scene and must not render.
+
+If the project was NOT scaffolded (no chrome in `scenes/`), fall back to copying the chrome blocks
+yourself per the kit-block section below — but the normal path is **fill, not rebuild**.
+
 ## Stage timing
 
 Log timing at entry and exit:
@@ -172,7 +197,8 @@ build time, so parallelising it is the single biggest speed-up available:
    that keeps parallel authoring from reading as disconnected slides: seams are stamped centrally
    at assembly, but each worker must know which way its scene *enters* and *leaves* so its interior
    motion resolves toward the cut instead of fighting it.
-1. Copy in every block scene first, so `scenes.json` and all block skeletons exist.
+1. Copy in every **body** block scene first (the chrome blocks are already scaffolded), so
+   `scenes.json` and all block skeletons exist.
 2. Dispatch one `@hyperframes-scene-writer` per **custom** scene **in parallel**, each with its
    `SCENE_ID`, `DURATION`, the `NARRATION_SLICE` it covers, its `DESIGN_ROW`, **and its inbound
    seam + required exit vector** from the seam contract. They run independently and each

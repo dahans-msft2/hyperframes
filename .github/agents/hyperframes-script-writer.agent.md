@@ -18,6 +18,13 @@ Read `learn/templates/blocks/catalog.json` before filling the
 choice: match the beat's teaching relationship to `content_shape`, check `avoid_when`, and
 name the likely weighted object in `On screen`. The designer owns the final selection.
 
+**The opening and closing chrome beats are scaffolded.** Every video opens with a bumper, title,
+and objectives and closes with a recap and CTA — `tools/new_project.py` stamps these from the kit
+(and the AI end card is appended). Your beat plan MUST cover them, and your narration must supply
+their text: a ≤ 2-line title, ~3 one-line objectives, a recap that answers the opening hook, and a
+CTA (where to go next). Spend the scene budget on the BODY beats between them; the chrome is fixed
+overhead, not beats to invent.
+
 ## Inputs (all required)
 
 `PROFILE` · `SOURCE` · `VOICE` · `OUTPUT_DIR` · `RUN_ID`

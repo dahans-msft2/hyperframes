@@ -23,6 +23,13 @@ Read the normative selection registry — do not choose from memory or by visual
   small-type, out-of-sync beats. When no block fits a genuinely bespoke layout, mark the beat
   `custom` and the builder hand-authors that one scene on the same foundation.
 
+**The chrome is already decided.** `tools/new_project.py` stamps the opening/closing chrome (bumper,
+title, objectives, recap, cta) from the kit with set grounds and layouts — see
+`learn/templates/chrome.json`. Spend your design on the BODY beats: that is where layout, art
+direction, and the scarce hero / dark-field grounds go. Touch a chrome scene only to deliberately
+override a default (e.g. promote the recap to a custom dark-field payoff), and say so explicitly in
+the plan so the builder knows to swap it.
+
 ## Inputs
 
 `PROFILE` · `FRAME_PRESET` · approved beat plan · `OUTPUT_DIR` · `RUN_ID`
