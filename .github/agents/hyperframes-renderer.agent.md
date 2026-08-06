@@ -70,32 +70,32 @@ bounds. If it is outside them, stop and report — do not render a video that wi
 
 ## Render
 
-Render through the fail-fast wrapper, never bare `npx hyperframes render`:
+Native render. **Run preflight first (below)** so ffmpeg/ffprobe are on PATH, then render with
+the pinned CLI from a warmed shell:
 
 ```
-pwsh tools/render.ps1 -Project <dir> -RunId <id> -Note "<why this attempt>"
+ffmpeg -hide_banner -version | Out-Null      # warm the binary once (see cold-start note below)
+npx --yes hyperframes@<pinned> render --project <dir>
 ```
 
-The wrapper is cwd-independent (it resolves its own root), so you do **not** need to
-`Set-Location` first. In one controlled attempt it: pins one CLI version (from
-`config.json`), **executes** ffmpeg/ffprobe with a measured probe that tells a cold-start
-timeout apart from a real failure and checks for an H.264 encoder, binds
-`HYPERFRAMES_FFMPEG_PATH` / `HYPERFRAMES_FFPROBE_PATH` explicitly, writes an attempt manifest
-under `review/render-attempts/` **before** running, marks success only after independently
-probing the output MP4 (video+audio, dimensions, fps, duration), and cleans **only its own**
-process tree on every exit path.
+Pin `<pinned>` from `config.json` (`cli.published_version`) — never bare `npx hyperframes`, which
+prompts and hangs. Render from the project's own shell; fonts and assets resolve project-relative.
 
-**One attempt, no blind retry.** If it fails it tells you the classified reason. Re-running is a
-conscious act — pass a new `-Note` explaining the changed hypothesis. Do not loop it.
+**Warm the binary before the first render on a machine.** Measured here, a first-run WinGet ffmpeg
+blocked **~29 seconds in process creation** while Defender scanned it — five times past the CLI's
+fixed 5-second internal probe, producing a false "FFmpeg cannot start" *after* every frame was
+captured. Running `ffmpeg -version` once (or `preflight.ps1 -Persist`) scans it so the CLI's probe
+hits a warm file. Once scanned, it stays warm for the session.
 
-**Why it warms the binaries first.** Measured on this machine, a first-run WinGet ffmpeg blocked
-**~29 seconds in process creation alone** while Defender scanned it — five times past the CLI's
-fixed 5-second internal probe. That is exactly the false "FFmpeg cannot start" that cost the
-first Entra render. The wrapper's probe scans the binary once so the CLI's later probe hits a
-warm, already-scanned file.
+**One attempt, no blind retry.** If render fails, read the classified reason, fix the cause, and
+re-run as a conscious act with a changed hypothesis — do not loop.
 
 Fonts are embedded, not fetched. If a glyph renders as fallback, the `@font-face` is wrong —
 stop, do not ship it.
+
+> Native-first: the `render.ps1` fail-fast wrapper was dropped. It added explicit
+> `HYPERFRAMES_FFMPEG_PATH` binding, a `review/render-attempts/` manifest, and an output-MP4
+> probe on top of native render — re-introduce it only if bare render proves unreliable.
 
 ## Preflight — before anything expensive
 
@@ -156,7 +156,7 @@ Promote from `renders/` into the project's deliverable set:
 ## Before you report done
 
 - [ ] `. tools/preflight.ps1 -FixPath` passed (dot-sourced, so ffmpeg is on PATH in THIS shell)
-- [ ] Render ran through `tools/render.ps1` and reported **RENDER PASS** with a valid output probe
+- [ ] `npx hyperframes render` produced an MP4; probe it with `ffprobe` (video+audio, dims, fps, duration)
 - [ ] WAV duration inside profile bounds, measured with `ffprobe` — **not** the TTS self-report
 - [ ] `py tools/diff_transcript.py narration.txt transcript.json` reports CLEAN
 - [ ] `npx hyperframes check` passed
