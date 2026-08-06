@@ -24,3 +24,8 @@ assets/icon-index.json
 # Learn video must end with it, and a missing disclosure is a rubric
 # disqualifier. The blanket *.mp4 above would otherwise exclude it.
 !assets/AI_End_Card.mp4
+
+# --- Regenerable run artefacts (recreated on the next tool run) ---------------
+# Python bytecode cache, and the audition_voices.py voice cache.
+__pycache__/
+.voice-catalog.json

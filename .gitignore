@@ -181,3 +181,6 @@ tmp/
 
 # Local editor settings
 .zed/
+
+# VS Code multi-root workspace files (per-developer; none are tracked)
+*.code-workspace
