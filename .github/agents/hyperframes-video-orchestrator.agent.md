@@ -193,10 +193,22 @@ it as its own fact:
 py tools/review_index.py record --project <dir> --gate 8 --status authorized --note "user approved render spend"
 ```
 
-Then the renderer runs the fail-fast wrapper. Gate 8 becomes `passed` **only** after a validated
-MP4 exists — the ledger refuses a `passed` render with no `--artifact`. A failed render records
-`--status failed` and keeps the authorization on record. Never record `passed` at the moment you
-approve: that once made the review page claim a finished render before anything had rendered.
+Then run the fail-fast render wrapper **yourself, as one blocking command** — do NOT dispatch a
+subagent to package. A stateless renderer subagent has repeatedly returned *before* promoting the
+scratch render, orphaning the job (the scratch MP4 renders but nothing captions, thumbnails, or
+validates it). Running the wrapper directly removes that failure mode: it is one process that either
+finishes or fails.
+
+```
+. tools/preflight.ps1 -FixPath                 # ffmpeg/ffprobe on PATH first
+py tools/render_and_package.py --project <dir>
+```
+
+`render_and_package.py` runs placeholder-guard → lint → render → promote scratch → captions →
+thumbnail → verify and exits 0 **only** when a validated MP4 + VTT + thumbnail all exist. Record
+Gate 8 `passed` with the MP4 as `--artifact` **only after it exits 0**; on non-zero, record
+`--status failed` with the printed reason and keep the authorization on record. There is no "render
+started" success state — a return without a validated, packaged MP4 is a failure.
 
 ### Gate 9 — Delivery
 

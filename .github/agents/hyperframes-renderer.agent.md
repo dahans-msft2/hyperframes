@@ -81,16 +81,21 @@ packaged MP4 is a **failure** — close the stage `--status failed` and say so p
 chain below (render → promote scratch → captions → thumbnail → verify) happens in one invocation,
 after the render has fully finished, before you return.
 
-Native render. **Run preflight first (below)** so ffmpeg/ffprobe are on PATH, then render with
-the pinned CLI from a warmed shell:
+Native render. **The whole render → package chain is one deterministic script — run it, do NOT
+hand-run the steps.** `tools/render_and_package.py` runs placeholder-guard → lint → render → promote
+scratch → captions → thumbnail → verify and exits 0 **only** when a validated MP4 + VTT + thumbnail
+all exist. It cannot half-finish — which is the whole point, given the orphan-render failures above:
 
 ```
-ffmpeg -hide_banner -version | Out-Null      # warm the binary once (see cold-start note below)
-npx --yes hyperframes@<pinned> render --project <dir>
+. tools/preflight.ps1 -FixPath                 # ffmpeg/ffprobe on PATH first
+py tools/render_and_package.py --project <dir>
 ```
 
-Pin `<pinned>` from `config.json` (`cli.published_version`) — never bare `npx hyperframes`, which
-prompts and hangs. Render from the project's own shell; fonts and assets resolve project-relative.
+It pins the CLI from `config.json`, reads the caption offset from `scenes.json` narration.start, and
+picks up a project-local `captions.lexicon.json` if present. Report its exit verbatim: 0 = packaged
+(close the stage `passed`, artifact = the MP4); non-zero = failed (close `--status failed` with the
+printed reason). Do NOT re-implement promote/caption/thumbnail/verify by hand — hand-running that
+chain is exactly what orphaned a render before.
 
 **Warm the binary before the first render on a machine.** Measured here, a first-run WinGet ffmpeg
 blocked **~29 seconds in process creation** while Defender scanned it — five times past the CLI's
