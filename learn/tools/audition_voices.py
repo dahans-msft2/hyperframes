@@ -97,6 +97,10 @@ _STRIP = re.compile(r"^\s*(#|\||>|-\s|\*\s|\[)")
 
 def narration_from(path: pathlib.Path) -> str:
     text = path.read_text(encoding="utf-8")
+    text = re.sub(r"<!--.*?-->", "", text, flags=re.S)  # drop metadata comment headers (URLs skew difficulty)
+    section = re.search(r"^#+\s*Narration\s*$(.*?)(?=^#+\s|\Z)", text, flags=re.S | re.M | re.I)
+    if section:
+        text = section.group(1)  # scope to the spoken narration, not the beat plan / ledger tables
     blocks = _FENCE.findall(text)
     if blocks:
         return "\n".join(blocks)
