@@ -50,8 +50,10 @@ and the video reads rushed and empty at once. Fewer beats, each richer.
 
 ## Verify and enrich against Microsoft Learn (Docs MCP)
 
-The local `SOURCE` can be stale — a product renamed, a limit changed, a feature moved. Ground the
-drift-prone claims against current first-party docs:
+The **Docs MCP is a core tool, not an optional nicety** — `microsoft_docs_search` /
+`microsoft_docs_fetch` against live learn.microsoft.com (server `microsoft_docs_mcp`). Run this
+grounding pass on every script. The local `SOURCE` can be stale — a product renamed, a limit
+changed, a feature moved — so ground the drift-prone claims against current first-party docs:
 
 - **Verify.** For every product name, capability, limit, or portal path the narration asserts,
   confirm it with `microsoft_docs_search("[product] [feature]")` then `microsoft_docs_fetch(url)`
@@ -60,6 +62,9 @@ drift-prone claims against current first-party docs:
   source: search, fetch, and cite the exact Learn URLs in a comment block at the top of `script.md`.
 - **Scope unchanged.** This is fact-checking, not licence to wander. Still one unit — do not fold
   in sibling-unit material. Verify what this video already teaches; don't expand what it teaches.
+- **Outage fallback.** Only if the server is genuinely unreachable: ground against the local
+  source clone and flag every drift-prone claim as `unverified` in the fidelity ledger — never
+  silently skip the pass.
 
 Record it in the fidelity ledger: a drift-prone claim's row cites the local source **and** the
 Learn URL that confirms it.

@@ -27,6 +27,7 @@ supersede upstream **motion** guidance — see the routing table.
 | `frame.md` handling, composition patterns, beat planning | `hyperframes-creative` (vendored) |
 | Scene components | the **Learn-ILT kit** — `templates/blocks/catalog.json`; upstream mechanics in `hyperframes-registry` (vendored) |
 | TTS + SSML + transcription + icons | repo tools: `tools/azure_tts.py`, `tools/make_ssml.py`, `npx hyperframes transcribe`, `tools/icon_index.py` (voice selection: `learn-narration-doctrine`) |
+| Source grounding & fact-check against **current** Learn docs | **Docs MCP — a core tool**: `microsoft_docs_search` / `microsoft_docs_fetch` (server `microsoft_docs_mcp`, configured in `.vscode/mcp.json`). Ground every drift-prone claim here; the local source clone is the fallback only when the server is genuinely unreachable. |
 | CLI, lint, check, render | `hyperframes-cli` (vendored) |
 
 **`motion-doctrine` is adopted whole and unmodified.** Its vector law, vector ledger,
