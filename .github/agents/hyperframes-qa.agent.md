@@ -40,7 +40,7 @@ comes from it, never from a constant you remember.
 Cheap to fix here, expensive after audio exists.
 
 **Pass B — before render.** Built composition. Snapshots, contrast, structure, dead zones,
-end card, duration.
+reveal order, in-frame, end card, duration.
 
 ## The bar
 
@@ -70,7 +70,8 @@ misspelled product name does not ship.
 |---|---|
 | Contrast | `npx hyperframes check` + `py tools/contrast_gate.py` |
 | End card | static assertion: present · last · ends at root duration |
-| C2 dead zones | `animation-map.mjs` against the profile's `max_static_stretch_seconds` |
+| Reveal order · in-frame · dead-zone gate | native `npx hyperframes check` reads `index.motion.json` (built by `emit_motion_spec.py` from the profile) |
+| C2 dead zones (fine judgement) | `animation-map.mjs` against the profile's `max_static_stretch_seconds` |
 | C4 structure | required elements from the profile present; `seam-gate.mjs` exit 0 |
 | C5 length | root `data-duration` and narration word count against profile bounds |
 | Scene density | scene count in `scenes.json` vs `profile.py` `scene_count_target`/`scene_count_max`; flag scenes under `scene_seconds.min` |
