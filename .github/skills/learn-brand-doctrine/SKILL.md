@@ -208,6 +208,26 @@ icons, glyphs, and diagrams,"** and names four sanctioned sources:
 - Microsoft IconCloud
 - Fluent Icon Collections
 
+### Reuse the source's own visuals before inventing new ones
+
+The learning content you are adapting already ships its own **on-brand, authoritative** visuals —
+screenshots, diagrams, and illustrations in the source module's `media/` folder. **Reuse them
+first.** A diagram from the module is already correct, already approved, and already on palette;
+re-drawing it from scratch risks drift and wastes effort. Break a source diagram into its parts and
+**animate** it — each element revealing on its narrated beat — rather than dropping the flat PNG:
+that earns the motion a raster can't give while keeping the source's own authority. Inventory the
+source module's media at planning time and map each reusable asset to the beat it serves.
+
+### Offer the author a capture, don't silently mock one
+
+Where a beat teaches something that lives in a **real UI** — a portal step, an admin-center
+setting, a report, a dashboard — a genuine **screenshot or screen recording** teaches it better
+than an invented mock, and a fabricated UI risks being subtly wrong. When planning such a beat,
+**flag it as a capture opportunity** and offer the author the chance to supply the real asset
+(the `media-screenshot` / `media-screen-recording` blocks are built for exactly this). Give a
+concrete suggestion — *what* to capture and *where* it lands — so the author can drop it in. Never
+fabricate a portal UI as fact when a real capture was there for the asking.
+
 **Hand-drawn SVG primitives are a legitimate choice, not the only one.** If a beat needs a
 device, a cloud, a person, or a service mark and a real icon or illustration would carry it
 better, use one — on the Learn palette. A 1px outline rectangle standing in for "a device" is a

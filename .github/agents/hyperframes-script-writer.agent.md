@@ -93,6 +93,13 @@ lurch.>
 |---|---|---|---|---|
 | 1 | … | … | … | … |
 
+In `On screen`, surface visual-source opportunities early so the designer and author see them:
+name a **reusable source asset** when the module already ships one for the beat (a diagram,
+screenshot, or illustration in its `media/` folder), and flag a **capture opportunity** —
+`capture: <what>` — for any beat that teaches a real UI (a portal step, a setting, a report) where
+an author-supplied screenshot or screen recording would teach better than an invented mock. The
+designer owns the final selection; you just make sure the reuse-or-capture chance isn't missed.
+
 ## Source-fidelity ledger
 
 | Claim in narration | Where it comes from in the source | Verbatim? |

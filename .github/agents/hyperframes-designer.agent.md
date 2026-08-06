@@ -82,7 +82,7 @@ cuts. A richer scene is more happening within one ground, not more cuts.
 
 Preset: learn-ilt   Profile: <profile>
 
-| Beat | Component | Kind | Why it fits | Ground | Config / Elements | Accent use | Asset? |
+| Beat | Component | Kind | Why it fits | Ground | Config / Elements | Accent use | Asset / capture |
 |---|---|---|---|---|---|---|---|
 | 1 | title-hero | block | the opening title owns the frame | hero-swoosh | kicker + title + subtitle | ink only (accent rule) | — |
 | 2 | stat-spotlight | block | one dramatic metric carries the beat | dark-field | value + label + caption | white ink (dark ground) | — |
@@ -93,6 +93,8 @@ Preset: learn-ilt   Profile: <profile>
 block carries. `Kind` is `block` or `custom`. For a `block`, `Config / Elements` names the CONFIG
 values the builder must set;
 the chosen `Ground` is applied by the builder as `data-ground` on the block's `#root`.
+**Asset / capture** names each beat's visual source: a **reused** source-module asset (name the
+file), a **capture opportunity** to offer the author (`capture: <what>`), a generated asset, or `—`.
 
 ## Frame obligations
 For every beat, state its ground plane, its two depth planes, and its object with weight.
@@ -108,9 +110,21 @@ Also return the builder's shopping list:
   `title-hero, stat-spotlight, chart-bar, list-steps`.
 - **Custom scenes** to hand-author (the `custom` rows), if any — authored on `_foundation.css`.
 
-## Assets
-<only the beats that earn a generated asset, and what it carries that geometry cannot>
-Most beats will not need one. Schematic beats are usually better as authored geometry —
+## Assets — reuse the source's own first, then flag capture opportunities
+
+**Inventory the source module's own media before anything else.** The unit ships on-brand,
+authoritative screenshots, diagrams, and illustrations in its `media/` folder — reuse or adapt them
+per beat (crop a diagram into its parts and animate each on its narrated beat; the source's artwork
+is already correct and on palette). List each reused source asset against the beat it serves.
+
+**Then flag capture opportunities for the author.** For any beat that teaches a real UI — a portal
+step, a setting, a report, a dashboard — a genuine screenshot or screen recording teaches better
+than an invented mock (`media-screenshot` / `media-screen-recording` carry them). Call it out with
+a concrete suggestion (what to capture, where it lands) so the author can add it; do not fabricate
+a portal UI as fact.
+
+**Only then, generated assets** — and only where a beat earns one (`learn-brand-doctrine` asset
+policy). Most beats will not need one. Schematic beats are usually better as authored geometry —
 it can animate causally; a raster illustration cannot.
 
 ## Hero-swoosh budget
@@ -204,6 +218,21 @@ offset:
 
 A beat where nothing moves with the words is the "could this have been a PDF" failure the rubric
 scores. For each beat, name the one-to-three cues and the spoken word each one lands on.
+
+## Motion budget comes from the profile
+
+The profile's `max_static_stretch_seconds` is the dead-zone budget, and it sets how densely you
+must move: a launch-promo (2.5s) needs a carrier motion in every beat; a demo-walkthrough (12s)
+lets a screen recording hold. Resolve it (`py tools/profile.py <PROFILE>`) and pitch each beat's
+motion density to fit — this number is not advisory, the builder compiles it into a native
+`keepsMoving` assertion the composition is checked against.
+
+Two markers you plan here become native `check` assertions, so place them deliberately:
+
+- `data-reveal-after="#a #b"` on any dependent element → a native `before` gate (it cannot appear
+  before what it depends on).
+- `data-keep-in-frame` on any full-frame stage that could shift off-canvas → a native
+  `staysInFrame` gate.
 
 ## Engagement beats — design supports the narrative
 
