@@ -1,7 +1,7 @@
 {
   "version": "2026-08-05",
-  "description": "Learn-ILT kit blocks — pre-built, pre-animated, on-brand sub-composition scenes. PREFER a kit block over a hand-authored archetype whenever a beat matches one: a block ships a finished, brand-correct, seek-safe timeline, so it removes the hand-authoring that produced flat, small-type, out-of-sync beats. Fall back to an archetype only when no block fits the teaching relationship. Every block is built on templates/blocks/_foundation.css (one token contract, one cqw type scale, four grounds via #root[data-ground], shared primitives). To use one: copy templates/blocks/<id>.html into <project>/scenes/, edit its CONFIG object, set data-ground on #root, add it to scenes.json. File name = data-composition-id = window.__timelines key = <id>.",
-  "naming": "<category>-<variant>. category = scene archetype; variant = style. Categories: stat, chart, list, diagram, lower-third, title, section, code, callout, media. Reserved: quote, compare.",
+  "description": "Learn-ILT kit blocks — pre-built, pre-animated, on-brand sub-composition scenes. PREFER a kit block over a hand-authored archetype whenever a beat matches one: a block ships a finished, brand-correct, seek-safe timeline, so it removes the hand-authoring that produced flat, small-type, out-of-sync beats. If no block fits a genuinely bespoke layout, the builder authors that one scene by hand from the foundation. Every block is built on templates/blocks/_foundation.css (one token contract, one cqw type scale, four grounds via #root[data-ground], shared primitives). To use one: copy templates/blocks/<id>.html into <project>/scenes/, edit its CONFIG object, set data-ground on #root, add it to scenes.json. File name = data-composition-id = window.__timelines key = <id>.",
+  "naming": "<category>-<variant>. category = scene archetype; variant = style. Categories: stat, chart, list, diagram, lower-third, title, section, code, callout, media. Reserved: quote.",
   "grounds": {
     "content-wash": "default — warm paper wash, ink text. Most content beats.",
     "hero-swoosh": "warm sweep — title / opening / closing only.",
@@ -173,6 +173,39 @@
       "default_ground": "content-wash",
       "config": "name, role",
       "file": "templates/blocks/lower-third-bar.html"
+    },
+    {
+      "id": "list-select",
+      "category": "list",
+      "summary": "Peer rows cascade in; a count reads up; ONE row lifts with an accent tab as the rest recede.",
+      "content_shape": "A small set of peer items with one selected, compared, or emphasized — a choose-one decision.",
+      "best_for": "Roles, assignment/policy types, app categories, options, inventory — lifting the one that resolves the scenario.",
+      "avoid_when": "Order, containment, causality, or dependencies carry the meaning (use list-steps, diagram-layers, or diagram-flow); or nothing is selected (use list-specs).",
+      "default_ground": "content-wash",
+      "config": "kicker, items[] (label, detail), selectedIndex, countLabel",
+      "file": "templates/blocks/list-select.html"
+    },
+    {
+      "id": "diagram-layers",
+      "category": "diagram",
+      "summary": "Concentric labelled planes settle outside-in around a protected core that glows last.",
+      "content_shape": "Nested scopes, boundaries, inheritance, or protection arranged outside-in around a core.",
+      "best_for": "Containment, trust boundaries, layered security, inheritance, management scope.",
+      "avoid_when": "The items are peers (use list-select), the explanation is a sequence (use list-steps), or relationships/links matter more than nesting (use diagram-flow).",
+      "default_ground": "content-wash",
+      "config": "layers[] (label, outer→inner), core, outer/step/coreSize px",
+      "file": "templates/blocks/diagram-layers.html"
+    },
+    {
+      "id": "console-status",
+      "category": "list",
+      "summary": "Portal-like status panel: check rows populate, then the blocking row flips pending→passed.",
+      "content_shape": "Operational details expressed as checks, statuses, approvals, or pass/fail outcomes.",
+      "best_for": "Readiness checks, approval flows, troubleshooting checks, request detail, pass-or-fail status.",
+      "avoid_when": "The beat is conceptual or relational (use diagram-flow), a sequence (use list-steps), or a plain peer list (use list-select).",
+      "default_ground": "content-wash",
+      "config": "title, rows[] (label, status: pass|fail|pending), flipIndex",
+      "file": "templates/blocks/console-status.html"
     }
   ]
 }

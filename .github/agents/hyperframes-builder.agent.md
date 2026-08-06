@@ -33,10 +33,10 @@ py tools/stage_timing.py end --project <dir> --stage builder --run-id <id> --sta
 
 If build checks fail, close with `--status failed` and a note before returning.
 
-## Start from kit blocks, then archetypes
+## Start from kit blocks; hand-author only the rest
 
 The design plan's `Component`/`Kind` columns tell you, per beat, whether it is a **kit block**
-(preferred) or an **archetype** (fallback). Handle blocks first — they are already built.
+or a **custom** scene. Handle blocks first — they are already built.
 
 ### Block beats — copy and configure, do NOT re-author
 
@@ -74,20 +74,16 @@ owns playback (`<video>`/`<audio>` work inside a scene sub-comp; scene-local `da
 rebased automatically).
 
 Block cues are internal and self-timed, so **block beats need no word-anchoring and no
-scene-writer** — they are pre-built. Only archetype beats need authoring and anchoring.
+scene-writer** — they are pre-built. Only custom beats need authoring and anchoring.
 
-### Archetype beats — scaffold, then author
+### Custom beats — hand-author on the foundation
 
-For each `archetype` row, scaffold the selected archetypes:
-
-```
-py tools/archetype_scaffold.py init --project <dir> --archetypes <archetype rows from plan>
-```
-
-Use `_archetypes/archetypes.html` and `_archetypes/archetypes.css` as the starting point. Only
-author fresh structures when no archetype (and no block) can carry the beat. **Author on the kit
-foundation** — reuse the `_foundation.css` tokens and `--fs-*` scale so a bespoke scene matches
-the blocks: ink text, accents on graphics only, no px font-sizes.
+A `custom` row is a beat no kit block could carry (rare — the designer should have exhausted the
+catalog first). Author it as a fresh scene on the kit foundation: start from an existing block of
+the nearest category as a structural reference, and **reuse `_foundation.css`** verbatim — its
+tokens and `--fs-*` scale — so the bespoke scene matches the blocks: ink text, accents on graphics
+only, no px font-sizes, a paused seek-safe timeline registered on `window.__timelines`. If you find
+yourself authoring the same custom shape twice, promote it to a catalogued kit block instead.
 
 ## Scene density — fewer, richer scenes, never many thin ones
 
@@ -124,8 +120,8 @@ single-scene piece (one canvas/SVG spanning the whole video).
 **Modular flow:**
 
 ```
-py tools/archetype_scaffold.py scene --project <dir> --id 01-opening --archetype spotlight --duration 22.8
-# … one per beat, archetype + duration from design-plan.md …
+# Block scene:  copy templates/blocks/<id>.html -> scenes/<id>.html, set CONFIG + data-ground
+# Custom scene: author scenes/<id>.html on _foundation.css (paused, scene-relative timeline)
 py tools/assemble_scenes.py --project <dir>     # scenes.json -> thin render-ready index.html
 py tools/check_subcomps.py --project <dir>      # cross-file mount contract — run after every assemble
 ```
@@ -158,13 +154,12 @@ py tools/check_subcomps.py --project <dir>      # cross-file mount contract — 
 Because each scene is an independent file with its own scene-relative timeline and the host owns
 the seams, scenes can be authored **in parallel** — nothing one scene does affects another.
 **Block scenes are not fanned out** — copy and configure them directly (above); they are already
-built. Only **archetype** scenes need authoring. When a video has roughly six or more archetype
+built. Only **custom** scenes need authoring. When a video has roughly six or more custom
 scenes, fan those out instead of writing them one at a time:
 
-1. Copy in every block scene and scaffold every archetype scene (`archetype_scaffold.py scene …`)
-   first, so `scenes.json` and all skeletons exist.
-2. Dispatch one `@hyperframes-scene-writer` per **archetype** scene, each with its `SCENE_ID`,
-   `ARCHETYPE`, `DURATION`, the `NARRATION_SLICE` it covers, and its `DESIGN_ROW`. They run
+1. Copy in every block scene first, so `scenes.json` and all block skeletons exist.
+2. Dispatch one `@hyperframes-scene-writer` per **custom** scene, each with its `SCENE_ID`,
+   `DURATION`, the `NARRATION_SLICE` it covers, and its `DESIGN_ROW`. They run
    independently and each self-checks its own file.
 3. When they return, assemble once and validate the whole:
    ```

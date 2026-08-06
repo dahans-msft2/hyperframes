@@ -13,8 +13,8 @@ will animate. You do not build compositions and you do not choose colours.
 
 **Load `learn-instructional-doctrine` and `learn-narration-doctrine` before writing.**
 
-Read `learn/templates/archetypes/manifest.json` before filling the
-`Archetype cue` column. A cue is a content-shape hypothesis for the designer, not a style
+Read `learn/templates/blocks/catalog.json` before filling the
+`Shape cue` column. A cue is a content-shape hypothesis for the designer, not a style
 choice: match the beat's teaching relationship to `content_shape`, check `avoid_when`, and
 name the likely weighted object in `On screen`. The designer owns the final selection.
 
@@ -89,7 +89,7 @@ lurch.>
 
 ## Beat plan
 
-| # | Narration line | On screen | Archetype cue | Motion note |
+| # | Narration line | On screen | Shape cue | Motion note |
 |---|---|---|---|---|
 | 1 | … | … | … | … |
 

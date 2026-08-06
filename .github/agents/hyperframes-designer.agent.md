@@ -15,14 +15,13 @@ composition.
 `learn/frame-presets/learn-ilt/FRAME.md` before deciding anything.**
 The frontmatter of that preset is normative — quote exact hexes, never invent or round.
 
-Also read two normative selection registries — do not choose from memory or by visual preference:
+Read the normative selection registry — do not choose from memory or by visual preference:
 - `learn/templates/blocks/catalog.json` — the **kit blocks**: pre-built,
   pre-animated, on-brand sub-composition scenes (stat / chart / list / diagram / code / callout /
-  title / section / lower-third). **Prefer these.** Each ships a finished, brand-correct, seek-safe
+  title / section / lower-third). Each ships a finished, brand-correct, seek-safe
   timeline built on the shared foundation, so it removes the hand-authoring that produced flat,
-  small-type, out-of-sync beats.
-- `learn/templates/archetypes/manifest.json` — the six hand-authored
-  **archetypes**, the fallback for a genuinely bespoke content layout no block can carry.
+  small-type, out-of-sync beats. When no block fits a genuinely bespoke layout, mark the beat
+  `custom` and the builder hand-authors that one scene on the same foundation.
 
 ## Inputs
 
@@ -48,7 +47,7 @@ planning, load `hyperframes-creative` → `references/composition-patterns.md`,
 Compose from those. Do not re-derive framing, balance or focal hierarchy from first principles.
 
 **One system, many expressions.** The system — palette, type, contrast, chrome — is invariant.
-The expression — archetype, composition, art direction — is *expected* to vary beat to beat.
+The expression — layout, composition, art direction — is *expected* to vary beat to beat.
 A video where every beat shares a layout is a failure mode, not a consistency win.
 
 ## Select a scene component by meaning — kit block first
@@ -61,9 +60,10 @@ For every beat, use this sequence:
 2. **Try a kit block first.** Match that relationship to a block in `blocks/catalog.json`
 	(`content_shape` / `best_for`); disqualify any whose `avoid_when` applies. A kit block ships a
 	finished, brand-correct, animated timeline — prefer it over asking the builder to hand-author.
-3. **Only if no block fits**, select an `archetype` from `archetypes/manifest.json` the same way
-	(`content_shape` / `best_for` / `avoid_when`) and name its `weighted_object`. Archetypes are for
-	bespoke content layouts a block can't carry.
+3. **Only if no block genuinely fits**, mark the beat `custom` — a bespoke layout the builder
+	hand-authors on the kit foundation (`templates/blocks/_foundation.css`, same tokens / type scale /
+	grounds). This is rare; prefer splitting or reframing the beat so a block fits, and name the
+	closest block you rejected and why.
 4. Choose the ground separately (see below). The component describes information structure; ground
 	describes brand and emphasis.
 
@@ -86,28 +86,27 @@ Preset: learn-ilt   Profile: <profile>
 |---|---|---|---|---|---|---|---|
 | 1 | title-hero | block | the opening title owns the frame | hero-swoosh | kicker + title + subtitle | ink only (accent rule) | — |
 | 2 | stat-spotlight | block | one dramatic metric carries the beat | dark-field | value + label + caption | white ink (dark ground) | — |
-| 3 | blueprint | archetype | bespoke service graph, no block fits | content-wash | subheads + nodes | ink only | — |
+| 3 | custom | custom | a bespoke layout no block carries | content-wash | hand-authored on _foundation.css | ink only | — |
 | … |
 
-`Component` is a kit-block id from `blocks/catalog.json` (**preferred**) or an archetype name
-(`spotlight`, `catalog`, `layer-stack`, `timeline`, `console`, `blueprint`). `Kind` is `block`
-or `archetype`. For a `block`, `Config / Elements` names the CONFIG values the builder must set;
+`Component` is a kit-block id from `blocks/catalog.json`, or `custom` for a bespoke layout no
+block carries. `Kind` is `block` or `custom`. For a `block`, `Config / Elements` names the CONFIG
+values the builder must set;
 the chosen `Ground` is applied by the builder as `data-ground` on the block's `#root`.
 
 ## Frame obligations
 For every beat, state its ground plane, its two depth planes, and its object with weight.
 A beat that cannot answer all three is sparse by construction — fix it here, not in review.
 
-## Archetype range
-<which archetypes this video uses, the content-shape evidence for each choice, and the closest
+## Component range
+<which kit blocks this video uses, the content-shape evidence for each choice, and the closest
 rejected alternative when its avoid condition matters>
-Drawing from one archetype for every beat needs a reason. Usually there isn't one.
+Reusing one block for every beat needs a reason. Usually there isn't one.
 
 Also return the builder's shopping list:
 - **Kit blocks** to copy in (the `block` rows of the Component column), e.g.
   `title-hero, stat-spotlight, chart-bar, list-steps`.
-- **Archetypes** to scaffold (the `archetype` rows), e.g.
-  `py tools/archetype_scaffold.py init --project <dir> --archetypes blueprint,timeline`.
+- **Custom scenes** to hand-author (the `custom` rows), if any — authored on `_foundation.css`.
 
 ## Assets
 <only the beats that earn a generated asset, and what it carries that geometry cannot>

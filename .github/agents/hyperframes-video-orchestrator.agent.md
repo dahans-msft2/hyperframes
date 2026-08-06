@@ -103,15 +103,15 @@ Confirm layout family and whether any scene earns the hero gradient field or the
 Remind them the field is scarce by design.
 
 Before recommending a look, read
-`learn/templates/blocks/catalog.json` (the **kit blocks** — prefer these) and
-`learn/templates/archetypes/manifest.json` (the archetype fallback). Treat their
+`learn/templates/blocks/catalog.json` (the **kit blocks**). Treat their
 `content_shape`, `best_for`, and `avoid_when` fields as the selection contract, not optional
-inspiration.
+inspiration. When no block fits a genuinely bespoke layout, the beat is `custom` — hand-authored
+on the kit foundation.
 
 Infer the dominant relationship in the source or concept, then recommend:
 
 1. The primary structure — a kit block where one fits (stat / chart / list / diagram / code /
-   callout / title / section), or an archetype when the beat is a bespoke layout — and why.
+   callout / title / section), or `custom` when the beat is a bespoke layout no block carries — and why.
 2. One alternate only when it represents a genuinely different, viable explanation.
 3. The weighted object each choice would make focal.
 4. Any tempting component you rejected because an `avoid_when` condition applies.

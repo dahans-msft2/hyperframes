@@ -160,13 +160,13 @@ Split every visual decision into two layers and treat them differently:
 | | | |
 |---|---|---|
 | **The system** — invariant | Palette, type, contrast law, chrome and identity, the AI end card, the three frame obligations (ground plane / depth / object with weight) | Never varies. Not per beat, not per video, not per learning path. |
-| **The expression** — free | Archetype, composition, art direction, motion recipe, whether a beat uses a generated asset at all | **Expected** to vary — beat to beat and video to video. |
+| **The expression** — free | Layout, composition, art direction, motion recipe, whether a beat uses a generated asset at all | **Expected** to vary — beat to beat and video to video. |
 
 A beat that looks different from the beat before it is not off-brand. A beat that uses a
 colour, a typeface, or a contrast level outside the system *is*. Judge those separately, and
 never reach for uniformity as a proxy for consistency.
 
-The 44 predecessors ran multiple archetypes — blueprint, console, dashboard, spotlight,
+The 44 predecessors ran many layouts — blueprint, console, dashboard, spotlight,
 timeline, editorial, drafting, layer-stack. **Keep that range.** What they lacked was one
 system underneath. Do not solve that by collapsing the range.
 
@@ -211,8 +211,8 @@ answering different questions.
 1. **Route** — pick the profile; lock it.
 2. **Source** — resolve the Learn unit / module / topic.
 3. **Design** — `learn-brand-doctrine` + the `learn-ilt` frame preset for the **system**;
-   `hyperframes-creative` composition and style references for the **expression**. Choose an
-   archetype per beat, not one for the video.
+   `hyperframes-creative` composition and style references for the **expression**. Choose a
+   kit block (or a custom layout) per beat, not one for the video.
 4. **Plan** — `learn-instructional-doctrine` for beats and density.
 5. **Script** — `learn-narration-doctrine` for voice and pacing.
 6. **Build** — `hyperframes-core` + `motion-doctrine`, composing from
