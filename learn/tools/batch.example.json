@@ -1,0 +1,19 @@
+{
+  "$comment": "A batch slate for tools/batch.py. Each row scaffolds one project via new_project.py; then the video-orchestrator runs one gated build per project. Only title + profile are required; source + out are optional.",
+  "videos": [
+    {
+      "title": "Explore quantum entanglement with Q#",
+      "profile": "unit-video",
+      "source": "https://learn.microsoft.com/azure/quantum/tutorial-qdk-explore-entanglement"
+    },
+    {
+      "title": "Plan a phased rollout across the organization",
+      "profile": "companion-short",
+      "source": "https://learn.microsoft.com/training/modules/plan-phased-rollout/"
+    },
+    {
+      "title": "Build your first plugin for Microsoft 365 Copilot",
+      "profile": "unit-video"
+    }
+  ]
+}

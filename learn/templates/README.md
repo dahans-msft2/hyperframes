@@ -49,3 +49,10 @@ lives in `chrome.json`. Reference skeletons for each type live in `starters/<pro
 with `--emit-starter`; binary assets are intentionally omitted — the generator copies them fresh).
 
 Before render, `tools/check_placeholders.py --project <dir>` must be clean — no `__FILL__` may survive.
+
+**Batch a slate:** `tools/batch.py --manifest batch.json` loops the scaffolder over many
+`{title, profile, source}` rows and writes a `batch-queue.json` the orchestrator iterates one gated
+build at a time (see `tools/batch.example.json`). **Render + package is one deterministic step:**
+`tools/render_and_package.py --project <dir>` runs placeholder-guard → lint → render → promote →
+captions → thumbnail → verify and exits 0 only when the deliverables validate — so a render can't
+orphan half-packaged.
