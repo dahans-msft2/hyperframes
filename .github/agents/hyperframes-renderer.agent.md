@@ -70,6 +70,17 @@ bounds. If it is outside them, stop and report — do not render a video that wi
 
 ## Render
 
+**The render runs to completion in THIS invocation — block until it finishes.** Capture + encode is
+a single long-running command; wait for it. **Never return control while a render is still in
+flight, and never report "render in progress" as if it were a result.** A stateless renderer that
+returns early orphans the job: the render finishes with no one left to promote `renders/*.mp4` into
+the deliverable, offset the VTT, or validate the MP4, and the delivery has to be rebuilt by hand.
+(That exact failure has happened — a returned "in progress" left an orphan render whose output was
+never packaged.) There is **no "render started" success state**: returning without a validated,
+packaged MP4 is a **failure** — close the stage `--status failed` and say so plainly. The whole
+chain below (render → promote scratch → captions → thumbnail → verify) happens in one invocation,
+after the render has fully finished, before you return.
+
 Native render. **Run preflight first (below)** so ffmpeg/ffprobe are on PATH, then render with
 the pinned CLI from a warmed shell:
 
@@ -154,6 +165,9 @@ Promote from `renders/` into the project's deliverable set:
 `renders/` is build scratch. It is never the ship point.
 
 ## Before you report done
+
+Every box below is checked **in this same invocation, after the render has fully finished** — do
+not return until they all pass. A render still in flight is not done.
 
 - [ ] `. tools/preflight.ps1 -FixPath` passed (dot-sourced, so ffmpeg is on PATH in THIS shell)
 - [ ] `npx hyperframes render` produced an MP4; probe it with `ffprobe` (video+audio, dims, fps, duration)
