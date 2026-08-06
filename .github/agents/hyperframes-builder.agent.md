@@ -114,8 +114,17 @@ happens *within* one ground, not more cuts.
 If the design plan has **three or more scene cuts**, build modular — one file per scene — not one
 `index.html` with ten inline beats. A monolith re-times everything on a single edit, is expensive
 to load, and is hard to review; per-scene files are inspected, previewed, and changed in isolation
-while the render still flattens to one MP4. Keep the monolith only for a genuinely continuous
-single-scene piece (one canvas/SVG spanning the whole video).
+while the render still flattens to one MP4.
+
+**The monolith is only for a genuinely single-scene piece** — one canvas or SVG that spans the
+whole video with no cuts. **Narrative continuity is NOT a reason to go monolith.** A multi-beat
+narrated film always builds modular *even when it should feel like one continuous camera move* —
+that continuity is a property of the **seams**, stamped centrally at assembly, not of cramming
+every beat into one file. Going monolith on a multi-beat film forfeits three things you want:
+parallel authoring (below), isolated per-scene review, and the **automatic fade bookends** (above)
+— it is exactly why a monolith build has to hand-add the opening "breath" and closing fade that the
+modular path gives for free. If you are tempted to go monolith on a 3+ beat film, don't — split it
+and let the seams carry the continuity.
 
 **Modular flow:**
 
@@ -154,13 +163,20 @@ py tools/check_subcomps.py --project <dir>      # cross-file mount contract — 
 Because each scene is an independent file with its own scene-relative timeline and the host owns
 the seams, scenes can be authored **in parallel** — nothing one scene does affects another.
 **Block scenes are not fanned out** — copy and configure them directly (above); they are already
-built. Only **custom** scenes need authoring. When a video has roughly six or more custom
-scenes, fan those out instead of writing them one at a time:
+built. Only **custom** scenes need authoring. **When a video has two or more custom scenes, fan
+them out** instead of writing them one at a time — the per-scene interior authoring is the bulk of
+build time, so parallelising it is the single biggest speed-up available:
 
+0. **Author the seam contract first.** From the design plan's motion continuity, fix each scene's
+   inbound `seam` and the **exit vector** it must hand to the next scene. This is the guardrail
+   that keeps parallel authoring from reading as disconnected slides: seams are stamped centrally
+   at assembly, but each worker must know which way its scene *enters* and *leaves* so its interior
+   motion resolves toward the cut instead of fighting it.
 1. Copy in every block scene first, so `scenes.json` and all block skeletons exist.
-2. Dispatch one `@hyperframes-scene-writer` per **custom** scene, each with its `SCENE_ID`,
-   `DURATION`, the `NARRATION_SLICE` it covers, and its `DESIGN_ROW`. They run
-   independently and each self-checks its own file.
+2. Dispatch one `@hyperframes-scene-writer` per **custom** scene **in parallel**, each with its
+   `SCENE_ID`, `DURATION`, the `NARRATION_SLICE` it covers, its `DESIGN_ROW`, **and its inbound
+   seam + required exit vector** from the seam contract. They run independently and each
+   self-checks its own file.
 3. When they return, assemble once and validate the whole:
    ```
    py tools/assemble_scenes.py --project <dir>
@@ -169,8 +185,8 @@ scenes, fan those out instead of writing them one at a time:
    Then run the full build loop below on the assembled `index.html`.
 
 The merge is safe by construction: seams are stamped centrally at assembly, so independently
-authored scenes still flow. For a small video (two or three scenes) author them yourself — the
-fan-out overhead is not worth it.
+authored scenes still flow. Only when there is a **single** custom scene is a worker not worth the
+overhead — author that one yourself.
 
 ## Anchor to real word times, never estimates
 
@@ -249,22 +265,32 @@ node <motion-doctrine>/scripts/seam-gate.mjs  verify --ledger ledger.json --proj
 
 Motion must **perform**, not breathe. No idle wobble. Each move visibly caused by the last.
 
-Dead zones are measured by the rubric as "could this have been a PDF" — check your static
-stretches against the profile's `max_static_stretch_seconds` before you hand off.
+**Emit the motion spec from the profile first, then build to it.** The profile's motion budget
+compiles into a native sidecar `npx hyperframes check` enforces — author against it, don't
+discover it at the gate:
+
+```
+py tools/emit_motion_spec.py --project . --profile <PROFILE>   # → index.motion.json
+```
+
+It writes a `keepsMoving` assertion from `max_static_stretch_seconds` (the dead-zone budget; a
+2.5s promo needs a carrier move every beat, a 12s demo may hold), a `before` assertion for every
+`data-reveal-after`, and a `staysInFrame` assertion for every `data-keep-in-frame`. Dead-zone-exempt
+profiles skip `keepsMoving` — their holds are legal.
 
 ## Build loop
 
 ```
 Set-Location '<project>'      # the tool strips cd from piped/backgrounded commands
 npx hyperframes lint
-npx hyperframes check          # runtime, layout, WCAG contrast
+py tools/emit_motion_spec.py --project . --profile <PROFILE>   # profile → index.motion.json
+npx hyperframes check          # runtime, layout, WCAG contrast + the motion spec (reveal order, dead zones, in-frame)
 py tools/check_initial_state.py index.html    # beat accumulation - lint CANNOT see this
 py tools/check_cue_anchors.py index.html      # hand-estimated cue timings
-py tools/check_reveal_order.py index.html     # connector-after-node / semantic reveal order
 npx hyperframes snapshot --at <one time per beat> --no-end -o _snap
 ```
 
-All six must pass. Fix every error before returning — do not hand a failing composition to QA.
+Every step must pass. Fix every error before returning — do not hand a failing composition to QA.
 
 ### `check_cue_anchors.py` enforces the anchoring rule
 
@@ -277,21 +303,23 @@ scored **3%** with 107 raw literals.
 Anything larger is a cue guessed from an assumed words-per-second. If a line genuinely needs an
 offset, justify it inline: `// anchor-exempt: <reason>`.
 
-### `check_reveal_order.py` enforces semantic reveal order
+### The motion spec is your build contract
 
-`check_cue_anchors` proves a cue is tied to a *word*; it says nothing about the order of two
-elements relative to *each other*. A connector drawn before its endpoint nodes, or a label shown
-before the thing it labels, passes lint, check, and cue-anchoring while teaching the wrong thing.
-
+`emit_motion_spec.py` compiles the locked profile + your `data-*` markers into `index.motion.json`,
+and `npx hyperframes check` evaluates it against the same seeked timeline the renderer uses — so
+reveal order, dead zones, and in-frame containment are gated **natively**, not by a bespoke script.
 Declare the dependency inline on the element that must come later:
 
 ```html
 <div id="link-ab" data-reveal-after="#node-a #node-b" …></div>
 ```
 
-The checker then requires that element to be pinned hidden at t=0 and to reveal no earlier than
-every dependency. Mark connectors, links, milestones, and any label whose meaning depends on a
-prior element. Anchored (`W.*`) reveals are accepted as tied-to-word by construction.
+That becomes a native `before` assertion: `#link-ab` cannot reach visible opacity before `#node-a`
+or `#node-b` do — checked against real seeked opacity, not code shape. Mark connectors, links,
+milestones, and any label whose meaning depends on a prior element. Mark full-frame stages that
+could shift off-canvas with `data-keep-in-frame` (→ `staysInFrame`). Re-run `emit_motion_spec.py`
+whenever you add or move a marker, then `check`. Pinning arrivals hidden at t=0 is still enforced
+by `check_initial_state.py` below.
 
 ### `check_initial_state.py` is not optional
 

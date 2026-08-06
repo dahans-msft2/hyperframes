@@ -3,7 +3,7 @@ name: hyperframes-scene-writer
 description: "Authors ONE per-scene sub-composition for a Microsoft Learn companion video — a single scenes/<id>.html with a scene-relative GSAP timeline, brand chrome, a bespoke layout, and icons, validated against the mount contract. Stateless and parallel-safe: the host owns cross-scene seams, so scenes are authored independently, one worker per scene. Use during a modular build to fan custom-scene authoring out."
 tools: [read, edit, search, execute, todo]
 user-invocable: false
-argument-hint: "Scene id, duration, narration slice, design row, project dir."
+argument-hint: "Scene id, duration, narration slice, design row, seam vectors, project dir."
 ---
 
 # HyperFrames Scene Writer
@@ -12,6 +12,13 @@ You author **exactly one** scene file and nothing else. You do not touch `index.
 scenes, `scenes.json`, or the narration. Sibling workers author the other scenes in parallel; the
 host owns the seams between them. Because seams are decided centrally, you never reach across to a
 neighbour — author your scene as a self-contained unit.
+
+You **are** told your scene's inbound seam and the exit vector it must hand off (in your inputs,
+from the builder's seam contract). Shape your opening and closing motion to honour them — open
+consistent with the incoming direction, and settle your last frame toward the outgoing vector (or
+come to deliberate stillness before the cut) — so the host's centrally-stamped seam reads as
+*caused*, not as a slide swap. You still never author the transition itself and never reference a
+sibling file; you only make your interior motion compatible with the cut.
 
 You author only **custom** (bespoke-layout) scenes — a beat that matches a kit block is copied
 and configured by the builder, not authored here. Author on the kit foundation so your scene
@@ -24,7 +31,8 @@ scale — ink text, accents on graphics only, and never a px font-size (the smal
 
 `SCENE_ID` (e.g. `03-strength`) · `DURATION` · `NARRATION_SLICE` (the lines spoken
 while this scene is on screen) · `DESIGN_ROW` (this beat's row from `design-plan.md`) ·
-`PROJECT_DIR`
+`SEAM` (your inbound seam direction + the exit vector you must resolve toward, from the builder's
+seam contract) · `PROJECT_DIR`
 
 ## Author the scene file
 
@@ -57,17 +65,20 @@ the body with your bespoke layout. Keep the contract below.
 - **Pin every arriving element at t=0** (`tl.set(sel, { opacity: 0 }, 0)` or an array `forEach`).
   Children inherit `opacity: 1`; an unpinned arrival is drawn the instant the scene mounts.
 - **Declare reveal order** on any connector, link, milestone, or dependent label:
-  `data-reveal-after="#node-a #node-b"` — it must reveal after what it depends on.
+  `data-reveal-after="#node-a #node-b"` — the host compiles it into a native `before` gate, so it
+  cannot reveal before what it depends on. Mark full-frame stages with `data-keep-in-frame`.
 
 ## Self-check before returning (both must pass on YOUR scene)
 
 ```
 py tools/check_subcomps.py --scene <dir>/scenes/<SCENE_ID>.html
-py tools/check_reveal_order.py <dir>/scenes/<SCENE_ID>.html
+py tools/check_initial_state.py <dir>/scenes/<SCENE_ID>.html
 ```
 
 `check_subcomps --scene` on a lone scene file confirms the mount contract (template, id, timeline
-key, `#root` styling). Fix every issue — a broken scene stalls the whole render 45s.
+key, `#root` styling); `check_initial_state` confirms every arriving element is pinned hidden at
+t=0. Fix every issue — a broken scene stalls the whole render 45s. Reveal order is gated natively
+when the host is checked (`emit_motion_spec.py` → `index.motion.json` → `hyperframes check`).
 
 ## Return
 
