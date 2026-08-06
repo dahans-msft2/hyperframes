@@ -26,3 +26,26 @@ twice, promote it to a catalogued kit block instead.
 > The six MD-102 transition archetypes were folded into the kit: `spotlight`→`stat-spotlight`/
 > `title-hero`, `timeline`→`list-steps`, `blueprint`→`diagram-flow`, `catalog`→`list-select`,
 > `layer-stack`→`diagram-layers`, `console`→`console-status`. There is no separate archetype pack.
+
+## Scaffolding a project (batching many videos fast)
+
+The MD-102 workflow copied whole project folders to batch videos. The drift-proof version is a
+generator: `tools/new_project.py` stamps a fresh project from the LIVE kit + frozen assets + the
+locked profile every run, so a folder can never go stale.
+
+```
+py tools/new_project.py --profile unit-video --title "…" --source "<learn url|uid>"
+```
+
+It bakes the INVARIANT and leaves the VARIANT empty:
+
+- **Baked:** frozen fonts / grounds / gsap / AI end card; the required **chrome** scenes (bumper,
+  title, objectives, recap, cta) stamped from the kit with `__FILL__` placeholder CONFIG; a
+  `scenes.json` skeleton (chrome wired + a `body_slot`); a seeded Gate-2 ledger; a `BRIEF.md`.
+- **Empty:** the teaching-body scenes, narration, and QA — authored per video by the gated pipeline.
+
+The chrome definition (which block stamps each required element, its ground / seam / placeholders)
+lives in `chrome.json`. Reference skeletons for each type live in `starters/<profile>/` (regenerate
+with `--emit-starter`; binary assets are intentionally omitted — the generator copies them fresh).
+
+Before render, `tools/check_placeholders.py --project <dir>` must be clean — no `__FILL__` may survive.

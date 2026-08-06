@@ -1,0 +1,13 @@
+{
+  "title": "Unit video (~4 min) — starter skeleton",
+  "type": "unit-video",
+  "profile": "unit-video",
+  "status": "scaffolded",
+  "voice": "en-US-Ava:DragonHDLatestNeural",
+  "source": null,
+  "deliverables": {
+    "mp4": "Unit-Video-4-Min-Starter-Skeleton.mp4",
+    "captions_vtt": "Unit-Video-4-Min-Starter-Skeleton.vtt",
+    "thumbnail": "Unit-Video-4-Min-Starter-Skeleton_thumbnail.png"
+  }
+}

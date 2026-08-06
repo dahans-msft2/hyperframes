@@ -1,0 +1,72 @@
+{
+  "version": "2026-08-06",
+  "$comment": "The chrome scaffold: which kit block stamps each required opening/closing element, its ground, seam, starting duration, and a __FILL__ placeholder CONFIG. new_project.py reads this + the live kit blocks to stamp a fresh, doctrine-compliant chrome shell into every scaffolded project. Only elements whose key is in the resolved profile's required_elements are stamped. endcard.ai-disclosure is NOT a scene (assemble_scenes.py injects it from scenes.json.endcard); body.* elements (chapter-markers, per-chapter-recap) are authored in the body, not chrome.",
+  "order": {
+    "opening": ["opening.bumper", "opening.title", "opening.objectives"],
+    "closing": ["closing.recap", "closing.cta"]
+  },
+  "elements": {
+    "opening.bumper": {
+      "id": "01-bumper",
+      "block": "bumper",
+      "ground": "hero-swoosh",
+      "seam": "hard",
+      "duration": { "seconds": 3.0 },
+      "config": { "kicker": "__FILL__ skilling series (e.g. 'Skilling · Azure Quantum')" }
+    },
+    "opening.title": {
+      "id": "02-title",
+      "block": "title-hero",
+      "ground": "hero-swoosh",
+      "seam": "hard",
+      "duration": { "fraction_of_scene_target": 1.0 },
+      "config": {
+        "kicker": "MICROSOFT LEARN",
+        "titleLine1": "__FILL__ title line 1",
+        "titleLine2": "__FILL__ title line 2",
+        "subtitle": "__FILL__ one-line subtitle for the video."
+      }
+    },
+    "opening.objectives": {
+      "id": "03-objectives",
+      "block": "list-steps",
+      "ground": "content-wash",
+      "seam": "cut-left",
+      "duration": { "fraction_of_scene_target": 0.7 },
+      "config": {
+        "steps": [
+          { "title": "__FILL__ objective one", "detail": "__FILL__ what the learner will be able to do" },
+          { "title": "__FILL__ objective two", "detail": "__FILL__ what the learner will be able to do" },
+          { "title": "__FILL__ objective three", "detail": "__FILL__ what the learner will be able to do" }
+        ]
+      }
+    },
+    "closing.recap": {
+      "id": "90-recap",
+      "block": "title-hero",
+      "ground": "content-wash",
+      "seam": "cut-up",
+      "duration": { "fraction_of_scene_target": 1.0 },
+      "config": {
+        "kicker": "RECAP",
+        "titleLine1": "__FILL__ the payoff, line 1",
+        "titleLine2": "__FILL__ the payoff, line 2",
+        "subtitle": "__FILL__ one-line recap tied back to the opening hook."
+      }
+    },
+    "closing.cta": {
+      "id": "91-cta",
+      "block": "title-hero",
+      "ground": "content-wash",
+      "seam": "cut-left",
+      "duration": { "fraction_of_scene_target": 0.7 },
+      "config": {
+        "kicker": "NEXT STEP",
+        "titleLine1": "__FILL__ call to action, line 1",
+        "titleLine2": "__FILL__ call to action, line 2",
+        "subtitle": "__FILL__ where to go next (the module or docs)."
+      }
+    }
+  },
+  "$note": "duration.seconds is absolute; duration.fraction_of_scene_target is multiplied by the profile's scene_seconds.target and floored at scene_seconds.min. The builder re-times every scene to real narration word anchors — these are only non-degenerate starting durations so the skeleton lints and previews before authoring."
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Learn companion video (short) — starter skeleton",
+  "type": "companion-short",
+  "profile": "companion-short",
+  "status": "scaffolded",
+  "voice": "en-US-Ava:DragonHDLatestNeural",
+  "source": null,
+  "deliverables": {
+    "mp4": "Learn-Companion-Video-Short-Starter-Skeleton.mp4",
+    "captions_vtt": "Learn-Companion-Video-Short-Starter-Skeleton.vtt",
+    "thumbnail": "Learn-Companion-Video-Short-Starter-Skeleton_thumbnail.png"
+  }
+}

@@ -141,6 +141,7 @@ def build_html(manifest: dict[str, Any], scenes_dir_name: str) -> tuple[str, dic
 
     narration = manifest.get("narration")
     narration_dur = r3(float((narration or {}).get("duration", scenes_total)))
+    narration_start = r3(float((narration or {}).get("start", 0)))
     narration_track = int((narration or {}).get("track", 10))
     narration_src = (narration or {}).get("src", "narration.wav")
 
@@ -209,7 +210,7 @@ def build_html(manifest: dict[str, Any], scenes_dir_name: str) -> tuple[str, dic
     if narration:
         slots.append(
             f'      <audio id="narration" class="clip" src="{narration_src}" '
-            f'data-start="0" data-duration="{narration_dur}" data-track-index="{narration_track}"></audio>'
+            f'data-start="{narration_start}" data-duration="{narration_dur}" data-track-index="{narration_track}"></audio>'
         )
     for sc in tiled:
         slots.append(

@@ -90,6 +90,17 @@ def composition_duration(html: str) -> float | None:
     return float(m.group(1)) if m else None
 
 
+def endcard_start(html: str) -> float | None:
+    """data-start of a trailing end-card <video>. A video plays real motion but its DOM
+    rect is static, so the geometry-based keepsMoving gate false-positives on it; cap the
+    motion window at its start."""
+    m = re.search(r'<video[^>]*\bid\s*=\s*"[^"]*end-?card[^"]*"[^>]*>', html, re.I)
+    if not m:
+        return None
+    ds = re.search(r'data-start\s*=\s*"([\d.]+)"', m.group(0))
+    return float(ds.group(1)) if ds else None
+
+
 def build_spec(profile: dict, html_files: list[Path]) -> dict:
     assertions: list[dict] = []
     seen: set[str] = set()
@@ -106,10 +117,12 @@ def build_spec(profile: dict, html_files: list[Path]) -> dict:
         add({"kind": "keepsMoving", "maxStaticSec": float(max_static)})
 
     duration: float | None = None
+    motion_cap: float | None = None
     for path in html_files:
         html = path.read_text(encoding="utf-8")
         if duration is None:
             duration = composition_duration(html)
+            motion_cap = endcard_start(html)
         reveal_after, keep_in_frame = collect_markers(html)
         for element, deps in reveal_after:
             for dep in deps:
@@ -117,9 +130,15 @@ def build_spec(profile: dict, html_files: list[Path]) -> dict:
         for sel in keep_in_frame:
             add({"kind": "staysInFrame", "selector": sel})
 
+    # Motion sampling ranges over spec.duration; cap it at the end-card start so keepsMoving
+    # doesn't flag the geometrically-static (but really playing) disclosure video.
+    motion_duration = duration
+    if motion_cap is not None and duration is not None and motion_cap < duration:
+        motion_duration = motion_cap
+
     spec: dict = {"version": 1}
-    if duration is not None:
-        spec["duration"] = duration
+    if motion_duration is not None:
+        spec["duration"] = motion_duration
     spec["assertions"] = assertions
     return spec
 

@@ -91,8 +91,27 @@ Run `py tools/profile.py <name>` yourself and tell them the resulting length and
 plain language: *"About 90 seconds, so roughly 205 words of narration, plus a 10-second
 disclosure card at the end."*
 
-**PROFILE LOCK.** Record it. Pass it to every subagent. A mismatch between this and the profile
-on any later scorecard is a hard error — stop and reconcile.
+**PROFILE LOCK.** Pass it to every subagent; the scaffold step below records it in the ledger. A
+mismatch between this and the profile on any later scorecard is a hard error — stop and reconcile.
+
+### Scaffold the project (once the profile is locked)
+
+Do not hand-create the folder. Stamp it fresh from the locked profile:
+
+```
+py tools/new_project.py --profile <name> --title "<Video Title>" --source "<url|uid|path>"
+```
+
+This creates `learn/output/<slug>/` with the frozen assets (fonts, grounds, gsap, AI end card), the
+required **chrome** scenes (bumper, title, objectives, recap, cta) stamped fresh from the kit with
+`__FILL__` placeholder CONFIG, a `scenes.json` skeleton (chrome wired + a `body_slot` for the
+teaching scenes), and a `BRIEF.md`. It **seeds Gate 2** (and Gate 1 if `--source` is given), so you
+don't hand-record those. The chrome is doctrine-compliant on arrival — every video starts already
+correct on the required elements, the end card, and frozen-asset determinism. Pass the resulting dir
+as `OUTPUT_DIR`. (The chrome mapping lives in `learn/templates/chrome.json`.)
+
+**Before render the placeholders must be gone:** `py tools/check_placeholders.py --project <dir>`
+must exit clean — a scaffolded chrome scene that still says `__FILL__` is a hard stop.
 
 ### Gate 3 — Look
 

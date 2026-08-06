@@ -1,7 +1,7 @@
 {
   "version": "2026-08-05",
   "description": "Learn-ILT kit blocks — pre-built, pre-animated, on-brand sub-composition scenes. PREFER a kit block over a hand-authored archetype whenever a beat matches one: a block ships a finished, brand-correct, seek-safe timeline, so it removes the hand-authoring that produced flat, small-type, out-of-sync beats. If no block fits a genuinely bespoke layout, the builder authors that one scene by hand from the foundation. Every block is built on templates/blocks/_foundation.css (one token contract, one cqw type scale, four grounds via #root[data-ground], shared primitives). To use one: copy templates/blocks/<id>.html into <project>/scenes/, edit its CONFIG object, set data-ground on #root, add it to scenes.json. File name = data-composition-id = window.__timelines key = <id>.",
-  "naming": "<category>-<variant>. category = scene archetype; variant = style. Categories: stat, chart, list, diagram, lower-third, title, section, code, callout, media. Reserved: quote.",
+  "naming": "<category>-<variant>. category = scene archetype; variant = style. Categories: brand, stat, chart, list, diagram, lower-third, title, section, code, callout, media. Reserved: quote.",
   "grounds": {
     "content-wash": "default — warm paper wash, ink text. Most content beats.",
     "hero-swoosh": "warm sweep — title / opening / closing only.",
@@ -9,6 +9,17 @@
     "dark-field": "navy, WHITE ink (auto-inverted) — the dramatic exception, at most one scene."
   },
   "blocks": [
+    {
+      "id": "bumper",
+      "category": "brand",
+      "summary": "Opening brand sting: the Microsoft Learn mark lands, the glyph draws, the wordmark builds, the accent rule wipes, a kicker sub-line settles.",
+      "content_shape": "The mandatory opening.bumper — the same branded open on every Learn companion video; only the kicker sub-line varies.",
+      "best_for": "The first ~3s of every video (opening.bumper required element).",
+      "avoid_when": "It is the video's title card (use title-hero) or any content beat.",
+      "default_ground": "hero-swoosh",
+      "config": "kicker",
+      "file": "templates/blocks/bumper.html"
+    },
     {
       "id": "title-hero",
       "category": "title",
