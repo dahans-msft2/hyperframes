@@ -22,9 +22,10 @@ on:
         description: "Project dir (blank = auto-detect the one learn/output/<slug> on the branch)"
         required: false
         default: ""
-  # Auto: add the `render` label to a video PR to render its branch (pre-merge).
+  # Auto: the Copilot coding agent takes its PR out of draft when its session ends -> render it.
+  #       Or add the `render` label to a video PR to (re-)render on demand. Both render pre-merge.
   pull_request:
-    types: [labeled]
+    types: [labeled, ready_for_review]
   # Called by the batch matrix (render-batch.yml) to fan a module's videos out in parallel.
   workflow_call:
     inputs:
@@ -42,8 +43,11 @@ permissions:
 
 jobs:
   render:
-    # dispatch always; PR only when the `render` label is added
-    if: github.event_name == 'workflow_dispatch' || github.event.label.name == 'render'
+    # dispatch always; on a video PR when the agent marks it ready (session done) or you add `render`
+    if: >-
+      github.event_name == 'workflow_dispatch'
+      || github.event.label.name == 'render'
+      || (github.event.action == 'ready_for_review' && startsWith(github.event.pull_request.head.ref, 'video/'))
     runs-on: windows-latest
     timeout-minutes: 120
     steps:
