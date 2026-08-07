@@ -1,0 +1,85 @@
+name: Build Learn video
+description: Kick off a cloud build of a scaffolded Learn companion video composition.
+title: "Build video: <slug>"
+labels: ["build-video"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Task: author this video's composition (builder only)
+
+        The project is **already scaffolded** on its `video/<slug>` branch with the approved
+        `script.md`, `design-plan.md`, `narration.wav`, and `transcript.json` committed. Fill the
+        chrome placeholders and author the teaching body, then pass every gate.
+
+        **Follow `.github/copilot-instructions.md`** (the build loop + hard rules) and read
+        `.github/agents/hyperframes-builder.agent.md` (the full builder doctrine). Do **not** render,
+        do **not** change narration or palette, do **not** commit fonts, stay on this branch.
+  - type: input
+    id: slug
+    attributes:
+      label: Slug
+      description: Names the branch, folder, PR, and this issue. Lower-kebab for the branch.
+      placeholder: require-mfa-ca-policy
+    validations:
+      required: true
+  - type: dropdown
+    id: profile
+    attributes:
+      label: Profile (locked upstream)
+      options:
+        - companion-short
+        - unit-video
+        - demo-walkthrough
+        - skilling-session
+        - skilling-session-long
+        - explainer
+        - launch-promo
+        - code-change
+        - motion-graphic
+        - unit-fy27
+        - slideshow
+    validations:
+      required: true
+  - type: input
+    id: project
+    attributes:
+      label: Project directory
+      description: Where the scaffold lives; run all build commands from here.
+      placeholder: learn/output/Require-MFA-With-A-Conditional-Access-Policy
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Learn source (UID or URL)
+      placeholder: learn.microsoft.com/en-us/training/modules/...
+    validations:
+      required: false
+  - type: textarea
+    id: notes
+    attributes:
+      label: Build notes
+      description: Anything scene-specific the design plan doesn't already cover.
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: |
+        ### Recommended kickoff
+        Assign to Copilot (or `@copilot` the video PR) with **Claude Opus 5, high reasoning** — the
+        model list is per-task and this is the most capable option for a complex authoring build.
+
+        ### Definition of done
+        Every gate green, run from the project directory:
+        ```
+        python ../../tools/assemble_scenes.py --project .
+        python ../../tools/check_subcomps.py --project .
+        python ../../tools/check_placeholders.py --project .
+        python ../../tools/check_initial_state.py --project .
+        python ../../tools/check_cue_anchors.py --project .
+        npx --yes hyperframes@0.7.77 lint
+        npx --yes hyperframes@0.7.77 check
+        ```
+        Then complete the PR for `video/<slug>` with the gate results in the description. The local
+        orchestrator pulls the branch and renders the brand-final on real Segoe.

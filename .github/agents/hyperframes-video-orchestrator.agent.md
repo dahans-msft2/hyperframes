@@ -110,6 +110,10 @@ don't hand-record those. The chrome is doctrine-compliant on arrival — every v
 correct on the required elements, the end card, and frozen-asset determinism. Pass the resulting dir
 as `OUTPUT_DIR`. (The chrome mapping lives in `learn/templates/chrome.json`.)
 
+**For a cloud build** (offload authoring to the Copilot cloud agent), add `--cloud`: it cuts the
+`video/<slug>` branch from `main` and makes the project's source git-trackable (renders stay
+ignored). See **Cloud build handoff** below.
+
 **Before render the placeholders must be gone:** `py tools/check_placeholders.py --project <dir>`
 must exit clean — a scaffolded chrome scene that still says `__FILL__` is a hard stop.
 
@@ -281,6 +285,30 @@ not get to rewrite narration.
 For a **modular multi-scene** video, `@hyperframes-builder` fans scene authoring out to
 `@hyperframes-scene-writer` workers — one per scene, authored in parallel — then assembles and
 validates. You do not dispatch scene-writers yourself; the builder owns that.
+
+---
+
+## Cloud build handoff
+
+The build step (author scenes + `index.html`, pass lint/check) can run on the **GitHub Copilot
+cloud agent** instead of the local `@hyperframes-builder`. TTS and render stay local; the branch is
+the handoff. One branch per video, cut from `main` at scaffold.
+
+Run Gates 1–6 on the `video/<slug>` branch as usual (scaffold with `--cloud`, local TTS at Gate 4),
+committing `script.md`, `design-plan.md`, `narration.wav`, `transcript.json`. Then, **instead of
+dispatching `@hyperframes-builder`:**
+
+1. Push the branch: `git push -u origin video/<slug>`.
+2. Open the build issue from the `build-video` form (slug, profile, project dir, source).
+3. Open a draft PR from `video/<slug>` and `@copilot` it with the build task, selecting
+   **Claude Opus 5, high reasoning**. The agent authors onto this branch and pushes to the PR.
+4. When the PR's gates are green, review it (Gate 7 input), then pull:
+   `git checkout video/<slug> && git pull`.
+5. Render locally on real Segoe (Gate 8) and deliver (Gate 9).
+6. After delivery, close the PR + issue and delete the branch: `git push origin --delete video/<slug>`.
+
+The slug names the branch, issue, PR, and folder — never mix two videos on one branch. The
+renderer's slug guard aborts if the project folder doesn't match the checked-out video branch.
 
 ---
 
