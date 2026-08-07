@@ -114,9 +114,10 @@ def emit_gitignore_negation(slug: str) -> bool:
         "output/*",
         f"!output/{slug}/",
         f"!output/{slug}/**",
+        "# ignore render OUTPUTS only — keep input media (end card, screen recordings) tracked",
         f"output/{slug}/renders/",
-        f"output/{slug}/**/*.mp4",
-        f"output/{slug}/**/*_thumbnail.png",
+        f"output/{slug}/{slug}.mp4",
+        f"output/{slug}/{slug}_thumbnail.png",
         "",
     ])
     gi.write_text(text.rstrip("\n") + "\n" + block, encoding="utf-8")
