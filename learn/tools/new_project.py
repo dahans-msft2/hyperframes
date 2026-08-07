@@ -114,6 +114,8 @@ def emit_gitignore_negation(slug: str) -> bool:
         "output/*",
         f"!output/{slug}/",
         f"!output/{slug}/**",
+        "# never the licensed Segoe woff2 (regenerable locally; cloud renders on fallback fonts)",
+        f"output/{slug}/fonts/",
         "# ignore render OUTPUTS only — keep input media (end card, screen recordings) tracked",
         f"output/{slug}/renders/",
         f"output/{slug}/{slug}.mp4",
