@@ -1,0 +1,1022 @@
+[
+  {
+    "text": "Most",
+    "start": 0.03,
+    "end": 0.28
+  },
+  {
+    "text": "AI",
+    "start": 0.43,
+    "end": 0.54
+  },
+  {
+    "text": "stops",
+    "start": 0.54,
+    "end": 0.89
+  },
+  {
+    "text": "the",
+    "start": 1.02,
+    "end": 1.22
+  },
+  {
+    "text": "moment",
+    "start": 1.42,
+    "end": 1.83
+  },
+  {
+    "text": "it",
+    "start": 1.89,
+    "end": 1.99
+  },
+  {
+    "text": "answers",
+    "start": 1.99,
+    "end": 2.53
+  },
+  {
+    "text": "your",
+    "start": 2.53,
+    "end": 2.84
+  },
+  {
+    "text": "question.",
+    "start": 2.84,
+    "end": 3.5
+  },
+  {
+    "text": "Microsoft",
+    "start": 3.53,
+    "end": 4.39
+  },
+  {
+    "text": "Scout",
+    "start": 4.39,
+    "end": 4.72
+  },
+  {
+    "text": "keeps",
+    "start": 4.92,
+    "end": 5.33
+  },
+  {
+    "text": "going.",
+    "start": 5.37,
+    "end": 5.88
+  },
+  {
+    "text": "In",
+    "start": 5.91,
+    "end": 6.03
+  },
+  {
+    "text": "the",
+    "start": 6.03,
+    "end": 6.16
+  },
+  {
+    "text": "next",
+    "start": 6.31,
+    "end": 6.55
+  },
+  {
+    "text": "minute,",
+    "start": 6.55,
+    "end": 7.1
+  },
+  {
+    "text": "what",
+    "start": 7.3,
+    "end": 7.4
+  },
+  {
+    "text": "Microsoft",
+    "start": 7.4,
+    "end": 7.93
+  },
+  {
+    "text": "Scout",
+    "start": 8.01,
+    "end": 8.22
+  },
+  {
+    "text": "is,",
+    "start": 8.33,
+    "end": 8.96
+  },
+  {
+    "text": "what",
+    "start": 8.99,
+    "end": 9.23
+  },
+  {
+    "text": "it",
+    "start": 9.23,
+    "end": 9.24
+  },
+  {
+    "text": "does",
+    "start": 9.39,
+    "end": 9.63
+  },
+  {
+    "text": "across",
+    "start": 9.63,
+    "end": 9.85
+  },
+  {
+    "text": "your",
+    "start": 10.05,
+    "end": 10.18
+  },
+  {
+    "text": "day,",
+    "start": 10.38,
+    "end": 10.56
+  },
+  {
+    "text": "and",
+    "start": 10.59,
+    "end": 10.83
+  },
+  {
+    "text": "how",
+    "start": 10.83,
+    "end": 11.1
+  },
+  {
+    "text": "it",
+    "start": 11.1,
+    "end": 11.28
+  },
+  {
+    "text": "stays",
+    "start": 11.28,
+    "end": 11.74
+  },
+  {
+    "text": "firmly",
+    "start": 11.74,
+    "end": 12.29
+  },
+  {
+    "text": "in",
+    "start": 12.29,
+    "end": 12.39
+  },
+  {
+    "text": "your",
+    "start": 12.47,
+    "end": 12.84
+  },
+  {
+    "text": "control.",
+    "start": 12.84,
+    "end": 13.72
+  },
+  {
+    "text": "Scout",
+    "start": 13.83,
+    "end": 14.24
+  },
+  {
+    "text": "is",
+    "start": 14.24,
+    "end": 14.41
+  },
+  {
+    "text": "Microsoft's",
+    "start": 14.41,
+    "end": 15.38
+  },
+  {
+    "text": "first",
+    "start": 15.38,
+    "end": 15.82
+  },
+  {
+    "text": "autopilot,",
+    "start": 15.82,
+    "end": 16.74
+  },
+  {
+    "text": "a",
+    "start": 16.87,
+    "end": 16.92
+  },
+  {
+    "text": "new",
+    "start": 16.92,
+    "end": 17.12
+  },
+  {
+    "text": "kind",
+    "start": 17.27,
+    "end": 17.53
+  },
+  {
+    "text": "of",
+    "start": 17.53,
+    "end": 17.7
+  },
+  {
+    "text": "agent",
+    "start": 17.7,
+    "end": 18.06
+  },
+  {
+    "text": "that's",
+    "start": 18.26,
+    "end": 18.65
+  },
+  {
+    "text": "always",
+    "start": 18.65,
+    "end": 19.17
+  },
+  {
+    "text": "on.",
+    "start": 19.17,
+    "end": 19.63
+  },
+  {
+    "text": "It",
+    "start": 19.67,
+    "end": 19.76
+  },
+  {
+    "text": "works",
+    "start": 19.76,
+    "end": 19.92
+  },
+  {
+    "text": "on",
+    "start": 20.07,
+    "end": 20.19
+  },
+  {
+    "text": "its",
+    "start": 20.19,
+    "end": 20.37
+  },
+  {
+    "text": "own",
+    "start": 20.37,
+    "end": 20.52
+  },
+  {
+    "text": "in",
+    "start": 20.66,
+    "end": 20.67
+  },
+  {
+    "text": "the",
+    "start": 20.67,
+    "end": 20.85
+  },
+  {
+    "text": "background",
+    "start": 20.85,
+    "end": 21.47
+  },
+  {
+    "text": "with",
+    "start": 21.52,
+    "end": 21.85
+  },
+  {
+    "text": "its",
+    "start": 21.88,
+    "end": 22.17
+  },
+  {
+    "text": "own",
+    "start": 22.17,
+    "end": 22.45
+  },
+  {
+    "text": "identity",
+    "start": 22.45,
+    "end": 23.2
+  },
+  {
+    "text": "and",
+    "start": 23.23,
+    "end": 23.48
+  },
+  {
+    "text": "takes",
+    "start": 23.48,
+    "end": 23.95
+  },
+  {
+    "text": "action",
+    "start": 23.95,
+    "end": 24.41
+  },
+  {
+    "text": "on",
+    "start": 24.62,
+    "end": 24.71
+  },
+  {
+    "text": "your",
+    "start": 24.71,
+    "end": 25.03
+  },
+  {
+    "text": "behalf.",
+    "start": 25.08,
+    "end": 25.68
+  },
+  {
+    "text": "And",
+    "start": 25.71,
+    "end": 25.93
+  },
+  {
+    "text": "it's",
+    "start": 25.93,
+    "end": 26.25
+  },
+  {
+    "text": "grounded",
+    "start": 26.25,
+    "end": 26.89
+  },
+  {
+    "text": "in",
+    "start": 26.89,
+    "end": 27.1
+  },
+  {
+    "text": "your",
+    "start": 27.1,
+    "end": 27.41
+  },
+  {
+    "text": "everyday",
+    "start": 27.41,
+    "end": 28.02
+  },
+  {
+    "text": "Microsoft",
+    "start": 28.13,
+    "end": 28.61
+  },
+  {
+    "text": "365,",
+    "start": 29.21,
+    "end": 29.62
+  },
+  {
+    "text": "connecting",
+    "start": 29.65,
+    "end": 30.42
+  },
+  {
+    "text": "to",
+    "start": 30.42,
+    "end": 30.51
+  },
+  {
+    "text": "Teams,",
+    "start": 30.64,
+    "end": 31.14
+  },
+  {
+    "text": "Outlook,",
+    "start": 31.14,
+    "end": 31.87
+  },
+  {
+    "text": "your",
+    "start": 31.88,
+    "end": 32.13
+  },
+  {
+    "text": "calendar,",
+    "start": 32.13,
+    "end": 32.76
+  },
+  {
+    "text": "and",
+    "start": 32.76,
+    "end": 33.04
+  },
+  {
+    "text": "your",
+    "start": 33.15,
+    "end": 33.42
+  },
+  {
+    "text": "files.",
+    "start": 33.5,
+    "end": 34.16
+  },
+  {
+    "text": "Scout",
+    "start": 34.25,
+    "end": 34.5
+  },
+  {
+    "text": "takes",
+    "start": 34.65,
+    "end": 34.82
+  },
+  {
+    "text": "on",
+    "start": 34.82,
+    "end": 34.94
+  },
+  {
+    "text": "the",
+    "start": 34.94,
+    "end": 35.1
+  },
+  {
+    "text": "coordination",
+    "start": 35.31,
+    "end": 35.86
+  },
+  {
+    "text": "that",
+    "start": 35.86,
+    "end": 36.19
+  },
+  {
+    "text": "piles",
+    "start": 36.19,
+    "end": 36.56
+  },
+  {
+    "text": "up",
+    "start": 36.67,
+    "end": 36.76
+  },
+  {
+    "text": "in",
+    "start": 36.76,
+    "end": 36.84
+  },
+  {
+    "text": "a",
+    "start": 36.9,
+    "end": 37
+  },
+  {
+    "text": "day.",
+    "start": 37,
+    "end": 37.52
+  },
+  {
+    "text": "It",
+    "start": 37.55,
+    "end": 37.65
+  },
+  {
+    "text": "schedules",
+    "start": 37.65,
+    "end": 38.25
+  },
+  {
+    "text": "meetings",
+    "start": 38.25,
+    "end": 38.73
+  },
+  {
+    "text": "across",
+    "start": 38.94,
+    "end": 39.19
+  },
+  {
+    "text": "time",
+    "start": 39.19,
+    "end": 39.46
+  },
+  {
+    "text": "zones,",
+    "start": 39.46,
+    "end": 39.86
+  },
+  {
+    "text": "blocks",
+    "start": 39.99,
+    "end": 40.24
+  },
+  {
+    "text": "time",
+    "start": 40.39,
+    "end": 40.61
+  },
+  {
+    "text": "for",
+    "start": 40.61,
+    "end": 40.81
+  },
+  {
+    "text": "the",
+    "start": 40.81,
+    "end": 40.85
+  },
+  {
+    "text": "deliverables",
+    "start": 41.05,
+    "end": 41.79
+  },
+  {
+    "text": "you",
+    "start": 41.85,
+    "end": 42
+  },
+  {
+    "text": "owe,",
+    "start": 42,
+    "end": 42.3
+  },
+  {
+    "text": "flags",
+    "start": 42.39,
+    "end": 42.64
+  },
+  {
+    "text": "the",
+    "start": 42.79,
+    "end": 42.81
+  },
+  {
+    "text": "meetings",
+    "start": 42.85,
+    "end": 43.25
+  },
+  {
+    "text": "that",
+    "start": 43.38,
+    "end": 43.56
+  },
+  {
+    "text": "matter,",
+    "start": 43.56,
+    "end": 43.96
+  },
+  {
+    "text": "and",
+    "start": 43.99,
+    "end": 44.15
+  },
+  {
+    "text": "catches",
+    "start": 44.15,
+    "end": 44.61
+  },
+  {
+    "text": "stalled",
+    "start": 44.61,
+    "end": 45.07
+  },
+  {
+    "text": "decisions",
+    "start": 45.07,
+    "end": 45.68
+  },
+  {
+    "text": "before",
+    "start": 45.68,
+    "end": 46.1
+  },
+  {
+    "text": "they",
+    "start": 46.1,
+    "end": 46.3
+  },
+  {
+    "text": "become",
+    "start": 46.41,
+    "end": 46.8
+  },
+  {
+    "text": "blockers.",
+    "start": 46.8,
+    "end": 47.6
+  },
+  {
+    "text": "Powered",
+    "start": 47.63,
+    "end": 48.29
+  },
+  {
+    "text": "by",
+    "start": 48.29,
+    "end": 48.48
+  },
+  {
+    "text": "Work",
+    "start": 48.48,
+    "end": 48.82
+  },
+  {
+    "text": "IQ,",
+    "start": 49.02,
+    "end": 49.28
+  },
+  {
+    "text": "it",
+    "start": 49.28,
+    "end": 49.43
+  },
+  {
+    "text": "learns",
+    "start": 49.43,
+    "end": 49.88
+  },
+  {
+    "text": "how",
+    "start": 49.88,
+    "end": 50.1
+  },
+  {
+    "text": "you",
+    "start": 50.1,
+    "end": 50.32
+  },
+  {
+    "text": "work",
+    "start": 50.32,
+    "end": 50.54
+  },
+  {
+    "text": "and",
+    "start": 50.67,
+    "end": 50.88
+  },
+  {
+    "text": "carries",
+    "start": 50.88,
+    "end": 51.45
+  },
+  {
+    "text": "your",
+    "start": 51.45,
+    "end": 51.78
+  },
+  {
+    "text": "priorities",
+    "start": 51.78,
+    "end": 52.6
+  },
+  {
+    "text": "forward.",
+    "start": 52.6,
+    "end": 53.2
+  },
+  {
+    "text": "And",
+    "start": 53.23,
+    "end": 53.43
+  },
+  {
+    "text": "it's",
+    "start": 53.43,
+    "end": 53.73
+  },
+  {
+    "text": "built",
+    "start": 53.73,
+    "end": 54.09
+  },
+  {
+    "text": "to",
+    "start": 54.22,
+    "end": 54.23
+  },
+  {
+    "text": "be",
+    "start": 54.29,
+    "end": 54.42
+  },
+  {
+    "text": "trusted.",
+    "start": 54.62,
+    "end": 55.24
+  },
+  {
+    "text": "Every",
+    "start": 55.27,
+    "end": 55.68
+  },
+  {
+    "text": "agent",
+    "start": 55.68,
+    "end": 56.12
+  },
+  {
+    "text": "runs",
+    "start": 56.12,
+    "end": 56.46
+  },
+  {
+    "text": "under",
+    "start": 56.66,
+    "end": 56.91
+  },
+  {
+    "text": "its",
+    "start": 56.91,
+    "end": 57.07
+  },
+  {
+    "text": "own",
+    "start": 57.16,
+    "end": 57.43
+  },
+  {
+    "text": "governed",
+    "start": 57.43,
+    "end": 58.11
+  },
+  {
+    "text": "entry",
+    "start": 58.11,
+    "end": 58.4
+  },
+  {
+    "text": "identity,",
+    "start": 58.77,
+    "end": 59.32
+  },
+  {
+    "text": "never",
+    "start": 59.35,
+    "end": 59.6
+  },
+  {
+    "text": "a",
+    "start": 59.6,
+    "end": 59.75
+  },
+  {
+    "text": "shared",
+    "start": 59.75,
+    "end": 60.08
+  },
+  {
+    "text": "account,",
+    "start": 60.08,
+    "end": 60.54
+  },
+  {
+    "text": "inside",
+    "start": 60.74,
+    "end": 61.15
+  },
+  {
+    "text": "the",
+    "start": 61.15,
+    "end": 61.37
+  },
+  {
+    "text": "permissions",
+    "start": 61.38,
+    "end": 62.21
+  },
+  {
+    "text": "you",
+    "start": 62.22,
+    "end": 62.39
+  },
+  {
+    "text": "set.",
+    "start": 62.47,
+    "end": 62.96
+  },
+  {
+    "text": "Microsoft",
+    "start": 62.99,
+    "end": 63.5
+  },
+  {
+    "text": "Purview",
+    "start": 63.5,
+    "end": 63.85
+  },
+  {
+    "text": "protections",
+    "start": 64.05,
+    "end": 64.6
+  },
+  {
+    "text": "are",
+    "start": 64.6,
+    "end": 64.79
+  },
+  {
+    "text": "enforced",
+    "start": 64.83,
+    "end": 65.44
+  },
+  {
+    "text": "in",
+    "start": 65.44,
+    "end": 65.58
+  },
+  {
+    "text": "the",
+    "start": 65.58,
+    "end": 65.81
+  },
+  {
+    "text": "moment",
+    "start": 65.81,
+    "end": 65.92
+  },
+  {
+    "text": "and",
+    "start": 66.31,
+    "end": 66.5
+  },
+  {
+    "text": "the",
+    "start": 66.5,
+    "end": 66.72
+  },
+  {
+    "text": "most",
+    "start": 66.72,
+    "end": 67.01
+  },
+  {
+    "text": "sensitive",
+    "start": 67.01,
+    "end": 67.49
+  },
+  {
+    "text": "actions",
+    "start": 67.7,
+    "end": 68.2
+  },
+  {
+    "text": "still",
+    "start": 68.2,
+    "end": 68.59
+  },
+  {
+    "text": "wait",
+    "start": 68.59,
+    "end": 68.9
+  },
+  {
+    "text": "for",
+    "start": 68.96,
+    "end": 69.18
+  },
+  {
+    "text": "your",
+    "start": 69.18,
+    "end": 69.44
+  },
+  {
+    "text": "sign-off.",
+    "start": 69.81,
+    "end": 70.52
+  },
+  {
+    "text": "So",
+    "start": 70.55,
+    "end": 70.63
+  },
+  {
+    "text": "the",
+    "start": 70.63,
+    "end": 70.8
+  },
+  {
+    "text": "follow-through",
+    "start": 70.8,
+    "end": 71.41
+  },
+  {
+    "text": "happens",
+    "start": 71.61,
+    "end": 71.99
+  },
+  {
+    "text": "for",
+    "start": 71.99,
+    "end": 72.16
+  },
+  {
+    "text": "you,",
+    "start": 72.16,
+    "end": 72.36
+  },
+  {
+    "text": "an",
+    "start": 72.39,
+    "end": 72.55
+  },
+  {
+    "text": "always-on",
+    "start": 72.55,
+    "end": 73.25
+  },
+  {
+    "text": "agent",
+    "start": 73.38,
+    "end": 73.88
+  },
+  {
+    "text": "that",
+    "start": 73.88,
+    "end": 74.13
+  },
+  {
+    "text": "keeps",
+    "start": 74.13,
+    "end": 74.41
+  },
+  {
+    "text": "work",
+    "start": 74.45,
+    "end": 74.7
+  },
+  {
+    "text": "moving",
+    "start": 74.81,
+    "end": 75.29
+  },
+  {
+    "text": "under",
+    "start": 75.39,
+    "end": 75.81
+  },
+  {
+    "text": "your",
+    "start": 75.85,
+    "end": 76.21
+  },
+  {
+    "text": "control.",
+    "start": 76.21,
+    "end": 77.18
+  },
+  {
+    "text": "Microsoft",
+    "start": 77.21,
+    "end": 77.73
+  },
+  {
+    "text": "Scout",
+    "start": 77.73,
+    "end": 78.03
+  },
+  {
+    "text": "is",
+    "start": 78.03,
+    "end": 78.07
+  },
+  {
+    "text": "rolling",
+    "start": 78.2,
+    "end": 78.4
+  },
+  {
+    "text": "out",
+    "start": 78.6,
+    "end": 78.78
+  },
+  {
+    "text": "now",
+    "start": 78.78,
+    "end": 79.01
+  },
+  {
+    "text": "in",
+    "start": 79.07,
+    "end": 79.17
+  },
+  {
+    "text": "preview",
+    "start": 79.17,
+    "end": 79.64
+  },
+  {
+    "text": "through",
+    "start": 79.67,
+    "end": 79.92
+  },
+  {
+    "text": "the",
+    "start": 80.07,
+    "end": 80.19
+  },
+  {
+    "text": "Frontier",
+    "start": 80.19,
+    "end": 80.53
+  },
+  {
+    "text": "program.",
+    "start": 80.66,
+    "end": 81.22
+  }
+]

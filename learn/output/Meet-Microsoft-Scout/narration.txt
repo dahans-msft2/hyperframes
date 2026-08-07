@@ -1,0 +1,13 @@
+Most AI stops the moment it answers your question. Microsoft Scout keeps going.
+
+In the next minute: what Microsoft Scout is, what it does across your day, and how it stays firmly in your control.
+
+Scout is Microsoft's first Autopilot — a new kind of agent that's always on. It works on its own in the background, with its own identity, and takes action on your behalf. And it's grounded in your everyday Microsoft 365 — connecting to Teams, Outlook, your calendar, and your files.
+
+Scout takes on the coordination that piles up in a day. It schedules meetings across time zones, blocks time for the deliverables you owe, flags the meetings that matter, and catches stalled decisions before they become blockers. Powered by Work IQ, it learns how you work and carries your priorities forward.
+
+And it's built to be trusted. Every agent runs under its own governed Entra identity — never a shared account — inside the permissions you set. Microsoft Purview protections are enforced in the moment, and the most sensitive actions still wait for your sign-off.
+
+So the follow-through happens for you — an always-on agent that keeps work moving, under your control.
+
+Microsoft Scout is rolling out now in preview through the Frontier program.

@@ -29,3 +29,17 @@ assets/icon-index.json
 # Python bytecode cache, and the audition_voices.py voice cache.
 __pycache__/
 .voice-catalog.json
+
+# --- cloud handoff: Meet-Microsoft-Scout ---
+# Source of this video's composition is tracked so the cloud builder can hand it back;
+# renders + heavy artifacts stay local-only. Never merged to main.
+!output/
+output/*
+!output/Meet-Microsoft-Scout/
+!output/Meet-Microsoft-Scout/**
+# never the licensed Segoe woff2 (regenerable locally; cloud renders on fallback fonts)
+output/Meet-Microsoft-Scout/fonts/
+# ignore render OUTPUTS only — keep input media (end card, screen recordings) tracked
+output/Meet-Microsoft-Scout/renders/
+output/Meet-Microsoft-Scout/Meet-Microsoft-Scout.mp4
+output/Meet-Microsoft-Scout/Meet-Microsoft-Scout_thumbnail.png
