@@ -25,6 +25,16 @@ on:
   # Auto: add the `render` label to a video PR to render its branch (pre-merge).
   pull_request:
     types: [labeled]
+  # Called by the batch matrix (render-batch.yml) to fan a module's videos out in parallel.
+  workflow_call:
+    inputs:
+      branch:
+        required: true
+        type: string
+      project:
+        required: false
+        type: string
+        default: ""
 
 permissions:
   contents: read
