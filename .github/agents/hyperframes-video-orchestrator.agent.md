@@ -300,8 +300,25 @@ dispatching `@hyperframes-builder`:**
 
 1. Push the branch: `git push -u origin video/<slug>`.
 2. Open the build issue from the `build-video` form (slug, profile, project dir, source).
-3. Open a draft PR from `video/<slug>` and `@copilot` it with the build task, selecting
-   **Claude Opus 5, high reasoning**. The agent authors onto this branch and pushes to the PR.
+3. Open a draft PR from `video/<slug>` → `main`. **Embed the ready-to-paste `@copilot` kickoff
+   prompt in the PR body itself**, templated for this video, so the operator copies it straight
+   from the PR:
+
+   > `@copilot` Build the **&lt;Title&gt;** &lt;profile&gt; in `learn/output/&lt;slug&gt;/`. Follow
+   > `.github/copilot-instructions.md` and the builder doctrine in
+   > `.github/agents/hyperframes-builder.agent.md`.
+   > 1. Fill every chrome `__FILL__` from `script.md`.
+   > 2. Author the body scenes per `design-plan.md` (name each: `&lt;id&gt;` → `&lt;block&gt;` → ground),
+   >    inserting them into `scenes.json`'s `body_slot`.
+   > 3. Anchor every beat + in-scene cue to `transcript.json` word times.
+   > 4. Pass all gates from the project dir: `assemble_scenes → check_subcomps →
+   >    check_placeholders → check_initial_state → check_cue_anchors → lint → check`.
+   > Don't render, change narration or palette, or commit fonts. Push commits to this branch and
+   > report the gate results.
+
+   The operator posts that prompt as a PR comment, selecting **Claude Opus 5, high reasoning** in the
+   model picker (repo `copilot-instructions.md` loads automatically; the prompt supplies the per-video
+   what/where). The agent authors onto this branch and pushes to the PR.
 4. When the PR's gates are green, review it (Gate 7 input), then pull:
    `git checkout video/<slug> && git pull`.
 5. Render locally on real Segoe (Gate 8) and deliver (Gate 9).
