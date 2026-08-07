@@ -43,7 +43,10 @@
         /* ==== END _foundation.css ==== */
 
         #bm-wrap { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.2cqw; }
-        #bm-mark { width: 9.5cqw; height: 9.5cqw; border-radius: 2.2cqw; box-shadow: 0 18px 48px rgba(134,97,197,0.35); overflow: hidden; }
+        #bm-mark { width: 9cqw; height: 9cqw; position: relative; }
+        #bm-ms { width: 100%; height: 100%; display: block; }
+        .bm-sq { transform-box: fill-box; transform-origin: 50% 50%; }
+        #bm-logo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: none; }
         #bm-lockup { display: flex; flex-direction: column; align-items: center; gap: 1.1cqw; }
         #bm-word { font-family: "Segoe UI Semibold","Segoe UI",sans-serif; font-weight: 600; font-size: var(--fs-h1); letter-spacing: -0.01em; color: var(--ink); }
         #bm-word span { display: inline-block; }
@@ -53,18 +56,15 @@
 
       <div id="root" data-composition-id="01-bumper" data-ground="hero-swoosh" data-width="1920" data-height="1080">
         <div id="bm-wrap">
-          <svg id="bm-mark" viewBox="0 0 100 100" aria-hidden="true">
-            <defs>
-              <linearGradient id="bm-grad" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#8661c5" />
-                <stop offset="0.55" stop-color="#6f5bd0" />
-                <stop offset="1" stop-color="#0078d4" />
-              </linearGradient>
-            </defs>
-            <rect x="0" y="0" width="100" height="100" rx="22" fill="url(#bm-grad)" />
-            <path id="bm-glyph" d="M30 34 v32 M30 50 h22 M52 34 v32 M64 34 l14 16 l-14 16"
-                  fill="none" stroke="#ffffff" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
+          <div id="bm-mark" aria-hidden="true">
+            <svg id="bm-ms" viewBox="0 0 100 100">
+              <rect class="bm-sq" x="3"  y="3"  width="44" height="44" fill="#F25022" />
+              <rect class="bm-sq" x="53" y="3"  width="44" height="44" fill="#7FBA00" />
+              <rect class="bm-sq" x="3"  y="53" width="44" height="44" fill="#00A4EF" />
+              <rect class="bm-sq" x="53" y="53" width="44" height="44" fill="#FFB900" />
+            </svg>
+            <img id="bm-logo" alt="" />
+          </div>
           <div id="bm-lockup">
             <div id="bm-word"><span id="bm-w1">Microsoft</span>&nbsp;<span id="bm-w2">Learn</span></div>
             <div id="bm-rule" class="ilt-rule"></div>
@@ -77,13 +77,17 @@
         (function () {
           window.__timelines = window.__timelines || {};
 
-          // Edit per use. Only the kicker sub-line varies; the "Microsoft Learn" wordmark is fixed.
+          // Edit per use. The mark is the Microsoft four-square logo by default; set logoSrc to a
+          // project-local product logo to override it. Only the kicker and logo vary.
           var CONFIG = {
-            "kicker": "Microsoft 365"
+            "kicker": "Microsoft 365",
+            "logoSrc": ""
           };
 
           var mark = document.getElementById("bm-mark");
-          var glyph = document.getElementById("bm-glyph");
+          var ms = document.getElementById("bm-ms");
+          var logo = document.getElementById("bm-logo");
+          var squares = mark.querySelectorAll(".bm-sq");
           var w1 = document.getElementById("bm-w1");
           var w2 = document.getElementById("bm-w2");
           var rule = document.getElementById("bm-rule");
@@ -91,20 +95,23 @@
 
           kick.textContent = CONFIG.kicker;
 
+          var useLogo = !!CONFIG.logoSrc;
+          if (useLogo) { logo.src = CONFIG.logoSrc; logo.style.display = "block"; ms.style.display = "none"; }
+
           var tl = gsap.timeline({ paused: true });
-          // Brand sting: the mark lands, the glyph draws, the wordmark builds, the rule wipes.
+          // Brand sting: the mark lands, the Microsoft squares pop (or the product logo scales in).
           gsap.set([mark, w1, w2, rule, kick], { opacity: 0 });
           gsap.set(mark, { scale: 0.55, transformOrigin: "50% 50%" });
           gsap.set([w1, w2, kick], { y: 22 });
           gsap.set(rule, { scaleX: 0 });
-          var dash = glyph.getTotalLength ? glyph.getTotalLength() : 220;
-          gsap.set(glyph, { strokeDasharray: dash, strokeDashoffset: dash });
+          if (!useLogo) gsap.set(squares, { scale: 0 });
 
           // State pinned at t=0 so the sting is a pure function of timeline time.
           tl.set([mark, w1, w2, rule, kick], { opacity: 0 }, 0);
+          if (!useLogo) tl.set(squares, { scale: 0 }, 0);
 
           tl.to(mark, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.15); // anchor-exempt: brand sting, plays before narration starts
-          tl.to(glyph, { strokeDashoffset: 0, duration: 0.55, ease: "power2.out" }, 0.35); // anchor-exempt: brand sting, plays before narration starts
+          if (!useLogo) tl.to(squares, { scale: 1, duration: 0.42, ease: "back.out(2.2)", stagger: 0.07 }, 0.32); // anchor-exempt: brand sting, plays before narration starts
           tl.to(w1, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.7); // anchor-exempt: brand sting, plays before narration starts
           tl.to(w2, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.82); // anchor-exempt: brand sting, plays before narration starts
           tl.to(rule, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power2.out" }, 1.05); // anchor-exempt: brand sting, plays before narration starts
