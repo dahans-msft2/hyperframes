@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -35,8 +36,14 @@ def die(msg: str) -> "NoReturn":  # type: ignore[name-defined]
     raise SystemExit(1)
 
 
-def run(cmd: list[str], *, cwd: Path | None = None, what: str) -> subprocess.CompletedProcess:
+def run(cmd: list[str], *, cwd: Path | None = None, what: str, stream: bool = False) -> subprocess.CompletedProcess:
     print(f"  · {what} …")
+    if stream:
+        # Long steps (render) stream live so progress is visible; on failure the output is already on screen.
+        r = subprocess.run(cmd, cwd=str(cwd) if cwd else None)
+        if r.returncode != 0:
+            die(f"{what} failed (exit {r.returncode}) — see output above")
+        return r
     r = subprocess.run(cmd, cwd=str(cwd) if cwd else None, capture_output=True, text=True)
     if r.returncode != 0:
         tail = "\n".join((r.stderr or r.stdout).splitlines()[-12:])
@@ -88,17 +95,22 @@ def main() -> int:
     run([sys.executable, str(TOOLS / "check_placeholders.py"), "--project", str(proj)],
         what="placeholder guard")
 
+    # npx is a .cmd shim on Windows — CreateProcess can't launch it directly; go via cmd /c.
+    npx = ["cmd", "/c", "npx"] if os.name == "nt" else ["npx"]
+
     # 2) Lint (fast structural gate; the heavy browser `check` is the QA gate upstream).
-    run(["npx", "--yes", f"hyperframes@{cli}", "lint"], cwd=proj, what="lint")
+    run(npx + ["--yes", f"hyperframes@{cli}", "lint"], cwd=proj, what="lint")
 
-    # 3) Warm ffmpeg (WinGet cold-start can blow the CLI's 5s probe) + confirm it is on PATH.
-    if shutil.which("ffmpeg") is None or shutil.which("ffprobe") is None:
+    # 3) Confirm ffmpeg/ffprobe on PATH + warm ffmpeg (WinGet cold-start can blow the CLI's 5s probe).
+    ffmpeg = shutil.which("ffmpeg")
+    ffprobe_bin = shutil.which("ffprobe")
+    if not ffmpeg or not ffprobe_bin:
         die("ffmpeg/ffprobe not on PATH — dot-source tools/preflight.ps1 -FixPath first")
-    subprocess.run(["ffmpeg", "-hide_banner", "-version"], capture_output=True)
+    subprocess.run([ffmpeg, "-hide_banner", "-version"], capture_output=True)
 
-    # 4) Render to the scratch renders/ dir.
+    # 4) Render to the scratch renders/ dir. Streamed so the frame-by-frame progress is visible.
     if not args.skip_render:
-        run(["npx", "--yes", f"hyperframes@{cli}", "render"], cwd=proj, what="render")
+        run(npx + ["--yes", f"hyperframes@{cli}", "render"], cwd=proj, what="render", stream=True)
 
     renders = sorted((proj / "renders").glob("*.mp4"), key=lambda p: p.stat().st_mtime, reverse=True)
     if not renders:
@@ -119,12 +131,12 @@ def main() -> int:
     run(vtt_cmd, what=f"captions (offset {offset}s{', lexicon' if lex else ''})")
 
     # 7) Verify the MP4, then extract a thumbnail at a frame with signal.
-    def ffprobe(*entries: str) -> str:
-        r = subprocess.run(["ffprobe", "-v", "error", *entries, str(final_mp4)], capture_output=True, text=True)
+    def probe(*entries: str) -> str:
+        r = subprocess.run([ffprobe_bin, "-v", "error", *entries, str(final_mp4)], capture_output=True, text=True)
         return r.stdout.strip()
 
-    duration = float(ffprobe("-show_entries", "format=duration", "-of", "default=nk=1:nw=1") or 0)
-    streams = ffprobe("-show_entries", "stream=codec_type", "-of", "csv=p=0").split()
+    duration = float(probe("-show_entries", "format=duration", "-of", "default=nk=1:nw=1") or 0)
+    streams = probe("-show_entries", "stream=codec_type", "-of", "csv=p=0").split()
     if duration <= 0:
         die(f"rendered MP4 has no duration ({final_mp4})")
     if "video" not in streams or "audio" not in streams:
@@ -132,7 +144,7 @@ def main() -> int:
 
     thumb_at = args.thumb_at if args.thumb_at is not None else round(duration * 0.6, 2)
     thumb = proj / f"{slug}_thumbnail.png"
-    run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-ss", str(thumb_at), "-i", str(final_mp4),
+    run([ffmpeg, "-y", "-hide_banner", "-loglevel", "error", "-ss", str(thumb_at), "-i", str(final_mp4),
          "-frames:v", "1", str(thumb)], what=f"thumbnail @ {thumb_at}s")
 
     # 8) Update the manifest and report.
