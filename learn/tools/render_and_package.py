@@ -18,6 +18,7 @@ that is a pipeline-order error and this aborts.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -56,6 +57,24 @@ def slugify(title: str) -> str:
     return "-".join(w[:1].upper() + w[1:] for w in words) or "video"
 
 
+def sha256_file(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def current_video_slug() -> "str | None":
+    """The <slug> if HEAD is on a `video/<slug>` branch, else None (not a video branch / not a repo)."""
+    r = subprocess.run(["git", "-C", str(LEARN), "rev-parse", "--abbrev-ref", "HEAD"],
+                       capture_output=True, text=True)
+    if r.returncode != 0:
+        return None
+    branch = r.stdout.strip()
+    return branch[len("video/"):] if branch.startswith("video/") else None
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Render a Learn composition and package the deliverables (blocking).")
     ap.add_argument("--project", required=True, help="project directory")
@@ -88,6 +107,20 @@ def main() -> int:
         die("no index.html — assemble the composition before rendering")
     if not narration_wav.exists() or not transcript.exists():
         die("narration.wav / transcript.json missing — run TTS + transcribe before rendering (they precede the build)")
+
+    # Anti-mixup guard: on a video/<slug> branch, the project folder MUST be that slug — never
+    # render one video's folder while checked out on another video's branch.
+    vslug = current_video_slug()
+    if vslug and proj.name.lower() != vslug.lower():
+        die(f"branch is 'video/{vslug}' but --project is '{proj.name}' — refusing to render a "
+            f"different video's folder on this branch (slug mismatch guards against file mixups)")
+
+    # Audio fingerprint: the narration.wav the builder timed against MUST be the one we render.
+    narration_hash = sha256_file(narration_wav)
+    prior = manifest.get("narration_sha256")
+    if prior and prior != narration_hash:
+        die("narration.wav has changed since the build (sha256 mismatch) — the builder's timing clock "
+            "is stale; re-transcribe + rebuild, or restore the committed narration.wav")
 
     print(f"render + package: {title}  ->  {proj.name}  (CLI {cli})")
 
@@ -151,6 +184,7 @@ def main() -> int:
     manifest.update({
         "title": title,
         "status": "rendered",
+        "narration_sha256": narration_hash,
         "video": {"file": final_mp4.name, "duration_seconds": round(duration, 2)},
         "deliverables": {
             "mp4": final_mp4.name,

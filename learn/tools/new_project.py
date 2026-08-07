@@ -92,6 +92,50 @@ def copy_asset(src: Path, dst: Path, warnings: list) -> None:
     shutil.copy2(src, dst)
 
 
+def _git(*args: str) -> subprocess.CompletedProcess:
+    return subprocess.run(["git", "-C", str(LEARN), *args], capture_output=True, text=True)
+
+
+def emit_gitignore_negation(slug: str) -> bool:
+    """Append a per-slug negation to learn/.gitignore so THIS one project's source is trackable
+    (renders + heavy artifacts stay ignored). Idempotent. Lives on the video branch, never merged
+    to main — so main's blanket `output/` ignore, and every other local-only video, stay untouched."""
+    gi = LEARN / ".gitignore"
+    marker = f"# --- cloud handoff: {slug} ---"
+    text = gi.read_text(encoding="utf-8") if gi.exists() else ""
+    if marker in text:
+        return False
+    block = "\n".join([
+        "",
+        marker,
+        "# Source of this video's composition is tracked so the cloud builder can hand it back;",
+        "# renders + heavy artifacts stay local-only. Never merged to main.",
+        "!output/",
+        "output/*",
+        f"!output/{slug}/",
+        f"!output/{slug}/**",
+        f"output/{slug}/renders/",
+        f"output/{slug}/**/*.mp4",
+        f"output/{slug}/**/*_thumbnail.png",
+        "",
+    ])
+    gi.write_text(text.rstrip("\n") + "\n" + block, encoding="utf-8")
+    return True
+
+
+def ensure_video_branch(slug: str, warnings: list) -> str:
+    """Create/switch to video/<slug>. Non-fatal on any git problem (warns with the manual command)."""
+    branch = f"video/{slug.lower()}"
+    if _git("rev-parse", "--git-dir").returncode != 0:
+        warnings.append(f"not a git repo — create the branch yourself: git checkout -b {branch}")
+        return branch
+    exists = _git("rev-parse", "--verify", "--quiet", branch).returncode == 0
+    r = _git("checkout", branch) if exists else _git("checkout", "-b", branch)
+    if r.returncode != 0:
+        warnings.append(f"could not switch to {branch}: {(r.stderr or r.stdout).strip()} — do it manually")
+    return branch
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Scaffold a Learn video project folder for a profile.")
     ap.add_argument("--profile", required=True, help="video-type profile (see tools/profile.py)")
@@ -101,6 +145,9 @@ def main() -> int:
     ap.add_argument("--emit-starter", action="store_true",
                     help="write a committable reference skeleton to templates/starters/<profile>/ (no binary assets)")
     ap.add_argument("--force", action="store_true", help="overwrite a non-empty output dir")
+    ap.add_argument("--cloud", action="store_true",
+                    help="prepare for cloud handoff: create the video/<slug> branch and track this "
+                         "project's source (renders stay git-ignored)")
     args = ap.parse_args()
 
     try:
@@ -286,6 +333,13 @@ def main() -> int:
     ]
     (out / "BRIEF.md").write_text("\n".join(brief), encoding="utf-8")
 
+    # --- cloud handoff: branch + per-slug gitignore so the source is trackable for the builder ---
+    branch = None
+    if args.cloud and not args.emit_starter:
+        slug = out.name
+        emit_gitignore_negation(slug)
+        branch = ensure_video_branch(slug, warnings)
+
     # --- report ---
     print(f"scaffolded {p['name']} project -> {out}")
     print(f"  chrome scenes: {', '.join(s['id'] for s in scenes) or '(none for this profile)'}")
@@ -293,6 +347,8 @@ def main() -> int:
           f"{body_after or '(start)'} and {body_before or '(end)'}")
     print(f"  assets: {'copied fresh' if copy_assets else 'skipped (starter skeleton)'}")
     print(f"  placeholders to fill: {len(fill_locations)} chrome element(s) - see BRIEF.md")
+    if branch:
+        print(f"  cloud handoff: on branch '{branch}' — source tracked, renders git-ignored")
     for w in warnings:
         print(f"  ! {w}")
     print("\nnext: fill BRIEF.md placeholders, author body scenes, run the pipeline.")
