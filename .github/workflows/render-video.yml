@@ -1,0 +1,72 @@
+# Renders a Learn video in GitHub Actions on a Windows runner — where Segoe UI is a system font,
+# so `sync_fonts.py` regenerates the REAL brand woff2 on the runner (no Selawik, no committed fonts,
+# pixel-identical to a local render). Same OS as the local pipeline, so render_and_package.py runs
+# unchanged. Standard windows-latest is free on this public fork.
+#
+# Render PRE-MERGE, on the video branch: the MP4 is what you approve, so watch it (as an uploaded
+# artifact) before merging the PR into `videos`. Dispatch manually for now; a `render` PR-label
+# trigger and a batch matrix are the natural next additions.
+
+name: Render Learn video
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch holding the project (e.g. video/<slug>, or videos)"
+        required: true
+        default: videos
+      project:
+        description: "Project dir to render (e.g. learn/output/Meet-Microsoft-Scout)"
+        required: true
+        default: learn/output/Meet-Microsoft-Scout
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: windows-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout the video branch (with LFS media)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+          lfs: true
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Python deps for font generation
+        run: python -m pip install --upgrade pip fonttools brotli
+
+      # Windows Server ships Segoe UI in C:\Windows\Fonts — regenerate the project's brand woff2
+      # from the runner's own licensed system fonts. This is the whole reason for a Windows runner.
+      - name: Generate real Segoe woff2 from the runner's system fonts
+        run: python learn/tools/sync_fonts.py --out "${{ inputs.project }}/fonts" --css
+
+      - name: Ensure ffmpeg is available
+        shell: pwsh
+        run: if (-not (Get-Command ffmpeg -ErrorAction SilentlyContinue)) { choco install ffmpeg -y --no-progress }
+
+      - name: Provision chrome-headless-shell for the render
+        run: npx --yes hyperframes@0.7.77 browser ensure
+
+      - name: Render + package (MP4 + VTT + thumbnail)
+        run: python learn/tools/render_and_package.py --project "${{ inputs.project }}"
+
+      - name: Upload the deliverables
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-${{ github.run_id }}
+          path: |
+            ${{ inputs.project }}/*.mp4
+            ${{ inputs.project }}/*.vtt
+            ${{ inputs.project }}/*_thumbnail.png
+          if-no-files-found: error
+          retention-days: 30
