@@ -4,12 +4,14 @@
 # unchanged. Standard windows-latest is free on this public fork.
 #
 # Render PRE-MERGE, on the video branch: the MP4 is what you approve, so watch it (as an uploaded
-# artifact) before merging the PR into `videos`. Dispatch manually for now; a `render` PR-label
-# trigger and a batch matrix are the natural next additions.
+# artifact) before merging the PR into `videos`. Two triggers: add the `render` label to a video PR
+# (auto-resolves branch + project, comments the link back), or dispatch manually with branch/project.
+# A batch render matrix (fan module PRs out in parallel) is the natural next addition.
 
 name: Render Learn video
 
 on:
+  # Manual: render any branch's project on demand.
   workflow_dispatch:
     inputs:
       branch:
@@ -17,23 +19,49 @@ on:
         required: true
         default: videos
       project:
-        description: "Project dir to render (e.g. learn/output/Meet-Microsoft-Scout)"
-        required: true
-        default: learn/output/Meet-Microsoft-Scout
+        description: "Project dir (blank = auto-detect the one learn/output/<slug> on the branch)"
+        required: false
+        default: ""
+  # Auto: add the `render` label to a video PR to render its branch (pre-merge).
+  pull_request:
+    types: [labeled]
 
 permissions:
   contents: read
+  pull-requests: write   # comment the artifact link back on the PR
 
 jobs:
   render:
+    # dispatch always; PR only when the `render` label is added
+    if: github.event_name == 'workflow_dispatch' || github.event.label.name == 'render'
     runs-on: windows-latest
     timeout-minutes: 120
     steps:
+      - name: Resolve the branch to render
+        id: br
+        shell: pwsh
+        run: |
+          $b = if ($env:GITHUB_EVENT_NAME -eq 'workflow_dispatch') { '${{ inputs.branch }}' } else { '${{ github.event.pull_request.head.ref }}' }
+          "branch=$b" | Out-File $env:GITHUB_OUTPUT -Append
+
       - name: Checkout the video branch (with LFS media)
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.branch }}
+          ref: ${{ steps.br.outputs.branch }}
           lfs: true
+
+      - name: Resolve the project dir
+        id: proj
+        shell: pwsh
+        run: |
+          $p = '${{ inputs.project }}'
+          if (-not $p) {
+            $dirs = @(Get-ChildItem learn/output -Directory -ErrorAction SilentlyContinue)
+            if ($dirs.Count -ne 1) { throw "Expected exactly one learn/output/<slug> project on this branch, found $($dirs.Count) — pass --project via dispatch." }
+            $p = "learn/output/$($dirs[0].Name)"
+          }
+          "dir=$p" | Out-File $env:GITHUB_OUTPUT -Append
+          Write-Host "Rendering project: $p"
 
       - uses: actions/setup-node@v4
         with:
@@ -48,7 +76,7 @@ jobs:
       # Windows Server ships Segoe UI in C:\Windows\Fonts — regenerate the project's brand woff2
       # from the runner's own licensed system fonts. This is the whole reason for a Windows runner.
       - name: Generate real Segoe woff2 from the runner's system fonts
-        run: python learn/tools/sync_fonts.py --out "${{ inputs.project }}/fonts" --css
+        run: python learn/tools/sync_fonts.py --out "${{ steps.proj.outputs.dir }}/fonts" --css
 
       - name: Ensure ffmpeg is available
         shell: pwsh
@@ -58,15 +86,30 @@ jobs:
         run: npx --yes hyperframes@0.7.77 browser ensure
 
       - name: Render + package (MP4 + VTT + thumbnail)
-        run: python learn/tools/render_and_package.py --project "${{ inputs.project }}"
+        run: python learn/tools/render_and_package.py --project "${{ steps.proj.outputs.dir }}"
 
       - name: Upload the deliverables
+        id: art
         uses: actions/upload-artifact@v4
         with:
           name: video-${{ github.run_id }}
           path: |
-            ${{ inputs.project }}/*.mp4
-            ${{ inputs.project }}/*.vtt
-            ${{ inputs.project }}/*_thumbnail.png
+            ${{ steps.proj.outputs.dir }}/*.mp4
+            ${{ steps.proj.outputs.dir }}/*.vtt
+            ${{ steps.proj.outputs.dir }}/*_thumbnail.png
           if-no-files-found: error
           retention-days: 30
+
+      # Pre-merge review: drop the watch/download link right on the PR that triggered the render.
+      - name: Comment the artifact link on the PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: `🎬 **Render complete** — download the MP4 + captions + thumbnail from this run's artifacts (\`video-${context.runId}\`): ${runUrl}#artifacts\n\nReview it, then merge to \`videos\` to archive.`,
+            });
