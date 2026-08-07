@@ -1,0 +1,92 @@
+[
+  {
+    "kind": "start",
+    "stage": "orchestrator",
+    "run_id": "call-queue-routing-methods-202608071230",
+    "at": "2026-08-07T23:25:38+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "start",
+    "stage": "script-writer",
+    "run_id": "call-queue-routing-methods-202608071230",
+    "at": "2026-08-07T23:26:01+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "script-writer",
+    "run_id": "call-queue-routing-methods-202608071230",
+    "at": "2026-08-07T23:37:04+00:00",
+    "status": "passed",
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "start",
+    "stage": "designer",
+    "run_id": "call-queue-routing-methods-202608071230",
+    "at": "2026-08-07T23:41:25+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "designer",
+    "run_id": "call-queue-routing-methods-202608071230",
+    "at": "2026-08-07T23:49:22+00:00",
+    "status": "passed",
+    "note": "design-plan.md written; 4 custom (6/8/11/14) + 13 kit; hero on 1/2/17; dark-field on 14 only; contrast gate PASS worst 5.95",
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "designer",
+    "run_id": "call-queue-routing-methods-202608071230",
+    "at": "2026-08-07T23:49:48+00:00",
+    "status": "passed",
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "start",
+    "stage": "qa",
+    "run_id": "call-queue-routing-methods-202608071230",
+    "at": "2026-08-07T23:49:48+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "qa",
+    "run_id": "call-queue-routing-methods-202608071230",
+    "at": "2026-08-07T23:54:12+00:00",
+    "status": "passed",
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "start",
+    "stage": "tts",
+    "run_id": "call-queue-routing-methods-202608071230",
+    "at": "2026-08-07T23:55:08+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "tts",
+    "run_id": "call-queue-routing-methods-202608071230",
+    "at": "2026-08-07T23:58:38+00:00",
+    "status": "passed",
+    "note": null,
+    "meta": {}
+  }
+]

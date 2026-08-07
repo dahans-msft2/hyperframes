@@ -1,0 +1,33 @@
+Here's a call queue setup that looks completely correct — and quietly fails.
+
+This is how call queue routing works in Microsoft Teams Phone, and how to keep it from tripping you up.
+
+By the end, you'll know three things: how the four routing methods hand out calls, and which two Microsoft recommends; how callback offers a waiting caller a call back instead of hold music; and the timing trap that stops callback from ever being offered.
+
+Picture that broken setup. Callback is on, a caller is clearly waiting, an agent is clearly free — and the callback never comes. Nothing's misconfigured. To see why, you first need to see how a call queue handles a call. It starts with one decision: who to ring.
+
+That decision is the routing method — and you get four of them. Each hands out calls differently, so your choice decides how the work is shared across agents.
+
+The default on every queue, new or existing, is Attendant routing. A call comes in, every agent's phone rings at once, and whoever answers first gets it. Fast — but it leans on the same quick hands.
+
+Serial rings agents one at a time, in the exact order you list them. If one dismisses the call or doesn't answer, it moves to the next, and keeps going until someone picks up or the call times out.
+
+Round robin evens things out, so every agent gets the same number of calls. That's the one for inbound sales, where each rep should get an equal shot at the next lead.
+
+Longest idle sends the next call to whoever's been free the longest — and free means their presence is set to *Available*. Choosing it flips presence-based routing on automatically, even when that toggle looks off. These two — Round robin and Longest idle — are the ones Microsoft recommends.
+
+One catch: when fewer calls are waiting than there are available agents, only the first two longest-idle agents get offered calls.
+
+So that's who the queue rings. Callback handles the people still waiting: turn it on, and an eligible caller can hang up and get called back the moment an agent frees up — instead of sitting on hold.
+
+A caller becomes eligible the moment any one of three conditions comes true: they wait past your set time, the queue grows past a set number of calls, or the calls-to-agent ratio crosses your limit. Their number just has to be publicly dialable, non-premium, and in standard E one six four format.
+
+So — back to our mystery. Callback's on, eligibility's set to sixty seconds, everything looks right. Will this caller ever get offered a callback? [[pause:800ms]]
+
+Watch the clock. At sixty seconds, the caller becomes eligible — but the default hold music runs a full two minutes, and the timeout is set to one hundred and twenty seconds. The timeout fires before the music ends, so the offer never plays. Callback wasn't broken — the timeout just never gave it *room*.
+
+So here's the rule to keep: your Call timeout has to outlast the whole sequence — time to become eligible, time for the music to finish, and time for the callback to reach a free agent. Get that one value right, and callback finally works.
+
+So, four routing methods deciding who rings: Attendant, Serial, Round robin, and Longest idle — the last two recommended. Callback for the callers still on hold. And one timing rule tying it together: set the timeout long enough, or callback never gets its turn.
+
+Want to set one up yourself? Head to the call queue setup guide on Microsoft Learn and walk through routing and callback end to end.

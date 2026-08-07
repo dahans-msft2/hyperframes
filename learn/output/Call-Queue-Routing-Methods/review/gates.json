@@ -1,0 +1,66 @@
+[
+  {
+    "gate": 1,
+    "name": "Concept and source",
+    "status": "passed",
+    "artifact": null,
+    "note": "Source: C:\\learn-pr\\learn-m365-pr\\learn-m365-pr\\wwl\\configure-auto-attendants-call-queues\\includes\\8-interpret-call-queue-routing-methods.md",
+    "at": "2026-08-07T16:25:02"
+  },
+  {
+    "gate": 2,
+    "name": "Video type and profile",
+    "status": "passed",
+    "artifact": null,
+    "note": "Profile LOCKED: unit-video (~240s, 580 words, ~10 scenes, 5.0s static). Scaffolded by new_project.py.",
+    "at": "2026-08-07T16:25:02"
+  },
+  {
+    "gate": 1,
+    "name": "Concept and source",
+    "status": "passed",
+    "artifact": null,
+    "note": "MS-721 unit 8 'Interpret call queue routing methods' (auto-attendants-call-queues); source=local learn-pr md + Docs MCP grounding",
+    "at": "2026-08-07T16:25:38"
+  },
+  {
+    "gate": 2,
+    "name": "Video type and profile",
+    "status": "passed",
+    "artifact": null,
+    "note": "profile unit-video LOCKED (~240s, ~580 words, ~10 scenes)",
+    "at": "2026-08-07T16:25:38"
+  },
+  {
+    "gate": 4,
+    "name": "Voice",
+    "status": "passed",
+    "artifact": null,
+    "note": "voice LOCKED en-US-Andrew:DragonHDLatestNeural (user pick; audition catalog unreachable, static shortlist)",
+    "at": "2026-08-07T16:41:24"
+  },
+  {
+    "gate": 5,
+    "name": "Script",
+    "status": "passed",
+    "artifact": "script.md",
+    "note": "602 words; hook=callback-timeout gotcha; 12 body beats; verbatim-grounded + Docs MCP confirmed",
+    "at": "2026-08-07T16:41:25"
+  },
+  {
+    "gate": 3,
+    "name": "Look",
+    "status": "passed",
+    "artifact": "design-plan.md",
+    "note": "learn-ilt; hero=bumper/title/cta, dark-field=timeout reveal only; 4 custom+13 kit; contrast PASS worst 5.95",
+    "at": "2026-08-07T16:49:48"
+  },
+  {
+    "gate": 6,
+    "name": "Fact-check QA",
+    "status": "passed",
+    "artifact": null,
+    "note": "SHIP 20/20; 0 disqualifiers; 0 fact FLAGs; watch density@render",
+    "at": "2026-08-07T16:54:12"
+  }
+]

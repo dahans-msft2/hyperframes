@@ -1,0 +1,32 @@
+{
+  "$comment": "Cue name -> exact spoken phrase it must land on. Resolve to real times with tools/word_anchors.py against transcript.json. Phrases are verbatim substrings of the narration in script.md.",
+  "run_id": "call-queue-routing-methods-202608071230",
+  "source": "script.md",
+  "anchors": {
+    "hook_no_callback": "the callback never comes",
+    "who_rings": "who to ring",
+    "four_methods": "you get four of them",
+    "m_attendant": "Attendant routing",
+    "m_serial": "Serial rings agents one at a time",
+    "m_roundrobin": "Round robin evens things out",
+    "m_longestidle": "Longest idle sends the next call",
+    "presence_auto": "flips presence-based routing on automatically",
+    "recommend_two": "are the ones Microsoft recommends",
+    "catch_two_agents": "the first two longest-idle agents",
+    "callback_on": "an eligible caller can hang up and get called back",
+    "elig_three": "any one of three conditions comes true",
+    "elig_wait": "they wait past your set time",
+    "elig_count": "the queue grows past a set number of calls",
+    "elig_ratio": "the calls-to-agent ratio crosses your limit",
+    "number_e164": "standard E one six four format",
+    "predict_q": "ever get offered a callback",
+    "reveal_eligible": "the caller becomes eligible",
+    "reveal_music_2min": "runs a full two minutes",
+    "reveal_timeout_120": "one hundred and twenty seconds",
+    "reveal_fires": "fires before the music ends",
+    "reveal_offer": "the offer never plays",
+    "rule_outlast": "has to outlast the whole sequence",
+    "recap_set_long": "set the timeout long enough",
+    "cta_setup": "call queue setup guide on Microsoft Learn"
+  }
+}
