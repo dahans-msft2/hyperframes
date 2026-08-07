@@ -1,0 +1,61 @@
+# Environment the GitHub Copilot cloud agent provisions before a Learn-video BUILD task.
+#
+# The agent runs the job named exactly `copilot-setup-steps` in its ephemeral Ubuntu
+# environment, then authors scenes/*.html + index.html and runs `lint` + `check`. It does
+# NOT render (render stays local, on real Segoe + ffmpeg). So this env only needs Node, a
+# headless browser for `check`, Python for the learn build tools, and fallback fonts.
+#
+# Fonts: Segoe UI is licensed and its woff2 are git-ignored, so they are ABSENT here. That is
+# fine — `check`'s WCAG gate is colour-based (valid without Segoe) and the pipeline treats a
+# missing local font as non-fatal, falling back to the installed sans. This mirrors the
+# project's own headless render container (packages/cli/src/docker/Dockerfile.render), which
+# also renders on apt fonts. The brand-accurate Segoe render is the LOCAL one; this env is a
+# pre-filter, and the local render is authoritative.
+
+name: Copilot setup steps
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Node 22 (matches Dockerfile.render's node:22 base)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Python 3.12 (the learn/tools/* build helpers)
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # `chromium` is installed only to pull the version-correct shared libs (libnss3, libgbm1,
+      # libasound2*, ...) that headless Chrome needs — apt resolves the right names per Ubuntu
+      # release, avoiding the libasound2 -> libasound2t64 breakage on 24.04. The actual render
+      # browser is the chrome-headless-shell fetched by `hyperframes browser ensure` below.
+      - name: Headless-browser libs + fallback fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            chromium fontconfig \
+            fonts-liberation fonts-noto-core fonts-noto-color-emoji fonts-dejavu-core
+          sudo fc-cache -f
+
+      - name: Python libs used by the build tools
+        run: python -m pip install --upgrade pip fonttools brotli pillow
+
+      # Pinned CLI = learn/config.json -> cli.published_version. Keep this in sync when it bumps.
+      - name: Provision chrome-headless-shell for `hyperframes check`
+        run: npx --yes hyperframes@0.7.77 browser ensure
+
+      - name: Warm the pinned CLI (cache the npx download)
+        run: npx --yes hyperframes@0.7.77 --version
