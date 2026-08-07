@@ -65,13 +65,40 @@ def elements_with_css_zero(html, zero_classes):
     return hidden
 
 
+def targets(project):
+    """Composition files to scan for a project dir.
+
+    A modular project keeps every authored element in scenes/*.html; the assembled
+    index.html only tiles them. Scan the scene files when they exist, the monolith
+    index.html otherwise.
+    """
+    scenes = sorted((project / "scenes").glob("*.html"))
+    return scenes or [project / "index.html"]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("composition", type=pathlib.Path, nargs="?",
                     default=pathlib.Path("index.html"))
+    ap.add_argument("--project", type=pathlib.Path,
+                    help="project dir - scans scenes/*.html (modular) or index.html (monolith)")
     args = ap.parse_args()
 
-    html = args.composition.read_text(encoding="utf-8")
+    if args.project:
+        paths = targets(args.project)
+        failed = 0
+        for path in paths:
+            print(f"=== {path}")
+            failed += 1 if scan(path) else 0
+            print()
+        print(f"{len(paths) - failed}/{len(paths)} composition file(s) clean")
+        return 1 if failed else 0
+
+    return scan(args.composition)
+
+
+def scan(composition):
+    html = composition.read_text(encoding="utf-8")
     css = "\n".join(re.findall(r"<style[^>]*>(.*?)</style>", html, re.S))
     script = "\n".join(re.findall(r"<script(?![^>]*\bsrc=)[^>]*>(.*?)</script>", html, re.S))
 

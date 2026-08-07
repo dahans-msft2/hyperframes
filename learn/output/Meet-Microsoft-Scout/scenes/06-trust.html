@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+    <script src="../anchors.js"></script>
+  </head>
+  <body>
+    <template>
+      <style>
+        /* === Body beat 06 — "in your control", built on the Learn-ILT `diagram-layers` block. ===
+           The single dark-field of the video: concentric governance closing around what Scout
+           does. Rings arrive in the order they are spoken, not outside-in, so the picture is
+           assembled by the narration. Ink inverts from the ground token — nothing is hardcoded
+           white. Foundation is verbatim; everything else is tokens only. */
+
+        /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+        #root,
+        #root *,
+        #root *::before,
+        #root *::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size;
+
+          --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
+          --ink: #091f2e;
+          --ink-soft: #59636e;
+          --paper: #ffffff;
+          --paper-veil: rgba(255, 255, 255, 0.9);
+          --border: rgba(9, 31, 46, 0.16);
+          --border-soft: rgba(9, 31, 46, 0.12);
+          --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
+
+          --accent: #8661c5;
+          --accent-2: #0078d4;
+          --accent-3: #389a91;
+          --accent-4: #bf3ac4;
+          --accent-ink: #ffffff;
+
+          --fs-display: 11cqw;
+          --fs-h1: 4.6cqw;
+          --fs-h2: 3.4cqw;
+          --fs-h3: 2.4cqw;
+          --fs-lead: 2cqw;
+          --fs-body: 1.75cqw;
+          --fs-caption: 1.5cqw;
+          --fs-kicker: 1.55cqw;
+          --fs-micro: 1.25cqw;
+
+          --radius: 16px;
+          --radius-sm: 10px;
+          --radius-pill: 999px;
+          --stroke: 5px;
+          --rule: 3px;
+
+          font-family: "Segoe UI", system-ui, sans-serif;
+          color: var(--ink);
+          background: var(--ground);
+        }
+        #root[data-ground="hero-swoosh"] {
+          --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+        }
+        #root[data-ground="section-field"] {
+          --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
+        }
+        #root[data-ground="dark-field"] {
+          --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
+          --ink: #ffffff;
+          --ink-soft: rgba(255, 255, 255, 0.72);
+          --paper: rgba(255, 255, 255, 0.08);
+          --paper-veil: rgba(255, 255, 255, 0.1);
+          --border: rgba(255, 255, 255, 0.24);
+          --border-soft: rgba(255, 255, 255, 0.14);
+          --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+        /* ==== END _foundation.css ==== */
+
+        /* ---- kit primitives used by this block (verbatim from _foundation.css) ---- */
+        .ilt-kicker {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-kicker);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+        .ilt-headline {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h3);
+          line-height: 1.12;
+          letter-spacing: -0.015em;
+          color: var(--ink);
+        }
+        .ilt-body {
+          font-weight: 400;
+          font-size: var(--fs-body);
+          line-height: 1.3;
+          color: var(--ink);
+        }
+
+        /* ---- block-specific: compose primitives + tokens only ---- */
+        #mk-dl-stage {
+          position: absolute;
+          inset: 0;
+        }
+        /* a concentric ring: a bordered translucent plane, centred, labelled at its top edge. */
+        .mk-dl-ring {
+          position: absolute;
+          left: var(--cx, 50%);
+          top: 50%;
+          transform: translate(-50%, -50%);
+          border: 2px solid var(--border);
+          border-radius: 28px;
+          background: var(--paper-veil);
+          box-shadow: var(--shadow);
+        }
+        .mk-dl-ring-label {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          padding: 0.35em 1.1em;
+          border-radius: var(--radius-pill);
+          border: 1.5px solid var(--border);
+          background: var(--paper);
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-caption);
+          letter-spacing: 0.02em;
+          color: var(--ink);
+          white-space: nowrap;
+        }
+        /* the protected core — an accent-bordered panel; its label sits on no fill, stays ink. */
+        #mk-dl-core {
+          position: absolute;
+          left: var(--cx, 50%);
+          top: 50%;
+          width: 360px;
+          transform: translate(-50%, -50%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 1.4cqw 2cqw;
+          border: 2.5px solid var(--accent);
+          border-radius: 20px;
+          background: var(--paper);
+          box-shadow: 0 0 0 0 rgba(134, 97, 197, 0);
+          z-index: 100;
+        }
+        #mk-dl-core-label {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h3);
+          line-height: 1.1;
+          letter-spacing: -0.015em;
+          color: var(--ink);
+        }
+
+        /* right-hand text column — the words the rings illustrate */
+        #mk-dl-col {
+          position: absolute;
+          left: 1240px;
+          top: 50%;
+          width: 520px;
+          transform: translateY(-50%);
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+        #mk-dl-note,
+        #mk-dl-signoff {
+          display: flex;
+          align-items: center;
+          gap: 0.8cqw;
+          margin-top: 14px;
+          padding: 0.7em 1.1em;
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius-sm);
+          background: var(--paper-veil);
+          font-size: var(--fs-caption);
+          color: var(--ink);
+        }
+        .mk-dl-glyph {
+          width: 1.6cqw;
+          height: 1.6cqw;
+          flex-shrink: 0;
+        }
+        .mk-dl-glyph path {
+          stroke: var(--accent); /* accent = graphic, not text */
+          fill: none;
+          stroke-width: 2.4;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="06-trust"
+        data-ground="dark-field"
+        data-width="1920"
+        data-height="1080"
+      >
+        <div id="mk-dl-stage">
+          <div id="mk-dl-ring-0" class="mk-dl-ring">
+            <div class="mk-dl-ring-label">Your permissions &amp; policies</div>
+          </div>
+          <div id="mk-dl-ring-1" class="mk-dl-ring">
+            <div class="mk-dl-ring-label">Microsoft Purview</div>
+          </div>
+          <div id="mk-dl-ring-2" class="mk-dl-ring">
+            <div class="mk-dl-ring-label">Governed Entra identity</div>
+          </div>
+          <div id="mk-dl-core">
+            <div id="mk-dl-core-label">Scout acts</div>
+          </div>
+        </div>
+
+        <div id="mk-dl-col">
+          <div id="mk-dl-kicker" class="ilt-kicker">In your control</div>
+          <div id="mk-dl-headline" class="ilt-headline">Built to be trusted</div>
+          <div id="mk-dl-note">
+            <svg class="mk-dl-glyph" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 4l16 16M4 20L20 4" />
+            </svg>
+            <span>Never a shared account</span>
+          </div>
+          <div id="mk-dl-signoff">
+            <svg class="mk-dl-glyph" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 12.5l5 5L20 6.5" />
+            </svg>
+            <span>The most sensitive actions wait for your sign-off</span>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          window.__timelines = window.__timelines || {};
+
+          // Cue clock — real spoken-word times (anchors.js, generated from transcript.json),
+          // made scene-relative against this beat's start in scenes.json.
+          var A = window.__anchors || {};
+          var B = { b06: 56.215 };
+          var W = {
+            trusted: A.t6Trusted - B.b06,          // "And it's built to be trusted."
+            identity: A.t6Identity - B.b06,        // "…its own governed Entra identity"
+            shared: A.t6Shared - B.b06,            // "never a shared account"
+            permissions: A.t6Permissions - B.b06,  // "inside the permissions you set"
+            purview: A.t6Purview - B.b06,          // "Microsoft Purview protections"
+            moment: A.t6Moment - B.b06,            // "…enforced in the moment"
+            sensitive: A.t6Sensitive - B.b06,      // "the most sensitive actions"
+            signoff: A.t6Signoff - B.b06           // "…wait for your sign-off"
+          };
+
+          // Concentric geometry: outermost ring first, each inner one a step smaller per side.
+          var LAYOUT = { cx: 660, outer: 800, step: 170, ringCount: 3 };
+
+          var stage = document.getElementById("mk-dl-stage");
+          stage.style.setProperty("--cx", LAYOUT.cx + "px");
+
+          var ring0 = document.getElementById("mk-dl-ring-0");
+          var ring1 = document.getElementById("mk-dl-ring-1");
+          var ring2 = document.getElementById("mk-dl-ring-2");
+          [ring0, ring1, ring2].forEach(function (ring, i) {
+            var size = LAYOUT.outer - i * LAYOUT.step;
+            ring.style.width = size + "px";
+            ring.style.height = size + "px";
+            ring.style.zIndex = 10 + i;
+          });
+
+          var core = document.getElementById("mk-dl-core");
+          var kicker = document.getElementById("mk-dl-kicker");
+          var headline = document.getElementById("mk-dl-headline");
+          var note = document.getElementById("mk-dl-note");
+          var signoff = document.getElementById("mk-dl-signoff");
+
+          var tl = gsap.timeline({ paused: true });
+
+          // Every element is pinned before its cue, so state stays a pure function of time.
+          gsap.set([kicker, headline], { opacity: 0, y: 22 });
+          gsap.set([note, signoff], { opacity: 0, y: 18 });
+          gsap.set([ring0, ring1, ring2], { opacity: 0, scale: 1.12 });
+          gsap.set(core, { opacity: 0, scale: 0.6 });
+
+          // 1) the claim, then the thing being governed.
+          tl.to(kicker, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.trusted);
+          tl.to(headline, { opacity: 1, y: 0, duration: 0.55, delay: 0.14, ease: "power3.out" }, W.trusted);
+          tl.to(core, { opacity: 1, scale: 1, duration: 0.55, delay: 0.3, ease: "back.out(1.8)" }, W.trusted);
+
+          // 2) each scope closes around it in the order it is spoken: identity, then the
+          //    permissions you set, then Purview.
+          tl.to(ring2, { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, W.identity);
+          tl.to(note, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.shared);
+          tl.to(ring0, { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, W.permissions);
+          tl.to(ring1, { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, W.purview);
+
+          // 3) "enforced in the moment" — the accent glow lands once, on the word.
+          tl.to(core, { boxShadow: "0 0 44px 6px rgba(134,97,197,.38)", duration: 0.5, ease: "power2.out" }, W.moment);
+
+          // 4) the human gate closes the beat.
+          tl.to(signoff, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.sensitive);
+          tl.to(signoff, { scale: 1.03, duration: 0.4, ease: "power2.inOut", yoyo: true, repeat: 1 }, W.signoff);
+
+          window.__timelines["06-trust"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

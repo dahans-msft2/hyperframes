@@ -1,0 +1,34 @@
+[
+  {
+    "gate": 1,
+    "name": "Concept and source",
+    "status": "passed",
+    "artifact": null,
+    "note": "Source: https://learn.microsoft.com/en-us/microsoft-scout/use-microsoft-scout",
+    "at": "2026-08-07T11:56:03"
+  },
+  {
+    "gate": 2,
+    "name": "Video type and profile",
+    "status": "passed",
+    "artifact": null,
+    "note": "Profile LOCKED: companion-short (~105s, 254 words, ~5 scenes, 4.0s static). Scaffolded by new_project.py.",
+    "at": "2026-08-07T11:56:04"
+  },
+  {
+    "gate": 8,
+    "name": "Render",
+    "status": "passed",
+    "artifact": "Meet-Microsoft-Scout.mp4",
+    "note": "Cloud-built (Copilot agent) composition rendered brand-final on Segoe: 96.3s, all gates green (lint, check 24/24 AA, subcomps, initial-state, cue-anchors). First end-to-end cloud-build proof.",
+    "at": "2026-08-07T14:37:52"
+  },
+  {
+    "gate": 9,
+    "name": "Delivery",
+    "status": "passed",
+    "artifact": "manifest.json",
+    "note": "Delivered MP4 + VTT + thumbnail. Cloud authoring -> local render loop proven.",
+    "at": "2026-08-07T14:37:52"
+  }
+]

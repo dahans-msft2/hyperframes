@@ -1,0 +1,20 @@
+{
+  "title": "Meet Microsoft Scout",
+  "type": "companion-short",
+  "profile": "companion-short",
+  "status": "rendered",
+  "voice": "en-US-Ava:DragonHDLatestNeural",
+  "source": "https://learn.microsoft.com/en-us/microsoft-scout/use-microsoft-scout",
+  "deliverables": {
+    "mp4": "Meet-Microsoft-Scout.mp4",
+    "captions_vtt": "Meet-Microsoft-Scout.vtt",
+    "transcript": "transcript.json",
+    "thumbnail": "Meet-Microsoft-Scout_thumbnail.png",
+    "narration_wav": "narration.wav"
+  },
+  "narration_sha256": "db203cc277258301fdb44da81c30df51344b7e4f58961b0dc13aa939d7af61c9",
+  "video": {
+    "file": "Meet-Microsoft-Scout.mp4",
+    "duration_seconds": 96.3
+  }
+}

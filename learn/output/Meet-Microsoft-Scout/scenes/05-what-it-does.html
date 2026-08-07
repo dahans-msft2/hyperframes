@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+    <script src="../anchors.js"></script>
+  </head>
+  <body>
+    <template>
+      <style>
+        /* === Body beat 05 — "what it does", built on the Learn-ILT `list-specs` block. ===
+           Four capability rows, each landing on the verb that names it, under a header and
+           over a Work IQ caption. Foundation is verbatim; everything else is tokens only. */
+
+        /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+        #root,
+        #root *,
+        #root *::before,
+        #root *::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size;
+
+          --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
+          --ink: #091f2e;
+          --ink-soft: #59636e;
+          --paper: #ffffff;
+          --paper-veil: rgba(255, 255, 255, 0.9);
+          --border: rgba(9, 31, 46, 0.16);
+          --border-soft: rgba(9, 31, 46, 0.12);
+          --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
+
+          --accent: #8661c5;
+          --accent-2: #0078d4;
+          --accent-3: #389a91;
+          --accent-4: #bf3ac4;
+          --accent-ink: #ffffff;
+
+          --fs-display: 11cqw;
+          --fs-h1: 4.6cqw;
+          --fs-h2: 3.4cqw;
+          --fs-h3: 2.4cqw;
+          --fs-lead: 2cqw;
+          --fs-body: 1.75cqw;
+          --fs-caption: 1.5cqw;
+          --fs-kicker: 1.55cqw;
+          --fs-micro: 1.25cqw;
+
+          --radius: 16px;
+          --radius-sm: 10px;
+          --radius-pill: 999px;
+          --stroke: 5px;
+          --rule: 3px;
+
+          font-family: "Segoe UI", system-ui, sans-serif;
+          color: var(--ink);
+          background: var(--ground);
+        }
+        #root[data-ground="hero-swoosh"] {
+          --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+        }
+        #root[data-ground="section-field"] {
+          --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
+        }
+        #root[data-ground="dark-field"] {
+          --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
+          --ink: #ffffff;
+          --ink-soft: rgba(255, 255, 255, 0.72);
+          --paper: rgba(255, 255, 255, 0.08);
+          --paper-veil: rgba(255, 255, 255, 0.1);
+          --border: rgba(255, 255, 255, 0.24);
+          --border-soft: rgba(255, 255, 255, 0.14);
+          --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+        /* ==== END _foundation.css ==== */
+
+        /* ---- kit primitives used by this block (verbatim from _foundation.css) ---- */
+        .ilt-kicker {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-kicker);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+        .ilt-headline {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h3);
+          line-height: 1.12;
+          letter-spacing: -0.015em;
+          color: var(--ink);
+        }
+        .ilt-caption {
+          font-weight: 400;
+          font-size: var(--fs-caption);
+          line-height: 1.3;
+          color: var(--ink-soft);
+        }
+        .ilt-rule {
+          /* accent underline bar — a graphic, never text colour */
+          height: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent);
+        }
+
+        /* ---- block-specific: compose primitives + tokens only ---- */
+        #mk-sl-col {
+          position: absolute;
+          left: 170px;
+          top: 50%;
+          width: 1120px;
+          transform: translateY(-50%);
+          display: flex;
+          flex-direction: column;
+        }
+        #mk-sl-head {
+          margin-bottom: 54px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+        .mk-sl-row {
+          line-height: 1;
+        }
+        .mk-sl-row + .mk-sl-row {
+          margin-top: 44px;
+        }
+        .mk-sl-text {
+          display: flex;
+          align-items: baseline;
+          gap: 22px;
+          white-space: nowrap;
+        }
+        .mk-sl-label {
+          font-weight: 600;
+          font-size: var(--fs-body);
+          letter-spacing: -0.015em;
+          color: var(--ink); /* label — primary ink */
+        }
+        .mk-sl-value {
+          font-weight: 400;
+          font-size: var(--fs-body);
+          letter-spacing: -0.01em;
+          color: var(--ink-soft); /* value — secondary ink */
+        }
+        .mk-sl-line {
+          position: relative;
+          margin-top: 22px;
+          width: 980px;
+          height: var(--rule);
+          background: var(--border-soft); /* track — soft border, ground-aware */
+          border-radius: 2px;
+          overflow: hidden;
+        }
+        .mk-sl-line-fill {
+          position: absolute;
+          inset: 0;
+          transform-origin: left center;
+          /* .ilt-rule supplies the purple accent fill */
+        }
+        #mk-sl-cap {
+          margin-top: 62px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+        #mk-sl-cap-line {
+          font-size: var(--fs-body);
+          line-height: 1.3;
+          color: var(--ink);
+        }
+        #mk-sl-cap-rule {
+          width: 200px;
+          transform-origin: left center;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="05-what-it-does"
+        data-width="1920"
+        data-height="1080"
+      >
+        <div id="mk-sl-col">
+          <div id="mk-sl-head">
+            <div id="mk-sl-kicker" class="ilt-kicker">What it does</div>
+            <div id="mk-sl-headline" class="ilt-headline">The coordination that piles up in a day</div>
+          </div>
+
+          <div id="mk-sl-row-0" class="mk-sl-row">
+            <div class="mk-sl-text">
+              <span class="mk-sl-label">Schedules</span>
+              <span class="mk-sl-value">meetings across time zones</span>
+            </div>
+            <div class="mk-sl-line"><div id="mk-sl-fill-0" class="mk-sl-line-fill ilt-rule"></div></div>
+          </div>
+
+          <div id="mk-sl-row-1" class="mk-sl-row">
+            <div class="mk-sl-text">
+              <span class="mk-sl-label">Protects time</span>
+              <span class="mk-sl-value">blocks focus time for the deliverables you owe</span>
+            </div>
+            <div class="mk-sl-line"><div id="mk-sl-fill-1" class="mk-sl-line-fill ilt-rule"></div></div>
+          </div>
+
+          <div id="mk-sl-row-2" class="mk-sl-row">
+            <div class="mk-sl-text">
+              <span class="mk-sl-label">Surfaces signal</span>
+              <span class="mk-sl-value">flags the meetings that matter</span>
+            </div>
+            <div class="mk-sl-line"><div id="mk-sl-fill-2" class="mk-sl-line-fill ilt-rule"></div></div>
+          </div>
+
+          <div id="mk-sl-row-3" class="mk-sl-row">
+            <div class="mk-sl-text">
+              <span class="mk-sl-label">Catches risk</span>
+              <span class="mk-sl-value">spots stalled decisions before they block</span>
+            </div>
+            <div class="mk-sl-line"><div id="mk-sl-fill-3" class="mk-sl-line-fill ilt-rule"></div></div>
+          </div>
+
+          <div id="mk-sl-cap">
+            <div id="mk-sl-cap-rule" class="ilt-rule"></div>
+            <div id="mk-sl-cap-kicker" class="ilt-kicker">Powered by Work IQ</div>
+            <div id="mk-sl-cap-line">Learns how you work — and carries your priorities forward.</div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          window.__timelines = window.__timelines || {};
+
+          // Cue clock — real spoken-word times (anchors.js, generated from transcript.json),
+          // made scene-relative against this beat's start in scenes.json.
+          var A = window.__anchors || {};
+          var B = { b05: 37.205 };
+          var W = {
+            header: A.t5Header - B.b05,   // "…the coordination that piles up in a day"
+            row1: A.t5Row1 - B.b05,       // "It schedules meetings across time zones"
+            row2: A.t5Row2 - B.b05,       // "blocks time for the deliverables you owe"
+            row3: A.t5Row3 - B.b05,       // "flags the meetings that matter"
+            row4: A.t5Row4 - B.b05,       // "catches stalled decisions"
+            cap1: A.t5Cap1 - B.b05,       // "Powered by Work IQ"
+            cap2: A.t5Cap2 - B.b05,       // "it learns how you work"
+            cap3: A.t5Cap3 - B.b05        // "carries your priorities forward"
+          };
+
+          var head = document.getElementById("mk-sl-head");
+          var row0 = document.getElementById("mk-sl-row-0");
+          var row1 = document.getElementById("mk-sl-row-1");
+          var row2 = document.getElementById("mk-sl-row-2");
+          var row3 = document.getElementById("mk-sl-row-3");
+          var fill0 = document.getElementById("mk-sl-fill-0");
+          var fill1 = document.getElementById("mk-sl-fill-1");
+          var fill2 = document.getElementById("mk-sl-fill-2");
+          var fill3 = document.getElementById("mk-sl-fill-3");
+          var capRule = document.getElementById("mk-sl-cap-rule");
+          var capKicker = document.getElementById("mk-sl-cap-kicker");
+          var capLine = document.getElementById("mk-sl-cap-line");
+
+          var tl = gsap.timeline({ paused: true });
+
+          // Every element is pinned before its cue, so state stays a pure function of time.
+          gsap.set([head, row0, row1, row2, row3], { opacity: 0, x: -36 });
+          gsap.set([fill0, fill1, fill2, fill3, capRule], { scaleX: 0 });
+          gsap.set([capKicker, capLine], { opacity: 0, y: 18 });
+
+          // 1) the header lands on "the coordination that piles up in a day".
+          tl.to(head, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.header);
+
+          // 2) each capability row slides in on its own verb, its underline sweeping after it.
+          tl.to(row0, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.row1);
+          tl.to(fill0, { scaleX: 1, duration: 0.8, delay: 0.15, ease: "power2.inOut" }, W.row1);
+
+          tl.to(row1, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.row2);
+          tl.to(fill1, { scaleX: 1, duration: 0.8, delay: 0.15, ease: "power2.inOut" }, W.row2);
+
+          tl.to(row2, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.row3);
+          tl.to(fill2, { scaleX: 1, duration: 0.8, delay: 0.15, ease: "power2.inOut" }, W.row3);
+
+          tl.to(row3, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.row4);
+          tl.to(fill3, { scaleX: 1, duration: 0.8, delay: 0.15, ease: "power2.inOut" }, W.row4);
+
+          // 3) the Work IQ caption closes the beat — rule, attribution, then the payoff line.
+          tl.to(capRule, { scaleX: 0.42, duration: 0.5, ease: "power2.out" }, W.cap1);
+          tl.to(capKicker, { opacity: 1, y: 0, duration: 0.5, delay: 0.12, ease: "power3.out" }, W.cap1);
+          tl.to(capLine, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.cap2);
+          // the rule finishes its run on "carries your priorities forward" — the beat's last word.
+          tl.to(capRule, { scaleX: 1, duration: 0.7, ease: "power2.inOut" }, W.cap3);
+
+          window.__timelines["05-what-it-does"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

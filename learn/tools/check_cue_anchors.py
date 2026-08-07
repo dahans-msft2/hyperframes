@@ -68,15 +68,44 @@ def classify(expr, max_offset):
     return "other"
 
 
+def targets(project):
+    """Composition files to scan for a project dir.
+
+    A modular project keeps every authored cue in scenes/*.html; the assembled
+    index.html carries only generated seams. Scan the scene files when they exist,
+    the monolith index.html otherwise.
+    """
+    scenes = sorted((project / "scenes").glob("*.html"))
+    return scenes or [project / "index.html"]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("composition", type=pathlib.Path, nargs="?",
                     default=pathlib.Path("index.html"))
+    ap.add_argument("--project", type=pathlib.Path,
+                    help="project dir - scans scenes/*.html (modular) or index.html (monolith)")
     ap.add_argument("--max-offset", type=float, default=1.0,
                     help="largest offset from a beat boundary still counted as seam mechanics")
     args = ap.parse_args()
 
-    html = args.composition.read_text(encoding="utf-8")
+    if args.project:
+        paths = targets(args.project)
+        failed = total = 0
+        for path in paths:
+            print(f"=== {path}")
+            rc = scan(path, args.max_offset)
+            total += 1
+            failed += 1 if rc else 0
+            print()
+        print(f"{total - failed}/{total} composition file(s) fully anchored")
+        return 1 if failed else 0
+
+    return scan(args.composition, args.max_offset)
+
+
+def scan(composition, max_offset):
+    html = composition.read_text(encoding="utf-8")
     script = "\n".join(re.findall(r"<script(?![^>]*\bsrc=)[^>]*>(.*?)</script>", html, re.S))
     if not script.strip():
         print("no inline timeline script found", file=sys.stderr)
@@ -99,7 +128,7 @@ def main():
         else:
             continue
 
-        kind = classify(expr, args.max_offset)
+        kind = classify(expr, max_offset)
         line_no = script.count("\n", 0, m.start()) + 1
         src_line = lines[line_no - 1].strip() if line_no <= len(lines) else ""
 
@@ -117,10 +146,10 @@ def main():
 
     print(f"word-anchored   W.*             {counts['anchored']}")
     print(f"beat starts     B.*             {counts['beat']}")
-    print(f"seam mechanics  <={args.max_offset}s         {counts['seam']}")
+    print(f"seam mechanics  <={max_offset}s         {counts['seam']}")
     print(f"t=0 pins                        {counts['literal-zero']}")
     print(f"exempted                        {exempt}")
-    print(f"guessed offsets B.* >{args.max_offset}s      {counts['guess']}")
+    print(f"guessed offsets B.* >{max_offset}s      {counts['guess']}")
     print(f"raw numeric literals            {counts['literal']}")
     print(f"\n{total} timeline positions | anchored coverage {pct:.0f}%")
 
