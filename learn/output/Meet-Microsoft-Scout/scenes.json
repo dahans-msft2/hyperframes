@@ -5,6 +5,7 @@
   "height": 1080,
   "root_background": "#fff8f3",
   "gsap": "assets/vendor/gsap.min.js",
+  "anchors": "anchors.js",
   "fonts": [
     {
       "family": "Segoe UI",
@@ -19,6 +20,12 @@
       "src": "fonts/segoeui-semibold.woff2"
     }
   ],
+  "narration": {
+    "src": "narration.wav",
+    "start": 3.0,
+    "duration": 81.116,
+    "track": 10
+  },
   "endcard": {
     "src": "assets/AI_End_Card.mp4",
     "duration": 10.667,
@@ -39,33 +46,51 @@
     {
       "id": "02-title",
       "src": "scenes/02-title.html",
-      "duration": 20.0,
+      "duration": 5.895,
       "seam": "hard"
     },
     {
       "id": "03-objectives",
       "src": "scenes/03-objectives.html",
-      "duration": 14.0,
+      "duration": 7.88,
       "seam": "cut-left"
+    },
+    {
+      "id": "04-what-it-is",
+      "src": "scenes/04-what-it-is.html",
+      "duration": 20.43,
+      "seam": "cut-left"
+    },
+    {
+      "id": "05-what-it-does",
+      "src": "scenes/05-what-it-does.html",
+      "duration": 19.01,
+      "seam": "cut-left"
+    },
+    {
+      "id": "06-trust",
+      "src": "scenes/06-trust.html",
+      "duration": 17.32,
+      "seam": "cut-up"
     },
     {
       "id": "90-recap",
       "src": "scenes/90-recap.html",
-      "duration": 20.0,
+      "duration": 6.66,
       "seam": "cut-up"
     },
     {
       "id": "91-cta",
       "src": "scenes/91-cta.html",
-      "duration": 14.0,
+      "duration": 5.425,
       "seam": "cut-left"
     }
   ],
   "body_slot": {
     "insert_after": "03-objectives",
     "before": "90-recap",
-    "target_scene_count": 1,
+    "target_scene_count": 3,
     "max_scene_count": 10,
-    "note": "Author the teaching-body scenes here (each on the kit foundation), then insert them into 'scenes' between the opening and closing chrome. The builder re-times all durations to real narration word anchors."
+    "note": "Filled: 04-what-it-is, 05-what-it-does, 06-trust. Durations are word-anchored to transcript.json (see anchors.json / anchors.js)."
   }
 }

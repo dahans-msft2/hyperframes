@@ -1,0 +1,54 @@
+{
+  "_note": "Cue anchor spec: anchorName -> spoken phrase. Resolved against transcript.json by tools/word_anchors.py with --lead-in 3.0 (narration starts 3.0s into the composition, after the bumper). Regenerate anchors.js after any re-record.",
+
+  "t2Kicker": "Most AI",
+  "t2Meet": "answers",
+  "t2Name": "Microsoft Scout keeps",
+  "t2Rule": "Scout keeps",
+  "t2Sub": "keeps going",
+
+  "t3One": "Microsoft Scout is #1",
+  "t3Two": "does across your day",
+  "t3Three": "stays firmly",
+
+  "t4Autopilot": "autopilot",
+  "t4AlwaysOn": "always on",
+  "t4Identity": "identity and",
+  "t4Behalf": "your behalf",
+  "t4Grounded": "grounded in",
+  "t4M365": "Microsoft 365",
+  "t4Teams": "Teams",
+  "t4Outlook": "Outlook",
+  "t4Calendar": "calendar",
+  "t4Files": "files",
+
+  "t5Header": "coordination",
+  "t5Row1": "schedules meetings",
+  "t5Row2": "blocks time",
+  "t5Row3": "flags the meetings",
+  "t5Row4": "catches stalled",
+  "t5Cap1": "Powered by Work IQ",
+  "t5Cap2": "learns how you work",
+  "t5Cap3": "priorities forward",
+
+  "t6Trusted": "trusted",
+  "t6Identity": "governed entry",
+  "t6Shared": "shared account",
+  "t6Permissions": "permissions",
+  "t6Purview": "Purview",
+  "t6Moment": "moment #2",
+  "t6Sensitive": "sensitive",
+  "t6Signoff": "sign-off",
+
+  "t90Kicker": "So the follow-through",
+  "t90Line1": "follow-through happens",
+  "t90Line2": "happens for you",
+  "t90Rule": "always-on agent",
+  "t90Sub": "keeps work moving",
+
+  "t91Kicker": "Microsoft Scout is rolling",
+  "t91Line1": "Scout is rolling",
+  "t91Line2": "rolling out now",
+  "t91Rule": "preview through",
+  "t91Sub": "Frontier program"
+}

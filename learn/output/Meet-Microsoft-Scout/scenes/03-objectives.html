@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
     <script src="../assets/vendor/gsap.min.js"></script>
+    <script src="../anchors.js"></script>
   </head>
   <body>
     <template>
@@ -154,16 +155,16 @@
           var CONFIG = {
             "steps": [
               {
-                "title": "__FILL__ objective one",
-                "detail": "__FILL__ what the learner will be able to do"
+                "title": "What it is",
+                "detail": "Microsoft's first Autopilot — an agent that is always on"
               },
               {
-                "title": "__FILL__ objective two",
-                "detail": "__FILL__ what the learner will be able to do"
+                "title": "What it does",
+                "detail": "Carries the coordination across your working day"
               },
               {
-                "title": "__FILL__ objective three",
-                "detail": "__FILL__ what the learner will be able to do"
+                "title": "In your control",
+                "detail": "Governed identity, your permissions, Purview enforcement"
               }
             ],
             "connector": true,
@@ -231,28 +232,46 @@
             connector.style.display = "none";
           }
 
+          /* Cue clock — real spoken-word times (anchors.js, generated from transcript.json),
+             made scene-relative against this beat's start in scenes.json. Each objective row
+             lands on the clause that names it. */
+          var A = window.__anchors || {};
+          var B = { b03: 8.895 };
+          var W = {
+            step1: A.t3One - B.b03,     /* "…what Microsoft Scout is," */
+            step2: A.t3Two - B.b03,     /* "…what it does across your day," */
+            step3: A.t3Three - B.b03    /* "…how it stays firmly in your control." */
+          };
+
           var tl = gsap.timeline({ paused: true });
 
           /* Scene-relative, seek-safe: connector draws down across the whole reveal, each row
              slides/fades in while its badge pops. No exit / hide — the host owns lifetime. */
-          var lastStart = 0.4 + (n - 1) * CONFIG.stagger;
+          var row0 = document.getElementById("mk-st-row-0");
+          var row1 = document.getElementById("mk-st-row-1");
+          var row2 = document.getElementById("mk-st-row-2");
+          var badge0 = document.getElementById("mk-st-badge-0");
+          var badge1 = document.getElementById("mk-st-badge-1");
+          var badge2 = document.getElementById("mk-st-badge-2");
+
+          gsap.set([row0, row1, row2], { opacity: 0, x: -40 });
+          gsap.set([badge0, badge1, badge2], { scale: 0.35 });
 
           if (CONFIG.connector && n > 1) {
             gsap.set(connector, { scaleY: 0 });
-            tl.to(connector, { scaleY: 1, duration: lastStart, ease: "none" }, 0.4);
+            /* the line draws badge→badge, so it reaches the midpoint exactly as row 2 lands */
+            tl.to(connector, { scaleY: 1 / (n - 1), duration: W.step2 - W.step1, ease: "none" }, W.step1);
+            tl.to(connector, { scaleY: 1, duration: W.step3 - W.step2, ease: "none" }, W.step2);
           }
 
-          steps.forEach(function (s, i) {
-            var row = document.getElementById("mk-st-row-" + i);
-            var badge = document.getElementById("mk-st-badge-" + i);
-            var t0 = 0.4 + i * CONFIG.stagger;
+          tl.to(row0, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.step1);
+          tl.to(badge0, { scale: 1, duration: 0.55, delay: 0.05, ease: "back.out(2.2)" }, W.step1);
 
-            gsap.set(row, { opacity: 0, x: -40 });
-            tl.to(row, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, t0);
+          tl.to(row1, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.step2);
+          tl.to(badge1, { scale: 1, duration: 0.55, delay: 0.05, ease: "back.out(2.2)" }, W.step2);
 
-            gsap.set(badge, { scale: 0.35 });
-            tl.to(badge, { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, t0 + 0.05);
-          });
+          tl.to(row2, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.step3);
+          tl.to(badge2, { scale: 1, duration: 0.55, delay: 0.05, ease: "back.out(2.2)" }, W.step3);
 
           window.__timelines["03-objectives"] = tl;
         })();

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
     <script src="../assets/vendor/gsap.min.js"></script>
+    <script src="../anchors.js"></script>
   </head>
   <body>
     <template>
@@ -155,9 +156,21 @@
           // Edit per use. Opening title card: eyebrow kicker + two-line title + one-line subtitle.
           var CONFIG = {
             "kicker": "MICROSOFT LEARN",
-            "titleLine1": "__FILL__ title line 1",
-            "titleLine2": "__FILL__ title line 2",
-            "subtitle": "__FILL__ one-line subtitle for the video."
+            "titleLine1": "Meet",
+            "titleLine2": "Microsoft Scout",
+            "subtitle": "Your always-on personal agent."
+          };
+
+          // Cue clock — real spoken-word times (anchors.js, generated from transcript.json),
+          // made scene-relative against this beat's start in scenes.json.
+          var A = window.__anchors || {};
+          var B = { b02: 3.0 };
+          var W = {
+            kicker: A.t2Kicker - B.b02,      // "Most AI …"
+            meet: A.t2Meet - B.b02,          // "…answers your question."
+            name: A.t2Name - B.b02,          // "Microsoft Scout keeps going."
+            rule: A.t2Rule - B.b02,
+            subtitle: A.t2Sub - B.b02
           };
 
           var kicker = document.getElementById("mk-th-kicker");
@@ -173,37 +186,46 @@
 
           var tl = gsap.timeline({ paused: true });
 
-          // Waterfall entrance — scene-relative, seek-safe. Calm cadence for the opener.
-          // 1) kicker fades + rises first.
+          // Waterfall entrance — scene-relative, seek-safe. Calm cadence for the opener,
+          // each step landing on the word that earns it.
+          // 1) kicker fades + rises as the first word lands.
           tl.fromTo(
             kicker,
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
-            0.25,
+            W.kicker
           );
 
-          // 2) the two title lines arrive on a short stagger.
+          // 2) "Meet" arrives mid-sentence …
           tl.fromTo(
-            [line1, line2],
+            line1,
             { opacity: 0, y: 44 },
-            { opacity: 1, y: 0, duration: 0.85, ease: "power3.out", stagger: 0.14 },
-            0.75,
+            { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" },
+            W.meet
           );
 
-          // 3) the accent rule wipes in left→right (a graphic).
+          // 3) … and the product name lands exactly on "Microsoft Scout".
+          tl.fromTo(
+            line2,
+            { opacity: 0, y: 44 },
+            { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" },
+            W.name
+          );
+
+          // 4) the accent rule wipes in left→right (a graphic).
           tl.fromTo(
             rule,
             { scaleX: 0 },
             { scaleX: 1, duration: 0.7, ease: "power2.out" },
-            1.55,
+            W.rule
           );
 
-          // 4) the subtitle fades up last, then we hold on stillness.
+          // 5) the subtitle fades up last, then we hold on stillness.
           tl.fromTo(
             subtitle,
             { opacity: 0, y: 22 },
             { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-            1.95,
+            W.subtitle
           );
 
           window.__timelines["02-title"] = tl;

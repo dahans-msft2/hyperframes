@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=1920, height=1080">
     <title>Meet Microsoft Scout</title>
     <script src="assets/vendor/gsap.min.js"></script>
+    <script src="anchors.js"></script>
     <style>
       @font-face {
         font-family: "Segoe UI";
@@ -47,8 +48,10 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="root" data-start="0" data-duration="81.667"
+    <div id="root" data-composition-id="root" data-start="0" data-duration="96.287"
          data-width="1920" data-height="1080" data-resolution="landscape">
+
+      <audio id="narration" class="clip" src="narration.wav" data-start="3.0" data-duration="81.116" data-track-index="10"></audio>
 
       <div id="slot-01-bumper" class="clip"
            data-composition-id="01-bumper"
@@ -60,36 +63,57 @@
       <div id="slot-02-title" class="clip"
            data-composition-id="02-title"
            data-composition-src="scenes/02-title.html"
-           data-start="3.0" data-duration="20.0"
+           data-start="3.0" data-duration="5.895"
            data-track-index="1"
            data-width="1920" data-height="1080"></div>
 
       <div id="slot-03-objectives" class="clip"
            data-composition-id="03-objectives"
            data-composition-src="scenes/03-objectives.html"
-           data-start="23.0" data-duration="14.0"
+           data-start="8.895" data-duration="7.88"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-04-what-it-is" class="clip"
+           data-composition-id="04-what-it-is"
+           data-composition-src="scenes/04-what-it-is.html"
+           data-start="16.775" data-duration="20.43"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-05-what-it-does" class="clip"
+           data-composition-id="05-what-it-does"
+           data-composition-src="scenes/05-what-it-does.html"
+           data-start="37.205" data-duration="19.01"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-06-trust" class="clip"
+           data-composition-id="06-trust"
+           data-composition-src="scenes/06-trust.html"
+           data-start="56.215" data-duration="17.32"
            data-track-index="1"
            data-width="1920" data-height="1080"></div>
 
       <div id="slot-90-recap" class="clip"
            data-composition-id="90-recap"
            data-composition-src="scenes/90-recap.html"
-           data-start="37.0" data-duration="20.0"
+           data-start="73.535" data-duration="6.66"
            data-track-index="1"
            data-width="1920" data-height="1080"></div>
 
       <div id="slot-91-cta" class="clip"
            data-composition-id="91-cta"
            data-composition-src="scenes/91-cta.html"
-           data-start="57.0" data-duration="14.0"
+           data-start="80.195" data-duration="5.425"
            data-track-index="1"
            data-width="1920" data-height="1080"></div>
 
-      <video id="ai-end-card" class="clip" src="assets/AI_End_Card.mp4" data-start="71.0" data-duration="10.667" data-track-index="11" muted></video>
+      <video id="ai-end-card" class="clip" src="assets/AI_End_Card.mp4" data-start="85.62" data-duration="10.667" data-track-index="11" muted></video>
 
       <div id="fade-in" class="fade-cover clip" data-start="0" data-duration="0.5" data-track-index="20"></div>
 
-      <div id="fade-out" class="fade-cover clip" data-start="80.967" data-duration="0.7" data-track-index="20"></div>
+      <div id="fade-out" class="fade-cover clip" data-start="95.587" data-duration="0.7" data-track-index="20"></div>
     </div>
 
     <script>
@@ -100,24 +124,36 @@
       window.__timelines["root"] = tl;
 
       // <seams:auto> — cross-scene cut-the-curve, stamped by assemble_scenes.py from scenes.json.
-      // SEAM 02-title -> 03-objectives : cut-left (cut @23.0)
-      tl.to("#slot-02-title", { xPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 22.66);
-      tl.set("#slot-02-title", { autoAlpha: 0 }, 23.0);
-      tl.fromTo("#slot-03-objectives", { xPercent: 10, autoAlpha: 0.35 }, { xPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 23.0);
-      // SEAM 03-objectives -> 90-recap : cut-up (cut @37.0)
-      tl.to("#slot-03-objectives", { yPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 36.66);
-      tl.set("#slot-03-objectives", { autoAlpha: 0 }, 37.0);
-      tl.fromTo("#slot-90-recap", { yPercent: 10, autoAlpha: 0.35 }, { yPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 37.0);
-      // SEAM 90-recap -> 91-cta : cut-left (cut @57.0)
-      tl.to("#slot-90-recap", { xPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 56.66);
-      tl.set("#slot-90-recap", { autoAlpha: 0 }, 57.0);
-      tl.fromTo("#slot-91-cta", { xPercent: 10, autoAlpha: 0.35 }, { xPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 57.0);
+      // SEAM 02-title -> 03-objectives : cut-left (cut @8.895)
+      tl.to("#slot-02-title", { xPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 8.555);
+      tl.set("#slot-02-title", { autoAlpha: 0 }, 8.895);
+      tl.fromTo("#slot-03-objectives", { xPercent: 10, autoAlpha: 0.35 }, { xPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 8.895);
+      // SEAM 03-objectives -> 04-what-it-is : cut-left (cut @16.775)
+      tl.to("#slot-03-objectives", { xPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 16.435);
+      tl.set("#slot-03-objectives", { autoAlpha: 0 }, 16.775);
+      tl.fromTo("#slot-04-what-it-is", { xPercent: 10, autoAlpha: 0.35 }, { xPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 16.775);
+      // SEAM 04-what-it-is -> 05-what-it-does : cut-left (cut @37.205)
+      tl.to("#slot-04-what-it-is", { xPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 36.865);
+      tl.set("#slot-04-what-it-is", { autoAlpha: 0 }, 37.205);
+      tl.fromTo("#slot-05-what-it-does", { xPercent: 10, autoAlpha: 0.35 }, { xPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 37.205);
+      // SEAM 05-what-it-does -> 06-trust : cut-up (cut @56.215)
+      tl.to("#slot-05-what-it-does", { yPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 55.875);
+      tl.set("#slot-05-what-it-does", { autoAlpha: 0 }, 56.215);
+      tl.fromTo("#slot-06-trust", { yPercent: 10, autoAlpha: 0.35 }, { yPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 56.215);
+      // SEAM 06-trust -> 90-recap : cut-up (cut @73.535)
+      tl.to("#slot-06-trust", { yPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 73.195);
+      tl.set("#slot-06-trust", { autoAlpha: 0 }, 73.535);
+      tl.fromTo("#slot-90-recap", { yPercent: 10, autoAlpha: 0.35 }, { yPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 73.535);
+      // SEAM 90-recap -> 91-cta : cut-left (cut @80.195)
+      tl.to("#slot-90-recap", { xPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 79.855);
+      tl.set("#slot-90-recap", { autoAlpha: 0 }, 80.195);
+      tl.fromTo("#slot-91-cta", { xPercent: 10, autoAlpha: 0.35 }, { xPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 80.195);
       // </seams:auto>
 
       // <bookends> — fade-in breath + fade-to-black on the end card.
       gsap.set("#fade-in", { autoAlpha: 1 });
       tl.to("#fade-in", { autoAlpha: 0, duration: 0.5, ease: "power2.out" }, 0);
-      tl.fromTo("#fade-out", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.7, ease: "power2.in", immediateRender: false }, 80.967);
+      tl.fromTo("#fade-out", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.7, ease: "power2.in", immediateRender: false }, 95.587);
       // </bookends>
     </script>
   </body>

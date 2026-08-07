@@ -79,7 +79,7 @@
 
           // Edit per use. Only the kicker sub-line varies; the "Microsoft Learn" wordmark is fixed.
           var CONFIG = {
-            "kicker": "__FILL__ skilling series (e.g. 'Skilling · Azure Quantum')"
+            "kicker": "Microsoft 365"
           };
 
           var mark = document.getElementById("bm-mark");
@@ -100,14 +100,17 @@
           var dash = glyph.getTotalLength ? glyph.getTotalLength() : 220;
           gsap.set(glyph, { strokeDasharray: dash, strokeDashoffset: dash });
 
-          tl.to(mark, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.15);
-          tl.to(glyph, { strokeDashoffset: 0, duration: 0.55, ease: "power2.out" }, 0.35);
-          tl.to(w1, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.7);
-          tl.to(w2, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.82);
-          tl.to(rule, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power2.out" }, 1.05);
-          tl.to(kick, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.2);
+          // State pinned at t=0 so the sting is a pure function of timeline time.
+          tl.set([mark, w1, w2, rule, kick], { opacity: 0 }, 0);
+
+          tl.to(mark, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.15); // anchor-exempt: brand sting, plays before narration starts
+          tl.to(glyph, { strokeDashoffset: 0, duration: 0.55, ease: "power2.out" }, 0.35); // anchor-exempt: brand sting, plays before narration starts
+          tl.to(w1, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.7); // anchor-exempt: brand sting, plays before narration starts
+          tl.to(w2, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.82); // anchor-exempt: brand sting, plays before narration starts
+          tl.to(rule, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power2.out" }, 1.05); // anchor-exempt: brand sting, plays before narration starts
+          tl.to(kick, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.2); // anchor-exempt: brand sting, plays before narration starts
           // a slow, intentional final push on the mark (camera settling) — performs, does not wobble.
-          tl.to(mark, { scale: 1.04, duration: 1.4, ease: "power1.inOut" }, 1.5);
+          tl.to(mark, { scale: 1.04, duration: 1.4, ease: "power1.inOut" }, 1.5); // anchor-exempt: brand sting, plays before narration starts
 
           window.__timelines["01-bumper"] = tl;
         })();

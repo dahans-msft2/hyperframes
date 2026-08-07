@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
     <script src="../assets/vendor/gsap.min.js"></script>
+    <script src="../anchors.js"></script>
   </head>
   <body>
     <template>
@@ -155,9 +156,21 @@
           // Edit per use. Opening title card: eyebrow kicker + two-line title + one-line subtitle.
           var CONFIG = {
             "kicker": "NEXT STEP",
-            "titleLine1": "__FILL__ call to action, line 1",
-            "titleLine2": "__FILL__ call to action, line 2",
-            "subtitle": "__FILL__ where to go next (the module or docs)."
+            "titleLine1": "Microsoft Scout",
+            "titleLine2": "is rolling out now",
+            "subtitle": "In preview through the Frontier program — learn.microsoft.com/microsoft-scout"
+          };
+
+          // Cue clock — real spoken-word times (anchors.js, generated from transcript.json),
+          // made scene-relative against this beat's start in scenes.json.
+          var A = window.__anchors || {};
+          var B = { b91: 80.195 };
+          var W = {
+            kicker: A.t91Kicker - B.b91,   // "Microsoft Scout is rolling out …"
+            line1: A.t91Line1 - B.b91,
+            line2: A.t91Line2 - B.b91,     // "… rolling out now"
+            rule: A.t91Rule - B.b91,
+            subtitle: A.t91Sub - B.b91
           };
 
           var kicker = document.getElementById("mk-th-kicker");
@@ -173,21 +186,29 @@
 
           var tl = gsap.timeline({ paused: true });
 
-          // Waterfall entrance — scene-relative, seek-safe. Calm cadence for the opener.
+          // Waterfall entrance — scene-relative, seek-safe. Every step lands on the
+          // word that earns it, not on an assumed words-per-second.
           // 1) kicker fades + rises first.
           tl.fromTo(
             kicker,
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
-            0.25,
+            W.kicker
           );
 
-          // 2) the two title lines arrive on a short stagger.
+          // 2) the two title lines arrive on the phrase each one carries.
           tl.fromTo(
-            [line1, line2],
+            line1,
             { opacity: 0, y: 44 },
-            { opacity: 1, y: 0, duration: 0.85, ease: "power3.out", stagger: 0.14 },
-            0.75,
+            { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" },
+            W.line1
+          );
+
+          tl.fromTo(
+            line2,
+            { opacity: 0, y: 44 },
+            { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" },
+            W.line2
           );
 
           // 3) the accent rule wipes in left→right (a graphic).
@@ -195,7 +216,7 @@
             rule,
             { scaleX: 0 },
             { scaleX: 1, duration: 0.7, ease: "power2.out" },
-            1.55,
+            W.rule
           );
 
           // 4) the subtitle fades up last, then we hold on stillness.
@@ -203,7 +224,7 @@
             subtitle,
             { opacity: 0, y: 22 },
             { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-            1.95,
+            W.subtitle
           );
 
           window.__timelines["91-cta"] = tl;
