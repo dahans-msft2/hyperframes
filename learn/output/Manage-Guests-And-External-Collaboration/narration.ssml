@@ -1,0 +1,31 @@
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="https://www.w3.org/2001/mstts" xml:lang="en-US">
+  <voice name="en-US-Vance:DragonHDLatestNeural">
+    <prosody rate="-3%">
+      <p>Managing guests and external collaboration in Microsoft Entra ID. Let outside partners in — without handing them the run of your directory.</p>
+      <break time="400ms"/>
+      <p>In this unit, you'll map the levers of external access, invite a partner with the least privilege that does the job, and spot when one-by-one invitations stop scaling. Leave a lever loose, and a guest you invited for one project can see far more than they should.</p>
+      <break time="400ms"/>
+      <p>Start with the scenario. Relecloud's coordinators need Woodgrove Bank's fraud analysts inside one investigation — and <emphasis level="moderate">only</emphasis> that. So here's the real question: the moment you invite one of them as a guest, how much of your directory can they see by default? <break time="500ms"/> Take a guess before we answer it.</p>
+      <break time="400ms"/>
+      <p>Here's the catch: guest access isn't one switch. It's several levers, each answering a different question — how a guest gets in, how much they see, which domains you'll invite, how far you trust a partner tenant. None of them replaces another; together they define what "let this analyst in" really means.</p>
+      <break time="400ms"/>
+      <p>Back to what a guest can see. There are three levels. Same access as members is the most inclusive. The default — limited access — stops a guest from browsing your users and groups. The <emphasis level="moderate">most restrictive</emphasis> level narrows them to their own profile: no other users, no groups, not even their own memberships. For analysts here for one project, that default fits.</p>
+      <break time="400ms"/>
+      <p>So who pulls these levers? Coordinators need to invite analysts themselves, without a ticket to IT. The obvious move is User Administrator — it can invite. But it can also reset passwords, edit profiles, and manage licenses across the tenant. That's far more than "invite one analyst" needs.</p>
+      <break time="400ms"/>
+      <p>The least-privileged path takes <emphasis level="moderate">two</emphasis> pieces, not one. First, assign coordinators the Guest Inviter role — its only power is sending invitations. Second, set the tenant's invite setting to "only users assigned to specific admin roles can invite guest users." Skip that second piece, and everyone can still invite — so the role changes nothing.</p>
+      <break time="400ms"/>
+      <p>With that set, inviting is simple. A coordinator sends an invitation to an external email address. The analyst redeems it by signing in with their own account — and a guest object appears in your directory, no Relecloud identity to create or maintain.</p>
+      <break time="400ms"/>
+      <p>Here's a point that trips people up. That one guest object shows up in two places: beside your members in the Microsoft Entra admin center, and in the Guest users list in the Microsoft 365 admin center. Same record, two surfaces — not a <emphasis level="moderate">copy</emphasis>, not a second account to reconcile.</p>
+      <break time="400ms"/>
+      <p>Two more levers tighten the outer edges. Allow and deny domain lists act before any invitation is sent — permit a partner's domain, block consumer email outright. Cross-tenant access settings go a layer deeper, governing trust with one specific partner tenant: which multifactor claims you trust from them, and which of your apps their users can reach.</p>
+      <break time="400ms"/>
+      <p>One last judgment call. Inviting analysts one project at a time works for a fixed group. But if this becomes a standing partnership — hundreds of people, changing constantly — those individual invitations become a maintenance burden. That's when a Multitenant Organization fits: it synchronizes users as members, not guests you invite one by one. Spotting that shift is the skill; configuring it is a separate job.</p>
+      <break time="400ms"/>
+      <p>So that's the shape of it. External collaboration is a set of levers, not a switch. Permission levels decide what a guest sees — limited by default, tighter when you need it. Guest Inviter plus the right tenant setting delegates invitations without over-granting. And when guests stop scaling, a Multitenant Organization is your next move.</p>
+      <break time="400ms"/>
+      <p>Want to go deeper? Open the Microsoft Learn docs on configuring external collaboration settings, and on how a Multitenant Organization differs from one-off invitations. Then try it in your own tenant.</p>
+    </prosody>
+  </voice>
+</speak>

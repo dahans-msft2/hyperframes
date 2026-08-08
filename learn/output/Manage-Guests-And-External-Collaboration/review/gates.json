@@ -1,0 +1,26 @@
+[
+  {
+    "gate": 1,
+    "name": "Concept and source",
+    "status": "passed",
+    "artifact": null,
+    "note": "Source: C:\\learn-pr\\learn-m365-pr\\learn-m365-pr\\wwl\\provision-govern-identities-entra\\includes\\5-manage-guests-external-collaboration.md",
+    "at": "2026-08-07T18:02:19"
+  },
+  {
+    "gate": 2,
+    "name": "Video type and profile",
+    "status": "passed",
+    "artifact": null,
+    "note": "Profile LOCKED: unit-video (~240s, 580 words, ~10 scenes, 5.0s static). Scaffolded by new_project.py.",
+    "at": "2026-08-07T18:02:19"
+  },
+  {
+    "gate": 6,
+    "name": "Fact-check QA",
+    "status": "passed",
+    "artifact": null,
+    "note": "SHIP 20/20",
+    "at": "2026-08-07T19:00:28"
+  }
+]
