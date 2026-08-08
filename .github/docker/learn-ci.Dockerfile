@@ -12,6 +12,9 @@ FROM node:22-bookworm-slim
 ARG HYPERFRAMES_VERSION=0.7.77
 ENV HYPERFRAMES_VERSION=${HYPERFRAMES_VERSION}
 ENV DEBIAN_FRONTEND=noninteractive
+# Inside `docker build` CI is unset, so the browser-download progress spinner runs interactively
+# against a non-TTY pipe and hangs at 100% forever. CI=1 makes it finalize; NO_COLOR trims noise.
+ENV CI=1 NO_COLOR=1
 
 # python (the check_*.py tools call `python`, so alias python->python3), chromium for the ABI/libs
 # the headless-shell needs, fallback fonts (Segoe is NOT needed — the gates are colour/structure,
@@ -29,7 +32,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # runtime — resolve the binary now and pin it via HYPERFRAMES_CHROME_PATH, which survives the HOME
 # override. (Chrome finds its resources relative to the real binary, so a symlink is safe.)
 RUN npm install -g "hyperframes@${HYPERFRAMES_VERSION}" \
-    && hyperframes browser ensure \
+    && timeout 600 hyperframes browser ensure \
     && CHS="$(find / -type f -name 'chrome-headless-shell' 2>/dev/null | head -1)" \
     && test -n "$CHS" \
     && ln -sf "$CHS" /usr/local/bin/chrome-headless-shell \
