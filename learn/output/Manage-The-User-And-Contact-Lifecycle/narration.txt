@@ -1,0 +1,25 @@
+Relecloud's directory never stops growing. Every week brings a new hire, a contractor who only needs email, and someone whose last day means their account has to go. But here's what keeps admins up: what happens the moment you delete a user? Delete the wrong one this morning — is it already gone for good?
+
+That question has a reassuring answer — and it's one of several things worth getting right. In this unit, you'll move a user through its whole lifecycle, choose the admin center built for each task, recover a deletion before it's permanent, and tell a real user from a contact who never signs in.
+
+Start with the user itself. A cloud identity moves through a handful of stages, and you move it along: create it, edit its profile as a role changes, add and remove licenses as the job needs, block sign-in when access must stop now, and delete it when someone leaves for good.
+
+Creating one account at a time is fine for a single new hire. But when a batch arrives together, the Microsoft Entra admin center's *Bulk create* feature takes a spreadsheet of display names, user principal names, and initial passwords, and builds every account in one pass.
+
+Two admin centers show you the same user, and each owns a different part of the job. You spend most of your day in the Microsoft 365 admin center — creating users, assigning licenses, blocking sign-in. You open the Microsoft Entra admin center for the identity object underneath, and to restore a deleted account.
+
+That last one is the surprise. Before I answer, picture it: you delete a user by mistake, and catch it five minutes later. Would you expect that account to be gone for good?
+
+It isn't — not right away. Deleting a user moves it into a suspended state for *thirty days*, fully restorable, before Microsoft Entra ID removes it permanently. [[pause:400ms]] Only after those thirty days pass is restoring no longer possible.
+
+During that window, you find the account in the Microsoft Entra admin center under *Deleted users*, select it, and restore it. Restoring brings back the user's properties and the licenses it held before deletion — you're not rebuilding the profile or reassigning every license.
+
+One caveat matters. If the account was synced from an on-premises directory instead of created in the cloud, deleting it in Microsoft Entra ID doesn't settle it. On-premises stays the master record, so the next sync cycle *can* recreate the account you just deleted — and the fix belongs on-premises, not in a cloud portal.
+
+Not everyone in the address book signs in. A vendor's contact might only need to be emailed — that's a mail contact, not a user: a recipient with an external email address that never authenticates. You create one in the Exchange admin center, under *Recipients*, then *Contacts*. The deciding question is simple: does this person sign in? If yes, a user or a guest; if not, a contact.
+
+Finally, not every account started in the cloud — some sync from an on-premises Active Directory. Connect Sync is the classic sync server; Cloud Sync is a lighter, agent-based alternative that supports multiple disconnected forests; Connect Health watches the sync for failures; and IdFix scans on-premises directories for attribute errors before a clean first sync. You won't configure these — recognizing what each does is enough.
+
+So, the account you deleted by mistake this morning? You've got thirty days to bring it back — properties and licenses intact. You can move a user through its lifecycle, match each task to the right admin center, recover a deletion in time, and tell a user from a contact.
+
+Editing accounts one at a time works for a handful of people — but when your overseas office needs dozens before it opens, you'll want to provision at scale without over-granting your own permissions. That's the next unit. To go deeper, follow the *Learn more* links in this module.
