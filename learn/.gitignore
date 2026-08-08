@@ -37,7 +37,15 @@ output/*
 # published: Require-MFA-With-A-Conditional-Access-Policy
 !output/Require-MFA-With-A-Conditional-Access-Policy/
 !output/Require-MFA-With-A-Conditional-Access-Policy/**
-output/Require-MFA-With-A-Conditional-Access-Policy/fonts/
+# Keep only source text + this video's own media screenshots. Everything below is a
+# Release asset, a shared repo asset (re-copied at build), or a regenerable artifact.
+output/Require-MFA-With-A-Conditional-Access-Policy/_snap*/
+output/Require-MFA-With-A-Conditional-Access-Policy/snapshots/
 output/Require-MFA-With-A-Conditional-Access-Policy/renders/
-output/Require-MFA-With-A-Conditional-Access-Policy/Require-MFA-With-A-Conditional-Access-Policy.mp4
-output/Require-MFA-With-A-Conditional-Access-Policy/Require-MFA-With-A-Conditional-Access-Policy_thumbnail.png
+output/Require-MFA-With-A-Conditional-Access-Policy/fonts/
+output/Require-MFA-With-A-Conditional-Access-Policy/anchors.js
+output/Require-MFA-With-A-Conditional-Access-Policy/**/*.mp4
+output/Require-MFA-With-A-Conditional-Access-Policy/**/*.wav
+output/Require-MFA-With-A-Conditional-Access-Policy/*_thumbnail.png
+output/Require-MFA-With-A-Conditional-Access-Policy/assets/grounds/
+output/Require-MFA-With-A-Conditional-Access-Policy/assets/vendor/

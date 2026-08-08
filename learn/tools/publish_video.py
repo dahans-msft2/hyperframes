@@ -62,10 +62,18 @@ def emit_gitignore_negation(slug: str, dry: bool) -> bool:
             marker,
             f"!output/{slug}/",
             f"!output/{slug}/**",
-            f"output/{slug}/fonts/",                 # licensed Segoe woff2, regenerable locally
+            "# Keep only source text + this video's own media screenshots. Everything below is a",
+            "# Release asset, a shared repo asset (re-copied at build), or a regenerable artifact.",
+            f"output/{slug}/_snap*/",                # QA snapshot contact sheets
+            f"output/{slug}/snapshots/",             # QA snapshots
             f"output/{slug}/renders/",               # render scratch
-            f"output/{slug}/{slug}.mp4",             # -> Release asset, not git
-            f"output/{slug}/{slug}_thumbnail.png",   # -> Release asset, not git
+            f"output/{slug}/fonts/",                 # licensed Segoe woff2, regenerable
+            f"output/{slug}/anchors.js",             # generated from anchors.json
+            f"output/{slug}/**/*.mp4",               # deliverable + shared end card
+            f"output/{slug}/**/*.wav",               # narration master -> Release asset
+            f"output/{slug}/*_thumbnail.png",        # -> Release asset
+            f"output/{slug}/assets/grounds/",        # shared ground PNGs, re-copied at build
+            f"output/{slug}/assets/vendor/",         # vendored gsap, re-copied at build
             "",
         ])
         changed = True
@@ -103,9 +111,12 @@ def main() -> int:
     mp4 = proj / f"{slug}.mp4"
     vtt = proj / f"{slug}.vtt"
     thumb = proj / f"{slug}_thumbnail.png"
+    wav = proj / "narration.wav"
     missing = [p.name for p in (mp4, vtt, thumb) if not p.exists()]
     if missing:
         die(f"missing deliverable(s): {', '.join(missing)} — re-render")
+    # narration.wav is the audio master — ship it with the release so the source re-renders from a clone.
+    assets = [mp4, vtt, thumb] + ([wav] if wav.exists() else [])
 
     duration = float((manifest.get("video") or {}).get("duration_seconds", 0))
     release_url = f"https://github.com/{args.repo}/releases/tag/{tag}"
@@ -119,7 +130,7 @@ def main() -> int:
         "url": release_url,
         "repo": args.repo,
         "published": _dt.date.today().isoformat(),
-        "assets": [mp4.name, vtt.name, thumb.name],
+        "assets": [p.name for p in assets],
     }
     if not dry:
         manifest_path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
@@ -143,11 +154,11 @@ def main() -> int:
         f"**{title}** — Microsoft Learn companion video ({duration:.0f}s).\n\n"
         f"Source: [`learn/output/{slug}/`](https://github.com/{args.repo}/tree/{sha}/learn/output/{slug}) "
         f"on `{args.branch}` @ `{sha[:8]}`.\n\n"
-        f"Assets: MP4 (video+audio), WebVTT captions, thumbnail.\n\n"
+        f"Assets: MP4 (video+audio), WebVTT captions, thumbnail, narration.wav (audio master).\n\n"
         f"_This video was produced with AI assistance and carries the required AI-disclosure end card._"
     )
     run(["gh", "release", "create", tag, "--repo", args.repo, "--target", sha,
-         "--title", title, "--notes", notes, str(mp4), str(vtt), str(thumb)],
+         "--title", title, "--notes", notes] + [str(p) for p in assets],
         dry=dry, what="gh release create")
 
     print(f"\n{'DRY-RUN — nothing changed.' if dry else 'OK: published.'}")
