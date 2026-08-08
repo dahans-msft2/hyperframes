@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>Govern Roles with Role Groups and PIM</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script src="anchors.js"></script>
+    <style>
+
+
+      * { box-sizing: border-box; }
+
+      html, body {
+        width: 1920px; height: 1080px;
+        margin: 0; overflow: hidden;
+        background: #fff8f3;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      #root {
+        position: relative;
+        width: 1920px; height: 1080px;
+        overflow: hidden;
+        /* Opaque stage ground: white-flash guard for any seam dip (seam-craft). */
+        background: #fff8f3;
+      }
+
+      /* Scene slots fill the root and stack by mount order. */
+      #root > div[data-composition-src] { position: absolute; inset: 0; }
+
+      /* Fade bookends: opaque covers above everything; the timeline drives their opacity. */
+      .fade-cover { position: absolute; inset: 0; background: #000; z-index: 100; pointer-events: none; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="root" data-start="0" data-duration="290.067"
+         data-width="1920" data-height="1080" data-resolution="landscape">
+
+      <audio id="narration" class="clip" src="narration.wav" data-start="3.0" data-duration="275.367" data-track-index="10"></audio>
+
+      <div id="slot-01-bumper" class="clip"
+           data-composition-id="01-bumper"
+           data-composition-src="scenes/01-bumper.html"
+           data-start="0.0" data-duration="3.0"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-02-title" class="clip"
+           data-composition-id="02-title"
+           data-composition-src="scenes/02-title.html"
+           data-start="3.0" data-duration="28.92"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-03-objectives" class="clip"
+           data-composition-id="03-objectives"
+           data-composition-src="scenes/03-objectives.html"
+           data-start="31.92" data-duration="13.9"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-04-roles-today" class="clip"
+           data-composition-id="04-roles-today"
+           data-composition-src="scenes/04-roles-today.html"
+           data-start="45.82" data-duration="17.82"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-05-role-groups" class="clip"
+           data-composition-id="05-role-groups"
+           data-composition-src="scenes/05-role-groups.html"
+           data-start="63.64" data-duration="16.68"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-06-always-on" class="clip"
+           data-composition-id="06-always-on"
+           data-composition-src="scenes/06-always-on.html"
+           data-start="80.32" data-duration="17.75"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-07-assignment-types" class="clip"
+           data-composition-id="07-assignment-types"
+           data-composition-src="scenes/07-assignment-types.html"
+           data-start="98.07" data-duration="21.66"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-08-activation" class="clip"
+           data-composition-id="08-activation"
+           data-composition-src="scenes/08-activation.html"
+           data-start="119.73" data-duration="23.99"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-09-approver-puzzle" class="clip"
+           data-composition-id="09-approver-puzzle"
+           data-composition-src="scenes/09-approver-puzzle.html"
+           data-start="143.72" data-duration="21.78"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-10-lockout-risk" class="clip"
+           data-composition-id="10-lockout-risk"
+           data-composition-src="scenes/10-lockout-risk.html"
+           data-start="165.5" data-duration="30.22"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-11-durations" class="clip"
+           data-composition-id="11-durations"
+           data-composition-src="scenes/11-durations.html"
+           data-start="195.72" data-duration="25.32"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-12-custom-role" class="clip"
+           data-composition-id="12-custom-role"
+           data-composition-src="scenes/12-custom-role.html"
+           data-start="221.04" data-duration="18.36"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-90-recap" class="clip"
+           data-composition-id="90-recap"
+           data-composition-src="scenes/90-recap.html"
+           data-start="239.4" data-duration="24.08"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <div id="slot-91-cta" class="clip"
+           data-composition-id="91-cta"
+           data-composition-src="scenes/91-cta.html"
+           data-start="263.48" data-duration="15.92"
+           data-track-index="1"
+           data-width="1920" data-height="1080"></div>
+
+      <video id="ai-end-card" class="clip" src="assets/AI_End_Card.mp4" data-start="279.4" data-duration="10.667" data-track-index="11" muted></video>
+
+      <div id="fade-in" class="fade-cover clip" data-start="0" data-duration="0.5" data-track-index="20"></div>
+
+      <div id="fade-out" class="fade-cover clip" data-start="289.367" data-duration="0.7" data-track-index="20"></div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      // Thin root timeline: scene motion lives in each scene file. This timeline carries only
+      // the cross-scene seams, stamped against the slot-<id> hosts.
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["root"] = tl;
+
+      // <seams:auto> — cross-scene cut-the-curve, stamped by assemble_scenes.py from scenes.json.
+      // SEAM 02-title -> 03-objectives : cut-left (cut @31.92)
+      tl.to("#slot-02-title", { xPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 31.58);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.set("#slot-02-title", { autoAlpha: 0 }, 31.92);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.fromTo("#slot-03-objectives", { xPercent: 10, autoAlpha: 0.35 }, { xPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 31.92);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      // SEAM 03-objectives -> 04-roles-today : cut-left (cut @45.82)
+      tl.to("#slot-03-objectives", { xPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 45.48);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.set("#slot-03-objectives", { autoAlpha: 0 }, 45.82);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.fromTo("#slot-04-roles-today", { xPercent: 10, autoAlpha: 0.35 }, { xPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 45.82);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      // SEAM 04-roles-today -> 05-role-groups : cut-left (cut @63.64)
+      tl.to("#slot-04-roles-today", { xPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 63.3);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.set("#slot-04-roles-today", { autoAlpha: 0 }, 63.64);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.fromTo("#slot-05-role-groups", { xPercent: 10, autoAlpha: 0.35 }, { xPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 63.64);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      // SEAM 05-role-groups -> 06-always-on : cut-up (cut @80.32)
+      tl.to("#slot-05-role-groups", { yPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 79.98);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.set("#slot-05-role-groups", { autoAlpha: 0 }, 80.32);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.fromTo("#slot-06-always-on", { yPercent: 10, autoAlpha: 0.35 }, { yPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 80.32);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      // SEAM 06-always-on -> 07-assignment-types : cut-left (cut @98.07)
+      tl.to("#slot-06-always-on", { xPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 97.73);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.set("#slot-06-always-on", { autoAlpha: 0 }, 98.07);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.fromTo("#slot-07-assignment-types", { xPercent: 10, autoAlpha: 0.35 }, { xPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 98.07);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      // SEAM 07-assignment-types -> 08-activation : cut-left (cut @119.73)
+      tl.to("#slot-07-assignment-types", { xPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 119.39);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.set("#slot-07-assignment-types", { autoAlpha: 0 }, 119.73);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.fromTo("#slot-08-activation", { xPercent: 10, autoAlpha: 0.35 }, { xPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 119.73);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      // SEAM 08-activation -> 09-approver-puzzle : cut-left (cut @143.72)
+      tl.to("#slot-08-activation", { xPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 143.38);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.set("#slot-08-activation", { autoAlpha: 0 }, 143.72);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.fromTo("#slot-09-approver-puzzle", { xPercent: 10, autoAlpha: 0.35 }, { xPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 143.72);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      // SEAM 09-approver-puzzle -> 10-lockout-risk : cut-up (cut @165.5)
+      tl.to("#slot-09-approver-puzzle", { yPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 165.16);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.set("#slot-09-approver-puzzle", { autoAlpha: 0 }, 165.5);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.fromTo("#slot-10-lockout-risk", { yPercent: 10, autoAlpha: 0.35 }, { yPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 165.5);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      // SEAM 10-lockout-risk -> 11-durations : cut-left (cut @195.72)
+      tl.to("#slot-10-lockout-risk", { xPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 195.38);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.set("#slot-10-lockout-risk", { autoAlpha: 0 }, 195.72);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.fromTo("#slot-11-durations", { xPercent: 10, autoAlpha: 0.35 }, { xPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 195.72);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      // SEAM 11-durations -> 12-custom-role : cut-left (cut @221.04)
+      tl.to("#slot-11-durations", { xPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 220.7);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.set("#slot-11-durations", { autoAlpha: 0 }, 221.04);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.fromTo("#slot-12-custom-role", { xPercent: 10, autoAlpha: 0.35 }, { xPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 221.04);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      // SEAM 12-custom-role -> 90-recap : cut-up (cut @239.4)
+      tl.to("#slot-12-custom-role", { yPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 239.06);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.set("#slot-12-custom-role", { autoAlpha: 0 }, 239.4);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.fromTo("#slot-90-recap", { yPercent: 10, autoAlpha: 0.35 }, { yPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 239.4);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      // SEAM 90-recap -> 91-cta : cut-left (cut @263.48)
+      tl.to("#slot-90-recap", { xPercent: -12, autoAlpha: 0, duration: 0.34, ease: "power3.in" }, 263.14);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.set("#slot-90-recap", { autoAlpha: 0 }, 263.48);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      tl.fromTo("#slot-91-cta", { xPercent: 10, autoAlpha: 0.35 }, { xPercent: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }, 263.48);  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)
+      // </seams:auto>
+
+      // <bookends> — fade-in breath + fade-to-black on the end card.
+      gsap.set("#fade-in", { autoAlpha: 1 });
+      tl.to("#fade-in", { autoAlpha: 0, duration: 0.5, ease: "power2.out" }, 0);
+      tl.fromTo("#fade-out", { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.7, ease: "power2.in", immediateRender: false }, 289.367);  // anchor-exempt: fade bookend relative to the composition boundary
+      // </bookends>
+    </script>
+  </body>
+</html>

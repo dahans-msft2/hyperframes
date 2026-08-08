@@ -132,7 +132,7 @@
       <div
         id="root"
         data-composition-id="90-recap"
-        data-ground="hero-swoosh"
+        data-ground="content-wash"
         data-width="1920"
         data-height="1080"
       >
@@ -155,9 +155,9 @@
           // Edit per use. Opening title card: eyebrow kicker + two-line title + one-line subtitle.
           var CONFIG = {
             "kicker": "RECAP",
-            "titleLine1": "__FILL__ the payoff, line 1",
-            "titleLine2": "__FILL__ the payoff, line 2",
-            "subtitle": "__FILL__ one-line recap tied back to the opening hook."
+            "titleLine1": "Always-on \u2192 eligible = just-in-time access",
+            "titleLine2": "Empty approver list \u2192 active PRA / GA approve",
+            "subtitle": "Emergency access account prevents lockout."
           };
 
           var kicker = document.getElementById("mk-th-kicker");
@@ -165,6 +165,7 @@
           var line2 = document.getElementById("mk-th-line2");
           var rule = document.getElementById("mk-th-rule");
           var subtitle = document.getElementById("mk-th-subtitle");
+          var group = document.getElementById("mk-th-group");
 
           kicker.textContent = CONFIG.kicker;
           line1.textContent = CONFIG.titleLine1;
@@ -173,38 +174,64 @@
 
           var tl = gsap.timeline({ paused: true });
 
-          // Waterfall entrance — scene-relative, seek-safe. Calm cadence for the opener.
-          // 1) kicker fades + rises first.
+          /* ---- word-anchored cue clock ------------------------------------------------
+             Every position below is a REAL spoken-word time from transcript.json via
+             anchors.js (tools/word_anchors.py), converted to scene-relative time by
+             subtracting this scene's start. Never an assumed words-per-second. */
+          var A = window.__anchors || {};
+          var T0 = 239.4; // scene start in composition time (scenes.json)
+          function cue(name, fallback, shift) {
+            var t = typeof A[name] === "number" ? A[name] : fallback;
+            return Math.max(0, t - T0 + (shift || 0));
+          }
+          var W = {
+            kicker: cue("open_recap", 239.75, -0.1),      // "So, back to that standing-access problem"
+            line1: cue("recap_convert", 242.65, -0.25),    // "Convert your always-on admins…"
+            rule: cue("recap_activation", 247.97, -0.15),  // "granted on activation"
+            line2: cue("recap_puzzle", 253.83, -0.25),     // "The empty approver puzzle…"
+            subtitle: cue("recap_emergency", 258.29, -0.25), // "an emergency access account"
+            settle: cue("recap_model", 260.65, -0.1),      // "the governance model"
+          };
+
+          // Waterfall payoff — each recap line lands on the sentence that answers the hook.
           tl.fromTo(
             kicker,
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
-            0.25,
+            W.kicker
           );
 
-          // 2) the two title lines arrive on a short stagger.
           tl.fromTo(
-            [line1, line2],
+            line1,
             { opacity: 0, y: 44 },
-            { opacity: 1, y: 0, duration: 0.85, ease: "power3.out", stagger: 0.14 },
-            0.75,
+            { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" },
+            W.line1
           );
 
-          // 3) the accent rule wipes in left→right (a graphic).
+          // the accent rule wipes in left→right (a graphic) as the answer is spoken.
           tl.fromTo(
             rule,
             { scaleX: 0 },
             { scaleX: 1, duration: 0.7, ease: "power2.out" },
-            1.55,
+            W.rule
           );
 
-          // 4) the subtitle fades up last, then we hold on stillness.
+          tl.fromTo(
+            line2,
+            { opacity: 0, y: 44 },
+            { opacity: 1, y: 0, duration: 0.85, ease: "power3.out" },
+            W.line2
+          );
+
           tl.fromTo(
             subtitle,
             { opacity: 0, y: 22 },
             { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-            1.95,
+            W.subtitle
           );
+
+          // the whole lockup settles as the module-level payoff lands.
+          tl.to(group, { y: "-=14", duration: 1.1, ease: "power2.inOut" }, W.settle);
 
           window.__timelines["90-recap"] = tl;
         })();

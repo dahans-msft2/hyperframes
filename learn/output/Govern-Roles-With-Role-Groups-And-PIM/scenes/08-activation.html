@@ -138,7 +138,7 @@
         }
       </style>
 
-      <div id="root" data-composition-id="03-objectives" data-width="1920" data-height="1080">
+      <div id="root" data-composition-id="08-activation" data-ground="content-wash" data-width="1920" data-height="1080">
         <!-- host may set data-ground="section-field" | "hero-swoosh" | "dark-field" on #root -->
         <div id="mk-st-col">
           <div id="mk-st-connector"></div>
@@ -152,27 +152,19 @@
           /* Edit per use. A numbered how-to: each step pops a badge as its row slides in,
              one at a time, top→down, with a connector line drawing down between the badges. */
           var CONFIG = {
-            "steps": [
-              {
-                "title": "How Entra assigns roles \u2014 and why it's always on",
-                "detail": "Built-in roles, direct assignments, and workload role groups"
-              },
-              {
-                "title": "How PIM makes access just-in-time",
-                "detail": "Eligible instead of active: activate, time-box, expire"
-              },
-              {
-                "title": "The setting that can lock your admins out",
-                "detail": "Approval required, an empty approver list, and the fix"
-              }
+            steps: [
+              { title: "Eligible", detail: "The role is assigned, but no permissions apply yet." },
+              { title: "Activate", detail: "Request in PIM \u2014 approval, MFA and a business justification if required." },
+              { title: "Time-box", detail: "Active only up to the activation maximum duration \u2014 for example, 4 hours." },
+              { title: "Expire", detail: "Access falls away automatically. No cleanup ticket needed." },
             ],
-            "connector": true,
-            "badge": 96,
-            "gap": 34,
-            "rowGap": 58,
-            "textWidth": 1180,
-            "x": 210,
-            "stagger": 0.55
+            connector: true,
+            badge: 92,
+            gap: 34,
+            rowGap: 46,
+            textWidth: 1240,
+            x: 240,
+            stagger: 0.55,
           };
 
           var col = document.getElementById("mk-st-col");
@@ -238,55 +230,70 @@
              anchors.js (tools/word_anchors.py), converted to scene-relative time by
              subtracting this scene's start. Never an assumed words-per-second. */
           var A = window.__anchors || {};
-          var T0 = 31.92; // scene start in composition time (scenes.json)
+          var T0 = 119.73; // scene start in composition time (scenes.json)
           function cue(name, fallback, shift) {
             var t = typeof A[name] === "number" ? A[name] : fallback;
             return Math.max(0, t - T0 + (shift || 0));
           }
           var W = {
-            open: cue("open_objectives", 32.27, -0.1),   // "You'll see three things"
-            row0: cue("obj_one", 34.61, -0.35),          // "…Entra assigns roles today"
-            badge0: cue("obj_one", 34.61, -0.3),
-            row1: cue("obj_two", 39.69, -0.35),          // "…PIM makes it just-in-time"
-            badge1: cue("obj_two", 39.69, -0.3),
-            row2: cue("obj_three", 42.82, -0.35),        // "…one wrong setting"
-            badge2: cue("obj_three", 42.82, -0.3),
-            lockout: cue("obj_lockout", 44.54, -0.1),    // "lock your admins out"
+            open: cue("open_b5", 120.08, -0.2),               // "Eligible on its own does nothing"
+            row0: cue("b5_before_effect", 123.95, -0.35),      // "before it takes effect"
+            row1: cue("b5_activate", 125.43, -0.35),           // "activate the role"
+            mfa: cue("b5_mfa", 127.08, -0.1),                  // "multi-factor authentication"
+            justify: cue("b5_justification", 129.19, -0.1),    // "a business justification"
+            row2: cue("b5_timeboxed", 130.88, -0.35),          // "the activation is time-boxed"
+            maxdur: cue("b5_max_duration", 133.87, -0.1),      // "activation maximum duration"
+            fourHours: cue("b5_four_hours", 137.63, -0.1),     // "four hours"
+            row3: cue("b5_expire", 139.81, -0.35),             // "access expires"
+            jit: cue("b5_jit", 141.79, -0.1),                  // "just-in-time access"
           };
 
-          /* Scene-relative, seek-safe: the connector draws down across the whole reveal, each row
-             slides/fades in on its own spoken objective while its badge pops. No exit / hide —
-             the host owns lifetime. */
-          var rows = [
+          /* Scene-relative, seek-safe: the connector draws down across the reveal while each step
+             lands on the word that names it. Step 4 is withheld until "expires" is spoken \u2014
+             the viewer predicts the outcome before the graphic confirms it. */
+          var rowEls = [
             document.getElementById("mk-st-row-0"),
             document.getElementById("mk-st-row-1"),
             document.getElementById("mk-st-row-2"),
+            document.getElementById("mk-st-row-3"),
           ];
-          var badges = [
+          var badgeEls = [
             document.getElementById("mk-st-badge-0"),
             document.getElementById("mk-st-badge-1"),
             document.getElementById("mk-st-badge-2"),
+            document.getElementById("mk-st-badge-3"),
           ];
-          gsap.set(rows, { opacity: 0, x: -40 });
-          gsap.set(badges, { scale: 0.35 });
+          gsap.set(rowEls, { opacity: 0, x: -40 });
+          gsap.set(badgeEls, { scale: 0.35 });
 
           if (CONFIG.connector && n > 1) {
             gsap.set(connector, { scaleY: 0 });
-            tl.to(connector, { scaleY: 1, duration: Math.max(0.4, W.row2 - W.open), ease: "none" }, W.open);
+            tl.to(connector, { scaleY: 1, duration: Math.max(0.5, W.row3 - W.row0), ease: "none" }, W.row0);
           }
 
-          tl.to(rows[0], { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.row0);
-          tl.to(badges[0], { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.badge0);
-          tl.to(rows[1], { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.row1);
-          tl.to(badges[1], { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.badge1);
-          tl.to(rows[2], { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.row2);
-          tl.to(badges[2], { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.badge2);
+          tl.to(rowEls[0], { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.row0);
+          tl.to(badgeEls[0], { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.row0);
+          tl.to(rowEls[1], { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.row1);
+          tl.to(badgeEls[1], { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.row1);
+          tl.to(rowEls[2], { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.row2);
+          tl.to(badgeEls[2], { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.row2);
+          tl.to(rowEls[3], { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.row3);
+          tl.to(badgeEls[3], { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.row3);
 
-          // CUE — the third stake (the lockout) lifts on "lock your admins out".
-          tl.to(rows[2], { x: 26, duration: 0.55, ease: "power3.out" }, W.lockout);
-          tl.to(badges[2], { scale: 1.12, duration: 0.55, ease: "back.out(2.4)" }, W.lockout);
+          /* CUE \u2014 the two activation gates, each on the word that names it. */
+          tl.to(badgeEls[1], { scale: 1.12, duration: 0.3, ease: "power2.out" }, W.mfa);
+          tl.to(badgeEls[1], { scale: 1, duration: 0.4, ease: "power2.inOut" }, W.mfa);
+          tl.to(rowEls[1], { x: 18, duration: 0.5, ease: "power3.out" }, W.justify);
 
-          window.__timelines["03-objectives"] = tl;
+          /* CUE \u2014 "activation maximum duration" then "four hours": the time-box tightens. */
+          tl.to(rowEls[2], { x: 18, duration: 0.5, ease: "power3.out" }, W.maxdur);
+          tl.to(badgeEls[2], { scale: 1.12, duration: 0.3, ease: "power2.out" }, W.fourHours);
+          tl.to(badgeEls[2], { scale: 1, duration: 0.4, ease: "power2.inOut" }, W.fourHours);
+
+          /* CUE \u2014 "just-in-time access": the whole ladder settles on the payoff. */
+          tl.to(col, { y: -12, duration: 0.9, ease: "power2.inOut" }, W.jit);
+
+          window.__timelines["08-activation"] = tl;
         })();
       </script>
     </template>

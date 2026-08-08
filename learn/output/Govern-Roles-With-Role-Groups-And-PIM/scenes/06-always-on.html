@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+  </head>
+  <body>
+    <template>
+      <style>
+        /* === Custom scene: 06-always-on ===
+           The "standing access" beat: a tenant frame holding admin tokens. Every token lights
+           when the narration says the access is always on, and STAYS lit \u2014 the picture of
+           permanent privilege the rest of the video dismantles. Built on the kit foundation:
+           tokens only, no hardcoded colours or px type. */
+
+        /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+        #root,
+        #root *,
+        #root *::before,
+        #root *::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size;
+
+          --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
+          --ink: #091f2e;
+          --ink-soft: #59636e;
+          --paper: #ffffff;
+          --paper-veil: rgba(255, 255, 255, 0.9);
+          --border: rgba(9, 31, 46, 0.16);
+          --border-soft: rgba(9, 31, 46, 0.12);
+          --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
+
+          --accent: #8661c5;
+          --accent-2: #0078d4;
+          --accent-3: #389a91;
+          --accent-4: #bf3ac4;
+          --accent-ink: #ffffff;
+
+          --fs-display: 11cqw;
+          --fs-h1: 4.6cqw;
+          --fs-h2: 3.4cqw;
+          --fs-h3: 2.4cqw;
+          --fs-lead: 2cqw;
+          --fs-body: 1.75cqw;
+          --fs-caption: 1.5cqw;
+          --fs-kicker: 1.55cqw;
+          --fs-micro: 1.25cqw;
+
+          --radius: 16px;
+          --radius-sm: 10px;
+          --radius-pill: 999px;
+          --stroke: 5px;
+          --rule: 3px;
+
+          font-family: "Segoe UI", system-ui, sans-serif;
+          color: var(--ink);
+          background: var(--ground);
+        }
+        #root[data-ground="hero-swoosh"] {
+          --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+        }
+        #root[data-ground="section-field"] {
+          --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
+        }
+        #root[data-ground="dark-field"] {
+          --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
+          --ink: #ffffff;
+          --ink-soft: rgba(255, 255, 255, 0.72);
+          --paper: rgba(255, 255, 255, 0.08);
+          --paper-veil: rgba(255, 255, 255, 0.1);
+          --border: rgba(255, 255, 255, 0.24);
+          --border-soft: rgba(255, 255, 255, 0.14);
+          --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+        .ilt-kicker {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-kicker);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+        .ilt-headline {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h3);
+          line-height: 1.12;
+          letter-spacing: -0.015em;
+          color: var(--ink);
+        }
+        .ilt-body {
+          font-weight: 400;
+          font-size: var(--fs-body);
+          line-height: 1.3;
+          color: var(--ink);
+        }
+        .ilt-panel {
+          background: var(--paper);
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow);
+        }
+        .ilt-tab {
+          width: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent);
+        }
+        /* ==== END _foundation.css ==== */
+
+        /* ---- kit primitives used by this scene ---- */
+        .ilt-kicker {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-kicker);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+        .ilt-caption {
+          font-weight: 400;
+          font-size: var(--fs-caption);
+          line-height: 1.3;
+          color: var(--ink-soft);
+        }
+
+        /* ---- scene-specific ---- */
+        #ao-wrap {
+          position: absolute;
+          left: 240px;
+          top: 168px;
+          width: 1440px;
+        }
+        #ao-head {
+          margin-bottom: 1.4cqw;
+        }
+        #ao-title {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h2);
+          line-height: 1.15;
+          margin-top: 0.5cqw;
+        }
+        #ao-frame {
+          position: relative;
+          border: var(--rule) solid var(--border);
+          border-radius: var(--radius);
+          background: var(--paper-veil);
+          box-shadow: var(--shadow);
+          padding: 2.2cqw 2.4cqw 2.4cqw;
+        }
+        #ao-frame-label {
+          position: absolute;
+          top: -1.05cqw;
+          left: 2.2cqw;
+          padding: 0 0.8cqw;
+          background: var(--paper);
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-micro);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+        #ao-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 30px;
+        }
+        .ao-token {
+          display: flex;
+          align-items: center;
+          gap: 18px;
+          padding: 18px 22px;
+          border: var(--rule) solid var(--border-soft);
+          border-radius: var(--radius-sm);
+          background: var(--paper);
+        }
+        .ao-dot {
+          flex: 0 0 auto;
+          width: 54px;
+          height: 54px;
+          border-radius: var(--radius-pill);
+          border: var(--stroke) solid var(--border);
+          background: var(--paper);
+        }
+        .ao-name {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-caption);
+          line-height: 1.2;
+          color: var(--ink);
+        }
+        .ao-role {
+          font-size: var(--fs-micro);
+          color: var(--ink-soft);
+        }
+        #ao-flag {
+          margin-top: 1.8cqw;
+          display: inline-flex;
+          align-items: center;
+          gap: 14px;
+          padding: 14px 24px;
+          border-radius: var(--radius-pill);
+          background: var(--accent-4);
+          color: var(--accent-ink);
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-caption);
+        }
+      </style>
+
+      <div id="root" data-composition-id="06-always-on" data-ground="content-wash" data-width="1920" data-height="1080">
+        <div id="ao-wrap" data-keep-in-frame>
+          <div id="ao-head">
+            <div class="ilt-kicker">Directly assigned</div>
+            <div id="ao-title">Assign the role and it applies from the moment it is created</div>
+          </div>
+          <div id="ao-frame">
+            <div id="ao-frame-label">Contoso tenant</div>
+            <div id="ao-grid"></div>
+          </div>
+          <div id="ao-flag">Standing access \u2014 permanent, always on</div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          window.__timelines = window.__timelines || {};
+
+          var CONFIG = {
+            admins: [
+              { name: "A. Chen", role: "Global Administrator" },
+              { name: "R. Silva", role: "User Administrator" },
+              { name: "M. Novak", role: "Exchange Administrator" },
+              { name: "J. Okafor", role: "Security Administrator" },
+              { name: "P. Dubois", role: "Billing Administrator" },
+              { name: "S. Haddad", role: "Helpdesk Administrator" },
+              { name: "L. Weber", role: "Groups Administrator" },
+              { name: "K. Ito", role: "Global Administrator" },
+            ],
+          };
+
+          var grid = document.getElementById("ao-grid");
+          var tokens = [];
+          var dots = [];
+          CONFIG.admins.forEach(function (a, i) {
+            var t = document.createElement("div");
+            t.className = "ao-token";
+            t.id = "ao-token-" + i;
+
+            var dot = document.createElement("div");
+            dot.className = "ao-dot";
+            dot.id = "ao-dot-" + i;
+            t.appendChild(dot);
+
+            var text = document.createElement("div");
+            var name = document.createElement("div");
+            name.className = "ao-name";
+            name.textContent = a.name;
+            text.appendChild(name);
+            var role = document.createElement("div");
+            role.className = "ao-role";
+            role.textContent = a.role;
+            text.appendChild(role);
+            t.appendChild(text);
+
+            grid.appendChild(t);
+            tokens.push(t);
+            dots.push(dot);
+          });
+
+          var head = document.getElementById("ao-head");
+          var frame = document.getElementById("ao-frame");
+          var flag = document.getElementById("ao-flag");
+
+          var tl = gsap.timeline({ paused: true });
+
+          /* ---- word-anchored cue clock ------------------------------------------------
+             Every position below is a REAL spoken-word time from transcript.json via
+             anchors.js (tools/word_anchors.py), converted to scene-relative time by
+             subtracting this scene's start. Never an assumed words-per-second. */
+          var A = window.__anchors || {};
+          var T0 = 80.32; // scene start in composition time (scenes.json)
+          function cue(name, fallback, shift) {
+            var t = typeof A[name] === "number" ? A[name] : fallback;
+            return Math.max(0, t - T0 + (shift || 0));
+          }
+          var W = {
+            head: cue("open_b3", 80.67, -0.2),                  // "That is the problem"
+            frame: cue("b3_direct", 81.72, -0.25),              // "a direct assignment"
+            light: cue("b3_always_on", 83.51, -0.15),           // "always on"
+            created: cue("b3_moment_created", 84.95, -0.1),     // "from the moment it's created"
+            many: cue("b3_too_many", 92.21, -0.1),              // "too many"
+            flag: cue("b3_standing_access", 93.07, -0.2),       // "standing access"
+          };
+
+          /* Scene-relative, seek-safe. Initial state pinned here, never mid-timeline. */
+          gsap.set(head, { opacity: 0, y: 22 });
+          gsap.set(frame, { opacity: 0, y: 26 });
+          gsap.set(tokens, { opacity: 0, y: 18 });
+          gsap.set(dots, { backgroundColor: "#ffffff", borderColor: "rgba(9,31,46,0.16)" });
+          gsap.set(flag, { opacity: 0, y: 18, scale: 0.94, transformOrigin: "0% 50%" });
+
+          tl.to(head, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, W.head);
+          tl.to(frame, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, W.frame);
+          tl.to(tokens, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.07 }, W.frame);
+
+          /* CUE \u2014 "always on": every admin token lights, and STAYS lit for the rest of the scene.
+             The permanence is the point; nothing here ever fades back down. */
+          tl.to(dots, { backgroundColor: "#8661c5", borderColor: "#8661c5", duration: 0.45, ease: "power2.out", stagger: 0.05 }, W.light);
+
+          /* CUE \u2014 "from the moment it's created": the lit frame pushes forward once. */
+          tl.to(frame, { y: -10, duration: 0.7, ease: "power2.inOut" }, W.created);
+
+          /* CUE \u2014 "too many": the grid holds, fully lit, while the count is called out. */
+          tl.to(tokens, { scale: 1.02, duration: 0.5, ease: "power2.out" }, W.many);
+
+          /* CUE \u2014 "standing access": the term is named and flagged. */
+          tl.to(flag, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.8)" }, W.flag);
+
+          window.__timelines["06-always-on"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

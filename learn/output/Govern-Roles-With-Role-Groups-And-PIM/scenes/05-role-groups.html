@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+  </head>
+  <body>
+    <template>
+      <style>
+        /* === Learn-ILT kit block: callout-note (key-point / note / definition card). ===
+           Built on the kit foundation: no hardcoded colours/fonts/px type — tokens only.
+           Ground is host-selectable via #root[data-ground]; dark-field auto-inverts ink.
+           A panel + a left accent tab is the callout marker (mirrors lower-third-bar);
+           the glyph + tab are the only accent-coloured graphics — all text stays ink. */
+
+        /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+        #root,
+        #root *,
+        #root *::before,
+        #root *::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size;
+
+          --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
+          --ink: #091f2e;
+          --ink-soft: #59636e;
+          --paper: #ffffff;
+          --paper-veil: rgba(255, 255, 255, 0.9);
+          --border: rgba(9, 31, 46, 0.16);
+          --border-soft: rgba(9, 31, 46, 0.12);
+          --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
+
+          --accent: #8661c5;
+          --accent-2: #0078d4;
+          --accent-3: #389a91;
+          --accent-4: #bf3ac4;
+          --accent-ink: #ffffff;
+
+          --fs-display: 11cqw;
+          --fs-h1: 4.6cqw;
+          --fs-h2: 3.4cqw;
+          --fs-h3: 2.4cqw;
+          --fs-lead: 2cqw;
+          --fs-body: 1.75cqw;
+          --fs-caption: 1.5cqw;
+          --fs-kicker: 1.55cqw;
+          --fs-micro: 1.25cqw;
+
+          --radius: 16px;
+          --radius-sm: 10px;
+          --radius-pill: 999px;
+          --stroke: 5px;
+          --rule: 3px;
+
+          font-family: "Segoe UI", system-ui, sans-serif;
+          color: var(--ink);
+          background: var(--ground);
+        }
+        #root[data-ground="hero-swoosh"] {
+          --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+        }
+        #root[data-ground="section-field"] {
+          --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
+        }
+        #root[data-ground="dark-field"] {
+          --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
+          --ink: #ffffff;
+          --ink-soft: rgba(255, 255, 255, 0.72);
+          --paper: rgba(255, 255, 255, 0.08);
+          --paper-veil: rgba(255, 255, 255, 0.1);
+          --border: rgba(255, 255, 255, 0.24);
+          --border-soft: rgba(255, 255, 255, 0.14);
+          --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+        .ilt-kicker {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-kicker);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+        .ilt-headline {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h3);
+          line-height: 1.12;
+          letter-spacing: -0.015em;
+          color: var(--ink);
+        }
+        .ilt-body {
+          font-weight: 400;
+          font-size: var(--fs-body);
+          line-height: 1.3;
+          color: var(--ink);
+        }
+        .ilt-panel {
+          background: var(--paper);
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow);
+        }
+        .ilt-tab {
+          width: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent);
+        }
+        /* ==== END _foundation.css ==== */
+
+        /* ---- block-specific: compose primitives + tokens only ---- */
+        #root .cn-wrap {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #root .cn-card {
+          display: flex;
+          align-items: stretch;
+          width: 46cqw; /* body wraps to 1–2 lines at the kit type scale */
+          overflow: hidden; /* clips the tab wipe + rounds the tab's left corners */
+          will-change: transform, opacity;
+        }
+        #root .cn-tab {
+          width: 0.6cqw; /* wider than the --rule default for a callout marker */
+          border-radius: 0;
+          flex-shrink: 0;
+        }
+        #root .cn-body {
+          padding: 2.4cqw 2.8cqw 2.6cqw 2.4cqw;
+          display: flex;
+          flex-direction: column;
+          gap: 1cqw;
+        }
+        #root .cn-label-row {
+          display: flex;
+          align-items: center;
+          gap: 0.9cqw;
+        }
+        #root .cn-glyph {
+          width: 2.4cqw;
+          height: 2.4cqw;
+          flex-shrink: 0;
+        }
+        #root .cn-glyph path {
+          stroke: var(--accent); /* accent = graphic, not text */
+          fill: none;
+          stroke-width: 2;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+      </style>
+
+      <div id="root" data-composition-id="05-role-groups" data-ground="content-wash" data-width="1920" data-height="1080">
+        <!-- host may set data-ground="section-field" | "hero-swoosh" | "dark-field" on #root -->
+        <div class="cn-wrap">
+          <div id="cn-card" class="cn-card ilt-panel">
+            <div id="cn-tab" class="cn-tab ilt-tab"></div>
+            <div class="cn-body">
+              <div id="cn-label-row" class="cn-label-row">
+                <svg class="cn-glyph" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M9 18h6" />
+                  <path d="M10 22h4" />
+                  <path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1v.2h6v-.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z" />
+                </svg>
+                <div id="cn-label" class="ilt-kicker">Key point</div>
+              </div>
+              <div id="cn-term" class="ilt-headline">Conditional access</div>
+              <div id="cn-body-text" class="ilt-body">
+                Policies evaluate signals at sign-in and grant, block, or challenge access before the session begins.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          window.__timelines = window.__timelines || {};
+
+          // Edit per use. A Learn-style callout: type label + bold term + a 1–2 line body.
+          var CONFIG = {
+            label: "DEFINITION",
+            term: "Role group",
+            body: "Exchange, Purview and Defender bundle roles into groups you assign as one unit \u2014 so check the workload before you assign.",
+          };
+
+          document.getElementById("cn-label").textContent = CONFIG.label;
+          document.getElementById("cn-term").textContent = CONFIG.term;
+          document.getElementById("cn-body-text").textContent = CONFIG.body;
+
+          var card = document.getElementById("cn-card");
+          var tab = document.getElementById("cn-tab");
+          var labelRow = document.getElementById("cn-label-row");
+          var term = document.getElementById("cn-term");
+          var bodyText = document.getElementById("cn-body-text");
+
+          var tl = gsap.timeline({ paused: true });
+
+          /* ---- word-anchored cue clock ------------------------------------------------
+             Every position below is a REAL spoken-word time from transcript.json via
+             anchors.js (tools/word_anchors.py), converted to scene-relative time by
+             subtracting this scene's start. Never an assumed words-per-second. */
+          var A = window.__anchors || {};
+          var T0 = 63.64; // scene start in composition time (scenes.json)
+          function cue(name, fallback, shift) {
+            var t = typeof A[name] === "number" ? A[name] : fallback;
+            return Math.max(0, t - T0 + (shift || 0));
+          }
+          var W = {
+            card: cue("open_b2", 63.99, -0.2),               // "Some workloads go further"
+            tab: cue("open_b2", 63.99, 0.25),
+            label: cue("open_b2", 63.99, 0.45),
+            term: cue("b2_workloads", 66.37, -0.25),          // "Exchange, Purview and Defender"
+            body: cue("b2_workloads", 66.37, 0.35),
+            pulse: cue("b2_role_groups", 74.03, -0.1),        // "role groups"
+            check: cue("b2_check_workload", 76.88, -0.1),     // "check the workload"
+          };
+
+          /* Scene-relative, seek-safe: card scales/fades in, the accent tab wipes
+             top\u2192bottom, then label \u2192 term \u2192 body reveal on their spoken phrases. */
+          gsap.set(card, { opacity: 0, scale: 0.92, y: 24, transformOrigin: "50% 50%" });
+          gsap.set(tab, { scaleY: 0, transformOrigin: "50% 0%" });
+          gsap.set([labelRow, term, bodyText], { y: 22, opacity: 0 });
+
+          tl.to(card, { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: "power3.out" }, W.card);
+          tl.to(tab, { scaleY: 1, duration: 0.45, ease: "power2.out" }, W.tab);
+          tl.to(labelRow, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, W.label);
+          tl.to(term, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, W.term);
+          tl.to(bodyText, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, W.body);
+
+          /* CUE \u2014 the term pops exactly on the words "role groups". */
+          tl.to(term, { scale: 1.06, duration: 0.28, ease: "power2.out", transformOrigin: "0% 50%" }, W.pulse);
+          tl.to(term, { scale: 1, duration: 0.42, ease: "power2.inOut" }, W.pulse);
+
+          /* CUE \u2014 "check the workload": the accent tab re-wipes as the takeaway lands. */
+          tl.to(tab, { scaleY: 0.35, duration: 0.25, ease: "power2.in" }, W.check);
+          tl.to(tab, { scaleY: 1, duration: 0.5, ease: "power2.out" }, W.check);
+          window.__timelines["05-role-groups"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
