@@ -47,3 +47,14 @@ registry/**/*.html linguist-vendored
 .claude/skills/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
 .agents/skills/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
 .agents/skills/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
+
+# --- Fork override: stop tests/**/output/compiled.html self-converting to LFS pointers ----------
+# The pattern above flags these regression-test fixtures filter=lfs, but they were committed
+# UPSTREAM as PLAIN content (never migrated into LFS storage). So git-lfs's clean filter rewrites
+# them to pointers on every `git add` — a phantom "change" that cloud video-build agents silently
+# sweep into their PRs, tripping the scope gate on 20-60 files no one touched. This override (a
+# later match wins) treats them as the plain content they already are: no pointer is ever computed,
+# locally or in CI. `-text` keeps them byte-exact so no EOL renormalisation reintroduces a diff.
+# Retires the local `git update-index --skip-worktree` workaround. Appended (not edited inline) to
+# minimise merge friction on upstream sync.
+packages/producer/tests/**/output/compiled.html -filter -diff -merge -text
