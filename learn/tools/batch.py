@@ -58,10 +58,77 @@ def copilot_prompt(title: str, profile: str, slug: str) -> str:
     )
 
 
-def handoff_one(title: str, profile: str, source: "str | None", project: Path,
-                base: str, repo: str, assign: bool, dry: bool) -> dict:
+_PROFILE_LABEL = {
+    "unit-video": "~4-minute unit companion video",
+    "companion-short": "~90-second companion video",
+    "skilling-session": "skilling session",
+    "explainer": "explainer",
+    "demo-walkthrough": "demo walkthrough",
+}
+
+
+def _profile_label(profile: str) -> str:
+    return _PROFILE_LABEL.get(profile, f"{profile} video")
+
+
+def issue_body(row: dict) -> str:
+    """Human-readable issue body — what the video is, what's done, what happens next."""
+    title, profile = row["title"], row["profile"]
+    angle, unit, voice = row.get("angle"), row.get("unit"), row.get("voice")
+    where = f" for {unit}" if unit else (f" (source: {row['source']})" if row.get("source") else "")
+    lines = [f"## {title}", "",
+             f"A **{_profile_label(profile)}**{where}.", ""]
+    if angle:
+        lines += [f"**The angle.** {angle}", ""]
+    lines += [
+        "**Done locally, before this issue:** the narration script was written and fact-checked against "
+        "the live Learn content and current Microsoft docs, the visual design was planned on the "
+        "learn-ilt brand, and the narration was recorded" + (f" in {voice}" if voice else "") + ".",
+        "",
+        "**What happens next:** the GitHub Copilot coding agent builds the animated body scenes from "
+        "the approved script and design plan, passes the quality gates, and marks its pull request "
+        "ready — which auto-renders the final MP4 on a Windows runner with real Segoe fonts. Follow the "
+        "linked PR for the build.",
+    ]
+    return "\n".join(lines)
+
+
+def pr_body(row: dict, slug: str, issue_num: "str | None") -> str:
+    """Human-readable PR body — prose for the author, the agent build steps in a collapsible."""
+    title, profile = row["title"], row["profile"]
+    angle, unit, voice = row.get("angle"), row.get("unit"), row.get("voice")
+    lines = [f"## {title} — {_profile_label(profile)}", ""]
+    if angle:
+        lines += [angle, ""]
+    lines += [
+        "This branch carries everything the video needs **except the animated body scenes**, which the "
+        "coding agent authors here from the approved script and design plan.", "",
+        "| | |", "|---|---|"]
+    if unit:
+        lines.append(f"| **Source** | {unit} |")
+    elif row.get("source"):
+        lines.append(f"| **Source** | {row['source']} |")
+    lines.append(f"| **Format** | {_profile_label(profile)} |")
+    if voice:
+        lines.append(f"| **Voice** | {voice} |")
+    lines += [
+        "",
+        "**Already in this branch:** the approved narration script (`script.md`), the scene-by-scene "
+        "design plan (`design-plan.md`), the recorded narration (`narration.wav`) with its word-timed "
+        "transcript (`transcript.json`), and the stamped opening/closing brand chrome.", "",
+        "<details><summary><strong>Build instructions for the coding agent</strong></summary>", "",
+        copilot_prompt(title, profile, slug), "", "</details>"]
+    if issue_num:
+        lines += ["",
+                  f"Resolves #{issue_num} on merge — the close-on-merge workflow closes it automatically "
+                  "when this PR lands in `videos`."]
+    return "\n".join(lines)
+
+
+def handoff_one(row: dict, project: Path, base: str, repo: str, assign: bool, dry: bool) -> dict:
     """Push one prepped video branch and open its issue + draft PR. The branch must already exist
     locally with the approved inputs committed (scaffold --cloud + script + design + TTS)."""
+    title, profile = row["title"], row["profile"]
     slug = project.name
     branch = f"video/{slug.lower()}"
     missing = [f for f in REQUIRED_INPUTS if not (project / f).exists()]
@@ -76,11 +143,13 @@ def handoff_one(title: str, profile: str, source: "str | None", project: Path,
         return {"slug": slug, "status": "push-failed", "err": (push.stderr or push.stdout).strip()}
 
     issue = _run(["gh", "issue", "create", "--repo", repo, "--title", f"Build video: {slug}",
-                  "--body", f"Build **{title}** ({profile}). Source: {source or 'n/a'}. Kickoff prompt is in the PR."], dry)
+                  "--body", issue_body(row)], dry)
     issue_url = issue.stdout.strip().splitlines()[-1] if (issue and issue.returncode == 0 and issue.stdout.strip()) else None
+    m = re.search(r"/issues/(\d+)", issue_url) if issue_url else None
+    issue_num = m.group(1) if m else None
 
     pr = _run(["gh", "pr", "create", "--repo", repo, "--base", base, "--head", branch, "--draft",
-               "--title", f"Build video: {title}", "--body", copilot_prompt(title, profile, slug)], dry)
+               "--title", f"Build video: {title}", "--body", pr_body(row, slug, issue_num)], dry)
     pr_url = pr.stdout.strip().splitlines()[-1] if (pr and pr.returncode == 0 and pr.stdout.strip()) else None
 
     if assign and (pr_url or dry):  # Auto-model kickoff; omit to @copilot manually with Opus 5
@@ -128,8 +197,7 @@ def main() -> int:
                 print(f"  [{i}] SKIP — row missing title or profile", file=sys.stderr)
                 continue
             project = Path(row["out"]).resolve() if row.get("out") else (out_root / slugify(title))
-            res = handoff_one(title, profile, row.get("source"), project,
-                              args.base, args.repo, args.assign, args.dry_run)
+            res = handoff_one(row, project, args.base, args.repo, args.assign, args.dry_run)
             results.append(res)
             line = f"  [{i}] {res['status']:<11} {project.name}"
             if res.get("missing"):
