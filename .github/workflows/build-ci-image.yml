@@ -34,9 +34,12 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set up Buildx (enables GHA layer caching)
+        uses: docker/setup-buildx-action@v3
 
       - name: Resolve the CLI version to bake
         id: v
@@ -62,6 +65,8 @@ jobs:
           build-args: HYPERFRAMES_VERSION=${{ steps.v.outputs.version }}
           load: true
           tags: ${{ env.IMAGE }}:smoke
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
       - name: Smoke-test the toolchain inside the image
         run: |
@@ -84,3 +89,4 @@ jobs:
           tags: |
             ${{ env.IMAGE }}:${{ steps.v.outputs.version }}
             ${{ env.IMAGE }}:latest
+          cache-from: type=gha
