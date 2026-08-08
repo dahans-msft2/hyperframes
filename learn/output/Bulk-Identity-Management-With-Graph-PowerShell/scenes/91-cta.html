@@ -111,9 +111,15 @@
         }
         #mk-th-title {
           font-size: var(--fs-h1); /* title-card headline — up to the h1 tier */
+          /* .ilt-title's 1.08 leading is tighter than the face's own ascent+descent, so a
+             two-line lock-up collides with itself at h1 size. Give the stack enough leading
+             to clear its own descenders. */
+          line-height: 1.16;
           margin-top: 2.4cqw;
         }
-        #mk-th-line {
+        /* the two title lines are CLASSED spans — an id selector here never matched them,
+           so the headline ran inline and wrapped instead of breaking on the authored lines. */
+        .mk-th-line {
           display: block;
         }
         #mk-th-rule {
@@ -154,12 +160,15 @@
 
           // Edit per use. Opening title card: eyebrow kicker + two-line title + one-line subtitle.
           var CONFIG = {
+            // on-screen length of this scene (its slot data-duration) — drives the camera push
+            "pushSeconds": 16.08,
             "kicker": "NEXT STEP",
-            "titleLine1": "__FILL__ call to action, line 1",
-            "titleLine2": "__FILL__ call to action, line 2",
-            "subtitle": "__FILL__ where to go next (the module or docs)."
+            "titleLine1": "Try the exercise",
+            "titleLine2": "Bulk provision, hands-on",
+            "subtitle": "New-MgUser reference \u00b7 learn.microsoft.com"
           };
 
+          var group = document.getElementById("mk-th-group");
           var kicker = document.getElementById("mk-th-kicker");
           var line1 = document.getElementById("mk-th-line1");
           var line2 = document.getElementById("mk-th-line2");
@@ -205,6 +214,21 @@
             { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
             1.95,
           );
+
+          // 5) a slow camera push carries the hold. A title card sits under a long line of
+          //    narration, and without a carrier the shot freezes for the rest of the scene.
+          //    `pushSeconds` is the scene's on-screen length (its slot data-duration); the
+          //    push runs from the end of the waterfall to the cut, at a constant ~4px/s.
+          var push = Math.max(0, (CONFIG.pushSeconds || 12) - 2.75);
+          if (push > 0.5) {
+            gsap.set(group, { transformOrigin: "left center" });
+            tl.fromTo(
+              group,
+              { scale: 1 },
+              { scale: 1 + Math.min(0.07, push * 0.0032), duration: push, ease: "none" },
+              2.75,
+            );
+          }
 
           window.__timelines["91-cta"] = tl;
         })();

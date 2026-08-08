@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "duration": 271.8,
+  "assertions": [
+    {
+      "kind": "keepsMoving",
+      "maxStaticSec": 5.0
+    },
+    {
+      "kind": "before",
+      "a": "#lp-cmd-1",
+      "b": "#lp-out-0"
+    }
+  ]
+}

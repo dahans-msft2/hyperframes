@@ -138,7 +138,7 @@
         }
       </style>
 
-      <div id="root" data-composition-id="03-objectives" data-width="1920" data-height="1080">
+      <div id="root" data-composition-id="04-spine" data-width="1920" data-height="1080">
         <!-- host may set data-ground="section-field" | "hero-swoosh" | "dark-field" on #root -->
         <div id="mk-st-col">
           <div id="mk-st-connector"></div>
@@ -152,27 +152,18 @@
           /* Edit per use. A numbered how-to: each step pops a badge as its row slides in,
              one at a time, top→down, with a connector line drawing down between the badges. */
           var CONFIG = {
-            "steps": [
-              {
-                "title": "Connect with the least-privileged scope",
-                "detail": "Request User.ReadWrite.All at Connect-MgGraph \u2014 nothing broader."
-              },
-              {
-                "title": "Import your users from a CSV",
-                "detail": "One row per new hire, the same columns as the portal's Bulk create sheet."
-              },
-              {
-                "title": "Create every account with one cmdlet",
-                "detail": "A foreach hands each row to New-MgUser \u2014 the whole roster in one pass."
-              }
+            steps: [
+              { title: "Connect", detail: "Open the session and request a scope." },
+              { title: "Import", detail: "Read a CSV of your new hires." },
+              { title: "Loop", detail: "Create each account, one row at a time." },
             ],
-            "connector": true,
-            "badge": 96,
-            "gap": 34,
-            "rowGap": 58,
-            "textWidth": 760,
-            "x": 210,
-            "stagger": 0.55
+            connector: true, // draw the vertical line linking the badges
+            badge: 96, // px badge diameter
+            gap: 34, // px between badge and text
+            rowGap: 58, // px between rows
+            textWidth: 760, // px wrap width for the text column
+            x: 210, // column left edge
+            stagger: 0.55, // s between step entrances (clear one-at-a-time cadence)
           };
 
           var col = document.getElementById("mk-st-col");
@@ -258,7 +249,7 @@
           // Duration-aware carrier so unit-video keepsMoving (max static 5s) stays green.
           // Seek-safe fromTo; pure transform. // anchor-exempt: mechanical hold carrier from scene end
           (function () {
-            var hold = Math.max(0, 14.03 - 2.50);
+            var hold = Math.max(0, 16.05 - 2.50);
             if (hold > 0.5) {
               var carrier = col;
               if (carrier) {
@@ -274,7 +265,7 @@
             }
           })();
 
-          window.__timelines["03-objectives"] = tl;
+          window.__timelines["04-spine"] = tl;
         })();
       </script>
     </template>

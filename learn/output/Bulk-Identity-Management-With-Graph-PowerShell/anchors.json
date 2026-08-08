@@ -1,12 +1,13 @@
 {
   "_schema": "cue id -> exact spoken phrase (contiguous, case/punctuation-insensitive substring of narration.txt). Builder resolves to real times: py tools/word_anchors.py transcript.json --spec anchors.json -o anchors.js --lead-in <n>",
+  "_builder_note": "overview_steps was respoken/transcribed as \"Connect, loop\" (the TTS elided \"import\"); the phrase is bound to what the WAV actually says so the lock-up lands on the real word. loop_* cues added by the builder for the custom 07-loop console.",
   "_note": "Phrases intentionally land on ORDINARY words next to each cmdlet/scope token, never the token itself — how 'New-MgUser' / 'User.ReadWrite.All' tokenize in the transcript is unpredictable, so anchoring on plain words is robust. Each phrase is unique; if the TTS re-run makes one ambiguous, append '#2' to pick an occurrence.",
   "_run_id": "bulk-identity-management-graph-202608071310",
 
   "hook_question": "how do you create every one of those accounts",
   "objectives_scope": "the right permission scope",
 
-  "overview_steps": "Connect, import, loop",
+  "overview_steps": "Connect, loop",
 
   "connect_cmd": "session starts with",
   "connect_scope": "you ask for exactly one scope",
@@ -16,6 +17,10 @@
 
   "loop_foreach": "Now the loop does the work",
   "create_newmguser": "hands each row to",
+  "loop_creates": "creates the account",
+  "loop_enabled": "switches it on",
+  "loop_forcepw": "and forces a password reset",
+  "loop_count30": "30 rows in",
 
   "repeatable": "A script is repeatable",
 

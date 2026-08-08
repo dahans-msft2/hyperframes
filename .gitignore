@@ -51,6 +51,14 @@ output/
 renders/
 !packages/producer/tests/*/output/
 !packages/producer/tests/distributed/*/output/
+# Learn companion-video projects live under learn/output/<slug>/ and MUST be
+# tracked (script, scenes, assembled index). The blanket output/ rule above
+# would otherwise hide every new body scene from git.
+!learn/output/
+!learn/output/**
+# Never commit licensed Segoe WOFF2 stand-ins dropped into a project fonts/.
+learn/output/**/fonts/*.woff2
+learn/output/**/fonts/fonts.css
 # Source dir that the renders/ output rule accidentally shadows (its files are
 # tracked; without this, pre-commit's format re-stage fails on them).
 !packages/studio/src/components/renders/

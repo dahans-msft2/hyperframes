@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+    <script src="../anchors.js"></script>
+  </head>
+  <body>
+    <template>
+      <style>
+        /* === CUSTOM scene: 07-loop — the dark PowerShell console where the loop RUNS. ===
+           The one dark-field beat in the video (design-plan dark-field budget). Built on the
+           kit foundation verbatim: tokens only, --fs-* type scale, no hardcoded chrome colour.
+           No kit block carries an executing terminal with streaming output, so this beat is
+           hand-authored per the design plan (B4, the only custom scene). */
+
+        /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+        #root,
+        #root *,
+        #root *::before,
+        #root *::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size;
+
+          --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
+          --ink: #091f2e;
+          --ink-soft: #59636e;
+          --paper: #ffffff;
+          --paper-veil: rgba(255, 255, 255, 0.9);
+          --border: rgba(9, 31, 46, 0.16);
+          --border-soft: rgba(9, 31, 46, 0.12);
+          --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
+
+          --accent: #8661c5;
+          --accent-2: #0078d4;
+          --accent-3: #389a91;
+          --accent-4: #bf3ac4;
+          --accent-ink: #ffffff;
+
+          --fs-display: 11cqw;
+          --fs-h1: 4.6cqw;
+          --fs-h2: 3.4cqw;
+          --fs-h3: 2.4cqw;
+          --fs-lead: 2cqw;
+          --fs-body: 1.75cqw;
+          --fs-caption: 1.5cqw;
+          --fs-kicker: 1.55cqw;
+          --fs-micro: 1.25cqw;
+
+          --radius: 16px;
+          --radius-sm: 10px;
+          --radius-pill: 999px;
+          --stroke: 5px;
+          --rule: 3px;
+
+          font-family: "Segoe UI", system-ui, sans-serif;
+          color: var(--ink);
+          background: var(--ground);
+        }
+        #root[data-ground="hero-swoosh"] {
+          --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+        }
+        #root[data-ground="section-field"] {
+          --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
+        }
+        #root[data-ground="dark-field"] {
+          --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
+          --ink: #ffffff;
+          --ink-soft: rgba(255, 255, 255, 0.72);
+          --paper: rgba(255, 255, 255, 0.08);
+          --paper-veil: rgba(255, 255, 255, 0.1);
+          --border: rgba(255, 255, 255, 0.24);
+          --border-soft: rgba(255, 255, 255, 0.14);
+          --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+        /* ---- primitives used by this scene (verbatim from foundation) ---- */
+        .ilt-kicker {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-kicker);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+        .ilt-panel {
+          background: var(--paper);
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow);
+        }
+        .ilt-chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6em;
+          padding: 0.5em 1.1em;
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius-pill);
+          font-size: var(--fs-micro);
+          font-weight: 600;
+          color: var(--ink);
+          background: var(--paper-veil);
+        }
+        .ilt-tab {
+          width: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent);
+        }
+        /* ==== END _foundation.css ==== */
+
+        /* ---- scene-specific: compose primitives + tokens only ---- */
+        #lp-stage {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        #lp-window {
+          position: relative;
+          width: 1560px;
+          /* the terminal slab reads DARKER than the dark ground — a near plane with weight */
+          background: rgba(3, 8, 20, 0.72);
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow);
+          overflow: hidden;
+          transform-origin: center center;
+          opacity: 0;
+        }
+        #lp-titlebar {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          padding: 22px 34px;
+          border-bottom: 1.5px solid var(--border-soft);
+          background: rgba(255, 255, 255, 0.04);
+        }
+        #lp-tab {
+          height: 2.2cqw;
+        }
+        /* the prompt glyph stands in for the tool mark — authored geometry, not a product logo */
+        #lp-glyph {
+          width: 2.6cqw;
+          height: 2.6cqw;
+          flex: none;
+          fill: none;
+          stroke: var(--accent-3);
+          stroke-width: 2.4;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+        #lp-spacer {
+          flex: 1;
+        }
+        #lp-body {
+          padding: 30px 34px 26px;
+          /* mono is allowed HERE ONLY — a terminal needs tabular alignment. */
+          font-family: "Cascadia Code", "Consolas", ui-monospace, monospace;
+        }
+        .lp-cmd {
+          display: block;
+          white-space: pre;
+          font-size: clamp(18px, 1.4cqw, 34px);
+          line-height: 46px;
+          color: var(--ink);
+          opacity: 0;
+        }
+        .lp-prompt {
+          color: var(--accent-3);
+        }
+        .lp-cont {
+          color: var(--ink-soft);
+        }
+        .lp-param {
+          color: rgba(255, 255, 255, 0.86);
+        }
+        #lp-hi {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          height: 46px;
+          z-index: 0;
+          border-left: var(--rule) solid var(--accent);
+          background: rgba(134, 97, 197, 0.22);
+          opacity: 0;
+        }
+        #lp-cmdblock {
+          position: relative;
+          z-index: 1;
+        }
+        #lp-divider {
+          height: 1.5px;
+          margin: 22px 0 18px;
+          background: var(--border-soft);
+          transform-origin: left center;
+          transform: scaleX(0);
+        }
+        #lp-outlist {
+          position: relative;
+        }
+        .lp-out {
+          display: flex;
+          align-items: baseline;
+          gap: 26px;
+          white-space: pre;
+          font-size: clamp(17px, 1.3cqw, 32px);
+          line-height: 41px;
+          opacity: 0;
+        }
+        .lp-ok {
+          /* teal-light on the dark field: 7.94:1 — AAA. Status word only. */
+          color: #49c5b1;
+          font-weight: 600;
+        }
+        .lp-name {
+          color: var(--ink);
+          width: 300px;
+          display: inline-block;
+        }
+        .lp-upn {
+          color: var(--ink-soft);
+        }
+        #lp-foot {
+          display: flex;
+          align-items: center;
+          gap: 34px;
+          margin-top: 26px;
+        }
+        #lp-track {
+          position: relative;
+          flex: 1;
+          height: 6px;
+          border-radius: 3px;
+          background: var(--border-soft);
+          overflow: hidden;
+        }
+        #lp-fill {
+          position: absolute;
+          inset: 0;
+          border-radius: 3px;
+          background: #49c5b1;
+          transform-origin: left center;
+          transform: scaleX(0);
+        }
+        #lp-tally {
+          display: flex;
+          align-items: baseline;
+          gap: 14px;
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+        }
+        #lp-count {
+          font-size: var(--fs-h1);
+          font-weight: 600;
+          letter-spacing: -0.02em;
+          line-height: 1;
+          color: var(--ink);
+          font-variant-numeric: tabular-nums;
+        }
+        #lp-count-label {
+          font-size: var(--fs-caption);
+          color: var(--ink-soft);
+        }
+        #lp-caption {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 46px;
+          text-align: center;
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h3);
+          letter-spacing: -0.01em;
+          color: var(--ink);
+          opacity: 0;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="07-loop"
+        data-ground="dark-field"
+        data-width="1920"
+        data-height="1080"
+      >
+        <div id="lp-stage">
+          <div id="lp-window">
+            <div id="lp-titlebar">
+              <div id="lp-tab" class="ilt-tab"></div>
+              <svg id="lp-glyph" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5l7 7-7 7" />
+                <path d="M13 19h7" />
+              </svg>
+              <span id="lp-file" class="ilt-chip">provision.ps1</span>
+              <div id="lp-spacer"></div>
+              <span id="lp-shell" class="ilt-kicker">Graph PowerShell</span>
+            </div>
+
+            <div id="lp-body">
+              <div id="lp-cmdblock">
+                <div id="lp-hi"></div>
+                <code id="lp-cmd-0" class="lp-cmd"><span class="lp-prompt">PS C:\hr&gt;</span> foreach ($hire in $hires) {</code>
+                <code id="lp-cmd-1" class="lp-cmd"><span class="lp-cont">&gt;&gt;</span>     New-MgUser <span class="lp-param">-DisplayName</span>        $hire.DisplayName `</code>
+                <code id="lp-cmd-2" class="lp-cmd"><span class="lp-cont">&gt;&gt;</span>                <span class="lp-param">-UserPrincipalName</span> $hire.UserPrincipalName `</code>
+                <code id="lp-cmd-3" class="lp-cmd"><span class="lp-cont">&gt;&gt;</span>                <span class="lp-param">-MailNickname</span>      $hire.MailNickname `</code>
+                <code id="lp-cmd-4" class="lp-cmd"><span class="lp-cont">&gt;&gt;</span>                <span class="lp-param">-AccountEnabled</span> `</code>
+                <code id="lp-cmd-5" class="lp-cmd"><span class="lp-cont">&gt;&gt;</span>                <span class="lp-param">-PasswordProfile</span>   $forceChangeAtSignIn</code>
+                <code id="lp-cmd-6" class="lp-cmd"><span class="lp-cont">&gt;&gt;</span> }</code>
+              </div>
+
+              <div id="lp-divider"></div>
+
+              <div id="lp-outlist">
+                <div id="lp-out-0" class="lp-out" data-reveal-after="#lp-cmd-1"><span class="lp-ok">User created</span><span class="lp-name">Ada Nwosu</span><span class="lp-upn">ada.nwosu@relecloud.com</span></div>
+                <div id="lp-out-1" class="lp-out"><span class="lp-ok">User created</span><span class="lp-name">Bo Larsen</span><span class="lp-upn">bo.larsen@relecloud.com</span></div>
+                <div id="lp-out-2" class="lp-out"><span class="lp-ok">User created</span><span class="lp-name">Chen Wei</span><span class="lp-upn">chen.wei@relecloud.com</span></div>
+                <div id="lp-out-3" class="lp-out"><span class="lp-ok">User created</span><span class="lp-name">Dara Okafor</span><span class="lp-upn">dara.okafor@relecloud.com</span></div>
+                <div id="lp-out-4" class="lp-out"><span class="lp-ok">User created</span><span class="lp-name">Elin Haugen</span><span class="lp-upn">elin.haugen@relecloud.com</span></div>
+                <div id="lp-out-5" class="lp-out"><span class="lp-ok">User created</span><span class="lp-name">Farid Nasser</span><span class="lp-upn">farid.nasser@relecloud.com</span></div>
+                <div id="lp-out-6" class="lp-out"><span class="lp-ok">User created</span><span class="lp-name">Greta Lund</span><span class="lp-upn">greta.lund@relecloud.com</span></div>
+              </div>
+
+              <div id="lp-foot">
+                <div id="lp-track"><div id="lp-fill"></div></div>
+                <div id="lp-tally">
+                  <span id="lp-count">0</span>
+                  <span id="lp-count-label">accounts created</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="lp-caption">Thirty rows in, thirty accounts out.</div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          window.__timelines = window.__timelines || {};
+
+          // Scene-relative clock. T0 is this scene's start in composition time, exactly as
+          // scenes.json tiles it; every cue below is a REAL spoken-word time from
+          // transcript.json (anchors.js), rebased onto this scene. Nothing here is estimated
+          // from an assumed words-per-second.
+          var T0 = 104.29;
+          var RAW = (window.__anchors || {});
+          function A(name, fallback) {
+            var t = RAW[name];
+            return (typeof t === "number" ? t : fallback) - T0;
+          }
+
+          // Scene-relative word anchors. Every entry is a real spoken-word time from
+          // transcript.json (via anchors.js), rebased onto this scene's start.
+          var W = {
+            loop:    A("loop_foreach",     104.39), //  "Now the loop does the work"
+            newUser: A("create_newmguser", 109.12), //  "hands each row to New-MgUser"
+            creates: A("loop_creates",     113.37), //  "creates the account"
+            enabled: A("loop_enabled",     116.79), //  "switches it on"
+            force:   A("loop_forcepw",     117.75), //  "and forces a password reset"
+            count:   A("loop_count30",     121.21), //  "30 rows in, 30 accounts out"
+          };
+          var SCENE_END = 20.13;
+
+          var CMDS = ["#lp-cmd-0", "#lp-cmd-1", "#lp-cmd-2", "#lp-cmd-3", "#lp-cmd-4", "#lp-cmd-5", "#lp-cmd-6"];
+          var OUTS = [
+            "#lp-out-0", "#lp-out-1", "#lp-out-2", "#lp-out-3",
+            "#lp-out-4", "#lp-out-5", "#lp-out-6",
+          ];
+
+          var tl = gsap.timeline({ paused: true });
+
+          // ---- t=0 pins: state is a pure function of timeline time (check_initial_state). ----
+          tl.set("#lp-window", { opacity: 0, scale: 0.94, y: 18 }, 0);
+          CMDS.forEach(function (s) {
+            tl.set(s, { opacity: 0 }, 0);
+          });
+          OUTS.forEach(function (s) {
+            tl.set(s, { opacity: 0 }, 0);
+          });
+          tl.set("#lp-hi", { opacity: 0 }, 0);
+          tl.set("#lp-divider", { scaleX: 0 }, 0);
+          tl.set("#lp-fill", { scaleX: 0 }, 0);
+          tl.set("#lp-caption", { opacity: 0, y: 18 }, 0);
+          tl.set("#lp-count", { scale: 1 }, 0);
+
+          // ---- 1. the terminal lands on "Now the loop does the work" ----
+          tl.to("#lp-window", { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: "power3.out" }, W.loop);
+
+          // ---- 2. the loop body types itself in, line by line, up to the New-MgUser call.
+          // The per-line step is mechanical typing cadence inside the beat, not a content cue. ----
+          CMDS.forEach(function (sel, i) {
+            tl.to(sel, { opacity: 1, duration: 0.28, ease: "power1.out" }, W.loop + 0.45 + i * 0.62);
+          });
+
+          // ---- 3. "hands each row to New-MgUser" — the cmdlet line lights under the accent band ----
+          tl.set("#lp-hi", { y: 46 }, 0);
+          tl.to("#lp-hi", { opacity: 1, duration: 0.3, ease: "power1.out" }, W.newUser);
+          tl.fromTo(
+            "#lp-cmd-1",
+            { scale: 1 },
+            { scale: 1.035, duration: 0.34, ease: "power2.out", transformOrigin: "0% 50%", immediateRender: false },
+            W.newUser,
+          );
+          tl.to("#lp-cmd-1", { scale: 1, duration: 0.5, ease: "power2.inOut" }, W.newUser + 0.34);
+          tl.to("#lp-divider", { scaleX: 1, duration: 0.6, ease: "power2.out" }, W.newUser + 0.5);
+
+          // ---- 4. "creates the account" — the run starts and output streams for real.
+          // Rows land on an even cadence and the tally + track run continuously underneath,
+          // so the frame is alive from here to the payoff. ----
+          var streamSpan = W.count - W.creates;
+          var rowStep = streamSpan / OUTS.length;
+          OUTS.forEach(function (sel, i) {
+            tl.to(sel, { opacity: 1, duration: 0.22, ease: "none" }, W.creates + i * rowStep);
+          });
+          // the tally reads up with the stream; the track fills alongside it
+          var tally = { v: 0 };
+          var countEl = null;
+          tl.to(
+            tally,
+            {
+              v: 30,
+              duration: streamSpan,
+              ease: "none",
+              onUpdate: function () {
+                countEl = countEl || document.getElementById("lp-count");
+                if (countEl) countEl.textContent = Math.round(tally.v);
+              },
+            },
+            W.creates,
+          );
+          tl.to("#lp-fill", { scaleX: 1, duration: streamSpan, ease: "none" }, W.creates);
+
+          // ---- 5. "switches it on" / "forces a password reset" — the two switches the one
+          // cmdlet also throws, marked on the very parameters that do it ----
+          tl.fromTo(
+            "#lp-cmd-4",
+            { opacity: 1 },
+            { opacity: 1, x: 14, duration: 0.3, ease: "power2.out", immediateRender: false },
+            W.enabled,
+          );
+          tl.to("#lp-cmd-4", { x: 0, duration: 0.45, ease: "power2.inOut" }, W.enabled + 0.3);
+          tl.fromTo(
+            "#lp-cmd-5",
+            { opacity: 1 },
+            { opacity: 1, x: 14, duration: 0.3, ease: "power2.out", immediateRender: false },
+            W.force,
+          );
+          tl.to("#lp-cmd-5", { x: 0, duration: 0.45, ease: "power2.inOut" }, W.force + 0.3);
+
+          // ---- 6. "30 rows in, 30 accounts out" — the count punches and the payoff lands ----
+          tl.to("#lp-count", { scale: 1.28, duration: 0.28, ease: "back.out(3)" }, W.count);
+          tl.to("#lp-count", { scale: 1, duration: 0.42, ease: "power2.inOut" }, W.count + 0.28);
+          tl.to("#lp-caption", { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, W.count + 0.15);
+
+          // ---- 7. a slow, intentional settle on the slab so the beat never freezes before
+          // the cut (unit-video dead-zone budget is 5.0s) ----
+          tl.to("#lp-window", { scale: 1.018, duration: SCENE_END - (W.count + 0.4), ease: "power1.inOut" }, W.count + 0.4);
+
+          window.__timelines["07-loop"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
