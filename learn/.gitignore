@@ -30,6 +30,9 @@ assets/icon-index.json
 __pycache__/
 .voice-catalog.json
 
+# --- Generated gallery (built from releases by build_gallery.py -> Pages) ------
+gallery/
+
 # --- published videos: source tracked on main, MP4/thumbnail go to a Release ---
 !output/
 output/*

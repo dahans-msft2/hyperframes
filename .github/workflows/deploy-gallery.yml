@@ -1,0 +1,48 @@
+# Regenerate the companion-video gallery from GitHub Releases and deploy it to GitHub Pages.
+# Fires whenever a release changes (a new video is published) — the gallery stays current with zero
+# manual steps. build_gallery.py reads the releases via `gh` (authenticated by GITHUB_TOKEN) and
+# bakes a static page; no runtime API calls on the published site.
+
+name: Deploy video gallery
+
+on:
+  release:
+    types: [published, edited, deleted, released]
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - learn/tools/build_gallery.py
+      - .github/workflows/deploy-gallery.yml
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One live deploy at a time; let an in-progress deploy finish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Generate the gallery from releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python learn/tools/build_gallery.py --repo "${{ github.repository }}" -o _site/index.html
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deploy
+        uses: actions/deploy-pages@v4
