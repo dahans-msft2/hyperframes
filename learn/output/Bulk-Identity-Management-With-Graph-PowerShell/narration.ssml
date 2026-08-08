@@ -1,0 +1,31 @@
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="https://www.w3.org/2001/mstts" xml:lang="en-US">
+  <voice name="en-US-Vance:DragonHDLatestNeural">
+    <prosody rate="-3%">
+      <p>Relecloud's overseas office opens Monday, and the stack of new-hire names on your desk keeps growing. Thirty accounts, clicked in one at a time in the portal, won't be ready before the doors open. So here's the question this unit answers: how do you create every one of those accounts in a single pass, and run it again the next time a batch of hires lands?</p>
+      <break time="400ms"/>
+      <p>Microsoft Graph PowerShell is the way, and by the end you'll be able to do three things with it. Connect with the right permission scope. Pull your new hires from a spreadsheet. And let one command create the whole list.</p>
+      <break time="400ms"/>
+      <p>The whole thing is really just three moves, and they never change. First, you connect and request a scope. Next, you import a CSV of your users. Then you loop over that list and create each account. Connect, import, loop.</p>
+      <break time="400ms"/>
+      <p>Every Graph PowerShell session starts with Connect-MgGraph, and the scope you request right there decides what the rest of the script is allowed to do. To create accounts, you ask for exactly one scope: <emphasis level="moderate">User.ReadWrite.All</emphasis>. Ask for less, and the create step simply fails.</p>
+      <break time="400ms"/>
+      <p>Then Import-Csv reads your spreadsheet into a collection of objects, one for every new hire. Each row carries the same fields you'd type into the portal's bulk-create sheet: a display name, a user principal name, a mail nickname, and a temporary password. Same columns, just driven from a file.</p>
+      <break time="400ms"/>
+      <p>Now the loop does the work. A foreach walks that list and hands each row to New-MgUser, one at a time. That single cmdlet creates the account, switches it on, and forces a password reset at first sign-in. Thirty rows in, thirty accounts out.</p>
+      <break time="400ms"/>
+      <p>Here's why that beats clicking through a browser. A script is <emphasis level="moderate">repeatable</emphasis>. Run it again next quarter, when the next wave of hires arrives, and you don't reopen a single blade. You point it at a new file and go.</p>
+      <break time="400ms"/>
+      <p>Now, one small detail is doing more than it looks. Why <emphasis level="moderate">User.ReadWrite.All</emphasis>, and not the broader Directory.ReadWrite.All? Both of them would work. But the broad one grants far more than user management alone, and that's the decision actually being tested. You match the scope to the task, not to whatever also happens to work.</p>
+      <break time="400ms"/>
+      <p>And that same rule scales to every bulk job. Reading users for an audit? That's User.Read.All, read-only, no changes. Adding people to a group? GroupMember.ReadWrite.All. Building an administrative unit? AdministrativeUnit.ReadWrite.All. None of them stand in for each other. Each scope tells Entra ID exactly what your script may touch.</p>
+      <break time="400ms"/>
+      <p>Creating accounts isn't the only bulk task, either. A department change, a manager swap: Update-MgUser runs the very same CSV-and-loop pattern, under that same <emphasis level="moderate">User.ReadWrite.All</emphasis> scope. And when an account has to go, Remove-MgUser follows the identical shape. Learn the pattern once, reuse it everywhere.</p>
+      <break time="400ms"/>
+      <p>One trap, though, before you reach for this out of habit. Microsoft Graph doesn't manage mail contacts at all. Scripting a vendor contact with New-MgUser just won't work, because that contact was never a user object. That job belongs to New-MailContact, over in Exchange Online PowerShell, not Graph.</p>
+      <break time="400ms"/>
+      <p>So the overseas office is covered. You connected with a scope, imported a CSV, and let New-MgUser build the whole roster in one pass. Then you reused that same loop to update and to delete, matching every scope to its task along the way. One pattern for the entire directory.</p>
+      <break time="400ms"/>
+      <p>Ready to run it yourself? The next exercise takes you through bulk-provisioning with Graph PowerShell, hands-on. For the parameters, open the New-MgUser reference on Microsoft Learn.</p>
+    </prosody>
+  </voice>
+</speak>
