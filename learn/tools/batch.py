@@ -93,7 +93,7 @@ def issue_body(row: dict) -> str:
     return "\n".join(lines)
 
 
-def pr_body(row: dict, slug: str, issue_num: "str | None") -> str:
+def pr_body(row: dict, slug: str, issue_num: "str | None" = None, parent_num: "str | None" = None) -> str:
     """Human-readable PR body — prose for the author, the agent build steps in a collapsible."""
     title, profile = row["title"], row["profile"]
     angle, unit, voice = row.get("angle"), row.get("unit"), row.get("voice")
@@ -118,16 +118,52 @@ def pr_body(row: dict, slug: str, issue_num: "str | None") -> str:
         "transcript (`transcript.json`), and the stamped opening/closing brand chrome.", "",
         "<details><summary><strong>Build instructions for the coding agent</strong></summary>", "",
         copilot_prompt(title, profile, slug), "", "</details>"]
-    if issue_num:
+    if parent_num:
+        lines += ["",
+                  f"Part of #{parent_num} (the module tracking issue) — its checklist ticks this unit off "
+                  "when the PR merges into `videos`."]
+    elif issue_num:
         lines += ["",
                   f"Resolves #{issue_num} on merge — the close-on-merge workflow closes it automatically "
                   "when this PR lands in `videos`."]
     return "\n".join(lines)
 
 
-def handoff_one(row: dict, project: Path, base: str, repo: str, assign: bool, dry: bool) -> dict:
-    """Push one prepped video branch and open its issue + draft PR. The branch must already exist
-    locally with the approved inputs committed (scaffold --cloud + script + design + TTS)."""
+def module_issue_body(module: dict, rows: list, checklist: "list | None" = None) -> str:
+    """Umbrella issue for a module: prose + shared locks + a task list of the unit PRs (auto-checks on
+    merge). One issue for the whole set; each unit is a PR leaf, not a separate issue."""
+    name = module.get("name", "this module")
+    lines = [f"## Companion videos — {name}", "",
+             f"An umbrella for **{len(rows)} unit companion videos** covering *{name}*. Each unit is built "
+             "and delivered as its own pull request (listed below); this issue is the module-level view of "
+             "the whole set.", ""]
+    if module.get("source"):
+        lines += [f"**Source:** `{module['source']}`", ""]
+    profile = rows[0].get("profile") if rows else None
+    voice = rows[0].get("voice") if rows else None
+    shared = []
+    if profile:
+        shared.append(f"format **{_profile_label(profile)}**")
+    if voice:
+        shared.append(f"voice **{voice}**")
+    if shared:
+        lines += ["**Shared across the set:** " + ", ".join(shared) + ".", ""]
+    lines += ["### Units", ""]
+    pr_by_title = dict(checklist) if checklist else {}
+    for row in rows:
+        pr = pr_by_title.get(row.get("title"))
+        lines.append(f"- [ ] {row.get('title')} — #{pr}" if pr else f"- [ ] {row.get('title')}")
+    lines += ["",
+              "_Each box checks itself when that unit's PR merges into `videos`. Close this issue when the "
+              "module is fully delivered._"]
+    return "\n".join(lines)
+
+
+def handoff_one(row: dict, project: Path, base: str, repo: str, assign: bool, dry: bool,
+                parent_num: "str | None" = None) -> dict:
+    """Push one prepped video branch and open its draft PR. Standalone mode also opens a per-unit issue;
+    module mode (parent_num set) makes the PR a leaf tracked by the module issue — no per-unit issue.
+    The branch must already exist locally with the approved inputs committed."""
     title, profile = row["title"], row["profile"]
     slug = project.name
     branch = f"video/{slug.lower()}"
@@ -142,22 +178,26 @@ def handoff_one(row: dict, project: Path, base: str, repo: str, assign: bool, dr
     if push is not None and push.returncode != 0:
         return {"slug": slug, "status": "push-failed", "err": (push.stderr or push.stdout).strip()}
 
-    issue = _run(["gh", "issue", "create", "--repo", repo, "--title", f"Build video: {slug}",
-                  "--body", issue_body(row)], dry)
-    issue_url = issue.stdout.strip().splitlines()[-1] if (issue and issue.returncode == 0 and issue.stdout.strip()) else None
-    m = re.search(r"/issues/(\d+)", issue_url) if issue_url else None
-    issue_num = m.group(1) if m else None
+    issue_url = issue_num = None
+    if parent_num is None:  # standalone: one issue per video
+        issue = _run(["gh", "issue", "create", "--repo", repo, "--title", f"Build video: {slug}",
+                      "--body", issue_body(row)], dry)
+        issue_url = issue.stdout.strip().splitlines()[-1] if (issue and issue.returncode == 0 and issue.stdout.strip()) else None
+        m = re.search(r"/issues/(\d+)", issue_url) if issue_url else None
+        issue_num = m.group(1) if m else None
 
     pr = _run(["gh", "pr", "create", "--repo", repo, "--base", base, "--head", branch, "--draft",
-               "--title", f"Build video: {title}", "--body", pr_body(row, slug, issue_num)], dry)
+               "--title", f"Build video: {title}", "--body", pr_body(row, slug, issue_num, parent_num)], dry)
     pr_url = pr.stdout.strip().splitlines()[-1] if (pr and pr.returncode == 0 and pr.stdout.strip()) else None
+    pm = re.search(r"/pull/(\d+)", pr_url) if pr_url else None
+    pr_num = pm.group(1) if pm else None
 
     if assign and (pr_url or dry):  # Auto-model kickoff; omit to @copilot manually with Opus 5
         _run(["gh", "pr", "comment", pr_url or branch, "--repo", repo,
               "--body", copilot_prompt(title, profile, slug)], dry)
 
     return {"slug": slug, "status": "planned" if dry else "handed-off",
-            "branch": branch, "issue": issue_url, "pr": pr_url}
+            "branch": branch, "issue": issue_url, "pr": pr_url, "pr_num": pr_num}
 
 
 def main() -> int:
@@ -188,25 +228,42 @@ def main() -> int:
 
     out_root = Path(args.out_root).resolve()
 
-    # --- cloud handoff mode: push each prepped video branch + open its issue + draft PR ---
+    # --- cloud handoff mode: push each prepped video branch + open its PR ---
     if args.handoff:
+        module = data.get("module") if isinstance(data, dict) else None
         results = []
+        parent_num = None
+        if module:
+            p = _run(["gh", "issue", "create", "--repo", args.repo,
+                      "--title", f"Companion videos: {module.get('name', 'module')}",
+                      "--body", module_issue_body(module, rows)], args.dry_run)
+            if p is not None and p.returncode == 0 and p.stdout.strip():
+                pm = re.search(r"/issues/(\d+)", p.stdout.strip().splitlines()[-1])
+                parent_num = pm.group(1) if pm else None
+            print(f"  module issue: {'(dry run)' if args.dry_run else ('#' + parent_num if parent_num else 'FAILED')}")
+        checklist = []
         for i, row in enumerate(rows, 1):
             title, profile = (row or {}).get("title"), (row or {}).get("profile")
             if not title or not profile:
                 print(f"  [{i}] SKIP — row missing title or profile", file=sys.stderr)
                 continue
             project = Path(row["out"]).resolve() if row.get("out") else (out_root / slugify(title))
-            res = handoff_one(row, project, args.base, args.repo, args.assign, args.dry_run)
+            res = handoff_one(row, project, args.base, args.repo, args.assign, args.dry_run, parent_num)
             results.append(res)
+            checklist.append((title, res.get("pr_num")))
             line = f"  [{i}] {res['status']:<11} {project.name}"
             if res.get("missing"):
                 line += f"  (missing: {', '.join(res['missing'])})"
             if res.get("pr"):
                 line += f"  pr={res['pr']}"
             print(line)
+        if module and parent_num and not args.dry_run:
+            _run(["gh", "issue", "edit", str(parent_num), "--repo", args.repo,
+                  "--body", module_issue_body(module, rows, checklist)], False)
+            print(f"  module issue #{parent_num} checklist filled")
         done = sum(1 for r in results if r["status"] in ("handed-off", "planned"))
-        print(f"\n{done}/{len(results)} handed off" + (" (dry run)" if args.dry_run else ""))
+        print(f"\n{done}/{len(results)} handed off" + (" (dry run)" if args.dry_run else "")
+              + (f" under module issue #{parent_num}" if parent_num else ""))
         if done and not args.assign:
             print("next: on each PR, select Claude Opus 5 + high reasoning and @copilot it "
                   "(or re-run with --assign to auto-start on the Auto model).")
