@@ -62,7 +62,7 @@
           color: var(--ink);
           background: var(--ground);
         }
-        #root[data-ground="hero-swoosh"] {
+        #root[data-ground="content-wash"] {
           --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
         }
         #root[data-ground="section-field"] {
@@ -132,7 +132,7 @@
       <div
         id="root"
         data-composition-id="90-recap"
-        data-ground="hero-swoosh"
+        data-ground="content-wash"
         data-width="1920"
         data-height="1080"
       >
@@ -152,12 +152,14 @@
         (function () {
           window.__timelines = window.__timelines || {};
 
+          var W = window.__anchors || {};
+
           // Edit per use. Opening title card: eyebrow kicker + two-line title + one-line subtitle.
           var CONFIG = {
             "kicker": "RECAP",
-            "titleLine1": "__FILL__ the payoff, line 1",
-            "titleLine2": "__FILL__ the payoff, line 2",
-            "subtitle": "__FILL__ one-line recap tied back to the opening hook."
+            "titleLine1": "30 days to restore",
+            "titleLine2": "properties + licenses intact",
+            "subtitle": "Match each task to the right admin center and tell a user from a contact"
           };
 
           var kicker = document.getElementById("mk-th-kicker");
@@ -179,7 +181,7 @@
             kicker,
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
-            0.25,
+            W.thirty_days_recap,
           );
 
           // 2) the two title lines arrive on a short stagger.
@@ -187,7 +189,7 @@
             [line1, line2],
             { opacity: 0, y: 44 },
             { opacity: 1, y: 0, duration: 0.85, ease: "power3.out", stagger: 0.14 },
-            0.75,
+            W.thirty_days_recap,
           );
 
           // 3) the accent rule wipes in left→right (a graphic).
@@ -195,7 +197,7 @@
             rule,
             { scaleX: 0 },
             { scaleX: 1, duration: 0.7, ease: "power2.out" },
-            1.55,
+            W.thirty_days_recap,
           );
 
           // 4) the subtitle fades up last, then we hold on stillness.
@@ -203,7 +205,7 @@
             subtitle,
             { opacity: 0, y: 22 },
             { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-            1.95,
+            W.thirty_days_recap,
           );
 
           window.__timelines["90-recap"] = tl;

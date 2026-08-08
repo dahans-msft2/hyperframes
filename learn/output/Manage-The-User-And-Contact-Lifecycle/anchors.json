@@ -5,10 +5,14 @@
   "bulk_create": "Bulk create feature",
   "two_surfaces": "each owns a different part of the job",
   "predict_delete": "expect that account to be gone",
-  "soft_delete_30": "suspended state for thirty days",
+  "soft_delete_30": "suspended state for 30 days",
   "restore_props_licenses": "brings back the user's properties and the licenses",
   "onprem_caveat": "the next sync cycle can recreate",
   "mail_contact": "that's a mail contact, not a user",
   "signin_decision": "does this person sign in",
-  "hybrid_tools": "Connect Sync is the classic sync server"
+  "hybrid_tools": "Connect Sync is the classic sync server",
+  "opening_hook": "ReliCloud's directory never stops growing",
+  "objectives_stakes": "That question has a reassuring answer",
+  "thirty_days_recap": "you've got 30 days to bring it back",
+  "next_unit_cta": "Editing accounts one at a time works for a handful of people"
 }

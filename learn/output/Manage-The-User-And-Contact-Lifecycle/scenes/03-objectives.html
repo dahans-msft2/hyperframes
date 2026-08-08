@@ -149,21 +149,23 @@
         (function () {
           window.__timelines = window.__timelines || {};
 
+          var W = window.__anchors || {};
+
           /* Edit per use. A numbered how-to: each step pops a badge as its row slides in,
              one at a time, top→down, with a connector line drawing down between the badges. */
           var CONFIG = {
             "steps": [
               {
-                "title": "__FILL__ objective one",
-                "detail": "__FILL__ what the learner will be able to do"
+                "title": "Move a user through its full lifecycle",
+                "detail": "Create, edit, license, block, and delete"
               },
               {
-                "title": "__FILL__ objective two",
-                "detail": "__FILL__ what the learner will be able to do"
+                "title": "Recover a deletion within 30 days",
+                "detail": "Restore properties and licenses before it is permanent"
               },
               {
-                "title": "__FILL__ objective three",
-                "detail": "__FILL__ what the learner will be able to do"
+                "title": "Tell a user from a mail contact",
+                "detail": "Sign in means user or guest; email only means contact"
               }
             ],
             "connector": true,
@@ -239,7 +241,7 @@
 
           if (CONFIG.connector && n > 1) {
             gsap.set(connector, { scaleY: 0 });
-            tl.to(connector, { scaleY: 1, duration: lastStart, ease: "none" }, 0.4);
+            tl.to(connector, { scaleY: 1, duration: lastStart, ease: "none" }, W.objectives_stakes);
           }
 
           steps.forEach(function (s, i) {

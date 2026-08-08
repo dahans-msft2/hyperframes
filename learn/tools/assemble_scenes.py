@@ -65,13 +65,19 @@ def load_scenes(path: Path) -> dict[str, Any]:
     return {}
 
 
-def font_faces(fonts: list[dict[str, Any]]) -> str:
+def font_faces(fonts: list[dict[str, Any]], project_dir: Path | None = None) -> str:
     blocks = []
     for f in fonts:
         family = f["family"]
         weight = f.get("weight", 400)
         src = f["src"]
         style = f.get("style", "normal")
+        if project_dir is not None:
+            src_path = Path(src)
+            if not src_path.is_absolute():
+                src_path = project_dir / src_path
+            if not src_path.exists():
+                continue
         blocks.append(
             "      @font-face {\n"
             f'        font-family: "{family}";\n'
@@ -84,7 +90,7 @@ def font_faces(fonts: list[dict[str, Any]]) -> str:
     return "\n\n".join(blocks)
 
 
-def build_html(manifest: dict[str, Any], scenes_dir_name: str) -> tuple[str, dict[str, Any]]:
+def build_html(manifest: dict[str, Any], scenes_dir_name: str, project_dir: Path | None = None) -> tuple[str, dict[str, Any]]:
     width = int(manifest.get("width", 1920))
     height = int(manifest.get("height", 1080))
     cid = manifest.get("composition_id", "root")
@@ -158,7 +164,10 @@ def build_html(manifest: dict[str, Any], scenes_dir_name: str) -> tuple[str, dic
     intro_fade = r3(float(bookend.get("intro", 0.5)))
     outro_fade = r3(float(bookend.get("outro", 0.7)))
     fade_color = bookend.get("color", "#000")
-    outro_start = r3(total - outro_fade) if outro_fade > 0 else None
+    outro_anchor = bookend.get("outro_anchor")
+    outro_start = None
+    if outro_fade > 0:
+        outro_start = f"W.{outro_anchor}" if outro_anchor else r3(total - outro_fade)
     bookend_lines: list[str] = []
     if intro_fade > 0:
         bookend_lines.append('      gsap.set("#fade-in", { autoAlpha: 1 });')
@@ -176,9 +185,41 @@ def build_html(manifest: dict[str, Any], scenes_dir_name: str) -> tuple[str, dic
     if anchors_src:
         head_scripts.append(f'    <script src="{anchors_src}"></script>')
 
-    ff = font_faces(fonts)
+    ff = font_faces(fonts, project_dir=project_dir)
     slot_selector = "#root > div[data-composition-src]"
+    fallback_fonts = """      @font-face {
+        font-family: "Segoe UI";
+        font-weight: 400;
+        font-style: normal;
+        src: local("Segoe UI");
+        font-display: block;
+      }
+
+      @font-face {
+        font-family: "Segoe UI";
+        font-weight: 600;
+        font-style: normal;
+        src: local("Segoe UI");
+        font-display: block;
+      }
+
+      @font-face {
+        font-family: "Segoe UI Variable";
+        font-weight: 400;
+        font-style: normal;
+        src: local("Segoe UI Variable");
+        font-display: block;
+      }
+
+      @font-face {
+        font-family: "Segoe UI Variable";
+        font-weight: 600;
+        font-style: normal;
+        src: local("Segoe UI Variable");
+        font-display: block;
+      }"""
     style = f"""    <style>
+{fallback_fonts}
 {ff}
 
       * {{ box-sizing: border-box; }}
@@ -187,7 +228,7 @@ def build_html(manifest: dict[str, Any], scenes_dir_name: str) -> tuple[str, dic
         width: {width}px; height: {height}px;
         margin: 0; overflow: hidden;
         background: {ground};
-        font-family: "Segoe UI", sans-serif;
+        font-family: "Segoe UI", "Segoe UI Variable", "Arial", sans-serif;
       }}
 
       #root {{
@@ -268,6 +309,7 @@ def build_html(manifest: dict[str, Any], scenes_dir_name: str) -> tuple[str, dic
       // Thin root timeline: scene motion lives in each scene file. This timeline carries only
       // the cross-scene seams, stamped against the slot-<id> hosts.
       const tl = gsap.timeline({{ paused: true }});
+      const W = window.__anchors || {{}};
       window.__timelines["{cid}"] = tl;{seam_block}{bookend_block}
     </script>
   </body>"""
@@ -321,7 +363,8 @@ def main() -> int:
     else:
         out_path = scenes_path.parent / "index.html"
 
-    html, summary = build_html(manifest, args.scenes_dir)
+    project_dir = args.project.resolve() if args.project else scenes_path.parent.resolve()
+    html, summary = build_html(manifest, args.scenes_dir, project_dir=project_dir)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(html, encoding="utf-8")
 
