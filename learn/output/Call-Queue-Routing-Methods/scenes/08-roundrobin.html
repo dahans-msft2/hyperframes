@@ -574,7 +574,6 @@
 
           var W = window.__anchors || {};
           var SCENE_START = W.b08_start != null ? W.b08_start : 78.55;
-          var DURATION = 10.08;
           function cue(name, fallbackAbsolute) {
             var absolute = W[name] != null ? W[name] : fallbackAbsolute;
             return Math.max(0, absolute - SCENE_START);
@@ -701,7 +700,7 @@
           tl.to(["#agent-a", "#agent-b", "#agent-c", "#agent-d"], { boxShadow: "0 14px 34px rgba(9,31,46,0.13)", duration: 0.38, ease: "power2.out", stagger: 0.05 }, C.sales + 0.84);
           tl.to("#router-orbit", { rotation: 445, duration: 2.25, ease: "sine.inOut" }, C.sales + 0.9);
 
-          tl.to("#rr-stage", { x: -46, y: -32, duration: 0.66, ease: "power2.inOut" }, DURATION - 0.72);
+          tl.to("#rr-stage", { x: -46, y: -32, duration: 0.66, ease: "power2.inOut" }, Math.max(0, cue("b09_start", 88.63) - 0.72));
 
           window.__timelines["08-roundrobin"] = tl;
         })();

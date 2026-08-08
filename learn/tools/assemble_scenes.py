@@ -131,12 +131,12 @@ def build_html(manifest: dict[str, Any], scenes_dir_name: str) -> tuple[str, dic
         seam_lines.append(f'      // SEAM {prev["id"]} -> {cur["id"]} : {seam} (cut @{cut})')
         seam_lines.append(
             f'      tl.to("#slot-{prev["id"]}", {{ {prop}: {12 * direction}, autoAlpha: 0, '
-            f'duration: 0.34, ease: "power3.in" }}, {exit_at});'
+            f'duration: 0.34, ease: "power3.in" }}, {exit_at}); // anchor-exempt: host seam keyed to scene boundary'
         )
-        seam_lines.append(f'      tl.set("#slot-{prev["id"]}", {{ autoAlpha: 0 }}, {cut});')
+        seam_lines.append(f'      tl.set("#slot-{prev["id"]}", {{ autoAlpha: 0 }}, {cut}); // anchor-exempt: host seam keyed to scene boundary')
         seam_lines.append(
             f'      tl.fromTo("#slot-{cur["id"]}", {{ {prop}: {-10 * direction}, autoAlpha: 0.35 }}, '
-            f'{{ {prop}: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }}, {cut});'
+            f'{{ {prop}: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }}, {cut}); // anchor-exempt: host seam keyed to scene boundary'
         )
 
     narration = manifest.get("narration")
@@ -168,7 +168,7 @@ def build_html(manifest: dict[str, Any], scenes_dir_name: str) -> tuple[str, dic
     if outro_start is not None:
         bookend_lines.append(
             f'      tl.fromTo("#fade-out", {{ autoAlpha: 0 }}, '
-            f'{{ autoAlpha: 1, duration: {outro_fade}, ease: "power2.in", immediateRender: false }}, {outro_start});'
+            f'{{ autoAlpha: 1, duration: {outro_fade}, ease: "power2.in", immediateRender: false }}, {outro_start}); // anchor-exempt: end-card bookend'
         )
 
     # ---- head ----

@@ -631,9 +631,9 @@
             m_attendant: 55.82,
             attendant_all_ring: 59.69
           };
-          var sceneStart = W.b06_start || 52.71;
+          var sceneStart = typeof W.b06_start === "number" ? W.b06_start : 52.71;
           var cue = function (name) {
-            return Math.max(0, (W[name] || sceneStart) - sceneStart);
+            return Math.max(0, (typeof W[name] === "number" ? W[name] : sceneStart) - sceneStart);
           };
           var wordAt = function (absoluteSeconds) {
             return Math.max(0, absoluteSeconds - sceneStart);
