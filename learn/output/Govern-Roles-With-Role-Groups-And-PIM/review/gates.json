@@ -22,5 +22,13 @@
     "artifact": null,
     "note": "SHIP 19/20; C5 ~2s margin - verify WAV, trim if >300s",
     "at": "2026-08-07T19:00:29"
+  },
+  {
+    "gate": 7,
+    "name": "Composition build",
+    "status": "passed",
+    "artifact": "index.html",
+    "note": "14 scenes (5 chrome + 9 body), 101 word anchors from transcript.json. assemble_scenes / check_subcomps / check_placeholders / check_initial_state / check_cue_anchors / lint (0e 0w) / check (Runtime 0, Layout 0, Motion 0, Contrast 23/23 AA) all pass.",
+    "at": "2026-08-08T03:04:51"
   }
 ]

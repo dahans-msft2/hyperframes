@@ -90,6 +90,23 @@
           color: var(--ink-soft); /* detail — secondary ink */
         }
 
+
+        /* primitives this block's pruned _foundation.css copy omitted, pulled in
+           verbatim from templates/blocks/_foundation.css so the scene's added
+           elements inherit the kit type scale and contrast rules. */
+        .ilt-chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6em;
+          padding: 0.5em 1.1em;
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius-pill);
+          font-size: var(--fs-micro);
+          font-weight: 600;
+          color: var(--ink);
+          background: var(--paper-veil);
+        }
+
         /* ---- block-specific: compose primitives + tokens only ---- */
         #mk-st-col {
           position: absolute;
@@ -130,6 +147,46 @@
           flex-direction: column;
           gap: 0.35cqw;
         }
+        /* the gate chips + the duration meter: graphics that arrive on their own phrase */
+        .mk-st-extra {
+          display: flex;
+          align-items: center;
+          gap: 0.7cqw;
+          margin-top: 0.5cqw;
+        }
+        .mk-st-gate {
+          opacity: 0;
+        }
+        .mk-st-gate-dot {
+          flex: none;
+          width: 0.7em;
+          height: 0.7em;
+          border-radius: var(--radius-pill);
+          background: var(--accent-2);
+        }
+        .mk-st-meter {
+          position: relative;
+          width: 16cqw;
+          height: 0.55cqw;
+          border-radius: var(--radius-pill);
+          background: var(--border-soft);
+          overflow: hidden;
+        }
+        .mk-st-meter-fill {
+          position: absolute;
+          inset: 0;
+          border-radius: var(--radius-pill);
+          background: var(--accent-3);
+          transform-origin: left center;
+        }
+        .mk-st-cap {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-caption);
+          color: var(--ink);
+          font-variant-numeric: tabular-nums;
+          opacity: 0;
+        }
         .mk-st-title {
           font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
           font-weight: 600;
@@ -140,7 +197,7 @@
         }
       </style>
 
-      <div id="root" data-composition-id="03-objectives" data-width="1920" data-height="1080">
+      <div id="root" data-composition-id="50-activation" data-ground="content-wash" data-width="1920" data-height="1080">
         <!-- host may set data-ground="section-field" | "hero-swoosh" | "dark-field" on #root -->
         <div id="mk-st-col">
           <div id="mk-st-connector"></div>
@@ -157,8 +214,8 @@
              first spoken word, so every cue below is `anchor - sceneStart` in W — never an
              offset guessed from an assumed words-per-second. */
           var A = window.__anchors || {};
-          var T0 = A.beat_03_objectives;
-          if (typeof T0 !== "number") throw new Error("03-objectives: anchors.js not loaded");
+          var T0 = A.beat_b5;
+          if (typeof T0 !== "number") throw new Error("50-activation: anchors.js not loaded");
           var W = {};
           Object.keys(A).forEach(function (k) {
             W[k] = Math.max(0, Math.round((A[k] - T0) * 1000) / 1000);
@@ -167,27 +224,19 @@
           /* Edit per use. A numbered how-to: each step pops a badge as its row slides in,
              one at a time, top→down, with a connector line drawing down between the badges. */
           var CONFIG = {
-            "steps": [
-              {
-                "title": "How Entra assigns roles — and why it's always on",
-                "detail": "Built-in roles, direct assignments, and workload role groups."
-              },
-              {
-                "title": "How PIM makes access just-in-time",
-                "detail": "Eligible instead of active: activate, then let it expire."
-              },
-              {
-                "title": "The setting that can lock your admins out",
-                "detail": "Approval required, approver list empty — and no active approver."
-              }
+            steps: [
+              { title: "Eligible", detail: "The assignment exists \u2014 the role itself is off." },
+              { title: "Activate", detail: "It can require approval, and whatever else the role setting demands." },
+              { title: "Time-box", detail: "The role setting caps how long a single activation lasts." },
+              { title: "Expire", detail: "Access drops back to eligible on its own. Nothing to clean up." },
             ],
-            "connector": true,
-            "badge": 96,
-            "gap": 34,
-            "rowGap": 58,
-            "textWidth": 760,
-            "x": 210,
-            "stagger": 0.55
+            connector: true, // draw the vertical line linking the badges
+            badge: 84, // px badge diameter
+            gap: 34, // px between badge and text
+            rowGap: 44, // px between rows
+            textWidth: 760, // px wrap width for the text column
+            x: 210, // column left edge
+            stagger: 0.55, // s between step entrances (clear one-at-a-time cadence)
           };
 
           var col = document.getElementById("mk-st-col");
@@ -231,6 +280,34 @@
             col.appendChild(row);
           });
 
+          /* extras: the gate chips on step 2 and the duration meter on step 3.
+             Built here rather than in CONFIG so each one can carry its own cue. */
+          var gateHost = document.createElement("div");
+          gateHost.className = "mk-st-extra";
+          ["Multifactor authentication", "Business justification"].forEach(function (label, i) {
+            var chip = document.createElement("span");
+            chip.id = "mk-st-gate-" + i;
+            chip.className = "ilt-chip mk-st-gate";
+            var dot = document.createElement("span");
+            dot.className = "mk-st-gate-dot";
+            var txt = document.createElement("span");
+            txt.textContent = label;
+            chip.appendChild(dot);
+            chip.appendChild(txt);
+            gateHost.appendChild(chip);
+          });
+          document.querySelector("#mk-st-row-1 .mk-st-text").appendChild(gateHost);
+
+          var meterHost = document.createElement("div");
+          meterHost.className = "mk-st-extra";
+          meterHost.innerHTML =
+            '<span class="mk-st-meter"><span id="mk-st-meter-fill" class="mk-st-meter-fill"></span></span>' +
+            '<span id="mk-st-cap" class="mk-st-cap">up to 4 hours</span>';
+          document.querySelector("#mk-st-row-2 .mk-st-text").appendChild(meterHost);
+
+          /* declarative ordering for the motion spec: expiry cannot precede activation */
+          document.getElementById("mk-st-row-3").setAttribute("data-reveal-after", "#mk-st-row-1 #mk-st-row-2");
+
           /* center the stack vertically; occupy the left ~60% via CONFIG.x + textWidth */
           var n = steps.length;
           var colH = n * CONFIG.badge + (n - 1) * CONFIG.rowGap;
@@ -250,17 +327,20 @@
 
           /* Scene-relative, seek-safe: connector draws down across the whole reveal, each row
              slides/fades in while its badge pops. No exit / hide — the host owns lifetime. */
-          var lastStart = 0.4 + (n - 1) * CONFIG.stagger;
+          /* Each step lands on the phrase that names it, so the stack builds at the pace of
+             the narration instead of a fixed stagger. */
+          var stepCue = [0.4, W.b5_activate, W.b5_timeboxed, W.b5_expire];
+          var lastStart = stepCue[n - 1];
 
           if (CONFIG.connector && n > 1) {
             gsap.set(connector, { scaleY: 0 });
-            tl.to(connector, { scaleY: 1, duration: lastStart, ease: "none" }, 0.4);  // anchor-exempt: scene entrance — this scene starts on its own first spoken word (beat_*), so the entrance is anchored by the boundary itself
+            tl.to(connector, { scaleY: 1, duration: lastStart - 0.4, ease: "none" }, 0.4);  // anchor-exempt: scene entrance — this scene starts on its own first spoken word (beat_*), so the entrance is anchored by the boundary itself
           }
 
           steps.forEach(function (s, i) {
             var row = document.getElementById("mk-st-row-" + i);
             var badge = document.getElementById("mk-st-badge-" + i);
-            var t0 = 0.4 + i * CONFIG.stagger;
+            var t0 = stepCue[i];
 
             gsap.set(row, { opacity: 0, x: -40 });
             tl.to(row, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, t0);
@@ -269,45 +349,62 @@
             tl.to(badge, { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, t0 + 0.05);
           });
 
-          /* ---- anchored cues: each stake lifts as the narration names it --------------
-             The roadmap is on screen first (entrance above); the FOCUS is what tracks the
-             voice, so the learner's eye is on the stake being spoken. */
-          function focus(i, at) {
-            steps.forEach(function (s2, j) {
-              var row = document.getElementById("mk-st-row-" + j);
-              tl.to(
-                row,
-                { opacity: j === i ? 1 : 0.42, duration: 0.45, ease: "power2.out" },
-                at
-              );
-            });
-            tl.fromTo(
-              document.getElementById("mk-st-badge-" + i),
-              { scale: 1 },
-              { scale: 1.12, duration: 0.4, ease: "power2.out", yoyo: true, repeat: 1 },
-              at
-            );
-          }
+          /* ---- anchored cues --------------------------------------------------------- */
 
-          focus(0, W.obj_assigns_today); // "…how Entra assigns roles today…"
-          // "…and why that leaves access always on"
+          // "…nothing takes effect until they activate it."
           tl.fromTo(
             document.getElementById("mk-st-badge-0"),
             { scale: 1 },
-            { scale: 1.08, duration: 0.35, ease: "power2.out", yoyo: true, repeat: 1 },
-            W.obj_always_on
-          );
-          focus(1, W.obj_just_in_time); // "…how PIM makes it just in time…"
-          focus(2, W.obj_one_wrong_setting); // "…where one wrong setting…"
-          // "…quietly lock your admins out"
-          tl.fromTo(
-            document.getElementById("mk-st-badge-2"),
-            { scale: 1 },
-            { scale: 1.16, duration: 0.45, ease: "power2.out", yoyo: true, repeat: 1 },
-            W.obj_lockout
+            { scale: 1.14, duration: 0.4, ease: "power2.out", yoyo: true, repeat: 1 },
+            W.b5_takes_effect
           );
 
-          window.__timelines["03-objectives"] = tl;
+          // "…multi-factor authentication…" / "…a justification…"
+          tl.fromTo(
+            "#mk-st-gate-0",
+            { opacity: 0, y: 12 },
+            { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" },
+            W.b5_mfa
+          );
+          tl.fromTo(
+            "#mk-st-gate-1",
+            { opacity: 0, y: 12 },
+            { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" },
+            W.b5_justification
+          );
+
+          // "…a maximum duration…" — the meter fills to the cap.
+          gsap.set("#mk-st-meter-fill", { scaleX: 0 });
+          tl.to(
+            "#mk-st-meter-fill",
+            { scaleX: 1, duration: 1.1, ease: "power2.out" },
+            W.b5_max_duration
+          );
+
+          // "…four hours…" — the figure that caps it.
+          tl.fromTo(
+            "#mk-st-cap",
+            { opacity: 0, y: 10 },
+            { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" },
+            W.b5_four_hours
+          );
+
+          // "…it expires." — the meter drains as the last step arrives.
+          tl.to(
+            "#mk-st-meter-fill",
+            { scaleX: 0, duration: 0.9, ease: "power2.inOut" },
+            W.b5_expire
+          );
+
+          // "…just in time." — the badge of the last step confirms the loop closed.
+          tl.fromTo(
+            document.getElementById("mk-st-badge-3"),
+            { scale: 1 },
+            { scale: 1.14, duration: 0.45, ease: "power2.out", yoyo: true, repeat: 1 },
+            W.b5_jit
+          );
+
+          window.__timelines["50-activation"] = tl;
         })();
       </script>
     </template>

@@ -5,6 +5,7 @@
   "height": 1080,
   "root_background": "#fff8f3",
   "gsap": "assets/vendor/gsap.min.js",
+  "anchors": "anchors.js",
   "fonts": [
     {
       "family": "Segoe UI",
@@ -19,6 +20,12 @@
       "src": "fonts/segoeui-semibold.woff2"
     }
   ],
+  "narration": {
+    "src": "narration.wav",
+    "start": 3.0,
+    "duration": 275.367,
+    "track": 10
+  },
   "endcard": {
     "src": "assets/AI_End_Card.mp4",
     "duration": 10.667,
@@ -29,43 +36,105 @@
     "outro": 0.7,
     "color": "#000"
   },
+  "$timing": "Every scene boundary below is a REAL narration word time from transcript.json (see anchors.json `beat_*`, resolved with tools/word_anchors.py --lead-in 3.0). A scene starts on the first spoken word of its narration slice, so inside a scene every cue is `A.<cue> - A.<beat_*>`. Durations are boundary deltas — never an assumed words-per-second. Re-record => regenerate anchors.js and re-derive these numbers.",
   "scenes": [
     {
       "id": "01-bumper",
       "src": "scenes/01-bumper.html",
-      "duration": 3.0,
-      "seam": "hard"
+      "duration": 3.03,
+      "seam": "hard",
+      "$start": 0.0
     },
     {
       "id": "02-title",
       "src": "scenes/02-title.html",
-      "duration": 24.0,
-      "seam": "hard"
+      "duration": 29.24,
+      "seam": "hard",
+      "$start": 3.03
     },
     {
       "id": "03-objectives",
       "src": "scenes/03-objectives.html",
-      "duration": 16.8,
-      "seam": "cut-left"
+      "duration": 13.9,
+      "seam": "cut-left",
+      "$start": 32.27
+    },
+    {
+      "id": "10-roles-today",
+      "src": "scenes/10-roles-today.html",
+      "duration": 17.82,
+      "seam": "cut-left",
+      "$start": 46.17
+    },
+    {
+      "id": "20-role-groups",
+      "src": "scenes/20-role-groups.html",
+      "duration": 16.68,
+      "seam": "cut-left",
+      "$start": 63.99
+    },
+    {
+      "id": "30-always-on",
+      "src": "scenes/30-always-on.html",
+      "duration": 17.75,
+      "seam": "cut-up",
+      "$start": 80.67
+    },
+    {
+      "id": "40-assignment-types",
+      "src": "scenes/40-assignment-types.html",
+      "duration": 21.66,
+      "seam": "cut-left",
+      "$start": 98.42
+    },
+    {
+      "id": "50-activation",
+      "src": "scenes/50-activation.html",
+      "duration": 23.99,
+      "seam": "cut-left",
+      "$start": 120.08
+    },
+    {
+      "id": "60-approver-fallback",
+      "src": "scenes/60-approver-fallback.html",
+      "duration": 21.78,
+      "seam": "cut-left",
+      "$start": 144.07
+    },
+    {
+      "id": "70-lockout-risk",
+      "src": "scenes/70-lockout-risk.html",
+      "duration": 30.22,
+      "seam": "cut-up",
+      "$start": 165.85
+    },
+    {
+      "id": "80-durations",
+      "src": "scenes/80-durations.html",
+      "duration": 25.32,
+      "seam": "cut-left",
+      "$start": 196.07
+    },
+    {
+      "id": "85-custom-role",
+      "src": "scenes/85-custom-role.html",
+      "duration": 18.36,
+      "seam": "cut-left",
+      "$start": 221.39
     },
     {
       "id": "90-recap",
       "src": "scenes/90-recap.html",
-      "duration": 24.0,
-      "seam": "cut-up"
+      "duration": 24.08,
+      "seam": "cut-up",
+      "$start": 239.75
     },
     {
       "id": "91-cta",
       "src": "scenes/91-cta.html",
-      "duration": 16.8,
-      "seam": "cut-left"
+      "duration": 15.77,
+      "seam": "cut-left",
+      "$start": 263.83
     }
-  ],
-  "body_slot": {
-    "insert_after": "03-objectives",
-    "before": "90-recap",
-    "target_scene_count": 5,
-    "max_scene_count": 16,
-    "note": "Author the teaching-body scenes here (each on the kit foundation), then insert them into 'scenes' between the opening and closing chrome. The builder re-times all durations to real narration word anchors."
-  }
+  ]
 }

@@ -16,5 +16,23 @@
     "status": "passed",
     "note": null,
     "meta": {}
+  },
+  {
+    "kind": "start",
+    "stage": "builder",
+    "run_id": "pr-copilot-build",
+    "at": "2026-08-08T03:34:29+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "builder",
+    "run_id": "pr-copilot-build",
+    "at": "2026-08-08T03:34:29+00:00",
+    "status": "passed",
+    "note": null,
+    "meta": {}
   }
 ]
