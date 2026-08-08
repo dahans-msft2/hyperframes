@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+  </head>
+  <body>
+    <template>
+      <style>
+        /* === Highway 12 · 41-1805-rescue. The line crawls over the Bitterroots — the expedition's hardest chapter, and the mercy that ended it. ===
+           Authored on the learn-ilt kit foundation. Every content cue is a REAL spoken-word time
+           (window.__anchors -> W, made scene-relative below), never an assumed words-per-second. */
+
+        /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+/* =============================================================================
+   Learn-ILT KIT FOUNDATION  —  single source of truth for every kit block.
+   -----------------------------------------------------------------------------
+   Every block in templates/blocks/ opens its <style> with a VERBATIM copy of
+   this file (between the two BEGIN/END markers), then adds only block-specific
+   rules that REFERENCE these tokens + primitives. That is what makes a chart, a
+   spec list, a flowchart and a lower-third feel like one kit instead of seven
+   islands: shared tokens, one type scale, one ground-swap, shared primitives.
+
+   NAMING (every kit block file + its data-composition-id + its __timelines key
+   share ONE name):  <category>-<variant>  — lowercase, hyphen-separated.
+     category = the scene archetype (what kind of scene it is)
+     variant  = the specific style within that archetype
+   Current categories: stat- (single big number/count-up), chart- (multi-point
+   data viz), list- (enumerated rows), diagram- (nodes + relationships),
+   title- (title card), section- (segment divider), code- (code window),
+   callout- (key-point card), media- (screenshot / screen recording in a window),
+   lower-third- (name/role overlay). Reserved: quote-, compare-.
+   e.g. stat-progress, stat-count, chart-bar, chart-line, list-specs,
+   diagram-flow, media-screenshot, lower-third-bar.
+
+   AUTHORING RULES (the "one consistent approach"):
+     1. Never hardcode a brand colour, font, radius, or ground gradient in a
+        block. Read a token. If you need a value that isn't here, add it here.
+     2. Never size text in px. Use the --fs-* scale (cqw) so type scales with the
+        mount container and can never regress below the --fs-micro floor (~24px).
+     3. CONTRAST LAW: text is ALWAYS var(--ink) or var(--ink-soft). Accents
+        (var(--accent*)) colour GRAPHICS only — bars, lines, fills, borders,
+        chips, rules — never text.
+     4. Ground is chosen by the host via  #root[data-ground="…"]  (default
+        content-wash). Each ground layers the deck's real exported PNG
+        (assets/grounds/ground-<name>.png, copied into the project like fonts)
+        OVER a CSS-gradient fallback — if the PNG is absent (standalone preview),
+        the gradient shows. dark-field is CSS-only (no PNG) and flips ink to white
+        automatically — do not special-case it in a block.
+     5. The host owns scene lifetime. A block never hides/fades its own #root on
+        exit; register the paused timeline on window.__timelines[<id>] and stop.
+   ============================================================================= */
+
+/* ---- reset ---------------------------------------------------------------- */
+#root,
+#root *,
+#root *::before,
+#root *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- #root: tokens + container ------------------------------------------- */
+#root {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  container-type: size; /* 1cqw = 1% of width = 19.2px at 1920 */
+
+  /* palette — content-wash (default ground). data-ground overrides below. */
+  --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
+  --ink: #091f2e; /* all text */
+  --ink-soft: #59636e; /* secondary text */
+  --paper: #ffffff; /* panel / card fill */
+  --paper-veil: rgba(255, 255, 255, 0.9); /* translucent panel on a busy ground */
+  --border: rgba(9, 31, 46, 0.16);
+  --border-soft: rgba(9, 31, 46, 0.12);
+  --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
+
+  /* accents — GRAPHICS ONLY, never text */
+  --accent: #8661c5; /* purple  (primary)   */
+  --accent-2: #0078d4; /* blue    (secondary) */
+  --accent-3: #389a91; /* teal    (tertiary)  */
+  --accent-4: #bf3ac4; /* magenta (quaternary)*/
+  --accent-ink: #ffffff; /* text that sits ON an accent fill (chips/badges)   */
+
+  /* type — cqw scale (never px in a block). ~value at 1920 wide in comments.  */
+  --fs-display: 11cqw; /* ~211px  hero stat / count-up                        */
+  --fs-h1: 4.6cqw; /* ~88px   title-card headline                         */
+  --fs-h2: 3.4cqw; /* ~65px   scene title / subject                       */
+  --fs-h3: 2.4cqw; /* ~46px   block headline                              */
+  --fs-lead: 2cqw; /* ~38px   lead / large label                          */
+  --fs-body: 1.75cqw; /* ~34px   body / row label                           */
+  --fs-caption: 1.5cqw; /* ~29px   caption / value                            */
+  --fs-kicker: 1.55cqw; /* ~30px   eyebrow / kicker                           */
+  --fs-micro: 1.25cqw; /* ~24px   FLOOR — nothing smaller than this          */
+
+  /* rhythm */
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-pill: 999px;
+  --stroke: 5px; /* chart line / connector weight */
+  --rule: 3px; /* accent underline weight       */
+
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--ground);
+}
+
+#root[data-ground="hero-swoosh"] {
+  /* warm paper with a stronger purple sweep — css fallback of the PNG swoosh */
+  --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+}
+#root[data-ground="section-field"] {
+  /* the deck's pale "background-gradient" export — cool blue wash */
+  --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
+}
+#root[data-ground="dark-field"] {
+  /* the dramatic exception: near-black navy, WHITE ink. css-only (no PNG). */
+  --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
+  --ink: #ffffff;
+  --ink-soft: rgba(255, 255, 255, 0.72);
+  --paper: rgba(255, 255, 255, 0.08);
+  --paper-veil: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.24);
+  --border-soft: rgba(255, 255, 255, 0.14);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* ---- shared primitives ---------------------------------------------------- */
+/* Type roles — a block composes these instead of inventing a size each time.  */
+.ilt-kicker {
+  font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: var(--fs-kicker);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.ilt-title {
+  font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: var(--fs-h2);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.ilt-headline {
+  font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+.ilt-body {
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: 1.3;
+  color: var(--ink);
+}
+.ilt-caption {
+  font-weight: 400;
+  font-size: var(--fs-caption);
+  line-height: 1.3;
+  color: var(--ink-soft);
+}
+.ilt-value {
+  font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: var(--fs-caption);
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.ilt-display {
+  font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: var(--fs-display);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Surfaces */
+.ilt-panel {
+  background: var(--paper);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.ilt-panel--veil {
+  background: var(--paper-veil);
+}
+.ilt-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  padding: 0.5em 1.1em;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  color: var(--ink);
+  background: var(--paper-veil);
+}
+
+/* Accents-as-graphics */
+.ilt-rule {
+  /* accent underline bar — a graphic, never text colour */
+  height: var(--rule);
+  border-radius: var(--rule);
+  background: var(--accent);
+}
+.ilt-tab {
+  /* vertical accent tab (lower-thirds, callouts) */
+  width: var(--rule);
+  border-radius: var(--rule);
+  background: var(--accent);
+}
+/* SVG helpers: stroke:var(--accent) for lines, stroke:var(--border-soft) for axes */
+.ilt-axis {
+  stroke: var(--border-soft);
+  stroke-width: 2;
+  fill: none;
+}
+        /* ==== END _foundation.css ==== */
+
+        /* ---- Highway 12 scene furniture — composes kit tokens + primitives only ---- */
+        .hw-chapter { position: absolute; left: 96px; top: 74px; display: flex; align-items: center; gap: 18px; }
+        .hw-chapter-tab { width: 6px; height: 34px; border-radius: 3px; background: var(--accent); }
+
+        .hw-mapwrap { position: absolute; inset: 0; }
+        .hw-map { position: absolute; inset: 0; width: 100%; height: 100%; }
+        .hw-water { fill: #e4eef5; }
+        .hw-land { fill: #fbf3ea; stroke: rgba(9, 31, 46, 0.14); stroke-width: 2.5; }
+        .hw-state { fill: none; stroke: rgba(9, 31, 46, 0.18); stroke-width: 2; stroke-dasharray: 10 12; }
+        .hw-river { fill: none; stroke: #b7cfdd; stroke-width: 5; stroke-linecap: round; }
+        .hw-lake { fill: #b7cfdd; }
+        .hw-relief { fill: none; stroke: rgba(9, 31, 46, 0.22); stroke-width: 3; stroke-linecap: round; }
+        .hw-state-lbl { font-family: "Segoe UI Semibold", "Segoe UI", sans-serif; font-size: 30px; letter-spacing: 0.22em; fill: #59636e; }
+        .hw-lbl {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-size: 30px;
+          fill: #091f2e;
+          paint-order: stroke;
+          stroke: #fbf3ea;
+          stroke-width: 7px;
+          stroke-linejoin: round;
+        }
+        .hw-leg { fill: none; stroke: var(--accent-2); stroke-width: 8; stroke-linecap: round; stroke-linejoin: round; }
+        .hw-mourn { fill: none; stroke: #9c5f63; stroke-width: 5; stroke-linecap: round; stroke-dasharray: 16 14; }
+        .hw-dot { fill: var(--accent); stroke: #ffffff; stroke-width: 4; }
+        .hw-ring { fill: none; stroke: var(--accent); stroke-width: 4; transform-box: fill-box; transform-origin: 50% 50%; }
+        .hw-marker-halo { fill: rgba(0, 120, 212, 0.22); }
+        .hw-marker-core { fill: var(--accent-2); stroke: #ffffff; stroke-width: 4; }
+
+        /* the card that pops beside the route as the drive reaches a waypoint */
+        .hw-card {
+          position: absolute;
+          width: 660px;
+          background: var(--paper);
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius);
+          box-shadow: 0 20px 56px rgba(9, 31, 46, 0.22);
+          overflow: hidden;
+        }
+        .hw-card-media { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #eef2f5; }
+        .hw-card-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .hw-plate {
+          position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+          background: linear-gradient(160deg, #eaf2f8 0%, #f7f1ea 100%);
+        }
+        .hw-plate svg { width: 58%; height: 58%; }
+        .hw-card-body { padding: 26px 30px 30px; display: flex; flex-direction: column; gap: 10px; }
+        .hw-card-rule { width: 88px; height: var(--rule); border-radius: var(--rule); background: var(--accent); }
+
+        .hw-chip-abs {
+          position: absolute;
+          padding: 18px 24px;
+          border-radius: var(--radius-sm);
+          background: #ffffff;
+          border: 1.5px solid var(--border-soft);
+          box-shadow: 0 12px 30px rgba(9, 31, 46, 0.18);
+          font-size: var(--fs-caption);
+          line-height: 1.32;
+          color: var(--ink);
+        }
+        .hw-chip-abs b { font-family: "Segoe UI Semibold", "Segoe UI", sans-serif; font-weight: 600; }
+
+        /* story beats: a full-bleed photograph under an opaque ink-on-paper panel */
+        .hw-photo { position: absolute; inset: 0; overflow: hidden; }
+        .hw-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .hw-photo-veil {
+          position: absolute; inset: 0;
+          background: linear-gradient(90deg, rgba(255, 250, 245, 0.9) 0%, rgba(255, 250, 245, 0.62) 48%, rgba(255, 250, 245, 0.16) 100%);
+        }
+        .hw-panel {
+          position: absolute;
+          padding: 44px 48px 48px;
+          background: var(--paper);
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius);
+          box-shadow: 0 24px 64px rgba(9, 31, 46, 0.24);
+          display: flex; flex-direction: column; gap: 18px;
+        }
+        .hw-quote { font-size: var(--fs-h3); line-height: 1.24; }
+        .hw-rows { display: flex; flex-direction: column; gap: 16px; margin-top: 4px; }
+        .hw-row { display: flex; align-items: flex-start; gap: 16px; }
+        .hw-row-tab { flex: none; width: 6px; height: 30px; border-radius: 3px; background: var(--accent-3); margin-top: 5px; }
+        .hw-nations { position: absolute; display: flex; gap: 16px; }
+        .hw-nation { background: #ffffff; box-shadow: 0 10px 24px rgba(9, 31, 46, 0.16); }
+
+        /* portrait row (documented figures only) */
+        .hw-portraits { position: absolute; display: flex; gap: 40px; }
+        .hw-portrait {
+          width: 320px; background: var(--paper); border: 1.5px solid var(--border);
+          border-radius: var(--radius); box-shadow: 0 18px 44px rgba(9, 31, 46, 0.2); overflow: hidden;
+        }
+        .hw-portrait img { width: 100%; height: 392px; object-fit: cover; display: block; }
+        .hw-portrait-body { padding: 18px 20px 22px; display: flex; flex-direction: column; gap: 6px; }
+        .hw-expedition { position: absolute; inset: 0; width: 100%; height: 100%; }
+        .hw-exp-line { fill: none; stroke: rgba(134, 97, 197, 0.5); stroke-width: 6; stroke-dasharray: 14 16; stroke-linecap: round; }
+        .hw-headgroup { position: absolute; left: 96px; top: 188px; width: 1060px; display: flex; flex-direction: column; gap: 16px; }
+
+        .hw-strip {
+          position: absolute; left: 50%; transform: translateX(-50%);
+          padding: 22px 44px; border-radius: var(--radius);
+          background: #ffffff; border: 1.5px solid var(--border);
+          box-shadow: 0 18px 44px rgba(9, 31, 46, 0.2);
+          text-align: center; display: flex; flex-direction: column; gap: 8px;
+        }
+      </style>
+
+      <div id="root" data-composition-id="41-1805-rescue" data-ground="content-wash" data-width="1920" data-height="1080">
+        <div class="hw-mapwrap">
+          <svg id="s41-map" class="hw-map" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+            data-layout-allow-overlap data-layout-allow-occlusion data-layout-allow-overflow>
+            <g id="s41-cam">
+              <path class="hw-water" d="M 0 0 L 250 0 C 236 118 300 200 264 300 C 234 400 300 470 250 560 C 214 640 264 720 220 830 C 196 900 230 962 206 1080 L 0 1080 Z" />
+              <path class="hw-land" d="M 250 0 C 236 118 300 200 264 300 C 234 400 300 470 250 560 C 214 640 264 720 220 830 C 196 900 230 962 206 1080 L 1920 1080 L 1920 0 Z" />
+              <path class="hw-state" d="M 258 646 L 720 646" /><path class="hw-state" d="M 720 60 L 720 700" /><path class="hw-state" d="M 1066 60 L 1066 470 C 1040 500 1016 528 1008 556 C 1000 600 1040 660 1074 706 L 1074 1030" /><path class="hw-state" d="M 1074 706 L 1920 706" />
+              <path class="hw-river" d="M 660 40 C 618 190 528 296 515 360 C 502 470 430 560 330 602 C 282 622 240 640 208 660" />
+              <path class="hw-river" d="M 640 560 C 724 556 800 586 900 586 C 962 592 1002 604 1044 646" />
+              <path class="hw-river" d="M 860 590 C 900 620 940 660 986 690" />
+              <ellipse class="hw-lake" cx="1180" cy="318" rx="26" ry="46" />
+              <path class="hw-relief" d="M 792 604 l 13 -13 l 13 13" /><path class="hw-relief" d="M 822 598 l 13 -13 l 13 13" /><path class="hw-relief" d="M 852 592 l 13 -13 l 13 13" /><path class="hw-relief" d="M 882 586 l 13 -13 l 13 13" /><path class="hw-relief" d="M 912 580 l 13 -13 l 13 13" /><path class="hw-relief" d="M 942 574 l 13 -13 l 13 13" /><path class="hw-relief" d="M 972 568 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1002 562 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1032 556 l 13 -13 l 13 13" /><path class="hw-relief" d="M 806 640 l 13 -13 l 13 13" /><path class="hw-relief" d="M 836 635 l 13 -13 l 13 13" /><path class="hw-relief" d="M 866 630 l 13 -13 l 13 13" /><path class="hw-relief" d="M 896 625 l 13 -13 l 13 13" /><path class="hw-relief" d="M 926 620 l 13 -13 l 13 13" /><path class="hw-relief" d="M 956 615 l 13 -13 l 13 13" /><path class="hw-relief" d="M 986 610 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1016 605 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1310 232 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1340 224 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1370 216 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1400 208 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1430 200 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1460 192 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1330 268 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1360 261 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1390 254 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1420 247 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1450 240 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1198 392 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1224 386 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1250 380 l 13 -13 l 13 13" /><path class="hw-relief" d="M 1276 374 l 13 -13 l 13 13" />
+              <text class="hw-state-lbl" x="392" y="176">WASHINGTON</text><text class="hw-state-lbl" x="392" y="812">OREGON</text><text class="hw-state-lbl" x="846" y="264">IDAHO</text><text class="hw-state-lbl" x="1486" y="560">MONTANA</text>
+              <path id="s41-mourn" class="hw-mourn" d="M 884 596 C 930 578 972 566 1010 555 C 1002 590 1006 628 1020 660 C 1014 716 1002 758 996 796" />
+              <path id="s41-leg1" class="hw-leg" d="M 250 300 C 340 300 430 330 515 360" /><path id="s41-leg2" class="hw-leg" d="M 515 360 C 560 430 592 500 640 560" /><path id="s41-leg3" class="hw-leg" d="M 640 560 C 700 602 790 620 860 590" /><path id="s41-leg4" class="hw-leg" d="M 860 590 C 902 568 960 586 1010 555" /><path id="s41-leg5" class="hw-leg" d="M 1010 555 C 1046 546 1082 526 1110 505" /><path id="s41-leg6" class="hw-leg" d="M 1110 505 C 1122 494 1132 482 1140 470" /><path id="s41-leg7" class="hw-leg" d="M 1140 470 C 1156 420 1160 360 1180 315" /><path id="s41-leg8" class="hw-leg" d="M 1180 315 C 1242 290 1332 236 1400 205" />
+              <circle id="s41-ring-seattle" class="hw-ring" cx="250" cy="300" r="12" /><circle id="s41-dot-seattle" class="hw-dot" cx="250" cy="300" r="11" /><circle id="s41-ring-vantage" class="hw-ring" cx="515" cy="360" r="12" /><circle id="s41-dot-vantage" class="hw-dot" cx="515" cy="360" r="11" /><circle id="s41-ring-clarkston" class="hw-ring" cx="640" cy="560" r="12" /><circle id="s41-dot-clarkston" class="hw-dot" cx="640" cy="560" r="11" /><circle id="s41-ring-lochsa" class="hw-ring" cx="860" cy="590" r="12" /><circle id="s41-dot-lochsa" class="hw-dot" cx="860" cy="590" r="11" /><circle id="s41-ring-lolo" class="hw-ring" cx="1010" cy="555" r="12" /><circle id="s41-dot-lolo" class="hw-dot" cx="1010" cy="555" r="11" /><circle id="s41-ring-bighole" class="hw-ring" cx="1020" cy="660" r="12" /><circle id="s41-dot-bighole" class="hw-dot" cx="1020" cy="660" r="11" /><circle id="s41-ring-travelers" class="hw-ring" cx="1110" cy="505" r="12" /><circle id="s41-dot-travelers" class="hw-dot" cx="1110" cy="505" r="11" /><circle id="s41-ring-missoula" class="hw-ring" cx="1140" cy="470" r="12" /><circle id="s41-dot-missoula" class="hw-dot" cx="1140" cy="470" r="11" /><circle id="s41-ring-flathead" class="hw-ring" cx="1180" cy="315" r="12" /><circle id="s41-dot-flathead" class="hw-dot" cx="1180" cy="315" r="11" /><circle id="s41-ring-glacier" class="hw-ring" cx="1400" cy="205" r="12" /><circle id="s41-dot-glacier" class="hw-dot" cx="1400" cy="205" r="11" />
+              <text id="s41-lbl-seattle" class="hw-lbl" x="228" y="310" text-anchor="end">Seattle</text><text id="s41-lbl-vantage" class="hw-lbl" x="515" y="334" text-anchor="middle">Vantage</text><text id="s41-lbl-clarkston" class="hw-lbl" x="618" y="570" text-anchor="end">Clarkston · Lewiston</text><text id="s41-lbl-lochsa" class="hw-lbl" x="860" y="636" text-anchor="middle">The Lochsa</text><text id="s41-lbl-lolo" class="hw-lbl" x="1010" y="529" text-anchor="middle">Lolo Pass</text><text id="s41-lbl-bighole" class="hw-lbl" x="1020" y="706" text-anchor="middle">Big Hole</text><text id="s41-lbl-travelers" class="hw-lbl" x="1132" y="515" text-anchor="start">Traveler’s Rest</text><text id="s41-lbl-missoula" class="hw-lbl" x="1162" y="480" text-anchor="start">Missoula</text><text id="s41-lbl-flathead" class="hw-lbl" x="1158" y="325" text-anchor="end">Flathead Lake</text><text id="s41-lbl-glacier" class="hw-lbl" x="1422" y="215" text-anchor="start">Glacier</text>
+              <g id="s41-marker" class="hw-marker">
+                <circle class="hw-marker-halo" r="20" />
+                <circle class="hw-marker-core" r="9" />
+              </g>
+            </g>
+          </svg>
+        </div>
+        <div class="hw-chapter" id="s41-chapter">
+          <div class="hw-chapter-tab"></div>
+          <div class="ilt-kicker">Leg 3 · the Bitterroots, 1805</div>
+        </div>
+        <div class="hw-card" id="s41-card0" style="left: 1164px; top: 232px;">
+          <div class="hw-card-media"><img class="hw-card-img" id="s41-cardimg0" src="assets/media/img/bitterroots.png" alt="" /></div>
+          <div class="hw-card-body">
+            <div class="hw-card-rule"></div>
+            <div class="ilt-headline">The Bitterroots · September 1805</div>
+            <div class="ilt-caption">Early snow, the trail lost, near starvation — candle wax and their own horses.</div>
+          </div>
+        </div>
+        <div class="hw-chip-abs" id="s41-chip0" style="left: 96px; top: 852px; width: 660px;">At the Weippe Prairie the <b>Nez Perce chose to feed them</b>, and helped carve the canoes</div>
+      </div>
+
+      <script>
+        (function () {
+          window.__timelines = window.__timelines || {};
+
+          // Cue clock. anchors.js (tools/word_anchors.py <- transcript.json) is the source of
+          // truth; W maps each cue to a SCENE-RELATIVE spoken-word time. FALLBACK holds the same
+          // numbers frozen at author time, used only if anchors.js is absent (standalone preview).
+          var A = (typeof window !== "undefined" && window.__anchors) || {};
+          var SCENE_START = typeof A["beatRescue1805"] === "number" ? A["beatRescue1805"] : 195.69;
+          var FALLBACK = {
+            rescue1805: 0.0,
+            fedThem: 16.89,
+          };
+          var W = {};
+          Object.keys(FALLBACK).forEach(function (k) {
+            W[k] = typeof A[k] === "number" ? Math.max(0, Math.round((A[k] - SCENE_START) * 1000) / 1000) : FALLBACK[k];
+          });
+          // B: scene-open choreography, measured from this scene's own boundary (not from speech).
+          var B = { b0: 0 };
+
+          var tl = gsap.timeline({ paused: true });
+          // Pin every arriving element hidden at t=0 — children inherit opacity:1, so an
+          // unpinned element is fully drawn the moment the beat opens (check_initial_state.py).
+          [
+            "#s41-card0",
+            "#s41-chip0",
+            "#s41-chapter",
+            "#s41-marker",
+            "#s41-ring-seattle",
+            "#s41-ring-vantage",
+            "#s41-ring-clarkston",
+            "#s41-ring-lochsa",
+            "#s41-ring-lolo",
+            "#s41-ring-bighole",
+            "#s41-ring-travelers",
+            "#s41-ring-missoula",
+            "#s41-ring-flathead",
+            "#s41-ring-glacier",
+            "#s41-dot-lolo",
+            "#s41-dot-bighole",
+            "#s41-dot-travelers",
+            "#s41-dot-missoula",
+            "#s41-dot-flathead",
+            "#s41-dot-glacier",
+            "#s41-lbl-lolo",
+            "#s41-lbl-bighole",
+            "#s41-lbl-travelers",
+            "#s41-lbl-missoula",
+            "#s41-lbl-flathead",
+            "#s41-lbl-glacier"
+          ].forEach((s) => tl.set(s, { opacity: 0 }, 0));
+
+          // Waypoints already reached earlier in the drive stay lit from frame one.
+          ["#s41-dot-seattle", "#s41-lbl-seattle", "#s41-dot-vantage", "#s41-lbl-vantage", "#s41-dot-clarkston", "#s41-lbl-clarkston", "#s41-dot-lochsa", "#s41-lbl-lochsa"].forEach((s) => tl.set(s, { opacity: 1 }, 0));
+
+          // Route legs: dash-drawn from their own measured length, so the SAME map SVG
+          // (identical viewBox + waypoint coordinates) is reused verbatim in every journey scene.
+          var LEGS = ["leg1", "leg2", "leg3", "leg4", "leg5", "leg6", "leg7", "leg8"];
+          var DONE = ["leg1", "leg2", "leg3"];
+          var LEN = {};
+          LEGS.forEach(function (name) {
+            var el = document.getElementById("s41-" + name);
+            var L = el.getTotalLength();
+            LEN[name] = L;
+            el.style.strokeDasharray = L + " " + L;
+            tl.set(el, { strokeDashoffset: DONE.indexOf(name) >= 0 ? 0 : L }, 0);
+          });
+
+          var mourn = document.getElementById("s41-mourn");
+          var mournLen = mourn.getTotalLength();
+          tl.set(mourn, { opacity: 0 }, 0);
+
+          // The marker rides the head of the growing line: a proxy tween whose progress is read
+          // back onto the path with getPointAtLength — deterministic and seek-safe.
+          var marker = document.getElementById("s41-marker");
+          function rideLeg(name, at, dur) {
+            var el = document.getElementById("s41-" + name);
+            var L = LEN[name];
+            var head = { v: 0 };
+            function place() {
+              var p = el.getPointAtLength(L * head.v);
+              marker.setAttribute("transform", "translate(" + p.x + "," + p.y + ")");
+            }
+            place();
+            tl.to(el, { strokeDashoffset: 0, duration: dur, ease: "none" }, at);
+            tl.to(head, { v: 1, duration: dur, ease: "none", onUpdate: place }, at);
+            tl.to(marker, { opacity: 1, duration: 0.4, ease: "power2.out" }, at);
+          }
+
+          // Camera: one slow, continuous push toward this leg's region. The map performs; it never idles.
+          var cam = document.getElementById("s41-cam");
+          tl.fromTo(
+            cam,
+            { x: -653.15, y: -296.62, scale: 1.46, svgOrigin: "0 0" },
+            { x: -722.9, y: -339.75, scale: 1.53, svgOrigin: "0 0", duration: 24.12, ease: "none" },
+            0
+          );
+
+          tl.to("#s41-chapter", { opacity: 1, duration: 0.5, ease: "power2.out" }, B.b0 + 0.2);
+
+          rideLeg("leg4", W.rescue1805, 16.5);
+          tl.to(marker, { opacity: 0, duration: 0.45, ease: "power2.in" }, W.fedThem);
+
+          // Card 0 pops beside the route on its spoken word, settles with a soft overshoot, holds.
+          tl.fromTo("#s41-card0", { opacity: 0, scale: 0.9, y: 26 }, { opacity: 1, scale: 1, y: 0, duration: 0.72, ease: "back.out(1.5)", immediateRender: false }, W.rescue1805);
+          tl.fromTo("#s41-cardimg0", { scale: 1 }, { scale: 1.07, duration: 22.0, ease: "none", immediateRender: false }, W.rescue1805);
+          tl.fromTo("#s41-chip0", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out", immediateRender: false }, W.fedThem);
+
+          window.__timelines["41-1805-rescue"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

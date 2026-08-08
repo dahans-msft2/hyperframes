@@ -1,0 +1,20 @@
+{
+  "_comment": "cue name -> exact spoken phrase the beat lands on. Multi-word phrases chosen to resolve uniquely against the ASR transcript. NOTE: 'Vantage' transcribed as 'Advantage' and 'Lochsa' did not transcribe, so those beats anchor to neighbouring words.",
+  "quoteLand": "we are of this land",
+  "louisiana": "the vast Louisiana Territory",
+  "corps": "the Corps of Discovery #1",
+  "sacagawea": "a young woman named Sacagawea",
+  "vantage": "the road meets the Columbia",
+  "confluence": "two towns that face each other",
+  "lochsa": "one of the wildest drives",
+  "rescue1805": "In September of 1805",
+  "loloSummit": "the summit of Lolo Pass",
+  "flight1877": "later, in 1877",
+  "bigHole": "At the Big Hole",
+  "travelersRest": "a quiet meadow, Travelers Rest",
+  "missoula": "beyond it is Missoula",
+  "flathead": "Flathead Lake shines",
+  "glacier": "Glacier National Park, whose eastern",
+  "routeRecap": "So there's the route",
+  "driveIt": "So go and drive it"
+}

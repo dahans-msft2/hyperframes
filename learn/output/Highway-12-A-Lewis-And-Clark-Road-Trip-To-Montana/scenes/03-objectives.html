@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+  </head>
+  <body>
+    <template>
+      <style>
+        /* === Learn-ILT kit block: steps-list (numbered how-to process, staggered top→down). ===
+           Built on the kit foundation: no hardcoded colours/fonts/px type — tokens only.
+           Ground is host-selectable via #root[data-ground]; dark-field auto-inverts ink. */
+
+        /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+        #root,
+        #root *,
+        #root *::before,
+        #root *::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size;
+
+          --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
+          --ink: #091f2e;
+          --ink-soft: #59636e;
+          --paper: #ffffff;
+          --paper-veil: rgba(255, 255, 255, 0.9);
+          --border: rgba(9, 31, 46, 0.16);
+          --border-soft: rgba(9, 31, 46, 0.12);
+          --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
+
+          --accent: #8661c5;
+          --accent-2: #0078d4;
+          --accent-3: #389a91;
+          --accent-4: #bf3ac4;
+          --accent-ink: #ffffff;
+
+          --fs-display: 11cqw;
+          --fs-h1: 4.6cqw;
+          --fs-h2: 3.4cqw;
+          --fs-h3: 2.4cqw;
+          --fs-lead: 2cqw;
+          --fs-body: 1.75cqw;
+          --fs-caption: 1.5cqw;
+          --fs-kicker: 1.55cqw;
+          --fs-micro: 1.25cqw;
+
+          --radius: 16px;
+          --radius-sm: 10px;
+          --radius-pill: 999px;
+          --stroke: 5px;
+          --rule: 3px;
+
+          font-family: "Segoe UI", system-ui, sans-serif;
+          color: var(--ink);
+          background: var(--ground);
+        }
+        #root[data-ground="hero-swoosh"] {
+          --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+        }
+        #root[data-ground="section-field"] {
+          --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
+        }
+        #root[data-ground="dark-field"] {
+          --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
+          --ink: #ffffff;
+          --ink-soft: rgba(255, 255, 255, 0.72);
+          --paper: rgba(255, 255, 255, 0.08);
+          --paper-veil: rgba(255, 255, 255, 0.1);
+          --border: rgba(255, 255, 255, 0.24);
+          --border-soft: rgba(255, 255, 255, 0.14);
+          --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+        /* ==== END _foundation.css ==== */
+
+        /* ---- kit primitive used by this block ---- */
+        .ilt-caption {
+          font-weight: 400;
+          font-size: var(--fs-caption);
+          line-height: 1.3;
+          color: var(--ink-soft); /* detail — secondary ink */
+        }
+
+        /* ---- block-specific: compose primitives + tokens only ---- */
+        #mk-st-col {
+          position: absolute;
+        }
+        /* the connector: a thin vertical line linking the badges (a graphic) */
+        #mk-st-connector {
+          position: absolute;
+          width: var(--rule);
+          border-radius: var(--rule);
+          background: var(--border-soft); /* soft border — ground-aware graphic */
+          transform-origin: top center;
+        }
+        .mk-st-row {
+          position: relative;
+          display: flex;
+          align-items: center;
+          opacity: 0; /* revealed by the timeline */
+        }
+        .mk-st-badge {
+          flex: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: var(--radius-pill);
+          background: var(--accent); /* accent fill = graphic */
+          box-shadow: var(--shadow);
+        }
+        .mk-st-num {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h3);
+          letter-spacing: -0.01em;
+          color: var(--accent-ink); /* numeral SITS ON the accent fill — allowed */
+          font-variant-numeric: tabular-nums;
+        }
+        .mk-st-text {
+          display: flex;
+          flex-direction: column;
+          gap: 0.35cqw;
+        }
+        .mk-st-title {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-body);
+          line-height: 1.12;
+          letter-spacing: -0.015em;
+          color: var(--ink); /* step title — primary ink */
+        }
+      </style>
+
+      <div id="root" data-composition-id="03-objectives" data-width="1920" data-height="1080">
+        <!-- host may set data-ground="section-field" | "hero-swoosh" | "dark-field" on #root -->
+        <div id="mk-st-col">
+          <div id="mk-st-connector"></div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          window.__timelines = window.__timelines || {};
+
+          /* Edit per use. A numbered how-to: each step pops a badge as its row slides in,
+             one at a time, top→down, with a connector line drawing down between the badges. */
+          var CONFIG = {
+            "steps": [
+              {
+                "title": "The Corps of Discovery",
+                "detail": "1803, and a journey west across land that was never empty"
+              },
+              {
+                "title": "Washington to Vantage",
+                "detail": "Out of Seattle, over the pass, down to the Columbia"
+              },
+              {
+                "title": "The confluence",
+                "detail": "Clarkston and Lewiston, at the mouth of Hells Canyon"
+              },
+              {
+                "title": "Highway 12 & Lolo Pass",
+                "detail": "The Lochsa, the Bitterroots, and two crossings of one summit"
+              },
+              {
+                "title": "Into Montana",
+                "detail": "Traveler\u2019s Rest, then the valley opening at Missoula"
+              },
+              {
+                "title": "Flathead & Glacier",
+                "detail": "North to the lake, and up the Going-to-the-Sun Road"
+              }
+            ],
+            "connector": true,
+            "badge": 84,
+            "gap": 30,
+            "rowGap": 40,
+            "textWidth": 900,
+            "x": 210,
+            "stagger": 0.55
+          };
+
+          var col = document.getElementById("mk-st-col");
+          var connector = document.getElementById("mk-st-connector");
+          var steps = CONFIG.steps;
+
+          /* build rows */
+          steps.forEach(function (s, i) {
+            var row = document.createElement("div");
+            row.id = "mk-st-row-" + i;
+            row.className = "mk-st-row";
+            row.style.gap = CONFIG.gap + "px";
+            if (i > 0) row.style.marginTop = CONFIG.rowGap + "px";
+
+            var badge = document.createElement("div");
+            badge.id = "mk-st-badge-" + i;
+            badge.className = "mk-st-badge";
+            badge.style.width = CONFIG.badge + "px";
+            badge.style.height = CONFIG.badge + "px";
+            var num = document.createElement("span");
+            num.className = "mk-st-num";
+            num.textContent = i + 1;
+            badge.appendChild(num);
+            row.appendChild(badge);
+
+            var text = document.createElement("div");
+            text.className = "mk-st-text";
+            text.style.width = CONFIG.textWidth + "px";
+            var title = document.createElement("div");
+            title.className = "mk-st-title";
+            title.textContent = s.title;
+            text.appendChild(title);
+            if (s.detail) {
+              var detail = document.createElement("div");
+              detail.className = "ilt-caption";
+              detail.textContent = s.detail;
+              text.appendChild(detail);
+            }
+            row.appendChild(text);
+
+            col.appendChild(row);
+          });
+
+          /* center the stack vertically; occupy the left ~60% via CONFIG.x + textWidth */
+          var n = steps.length;
+          var colH = n * CONFIG.badge + (n - 1) * CONFIG.rowGap;
+          col.style.left = CONFIG.x + "px";
+          col.style.top = Math.round((1080 - colH) / 2) + "px";
+
+          /* connector runs from the first badge center to the last badge center */
+          if (CONFIG.connector && n > 1) {
+            connector.style.left = Math.round(CONFIG.badge / 2 - 1.5) + "px";
+            connector.style.top = Math.round(CONFIG.badge / 2) + "px";
+            connector.style.height = colH - CONFIG.badge + "px";
+          } else {
+            connector.style.display = "none";
+          }
+
+          var tl = gsap.timeline({ paused: true });
+          // B: scene-open choreography, measured from this scene's own boundary (not from speech).
+          // This card is the route preview under "Now, the drive." — one continuous list reveal
+          // that starts on the beat boundary, so its cadence is boundary-relative, not guessed
+          // against an assumed words-per-second.
+          var B = { b0: 0 };
+
+          /* Scene-relative, seek-safe: connector draws down across the whole reveal, each row
+             slides/fades in while its badge pops. No exit / hide — the host owns lifetime. */
+          var lastStart = 0.4 + (n - 1) * CONFIG.stagger;
+
+          if (CONFIG.connector && n > 1) {
+            gsap.set(connector, { scaleY: 0 });
+            tl.to(connector, { scaleY: 1, duration: lastStart, ease: "none" }, B.b0 + 0.4);
+          }
+
+          steps.forEach(function (s, i) {
+            var row = document.getElementById("mk-st-row-" + i);
+            var badge = document.getElementById("mk-st-badge-" + i);
+            var t0 = B.b0 + 0.4 + i * CONFIG.stagger;
+
+            gsap.set(row, { opacity: 0, x: -40 });
+            tl.to(row, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, t0);
+
+            gsap.set(badge, { scale: 0.35 });
+            tl.to(badge, { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, t0 + 0.05);
+          });
+
+          window.__timelines["03-objectives"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>
