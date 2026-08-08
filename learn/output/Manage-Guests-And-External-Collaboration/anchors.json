@@ -1,0 +1,40 @@
+{
+  "_comment": "Cue name -> exact spoken phrase (verbatim, unique run in narration.txt). Resolve with: python ../../tools/word_anchors.py transcript.json --spec anchors.json -o anchors.js --lead-in <intro>. Phrases are the words the visual is ABOUT, not estimated offsets.",
+
+  "b1-start": "Start with the scenario",
+  "b1-question": "how much of your directory can they see by default",
+  "b1-predict": "Take a guess before we answer it",
+
+  "b2-start": "Here's the catch",
+  "b2-levers": "several levers",
+
+  "b3-start": "Back to what a guest can see",
+  "b3-three-levels": "There are three levels",
+  "b3-default-fit": "that default fits",
+
+  "b4-start": "So who pulls these levers",
+  "b4-user-admin": "User Administrator",
+  "b4-too-broad": "manage licenses across the tenant",
+
+  "b5-start": "two pieces, not one",
+  "b5-first": "assign coordinators the Guest Inviter role",
+  "b5-second": "set the tenant's invite setting",
+
+  "b6-start": "With that set",
+  "b6-redeem": "redeems it by signing in",
+  "b6-appears": "a guest object appears",
+
+  "b7-start": "Here's a point that trips people up",
+  "b7-two-places": "shows up in two places",
+  "b7-same-record": "Same record, two surfaces",
+
+  "b8-start": "Two more levers",
+  "b8-domain-lists": "Allow and deny domain lists",
+  "b8-cross-tenant": "go a layer deeper",
+
+  "b9-start": "One last judgment call",
+  "b9-mto": "a Multitenant Organization fits",
+
+  "recap-answer": "limited by default",
+  "cta-docs": "configuring external collaboration settings"
+}

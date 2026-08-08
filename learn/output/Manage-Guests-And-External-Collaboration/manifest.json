@@ -1,0 +1,13 @@
+{
+  "title": "Manage Guests and External Collaboration",
+  "type": "unit-video",
+  "profile": "unit-video",
+  "status": "scaffolded",
+  "voice": "en-US-Ava:DragonHDLatestNeural",
+  "source": "C:\\learn-pr\\learn-m365-pr\\learn-m365-pr\\wwl\\provision-govern-identities-entra\\includes\\5-manage-guests-external-collaboration.md",
+  "deliverables": {
+    "mp4": "Manage-Guests-And-External-Collaboration.mp4",
+    "captions_vtt": "Manage-Guests-And-External-Collaboration.vtt",
+    "thumbnail": "Manage-Guests-And-External-Collaboration_thumbnail.png"
+  }
+}
