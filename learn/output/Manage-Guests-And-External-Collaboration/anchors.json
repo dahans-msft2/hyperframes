@@ -57,6 +57,7 @@
   "_section_b6": "B6 09-invite-redeem",
   "b6Start": "With that set",
   "b6Sends": "A coordinator sends an invitation",
+  "b6SendsEnd": "to an external email address",
   "b6Redeem": "redeems it by signing in",
   "b6Appears": "a guest object appears",
   "b6NoIdentity": "to create or maintain",
