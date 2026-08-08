@@ -16,5 +16,14 @@
     "status": "passed",
     "note": null,
     "meta": {}
+  },
+  {
+    "kind": "start",
+    "stage": "builder",
+    "run_id": "bulk-identity-management-graph-202608071310",
+    "at": "2026-08-08T03:09:42+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
   }
 ]
