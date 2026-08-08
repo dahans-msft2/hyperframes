@@ -25,6 +25,24 @@ TOOLS = Path(__file__).resolve().parent
 LEARN = TOOLS.parent
 DEFAULT_REPO = "dahans-msft2/hyperframes"
 
+# Lightbox player. Any element carrying data-mp4 opens the modal and plays that URL; data-close closes
+# it. Kept as a plain constant (normal braces) so it interpolates verbatim into the page f-string.
+PLAYER_JS = """
+(function () {
+  const modal = document.getElementById('player');
+  const v = document.getElementById('player-v');
+  const cap = document.getElementById('player-t');
+  function open(src, title) { v.src = src; cap.textContent = title || ''; modal.hidden = false; v.play().catch(function () {}); }
+  function close() { modal.hidden = true; v.pause(); v.removeAttribute('src'); v.load(); }
+  document.addEventListener('click', function (e) {
+    const trig = e.target.closest('[data-mp4]');
+    if (trig) { e.preventDefault(); open(trig.getAttribute('data-mp4'), trig.getAttribute('data-title')); return; }
+    if (e.target.closest('[data-close]')) close();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
+})();
+"""
+
 
 def gh_json(args: list[str]) -> object:
     r = subprocess.run(["gh"] + args, capture_output=True, text=True)
@@ -62,12 +80,13 @@ def card(rel: dict, repo: str) -> str:
     published = (rel.get("published_at") or "")[:10] or "\u2014"
 
     media = (
-        f'<video class="thumb" controls preload="none" poster="{poster}">'
-        f'<source src="{mp4_url}" type="video/mp4"></video>'
+        f'<button class="thumb play" style="background-image:url(\'{poster}\')"'
+        f' data-mp4="{mp4_url}" data-title="{title}" aria-label="Play {title}"></button>'
         if mp4 else
         f'<a class="thumb ph" href="{mp4_url}" target="_blank" rel="noopener">'
         f'<img src="{poster}" alt="{title}"></a>'
     )
+    watch = f' data-mp4="{mp4_url}" data-title="{title}"' if mp4 else ""
     return f"""        <tr>
           <td class="c-thumb">{media}</td>
           <td class="c-title">
@@ -75,7 +94,7 @@ def card(rel: dict, repo: str) -> str:
             <span class="sub">{html.escape(published)} \u00b7 {html.escape(dur)}</span>
           </td>
           <td class="c-act">
-            <a href="{mp4_url}" target="_blank" rel="noopener">Watch \u25b8</a>
+            <a href="{mp4_url}" target="_blank" rel="noopener"{watch}>Watch \u25b8</a>
             <a href="{src_url}" target="_blank" rel="noopener" class="ghost">Source</a>
           </td>
         </tr>"""
@@ -123,6 +142,23 @@ def render_html(releases: list[dict], repo: str) -> str:
     .thumb {{ width:120px; aspect-ratio:16/9; background:#000; display:block; object-fit:cover;
               border:0; border-radius:6px; }}
     .thumb.ph img {{ width:100%; height:100%; object-fit:cover; border-radius:6px; }}
+    .thumb.play {{ position:relative; padding:0; cursor:pointer; background-size:cover;
+                   background-position:center; background-color:#000; }}
+    .thumb.play::after {{ content:""; position:absolute; inset:0; margin:auto; width:34px; height:34px;
+                         border-radius:50%; background:rgba(0,0,0,.55); z-index:1; transition:background .15s; }}
+    .thumb.play::before {{ content:""; position:absolute; inset:0; margin:auto; z-index:2;
+                          border-style:solid; border-width:6px 0 6px 11px;
+                          border-color:transparent transparent transparent #fff; transform:translateX(2px); }}
+    .thumb.play:hover::after {{ background:var(--accent); }}
+    .modal[hidden] {{ display:none; }}
+    .modal {{ position:fixed; inset:0; z-index:50; display:flex; align-items:center; justify-content:center; padding:24px; }}
+    .modal-bg {{ position:absolute; inset:0; background:rgba(0,0,0,.72); cursor:zoom-out; }}
+    .modal-box {{ position:relative; margin:0; width:min(960px,100%); }}
+    .modal-box video {{ width:100%; border-radius:10px; background:#000; display:block;
+                       box-shadow:0 12px 40px rgba(0,0,0,.5); }}
+    .modal-x {{ position:absolute; top:-40px; right:0; background:transparent; border:0; color:#fff;
+               font-size:30px; line-height:1; cursor:pointer; }}
+    .modal-box figcaption {{ color:#fff; font-size:14px; margin-top:10px; text-align:center; }}
     .c-title {{ overflow:hidden; }}
     .c-title .title {{ display:block; font-size:15px; font-weight:600; line-height:1.3;
                        overflow:hidden; text-overflow:ellipsis; }}
@@ -149,7 +185,16 @@ def render_html(releases: list[dict], repo: str) -> str:
   <main>
 {body}
   </main>
-  <footer>Generated from GitHub Releases. Each row streams the MP4 and links to its source on main.</footer>
+  <div id="player" class="modal" hidden>
+    <div class="modal-bg" data-close></div>
+    <figure class="modal-box">
+      <button class="modal-x" data-close aria-label="Close">\u00d7</button>
+      <video id="player-v" controls playsinline preload="auto"></video>
+      <figcaption id="player-t"></figcaption>
+    </figure>
+  </div>
+  <footer>Generated from GitHub Releases. Click a thumbnail or Watch to play; Source links to main.</footer>
+  <script>{PLAYER_JS}</script>
 </body>
 </html>
 """
