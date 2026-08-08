@@ -1,0 +1,86 @@
+# Builds the pre-baked Learn CI image (.github/docker/learn-ci.Dockerfile) and publishes it to GHCR,
+# then SMOKE-TESTS it before it is ever used by the gate. Run this once (and whenever the pinned CLI
+# version changes) — the video-ci gate consumes the image it publishes.
+#
+# Order of operations when adopting the pre-baked gate:
+#   1. Merge this workflow + the Dockerfile.
+#   2. Run this workflow (manually, or it auto-runs when the Dockerfile changes on main).
+#   3. Confirm the smoke test passed and the package exists under Packages.
+#   4. THEN switch video-ci.yml to `container:` the published image.
+# Doing 4 before 2/3 would break the gate (image not found) — so keep that order.
+
+name: Build Learn CI image
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "hyperframes CLI version to bake (match learn/config.json cli.published_version)"
+        required: true
+        default: "0.7.77"
+  push:
+    branches: [main]
+    paths:
+      - .github/docker/learn-ci.Dockerfile
+      - .github/workflows/build-ci-image.yml
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  IMAGE: ghcr.io/${{ github.repository_owner }}/hyperframes-learn-ci
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve the CLI version to bake
+        id: v
+        shell: bash
+        run: |
+          v='${{ inputs.version }}'
+          if [ -z "$v" ]; then v=$(grep -oP '"published_version"\s*:\s*"\K[^"]+' learn/config.json); fi
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+          echo "Baking hyperframes@$v"
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build (load locally first for the smoke test)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: .github/docker/learn-ci.Dockerfile
+          build-args: HYPERFRAMES_VERSION=${{ steps.v.outputs.version }}
+          load: true
+          tags: ${{ env.IMAGE }}:smoke
+
+      - name: Smoke-test the toolchain inside the image
+        run: |
+          docker run --rm ${{ env.IMAGE }}:smoke bash -lc '
+            set -e
+            echo "node:   $(node --version)"
+            echo "python: $(python --version)"
+            echo "hf:     $(hyperframes --version)"
+            test -n "$HYPERFRAMES_CHROME_PATH" && "$HYPERFRAMES_CHROME_PATH" --version
+            echo "chromium libs + fonts present:"; fc-list | head -1
+          '
+
+      - name: Push the validated image (version tag + latest)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: .github/docker/learn-ci.Dockerfile
+          build-args: HYPERFRAMES_VERSION=${{ steps.v.outputs.version }}
+          push: true
+          tags: |
+            ${{ env.IMAGE }}:${{ steps.v.outputs.version }}
+            ${{ env.IMAGE }}:latest
