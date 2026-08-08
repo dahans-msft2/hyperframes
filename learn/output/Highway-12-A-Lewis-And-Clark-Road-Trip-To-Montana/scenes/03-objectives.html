@@ -154,23 +154,35 @@
           var CONFIG = {
             "steps": [
               {
-                "title": "__FILL__ objective one",
-                "detail": "__FILL__ what the learner will be able to do"
+                "title": "The Corps of Discovery",
+                "detail": "1803, and a journey west across land that was never empty"
               },
               {
-                "title": "__FILL__ objective two",
-                "detail": "__FILL__ what the learner will be able to do"
+                "title": "Washington to Vantage",
+                "detail": "Out of Seattle, over the pass, down to the Columbia"
               },
               {
-                "title": "__FILL__ objective three",
-                "detail": "__FILL__ what the learner will be able to do"
+                "title": "The confluence",
+                "detail": "Clarkston and Lewiston, at the mouth of Hells Canyon"
+              },
+              {
+                "title": "Highway 12 & Lolo Pass",
+                "detail": "The Lochsa, the Bitterroots, and two crossings of one summit"
+              },
+              {
+                "title": "Into Montana",
+                "detail": "Traveler\u2019s Rest, then the valley opening at Missoula"
+              },
+              {
+                "title": "Flathead & Glacier",
+                "detail": "North to the lake, and up the Going-to-the-Sun Road"
               }
             ],
             "connector": true,
-            "badge": 96,
-            "gap": 34,
-            "rowGap": 58,
-            "textWidth": 760,
+            "badge": 84,
+            "gap": 30,
+            "rowGap": 40,
+            "textWidth": 900,
             "x": 210,
             "stagger": 0.55
           };
@@ -232,6 +244,11 @@
           }
 
           var tl = gsap.timeline({ paused: true });
+          // B: scene-open choreography, measured from this scene's own boundary (not from speech).
+          // This card is the route preview under "Now, the drive." — one continuous list reveal
+          // that starts on the beat boundary, so its cadence is boundary-relative, not guessed
+          // against an assumed words-per-second.
+          var B = { b0: 0 };
 
           /* Scene-relative, seek-safe: connector draws down across the whole reveal, each row
              slides/fades in while its badge pops. No exit / hide — the host owns lifetime. */
@@ -239,13 +256,13 @@
 
           if (CONFIG.connector && n > 1) {
             gsap.set(connector, { scaleY: 0 });
-            tl.to(connector, { scaleY: 1, duration: lastStart, ease: "none" }, 0.4);
+            tl.to(connector, { scaleY: 1, duration: lastStart, ease: "none" }, B.b0 + 0.4);
           }
 
           steps.forEach(function (s, i) {
             var row = document.getElementById("mk-st-row-" + i);
             var badge = document.getElementById("mk-st-badge-" + i);
-            var t0 = 0.4 + i * CONFIG.stagger;
+            var t0 = B.b0 + 0.4 + i * CONFIG.stagger;
 
             gsap.set(row, { opacity: 0, x: -40 });
             tl.to(row, { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, t0);

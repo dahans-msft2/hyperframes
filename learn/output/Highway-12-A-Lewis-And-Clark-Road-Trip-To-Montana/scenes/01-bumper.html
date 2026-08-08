@@ -82,7 +82,7 @@
           // project-local product logo (e.g. "assets/media/scout.png") to override it. Only the
           // kicker sub-line and the logo vary; the "Microsoft Learn" wordmark is fixed.
           var CONFIG = {
-            "kicker": "__FILL__ skilling series (e.g. 'Skilling · Azure Quantum')"
+            "kicker": "A HIGHWAY 12 ROAD TRIP \u00b7 HISTORY, HONESTLY"
           };
 
           var mark = document.getElementById("bm-mark");
@@ -100,6 +100,10 @@
           if (useLogo) { logo.src = CONFIG.logoSrc; logo.style.display = "block"; ms.style.display = "none"; }
 
           var tl = gsap.timeline({ paused: true });
+          // B: scene-open choreography, measured from this scene's own boundary. This bumper plays
+          // in the 3s of SILENCE before the narration starts, so there is no spoken word to anchor
+          // to — every position here is boundary-relative brand mechanics, not a content cue.
+          var B = { b0: 0 };
           // Brand sting: the mark lands, the Microsoft squares pop (or the product logo scales in),
           // the wordmark builds, the rule wipes.
           gsap.set([mark, w1, w2, rule, kick], { opacity: 0 });
@@ -108,14 +112,14 @@
           gsap.set(rule, { scaleX: 0 });
           if (!useLogo) gsap.set(squares, { scale: 0 });
 
-          tl.to(mark, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, 0.15);
-          if (!useLogo) tl.to(squares, { scale: 1, duration: 0.42, ease: "back.out(2.2)", stagger: 0.07 }, 0.32);
-          tl.to(w1, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.7);
-          tl.to(w2, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.82);
-          tl.to(rule, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power2.out" }, 1.05);
-          tl.to(kick, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.2);
+          tl.to(mark, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(2)" }, B.b0 + 0.15);
+          if (!useLogo) tl.to(squares, { scale: 1, duration: 0.42, ease: "back.out(2.2)", stagger: 0.07 }, B.b0 + 0.32);
+          tl.to(w1, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, B.b0 + 0.7);
+          tl.to(w2, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, B.b0 + 0.82);
+          tl.to(rule, { opacity: 1, scaleX: 1, duration: 0.5, ease: "power2.out" }, 1.05); // anchor-exempt: silent brand sting, no narration to anchor to
+          tl.to(kick, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.2); // anchor-exempt: silent brand sting, no narration to anchor to
           // a slow, intentional final push on the mark (camera settling) — performs, does not wobble.
-          tl.to(mark, { scale: 1.04, duration: 1.4, ease: "power1.inOut" }, 1.5);
+          tl.to(mark, { scale: 1.04, duration: 1.4, ease: "power1.inOut" }, 1.5); // anchor-exempt: silent brand sting, no narration to anchor to
 
           window.__timelines["01-bumper"] = tl;
         })();

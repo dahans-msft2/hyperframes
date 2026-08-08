@@ -5,20 +5,6 @@
   "height": 1080,
   "root_background": "#fff8f3",
   "gsap": "assets/vendor/gsap.min.js",
-  "fonts": [
-    {
-      "family": "Segoe UI",
-      "weight": 400,
-      "style": "normal",
-      "src": "fonts/segoeui-regular.woff2"
-    },
-    {
-      "family": "Segoe UI Semibold",
-      "weight": 600,
-      "style": "normal",
-      "src": "fonts/segoeui-semibold.woff2"
-    }
-  ],
   "endcard": {
     "src": "assets/AI_End_Card.mp4",
     "duration": 10.667,
@@ -39,33 +25,105 @@
     {
       "id": "02-title",
       "src": "scenes/02-title.html",
-      "duration": 45.0,
+      "duration": 5.51,
       "seam": "hard"
+    },
+    {
+      "id": "10-whose-land",
+      "src": "scenes/10-whose-land.html",
+      "duration": 31.84,
+      "seam": "cut-left"
+    },
+    {
+      "id": "11-the-charge",
+      "src": "scenes/11-the-charge.html",
+      "duration": 30.44,
+      "seam": "cut-left"
+    },
+    {
+      "id": "12-sacagawea",
+      "src": "scenes/12-sacagawea.html",
+      "duration": 43.28,
+      "seam": "cut-left"
     },
     {
       "id": "03-objectives",
       "src": "scenes/03-objectives.html",
-      "duration": 31.5,
+      "duration": 10.6,
       "seam": "cut-left"
+    },
+    {
+      "id": "20-vantage",
+      "src": "scenes/20-vantage.html",
+      "duration": 16.96,
+      "seam": "cut-left"
+    },
+    {
+      "id": "30-confluence",
+      "src": "scenes/30-confluence.html",
+      "duration": 28.46,
+      "seam": "cut-left"
+    },
+    {
+      "id": "40-lochsa",
+      "src": "scenes/40-lochsa.html",
+      "duration": 25.6,
+      "seam": "cut-left"
+    },
+    {
+      "id": "41-1805-rescue",
+      "src": "scenes/41-1805-rescue.html",
+      "duration": 24.12,
+      "seam": "cut-left"
+    },
+    {
+      "id": "42-lolo-1877",
+      "src": "scenes/42-lolo-1877.html",
+      "duration": 27.98,
+      "seam": "cut-left"
+    },
+    {
+      "id": "43-big-hole",
+      "src": "scenes/43-big-hole.html",
+      "duration": 22.84,
+      "seam": "cut-down"
+    },
+    {
+      "id": "50-travelers-missoula",
+      "src": "scenes/50-travelers-missoula.html",
+      "duration": 23.08,
+      "seam": "cut-left"
+    },
+    {
+      "id": "60-flathead-glacier",
+      "src": "scenes/60-flathead-glacier.html",
+      "duration": 40.4,
+      "seam": "cut-left"
+    },
+    {
+      "id": "70-route-recap",
+      "src": "scenes/70-route-recap.html",
+      "duration": 8.24,
+      "seam": "cut-up"
     },
     {
       "id": "90-recap",
       "src": "scenes/90-recap.html",
-      "duration": 45.0,
+      "duration": 16.12,
       "seam": "cut-up"
     },
     {
       "id": "91-cta",
       "src": "scenes/91-cta.html",
-      "duration": 31.5,
+      "duration": 18.53,
       "seam": "cut-left"
     }
   ],
-  "body_slot": {
-    "insert_after": "03-objectives",
-    "before": "90-recap",
-    "target_scene_count": 18,
-    "max_scene_count": 55,
-    "note": "Author the teaching-body scenes here (each on the kit foundation), then insert them into 'scenes' between the opening and closing chrome. The builder re-times all durations to real narration word anchors."
+  "anchors": "anchors.js",
+  "narration": {
+    "src": "narration.wav",
+    "start": 3.0,
+    "duration": 372.68,
+    "track": 10
   }
 }

@@ -154,10 +154,10 @@
 
           // Edit per use. Opening title card: eyebrow kicker + two-line title + one-line subtitle.
           var CONFIG = {
-            "kicker": "RECAP",
-            "titleLine1": "__FILL__ the payoff, line 1",
-            "titleLine2": "__FILL__ the payoff, line 2",
-            "subtitle": "__FILL__ one-line recap tied back to the opening hook."
+            "kicker": "THE ROUTE, AND THE STORY",
+            "titleLine1": "Vantage · Lewiston & Clarkston · Lolo Pass",
+            "titleLine2": "Missoula · Flathead · Glacier",
+            "subtitle": "Homeland · the mercy of 1805 · the flight of 1877 · about 700 miles."
           };
 
           var kicker = document.getElementById("mk-th-kicker");
@@ -171,15 +171,30 @@
           line2.textContent = CONFIG.titleLine2;
           subtitle.textContent = CONFIG.subtitle;
 
+          // Cue clock. anchors.js (tools/word_anchors.py <- transcript.json) is the source of
+          // truth; W maps each cue to a SCENE-RELATIVE spoken-word time. FALLBACK holds the same
+          // numbers frozen at author time, used only if anchors.js is absent (standalone preview).
+          var A = (typeof window !== "undefined" && window.__anchors) || {};
+          var SCENE_START = typeof A["beatRecap"] === "number" ? A["beatRecap"] : 342.35;
+          var FALLBACK = {
+            recapHistory: 8.24,
+          };
+          var W = {};
+          Object.keys(FALLBACK).forEach(function (k) {
+            W[k] = typeof A[k] === "number" ? Math.max(0, Math.round((A[k] - SCENE_START) * 1000) / 1000) : FALLBACK[k];
+          });
+          // B: scene-open choreography, measured from this scene's own boundary (not from speech).
+          var B = { b0: 0 };
+
           var tl = gsap.timeline({ paused: true });
 
           // Waterfall entrance — scene-relative, seek-safe. Calm cadence for the opener.
-          // 1) kicker fades + rises first.
+          // 1) kicker fades + rises first, on the scene's own boundary.
           tl.fromTo(
             kicker,
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
-            0.25,
+            B.b0 + 0.25
           );
 
           // 2) the two title lines arrive on a short stagger.
@@ -187,7 +202,7 @@
             [line1, line2],
             { opacity: 0, y: 44 },
             { opacity: 1, y: 0, duration: 0.85, ease: "power3.out", stagger: 0.14 },
-            0.75,
+            B.b0 + 0.75
           );
 
           // 3) the accent rule wipes in left→right (a graphic).
@@ -195,15 +210,15 @@
             rule,
             { scaleX: 0 },
             { scaleX: 1, duration: 0.7, ease: "power2.out" },
-            1.55,
+            B.b0 + 1
           );
 
-          // 4) the subtitle fades up last, then we hold on stillness.
+          // 4) the subtitle fades up on the spoken words it belongs to, then we hold on stillness.
           tl.fromTo(
             subtitle,
             { opacity: 0, y: 22 },
             { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-            1.95,
+            W.recapHistory
           );
 
           window.__timelines["90-recap"] = tl;
