@@ -1,0 +1,13 @@
+{
+  "title": "Bulk Identity Management with Graph PowerShell",
+  "type": "unit-video",
+  "profile": "unit-video",
+  "status": "scaffolded",
+  "voice": "en-US-Ava:DragonHDLatestNeural",
+  "source": "C:\\learn-pr\\learn-m365-pr\\learn-m365-pr\\wwl\\provision-govern-identities-entra\\includes\\3-bulk-identity-management-graph.md",
+  "deliverables": {
+    "mp4": "Bulk-Identity-Management-With-Graph-PowerShell.mp4",
+    "captions_vtt": "Bulk-Identity-Management-With-Graph-PowerShell.vtt",
+    "thumbnail": "Bulk-Identity-Management-With-Graph-PowerShell_thumbnail.png"
+  }
+}

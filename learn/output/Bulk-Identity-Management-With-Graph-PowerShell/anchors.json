@@ -1,0 +1,36 @@
+{
+  "_schema": "cue id -> exact spoken phrase (contiguous, case/punctuation-insensitive substring of narration.txt). Builder resolves to real times: py tools/word_anchors.py transcript.json --spec anchors.json -o anchors.js --lead-in <n>",
+  "_note": "Phrases intentionally land on ORDINARY words next to each cmdlet/scope token, never the token itself — how 'New-MgUser' / 'User.ReadWrite.All' tokenize in the transcript is unpredictable, so anchoring on plain words is robust. Each phrase is unique; if the TTS re-run makes one ambiguous, append '#2' to pick an occurrence.",
+  "_run_id": "bulk-identity-management-graph-202608071310",
+
+  "hook_question": "how do you create every one of those accounts",
+  "objectives_scope": "the right permission scope",
+
+  "overview_steps": "Connect, import, loop",
+
+  "connect_cmd": "session starts with",
+  "connect_scope": "you ask for exactly one scope",
+
+  "import_csv": "reads your spreadsheet into a collection",
+  "csv_columns": "a display name, a user principal name",
+
+  "loop_foreach": "Now the loop does the work",
+  "create_newmguser": "hands each row to",
+
+  "repeatable": "A script is repeatable",
+
+  "match_scope_question": "and not the broader",
+  "least_privilege": "match the scope to the task",
+
+  "pattern_scales": "scales to every bulk job",
+  "read_scope": "Reading users for an audit",
+
+  "update_cmd": "runs the very same",
+  "remove_cmd": "when an account has to go",
+
+  "contacts_trap": "doesn't manage mail contacts",
+  "newmailcontact": "That job belongs to",
+
+  "recap_one_pass": "the whole roster in one pass",
+  "cta_exercise": "The next exercise takes you"
+}
