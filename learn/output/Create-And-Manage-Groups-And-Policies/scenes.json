@@ -39,33 +39,81 @@
     {
       "id": "02-title",
       "src": "scenes/02-title.html",
-      "duration": 24.0,
+      "duration": 24.55,
       "seam": "hard"
     },
     {
       "id": "03-objectives",
       "src": "scenes/03-objectives.html",
-      "duration": 16.8,
+      "duration": 15.8,
+      "seam": "cut-left"
+    },
+    {
+      "id": "04-group-types",
+      "src": "scenes/04-group-types.html",
+      "duration": 29.32,
+      "seam": "cut-left"
+    },
+    {
+      "id": "05-membership",
+      "src": "scenes/05-membership.html",
+      "duration": 22.72,
+      "seam": "cut-left"
+    },
+    {
+      "id": "06-nesting-predict",
+      "src": "scenes/06-nesting-predict.html",
+      "duration": 17.88,
+      "seam": "cut-up"
+    },
+    {
+      "id": "07-nesting-reveal",
+      "src": "scenes/07-nesting-reveal.html",
+      "duration": 20.96,
+      "seam": "cut-left"
+    },
+    {
+      "id": "08-direct-members-rule",
+      "src": "scenes/08-direct-members-rule.html",
+      "duration": 19.75,
+      "seam": "cut-left"
+    },
+    {
+      "id": "09-naming-policy",
+      "src": "scenes/09-naming-policy.html",
+      "duration": 26.83,
+      "seam": "cut-down"
+    },
+    {
+      "id": "10-expiration-lifecycle",
+      "src": "scenes/10-expiration-lifecycle.html",
+      "duration": 32.3,
+      "seam": "cut-left"
+    },
+    {
+      "id": "11-expiration-limits",
+      "src": "scenes/11-expiration-limits.html",
+      "duration": 18.1,
       "seam": "cut-left"
     },
     {
       "id": "90-recap",
       "src": "scenes/90-recap.html",
-      "duration": 24.0,
+      "duration": 20.82,
       "seam": "cut-up"
     },
     {
       "id": "91-cta",
       "src": "scenes/91-cta.html",
-      "duration": 16.8,
+      "duration": 14.17,
       "seam": "cut-left"
     }
   ],
-  "body_slot": {
-    "insert_after": "03-objectives",
-    "before": "90-recap",
-    "target_scene_count": 5,
-    "max_scene_count": 16,
-    "note": "Author the teaching-body scenes here (each on the kit foundation), then insert them into 'scenes' between the opening and closing chrome. The builder re-times all durations to real narration word anchors."
+  "anchors": "anchors.js",
+  "narration": {
+    "src": "narration.wav",
+    "start": 3.0,
+    "duration": 261.61,
+    "track": 10
   }
 }

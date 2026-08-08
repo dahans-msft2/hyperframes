@@ -8,11 +8,48 @@
   <body>
     <template>
       <style>
-        /* === Learn-ILT kit block: title-hero (opening title card — kicker + 2-line title + subtitle). ===
-           Built on the kit foundation: no hardcoded colours/fonts/px type — tokens only.
-           Ground is host-selectable via #root[data-ground]; dark-field auto-inverts ink. */
-
+        /* === Learn-ILT scene: 90-recap — title-hero + recap chips — the payoff line mirrored by the three objectives === */
         /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+        /* =============================================================================
+           Learn-ILT KIT FOUNDATION  —  single source of truth for every kit block.
+           -----------------------------------------------------------------------------
+           Every block in templates/blocks/ opens its <style> with a VERBATIM copy of
+           this file (between the two BEGIN/END markers), then adds only block-specific
+           rules that REFERENCE these tokens + primitives. That is what makes a chart, a
+           spec list, a flowchart and a lower-third feel like one kit instead of seven
+           islands: shared tokens, one type scale, one ground-swap, shared primitives.
+
+           NAMING (every kit block file + its data-composition-id + its __timelines key
+           share ONE name):  <category>-<variant>  — lowercase, hyphen-separated.
+             category = the scene archetype (what kind of scene it is)
+             variant  = the specific style within that archetype
+           Current categories: stat- (single big number/count-up), chart- (multi-point
+           data viz), list- (enumerated rows), diagram- (nodes + relationships),
+           title- (title card), section- (segment divider), code- (code window),
+           callout- (key-point card), media- (screenshot / screen recording in a window),
+           lower-third- (name/role overlay). Reserved: quote-, compare-.
+           e.g. stat-progress, stat-count, chart-bar, chart-line, list-specs,
+           diagram-flow, media-screenshot, lower-third-bar.
+
+           AUTHORING RULES (the "one consistent approach"):
+             1. Never hardcode a brand colour, font, radius, or ground gradient in a
+                block. Read a token. If you need a value that isn't here, add it here.
+             2. Never size text in px. Use the --fs-* scale (cqw) so type scales with the
+                mount container and can never regress below the --fs-micro floor (~24px).
+             3. CONTRAST LAW: text is ALWAYS var(--ink) or var(--ink-soft). Accents
+                (var(--accent*)) colour GRAPHICS only — bars, lines, fills, borders,
+                chips, rules — never text.
+             4. Ground is chosen by the host via  #root[data-ground="…"]  (default
+                content-wash). Each ground layers the deck's real exported PNG
+                (assets/grounds/ground-<name>.png, copied into the project like fonts)
+                OVER a CSS-gradient fallback — if the PNG is absent (standalone preview),
+                the gradient shows. dark-field is CSS-only (no PNG) and flips ink to white
+                automatically — do not special-case it in a block.
+             5. The host owns scene lifetime. A block never hides/fades its own #root on
+                exit; register the paused timeline on window.__timelines[<id>] and stop.
+           ============================================================================= */
+
+        /* ---- reset ---------------------------------------------------------------- */
         #root,
         #root *,
         #root *::before,
@@ -21,54 +58,64 @@
           margin: 0;
           padding: 0;
         }
+
+        /* ---- #root: tokens + container ------------------------------------------- */
         #root {
           position: absolute;
           inset: 0;
           overflow: hidden;
-          container-type: size;
+          container-type: size; /* 1cqw = 1% of width = 19.2px at 1920 */
 
+          /* palette — content-wash (default ground). data-ground overrides below. */
           --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
-          --ink: #091f2e;
-          --ink-soft: #59636e;
-          --paper: #ffffff;
-          --paper-veil: rgba(255, 255, 255, 0.9);
+          --ink: #091f2e; /* all text */
+          --ink-soft: #59636e; /* secondary text */
+          --paper: #ffffff; /* panel / card fill */
+          --paper-veil: rgba(255, 255, 255, 0.9); /* translucent panel on a busy ground */
           --border: rgba(9, 31, 46, 0.16);
           --border-soft: rgba(9, 31, 46, 0.12);
           --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
 
-          --accent: #8661c5;
-          --accent-2: #0078d4;
-          --accent-3: #389a91;
-          --accent-4: #bf3ac4;
-          --accent-ink: #ffffff;
+          /* accents — GRAPHICS ONLY, never text */
+          --accent: #8661c5; /* purple  (primary)   */
+          --accent-2: #0078d4; /* blue    (secondary) */
+          --accent-3: #389a91; /* teal    (tertiary)  */
+          --accent-4: #bf3ac4; /* magenta (quaternary)*/
+          --accent-ink: #ffffff; /* text that sits ON an accent fill (chips/badges)   */
 
-          --fs-display: 11cqw;
-          --fs-h1: 4.6cqw;
-          --fs-h2: 3.4cqw;
-          --fs-h3: 2.4cqw;
-          --fs-lead: 2cqw;
-          --fs-body: 1.75cqw;
-          --fs-caption: 1.5cqw;
-          --fs-kicker: 1.55cqw;
-          --fs-micro: 1.25cqw;
+          /* type — cqw scale (never px in a block). ~value at 1920 wide in comments.  */
+          --fs-display: 11cqw; /* ~211px  hero stat / count-up                        */
+          --fs-h1: 4.6cqw; /* ~88px   title-card headline                         */
+          --fs-h2: 3.4cqw; /* ~65px   scene title / subject                       */
+          --fs-h3: 2.4cqw; /* ~46px   block headline                              */
+          --fs-lead: 2cqw; /* ~38px   lead / large label                          */
+          --fs-body: 1.75cqw; /* ~34px   body / row label                           */
+          --fs-caption: 1.5cqw; /* ~29px   caption / value                            */
+          --fs-kicker: 1.55cqw; /* ~30px   eyebrow / kicker                           */
+          --fs-micro: 1.25cqw; /* ~24px   FLOOR — nothing smaller than this          */
 
+          /* rhythm */
           --radius: 16px;
           --radius-sm: 10px;
           --radius-pill: 999px;
-          --stroke: 5px;
-          --rule: 3px;
+          --stroke: 5px; /* chart line / connector weight */
+          --rule: 3px; /* accent underline weight       */
 
           font-family: "Segoe UI", system-ui, sans-serif;
           color: var(--ink);
           background: var(--ground);
         }
+
         #root[data-ground="hero-swoosh"] {
+          /* warm paper with a stronger purple sweep — css fallback of the PNG swoosh */
           --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
         }
         #root[data-ground="section-field"] {
+          /* the deck's pale "background-gradient" export — cool blue wash */
           --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
         }
         #root[data-ground="dark-field"] {
+          /* the dramatic exception: near-black navy, WHITE ink. css-only (no PNG). */
           --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
           --ink: #ffffff;
           --ink-soft: rgba(255, 255, 255, 0.72);
@@ -78,6 +125,9 @@
           --border-soft: rgba(255, 255, 255, 0.14);
           --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
         }
+
+        /* ---- shared primitives ---------------------------------------------------- */
+        /* Type roles — a block composes these instead of inventing a size each time.  */
         .ilt-kicker {
           font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
           font-weight: 600;
@@ -94,57 +144,140 @@
           letter-spacing: -0.02em;
           color: var(--ink);
         }
+        .ilt-headline {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h3);
+          line-height: 1.12;
+          letter-spacing: -0.015em;
+          color: var(--ink);
+        }
+        .ilt-body {
+          font-weight: 400;
+          font-size: var(--fs-body);
+          line-height: 1.3;
+          color: var(--ink);
+        }
+        .ilt-caption {
+          font-weight: 400;
+          font-size: var(--fs-caption);
+          line-height: 1.3;
+          color: var(--ink-soft);
+        }
+        .ilt-value {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-caption);
+          letter-spacing: -0.01em;
+          color: var(--ink);
+          font-variant-numeric: tabular-nums;
+        }
+        .ilt-display {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-display);
+          line-height: 0.95;
+          letter-spacing: -0.03em;
+          color: var(--ink);
+          font-variant-numeric: tabular-nums;
+        }
+
+        /* Surfaces */
+        .ilt-panel {
+          background: var(--paper);
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow);
+        }
+        .ilt-panel--veil {
+          background: var(--paper-veil);
+        }
+        .ilt-chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6em;
+          padding: 0.5em 1.1em;
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius-pill);
+          font-size: var(--fs-micro);
+          font-weight: 600;
+          color: var(--ink);
+          background: var(--paper-veil);
+        }
+
+        /* Accents-as-graphics */
         .ilt-rule {
+          /* accent underline bar — a graphic, never text colour */
           height: var(--rule);
           border-radius: var(--rule);
           background: var(--accent);
         }
+        .ilt-tab {
+          /* vertical accent tab (lower-thirds, callouts) */
+          width: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent);
+        }
+        /* SVG helpers: stroke:var(--accent) for lines, stroke:var(--border-soft) for axes */
+        .ilt-axis {
+          stroke: var(--border-soft);
+          stroke-width: 2;
+          fill: none;
+        }
         /* ==== END _foundation.css ==== */
 
-        /* ---- block-specific: compose primitives + tokens only ---- */
-        #mk-th-group {
+        /* ---- scene-specific: compose foundation primitives + tokens only ---- */
+        #r-group {
           position: absolute;
-          left: 184px;
+          left: 190px;
           top: 50%;
-          width: 1250px; /* left ~65% of a 1920 frame, generous right margin */
-          transform: translateY(-50%);
+          width: 1560px;
         }
-        #mk-th-title {
-          font-size: var(--fs-h1); /* title-card headline — up to the h1 tier */
-          margin-top: 2.4cqw;
+        #r-title {
+          font-size: var(--fs-h1);
+          margin-top: 2.2cqw;
         }
-        #mk-th-line {
+        #r-line1,
+        #r-line2 {
           display: block;
         }
-        #mk-th-rule {
-          width: 104px; /* graphic underline bar (accent = graphic, not text) */
-          margin: 2.6cqw 0 0;
+        #r-rule {
+          width: 148px;
+          margin: 2.4cqw 0 0;
           transform-origin: left center;
         }
-        #mk-th-subtitle {
-          margin-top: 2.4cqw;
+        #r-sub {
+          margin-top: 2.2cqw;
           font-size: var(--fs-lead);
           line-height: 1.3;
           color: var(--ink-soft);
         }
+        #r-chips {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 18px;
+          margin-top: 2.6cqw;
+          max-width: 1420px;
+        }
+        .r-chip {
+          font-size: var(--fs-caption);
+        }
       </style>
 
-      <div
-        id="root"
-        data-composition-id="90-recap"
-        data-ground="hero-swoosh"
-        data-width="1920"
-        data-height="1080"
-      >
-        <!-- host may override data-ground with "section-field" | "dark-field" -->
-        <div id="mk-th-group">
-          <div id="mk-th-kicker" class="ilt-kicker"></div>
-          <div id="mk-th-title" class="ilt-title">
-            <span id="mk-th-line1" class="mk-th-line"></span>
-            <span id="mk-th-line2" class="mk-th-line"></span>
+      <div id="root" data-composition-id="90-recap" data-width="1920" data-height="1080">
+        <div id="r-group">
+          <div id="r-kicker" class="ilt-kicker">Recap</div>
+          <div id="r-title" class="ilt-title">
+            <span id="r-line1">Assignments reach</span>
+            <span id="r-line2">direct members only</span>
           </div>
-          <div id="mk-th-rule" class="ilt-rule"></div>
-          <div id="mk-th-subtitle"></div>
+          <div id="r-rule" class="ilt-rule"></div>
+          <div id="r-sub">Never a cascade &mdash; always ask who a group's direct members are.</div>    <div id="r-chips">
+            <span id="r-chip-0" class="ilt-chip r-chip">Security groups &rarr; access</span>
+            <span id="r-chip-1" class="ilt-chip r-chip">Microsoft 365 groups &rarr; collaboration</span>
+            <span id="r-chip-2" class="ilt-chip r-chip">Dynamic membership &rarr; a growing group stays current</span>
+            <span id="r-chip-3" class="ilt-chip r-chip">Naming + expiration &rarr; a clean estate</span>
+          </div>
         </div>
       </div>
 
@@ -152,59 +285,52 @@
         (function () {
           window.__timelines = window.__timelines || {};
 
-          // Edit per use. Opening title card: eyebrow kicker + two-line title + one-line subtitle.
-          var CONFIG = {
-            "kicker": "RECAP",
-            "titleLine1": "__FILL__ the payoff, line 1",
-            "titleLine2": "__FILL__ the payoff, line 2",
-            "subtitle": "__FILL__ one-line recap tied back to the opening hook."
-          };
+          // Audio is the clock. anchors.js is generated by tools/word_anchors.py from
+          // transcript.json (lead-in 3.0s = the silent bumper) and is loaded by the host.
+          // If it is missing every cue time below is unresolvable — fail loudly rather than
+          // silently render a de-synced scene.
+          if (!window.__anchors) {
+            throw new Error("90-recap: anchors.js not loaded - cue times unresolvable");
+          }
 
-          var kicker = document.getElementById("mk-th-kicker");
-          var line1 = document.getElementById("mk-th-line1");
-          var line2 = document.getElementById("mk-th-line2");
-          var rule = document.getElementById("mk-th-rule");
-          var subtitle = document.getElementById("mk-th-subtitle");
+          // S = this scene's cut on the composition clock (scenes.json).
+          // W = every spoken-word anchor rebased onto THIS scene's clock, so a content cue
+          //     reads W.<anchor_name> and never a hand-estimated offset.
+          var S = 231.21;
+          var W = {};
+          Object.keys(window.__anchors).forEach(function (k) {
+            W[k] = window.__anchors[k] - S;
+          });
 
-          kicker.textContent = CONFIG.kicker;
-          line1.textContent = CONFIG.titleLine1;
-          line2.textContent = CONFIG.titleLine2;
-          subtitle.textContent = CONFIG.subtitle;
+          // B = mechanical beat markers measured from the scene cut itself, never from speech:
+          // the scene-open cadence and the slow camera settle (kit precedent: bumper's push).
+          var B = { o1: 0.3, push: 1.0 };
 
           var tl = gsap.timeline({ paused: true });
 
-          // Waterfall entrance — scene-relative, seek-safe. Calm cadence for the opener.
-          // 1) kicker fades + rises first.
-          tl.fromTo(
-            kicker,
-            { opacity: 0, y: 24 },
-            { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
-            0.25,
-          );
+          tl.set("#r-group", { yPercent: -50, transformOrigin: "left center" }, 0);
+          ["#r-kicker", "#r-line1", "#r-line2", "#r-sub", "#r-chip-0", "#r-chip-1", "#r-chip-2", "#r-chip-3"].forEach((s) => tl.set(s, { opacity: 0, y: 26 }, 0));
+          ["#r-rule"].forEach((s) => tl.set(s, { scaleX: 0 }, 0));
 
-          // 2) the two title lines arrive on a short stagger.
-          tl.fromTo(
-            [line1, line2],
-            { opacity: 0, y: 44 },
-            { opacity: 1, y: 0, duration: 0.85, ease: "power3.out", stagger: 0.14 },
-            0.75,
-          );
+          tl.to("#r-kicker", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, B.o1);
+          tl.to("#r-group", { scale: 1.024, duration: 18.8, ease: "none" }, B.push);
 
-          // 3) the accent rule wipes in left→right (a graphic).
-          tl.fromTo(
-            rule,
-            { scaleX: 0 },
-            { scaleX: 1, duration: 0.7, ease: "power2.out" },
-            1.55,
-          );
-
-          // 4) the subtitle fades up last, then we hold on stillness.
-          tl.fromTo(
-            subtitle,
-            { opacity: 0, y: 22 },
-            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-            1.95,
-          );
+          // "security groups for access…" / "…Microsoft 365 groups for collaboration"
+          tl.to("#r-chip-0", { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, W.recap_start);
+          tl.to("#r-chip-1", { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, W.recap_collab);
+          // "dynamic membership to keep a growing group current"
+          tl.to("#r-chip-2", { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, W.recap_dynamic);
+          // "Nesting that reaches direct members only…" — the payoff line lands.
+          tl.to("#r-line1", { opacity: 1, y: 0, duration: 0.75, ease: "power3.out" }, W.recap_nesting);
+          tl.to("#r-line2", { opacity: 1, y: 0, duration: 0.75, ease: "power3.out" }, W.recap_nesting);
+          // "…never a cascade"
+          tl.to("#r-rule", { scaleX: 1, duration: 0.7, ease: "power2.out" }, W.recap_cascade);
+          tl.to("#r-sub", { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, W.recap_cascade);
+          // "And naming and expiration policies…"
+          tl.to("#r-chip-3", { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, W.recap_naming);
+          // "…keeping the estate clean as Relecloud scales" — the four chips settle as one set.
+          tl.to(["#r-chip-0", "#r-chip-1", "#r-chip-2", "#r-chip-3"], { y: -12, duration: 0.7, ease: "power2.out", stagger: 0.1 }, W.recap_clean);
+          tl.to("#r-rule", { scaleX: 2.1, duration: 1.2, ease: "power2.inOut" }, W.recap_cleanEnd);
 
           window.__timelines["90-recap"] = tl;
         })();

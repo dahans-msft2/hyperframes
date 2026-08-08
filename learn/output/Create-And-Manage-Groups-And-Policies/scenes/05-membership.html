@@ -8,7 +8,7 @@
   <body>
     <template>
       <style>
-        /* === Learn-ILT scene: 03-objectives — list-steps — the three objectives as a numbered ladder, framed as stakes === */
+        /* === Learn-ILT scene: 05-membership — list-select — two membership models; the growing office selects dynamic === */
         /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
         /* =============================================================================
            Learn-ILT KIT FOUNDATION  —  single source of truth for every kit block.
@@ -227,113 +227,142 @@
         /* ==== END _foundation.css ==== */
 
         /* ---- scene-specific: compose foundation primitives + tokens only ---- */
-        #o-wrap {
+        #m-wrap {
           position: absolute;
-          left: 190px;
+          left: 180px;
           top: 50%;
           width: 1560px;
         }
-        #o-kicker {
-          margin-bottom: 1.1cqw;
-        }
-        #o-lead {
-          margin-bottom: 2.6cqw;
-          max-width: 1240px;
-        }
-        #o-lead span {
-          display: block;
-          font-size: var(--fs-lead);
-          line-height: 1.34;
-          color: var(--ink-soft);
-        }
-        #o-col {
-          position: relative;
-        }
-        /* the connector: a thin vertical line linking the badges (a graphic) */
-        #o-connector {
-          position: absolute;
-          left: 42px;
-          top: 44px;
-          width: var(--rule);
-          height: 264px;
-          border-radius: var(--rule);
-          background: var(--border-soft);
-          transform-origin: top center;
-        }
-        .o-row {
-          position: relative;
+        #m-head {
           display: flex;
-          align-items: center;
-          gap: 34px;
+          align-items: flex-end;
+          justify-content: space-between;
+          margin-bottom: 1.6cqw;
         }
-        .o-row + .o-row {
-          margin-top: 44px;
-        }
-        .o-badge {
-          flex: none;
-          width: 88px;
-          height: 88px;
+        #m-count {
           display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: var(--radius-pill);
-          background: var(--accent); /* accent fill = graphic */
-          box-shadow: var(--shadow);
+          align-items: baseline;
+          gap: 0.7cqw;
         }
-        .o-num {
+        #m-count-num {
           font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
           font-weight: 600;
-          font-size: var(--fs-h3);
-          color: var(--accent-ink); /* numeral SITS ON the accent fill — sanctioned */
+          font-size: var(--fs-h1);
+          line-height: 0.9;
+          letter-spacing: -0.03em;
+          color: var(--ink);
           font-variant-numeric: tabular-nums;
         }
-        .o-text {
+        .m-row {
+          position: relative;
+          display: flex;
+          gap: 32px;
+          padding: 34px 44px;
+          align-items: stretch;
+          transform-origin: left center;
+        }
+        .m-row + .m-row {
+          margin-top: 34px;
+        }
+        .m-tab {
+          flex: none;
+          align-self: stretch;
+          transform-origin: center top; /* accent tab = graphic */
+        }
+        .m-body {
           display: flex;
           flex-direction: column;
-          gap: 0.35cqw;
-          width: 1180px;
+          gap: 0.75cqw;
+          width: 1340px;
         }
-        .o-title {
-          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
-          font-weight: 600;
-          font-size: var(--fs-body);
-          line-height: 1.14;
-          letter-spacing: -0.015em;
-          color: var(--ink);
+        .m-detail {
+          display: flex;
+          align-items: baseline;
+          gap: 0.8cqw;
+        }
+        .m-dot {
+          flex: none;
+          width: 12px;
+          height: 12px;
+          border-radius: var(--radius-pill);
+          background: var(--accent-2); /* accent dot = graphic */
+        }
+
+        #m-glyph {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6cqw;
+          margin-top: 0.4cqw;
+        }
+        #m-glyph-arrow {
+          width: 68px;
+          height: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent-2); /* connector = graphic */
+          transform-origin: left center;
+        }
+        #m-note {
+          display: inline-flex;
+          font-size: var(--fs-caption);
+        }
+        #m-note-rule {
+          position: absolute;
+          left: 0;
+          bottom: -14px;
+          width: 100%;
+          height: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent);
+          transform-origin: left center;
+        }
+        #m-note-wrap {
+          position: relative;
+          display: inline-block;
+          margin-top: 1.5cqw;
         }
       </style>
 
-      <div id="root" data-composition-id="03-objectives" data-width="1920" data-height="1080">
-        <div id="o-wrap">
-          <div id="o-kicker" class="ilt-kicker">What you'll do</div>
-          <div id="o-lead">
-            <span id="o-lead-a">Get the choice wrong and the new hires lose access they need &mdash;</span>
-            <span id="o-lead-b">or gain access they shouldn't.</span>
+      <div id="root" data-composition-id="05-membership" data-width="1920" data-height="1080">
+        <div id="m-wrap">
+          <div id="m-head">
+            <div id="m-kicker" class="ilt-kicker">Membership</div>
+            <div id="m-count">
+              <span id="m-count-num">0</span>
+              <span id="m-count-label" class="ilt-caption">membership models</span>
+            </div>
           </div>
-          <div id="o-col">
-            <div id="o-connector"></div>
-            <div id="o-row-0" class="o-row">
-              <div id="o-badge-0" class="o-badge"><span class="o-num">1</span></div>
-              <div class="o-text">
-                <div class="o-title">Pick the right group type and membership model</div>
-                <div class="ilt-caption">Security or Microsoft 365 &middot; assigned or dynamic</div>
-              </div>
-            </div>
-            <div id="o-row-1" class="o-row">
-              <div id="o-badge-1" class="o-badge"><span class="o-num">2</span></div>
-              <div class="o-text">
-                <div class="o-title">Know why nesting doesn't cascade access</div>
-                <div class="ilt-caption">A parent's licences reach its direct members only</div>
-              </div>
-            </div>
-            <div id="o-row-2" class="o-row">
-              <div id="o-badge-2" class="o-badge"><span class="o-num">3</span></div>
-              <div class="o-text">
-                <div class="o-title">Govern the estate with naming and expiration policies</div>
-                <div class="ilt-caption">Names that stay tidy, groups that don't outlive their purpose</div>
+
+          <div id="m-row-0" class="m-row ilt-panel">
+            <div id="m-tab-0" class="m-tab ilt-tab"></div>
+            <div class="m-body">
+              <div id="m-label-0" class="ilt-headline">Assigned membership</div>
+              <div id="m-d0a" class="m-detail">
+                <span class="m-dot"></span>
+                <span class="ilt-caption">An admin adds and removes each person by hand</span>
               </div>
             </div>
           </div>
+
+          <div id="m-row-1" class="m-row ilt-panel">
+            <div id="m-tab-1" class="m-tab ilt-tab"></div>
+            <div class="m-body">
+              <div id="m-label-1" class="ilt-headline">Dynamic membership</div>
+              <div id="m-d1a" class="m-detail">
+                <span class="m-dot"></span>
+                <span class="ilt-caption">Microsoft Entra ID evaluates a rule over user attributes</span>
+              </div>
+              <div id="m-glyph">
+                <span id="m-glyph-a" class="ilt-chip">office location</span>
+                <span id="m-glyph-arrow"></span>
+                <span id="m-glyph-b" class="ilt-chip">membership updates automatically</span>
+              </div>
+            </div>
+          </div>
+
+          <span id="m-note-wrap">
+            <span id="m-note" class="ilt-chip">Still hiring &mdash; the next starter is added for you</span>
+            <span id="m-note-rule"></span>
+          </span>
         </div>
       </div>
 
@@ -346,13 +375,13 @@
           // If it is missing every cue time below is unresolvable — fail loudly rather than
           // silently render a de-synced scene.
           if (!window.__anchors) {
-            throw new Error("03-objectives: anchors.js not loaded - cue times unresolvable");
+            throw new Error("05-membership: anchors.js not loaded - cue times unresolvable");
           }
 
           // S = this scene's cut on the composition clock (scenes.json).
           // W = every spoken-word anchor rebased onto THIS scene's clock, so a content cue
           //     reads W.<anchor_name> and never a hand-estimated offset.
-          var S = 27.55;
+          var S = 72.67;
           var W = {};
           Object.keys(window.__anchors).forEach(function (k) {
             W[k] = window.__anchors[k] - S;
@@ -360,39 +389,53 @@
 
           // B = mechanical beat markers measured from the scene cut itself, never from speech:
           // the scene-open cadence and the slow camera settle (kit precedent: bumper's push).
-          var B = { o1: 0.3, push: 1.0 };
+          var B = { o1: 0.25, o2: 0.65, push: 1.0, hold: 21.7 };
 
           var tl = gsap.timeline({ paused: true });
 
-          tl.set("#o-wrap", { yPercent: -50, transformOrigin: "left center" }, 0);
-          ["#o-kicker", "#o-lead-a", "#o-lead-b", "#o-row-0", "#o-row-1", "#o-row-2"].forEach((s) => tl.set(s, { opacity: 0, x: -38 }, 0));
-          ["#o-connector"].forEach((s) => tl.set(s, { scaleY: 0 }, 0));
-          ["#o-badge-0", "#o-badge-1", "#o-badge-2"].forEach((s) => tl.set(s, { scale: 0.35 }, 0));
+          var counter = { v: 0 };
+          var countEl = document.getElementById("m-count-num");
+          function paintCount() {
+            countEl.textContent = String(Math.round(counter.v));
+          }
 
-          tl.to("#o-kicker", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, B.o1);
-          tl.to("#o-wrap", { scale: 1.026, duration: 14.2, ease: "none" }, B.push);
+          tl.set("#m-wrap", { yPercent: -50, transformOrigin: "left center" }, 0);
+          ["#m-kicker", "#m-count", "#m-row-0", "#m-row-1", "#m-label-0", "#m-label-1", "#m-d0a", "#m-d1a", "#m-glyph-a", "#m-glyph-b", "#m-note"].forEach((s) => tl.set(s, { opacity: 0, y: 22 }, 0));
+          ["#m-tab-0", "#m-tab-1"].forEach((s) => tl.set(s, { scaleY: 0 }, 0));
+          ["#m-glyph-arrow", "#m-note-rule"].forEach((s) => tl.set(s, { scaleX: 0 }, 0));
 
-          // "…either lose access they need" / "or gain access they shouldn't" — the stakes, two lines.
-          tl.to("#o-lead-a", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_lose);
-          tl.to("#o-lead-b", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_gain);
+          tl.to("#m-kicker", { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, B.o1);
+          tl.to("#m-count", { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, B.o2);
+          tl.to("#m-wrap", { scale: 1.03, duration: B.hold, ease: "none" }, B.push);
 
-          // the connector draws down across the three objectives as they are spoken.
-          tl.to("#o-connector", { scaleY: 1, duration: 7.4, ease: "none" }, W.obj_choices);
+          // "With assigned membership…" — the count resolves and both shells land.
+          tl.to(counter, { v: 2, duration: 1.0, ease: "power2.out", onUpdate: paintCount }, W.member_assigned);
+          tl.to("#m-row-0", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, W.member_assigned);
+          tl.to("#m-row-1", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, W.member_assigned);
+          tl.to("#m-label-0", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.member_assigned);
+          tl.to("#m-tab-0", { scaleY: 1, duration: 0.6, ease: "power2.out" }, W.member_assigned);
+          // "…an admin adds and removes each person by hand"
+          tl.to("#m-d0a", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.member_manual);
 
-          // "pick the right group type"
-          tl.to("#o-row-0", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_choices);
-          tl.to("#o-badge-0", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.obj_choices);
-          // "…decide how people become members"
-          tl.to("#o-row-1", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_members);
-          tl.to("#o-badge-1", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.obj_members);
-          // "…and set the policies…"
-          tl.to("#o-row-2", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_policies);
-          tl.to("#o-badge-2", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.obj_policies);
+          // "With dynamic membership…"
+          tl.to("#m-label-1", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.member_dynamic_label);
+          tl.to("#m-tab-1", { scaleY: 1, duration: 0.6, ease: "power2.out" }, W.member_dynamic_label);
+          // "…reads user attributes" — the chosen row lifts, the peer recedes.
+          tl.to("#m-d1a", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.member_dynamic);
+          tl.to("#m-row-1", { x: 26, duration: 0.7, ease: "power3.out" }, W.member_dynamic);
+          tl.to("#m-tab-1", { scaleX: 3, duration: 0.7, ease: "power3.out" }, W.member_dynamic);
+          tl.to("#m-row-0", { opacity: 0.42, scale: 0.985, duration: 0.7, ease: "power2.out" }, W.member_dynamic);
+          // "…and updates the group automatically" — attributes flow into the auto glyph.
+          tl.to("#m-glyph-a", { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, W.member_auto);
+          tl.to("#m-glyph-arrow", { scaleX: 1, duration: 0.55, ease: "power2.out" }, W.member_auto);
+          tl.to("#m-glyph-b", { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, W.member_auto);
 
-          // "…from sliding into clutter" — the ladder settles as one.
-          tl.to(["#o-badge-0", "#o-badge-1", "#o-badge-2"], { scale: 1.09, duration: 0.5, ease: "power2.out", stagger: 0.12 }, W.obj_clutter);
+          // "For an office that's still hiring…"
+          tl.to("#m-note", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, W.member_hiring);
+          // "…nobody has to remember to add the next starter"
+          tl.to("#m-note-rule", { scaleX: 1, duration: 0.7, ease: "power2.out" }, W.member_verdict);
 
-          window.__timelines["03-objectives"] = tl;
+          window.__timelines["05-membership"] = tl;
         })();
       </script>
     </template>

@@ -8,7 +8,7 @@
   <body>
     <template>
       <style>
-        /* === Learn-ILT scene: 03-objectives — list-steps — the three objectives as a numbered ladder, framed as stakes === */
+        /* === Learn-ILT scene: 04-group-types — list-select — two group types; the access problem selects the security group === */
         /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
         /* =============================================================================
            Learn-ILT KIT FOUNDATION  —  single source of truth for every kit block.
@@ -227,113 +227,117 @@
         /* ==== END _foundation.css ==== */
 
         /* ---- scene-specific: compose foundation primitives + tokens only ---- */
-        #o-wrap {
+        #g-wrap {
           position: absolute;
-          left: 190px;
+          left: 180px;
           top: 50%;
           width: 1560px;
         }
-        #o-kicker {
-          margin-bottom: 1.1cqw;
-        }
-        #o-lead {
-          margin-bottom: 2.6cqw;
-          max-width: 1240px;
-        }
-        #o-lead span {
-          display: block;
-          font-size: var(--fs-lead);
-          line-height: 1.34;
-          color: var(--ink-soft);
-        }
-        #o-col {
-          position: relative;
-        }
-        /* the connector: a thin vertical line linking the badges (a graphic) */
-        #o-connector {
-          position: absolute;
-          left: 42px;
-          top: 44px;
-          width: var(--rule);
-          height: 264px;
-          border-radius: var(--rule);
-          background: var(--border-soft);
-          transform-origin: top center;
-        }
-        .o-row {
-          position: relative;
+        #g-head {
           display: flex;
-          align-items: center;
-          gap: 34px;
+          align-items: flex-end;
+          justify-content: space-between;
+          margin-bottom: 1.6cqw;
         }
-        .o-row + .o-row {
-          margin-top: 44px;
-        }
-        .o-badge {
-          flex: none;
-          width: 88px;
-          height: 88px;
+        #g-count {
           display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: var(--radius-pill);
-          background: var(--accent); /* accent fill = graphic */
-          box-shadow: var(--shadow);
+          align-items: baseline;
+          gap: 0.7cqw;
         }
-        .o-num {
+        #g-count-num {
           font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
           font-weight: 600;
-          font-size: var(--fs-h3);
-          color: var(--accent-ink); /* numeral SITS ON the accent fill — sanctioned */
+          font-size: var(--fs-h1);
+          line-height: 0.9;
+          letter-spacing: -0.03em;
+          color: var(--ink);
           font-variant-numeric: tabular-nums;
         }
-        .o-text {
+        .g-row {
+          position: relative;
+          display: flex;
+          gap: 32px;
+          padding: 34px 44px;
+          align-items: stretch;
+          transform-origin: left center;
+        }
+        .g-row + .g-row {
+          margin-top: 34px;
+        }
+        .g-tab {
+          flex: none;
+          align-self: stretch;
+          transform-origin: center top; /* accent tab = graphic */
+        }
+        .g-body {
           display: flex;
           flex-direction: column;
-          gap: 0.35cqw;
-          width: 1180px;
+          gap: 0.75cqw;
+          width: 1340px;
         }
-        .o-title {
-          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
-          font-weight: 600;
-          font-size: var(--fs-body);
-          line-height: 1.14;
-          letter-spacing: -0.015em;
-          color: var(--ink);
+        .g-detail {
+          display: flex;
+          align-items: baseline;
+          gap: 0.8cqw;
+        }
+        .g-dot {
+          flex: none;
+          width: 12px;
+          height: 12px;
+          border-radius: var(--radius-pill);
+          background: var(--accent-2); /* accent dot = graphic */
+        }
+
+        #g-verdict {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.7cqw;
+          margin-top: 1.5cqw;
+          font-size: var(--fs-caption);
         }
       </style>
 
-      <div id="root" data-composition-id="03-objectives" data-width="1920" data-height="1080">
-        <div id="o-wrap">
-          <div id="o-kicker" class="ilt-kicker">What you'll do</div>
-          <div id="o-lead">
-            <span id="o-lead-a">Get the choice wrong and the new hires lose access they need &mdash;</span>
-            <span id="o-lead-b">or gain access they shouldn't.</span>
+      <div id="root" data-composition-id="04-group-types" data-width="1920" data-height="1080">
+        <div id="g-wrap">
+          <div id="g-head">
+            <div id="g-kicker" class="ilt-kicker">Group types</div>
+            <div id="g-count">
+              <span id="g-count-num">0</span>
+              <span id="g-count-label" class="ilt-caption">kinds of group</span>
+            </div>
           </div>
-          <div id="o-col">
-            <div id="o-connector"></div>
-            <div id="o-row-0" class="o-row">
-              <div id="o-badge-0" class="o-badge"><span class="o-num">1</span></div>
-              <div class="o-text">
-                <div class="o-title">Pick the right group type and membership model</div>
-                <div class="ilt-caption">Security or Microsoft 365 &middot; assigned or dynamic</div>
+
+          <div id="g-row-0" class="g-row ilt-panel">
+            <div id="g-tab-0" class="g-tab ilt-tab"></div>
+            <div class="g-body">
+              <div id="g-label-0" class="ilt-headline">Security group</div>
+              <div id="g-d0a" class="g-detail">
+                <span class="g-dot"></span>
+                <span class="ilt-caption">Manages access &mdash; apps, files, Conditional Access, licences</span>
               </div>
-            </div>
-            <div id="o-row-1" class="o-row">
-              <div id="o-badge-1" class="o-badge"><span class="o-num">2</span></div>
-              <div class="o-text">
-                <div class="o-title">Know why nesting doesn't cascade access</div>
-                <div class="ilt-caption">A parent's licences reach its direct members only</div>
-              </div>
-            </div>
-            <div id="o-row-2" class="o-row">
-              <div id="o-badge-2" class="o-badge"><span class="o-num">3</span></div>
-              <div class="o-text">
-                <div class="o-title">Govern the estate with naming and expiration policies</div>
-                <div class="ilt-caption">Names that stay tidy, groups that don't outlive their purpose</div>
+              <div id="g-d0b" class="g-detail">
+                <span class="g-dot"></span>
+                <span class="ilt-caption">Holds users, devices, even service principals</span>
               </div>
             </div>
           </div>
+
+          <div id="g-row-1" class="g-row ilt-panel">
+            <div id="g-tab-1" class="g-tab ilt-tab"></div>
+            <div class="g-body">
+              <div id="g-label-1" class="ilt-headline">Microsoft 365 group</div>
+              <div id="g-d1a" class="g-detail">
+                <span class="g-dot"></span>
+                <span class="ilt-caption">For collaboration &mdash; a shared mailbox, calendar, and site</span>
+              </div>
+              <div id="g-d1b" class="g-detail">
+                <span class="g-dot"></span>
+                <span class="ilt-caption">Holds only users</span>
+              </div>
+            </div>
+          </div>
+
+          <span id="g-verdict" class="ilt-chip">Relecloud's job is access</span>
         </div>
       </div>
 
@@ -346,13 +350,13 @@
           // If it is missing every cue time below is unresolvable — fail loudly rather than
           // silently render a de-synced scene.
           if (!window.__anchors) {
-            throw new Error("03-objectives: anchors.js not loaded - cue times unresolvable");
+            throw new Error("04-group-types: anchors.js not loaded - cue times unresolvable");
           }
 
           // S = this scene's cut on the composition clock (scenes.json).
           // W = every spoken-word anchor rebased onto THIS scene's clock, so a content cue
           //     reads W.<anchor_name> and never a hand-estimated offset.
-          var S = 27.55;
+          var S = 43.35;
           var W = {};
           Object.keys(window.__anchors).forEach(function (k) {
             W[k] = window.__anchors[k] - S;
@@ -360,39 +364,54 @@
 
           // B = mechanical beat markers measured from the scene cut itself, never from speech:
           // the scene-open cadence and the slow camera settle (kit precedent: bumper's push).
-          var B = { o1: 0.3, push: 1.0 };
+          var B = { o1: 0.25, o2: 0.65, push: 1.0, hold: 28.3 };
 
           var tl = gsap.timeline({ paused: true });
 
-          tl.set("#o-wrap", { yPercent: -50, transformOrigin: "left center" }, 0);
-          ["#o-kicker", "#o-lead-a", "#o-lead-b", "#o-row-0", "#o-row-1", "#o-row-2"].forEach((s) => tl.set(s, { opacity: 0, x: -38 }, 0));
-          ["#o-connector"].forEach((s) => tl.set(s, { scaleY: 0 }, 0));
-          ["#o-badge-0", "#o-badge-1", "#o-badge-2"].forEach((s) => tl.set(s, { scale: 0.35 }, 0));
+          var counter = { v: 0 };
+          var countEl = document.getElementById("g-count-num");
+          function paintCount() {
+            countEl.textContent = String(Math.round(counter.v));
+          }
 
-          tl.to("#o-kicker", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, B.o1);
-          tl.to("#o-wrap", { scale: 1.026, duration: 14.2, ease: "none" }, B.push);
 
-          // "…either lose access they need" / "or gain access they shouldn't" — the stakes, two lines.
-          tl.to("#o-lead-a", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_lose);
-          tl.to("#o-lead-b", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_gain);
+          tl.set("#g-wrap", { yPercent: -50, transformOrigin: "left center" }, 0);
+          ["#g-kicker", "#g-count", "#g-row-0", "#g-row-1", "#g-label-0", "#g-label-1", "#g-d0a", "#g-d0b", "#g-d1a", "#g-d1b", "#g-verdict"].forEach((s) => tl.set(s, { opacity: 0, y: 22 }, 0));
+          ["#g-tab-0", "#g-tab-1"].forEach((s) => tl.set(s, { scaleY: 0 }, 0));
 
-          // the connector draws down across the three objectives as they are spoken.
-          tl.to("#o-connector", { scaleY: 1, duration: 7.4, ease: "none" }, W.obj_choices);
+          tl.to("#g-kicker", { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, B.o1);
+          tl.to("#g-count", { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, B.o2);
+          // the whole scene rides one slow settle — motion performs, it never idles.
+          tl.to("#g-wrap", { scale: 1.03, duration: B.hold, ease: "none" }, B.push);
 
-          // "pick the right group type"
-          tl.to("#o-row-0", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_choices);
-          tl.to("#o-badge-0", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.obj_choices);
-          // "…decide how people become members"
-          tl.to("#o-row-1", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_members);
-          tl.to("#o-badge-1", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.obj_members);
-          // "…and set the policies…"
-          tl.to("#o-row-2", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_policies);
-          tl.to("#o-badge-2", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.obj_policies);
+          // "two kinds of group solve two different problems" — the count resolves and both shells land.
+          tl.to(counter, { v: 2, duration: 1.0, ease: "power2.out", onUpdate: paintCount }, W.types_twokinds);
+          tl.to("#g-row-0", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, W.types_twokinds);
+          tl.to("#g-row-1", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, W.types_twokinds);
 
-          // "…from sliding into clutter" — the ladder settles as one.
-          tl.to(["#o-badge-0", "#o-badge-1", "#o-badge-2"], { scale: 1.09, duration: 0.5, ease: "power2.out", stagger: 0.12 }, W.obj_clutter);
+          // "A security group manages access…"
+          tl.to("#g-label-0", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.types_security);
+          tl.to("#g-tab-0", { scaleY: 1, duration: 0.6, ease: "power2.out" }, W.types_security);
+          // "…apps, files, Conditional Access, licenses"
+          tl.to("#g-d0a", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.types_apps);
+          // "…it can hold users, devices, even service principals"
+          tl.to("#g-d0b", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.types_hold);
 
-          window.__timelines["03-objectives"] = tl;
+          // "A Microsoft 365 group…"
+          tl.to("#g-label-1", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.types_m365);
+          tl.to("#g-tab-1", { scaleY: 1, duration: 0.6, ease: "power2.out" }, W.types_m365);
+          // "…is for collaboration instead"
+          tl.to("#g-d1a", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.types_collab);
+          // "…and it holds only users"
+          tl.to("#g-d1b", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.types_only_users);
+
+          // "so a security group it is" — the chosen row lifts, the peer recedes.
+          tl.to("#g-row-0", { x: 26, duration: 0.7, ease: "power3.out" }, W.types_verdict);
+          tl.to("#g-tab-0", { scaleX: 3, duration: 0.7, ease: "power3.out" }, W.types_verdict);
+          tl.to("#g-row-1", { opacity: 0.42, scale: 0.985, duration: 0.7, ease: "power2.out" }, W.types_verdict);
+          tl.to("#g-verdict", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, W.types_verdict);
+
+          window.__timelines["04-group-types"] = tl;
         })();
       </script>
     </template>

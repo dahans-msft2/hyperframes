@@ -16,5 +16,23 @@
     "status": "passed",
     "note": null,
     "meta": {}
+  },
+  {
+    "kind": "start",
+    "stage": "builder",
+    "run_id": "create-manage-groups-policies-202608071310",
+    "at": "2026-08-08T03:54:19+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "builder",
+    "run_id": "create-manage-groups-policies-202608071310",
+    "at": "2026-08-08T03:54:19+00:00",
+    "status": "passed",
+    "note": "13 scenes assembled; subcomps/placeholders/initial-state/cue-anchors/lint/check all green",
+    "meta": {}
   }
 ]

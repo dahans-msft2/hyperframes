@@ -8,7 +8,7 @@
   <body>
     <template>
       <style>
-        /* === Learn-ILT scene: 03-objectives — list-steps — the three objectives as a numbered ladder, framed as stakes === */
+        /* === Learn-ILT scene: 11-expiration-limits — list-specs — the three exam-tested constraints; the '1' punches in === */
         /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
         /* =============================================================================
            Learn-ILT KIT FOUNDATION  —  single source of truth for every kit block.
@@ -227,113 +227,92 @@
         /* ==== END _foundation.css ==== */
 
         /* ---- scene-specific: compose foundation primitives + tokens only ---- */
-        #o-wrap {
+        #x-wrap {
           position: absolute;
-          left: 190px;
+          left: 180px;
           top: 50%;
           width: 1560px;
         }
-        #o-kicker {
-          margin-bottom: 1.1cqw;
+        #x-sheet {
+          margin-top: 1.4cqw;
+          padding: 48px 56px;
+          transform-origin: left center;
         }
-        #o-lead {
-          margin-bottom: 2.6cqw;
-          max-width: 1240px;
+        .x-row {
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 44px;
+          padding-bottom: 26px;
         }
-        #o-lead span {
-          display: block;
-          font-size: var(--fs-lead);
-          line-height: 1.34;
+        .x-row + .x-row {
+          margin-top: 38px;
+        }
+        .x-label {
+          flex: none;
+          width: 420px;
+          font-size: var(--fs-body);
           color: var(--ink-soft);
         }
-        #o-col {
-          position: relative;
-        }
-        /* the connector: a thin vertical line linking the badges (a graphic) */
-        #o-connector {
-          position: absolute;
-          left: 42px;
-          top: 44px;
-          width: var(--rule);
-          height: 264px;
-          border-radius: var(--rule);
-          background: var(--border-soft);
-          transform-origin: top center;
-        }
-        .o-row {
-          position: relative;
-          display: flex;
-          align-items: center;
-          gap: 34px;
-        }
-        .o-row + .o-row {
-          margin-top: 44px;
-        }
-        .o-badge {
-          flex: none;
-          width: 88px;
-          height: 88px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: var(--radius-pill);
-          background: var(--accent); /* accent fill = graphic */
-          box-shadow: var(--shadow);
-        }
-        .o-num {
+        .x-value {
           font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
           font-weight: 600;
           font-size: var(--fs-h3);
-          color: var(--accent-ink); /* numeral SITS ON the accent fill — sanctioned */
-          font-variant-numeric: tabular-nums;
-        }
-        .o-text {
-          display: flex;
-          flex-direction: column;
-          gap: 0.35cqw;
-          width: 1180px;
-        }
-        .o-title {
-          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
-          font-weight: 600;
-          font-size: var(--fs-body);
-          line-height: 1.14;
           letter-spacing: -0.015em;
           color: var(--ink);
         }
+        #x-one {
+          font-size: var(--fs-h1);
+          line-height: 0.9;
+          display: inline-block;
+          transform-origin: left center;
+          font-variant-numeric: tabular-nums;
+        }
+        .x-underline {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent);
+          transform-origin: left center;
+        }
+        #x-scope-alt {
+          margin-left: 20px;
+          font-size: var(--fs-micro);
+        }
+        #x-tier {
+          display: inline-flex;
+          margin-top: 1.7cqw;
+          font-size: var(--fs-caption);
+        }
       </style>
 
-      <div id="root" data-composition-id="03-objectives" data-width="1920" data-height="1080">
-        <div id="o-wrap">
-          <div id="o-kicker" class="ilt-kicker">What you'll do</div>
-          <div id="o-lead">
-            <span id="o-lead-a">Get the choice wrong and the new hires lose access they need &mdash;</span>
-            <span id="o-lead-b">or gain access they shouldn't.</span>
-          </div>
-          <div id="o-col">
-            <div id="o-connector"></div>
-            <div id="o-row-0" class="o-row">
-              <div id="o-badge-0" class="o-badge"><span class="o-num">1</span></div>
-              <div class="o-text">
-                <div class="o-title">Pick the right group type and membership model</div>
-                <div class="ilt-caption">Security or Microsoft 365 &middot; assigned or dynamic</div>
-              </div>
+      <div id="root" data-composition-id="11-expiration-limits" data-width="1920" data-height="1080">
+        <div id="x-wrap">
+          <div id="x-kicker" class="ilt-kicker">Three details worth keeping straight</div>
+
+          <div id="x-sheet" class="ilt-panel">
+            <div id="x-row-0" class="x-row">
+              <span class="x-label">Expiration policies per tenant</span>
+              <span id="x-one" class="x-value">1</span>
+              <span id="x-underline-0" class="x-underline"></span>
             </div>
-            <div id="o-row-1" class="o-row">
-              <div id="o-badge-1" class="o-badge"><span class="o-num">2</span></div>
-              <div class="o-text">
-                <div class="o-title">Know why nesting doesn't cascade access</div>
-                <div class="ilt-caption">A parent's licences reach its direct members only</div>
-              </div>
+            <div id="x-row-1" class="x-row">
+              <span class="x-label">Scope</span>
+              <span id="x-scope" class="x-value">All Microsoft 365 groups</span>
+              <span id="x-scope-alt" class="ilt-chip">or a selected subset</span>
+              <span id="x-underline-1" class="x-underline"></span>
             </div>
-            <div id="o-row-2" class="o-row">
-              <div id="o-badge-2" class="o-badge"><span class="o-num">3</span></div>
-              <div class="o-text">
-                <div class="o-title">Govern the estate with naming and expiration policies</div>
-                <div class="ilt-caption">Names that stay tidy, groups that don't outlive their purpose</div>
-              </div>
+            <div id="x-row-2" class="x-row">
+              <span class="x-label">Licence for covered members</span>
+              <span id="x-lic" class="x-value">Microsoft Entra ID P1 or P2</span>
+              <span id="x-underline-2" class="x-underline"></span>
             </div>
           </div>
+
+          <span id="x-tier" class="ilt-chip">The same tier the naming policy relies on</span>
         </div>
       </div>
 
@@ -346,13 +325,13 @@
           // If it is missing every cue time below is unresolvable — fail loudly rather than
           // silently render a de-synced scene.
           if (!window.__anchors) {
-            throw new Error("03-objectives: anchors.js not loaded - cue times unresolvable");
+            throw new Error("11-expiration-limits: anchors.js not loaded - cue times unresolvable");
           }
 
           // S = this scene's cut on the composition clock (scenes.json).
           // W = every spoken-word anchor rebased onto THIS scene's clock, so a content cue
           //     reads W.<anchor_name> and never a hand-estimated offset.
-          var S = 27.55;
+          var S = 213.11;
           var W = {};
           Object.keys(window.__anchors).forEach(function (k) {
             W[k] = window.__anchors[k] - S;
@@ -360,39 +339,43 @@
 
           // B = mechanical beat markers measured from the scene cut itself, never from speech:
           // the scene-open cadence and the slow camera settle (kit precedent: bumper's push).
-          var B = { o1: 0.3, push: 1.0 };
+          var B = { o1: 0.25, push: 0.9, hold: 16.9 };
 
           var tl = gsap.timeline({ paused: true });
 
-          tl.set("#o-wrap", { yPercent: -50, transformOrigin: "left center" }, 0);
-          ["#o-kicker", "#o-lead-a", "#o-lead-b", "#o-row-0", "#o-row-1", "#o-row-2"].forEach((s) => tl.set(s, { opacity: 0, x: -38 }, 0));
-          ["#o-connector"].forEach((s) => tl.set(s, { scaleY: 0 }, 0));
-          ["#o-badge-0", "#o-badge-1", "#o-badge-2"].forEach((s) => tl.set(s, { scale: 0.35 }, 0));
+          tl.set("#x-wrap", { yPercent: -50, transformOrigin: "left center" }, 0);
+          ["#x-kicker", "#x-one", "#x-scope", "#x-scope-alt", "#x-lic", "#x-tier"].forEach((s) => tl.set(s, { opacity: 0, y: 22 }, 0));
+          ["#x-sheet", "#x-row-0", "#x-row-1", "#x-row-2"].forEach((s) => tl.set(s, { opacity: 0 }, 0));
+          ["#x-underline-0", "#x-underline-1", "#x-underline-2"].forEach((s) => tl.set(s, { scaleX: 0 }, 0));
 
-          tl.to("#o-kicker", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, B.o1);
-          tl.to("#o-wrap", { scale: 1.026, duration: 14.2, ease: "none" }, B.push);
+          // "Three details worth keeping straight…"
+          tl.to("#x-kicker", { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, B.o1);
+          tl.to("#x-wrap", { scale: 1.028, duration: B.hold, ease: "none" }, B.push);
 
-          // "…either lose access they need" / "or gain access they shouldn't" — the stakes, two lines.
-          tl.to("#o-lead-a", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_lose);
-          tl.to("#o-lead-b", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_gain);
+          // "a tenant gets…"
+          tl.to("#x-sheet", { opacity: 1, duration: 0.6, ease: "power3.out" }, W.expire_tenant);
+          tl.to("#x-row-0", { opacity: 1, duration: 0.5, ease: "power3.out" }, W.expire_tenant);
+          // "…exactly one expiration policy" — the 1 punches in.
+          tl.to("#x-one", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.expire_one);
+          tl.to("#x-one", { scale: 1.18, duration: 0.6, ease: "back.out(2.6)" }, W.expire_oneEnd);
+          tl.to("#x-underline-0", { scaleX: 1, duration: 0.7, ease: "power2.out" }, W.expire_oneEnd);
 
-          // the connector draws down across the three objectives as they are spoken.
-          tl.to("#o-connector", { scaleY: 1, duration: 7.4, ease: "none" }, W.obj_choices);
+          // "it covers all your Microsoft 365 groups…"
+          tl.to("#x-row-1", { opacity: 1, duration: 0.5, ease: "power3.out" }, W.expire_covers);
+          tl.to("#x-scope", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.expire_covers);
+          // "…or a selected subset"
+          tl.to("#x-scope-alt", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.expire_scope);
+          tl.to("#x-underline-1", { scaleX: 1, duration: 0.7, ease: "power2.out" }, W.expire_scopeEnd);
 
-          // "pick the right group type"
-          tl.to("#o-row-0", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_choices);
-          tl.to("#o-badge-0", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.obj_choices);
-          // "…decide how people become members"
-          tl.to("#o-row-1", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_members);
-          tl.to("#o-badge-1", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.obj_members);
-          // "…and set the policies…"
-          tl.to("#o-row-2", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_policies);
-          tl.to("#o-badge-2", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.obj_policies);
+          // "and it needs P1 or P2…"
+          tl.to("#x-row-2", { opacity: 1, duration: 0.5, ease: "power3.out" }, W.expire_license);
+          // "…for the members it covers"
+          tl.to("#x-lic", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.expire_covered);
+          tl.to("#x-underline-2", { scaleX: 1, duration: 0.7, ease: "power2.out" }, W.expire_coveredEnd);
+          // "the same tier the naming policy relies on"
+          tl.to("#x-tier", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, W.expire_sametier);
 
-          // "…from sliding into clutter" — the ladder settles as one.
-          tl.to(["#o-badge-0", "#o-badge-1", "#o-badge-2"], { scale: 1.09, duration: 0.5, ease: "power2.out", stagger: 0.12 }, W.obj_clutter);
-
-          window.__timelines["03-objectives"] = tl;
+          window.__timelines["11-expiration-limits"] = tl;
         })();
       </script>
     </template>

@@ -8,7 +8,7 @@
   <body>
     <template>
       <style>
-        /* === Learn-ILT scene: 03-objectives — list-steps — the three objectives as a numbered ladder, framed as stakes === */
+        /* === Learn-ILT scene: 07-nesting-reveal — custom on the foundation — the membership graph on dark-field; the badge halts === */
         /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
         /* =============================================================================
            Learn-ILT KIT FOUNDATION  —  single source of truth for every kit block.
@@ -227,112 +227,184 @@
         /* ==== END _foundation.css ==== */
 
         /* ---- scene-specific: compose foundation primitives + tokens only ---- */
-        #o-wrap {
+        #f-wrap {
           position: absolute;
-          left: 190px;
-          top: 50%;
+          left: 180px;
+          top: 70px;
           width: 1560px;
         }
-        #o-kicker {
-          margin-bottom: 1.1cqw;
+        #f-ghost-wrap {
+          position: relative;
+          display: inline-block;
+          margin-top: 0.9cqw;
         }
-        #o-lead {
-          margin-bottom: 2.6cqw;
-          max-width: 1240px;
-        }
-        #o-lead span {
-          display: block;
+        #f-ghost {
           font-size: var(--fs-lead);
-          line-height: 1.34;
           color: var(--ink-soft);
         }
-        #o-col {
-          position: relative;
-        }
-        /* the connector: a thin vertical line linking the badges (a graphic) */
-        #o-connector {
+        #f-strike {
           position: absolute;
-          left: 42px;
-          top: 44px;
-          width: var(--rule);
-          height: 264px;
-          border-radius: var(--rule);
-          background: var(--border-soft);
-          transform-origin: top center;
+          left: -10px;
+          top: 52%;
+          width: calc(100% + 20px);
+          height: 5px;
+          border-radius: 5px;
+          background: var(--accent-4); /* magenta strike = graphic */
+          transform-origin: left center;
         }
-        .o-row {
+        #f-stage {
           position: relative;
+          width: 1560px;
+          height: 720px;
+          margin-top: 1.2cqw;
+          transform-origin: center center;
+        }
+        #f-links {
+          position: absolute;
+          inset: 0;
+        }
+        #f-links path {
+          fill: none;
+          stroke-width: 5;
+          stroke-linecap: round;
+        }
+        .f-node .ilt-headline {
+          font-size: var(--fs-lead); /* node titles sit below the block headline tier */
+        }
+        .f-node {
+          position: absolute;
           display: flex;
-          align-items: center;
-          gap: 34px;
+          flex-direction: column;
+          justify-content: center;
+          gap: 0.3cqw;
+          padding: 24px 30px;
+          border-radius: var(--radius);
+          background: var(--paper);
+          border: 1.5px solid var(--border);
+          box-shadow: var(--shadow);
+          transform-origin: center center;
         }
-        .o-row + .o-row {
-          margin-top: 44px;
+        #f-parent {
+          left: 0;
+          top: 258px;
+          width: 420px;
+          height: 180px;
         }
-        .o-badge {
-          flex: none;
-          width: 88px;
-          height: 88px;
+        #f-direct {
+          left: 1000px;
+          top: 70px;
+          width: 420px;
+          height: 170px;
+        }
+        #f-child {
+          left: 470px;
+          top: 490px;
+          width: 440px;
+          height: 190px;
+        }
+        #f-nested {
+          left: 1000px;
+          top: 505px;
+          width: 420px;
+          height: 160px;
+        }
+        #f-badge {
+          position: absolute;
+          left: 130px;
+          top: 108px;
+          width: 116px;
+          height: 116px;
+          border-radius: 20px;
+          background: var(--accent);
           display: flex;
           align-items: center;
           justify-content: center;
-          border-radius: var(--radius-pill);
-          background: var(--accent); /* accent fill = graphic */
           box-shadow: var(--shadow);
+          transform-origin: center center;
         }
-        .o-num {
-          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
-          font-weight: 600;
-          font-size: var(--fs-h3);
-          color: var(--accent-ink); /* numeral SITS ON the accent fill — sanctioned */
-          font-variant-numeric: tabular-nums;
+        #f-badge svg {
+          width: 62px;
+          height: 62px;
         }
-        .o-text {
-          display: flex;
-          flex-direction: column;
-          gap: 0.35cqw;
-          width: 1180px;
+        .f-mark {
+          position: absolute;
+          width: 84px;
+          height: 84px;
+          transform-origin: center center;
         }
-        .o-title {
-          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
-          font-weight: 600;
-          font-size: var(--fs-body);
-          line-height: 1.14;
-          letter-spacing: -0.015em;
-          color: var(--ink);
+        #f-mark-ok {
+          left: 1450px;
+          top: 113px;
+        }
+        #f-mark-no {
+          left: 1450px;
+          top: 543px;
         }
       </style>
 
-      <div id="root" data-composition-id="03-objectives" data-width="1920" data-height="1080">
-        <div id="o-wrap">
-          <div id="o-kicker" class="ilt-kicker">What you'll do</div>
-          <div id="o-lead">
-            <span id="o-lead-a">Get the choice wrong and the new hires lose access they need &mdash;</span>
-            <span id="o-lead-b">or gain access they shouldn't.</span>
-          </div>
-          <div id="o-col">
-            <div id="o-connector"></div>
-            <div id="o-row-0" class="o-row">
-              <div id="o-badge-0" class="o-badge"><span class="o-num">1</span></div>
-              <div class="o-text">
-                <div class="o-title">Pick the right group type and membership model</div>
-                <div class="ilt-caption">Security or Microsoft 365 &middot; assigned or dynamic</div>
-              </div>
+      <div
+        id="root"
+        data-composition-id="07-nesting-reveal"
+        data-ground="dark-field"
+        data-width="1920"
+        data-height="1080"
+      >
+        <div id="f-wrap">
+          <div id="f-kicker" class="ilt-kicker">What actually happens</div>
+          <span id="f-ghost-wrap">
+            <span id="f-ghost" data-layout-allow-occlusion>Nesting works like folders &mdash; everything flows down</span>
+            <span id="f-strike"></span>
+          </span>
+
+          <div id="f-stage" data-keep-in-frame>
+            <svg id="f-links" viewBox="0 0 1560 720" preserveAspectRatio="none" aria-hidden="true">
+              <path id="f-link-direct" d="M420 340 C 700 340 720 155 1000 155" stroke="#0078d4" pathLength="1" />
+              <path id="f-link-child" d="M210 438 C 210 560 300 585 470 585" stroke="#0078d4" pathLength="1" />
+              <path id="f-link-nested" d="M910 585 L 1000 585" stroke="#8b98a5" pathLength="1" />
+            </svg>
+
+            <div id="f-badge">
+              <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <rect x="7" y="16" width="34" height="24" rx="4" stroke="#ffffff" stroke-width="3" />
+                <path d="M16 16v-4a8 8 0 0 1 16 0v4" stroke="#ffffff" stroke-width="3" />
+              </svg>
             </div>
-            <div id="o-row-1" class="o-row">
-              <div id="o-badge-1" class="o-badge"><span class="o-num">2</span></div>
-              <div class="o-text">
-                <div class="o-title">Know why nesting doesn't cascade access</div>
-                <div class="ilt-caption">A parent's licences reach its direct members only</div>
-              </div>
+
+            <div id="f-parent" class="f-node">
+              <div id="f-parent-t" class="ilt-headline">All Engineering</div>
+              <div id="f-parent-c" class="ilt-caption">Licence assigned to this group</div>
             </div>
-            <div id="o-row-2" class="o-row">
-              <div id="o-badge-2" class="o-badge"><span class="o-num">3</span></div>
-              <div class="o-text">
-                <div class="o-title">Govern the estate with naming and expiration policies</div>
-                <div class="ilt-caption">Names that stay tidy, groups that don't outlive their purpose</div>
-              </div>
+
+            <div id="f-direct" class="f-node">
+              <div id="f-direct-t" class="ilt-headline">Direct members</div>
+              <div id="f-direct-c" class="ilt-caption">Reached by the assignment</div>
             </div>
+
+            <div id="f-child" class="f-node">
+              <div id="f-child-t" class="ilt-headline">New Office (nested)</div>
+              <div id="f-child-c" class="ilt-caption">A member of the parent</div>
+            </div>
+
+            <div id="f-nested" class="f-node">
+              <div id="f-nested-t" class="ilt-headline">Its members</div>
+              <div id="f-nested-c" class="ilt-caption">Two steps removed</div>
+            </div>
+
+            <svg id="f-mark-ok" class="f-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+              <circle cx="24" cy="24" r="21" stroke="#389a91" stroke-width="4" />
+              <path d="M14 24.5 21 31.5 34 17.5" stroke="#389a91" stroke-width="5" stroke-linecap="round" />
+            </svg>
+            <svg
+              id="f-mark-no"
+              class="f-mark"
+              data-reveal-after="#f-mark-ok"
+              viewBox="0 0 48 48"
+              fill="none"
+              aria-hidden="true"
+            >
+              <circle cx="24" cy="24" r="21" stroke="#bf3ac4" stroke-width="4" />
+              <path d="M16 16 32 32 M32 16 16 32" stroke="#bf3ac4" stroke-width="5" stroke-linecap="round" />
+            </svg>
           </div>
         </div>
       </div>
@@ -346,13 +418,13 @@
           // If it is missing every cue time below is unresolvable — fail loudly rather than
           // silently render a de-synced scene.
           if (!window.__anchors) {
-            throw new Error("03-objectives: anchors.js not loaded - cue times unresolvable");
+            throw new Error("07-nesting-reveal: anchors.js not loaded - cue times unresolvable");
           }
 
           // S = this scene's cut on the composition clock (scenes.json).
           // W = every spoken-word anchor rebased onto THIS scene's clock, so a content cue
           //     reads W.<anchor_name> and never a hand-estimated offset.
-          var S = 27.55;
+          var S = 113.27;
           var W = {};
           Object.keys(window.__anchors).forEach(function (k) {
             W[k] = window.__anchors[k] - S;
@@ -360,39 +432,55 @@
 
           // B = mechanical beat markers measured from the scene cut itself, never from speech:
           // the scene-open cadence and the slow camera settle (kit precedent: bumper's push).
-          var B = { o1: 0.3, push: 1.0 };
+          var B = { o1: 0.25, push: 0.9, hold: 19.9 };
 
           var tl = gsap.timeline({ paused: true });
 
-          tl.set("#o-wrap", { yPercent: -50, transformOrigin: "left center" }, 0);
-          ["#o-kicker", "#o-lead-a", "#o-lead-b", "#o-row-0", "#o-row-1", "#o-row-2"].forEach((s) => tl.set(s, { opacity: 0, x: -38 }, 0));
-          ["#o-connector"].forEach((s) => tl.set(s, { scaleY: 0 }, 0));
-          ["#o-badge-0", "#o-badge-1", "#o-badge-2"].forEach((s) => tl.set(s, { scale: 0.35 }, 0));
+          ["#f-link-direct", "#f-link-child", "#f-link-nested"].forEach((s) => tl.set(s, { strokeDasharray: 1, strokeDashoffset: 1 }, 0));
+          ["#f-kicker", "#f-ghost", "#f-parent-t", "#f-parent-c", "#f-direct-t", "#f-direct-c", "#f-child-t", "#f-child-c", "#f-nested-t", "#f-nested-c"].forEach((s) => tl.set(s, { opacity: 0, y: 20 }, 0));
+          ["#f-parent", "#f-direct", "#f-child", "#f-nested"].forEach((s) => tl.set(s, { opacity: 0, scale: 0.9 }, 0));
+          ["#f-badge", "#f-mark-ok", "#f-mark-no"].forEach((s) => tl.set(s, { opacity: 0, scale: 0.4 }, 0));
+          ["#f-strike"].forEach((s) => tl.set(s, { scaleX: 0 }, 0));
 
-          tl.to("#o-kicker", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, B.o1);
-          tl.to("#o-wrap", { scale: 1.026, duration: 14.2, ease: "none" }, B.push);
+          tl.to("#f-kicker", { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, B.o1);
+          tl.to("#f-stage", { scale: 1.028, duration: B.hold, ease: "none" }, B.push);
 
-          // "…either lose access they need" / "or gain access they shouldn't" — the stakes, two lines.
-          tl.to("#o-lead-a", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_lose);
-          tl.to("#o-lead-b", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_gain);
+          // "Most of us expect nesting to work like folders…" — the wrong prior is stated plainly.
+          tl.to("#f-ghost", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, W.nest_folders);
+          // "…where everything on the parent flows down"
+          tl.to("#f-ghost", { x: 16, duration: 0.7, ease: "power2.out" }, W.nest_flows);
+          // "Groups don't behave that way." — the strike sweeps the prior away.
+          tl.to("#f-strike", { scaleX: 1, duration: 0.55, ease: "power2.in" }, W.nest_dont);
+          tl.to("#f-ghost", { opacity: 0.45, duration: 0.6, ease: "power2.out" }, W.nest_dont);
 
-          // the connector draws down across the three objectives as they are spoken.
-          tl.to("#o-connector", { scaleY: 1, duration: 7.4, ease: "none" }, W.obj_choices);
+          // "Nesting makes the child group a member of the parent" — the graph replaces the containment.
+          tl.to("#f-parent", { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, W.nest_child_member);
+          tl.to("#f-parent-t", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.nest_child_member);
+          tl.to("#f-child", { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, W.nest_child_member);
+          tl.to("#f-child-t", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.nest_child_member);
+          tl.to("#f-child-c", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.nest_child_member);
+          tl.to("#f-link-child", { strokeDashoffset: 0, duration: 0.8, ease: "power2.out" }, W.nest_child_member);
 
-          // "pick the right group type"
-          tl.to("#o-row-0", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_choices);
-          tl.to("#o-badge-0", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.obj_choices);
-          // "…decide how people become members"
-          tl.to("#o-row-1", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_members);
-          tl.to("#o-badge-1", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.obj_members);
-          // "…and set the policies…"
-          tl.to("#o-row-2", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_policies);
-          tl.to("#o-badge-2", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.obj_policies);
+          // "…but a license or an assigned resource…" — the badge lands with weight on the parent.
+          tl.to("#f-badge", { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.8)" }, W.nest_license);
+          tl.to("#f-parent-c", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.nest_license);
 
-          // "…from sliding into clutter" — the ladder settles as one.
-          tl.to(["#o-badge-0", "#o-badge-1", "#o-badge-2"], { scale: 1.09, duration: 0.5, ease: "power2.out", stagger: 0.12 }, W.obj_clutter);
+          // "…only reaches the parent's direct members" — it travels, and the branch is checked.
+          tl.to("#f-link-direct", { strokeDashoffset: 0, duration: 0.9, ease: "power2.inOut" }, W.nest_direct);
+          tl.to("#f-direct", { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, W.nest_direct);
+          tl.to("#f-direct-t", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.nest_direct);
+          tl.to("#f-direct-c", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.nest_direct);
+          tl.to("#f-mark-ok", { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(2)" }, W.nest_direct);
 
-          window.__timelines["03-objectives"] = tl;
+          // "The people inside the nested group are two steps removed, so nothing reaches them."
+          tl.to("#f-link-nested", { strokeDashoffset: 0, duration: 0.7, ease: "power2.out" }, W.nest_removed);
+          tl.to("#f-nested", { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" }, W.nest_removed);
+          tl.to("#f-nested-t", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.nest_removed);
+          tl.to("#f-nested-c", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.nest_removed);
+          tl.to("#f-mark-no", { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(2)" }, W.nest_removed);
+          tl.to("#f-nested", { opacity: 0.55, duration: 1.2, ease: "power2.inOut" }, W.nest_removedEnd);
+
+          window.__timelines["07-nesting-reveal"] = tl;
         })();
       </script>
     </template>

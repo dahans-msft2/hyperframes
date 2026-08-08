@@ -8,7 +8,7 @@
   <body>
     <template>
       <style>
-        /* === Learn-ILT scene: 03-objectives — list-steps — the three objectives as a numbered ladder, framed as stakes === */
+        /* === Learn-ILT scene: 10-expiration-lifecycle — list-steps — the expiration lifecycle as four ordered stages on a connector === */
         /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
         /* =============================================================================
            Learn-ILT KIT FOUNDATION  —  single source of truth for every kit block.
@@ -227,73 +227,86 @@
         /* ==== END _foundation.css ==== */
 
         /* ---- scene-specific: compose foundation primitives + tokens only ---- */
-        #o-wrap {
+        #e-wrap {
           position: absolute;
-          left: 190px;
+          left: 180px;
           top: 50%;
           width: 1560px;
+          display: flex;
+          gap: 60px;
+          align-items: center;
         }
-        #o-kicker {
+        #e-ghost {
+          flex: none;
+          width: 480px;
+          padding: 40px 40px 44px;
+          transform-origin: center center;
+        }
+        #e-ghost-title {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h3);
+          line-height: 1.1;
+          letter-spacing: -0.015em;
+          color: var(--ink);
           margin-bottom: 1.1cqw;
         }
-        #o-lead {
-          margin-bottom: 2.6cqw;
-          max-width: 1240px;
+        .e-ghost-line {
+          display: flex;
+          align-items: baseline;
+          gap: 0.7cqw;
+          margin-top: 0.7cqw;
         }
-        #o-lead span {
-          display: block;
-          font-size: var(--fs-lead);
-          line-height: 1.34;
-          color: var(--ink-soft);
+        .e-ghost-dot {
+          flex: none;
+          width: 12px;
+          height: 12px;
+          border-radius: var(--radius-pill);
+          background: var(--accent-4); /* magenta dot = graphic */
         }
-        #o-col {
+        #e-col {
           position: relative;
+          flex: 1 1 auto;
         }
-        /* the connector: a thin vertical line linking the badges (a graphic) */
-        #o-connector {
+        #e-connector {
           position: absolute;
-          left: 42px;
-          top: 44px;
+          left: 39px;
+          top: 40px;
           width: var(--rule);
-          height: 264px;
+          height: 396px;
           border-radius: var(--rule);
           background: var(--border-soft);
           transform-origin: top center;
         }
-        .o-row {
+        .e-step {
           position: relative;
           display: flex;
           align-items: center;
-          gap: 34px;
+          gap: 30px;
         }
-        .o-row + .o-row {
+        .e-step + .e-step {
           margin-top: 44px;
         }
-        .o-badge {
+        .e-badge {
           flex: none;
-          width: 88px;
-          height: 88px;
+          width: 82px;
+          height: 82px;
           display: flex;
           align-items: center;
           justify-content: center;
           border-radius: var(--radius-pill);
-          background: var(--accent); /* accent fill = graphic */
+          background: var(--accent);
           box-shadow: var(--shadow);
+          transform-origin: center center;
         }
-        .o-num {
+        .e-num {
           font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
           font-weight: 600;
-          font-size: var(--fs-h3);
-          color: var(--accent-ink); /* numeral SITS ON the accent fill — sanctioned */
+          font-size: var(--fs-lead);
+          color: var(--accent-ink); /* numeral sits ON the accent fill */
           font-variant-numeric: tabular-nums;
         }
-        .o-text {
-          display: flex;
-          flex-direction: column;
-          gap: 0.35cqw;
-          width: 1180px;
-        }
-        .o-title {
+        .e-title {
           font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
           font-weight: 600;
           font-size: var(--fs-body);
@@ -301,37 +314,55 @@
           letter-spacing: -0.015em;
           color: var(--ink);
         }
+        .e-text {
+          display: flex;
+          flex-direction: column;
+          gap: 0.3cqw;
+          width: 820px;
+        }
+        #e-auto {
+          align-self: flex-start;
+          margin-top: 0.4cqw;
+          font-size: var(--fs-micro);
+        }
       </style>
 
-      <div id="root" data-composition-id="03-objectives" data-width="1920" data-height="1080">
-        <div id="o-wrap">
-          <div id="o-kicker" class="ilt-kicker">What you'll do</div>
-          <div id="o-lead">
-            <span id="o-lead-a">Get the choice wrong and the new hires lose access they need &mdash;</span>
-            <span id="o-lead-b">or gain access they shouldn't.</span>
+      <div id="root" data-composition-id="10-expiration-lifecycle" data-width="1920" data-height="1080">
+        <div id="e-wrap">
+          <div id="e-ghost" class="ilt-panel">
+            <div id="e-ghost-title">Project Falcon</div>
+            <div id="e-ghost-a" class="e-ghost-line">
+              <span class="e-ghost-dot"></span><span class="ilt-caption">A six-month project group</span>
+            </div>
+            <div id="e-ghost-b" class="e-ghost-line">
+              <span class="e-ghost-dot"></span><span class="ilt-caption">Still here two years later</span>
+            </div>
+            <div id="e-ghost-c" class="e-ghost-line">
+              <span class="e-ghost-dot"></span><span class="ilt-caption">Owner gone &middot; members unsure why</span>
+            </div>
           </div>
-          <div id="o-col">
-            <div id="o-connector"></div>
-            <div id="o-row-0" class="o-row">
-              <div id="o-badge-0" class="o-badge"><span class="o-num">1</span></div>
-              <div class="o-text">
-                <div class="o-title">Pick the right group type and membership model</div>
-                <div class="ilt-caption">Security or Microsoft 365 &middot; assigned or dynamic</div>
+
+          <div id="e-col">
+            <div id="e-kicker" class="ilt-kicker">Group expiration policy</div>
+            <div id="e-connector"></div>
+            <div id="e-step-0" class="e-step">
+              <div id="e-badge-0" class="e-badge"><span class="e-num">1</span></div>
+              <div class="e-text"><div id="e-title-0" class="e-title">A lifetime in days</div></div>
+            </div>
+            <div id="e-step-1" class="e-step">
+              <div id="e-badge-1" class="e-badge"><span class="e-num">2</span></div>
+              <div class="e-text">
+                <div id="e-title-1" class="e-title">Entra ID asks the owners to renew</div>
+                <span id="e-auto" class="ilt-chip">a group still in use renews itself</span>
               </div>
             </div>
-            <div id="o-row-1" class="o-row">
-              <div id="o-badge-1" class="o-badge"><span class="o-num">2</span></div>
-              <div class="o-text">
-                <div class="o-title">Know why nesting doesn't cascade access</div>
-                <div class="ilt-caption">A parent's licences reach its direct members only</div>
-              </div>
+            <div id="e-step-2" class="e-step">
+              <div id="e-badge-2" class="e-badge"><span class="e-num">3</span></div>
+              <div class="e-text"><div id="e-title-2" class="e-title">Anything nobody renews is deleted</div></div>
             </div>
-            <div id="o-row-2" class="o-row">
-              <div id="o-badge-2" class="o-badge"><span class="o-num">3</span></div>
-              <div class="o-text">
-                <div class="o-title">Govern the estate with naming and expiration policies</div>
-                <div class="ilt-caption">Names that stay tidy, groups that don't outlive their purpose</div>
-              </div>
+            <div id="e-step-3" class="e-step">
+              <div id="e-badge-3" class="e-badge"><span class="e-num">4</span></div>
+              <div class="e-text"><div id="e-title-3" class="e-title">&hellip; but it stays restorable for 30 days</div></div>
             </div>
           </div>
         </div>
@@ -346,13 +377,13 @@
           // If it is missing every cue time below is unresolvable — fail loudly rather than
           // silently render a de-synced scene.
           if (!window.__anchors) {
-            throw new Error("03-objectives: anchors.js not loaded - cue times unresolvable");
+            throw new Error("10-expiration-lifecycle: anchors.js not loaded - cue times unresolvable");
           }
 
           // S = this scene's cut on the composition clock (scenes.json).
           // W = every spoken-word anchor rebased onto THIS scene's clock, so a content cue
           //     reads W.<anchor_name> and never a hand-estimated offset.
-          var S = 27.55;
+          var S = 180.81;
           var W = {};
           Object.keys(window.__anchors).forEach(function (k) {
             W[k] = window.__anchors[k] - S;
@@ -360,39 +391,50 @@
 
           // B = mechanical beat markers measured from the scene cut itself, never from speech:
           // the scene-open cadence and the slow camera settle (kit precedent: bumper's push).
-          var B = { o1: 0.3, push: 1.0 };
+          var B = { o1: 0.25, push: 0.9, hold: 31.1 };
 
           var tl = gsap.timeline({ paused: true });
 
-          tl.set("#o-wrap", { yPercent: -50, transformOrigin: "left center" }, 0);
-          ["#o-kicker", "#o-lead-a", "#o-lead-b", "#o-row-0", "#o-row-1", "#o-row-2"].forEach((s) => tl.set(s, { opacity: 0, x: -38 }, 0));
-          ["#o-connector"].forEach((s) => tl.set(s, { scaleY: 0 }, 0));
-          ["#o-badge-0", "#o-badge-1", "#o-badge-2"].forEach((s) => tl.set(s, { scale: 0.35 }, 0));
+          tl.set("#e-wrap", { yPercent: -50, transformOrigin: "left center" }, 0);
+          ["#e-kicker", "#e-ghost-title", "#e-ghost-a", "#e-ghost-b", "#e-ghost-c", "#e-title-0", "#e-title-1", "#e-title-2", "#e-title-3", "#e-auto"].forEach((s) => tl.set(s, { opacity: 0, y: 20 }, 0));
+          ["#e-ghost"].forEach((s) => tl.set(s, { opacity: 0, scale: 0.94 }, 0));
+          ["#e-connector"].forEach((s) => tl.set(s, { scaleY: 0 }, 0));
+          ["#e-badge-0", "#e-badge-1", "#e-badge-2", "#e-badge-3"].forEach((s) => tl.set(s, { opacity: 0, scale: 0.3 }, 0));
 
-          tl.to("#o-kicker", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, B.o1);
-          tl.to("#o-wrap", { scale: 1.026, duration: 14.2, ease: "none" }, B.push);
+          // "Naming keeps names tidy…"
+          tl.to("#e-kicker", { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, B.o1);
+          tl.to("#e-wrap", { scale: 1.028, duration: B.hold, ease: "none" }, B.push);
 
-          // "…either lose access they need" / "or gain access they shouldn't" — the stakes, two lines.
-          tl.to("#o-lead-a", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_lose);
-          tl.to("#o-lead-b", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_gain);
+          // "…but it doesn't stop groups from outliving their purpose"
+          tl.to("#e-ghost", { opacity: 1, scale: 1, duration: 0.7, ease: "power3.out" }, W.expire_outliving);
+          tl.to("#e-ghost-title", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.expire_outliving);
+          // "A six-month project group…"
+          tl.to("#e-ghost-a", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.expire_sixmonth);
+          // "…is often still around two years later"
+          tl.to("#e-ghost-b", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.expire_twoyears);
+          // "owner gone, members unsure why they're there"
+          tl.to("#e-ghost-c", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.expire_ownergone);
 
-          // the connector draws down across the three objectives as they are spoken.
-          tl.to("#o-connector", { scaleY: 1, duration: 7.4, ease: "none" }, W.obj_choices);
+          // "A group expiration policy…" — the orphan recedes, the lifecycle rail draws down.
+          tl.to("#e-ghost", { opacity: 0.4, scale: 0.96, duration: 0.9, ease: "power2.out" }, W.expire_policy);
+          tl.to("#e-connector", { scaleY: 1, duration: 15.4, ease: "none" }, W.expire_policy);
+          tl.to(["#e-badge-0", "#e-badge-1", "#e-badge-2", "#e-badge-3"], { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(2.2)", stagger: 0.18 }, W.expire_policy);
 
-          // "pick the right group type"
-          tl.to("#o-row-0", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_choices);
-          tl.to("#o-badge-0", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.obj_choices);
-          // "…decide how people become members"
-          tl.to("#o-row-1", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_members);
-          tl.to("#o-badge-1", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.obj_members);
-          // "…and set the policies…"
-          tl.to("#o-row-2", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.obj_policies);
-          tl.to("#o-badge-2", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.obj_policies);
+          // "…gives each Microsoft 365 group a lifetime in days"
+          tl.to("#e-title-0", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.expire_lifetime);
+          tl.to("#e-badge-0", { scale: 1.12, duration: 0.6, ease: "power2.out" }, W.expire_nears);
+          // "…Entra ID asks the owners to renew"
+          tl.to("#e-title-1", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.expire_owners_renew);
+          // "…and a group still in use renews itself automatically"
+          tl.to("#e-auto", { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, W.expire_renew);
+          // "Anything nobody renews gets deleted"
+          tl.to("#e-title-2", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.expire_deleted);
+          // "…but it stays restorable for thirty days" — the closing stage takes the focus.
+          tl.to("#e-title-3", { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.expire_restore);
+          tl.to("#e-badge-3", { scale: 1.16, duration: 0.7, ease: "back.out(2)" }, W.expire_restore);
+          tl.to("#e-step-3", { x: 22, duration: 1.4, ease: "power2.out" }, W.expire_restore);
 
-          // "…from sliding into clutter" — the ladder settles as one.
-          tl.to(["#o-badge-0", "#o-badge-1", "#o-badge-2"], { scale: 1.09, duration: 0.5, ease: "power2.out", stagger: 0.12 }, W.obj_clutter);
-
-          window.__timelines["03-objectives"] = tl;
+          window.__timelines["10-expiration-lifecycle"] = tl;
         })();
       </script>
     </template>

@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "duration": 266.2,
+  "assertions": [
+    {
+      "kind": "keepsMoving",
+      "maxStaticSec": 5.0
+    },
+    {
+      "kind": "before",
+      "a": "#n-plane-outer",
+      "b": "#n-q"
+    },
+    {
+      "kind": "before",
+      "a": "#n-plane-inner",
+      "b": "#n-q"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#n-frame"
+    },
+    {
+      "kind": "before",
+      "a": "#f-mark-ok",
+      "b": "#f-mark-no"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "#f-stage"
+    }
+  ]
+}
