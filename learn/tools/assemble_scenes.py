@@ -65,13 +65,24 @@ def load_scenes(path: Path) -> dict[str, Any]:
     return {}
 
 
-def font_faces(fonts: list[dict[str, Any]]) -> str:
+def font_faces(fonts: list[dict[str, Any]], base: Path | None = None) -> str:
+    """@font-face blocks for every font whose WOFF2 is actually on disk.
+
+    Segoe UI is licensed and gitignored, so a cloud/CI checkout has no fonts/*.woff2. Emitting a
+    rule for a missing file turns the browser gate red with a 404 instead of quietly falling back
+    to the "Segoe UI", sans-serif stack the kit already declares (which resolves to the real system
+    font on any Windows render host). Local assembles, where sync_fonts.py produced the WOFF2s,
+    still embed them.
+    """
     blocks = []
     for f in fonts:
         family = f["family"]
         weight = f.get("weight", 400)
         src = f["src"]
         style = f.get("style", "normal")
+        if base is not None and not (base / src).exists():
+            print(f"  note: {src} not on disk — skipping @font-face (fallback stack applies)")
+            continue
         blocks.append(
             "      @font-face {\n"
             f'        font-family: "{family}";\n'
@@ -84,7 +95,7 @@ def font_faces(fonts: list[dict[str, Any]]) -> str:
     return "\n\n".join(blocks)
 
 
-def build_html(manifest: dict[str, Any], scenes_dir_name: str) -> tuple[str, dict[str, Any]]:
+def build_html(manifest: dict[str, Any], scenes_dir_name: str, base: Path | None = None) -> tuple[str, dict[str, Any]]:
     width = int(manifest.get("width", 1920))
     height = int(manifest.get("height", 1080))
     cid = manifest.get("composition_id", "root")
@@ -128,15 +139,19 @@ def build_html(manifest: dict[str, Any], scenes_dir_name: str) -> tuple[str, dic
         prop, direction = SEAM_DIRS[seam]
         cut = cur["start"]
         exit_at = r3(cut - 0.34)
+        # Seam positions ARE the scene boundaries (scenes.json derives those from real narration
+        # word times), not hand-guessed content cues — so they carry the check_cue_anchors opt-out
+        # rather than reading as unanchored literals. Keep this marker; do not edit the tool per-video.
+        exempt = "  // anchor-exempt: host seam keyed to the scene boundary (word-anchored in scenes.json)"
         seam_lines.append(f'      // SEAM {prev["id"]} -> {cur["id"]} : {seam} (cut @{cut})')
         seam_lines.append(
             f'      tl.to("#slot-{prev["id"]}", {{ {prop}: {12 * direction}, autoAlpha: 0, '
-            f'duration: 0.34, ease: "power3.in" }}, {exit_at}); // anchor-exempt: host seam keyed to scene boundary'
+            f'duration: 0.34, ease: "power3.in" }}, {exit_at});{exempt}'
         )
-        seam_lines.append(f'      tl.set("#slot-{prev["id"]}", {{ autoAlpha: 0 }}, {cut}); // anchor-exempt: host seam keyed to scene boundary')
+        seam_lines.append(f'      tl.set("#slot-{prev["id"]}", {{ autoAlpha: 0 }}, {cut});{exempt}')
         seam_lines.append(
             f'      tl.fromTo("#slot-{cur["id"]}", {{ {prop}: {-10 * direction}, autoAlpha: 0.35 }}, '
-            f'{{ {prop}: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }}, {cut}); // anchor-exempt: host seam keyed to scene boundary'
+            f'{{ {prop}: 0, autoAlpha: 1, duration: 0.42, ease: "power4.out", immediateRender: false }}, {cut});{exempt}'
         )
 
     narration = manifest.get("narration")
@@ -168,7 +183,7 @@ def build_html(manifest: dict[str, Any], scenes_dir_name: str) -> tuple[str, dic
     if outro_start is not None:
         bookend_lines.append(
             f'      tl.fromTo("#fade-out", {{ autoAlpha: 0 }}, '
-            f'{{ autoAlpha: 1, duration: {outro_fade}, ease: "power2.in", immediateRender: false }}, {outro_start}); // anchor-exempt: end-card bookend'
+            f'{{ autoAlpha: 1, duration: {outro_fade}, ease: "power2.in", immediateRender: false }}, {outro_start});  // anchor-exempt: fade bookend relative to the composition boundary'
         )
 
     # ---- head ----
@@ -321,7 +336,7 @@ def main() -> int:
     else:
         out_path = scenes_path.parent / "index.html"
 
-    html, summary = build_html(manifest, args.scenes_dir)
+    html, summary = build_html(manifest, args.scenes_dir, base=out_path.parent)
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(html, encoding="utf-8")
 
