@@ -5,6 +5,7 @@
   "height": 1080,
   "root_background": "#fff8f3",
   "gsap": "assets/vendor/gsap.min.js",
+  "anchors": "anchors.js",
   "fonts": [
     {
       "family": "Segoe UI",
@@ -19,6 +20,12 @@
       "src": "fonts/segoeui-semibold.woff2"
     }
   ],
+  "narration": {
+    "src": "narration.wav",
+    "start": 3.0,
+    "duration": 273.37,
+    "track": 10
+  },
   "endcard": {
     "src": "assets/AI_End_Card.mp4",
     "duration": 10.667,
@@ -33,39 +40,86 @@
     {
       "id": "01-bumper",
       "src": "scenes/01-bumper.html",
-      "duration": 3.0,
+      "duration": 3.03,
       "seam": "hard"
     },
     {
       "id": "02-title",
       "src": "scenes/02-title.html",
-      "duration": 24.0,
+      "duration": 11.78,
       "seam": "hard"
     },
     {
       "id": "03-objectives",
       "src": "scenes/03-objectives.html",
-      "duration": 16.8,
+      "duration": 16.38,
       "seam": "cut-left"
+    },
+    {
+      "id": "04-scenario",
+      "src": "scenes/04-scenario.html",
+      "duration": 20.76,
+      "seam": "cut-up"
+    },
+    {
+      "id": "05-lever-map",
+      "src": "scenes/05-lever-map.html",
+      "duration": 21.78,
+      "seam": "hard"
+    },
+    {
+      "id": "06-permission-levels",
+      "src": "scenes/06-permission-levels.html",
+      "duration": 26.88,
+      "seam": "hard"
+    },
+    {
+      "id": "07-role-trap",
+      "src": "scenes/07-role-trap.html",
+      "duration": 20.78,
+      "seam": "hard"
+    },
+    {
+      "id": "08-delegate-two-pieces",
+      "src": "scenes/08-delegate-two-pieces.html",
+      "duration": 25.08,
+      "seam": "hard"
+    },
+    {
+      "id": "09-invite-redeem",
+      "src": "scenes/09-invite-redeem.html",
+      "duration": 17.12,
+      "seam": "hard"
+    },
+    {
+      "id": "10-one-object-two-surfaces",
+      "src": "scenes/10-one-object-two-surfaces.html",
+      "duration": 21.58,
+      "seam": "hard"
+    },
+    {
+      "id": "11-restriction-levers",
+      "src": "scenes/11-restriction-levers.html",
+      "duration": 26.64,
+      "seam": "hard"
+    },
+    {
+      "id": "12-when-guests-stop-scaling",
+      "src": "scenes/12-when-guests-stop-scaling.html",
+      "duration": 28.64,
+      "seam": "hard"
     },
     {
       "id": "90-recap",
       "src": "scenes/90-recap.html",
-      "duration": 24.0,
+      "duration": 23.14,
       "seam": "cut-up"
     },
     {
       "id": "91-cta",
       "src": "scenes/91-cta.html",
-      "duration": 16.8,
+      "duration": 14.01,
       "seam": "cut-left"
     }
-  ],
-  "body_slot": {
-    "insert_after": "03-objectives",
-    "before": "90-recap",
-    "target_scene_count": 5,
-    "max_scene_count": 16,
-    "note": "Author the teaching-body scenes here (each on the kit foundation), then insert them into 'scenes' between the opening and closing chrome. The builder re-times all durations to real narration word anchors."
-  }
+  ]
 }

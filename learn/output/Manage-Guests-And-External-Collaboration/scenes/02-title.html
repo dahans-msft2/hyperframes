@@ -127,6 +127,14 @@
           line-height: 1.3;
           color: var(--ink-soft);
         }
+
+        /* ---- scene-specific: composes the kit tokens + primitives above ---- */
+
+        /* the kit block ships `#mk-th-line` (an id) for markup that uses the `mk-th-line`
+           class, so the two title lines never actually become blocks. Fixed here. */
+        .mk-th-line {
+          display: block;
+        }
       </style>
 
       <div
@@ -136,7 +144,6 @@
         data-width="1920"
         data-height="1080"
       >
-        <!-- host may override data-ground with "section-field" | "dark-field" -->
         <div id="mk-th-group">
           <div id="mk-th-kicker" class="ilt-kicker"></div>
           <div id="mk-th-title" class="ilt-title">
@@ -152,12 +159,34 @@
         (function () {
           window.__timelines = window.__timelines || {};
 
-          // Edit per use. Opening title card: eyebrow kicker + two-line title + one-line subtitle.
+          /* ---- CUE CLOCK -------------------------------------------------------
+             Every timeline position in this scene is a REAL spoken-word time from
+             transcript.json (resolved by tools/word_anchors.py into anchors.json /
+             anchors.js, with the 3.0s bumper lead-in applied), rebased to this
+             scene's start on the host timeline. Nothing here is an offset guessed
+             from an assumed words-per-second. Re-record => regenerate anchors.js. */
+          var SCENE_START = 3.03;
+          var ABS = {
+            "titleStart": 3.03,
+            "titleSubtitle": 7.9,
+            "titleTail": 11.64
+          };
+          var W = {};
+          (function () {
+            var live = (typeof window !== "undefined" && window.__anchors) || {};
+            for (var k in ABS) {
+              if (!Object.prototype.hasOwnProperty.call(ABS, k)) continue;
+              var t = typeof live[k] === "number" ? live[k] : ABS[k];
+              W[k] = Math.max(0, Math.round((t - SCENE_START) * 1000) / 1000);
+            }
+          })();
+
+          // Opening title card. Text from script.md -> "Chrome text" (02-title).
           var CONFIG = {
-            "kicker": "MICROSOFT LEARN",
-            "titleLine1": "__FILL__ title line 1",
-            "titleLine2": "__FILL__ title line 2",
-            "subtitle": "__FILL__ one-line subtitle for the video."
+            kicker: "Provision and govern identities in Microsoft Entra",
+            titleLine1: "Manage Guests &",
+            titleLine2: "External Collaboration",
+            subtitle: "Let partners in \u2014 without opening up the directory.",
           };
 
           var kicker = document.getElementById("mk-th-kicker");
@@ -173,38 +202,23 @@
 
           var tl = gsap.timeline({ paused: true });
 
-          // Waterfall entrance — scene-relative, seek-safe. Calm cadence for the opener.
-          // 1) kicker fades + rises first.
-          tl.fromTo(
-            kicker,
-            { opacity: 0, y: 24 },
-            { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
-            0.25,
-          );
+          // t=0 state is pinned so the card is never "already drawn" when the scene opens.
+          gsap.set(kicker, { opacity: 0, y: 24 });
+          gsap.set([line1, line2], { opacity: 0, y: 44 });
+          gsap.set(rule, { scaleX: 0 });
+          gsap.set(subtitle, { opacity: 0, y: 22 });
 
-          // 2) the two title lines arrive on a short stagger.
-          tl.fromTo(
-            [line1, line2],
-            { opacity: 0, y: 44 },
-            { opacity: 1, y: 0, duration: 0.85, ease: "power3.out", stagger: 0.14 },
-            0.75,
-          );
+          // kicker + title land on the first spoken words of the video.
+          tl.to(kicker, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, W.titleStart);
+          tl.to([line1, line2], { opacity: 1, y: 0, duration: 0.85, ease: "power3.out", stagger: 0.14 }, W.titleStart + 0.3);
+          tl.to(rule, { scaleX: 1, duration: 0.7, ease: "power2.out" }, W.titleStart + 1.1);
 
-          // 3) the accent rule wipes in left→right (a graphic).
-          tl.fromTo(
-            rule,
-            { scaleX: 0 },
-            { scaleX: 1, duration: 0.7, ease: "power2.out" },
-            1.55,
-          );
+          // the subtitle arrives on "Let outside partners in".
+          tl.to(subtitle, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, W.titleSubtitle);
 
-          // 4) the subtitle fades up last, then we hold on stillness.
-          tl.fromTo(
-            subtitle,
-            { opacity: 0, y: 22 },
-            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-            1.95,
-          );
+          // the accent rule extends as the sentence closes ("...the run of your directory") —
+          // a graphic mark, so the card is never static for longer than the 5.0s budget.
+          tl.to(rule, { width: 188, duration: 1.8, ease: "power2.inOut" }, W.titleTail);
 
           window.__timelines["02-title"] = tl;
         })();

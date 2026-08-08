@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+  </head>
+  <body>
+    <template>
+      <style>
+        /* === Learn-ILT kit block: flowchart (decision tree — white nodes, blue connectors). ===
+           Rebuilt on the kit foundation: no hardcoded colours/fonts/px type — tokens only.
+           Connectors + emphasis border + selection + the "You" cursor chip carry ONE blue
+           accent (var(--accent-2)) as a GRAPHIC; all node text stays var(--ink). The lone
+           non-brand colour is the intentional semantic-red spellcheck squiggle. Node/connector
+           geometry (absolute .canvas space + scale/transform-origin) and the node-then-connector
+           reveal + cursor/typing/emoji choreography are unchanged; no root fade-out. */
+
+        /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+        #root,
+        #root *,
+        #root *::before,
+        #root *::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size;
+
+          --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
+          --ink: #091f2e;
+          --ink-soft: #59636e;
+          --paper: #ffffff;
+          --paper-veil: rgba(255, 255, 255, 0.9);
+          --border: rgba(9, 31, 46, 0.16);
+          --border-soft: rgba(9, 31, 46, 0.12);
+          --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
+
+          --accent: #8661c5;
+          --accent-2: #0078d4;
+          --accent-3: #389a91;
+          --accent-4: #bf3ac4;
+          --accent-ink: #ffffff;
+
+          --fs-display: 11cqw;
+          --fs-h1: 4.6cqw;
+          --fs-h2: 3.4cqw;
+          --fs-h3: 2.4cqw;
+          --fs-lead: 2cqw;
+          --fs-body: 1.75cqw;
+          --fs-caption: 1.5cqw;
+          --fs-kicker: 1.55cqw;
+          --fs-micro: 1.25cqw;
+
+          --radius: 16px;
+          --radius-sm: 10px;
+          --radius-pill: 999px;
+          --stroke: 5px;
+          --rule: 3px;
+
+          font-family: "Segoe UI", system-ui, sans-serif;
+          color: var(--ink);
+          background: var(--ground);
+        }
+        #root[data-ground="hero-swoosh"] {
+          --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+        }
+        #root[data-ground="section-field"] {
+          --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
+        }
+        #root[data-ground="dark-field"] {
+          --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
+          --ink: #ffffff;
+          --ink-soft: rgba(255, 255, 255, 0.72);
+          --paper: rgba(255, 255, 255, 0.08);
+          --paper-veil: rgba(255, 255, 255, 0.1);
+          --border: rgba(255, 255, 255, 0.24);
+          --border-soft: rgba(255, 255, 255, 0.14);
+          --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+        /* ==== END _foundation.css ==== */
+
+        .canvas {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          transform: scale(1.2);
+          transform-origin: 960px 300px;
+        }
+
+        /* White ILT panel node (translucent paper-veil so it reads on a busy ground).
+           Geometry unchanged; only colours/type are tokenised. Node text stays --ink. */
+        .node {
+          position: absolute;
+          transform: translate(-50%, -50%) scale(0);
+          padding: 16px 24px;
+          max-width: 340px;
+          border-radius: 12px;
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-size: var(--fs-body);
+          font-weight: 600;
+          line-height: 1.25;
+          text-align: center;
+          color: var(--ink);
+          background: var(--paper-veil);
+          border: 1.5px solid var(--border);
+          box-shadow: 0 6px 20px rgba(9, 31, 46, 0.08);
+          white-space: normal;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          z-index: 10;
+        }
+
+        /* Emphasis / decision node — the central question. Accent lives on the border
+           (a graphic); the label itself stays ink. */
+        .node.emphasis {
+          border: 2.5px solid var(--accent-2);
+        }
+
+        .connectors {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 5;
+          pointer-events: none;
+        }
+
+        .connector {
+          stroke: var(--accent-2); /* blue connector = graphic, never text */
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+        }
+
+        .connector-label {
+          position: absolute;
+          font-family: "Segoe UI", sans-serif;
+          font-size: var(--fs-caption);
+          font-weight: 600;
+          color: var(--ink);
+          background: var(--paper);
+          border: 1px solid var(--border);
+          padding: 4px 12px;
+          border-radius: 8px;
+          opacity: 0;
+          z-index: 6;
+          transform: translate(-50%, -50%);
+        }
+
+        #label-yes {
+          left: 780px;
+          top: 230px;
+        }
+        #label-not-sure {
+          left: 1140px;
+          top: 230px;
+        }
+
+        .cursor-container {
+          position: absolute;
+          left: 1920px;
+          top: 1080px;
+          z-index: 100;
+          pointer-events: none;
+          display: flex;
+          align-items: flex-start;
+        }
+
+        /* "You" cursor chip — an accent-filled badge; --accent-ink is the sanctioned
+           text colour that rides ON an accent fill (chips/badges). */
+        .cursor-tag {
+          background-color: var(--accent-2);
+          color: var(--accent-ink);
+          padding: 4px 12px;
+          border-radius: 6px;
+          font-size: var(--fs-caption);
+          font-weight: 600;
+          margin-left: 6px;
+          margin-top: 16px;
+        }
+
+        .squiggle-container {
+          position: absolute;
+          right: 0;
+          bottom: -6px;
+          opacity: 0;
+        }
+
+        .emoji {
+          position: absolute;
+          font-size: var(--fs-h3);
+          left: 510px;
+          top: 500px;
+          transform: translate(-50%, -50%) scale(0);
+          z-index: 20;
+        }
+
+        .selection-border {
+          position: absolute;
+          top: -4px;
+          left: -4px;
+          right: -4px;
+          bottom: -4px;
+          border: 2.5px solid var(--accent-2);
+          border-radius: 16px;
+          pointer-events: none;
+          opacity: 0;
+        }
+
+        /* Text-selection tint during the typing correction — a translucent wash derived from
+           the blue accent (a graphic); the corrected word stays --ink on top. */
+        .text-highlight {
+          background-color: color-mix(in srgb, var(--accent-2) 20%, transparent);
+        }
+
+        /* ---- scene-specific: composes the kit tokens + primitives above ---- */
+
+        /* the kit demo scales the canvas 1.2x around (960,300) to crop its six-leaf tree.
+           This graph is authored to fit 1920x1080 exactly, so the crop is removed. */
+        .canvas {
+          transform: none;
+        }
+        .ilt-kicker {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-kicker);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+        #df-kicker {
+          position: absolute;
+          left: 200px;
+          top: 96px;
+          opacity: 0;
+        }
+        #df-premise {
+          position: absolute;
+          left: 960px;
+          top: 176px;
+          transform: translate(-50%, -50%);
+          font-weight: 400;
+          font-size: var(--fs-caption);
+          line-height: 1.3;
+          color: var(--ink-soft);
+          white-space: nowrap;
+          opacity: 0;
+        }
+        /* the branch that is still open at the end of this beat: dashed, recessed. Its answer
+           belongs to B5, so it must not read as resolved here. */
+        .node.pending {
+          border: 2px dashed var(--border);
+          background: var(--paper-veil);
+          color: var(--ink-soft);
+          box-shadow: none;
+        }
+        .connector.pending {
+          stroke: var(--border);
+          stroke-dasharray: 10 8;
+        }
+        #node-powers {
+          max-width: 460px;
+          padding: 18px 26px;
+          text-align: left;
+          align-items: stretch;
+          gap: 10px;
+        }
+        .df-power {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          font-family: "Segoe UI", sans-serif;
+          font-weight: 400;
+          font-size: var(--fs-caption);
+          line-height: 1.25;
+          color: var(--ink);
+          white-space: nowrap;
+          opacity: 0;
+        }
+        /* the marker is the graphic that separates "what you asked for" from "what came with
+           it" — magenta is a FILL on a dot, never the words. */
+        .df-dot {
+          flex: none;
+          width: 12px;
+          height: 12px;
+          border-radius: var(--radius-pill);
+          border: 2px solid var(--border);
+          background: transparent;
+        }
+        .df-power.extra .df-dot {
+          border-color: var(--accent-4);
+          background: var(--accent-4);
+        }
+        #df-flag {
+          position: absolute;
+          left: 940px;
+          top: 470px;
+          transform: translate(-50%, -50%);
+          display: inline-flex;
+          align-items: center;
+          gap: 0.55em;
+          padding: 0.5em 1.1em;
+          border: 1.5px solid var(--accent-4);
+          border-radius: var(--radius-pill);
+          background: var(--paper);
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-micro);
+          color: var(--ink); /* the flag's WORDS stay ink; magenta is the border + dot */
+          white-space: nowrap;
+          opacity: 0;
+          z-index: 20;
+        }
+        #df-flag-dot {
+          flex: none;
+          width: 0.6em;
+          height: 0.6em;
+          border-radius: var(--radius-pill);
+          background: var(--accent-4);
+        }
+        #df-open-caption {
+          position: absolute;
+          left: 1360px;
+          top: 634px;
+          transform: translate(-50%, -50%);
+          font-weight: 400;
+          font-size: var(--fs-caption);
+          line-height: 1.3;
+          color: var(--ink-soft);
+          white-space: nowrap;
+          opacity: 0;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="07-role-trap"
+        data-ground="content-wash"
+        data-width="1920"
+        data-height="1080"
+      >
+        <div class="canvas" data-keep-in-frame>
+          <svg class="connectors" width="1920" height="1080" viewBox="0 0 1920 1080">
+            <!-- root -> the tempting broad role -->
+            <path
+              id="path-root-L"
+              class="connector"
+              d="M 960 305 L 960 390 L 620 390 L 620 428"
+              fill="none"
+              stroke-width="4"
+            />
+            <!-- root -> the branch this beat deliberately leaves open -->
+            <path
+              id="path-root-R"
+              class="connector pending"
+              d="M 960 305 L 960 390 L 1360 390 L 1360 428"
+              fill="none"
+              stroke-width="4"
+            />
+            <!-- the broad role -> everything it can also do -->
+            <path
+              id="path-powers"
+              class="connector"
+              d="M 620 546 L 620 664"
+              fill="none"
+              stroke-width="4"
+            />
+          </svg>
+
+          <div id="df-kicker" class="ilt-kicker">Delegating invitations</div>
+          <div id="df-premise">
+            Coordinators need to invite analysts themselves &mdash; without a ticket to IT.
+          </div>
+
+          <div id="node-root" class="node emphasis" style="left: 960px; top: 260px">
+            Who can invite guests?
+          </div>
+
+          <div id="node-useradmin" class="node" style="left: 620px; top: 487px">
+            User Administrator
+          </div>
+          <div id="df-flag">
+            <span id="df-flag-dot"></span><span>Too broad</span>
+          </div>
+
+          <div id="node-powers" class="node" style="left: 620px; top: 792px">
+            <div id="df-power-0" class="df-power">
+              <span class="df-dot"></span><span>Invite guests</span>
+            </div>
+            <div id="df-power-1" class="df-power extra">
+              <span class="df-dot"></span><span>Reset passwords</span>
+            </div>
+            <div id="df-power-2" class="df-power extra">
+              <span class="df-dot"></span><span>Edit profiles</span>
+            </div>
+            <div id="df-power-3" class="df-power extra">
+              <span class="df-dot"></span><span>Manage licenses, tenant-wide</span>
+            </div>
+          </div>
+
+          <div id="node-inviter" class="node pending" style="left: 1360px; top: 487px">
+            Guest Inviter
+          </div>
+          <div id="df-open-caption">The least-privileged path &mdash; next</div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          window.__timelines = window.__timelines || {};
+
+          /* ---- CUE CLOCK -------------------------------------------------------
+             Every timeline position in this scene is a REAL spoken-word time from
+             transcript.json (resolved by tools/word_anchors.py into anchors.json /
+             anchors.js, with the 3.0s bumper lead-in applied), rebased to this
+             scene's start on the host timeline. Nothing here is an offset guessed
+             from an assumed words-per-second. Re-record => regenerate anchors.js. */
+          var SCENE_START = 100.61;
+          var ABS = {
+            "b4Start": 100.61,
+            "b4Themselves": 103.75,
+            "b4UserAdmin": 107.89,
+            "b4CanInvite": 110.79,
+            "b4CanInviteEnd": 113.13,
+            "b4TooBroad": 115.63,
+            "b4FarMore": 117.79
+          };
+          var W = {};
+          (function () {
+            var live = (typeof window !== "undefined" && window.__anchors) || {};
+            for (var k in ABS) {
+              if (!Object.prototype.hasOwnProperty.call(ABS, k)) continue;
+              var t = typeof live[k] === "number" ? live[k] : ABS[k];
+              W[k] = Math.max(0, Math.round((t - SCENE_START) * 1000) / 1000);
+            }
+          })();
+
+          /* B4 — a decision whose obvious answer is WRONG. The graph must show the broad role
+             winning on capability and losing on scope; the Guest Inviter branch stays dashed
+             because its answer is B5's payoff (design-plan.md: predict-before-reveal). */
+          var kicker = document.getElementById("df-kicker");
+          var premise = document.getElementById("df-premise");
+          var flag = document.getElementById("df-flag");
+          var openCaption = document.getElementById("df-open-caption");
+
+          var tl = gsap.timeline({ paused: true });
+
+          /* t=0 pins. `.node` ships `transform: translate(-50%,-50%) scale(0)`; the percentage
+             translate is restated as xPercent/yPercent so GSAP owns the whole transform and the
+             nodes stay centred on their coordinates at every seek position. */
+          gsap.set(".node", { xPercent: -50, yPercent: -50, scale: 0, opacity: 1 });
+          gsap.set(flag, { xPercent: -50, yPercent: -50, scale: 0.8, opacity: 0 });
+          gsap.set(".connector", { strokeDashoffset: 1000 });
+
+          /* "So who pulls these levers?" */
+          tl.to(kicker, { opacity: 1, duration: 0.4, ease: "power2.out" }, W.b4Start);
+          tl.to("#node-root", { scale: 1, duration: 0.45, ease: "back.out(1.6)" }, W.b4Start);
+
+          /* "Coordinators need to invite analysts themselves, without a ticket to IT." */
+          tl.to(premise, { opacity: 1, duration: 0.5, ease: "power2.out" }, W.b4Themselves);
+
+          /* "The obvious move is User Administrator" — node first, THEN the link to it. */
+          tl.to("#node-useradmin", { scale: 1, duration: 0.45, ease: "back.out(1.7)" }, W.b4UserAdmin);
+          tl.to("#path-root-L", { strokeDashoffset: 0, duration: 0.5, ease: "none" }, W.b4UserAdmin + 0.3);
+
+          /* "It can invite..." — the capability panel opens on the one power that was asked for */
+          tl.to("#node-powers", { scale: 1, duration: 0.45, ease: "back.out(1.7)" }, W.b4CanInvite);
+          tl.to("#path-powers", { strokeDashoffset: 0, duration: 0.35, ease: "none" }, W.b4CanInvite + 0.2);
+          tl.to("#df-power-0", { opacity: 1, duration: 0.35, ease: "power2.out" }, W.b4CanInvite + 0.35);
+
+          /* "...but it can also reset passwords, edit profiles, and manage licenses" — the three
+             extras arrive as they are spoken, so the over-grant accumulates in front of the
+             learner instead of being present from the start. */
+          tl.to("#df-power-1", { opacity: 1, duration: 0.35, ease: "power2.out" }, W.b4CanInviteEnd);
+          tl.to("#df-power-2", { opacity: 1, duration: 0.35, ease: "power2.out" }, W.b4CanInviteEnd + 0.9);
+          tl.to("#df-power-3", { opacity: 1, duration: 0.35, ease: "power2.out" }, W.b4TooBroad);
+
+          /* "That's far more than 'invite one analyst' needs." — the verdict lands, and the
+             still-open branch appears dashed. It is NOT walked here; B5 resolves it. */
+          tl.to(flag, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.9)" }, W.b4FarMore);
+          tl.to("#node-useradmin", { opacity: 0.45, duration: 0.6, ease: "power2.out" }, W.b4FarMore + 0.5);
+          tl.to("#node-powers", { opacity: 0.45, duration: 0.6, ease: "power2.out" }, W.b4FarMore + 0.5);
+          tl.to("#node-inviter", { scale: 1, duration: 0.45, ease: "back.out(1.7)" }, W.b4FarMore + 0.6);
+          tl.to("#path-root-R", { strokeDashoffset: 0, duration: 0.5, ease: "none" }, W.b4FarMore + 0.8);
+          tl.to(openCaption, { opacity: 1, duration: 0.4, ease: "power2.out" }, W.b4FarMore + 0.95);
+
+          window.__timelines["07-role-trap"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

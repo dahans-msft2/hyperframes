@@ -127,6 +127,34 @@
           line-height: 1.3;
           color: var(--ink-soft);
         }
+
+        /* ---- scene-specific: composes the kit tokens + primitives above ---- */
+
+        /* DECLARED CHROME OVERRIDE (design-plan.md): the CTA closes on the hero swoosh so the
+           film bookends on the ground it opened with. The title-hero waterfall is left-anchored
+           (left: 184px), which keeps every readable line out of the swoosh's bottom-right third —
+           the one zone that measures 5.95 rather than 15.6. Do not right-justify these lines. */
+        #mk-th-title {
+          font-size: var(--fs-h2);
+        }
+        .mk-th-line {
+          display: block;
+          position: relative;
+          padding-left: 46px;
+        }
+        .mk-th-line::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0.52em;
+          width: 22px;
+          height: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent-2); /* link marker = graphic, never text colour */
+        }
+        #mk-th-line2 {
+          margin-top: 0.5em;
+        }
       </style>
 
       <div
@@ -136,7 +164,6 @@
         data-width="1920"
         data-height="1080"
       >
-        <!-- host may override data-ground with "section-field" | "dark-field" -->
         <div id="mk-th-group">
           <div id="mk-th-kicker" class="ilt-kicker"></div>
           <div id="mk-th-title" class="ilt-title">
@@ -152,12 +179,35 @@
         (function () {
           window.__timelines = window.__timelines || {};
 
-          // Edit per use. Opening title card: eyebrow kicker + two-line title + one-line subtitle.
+          /* ---- CUE CLOCK -------------------------------------------------------
+             Every timeline position in this scene is a REAL spoken-word time from
+             transcript.json (resolved by tools/word_anchors.py into anchors.json /
+             anchors.js, with the 3.0s bumper lead-in applied), rebased to this
+             scene's start on the host timeline. Nothing here is an offset guessed
+             from an assumed words-per-second. Re-record => regenerate anchors.js. */
+          var SCENE_START = 263.59;
+          var ABS = {
+            "ctaStart": 263.59,
+            "ctaDocs": 266.7,
+            "ctaMto": 270.29,
+            "ctaTry": 274.91
+          };
+          var W = {};
+          (function () {
+            var live = (typeof window !== "undefined" && window.__anchors) || {};
+            for (var k in ABS) {
+              if (!Object.prototype.hasOwnProperty.call(ABS, k)) continue;
+              var t = typeof live[k] === "number" ? live[k] : ABS[k];
+              W[k] = Math.max(0, Math.round((t - SCENE_START) * 1000) / 1000);
+            }
+          })();
+
+          // Closing card. Text from script.md -> "Chrome text" (91-cta).
           var CONFIG = {
-            "kicker": "NEXT STEP",
-            "titleLine1": "__FILL__ call to action, line 1",
-            "titleLine2": "__FILL__ call to action, line 2",
-            "subtitle": "__FILL__ where to go next (the module or docs)."
+            kicker: "Next step \u00b7 Microsoft Learn docs",
+            titleLine1: "Configure external collaboration settings",
+            titleLine2: "Multitenant Organization overview",
+            subtitle: "Then try it in your own tenant.",
           };
 
           var kicker = document.getElementById("mk-th-kicker");
@@ -173,38 +223,16 @@
 
           var tl = gsap.timeline({ paused: true });
 
-          // Waterfall entrance — scene-relative, seek-safe. Calm cadence for the opener.
-          // 1) kicker fades + rises first.
-          tl.fromTo(
-            kicker,
-            { opacity: 0, y: 24 },
-            { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
-            0.25,
-          );
+          gsap.set(kicker, { opacity: 0, y: 24 });
+          gsap.set([line1, line2], { opacity: 0, y: 34 });
+          gsap.set(rule, { scaleX: 0 });
+          gsap.set(subtitle, { opacity: 0, y: 22 });
 
-          // 2) the two title lines arrive on a short stagger.
-          tl.fromTo(
-            [line1, line2],
-            { opacity: 0, y: 44 },
-            { opacity: 1, y: 0, duration: 0.85, ease: "power3.out", stagger: 0.14 },
-            0.75,
-          );
-
-          // 3) the accent rule wipes in left→right (a graphic).
-          tl.fromTo(
-            rule,
-            { scaleX: 0 },
-            { scaleX: 1, duration: 0.7, ease: "power2.out" },
-            1.55,
-          );
-
-          // 4) the subtitle fades up last, then we hold on stillness.
-          tl.fromTo(
-            subtitle,
-            { opacity: 0, y: 22 },
-            { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-            1.95,
-          );
+          tl.to(kicker, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, W.ctaStart);
+          tl.to(line1, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, W.ctaDocs);
+          tl.to(line2, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, W.ctaMto);
+          tl.to(rule, { scaleX: 1, duration: 0.65, ease: "power2.out" }, W.ctaMto + 0.4);
+          tl.to(subtitle, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, W.ctaTry);
 
           window.__timelines["91-cta"] = tl;
         })();

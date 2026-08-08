@@ -16,5 +16,23 @@
     "status": "passed",
     "note": null,
     "meta": {}
+  },
+  {
+    "kind": "start",
+    "stage": "builder",
+    "run_id": "manage-guests-external-collaboration-202608071310",
+    "at": "2026-08-08T03:08:36+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "builder",
+    "run_id": "manage-guests-external-collaboration-202608071310",
+    "at": "2026-08-08T03:42:02+00:00",
+    "status": "passed",
+    "note": "14 scenes authored (9 body + 5 chrome filled); 87/87 cues word-anchored; 5 of 7 gates green, 2 known non-authoring blockers (generator seam literals, licensed fonts absent)",
+    "meta": {}
   }
 ]

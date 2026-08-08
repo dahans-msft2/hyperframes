@@ -176,7 +176,7 @@
 
       <div
         id="root"
-        data-composition-id="90-recap"
+        data-composition-id="05-lever-map"
         data-ground="content-wash"
         data-width="1920"
         data-height="1080"
@@ -201,16 +201,16 @@
              anchors.js, with the 3.0s bumper lead-in applied), rebased to this
              scene's start on the host timeline. Nothing here is an offset guessed
              from an assumed words-per-second. Re-record => regenerate anchors.js. */
-          var SCENE_START = 240.45;
+          var SCENE_START = 51.95;
           var ABS = {
-            "recapStart": 240.45,
-            "recapLevers": 243.99,
-            "recapSees": 246.69,
-            "recapAnswer": 249.43,
-            "recapDelegate": 252.47,
-            "recapWithout": 256.54,
-            "recapScale": 258.34,
-            "recapNext": 262.15
+            "b2Start": 51.95,
+            "b2NotOneSwitch": 53.02,
+            "b2Levers": 56.72,
+            "b2GetsIn": 60.25,
+            "b2HowMuch": 61.54,
+            "b2Domains": 62.91,
+            "b2Trust": 64.73,
+            "b2Together": 69.27
           };
           var W = {};
           (function () {
@@ -222,21 +222,20 @@
             }
           })();
 
-          /* DECLARED CHROME OVERRIDE (design-plan.md): 90-recap is stamped from `list-specs`
-             instead of `title-hero`. The recap carries four parallel takeaways that answer the
-             three objectives plus the opening hook; a two-line title would drop three of them.
-             Ground stays content-wash. Text from script.md -> "Chrome text" (90-recap). */
+          /* B2 — five PEER levers, nothing selected. Each row is label -> what it controls,
+             which is why this is list-specs and not list-select (design-plan.md). */
           var CONFIG = {
-            kicker: "Recap",
-            countLabel: "takeaways",
+            kicker: "Guest access is not one switch",
+            countLabel: "levers",
             rows: [
-              { label: "Access model", value: "Levers, not a single switch" },
-              { label: "What a guest sees", value: "Limited access by default" },
-              { label: "Delegation", value: "Guest Inviter + the tenant invite setting" },
-              { label: "When to scale", value: "A Multitenant Organization" },
+              { label: "Invitation flow", value: "How a guest gets in" },
+              { label: "Permission levels", value: "How much a guest can see" },
+              { label: "Domain lists", value: "Which domains you'll invite" },
+              { label: "Cross-tenant access", value: "How far you trust a partner tenant" },
+              { label: "Self-service sign-up", value: "External users request access themselves" },
             ],
-            lineWidth: 1020,
-            x: 320,
+            lineWidth: 1080,
+            x: 300,
             rowGap: 48,
           };
 
@@ -290,46 +289,51 @@
           var tl = gsap.timeline({ paused: true });
 
           /* t=0 pins */
-          gsap.set(kickerEl, { opacity: 0, y: 16 });
-          gsap.set(countWrap, { opacity: 0, y: 16 });
+          gsap.set(kickerEl, { opacity: 0, y: 18 });
+          gsap.set(countWrap, { opacity: 0, y: 18 });
           for (var i = 0; i < n; i++) {
             gsap.set(document.getElementById("mk-sl-row-" + i), { opacity: 0, x: -36 });
             gsap.set(document.getElementById("mk-sl-fill-" + i), { scaleX: 0 });
           }
 
-          tl.to(kickerEl, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.recapStart);
+          /* "Here's the catch" -> the frame; "Guest access isn't one switch" -> the kicker */
+          tl.to(kickerEl, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.b2NotOneSwitch);
 
-          /* "External collaboration is a set of levers, not a switch." */
-          tl.to("#mk-sl-row-0", { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, W.recapLevers);
-          tl.to("#mk-sl-fill-0", { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, W.recapLevers + 0.15);
-
-          /* "Permission levels decide what a guest sees" -> row; "limited by default" -> its rule */
-          tl.to("#mk-sl-row-1", { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, W.recapSees);
-          tl.to("#mk-sl-fill-1", { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, W.recapAnswer);
-
-          /* "Guest Inviter plus the right tenant setting..." -> row; "...without over-granting" -> rule */
-          tl.to("#mk-sl-row-2", { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, W.recapDelegate);
-          tl.to("#mk-sl-fill-2", { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, W.recapWithout);
-
-          /* "And when guests stop scaling..." -> row; "...is your next move" -> rule + count */
-          tl.to("#mk-sl-row-3", { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" }, W.recapScale);
-          tl.to("#mk-sl-fill-3", { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, W.recapNext);
-          tl.to(countWrap, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.recapNext);
+          /* "It's several levers" -> the count reads up to five BEFORE the rows arrive, so the
+             learner knows how many are coming (Signaling). */
+          tl.to(countWrap, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.b2Levers);
           var counter = { v: 0 };
           tl.to(
             counter,
             {
               v: n,
-              duration: 0.7,
+              duration: 0.8,
               ease: "power1.out",
               onUpdate: function () {
                 countEl.textContent = Math.round(counter.v);
               },
             },
-            W.recapNext
+            W.b2Levers
           );
 
-          window.__timelines["90-recap"] = tl;
+          /* one row per lever, each landing on the words that name it */
+          tl.to("#mk-sl-row-0", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.b2GetsIn);
+          tl.to("#mk-sl-fill-0", { scaleX: 1, duration: 0.7, ease: "power2.inOut" }, W.b2GetsIn + 0.15);
+          tl.to("#mk-sl-row-1", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.b2HowMuch);
+          tl.to("#mk-sl-fill-1", { scaleX: 1, duration: 0.7, ease: "power2.inOut" }, W.b2HowMuch + 0.15);
+          tl.to("#mk-sl-row-2", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.b2Domains);
+          tl.to("#mk-sl-fill-2", { scaleX: 1, duration: 0.7, ease: "power2.inOut" }, W.b2Domains + 0.15);
+          tl.to("#mk-sl-row-3", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.b2Trust);
+          tl.to("#mk-sl-fill-3", { scaleX: 1, duration: 0.7, ease: "power2.inOut" }, W.b2Trust + 0.15);
+
+          /* the fifth lever (self-service sign-up) is never named in the VO; it arrives with
+             "Together, they define..." so the promised count of five is honoured on screen. */
+          tl.to("#mk-sl-row-4", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.b2Together);
+          tl.to("#mk-sl-fill-4", { scaleX: 1, duration: 0.7, ease: "power2.inOut" }, W.b2Together + 0.15);
+          /* "none of them replaces another" — the whole stack settles as one object */
+          tl.to(".mk-sl-row", { x: 6, duration: 0.9, ease: "power2.inOut", stagger: 0.05 }, W.b2Together + 0.3);
+
+          window.__timelines["05-lever-map"] = tl;
         })();
       </script>
     </template>

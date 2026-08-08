@@ -141,50 +141,84 @@
 
         #mk-st-head {
           position: absolute;
+          display: flex;
+          align-items: baseline;
+          gap: 1.3cqw;
+        }
+        #mk-st-kicker {
           opacity: 0;
         }
-        /* the accent half of the connector: a graphic mark that completes the spine */
-        #mk-st-connector-fill {
-          position: absolute;
-          width: var(--rule);
-          border-radius: var(--rule);
-          background: var(--accent);
-          transform-origin: top center;
+        #mk-st-count-wrap {
+          display: inline-flex;
+          align-items: baseline;
+          gap: 0.45em;
+          opacity: 0;
+        }
+        #mk-st-count {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h3);
+          line-height: 1;
+          letter-spacing: -0.02em;
+          color: var(--ink);
+          font-variant-numeric: tabular-nums;
+        }
+        #mk-st-count-label {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-lead);
+          letter-spacing: -0.01em;
+          color: var(--ink);
         }
         .mk-st-detail {
           margin-top: 0.45cqw;
           opacity: 0;
         }
-        .mk-st-note {
+        /* the gotcha: a bordered note. The border + dot are the graphic; the words are ink. */
+        #mk-st-note {
           position: absolute;
           display: inline-flex;
           align-items: center;
-          gap: 0.6em;
-          padding: 0.5em 1.1em;
-          border: 1.5px solid var(--accent-4); /* border = graphic; the words stay ink */
+          gap: 0.7em;
+          padding: 0.6em 1.2em;
+          border: 1.5px solid var(--accent-4);
           border-radius: var(--radius-pill);
           background: var(--paper);
           font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
-          font-size: var(--fs-micro);
           font-weight: 600;
+          font-size: var(--fs-micro);
           color: var(--ink);
+          white-space: nowrap;
           opacity: 0;
+        }
+        #mk-st-note-dot {
+          flex: none;
+          width: 0.62em;
+          height: 0.62em;
+          border-radius: var(--radius-pill);
+          background: var(--accent-4);
         }
       </style>
 
       <div
         id="root"
-        data-composition-id="03-objectives"
+        data-composition-id="08-delegate-two-pieces"
         data-ground="content-wash"
         data-width="1920"
         data-height="1080"
       >
         <div id="mk-st-head">
-          <div id="mk-st-kicker" class="ilt-kicker"></div>
+          <span id="mk-st-kicker" class="ilt-kicker"></span>
+          <span id="mk-st-count-wrap">
+            <span id="mk-st-count">0</span>
+            <span id="mk-st-count-label"></span>
+          </span>
         </div>
         <div id="mk-st-col">
           <div id="mk-st-connector"></div>
-          <div id="mk-st-connector-fill"></div>
+        </div>
+        <div id="mk-st-note">
+          <span id="mk-st-note-dot"></span><span id="mk-st-note-text"></span>
         </div>
       </div>
 
@@ -198,12 +232,16 @@
              anchors.js, with the 3.0s bumper lead-in applied), rebased to this
              scene's start on the host timeline. Nothing here is an offset guessed
              from an assumed words-per-second. Re-record => regenerate anchors.js. */
-          var SCENE_START = 14.81;
+          var SCENE_START = 121.39;
           var ABS = {
-            "objectivesStart": 14.81,
-            "objective2": 18.55,
-            "objective3": 21.98,
-            "objectiveStakes": 26.53
+            "b5Start": 121.39,
+            "b5TwoPieces": 123.7,
+            "b5First": 126.09,
+            "b5OnlyPower": 129.79,
+            "b5Second": 133.63,
+            "b5Setting": 136.35,
+            "b5Skip": 141.19,
+            "b5Nothing": 144.42
           };
           var W = {};
           (function () {
@@ -215,29 +253,42 @@
             }
           })();
 
-          // Objectives, framed as stakes. Text from script.md -> "Chrome text" (03-objectives).
+          /* B5 — an ORDERED, both-required procedure. The teaching point is that step 2 is not
+             optional, so step 2's badge is the focal object (design-plan.md). */
           var CONFIG = {
-            kicker: "In this unit",
+            kicker: "Least privilege, delegated",
+            countLabel: "pieces, not one",
             steps: [
-              { title: "Map the levers that control external access" },
-              { title: "Delegate invitations with least privilege" },
-              { title: "Know when to move from guests to a Multitenant Organization" },
+              {
+                title: "Assign the Guest Inviter role",
+                detail: "Its only power is sending invitations.",
+              },
+              {
+                title: "Set the tenant's invite setting",
+                detail: "\u201cOnly users assigned to specific admin roles can invite guest users\u201d",
+              },
             ],
-            badge: 96,
-            gap: 34,
-            rowGap: 58,
-            textWidth: 1040,
-            x: 210,
+            note: "Skip the second piece and everyone can still invite \u2014 the role changes nothing.",
+            badge: 104,
+            gap: 36,
+            rowGap: 92,
+            textWidth: 1120,
+            x: 260,
           };
 
           var col = document.getElementById("mk-st-col");
           var head = document.getElementById("mk-st-head");
+          var kickerEl = document.getElementById("mk-st-kicker");
+          var countWrap = document.getElementById("mk-st-count-wrap");
+          var countEl = document.getElementById("mk-st-count");
           var connector = document.getElementById("mk-st-connector");
-          var connectorFill = document.getElementById("mk-st-connector-fill");
+          var note = document.getElementById("mk-st-note");
           var steps = CONFIG.steps;
           var n = steps.length;
 
-          document.getElementById("mk-st-kicker").textContent = CONFIG.kicker;
+          kickerEl.textContent = CONFIG.kicker;
+          document.getElementById("mk-st-count-label").textContent = CONFIG.countLabel;
+          document.getElementById("mk-st-note-text").textContent = CONFIG.note;
 
           steps.forEach(function (s, i) {
             var row = document.createElement("div");
@@ -264,66 +315,83 @@
             title.className = "mk-st-title";
             title.textContent = s.title;
             text.appendChild(title);
-            if (s.detail) {
-              var detail = document.createElement("div");
-              detail.id = "mk-st-detail-" + i;
-              detail.className = "ilt-caption mk-st-detail";
-              detail.textContent = s.detail;
-              text.appendChild(detail);
-            }
+            var detail = document.createElement("div");
+            detail.id = "mk-st-detail-" + i;
+            detail.className = "ilt-caption mk-st-detail";
+            detail.textContent = s.detail;
+            text.appendChild(detail);
             row.appendChild(text);
 
             col.appendChild(row);
           });
 
-          /* centre the stack vertically; it occupies the left ~72% of the frame */
-          var rowH = CONFIG.badge;
-          var colH = n * rowH + (n - 1) * CONFIG.rowGap;
-          var colTop = Math.round((1080 - colH) / 2) + 24;
+          var colH = n * CONFIG.badge + (n - 1) * CONFIG.rowGap;
+          var colTop = Math.round((1080 - colH) / 2) + 16;
           col.style.left = CONFIG.x + "px";
           col.style.top = colTop + "px";
           head.style.left = CONFIG.x + "px";
-          head.style.top = colTop - 92 + "px";
+          head.style.top = colTop - 108 + "px";
+          note.style.left = CONFIG.x + "px";
+          note.style.top = colTop + colH + 74 + "px";
 
-          /* the connector runs from the first badge centre to the last badge centre */
-          var cLeft = Math.round(CONFIG.badge / 2 - 1.5);
-          var cTop = Math.round(CONFIG.badge / 2);
-          var cH = colH - rowH;
-          [connector, connectorFill].forEach(function (el) {
-            el.style.left = cLeft + "px";
-            el.style.top = cTop + "px";
-            el.style.height = cH + "px";
-          });
+          connector.style.left = Math.round(CONFIG.badge / 2 - 1.5) + "px";
+          connector.style.top = Math.round(CONFIG.badge / 2) + "px";
+          connector.style.height = colH - CONFIG.badge + "px";
 
           var tl = gsap.timeline({ paused: true });
 
-          /* t=0 pins — nothing is drawn before its own spoken cue. */
-          gsap.set(head, { opacity: 0, y: 18 });
+          /* t=0 pins */
+          gsap.set(kickerEl, { opacity: 0, y: 18 });
+          gsap.set(countWrap, { opacity: 0, y: 18 });
           gsap.set(connector, { scaleY: 0 });
-          gsap.set(connectorFill, { scaleY: 0 });
+          gsap.set(note, { opacity: 0, y: 18 });
           for (var i = 0; i < n; i++) {
             gsap.set(document.getElementById("mk-st-row-" + i), { opacity: 0, x: -40 });
             gsap.set(document.getElementById("mk-st-badge-" + i), { scale: 0.35 });
+            gsap.set(document.getElementById("mk-st-detail-" + i), { opacity: 0, y: 10 });
           }
 
-          /* the spine draws across the whole objective read, word-anchored end to end */
-          tl.to(head, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.objectivesStart);
-          tl.to(connector, { scaleY: 1, duration: W.objective3 - W.objectivesStart, ease: "none" }, W.objectivesStart);
+          /* "The least-privileged path takes..." */
+          tl.to(kickerEl, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.b5Start);
 
-          /* one objective per spoken objective */
-          tl.to("#mk-st-row-0", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.objectivesStart);
-          tl.to("#mk-st-badge-0", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.objectivesStart + 0.05);
-          tl.to("#mk-st-row-1", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.objective2);
-          tl.to("#mk-st-badge-1", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.objective2 + 0.05);
-          tl.to("#mk-st-row-2", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.objective3);
-          tl.to("#mk-st-badge-2", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.objective3 + 0.05);
+          /* "...*two* pieces, not one." — the count and the spine commit to two before either
+             one arrives, so the learner is watching for the second (Signaling). */
+          tl.to(countWrap, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.b5TwoPieces);
+          var counter = { v: 0 };
+          tl.to(
+            counter,
+            {
+              v: n,
+              duration: 0.5,
+              ease: "power1.out",
+              onUpdate: function () {
+                countEl.textContent = Math.round(counter.v);
+              },
+            },
+            W.b5TwoPieces
+          );
+          tl.to(connector, { scaleY: 1, duration: W.b5Second - W.b5TwoPieces, ease: "none" }, W.b5TwoPieces);
 
-          /* the stakes line ("...a guest can see far more than they should"): the spine fills
-             with accent and the badges settle — a graphic mark, no on-screen restatement. */
-          tl.to(connectorFill, { scaleY: 1, duration: 1.2, ease: "power2.inOut" }, W.objectiveStakes);
-          tl.to([".mk-st-badge"], { scale: 1.06, duration: 0.55, ease: "power2.out", stagger: 0.09 }, W.objectiveStakes);
+          /* "First, assign coordinators the Guest Inviter role" */
+          tl.to("#mk-st-row-0", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.b5First);
+          tl.to("#mk-st-badge-0", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.b5First + 0.05);
+          /* "Its only power is sending invitations." */
+          tl.to("#mk-st-detail-0", { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, W.b5OnlyPower);
 
-          window.__timelines["03-objectives"] = tl;
+          /* "Second, set the tenant's invite setting..." */
+          tl.to("#mk-st-row-1", { opacity: 1, x: 0, duration: 0.6, ease: "power3.out" }, W.b5Second);
+          tl.to("#mk-st-badge-1", { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, W.b5Second + 0.05);
+          /* the verbatim portal label lands on the words that quote it */
+          tl.to("#mk-st-detail-1", { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, W.b5Setting);
+
+          /* "Skip that second piece, and everyone can still invite..." */
+          tl.to(note, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, W.b5Skip);
+
+          /* "...so the role changes nothing." — step 2's badge is the thing that mattered. */
+          tl.to("#mk-st-badge-1", { scale: 1.12, duration: 0.5, ease: "power2.out" }, W.b5Nothing);
+          tl.to("#mk-st-badge-1", { scale: 1.06, duration: 0.8, ease: "power2.inOut" }, W.b5Nothing + 0.6);
+
+          window.__timelines["08-delegate-two-pieces"] = tl;
         })();
       </script>
     </template>
