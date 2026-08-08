@@ -1,0 +1,25 @@
+Here's a problem hiding in a lot of tenants. Your most powerful role, Global Administrator, is switched on permanently for more people than need it — and every one is a standing target, used or not. So what if nobody carried that access by default? What if you could hand someone the role, let it sit dormant until they need it, then expire on its own? That's this unit, and *Microsoft Entra Privileged Identity Management* is how you get there.
+
+You'll see three things: how Entra assigns roles today, and why that leaves access always on; how PIM makes it just-in-time instead; and where one wrong setting can quietly lock your admins out.
+
+Start with how roles get assigned today. Entra ID ships a catalog of built-in roles — well over a hundred — each with a fixed set of permissions. Outside PIM, you grant one with a direct assignment at a scope: the whole tenant, or something narrower, like an administrative unit.
+
+But Entra roles aren't the whole story. Workloads like Exchange, Microsoft Purview, and Microsoft Defender run their own access control, bundling roles into role groups you assign as one unit — so check the workload before you reach for the Entra catalog.
+
+Now the catch. A direct assignment is always on — the moment it's created, the user holds those permissions until someone removes it. That's how a tenant ends up with too many people holding standing access to Global Administrator, just because it was simpler to set up.
+
+PIM replaces always-on with two assignment types. An active assignment works like a direct one — permissions apply immediately. An eligible assignment grants nothing by itself; the user has to activate the role first. Move those standing admins from active to eligible, and nobody carries the access by default.
+
+So what does activating involve? Before the role takes effect, it can require approval, multifactor authentication, or a business justification. Then it's time-boxed: activation maximum duration decides how long — say, four hours — then the permissions expire on their own. That's just-in-time access.
+
+Here's a puzzle. You set a sensitive role to require approval, then leave the approver list empty. So who signs off? You'd expect the request to stall. Instead, PIM falls back to every admin holding an active Privileged Role Administrator or Global Administrator assignment, tenant-wide.
+
+But that fallback only works if at least one of those admins is actually active. If every Privileged Role Administrator and Global Administrator is eligible-only, approval is required, and no approvers are set, there's nobody left to approve. The request sits indefinitely — and depending on the role, that can lock admins out. So keep at least one emergency access account with a permanent, active Global Administrator role, and set explicit approvers.
+
+One more trap. PIM has three duration settings, and two sound almost identical. Activation maximum duration is how long a single activation lasts. Expiration of eligible assignments is how long you can activate the role at all. Expiration of active assignments is how long a standing assignment survives before it's removed. Mix them up, and you answer the wrong question.
+
+Finally, sometimes a built-in role grants more than the job needs, with nothing narrower in the catalog. That's when a custom role is the right call — you pick exactly the permissions the task needs, then assign it at a scope. The real skill is recognizing that moment.
+
+So, back to that standing-access problem. Convert your always-on admins to eligible, and access becomes just-in-time — granted on activation, gated by approval, gone when the time-box expires. The empty-approver puzzle isn't magic; it's a fallback you plan around with an emergency access account. That's the governance model this module builds toward.
+
+Next, you'll configure this exact approval workflow yourself: assign an eligible role, require approval, and see who ends up approving it. To go deeper on role settings and the fallback, follow the Microsoft Learn links in this unit.

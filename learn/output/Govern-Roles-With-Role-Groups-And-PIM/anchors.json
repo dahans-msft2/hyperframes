@@ -1,0 +1,26 @@
+{
+  "_about": "Cue name -> exact spoken phrase (a verbatim, unambiguous substring of script.md narration). tools/word_anchors.py resolves each to a real transcript word time so the builder anchors the matching composition cue to audio, never to an assumed words-per-second. Phrases avoid hyphenated compound tokens (just-in-time, always-on, time-box) that ASR may split.",
+  "_usage": "py ../../tools/word_anchors.py transcript.json --spec anchors.json -o anchors.js --lead-in <intro_seconds>",
+
+  "hook_standing_target": "standing target",
+  "hook_pim_named": "Microsoft Entra Privileged Identity Management",
+  "obj_lockout": "lock your admins out",
+
+  "b1_direct_assignment": "a direct assignment at a scope",
+  "b2_role_groups": "role groups you assign as one unit",
+  "b3_always_on": "is always on",
+  "b4_two_types": "two assignment types",
+  "b4_eligible": "grants nothing by itself",
+  "b5_activate": "it can require approval",
+  "b5_expire": "expire on their own",
+  "b6_empty_list": "leave the approver list empty",
+  "b6_fallback": "falls back to every admin",
+  "b7_lockout": "sits indefinitely",
+  "b7_emergency": "at least one emergency access account",
+  "b8_three_durations": "three duration settings",
+  "b8_activation_max": "how long a single activation lasts",
+  "b9_custom_role": "a custom role is the right call",
+
+  "recap_activation": "granted on activation",
+  "cta_configure": "configure this exact approval workflow"
+}

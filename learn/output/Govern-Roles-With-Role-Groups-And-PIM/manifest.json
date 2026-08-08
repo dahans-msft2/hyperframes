@@ -1,0 +1,13 @@
+{
+  "title": "Govern Roles with Role Groups and PIM",
+  "type": "unit-video",
+  "profile": "unit-video",
+  "status": "scaffolded",
+  "voice": "en-US-Ava:DragonHDLatestNeural",
+  "source": "C:\\learn-pr\\learn-m365-pr\\learn-m365-pr\\wwl\\provision-govern-identities-entra\\includes\\9-govern-roles-role-groups-privileged-identity-management.md",
+  "deliverables": {
+    "mp4": "Govern-Roles-With-Role-Groups-And-PIM.mp4",
+    "captions_vtt": "Govern-Roles-With-Role-Groups-And-PIM.vtt",
+    "thumbnail": "Govern-Roles-With-Role-Groups-And-PIM_thumbnail.png"
+  }
+}

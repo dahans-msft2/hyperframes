@@ -1,0 +1,3312 @@
+[
+  {
+    "text": "Here's",
+    "start": 0.03,
+    "end": 0.48
+  },
+  {
+    "text": "a",
+    "start": 0.54,
+    "end": 0.6
+  },
+  {
+    "text": "problem",
+    "start": 0.6,
+    "end": 1.21
+  },
+  {
+    "text": "hiding",
+    "start": 1.21,
+    "end": 1.73
+  },
+  {
+    "text": "in",
+    "start": 1.73,
+    "end": 1.89
+  },
+  {
+    "text": "a",
+    "start": 1.89,
+    "end": 1.97
+  },
+  {
+    "text": "lot",
+    "start": 2,
+    "end": 2.22
+  },
+  {
+    "text": "of",
+    "start": 2.23,
+    "end": 2.3
+  },
+  {
+    "text": "tenants.",
+    "start": 2.3,
+    "end": 3.11
+  },
+  {
+    "text": "Your",
+    "start": 3.11,
+    "end": 3.34
+  },
+  {
+    "text": "most",
+    "start": 3.45,
+    "end": 3.56
+  },
+  {
+    "text": "powerful",
+    "start": 3.62,
+    "end": 4.12
+  },
+  {
+    "text": "role,",
+    "start": 4.12,
+    "end": 4.52
+  },
+  {
+    "text": "global",
+    "start": 4.52,
+    "end": 4.89
+  },
+  {
+    "text": "administrator,",
+    "start": 4.89,
+    "end": 5.72
+  },
+  {
+    "text": "is",
+    "start": 5.75,
+    "end": 5.85
+  },
+  {
+    "text": "switched",
+    "start": 5.85,
+    "end": 6.39
+  },
+  {
+    "text": "on",
+    "start": 6.39,
+    "end": 6.52
+  },
+  {
+    "text": "permanently",
+    "start": 6.52,
+    "end": 7.26
+  },
+  {
+    "text": "for",
+    "start": 7.4,
+    "end": 7.45
+  },
+  {
+    "text": "more",
+    "start": 7.45,
+    "end": 7.68
+  },
+  {
+    "text": "people",
+    "start": 7.68,
+    "end": 7.99
+  },
+  {
+    "text": "than",
+    "start": 7.99,
+    "end": 8.82
+  },
+  {
+    "text": "need",
+    "start": 8.82,
+    "end": 8.96
+  },
+  {
+    "text": "it.",
+    "start": 8.96,
+    "end": 9.2
+  },
+  {
+    "text": "And",
+    "start": 9.23,
+    "end": 9.39
+  },
+  {
+    "text": "everyone",
+    "start": 9.41,
+    "end": 9.94
+  },
+  {
+    "text": "is",
+    "start": 9.99,
+    "end": 10.08
+  },
+  {
+    "text": "a",
+    "start": 10.08,
+    "end": 10.14
+  },
+  {
+    "text": "standing",
+    "start": 10.14,
+    "end": 10.65
+  },
+  {
+    "text": "target",
+    "start": 10.68,
+    "end": 11.09
+  },
+  {
+    "text": "used",
+    "start": 11.09,
+    "end": 11.35
+  },
+  {
+    "text": "or",
+    "start": 11.35,
+    "end": 11.47
+  },
+  {
+    "text": "not.",
+    "start": 11.47,
+    "end": 11.7
+  },
+  {
+    "text": "So",
+    "start": 11.7,
+    "end": 12.137
+  },
+  {
+    "text": "what",
+    "start": 12.137,
+    "end": 12.573
+  },
+  {
+    "text": "if",
+    "start": 12.573,
+    "end": 13.01
+  },
+  {
+    "text": "nobody",
+    "start": 13.01,
+    "end": 13.36
+  },
+  {
+    "text": "carried",
+    "start": 13.36,
+    "end": 14.06
+  },
+  {
+    "text": "that",
+    "start": 14.06,
+    "end": 14.44
+  },
+  {
+    "text": "access",
+    "start": 14.46,
+    "end": 14.95
+  },
+  {
+    "text": "by",
+    "start": 15,
+    "end": 15.25
+  },
+  {
+    "text": "default?",
+    "start": 15.25,
+    "end": 16.28
+  },
+  {
+    "text": "What",
+    "start": 16.31,
+    "end": 16.52
+  },
+  {
+    "text": "if",
+    "start": 16.52,
+    "end": 16.53
+  },
+  {
+    "text": "you",
+    "start": 16.65,
+    "end": 16.76
+  },
+  {
+    "text": "could",
+    "start": 16.82,
+    "end": 17.13
+  },
+  {
+    "text": "hand",
+    "start": 17.13,
+    "end": 17.37
+  },
+  {
+    "text": "someone",
+    "start": 17.37,
+    "end": 17.8
+  },
+  {
+    "text": "the",
+    "start": 17.8,
+    "end": 17.98
+  },
+  {
+    "text": "role,",
+    "start": 17.98,
+    "end": 18.39
+  },
+  {
+    "text": "let",
+    "start": 18.43,
+    "end": 18.64
+  },
+  {
+    "text": "it",
+    "start": 18.64,
+    "end": 18.8
+  },
+  {
+    "text": "sit",
+    "start": 18.8,
+    "end": 19.04
+  },
+  {
+    "text": "dormant",
+    "start": 19.04,
+    "end": 19.59
+  },
+  {
+    "text": "until",
+    "start": 19.59,
+    "end": 19.94
+  },
+  {
+    "text": "they",
+    "start": 20.08,
+    "end": 20.28
+  },
+  {
+    "text": "need",
+    "start": 20.28,
+    "end": 20.58
+  },
+  {
+    "text": "it,",
+    "start": 20.59,
+    "end": 20.8
+  },
+  {
+    "text": "then",
+    "start": 20.83,
+    "end": 21.06
+  },
+  {
+    "text": "expire",
+    "start": 21.17,
+    "end": 21.54
+  },
+  {
+    "text": "on",
+    "start": 21.59,
+    "end": 21.73
+  },
+  {
+    "text": "its",
+    "start": 21.73,
+    "end": 21.96
+  },
+  {
+    "text": "own?",
+    "start": 21.96,
+    "end": 22.34
+  },
+  {
+    "text": "That's",
+    "start": 22.34,
+    "end": 23.47
+  },
+  {
+    "text": "this",
+    "start": 23.47,
+    "end": 23.92
+  },
+  {
+    "text": "unit,",
+    "start": 23.98,
+    "end": 24.56
+  },
+  {
+    "text": "and",
+    "start": 24.59,
+    "end": 24.73
+  },
+  {
+    "text": "Microsoft",
+    "start": 24.76,
+    "end": 25.28
+  },
+  {
+    "text": "Enter",
+    "start": 25.28,
+    "end": 25.58
+  },
+  {
+    "text": "Privileged",
+    "start": 25.58,
+    "end": 26.1
+  },
+  {
+    "text": "Identity",
+    "start": 26.18,
+    "end": 26.53
+  },
+  {
+    "text": "Management",
+    "start": 26.53,
+    "end": 26.86
+  },
+  {
+    "text": "is",
+    "start": 27.31,
+    "end": 27.47
+  },
+  {
+    "text": "how",
+    "start": 27.48,
+    "end": 27.76
+  },
+  {
+    "text": "you",
+    "start": 27.82,
+    "end": 28.08
+  },
+  {
+    "text": "get",
+    "start": 28.08,
+    "end": 28.38
+  },
+  {
+    "text": "there.",
+    "start": 28.38,
+    "end": 29.24
+  },
+  {
+    "text": "You'll",
+    "start": 29.27,
+    "end": 29.8
+  },
+  {
+    "text": "see",
+    "start": 29.8,
+    "end": 30.08
+  },
+  {
+    "text": "three",
+    "start": 30.08,
+    "end": 30.56
+  },
+  {
+    "text": "things,",
+    "start": 30.56,
+    "end": 31.35
+  },
+  {
+    "text": "how",
+    "start": 31.39,
+    "end": 31.61
+  },
+  {
+    "text": "Enter",
+    "start": 31.61,
+    "end": 32.03
+  },
+  {
+    "text": "assigns",
+    "start": 32.03,
+    "end": 32.62
+  },
+  {
+    "text": "roles",
+    "start": 32.62,
+    "end": 32.9
+  },
+  {
+    "text": "today",
+    "start": 33.03,
+    "end": 33.36
+  },
+  {
+    "text": "and",
+    "start": 33.51,
+    "end": 33.74
+  },
+  {
+    "text": "why",
+    "start": 33.85,
+    "end": 33.96
+  },
+  {
+    "text": "that",
+    "start": 34.02,
+    "end": 34.35
+  },
+  {
+    "text": "leaves",
+    "start": 34.35,
+    "end": 34.88
+  },
+  {
+    "text": "access",
+    "start": 34.88,
+    "end": 35.41
+  },
+  {
+    "text": "always",
+    "start": 35.41,
+    "end": 35.75
+  },
+  {
+    "text": "on,",
+    "start": 35.97,
+    "end": 36.32
+  },
+  {
+    "text": "how",
+    "start": 36.35,
+    "end": 36.58
+  },
+  {
+    "text": "PIM",
+    "start": 36.69,
+    "end": 36.89
+  },
+  {
+    "text": "makes",
+    "start": 36.89,
+    "end": 37.38
+  },
+  {
+    "text": "it",
+    "start": 37.38,
+    "end": 37.57
+  },
+  {
+    "text": "just",
+    "start": 37.57,
+    "end": 37.86
+  },
+  {
+    "text": "in",
+    "start": 38,
+    "end": 38.15
+  },
+  {
+    "text": "time",
+    "start": 38.15,
+    "end": 38.49
+  },
+  {
+    "text": "instead,",
+    "start": 38.49,
+    "end": 39.28
+  },
+  {
+    "text": "and",
+    "start": 39.31,
+    "end": 39.47
+  },
+  {
+    "text": "where",
+    "start": 39.48,
+    "end": 39.76
+  },
+  {
+    "text": "one",
+    "start": 39.82,
+    "end": 39.98
+  },
+  {
+    "text": "wrong",
+    "start": 39.98,
+    "end": 40.3
+  },
+  {
+    "text": "setting",
+    "start": 40.3,
+    "end": 40.73
+  },
+  {
+    "text": "can",
+    "start": 40.79,
+    "end": 40.99
+  },
+  {
+    "text": "quietly",
+    "start": 40.99,
+    "end": 41.5
+  },
+  {
+    "text": "lock",
+    "start": 41.54,
+    "end": 41.85
+  },
+  {
+    "text": "your",
+    "start": 41.85,
+    "end": 42.16
+  },
+  {
+    "text": "admins",
+    "start": 42.16,
+    "end": 42.63
+  },
+  {
+    "text": "out.",
+    "start": 42.63,
+    "end": 43.03
+  },
+  {
+    "text": "Start",
+    "start": 43.17,
+    "end": 43.59
+  },
+  {
+    "text": "with",
+    "start": 43.59,
+    "end": 43.95
+  },
+  {
+    "text": "how",
+    "start": 43.95,
+    "end": 44.22
+  },
+  {
+    "text": "roles",
+    "start": 44.22,
+    "end": 44.67
+  },
+  {
+    "text": "get",
+    "start": 44.67,
+    "end": 44.94
+  },
+  {
+    "text": "assigned",
+    "start": 44.94,
+    "end": 45.32
+  },
+  {
+    "text": "today.",
+    "start": 46.12,
+    "end": 46.44
+  },
+  {
+    "text": "Enter",
+    "start": 46.47,
+    "end": 46.91
+  },
+  {
+    "text": "ID",
+    "start": 46.91,
+    "end": 47.1
+  },
+  {
+    "text": "ships",
+    "start": 47.1,
+    "end": 47.56
+  },
+  {
+    "text": "a",
+    "start": 47.56,
+    "end": 47.66
+  },
+  {
+    "text": "catalog",
+    "start": 47.66,
+    "end": 48.36
+  },
+  {
+    "text": "of",
+    "start": 48.36,
+    "end": 48.44
+  },
+  {
+    "text": "built-in",
+    "start": 48.46,
+    "end": 48.94
+  },
+  {
+    "text": "roles",
+    "start": 48.94,
+    "end": 49.45
+  },
+  {
+    "text": "well",
+    "start": 49.45,
+    "end": 49.64
+  },
+  {
+    "text": "over",
+    "start": 49.64,
+    "end": 49.86
+  },
+  {
+    "text": "100,",
+    "start": 49.86,
+    "end": 50.48
+  },
+  {
+    "text": "each",
+    "start": 50.48,
+    "end": 50.77
+  },
+  {
+    "text": "with",
+    "start": 50.77,
+    "end": 50.96
+  },
+  {
+    "text": "a",
+    "start": 51.1,
+    "end": 51.13
+  },
+  {
+    "text": "fixed",
+    "start": 51.13,
+    "end": 51.39
+  },
+  {
+    "text": "set",
+    "start": 51.44,
+    "end": 51.69
+  },
+  {
+    "text": "of",
+    "start": 51.7,
+    "end": 51.72
+  },
+  {
+    "text": "permissions.",
+    "start": 52.51,
+    "end": 52.87
+  },
+  {
+    "text": "Outside",
+    "start": 52.95,
+    "end": 53.39
+  },
+  {
+    "text": "PIM,",
+    "start": 53.4,
+    "end": 53.76
+  },
+  {
+    "text": "you",
+    "start": 53.76,
+    "end": 53.95
+  },
+  {
+    "text": "grant",
+    "start": 53.95,
+    "end": 54.27
+  },
+  {
+    "text": "one",
+    "start": 54.27,
+    "end": 54.46
+  },
+  {
+    "text": "with",
+    "start": 54.6,
+    "end": 54.62
+  },
+  {
+    "text": "a",
+    "start": 54.62,
+    "end": 54.68
+  },
+  {
+    "text": "direct",
+    "start": 54.68,
+    "end": 54.89
+  },
+  {
+    "text": "assignment",
+    "start": 54.89,
+    "end": 55.22
+  },
+  {
+    "text": "at",
+    "start": 55.67,
+    "end": 55.83
+  },
+  {
+    "text": "a",
+    "start": 55.83,
+    "end": 55.9
+  },
+  {
+    "text": "scope,",
+    "start": 56.01,
+    "end": 56.6
+  },
+  {
+    "text": "the",
+    "start": 56.6,
+    "end": 56.78
+  },
+  {
+    "text": "whole",
+    "start": 56.78,
+    "end": 57.07
+  },
+  {
+    "text": "tenant",
+    "start": 57.07,
+    "end": 57.44
+  },
+  {
+    "text": "or",
+    "start": 57.44,
+    "end": 57.57
+  },
+  {
+    "text": "something",
+    "start": 57.57,
+    "end": 57.91
+  },
+  {
+    "text": "narrower,",
+    "start": 57.91,
+    "end": 58.75
+  },
+  {
+    "text": "like",
+    "start": 58.75,
+    "end": 58.97
+  },
+  {
+    "text": "an",
+    "start": 59.09,
+    "end": 59.2
+  },
+  {
+    "text": "administrative",
+    "start": 59.26,
+    "end": 60.26
+  },
+  {
+    "text": "unit.",
+    "start": 60.4,
+    "end": 60.94
+  },
+  {
+    "text": "But",
+    "start": 60.99,
+    "end": 61.15
+  },
+  {
+    "text": "Enter",
+    "start": 61.16,
+    "end": 61.44
+  },
+  {
+    "text": "roles",
+    "start": 61.5,
+    "end": 61.84
+  },
+  {
+    "text": "aren't",
+    "start": 61.84,
+    "end": 62.24
+  },
+  {
+    "text": "the",
+    "start": 62.24,
+    "end": 62.42
+  },
+  {
+    "text": "whole",
+    "start": 62.44,
+    "end": 62.78
+  },
+  {
+    "text": "story.",
+    "start": 62.78,
+    "end": 63.25
+  },
+  {
+    "text": "Workloads",
+    "start": 63.37,
+    "end": 64.05
+  },
+  {
+    "text": "like",
+    "start": 64.05,
+    "end": 64.37
+  },
+  {
+    "text": "Exchange,",
+    "start": 64.37,
+    "end": 65.18
+  },
+  {
+    "text": "Microsoft",
+    "start": 65.18,
+    "end": 65.55
+  },
+  {
+    "text": "Purview,",
+    "start": 66.1,
+    "end": 66.42
+  },
+  {
+    "text": "and",
+    "start": 66.45,
+    "end": 66.65
+  },
+  {
+    "text": "Microsoft",
+    "start": 66.65,
+    "end": 67.35
+  },
+  {
+    "text": "Defender",
+    "start": 67.35,
+    "end": 67.96
+  },
+  {
+    "text": "run",
+    "start": 68.1,
+    "end": 68.19
+  },
+  {
+    "text": "their",
+    "start": 68.19,
+    "end": 68.39
+  },
+  {
+    "text": "own",
+    "start": 68.44,
+    "end": 68.69
+  },
+  {
+    "text": "access",
+    "start": 68.69,
+    "end": 69.52
+  },
+  {
+    "text": "control,",
+    "start": 69.52,
+    "end": 69.68
+  },
+  {
+    "text": "bundling",
+    "start": 69.71,
+    "end": 70.31
+  },
+  {
+    "text": "roles",
+    "start": 70.31,
+    "end": 70.71
+  },
+  {
+    "text": "into",
+    "start": 70.71,
+    "end": 71.03
+  },
+  {
+    "text": "role",
+    "start": 71.03,
+    "end": 71.22
+  },
+  {
+    "text": "groups",
+    "start": 71.35,
+    "end": 71.78
+  },
+  {
+    "text": "you",
+    "start": 71.78,
+    "end": 71.97
+  },
+  {
+    "text": "assign",
+    "start": 71.97,
+    "end": 72.78
+  },
+  {
+    "text": "as",
+    "start": 72.78,
+    "end": 72.83
+  },
+  {
+    "text": "one",
+    "start": 72.83,
+    "end": 73.1
+  },
+  {
+    "text": "unit.",
+    "start": 73.1,
+    "end": 73.74
+  },
+  {
+    "text": "So",
+    "start": 73.77,
+    "end": 73.88
+  },
+  {
+    "text": "check",
+    "start": 73.88,
+    "end": 74.21
+  },
+  {
+    "text": "the",
+    "start": 74.22,
+    "end": 74.43
+  },
+  {
+    "text": "workload",
+    "start": 74.43,
+    "end": 75
+  },
+  {
+    "text": "before",
+    "start": 75.03,
+    "end": 75.45
+  },
+  {
+    "text": "you",
+    "start": 75.45,
+    "end": 75.67
+  },
+  {
+    "text": "reach",
+    "start": 75.67,
+    "end": 76.04
+  },
+  {
+    "text": "for",
+    "start": 76.04,
+    "end": 76.26
+  },
+  {
+    "text": "the",
+    "start": 76.26,
+    "end": 76.46
+  },
+  {
+    "text": "Enter",
+    "start": 76.48,
+    "end": 76.85
+  },
+  {
+    "text": "catalog.",
+    "start": 76.85,
+    "end": 77.64
+  },
+  {
+    "text": "Now",
+    "start": 77.67,
+    "end": 77.87
+  },
+  {
+    "text": "the",
+    "start": 77.87,
+    "end": 78.1
+  },
+  {
+    "text": "catch.",
+    "start": 78.1,
+    "end": 78.72
+  },
+  {
+    "text": "A",
+    "start": 78.72,
+    "end": 79.235
+  },
+  {
+    "text": "direct",
+    "start": 79.235,
+    "end": 79.75
+  },
+  {
+    "text": "assignment",
+    "start": 79.75,
+    "end": 80.51
+  },
+  {
+    "text": "is",
+    "start": 80.51,
+    "end": 80.72
+  },
+  {
+    "text": "always",
+    "start": 80.72,
+    "end": 81.26
+  },
+  {
+    "text": "on.",
+    "start": 81.4,
+    "end": 81.89
+  },
+  {
+    "text": "The",
+    "start": 81.95,
+    "end": 82.13
+  },
+  {
+    "text": "moment",
+    "start": 82.13,
+    "end": 82.54
+  },
+  {
+    "text": "it's",
+    "start": 82.54,
+    "end": 82.81
+  },
+  {
+    "text": "created,",
+    "start": 82.81,
+    "end": 83.46
+  },
+  {
+    "text": "the",
+    "start": 83.49,
+    "end": 83.65
+  },
+  {
+    "text": "user",
+    "start": 83.66,
+    "end": 83.91
+  },
+  {
+    "text": "holds",
+    "start": 83.91,
+    "end": 84.2
+  },
+  {
+    "text": "those",
+    "start": 84.24,
+    "end": 84.57
+  },
+  {
+    "text": "permissions",
+    "start": 84.57,
+    "end": 85.32
+  },
+  {
+    "text": "until",
+    "start": 85.32,
+    "end": 85.64
+  },
+  {
+    "text": "someone",
+    "start": 85.64,
+    "end": 86.56
+  },
+  {
+    "text": "removes",
+    "start": 86.56,
+    "end": 87.05
+  },
+  {
+    "text": "it.",
+    "start": 87.09,
+    "end": 87.52
+  },
+  {
+    "text": "That's",
+    "start": 87.55,
+    "end": 87.91
+  },
+  {
+    "text": "how",
+    "start": 87.91,
+    "end": 88.1
+  },
+  {
+    "text": "a",
+    "start": 88.1,
+    "end": 88.16
+  },
+  {
+    "text": "tenant",
+    "start": 88.16,
+    "end": 88.55
+  },
+  {
+    "text": "ends",
+    "start": 88.55,
+    "end": 88.81
+  },
+  {
+    "text": "up",
+    "start": 88.81,
+    "end": 88.96
+  },
+  {
+    "text": "with",
+    "start": 88.96,
+    "end": 89.21
+  },
+  {
+    "text": "too",
+    "start": 89.21,
+    "end": 89.4
+  },
+  {
+    "text": "many",
+    "start": 89.4,
+    "end": 89.63
+  },
+  {
+    "text": "people",
+    "start": 89.63,
+    "end": 89.82
+  },
+  {
+    "text": "holding",
+    "start": 90.07,
+    "end": 90.52
+  },
+  {
+    "text": "standing",
+    "start": 90.58,
+    "end": 91.15
+  },
+  {
+    "text": "access",
+    "start": 91.15,
+    "end": 91.58
+  },
+  {
+    "text": "to",
+    "start": 91.72,
+    "end": 91.76
+  },
+  {
+    "text": "global",
+    "start": 91.76,
+    "end": 92.04
+  },
+  {
+    "text": "administrator",
+    "start": 92.21,
+    "end": 93.2
+  },
+  {
+    "text": "just",
+    "start": 93.23,
+    "end": 93.46
+  },
+  {
+    "text": "because",
+    "start": 93.57,
+    "end": 93.93
+  },
+  {
+    "text": "it",
+    "start": 93.93,
+    "end": 94.06
+  },
+  {
+    "text": "was",
+    "start": 94.06,
+    "end": 94.26
+  },
+  {
+    "text": "simpler",
+    "start": 94.26,
+    "end": 94.73
+  },
+  {
+    "text": "to",
+    "start": 94.73,
+    "end": 94.74
+  },
+  {
+    "text": "set",
+    "start": 94.88,
+    "end": 95.06
+  },
+  {
+    "text": "up.",
+    "start": 95.06,
+    "end": 95.42
+  },
+  {
+    "text": "PIM",
+    "start": 95.42,
+    "end": 96.045
+  },
+  {
+    "text": "replaces",
+    "start": 96.045,
+    "end": 96.67
+  },
+  {
+    "text": "always",
+    "start": 96.67,
+    "end": 97.31
+  },
+  {
+    "text": "on",
+    "start": 97.31,
+    "end": 97.53
+  },
+  {
+    "text": "with",
+    "start": 97.53,
+    "end": 97.97
+  },
+  {
+    "text": "two",
+    "start": 97.97,
+    "end": 98.18
+  },
+  {
+    "text": "assignment",
+    "start": 98.26,
+    "end": 98.86
+  },
+  {
+    "text": "types.",
+    "start": 99.74,
+    "end": 100.36
+  },
+  {
+    "text": "An",
+    "start": 100.39,
+    "end": 100.49
+  },
+  {
+    "text": "active",
+    "start": 100.49,
+    "end": 100.84
+  },
+  {
+    "text": "assignment",
+    "start": 100.9,
+    "end": 101.55
+  },
+  {
+    "text": "works",
+    "start": 101.55,
+    "end": 101.88
+  },
+  {
+    "text": "like",
+    "start": 101.88,
+    "end": 102.14
+  },
+  {
+    "text": "a",
+    "start": 102.14,
+    "end": 102.2
+  },
+  {
+    "text": "direct",
+    "start": 102.2,
+    "end": 102.54
+  },
+  {
+    "text": "one.",
+    "start": 102.58,
+    "end": 102.86
+  },
+  {
+    "text": "Permissions",
+    "start": 103.07,
+    "end": 103.85
+  },
+  {
+    "text": "apply",
+    "start": 103.85,
+    "end": 104.22
+  },
+  {
+    "text": "immediately.",
+    "start": 104.22,
+    "end": 105.26
+  },
+  {
+    "text": "An",
+    "start": 105.29,
+    "end": 105.4
+  },
+  {
+    "text": "eligible",
+    "start": 105.4,
+    "end": 105.96
+  },
+  {
+    "text": "assignment",
+    "start": 105.96,
+    "end": 106.66
+  },
+  {
+    "text": "grants",
+    "start": 106.66,
+    "end": 107.08
+  },
+  {
+    "text": "nothing",
+    "start": 107.08,
+    "end": 107.44
+  },
+  {
+    "text": "by",
+    "start": 107.44,
+    "end": 107.75
+  },
+  {
+    "text": "itself.",
+    "start": 107.75,
+    "end": 108.36
+  },
+  {
+    "text": "The",
+    "start": 108.39,
+    "end": 108.55
+  },
+  {
+    "text": "user",
+    "start": 108.56,
+    "end": 108.83
+  },
+  {
+    "text": "has",
+    "start": 108.83,
+    "end": 109.03
+  },
+  {
+    "text": "to",
+    "start": 109.03,
+    "end": 109.16
+  },
+  {
+    "text": "activate",
+    "start": 109.16,
+    "end": 109.7
+  },
+  {
+    "text": "the",
+    "start": 109.7,
+    "end": 109.9
+  },
+  {
+    "text": "role",
+    "start": 109.9,
+    "end": 110.17
+  },
+  {
+    "text": "first.",
+    "start": 110.17,
+    "end": 110.65
+  },
+  {
+    "text": "Move",
+    "start": 110.77,
+    "end": 111
+  },
+  {
+    "text": "those",
+    "start": 111.11,
+    "end": 111.38
+  },
+  {
+    "text": "standing",
+    "start": 111.38,
+    "end": 111.95
+  },
+  {
+    "text": "admins",
+    "start": 111.95,
+    "end": 112.28
+  },
+  {
+    "text": "from",
+    "start": 112.41,
+    "end": 112.71
+  },
+  {
+    "text": "active",
+    "start": 112.75,
+    "end": 113.04
+  },
+  {
+    "text": "to",
+    "start": 113.42,
+    "end": 113.62
+  },
+  {
+    "text": "eligible",
+    "start": 113.84,
+    "end": 114.46
+  },
+  {
+    "text": "and",
+    "start": 114.49,
+    "end": 114.67
+  },
+  {
+    "text": "nobody",
+    "start": 114.67,
+    "end": 115.09
+  },
+  {
+    "text": "carries",
+    "start": 115.09,
+    "end": 115.58
+  },
+  {
+    "text": "the",
+    "start": 115.58,
+    "end": 115.79
+  },
+  {
+    "text": "access",
+    "start": 115.79,
+    "end": 116.21
+  },
+  {
+    "text": "by",
+    "start": 116.21,
+    "end": 116.34
+  },
+  {
+    "text": "default.",
+    "start": 116.34,
+    "end": 117.08
+  },
+  {
+    "text": "So",
+    "start": 117.08,
+    "end": 117.79
+  },
+  {
+    "text": "what",
+    "start": 117.79,
+    "end": 117.84
+  },
+  {
+    "text": "does",
+    "start": 117.84,
+    "end": 118.35
+  },
+  {
+    "text": "activating",
+    "start": 118.35,
+    "end": 119.62
+  },
+  {
+    "text": "involve?",
+    "start": 119.62,
+    "end": 120.92
+  },
+  {
+    "text": "Before",
+    "start": 120.95,
+    "end": 121.17
+  },
+  {
+    "text": "the",
+    "start": 121.29,
+    "end": 121.4
+  },
+  {
+    "text": "role",
+    "start": 121.46,
+    "end": 121.65
+  },
+  {
+    "text": "takes",
+    "start": 121.65,
+    "end": 121.93
+  },
+  {
+    "text": "effect,",
+    "start": 121.93,
+    "end": 122.38
+  },
+  {
+    "text": "it",
+    "start": 122.43,
+    "end": 122.54
+  },
+  {
+    "text": "can",
+    "start": 122.54,
+    "end": 122.65
+  },
+  {
+    "text": "require",
+    "start": 122.77,
+    "end": 123.27
+  },
+  {
+    "text": "approval,",
+    "start": 123.27,
+    "end": 123.94
+  },
+  {
+    "text": "multi-factor",
+    "start": 124.08,
+    "end": 124.67
+  },
+  {
+    "text": "authentication,",
+    "start": 125.49,
+    "end": 126.06
+  },
+  {
+    "text": "or",
+    "start": 126.09,
+    "end": 126.19
+  },
+  {
+    "text": "a",
+    "start": 126.19,
+    "end": 126.25
+  },
+  {
+    "text": "business",
+    "start": 126.26,
+    "end": 126.78
+  },
+  {
+    "text": "justification.",
+    "start": 126.78,
+    "end": 127.88
+  },
+  {
+    "text": "Then",
+    "start": 127.88,
+    "end": 128.88
+  },
+  {
+    "text": "it's",
+    "start": 128.88,
+    "end": 129.04
+  },
+  {
+    "text": "time",
+    "start": 129.09,
+    "end": 129.62
+  },
+  {
+    "text": "boxed.",
+    "start": 129.66,
+    "end": 130.84
+  },
+  {
+    "text": "Activation",
+    "start": 130.87,
+    "end": 131.74
+  },
+  {
+    "text": "maximum",
+    "start": 131.74,
+    "end": 132.38
+  },
+  {
+    "text": "duration",
+    "start": 132.38,
+    "end": 133.02
+  },
+  {
+    "text": "decides",
+    "start": 133.09,
+    "end": 133.14
+  },
+  {
+    "text": "how",
+    "start": 133.94,
+    "end": 134.02
+  },
+  {
+    "text": "long,",
+    "start": 134.02,
+    "end": 134.6
+  },
+  {
+    "text": "say",
+    "start": 134.63,
+    "end": 134.84
+  },
+  {
+    "text": "four",
+    "start": 134.84,
+    "end": 135.16
+  },
+  {
+    "text": "hours,",
+    "start": 135.16,
+    "end": 135.71
+  },
+  {
+    "text": "then",
+    "start": 135.71,
+    "end": 136.04
+  },
+  {
+    "text": "the",
+    "start": 136.04,
+    "end": 136.14
+  },
+  {
+    "text": "permissions",
+    "start": 136.27,
+    "end": 136.81
+  },
+  {
+    "text": "expire",
+    "start": 136.81,
+    "end": 137.7
+  },
+  {
+    "text": "on",
+    "start": 137.7,
+    "end": 137.81
+  },
+  {
+    "text": "their",
+    "start": 137.81,
+    "end": 138.18
+  },
+  {
+    "text": "own.",
+    "start": 138.23,
+    "end": 138.76
+  },
+  {
+    "text": "That's",
+    "start": 138.79,
+    "end": 139.24
+  },
+  {
+    "text": "just",
+    "start": 139.3,
+    "end": 139.66
+  },
+  {
+    "text": "in",
+    "start": 139.66,
+    "end": 139.84
+  },
+  {
+    "text": "time",
+    "start": 139.84,
+    "end": 140.2
+  },
+  {
+    "text": "access.",
+    "start": 140.2,
+    "end": 141.03
+  },
+  {
+    "text": "Here's",
+    "start": 141.07,
+    "end": 141.63
+  },
+  {
+    "text": "a",
+    "start": 141.63,
+    "end": 141.73
+  },
+  {
+    "text": "puzzle.",
+    "start": 141.73,
+    "end": 142.58
+  },
+  {
+    "text": "You",
+    "start": 142.67,
+    "end": 142.88
+  },
+  {
+    "text": "set",
+    "start": 142.88,
+    "end": 143.11
+  },
+  {
+    "text": "a",
+    "start": 143.12,
+    "end": 143.2
+  },
+  {
+    "text": "sensitive",
+    "start": 143.2,
+    "end": 143.91
+  },
+  {
+    "text": "role",
+    "start": 143.91,
+    "end": 144.18
+  },
+  {
+    "text": "to",
+    "start": 144.32,
+    "end": 144.39
+  },
+  {
+    "text": "require",
+    "start": 144.39,
+    "end": 144.82
+  },
+  {
+    "text": "approval,",
+    "start": 144.89,
+    "end": 145.76
+  },
+  {
+    "text": "then",
+    "start": 145.79,
+    "end": 146.01
+  },
+  {
+    "text": "leave",
+    "start": 146.13,
+    "end": 146.5
+  },
+  {
+    "text": "the",
+    "start": 146.54,
+    "end": 146.77
+  },
+  {
+    "text": "approval",
+    "start": 146.77,
+    "end": 147.3
+  },
+  {
+    "text": "list",
+    "start": 147.44,
+    "end": 147.73
+  },
+  {
+    "text": "empty.",
+    "start": 147.78,
+    "end": 148.26
+  },
+  {
+    "text": "So",
+    "start": 148.51,
+    "end": 148.72
+  },
+  {
+    "text": "who",
+    "start": 148.72,
+    "end": 149.08
+  },
+  {
+    "text": "signs",
+    "start": 149.08,
+    "end": 149.69
+  },
+  {
+    "text": "off?",
+    "start": 149.69,
+    "end": 150.44
+  },
+  {
+    "text": "You'd",
+    "start": 150.47,
+    "end": 150.84
+  },
+  {
+    "text": "expect",
+    "start": 150.84,
+    "end": 151.32
+  },
+  {
+    "text": "the",
+    "start": 151.32,
+    "end": 151.55
+  },
+  {
+    "text": "request",
+    "start": 151.55,
+    "end": 151.98
+  },
+  {
+    "text": "to",
+    "start": 152.12,
+    "end": 152.28
+  },
+  {
+    "text": "stall.",
+    "start": 152.28,
+    "end": 152.74
+  },
+  {
+    "text": "Instead,",
+    "start": 152.99,
+    "end": 153.82
+  },
+  {
+    "text": "PIM",
+    "start": 153.82,
+    "end": 154.1
+  },
+  {
+    "text": "falls",
+    "start": 154.1,
+    "end": 154.5
+  },
+  {
+    "text": "back",
+    "start": 154.58,
+    "end": 154.93
+  },
+  {
+    "text": "to",
+    "start": 154.96,
+    "end": 155.14
+  },
+  {
+    "text": "every",
+    "start": 155.14,
+    "end": 155.26
+  },
+  {
+    "text": "admin",
+    "start": 156.05,
+    "end": 156.16
+  },
+  {
+    "text": "holding",
+    "start": 156.19,
+    "end": 156.64
+  },
+  {
+    "text": "an",
+    "start": 156.7,
+    "end": 156.79
+  },
+  {
+    "text": "active",
+    "start": 156.79,
+    "end": 157.21
+  },
+  {
+    "text": "privileged",
+    "start": 157.21,
+    "end": 157.91
+  },
+  {
+    "text": "role",
+    "start": 157.91,
+    "end": 158.13
+  },
+  {
+    "text": "administrator",
+    "start": 158.17,
+    "end": 158.46
+  },
+  {
+    "text": "or",
+    "start": 159.17,
+    "end": 159.29
+  },
+  {
+    "text": "global",
+    "start": 159.29,
+    "end": 159.76
+  },
+  {
+    "text": "administrator",
+    "start": 159.76,
+    "end": 160.68
+  },
+  {
+    "text": "assignment,",
+    "start": 160.76,
+    "end": 161.7
+  },
+  {
+    "text": "tenant-wide.",
+    "start": 162.17,
+    "end": 162.82
+  },
+  {
+    "text": "But",
+    "start": 162.85,
+    "end": 163.04
+  },
+  {
+    "text": "that",
+    "start": 163.04,
+    "end": 163.3
+  },
+  {
+    "text": "fallback",
+    "start": 163.36,
+    "end": 163.94
+  },
+  {
+    "text": "only",
+    "start": 163.94,
+    "end": 164.24
+  },
+  {
+    "text": "works",
+    "start": 164.24,
+    "end": 164.64
+  },
+  {
+    "text": "if",
+    "start": 164.67,
+    "end": 164.8
+  },
+  {
+    "text": "at",
+    "start": 164.8,
+    "end": 164.89
+  },
+  {
+    "text": "least",
+    "start": 165.01,
+    "end": 165.37
+  },
+  {
+    "text": "one",
+    "start": 165.37,
+    "end": 165.61
+  },
+  {
+    "text": "of",
+    "start": 165.61,
+    "end": 165.76
+  },
+  {
+    "text": "those",
+    "start": 165.76,
+    "end": 166.18
+  },
+  {
+    "text": "admins",
+    "start": 166.18,
+    "end": 166.61
+  },
+  {
+    "text": "is",
+    "start": 166.66,
+    "end": 166.82
+  },
+  {
+    "text": "actually",
+    "start": 166.82,
+    "end": 166.94
+  },
+  {
+    "text": "active.",
+    "start": 167.74,
+    "end": 168.27
+  },
+  {
+    "text": "If",
+    "start": 168.31,
+    "end": 168.42
+  },
+  {
+    "text": "every",
+    "start": 168.42,
+    "end": 168.76
+  },
+  {
+    "text": "privileged",
+    "start": 168.82,
+    "end": 169.47
+  },
+  {
+    "text": "role",
+    "start": 169.47,
+    "end": 169.74
+  },
+  {
+    "text": "administrator",
+    "start": 169.76,
+    "end": 170.46
+  },
+  {
+    "text": "and",
+    "start": 170.71,
+    "end": 170.93
+  },
+  {
+    "text": "global",
+    "start": 170.93,
+    "end": 171.42
+  },
+  {
+    "text": "administrator",
+    "start": 171.43,
+    "end": 172.52
+  },
+  {
+    "text": "is",
+    "start": 172.52,
+    "end": 172.65
+  },
+  {
+    "text": "eligible",
+    "start": 172.67,
+    "end": 172.95
+  },
+  {
+    "text": "only,",
+    "start": 172.95,
+    "end": 173.75
+  },
+  {
+    "text": "approval",
+    "start": 173.75,
+    "end": 174.33
+  },
+  {
+    "text": "is",
+    "start": 174.33,
+    "end": 174.46
+  },
+  {
+    "text": "required",
+    "start": 174.5,
+    "end": 175.09
+  },
+  {
+    "text": "and",
+    "start": 175.09,
+    "end": 175.26
+  },
+  {
+    "text": "no",
+    "start": 175.4,
+    "end": 175.47
+  },
+  {
+    "text": "approvers",
+    "start": 175.47,
+    "end": 176.01
+  },
+  {
+    "text": "are",
+    "start": 176.21,
+    "end": 176.22
+  },
+  {
+    "text": "set,",
+    "start": 176.38,
+    "end": 176.8
+  },
+  {
+    "text": "there's",
+    "start": 176.83,
+    "end": 177.28
+  },
+  {
+    "text": "nobody",
+    "start": 177.34,
+    "end": 177.71
+  },
+  {
+    "text": "left",
+    "start": 177.71,
+    "end": 177.99
+  },
+  {
+    "text": "to",
+    "start": 177.99,
+    "end": 178.13
+  },
+  {
+    "text": "approve.",
+    "start": 178.13,
+    "end": 178.77
+  },
+  {
+    "text": "The",
+    "start": 178.87,
+    "end": 179.08
+  },
+  {
+    "text": "request",
+    "start": 179.08,
+    "end": 179.65
+  },
+  {
+    "text": "sits",
+    "start": 179.65,
+    "end": 179.96
+  },
+  {
+    "text": "indefinitely",
+    "start": 179.96,
+    "end": 180.81
+  },
+  {
+    "text": "and",
+    "start": 180.99,
+    "end": 181.13
+  },
+  {
+    "text": "depending",
+    "start": 181.17,
+    "end": 181.69
+  },
+  {
+    "text": "on",
+    "start": 181.69,
+    "end": 181.81
+  },
+  {
+    "text": "the",
+    "start": 181.81,
+    "end": 181.99
+  },
+  {
+    "text": "role,",
+    "start": 181.99,
+    "end": 182.38
+  },
+  {
+    "text": "that",
+    "start": 182.38,
+    "end": 182.72
+  },
+  {
+    "text": "can",
+    "start": 182.72,
+    "end": 182.93
+  },
+  {
+    "text": "lock",
+    "start": 182.95,
+    "end": 183.23
+  },
+  {
+    "text": "admins",
+    "start": 183.23,
+    "end": 184.05
+  },
+  {
+    "text": "out.",
+    "start": 184.05,
+    "end": 184.34
+  },
+  {
+    "text": "So",
+    "start": 184.37,
+    "end": 184.48
+  },
+  {
+    "text": "keep",
+    "start": 184.48,
+    "end": 184.77
+  },
+  {
+    "text": "at",
+    "start": 184.77,
+    "end": 184.91
+  },
+  {
+    "text": "least",
+    "start": 184.91,
+    "end": 185.28
+  },
+  {
+    "text": "one",
+    "start": 185.28,
+    "end": 185.5
+  },
+  {
+    "text": "emergency",
+    "start": 185.5,
+    "end": 186.17
+  },
+  {
+    "text": "access",
+    "start": 186.17,
+    "end": 186.52
+  },
+  {
+    "text": "account",
+    "start": 186.59,
+    "end": 186.64
+  },
+  {
+    "text": "with",
+    "start": 187.21,
+    "end": 187.44
+  },
+  {
+    "text": "a",
+    "start": 187.44,
+    "end": 187.55
+  },
+  {
+    "text": "permanent",
+    "start": 187.55,
+    "end": 188.19
+  },
+  {
+    "text": "active",
+    "start": 188.19,
+    "end": 188.61
+  },
+  {
+    "text": "global",
+    "start": 188.61,
+    "end": 189.05
+  },
+  {
+    "text": "administrator",
+    "start": 189.05,
+    "end": 189.4
+  },
+  {
+    "text": "role",
+    "start": 190.27,
+    "end": 190.32
+  },
+  {
+    "text": "and",
+    "start": 190.35,
+    "end": 190.58
+  },
+  {
+    "text": "set",
+    "start": 190.69,
+    "end": 190.94
+  },
+  {
+    "text": "explicit",
+    "start": 190.94,
+    "end": 191.76
+  },
+  {
+    "text": "approvers.",
+    "start": 191.77,
+    "end": 193.04
+  },
+  {
+    "text": "One",
+    "start": 193.07,
+    "end": 193.29
+  },
+  {
+    "text": "more",
+    "start": 193.29,
+    "end": 193.63
+  },
+  {
+    "text": "trap.",
+    "start": 193.63,
+    "end": 194.24
+  },
+  {
+    "text": "PIM",
+    "start": 194.27,
+    "end": 194.48
+  },
+  {
+    "text": "has",
+    "start": 194.48,
+    "end": 194.72
+  },
+  {
+    "text": "three",
+    "start": 194.78,
+    "end": 195.14
+  },
+  {
+    "text": "duration",
+    "start": 195.14,
+    "end": 195.78
+  },
+  {
+    "text": "settings",
+    "start": 195.86,
+    "end": 196.42
+  },
+  {
+    "text": "and",
+    "start": 196.53,
+    "end": 196.76
+  },
+  {
+    "text": "two",
+    "start": 196.87,
+    "end": 197.06
+  },
+  {
+    "text": "sound",
+    "start": 197.06,
+    "end": 197.53
+  },
+  {
+    "text": "almost",
+    "start": 197.53,
+    "end": 198.04
+  },
+  {
+    "text": "identical.",
+    "start": 198.12,
+    "end": 199
+  },
+  {
+    "text": "Activation",
+    "start": 199.27,
+    "end": 199.96
+  },
+  {
+    "text": "maximum",
+    "start": 199.96,
+    "end": 200.46
+  },
+  {
+    "text": "duration",
+    "start": 200.46,
+    "end": 201.06
+  },
+  {
+    "text": "is",
+    "start": 201.09,
+    "end": 201.23
+  },
+  {
+    "text": "how",
+    "start": 201.24,
+    "end": 201.51
+  },
+  {
+    "text": "long",
+    "start": 201.51,
+    "end": 201.87
+  },
+  {
+    "text": "a",
+    "start": 201.87,
+    "end": 201.96
+  },
+  {
+    "text": "single",
+    "start": 201.96,
+    "end": 202.49
+  },
+  {
+    "text": "activation",
+    "start": 202.49,
+    "end": 203.23
+  },
+  {
+    "text": "lasts.",
+    "start": 203.86,
+    "end": 204.16
+  },
+  {
+    "text": "Expiration",
+    "start": 204.19,
+    "end": 204.88
+  },
+  {
+    "text": "of",
+    "start": 204.88,
+    "end": 205.02
+  },
+  {
+    "text": "eligible",
+    "start": 205.02,
+    "end": 205.59
+  },
+  {
+    "text": "assignments",
+    "start": 205.59,
+    "end": 206.13
+  },
+  {
+    "text": "is",
+    "start": 206.45,
+    "end": 206.56
+  },
+  {
+    "text": "how",
+    "start": 206.56,
+    "end": 206.67
+  },
+  {
+    "text": "long",
+    "start": 206.79,
+    "end": 207.06
+  },
+  {
+    "text": "you",
+    "start": 207.06,
+    "end": 207.27
+  },
+  {
+    "text": "can",
+    "start": 207.27,
+    "end": 207.48
+  },
+  {
+    "text": "activate",
+    "start": 207.48,
+    "end": 207.96
+  },
+  {
+    "text": "the",
+    "start": 208.1,
+    "end": 208.27
+  },
+  {
+    "text": "role",
+    "start": 208.27,
+    "end": 208.42
+  },
+  {
+    "text": "at",
+    "start": 208.44,
+    "end": 208.69
+  },
+  {
+    "text": "all.",
+    "start": 208.69,
+    "end": 208.92
+  },
+  {
+    "text": "Expiration",
+    "start": 209.23,
+    "end": 209.9
+  },
+  {
+    "text": "of",
+    "start": 209.9,
+    "end": 210.04
+  },
+  {
+    "text": "active",
+    "start": 210.04,
+    "end": 210.46
+  },
+  {
+    "text": "assignments",
+    "start": 210.46,
+    "end": 211.17
+  },
+  {
+    "text": "is",
+    "start": 211.27,
+    "end": 211.36
+  },
+  {
+    "text": "how",
+    "start": 211.36,
+    "end": 211.5
+  },
+  {
+    "text": "long",
+    "start": 211.61,
+    "end": 211.72
+  },
+  {
+    "text": "a",
+    "start": 211.78,
+    "end": 211.84
+  },
+  {
+    "text": "standing",
+    "start": 211.84,
+    "end": 212.33
+  },
+  {
+    "text": "assignment",
+    "start": 212.33,
+    "end": 212.96
+  },
+  {
+    "text": "survives",
+    "start": 212.96,
+    "end": 213.42
+  },
+  {
+    "text": "before",
+    "start": 213.57,
+    "end": 214.02
+  },
+  {
+    "text": "it's",
+    "start": 214.08,
+    "end": 214.38
+  },
+  {
+    "text": "removed.",
+    "start": 214.38,
+    "end": 215.24
+  },
+  {
+    "text": "Mix",
+    "start": 215.27,
+    "end": 215.49
+  },
+  {
+    "text": "them",
+    "start": 215.61,
+    "end": 216.06
+  },
+  {
+    "text": "up",
+    "start": 216.06,
+    "end": 216.32
+  },
+  {
+    "text": "and",
+    "start": 216.32,
+    "end": 216.51
+  },
+  {
+    "text": "you",
+    "start": 216.51,
+    "end": 216.69
+  },
+  {
+    "text": "answer",
+    "start": 216.69,
+    "end": 217.09
+  },
+  {
+    "text": "the",
+    "start": 217.09,
+    "end": 217.21
+  },
+  {
+    "text": "wrong",
+    "start": 217.26,
+    "end": 217.51
+  },
+  {
+    "text": "question.",
+    "start": 218.12,
+    "end": 218.36
+  },
+  {
+    "text": "Finally,",
+    "start": 218.39,
+    "end": 219.04
+  },
+  {
+    "text": "sometimes",
+    "start": 219.04,
+    "end": 219.72
+  },
+  {
+    "text": "a",
+    "start": 219.72,
+    "end": 219.79
+  },
+  {
+    "text": "built-in",
+    "start": 219.79,
+    "end": 220.33
+  },
+  {
+    "text": "role",
+    "start": 220.38,
+    "end": 220.63
+  },
+  {
+    "text": "grants",
+    "start": 220.75,
+    "end": 221.12
+  },
+  {
+    "text": "more",
+    "start": 221.12,
+    "end": 221.38
+  },
+  {
+    "text": "than",
+    "start": 221.38,
+    "end": 221.64
+  },
+  {
+    "text": "the",
+    "start": 221.64,
+    "end": 221.83
+  },
+  {
+    "text": "job",
+    "start": 221.83,
+    "end": 222.04
+  },
+  {
+    "text": "needs",
+    "start": 222.04,
+    "end": 222.26
+  },
+  {
+    "text": "with",
+    "start": 222.43,
+    "end": 222.66
+  },
+  {
+    "text": "nothing",
+    "start": 222.77,
+    "end": 223.28
+  },
+  {
+    "text": "narrower",
+    "start": 223.28,
+    "end": 223.92
+  },
+  {
+    "text": "in",
+    "start": 223.92,
+    "end": 223.94
+  },
+  {
+    "text": "the",
+    "start": 224.08,
+    "end": 224.32
+  },
+  {
+    "text": "catalog.",
+    "start": 224.32,
+    "end": 224.9
+  },
+  {
+    "text": "That's",
+    "start": 225.19,
+    "end": 225.58
+  },
+  {
+    "text": "when",
+    "start": 225.58,
+    "end": 225.86
+  },
+  {
+    "text": "a",
+    "start": 225.86,
+    "end": 225.89
+  },
+  {
+    "text": "custom",
+    "start": 225.94,
+    "end": 226.35
+  },
+  {
+    "text": "role",
+    "start": 226.35,
+    "end": 226.62
+  },
+  {
+    "text": "is",
+    "start": 226.64,
+    "end": 226.7
+  },
+  {
+    "text": "the",
+    "start": 226.84,
+    "end": 226.98
+  },
+  {
+    "text": "right",
+    "start": 226.98,
+    "end": 227.13
+  },
+  {
+    "text": "call.",
+    "start": 227.17,
+    "end": 227.66
+  },
+  {
+    "text": "You",
+    "start": 227.91,
+    "end": 228.05
+  },
+  {
+    "text": "pick",
+    "start": 228.06,
+    "end": 228.31
+  },
+  {
+    "text": "exactly",
+    "start": 228.31,
+    "end": 228.74
+  },
+  {
+    "text": "the",
+    "start": 228.74,
+    "end": 228.92
+  },
+  {
+    "text": "permissions",
+    "start": 228.92,
+    "end": 229.64
+  },
+  {
+    "text": "the",
+    "start": 229.64,
+    "end": 229.85
+  },
+  {
+    "text": "task",
+    "start": 229.89,
+    "end": 230.18
+  },
+  {
+    "text": "needs,",
+    "start": 230.97,
+    "end": 231
+  },
+  {
+    "text": "then",
+    "start": 231.03,
+    "end": 231.43
+  },
+  {
+    "text": "assign",
+    "start": 231.43,
+    "end": 232.08
+  },
+  {
+    "text": "it",
+    "start": 232.08,
+    "end": 232.29
+  },
+  {
+    "text": "at",
+    "start": 232.29,
+    "end": 232.49
+  },
+  {
+    "text": "a",
+    "start": 232.5,
+    "end": 232.54
+  },
+  {
+    "text": "scope.",
+    "start": 232.62,
+    "end": 233.3
+  },
+  {
+    "text": "The",
+    "start": 233.55,
+    "end": 233.75
+  },
+  {
+    "text": "real",
+    "start": 233.75,
+    "end": 234
+  },
+  {
+    "text": "skill",
+    "start": 234.06,
+    "end": 234.45
+  },
+  {
+    "text": "is",
+    "start": 234.45,
+    "end": 234.6
+  },
+  {
+    "text": "recognize",
+    "start": 234.6,
+    "end": 235.3
+  },
+  {
+    "text": "the",
+    "start": 235.3,
+    "end": 235.49
+  },
+  {
+    "text": "of",
+    "start": 235.52,
+    "end": 235.67
+  },
+  {
+    "text": "that",
+    "start": 235.67,
+    "end": 235.82
+  },
+  {
+    "text": "moment.",
+    "start": 236.01,
+    "end": 236.72
+  },
+  {
+    "text": "So",
+    "start": 236.75,
+    "end": 236.88
+  },
+  {
+    "text": "back",
+    "start": 236.88,
+    "end": 237.19
+  },
+  {
+    "text": "to",
+    "start": 237.2,
+    "end": 237.36
+  },
+  {
+    "text": "that",
+    "start": 237.36,
+    "end": 237.68
+  },
+  {
+    "text": "standing",
+    "start": 237.68,
+    "end": 238.26
+  },
+  {
+    "text": "access",
+    "start": 238.34,
+    "end": 238.69
+  },
+  {
+    "text": "problem.",
+    "start": 238.73,
+    "end": 239.62
+  },
+  {
+    "text": "Convert",
+    "start": 239.65,
+    "end": 240.09
+  },
+  {
+    "text": "your",
+    "start": 240.1,
+    "end": 240.36
+  },
+  {
+    "text": "always",
+    "start": 240.4,
+    "end": 240.78
+  },
+  {
+    "text": "on",
+    "start": 240.78,
+    "end": 240.91
+  },
+  {
+    "text": "admins",
+    "start": 240.91,
+    "end": 241.36
+  },
+  {
+    "text": "to",
+    "start": 241.36,
+    "end": 241.55
+  },
+  {
+    "text": "eligible",
+    "start": 241.55,
+    "end": 241.89
+  },
+  {
+    "text": "and",
+    "start": 242.39,
+    "end": 242.62
+  },
+  {
+    "text": "access",
+    "start": 242.73,
+    "end": 243.24
+  },
+  {
+    "text": "becomes",
+    "start": 243.24,
+    "end": 243.9
+  },
+  {
+    "text": "just",
+    "start": 243.98,
+    "end": 244.32
+  },
+  {
+    "text": "in",
+    "start": 244.32,
+    "end": 244.51
+  },
+  {
+    "text": "time.",
+    "start": 244.51,
+    "end": 244.94
+  },
+  {
+    "text": "Granted",
+    "start": 244.97,
+    "end": 245.61
+  },
+  {
+    "text": "on",
+    "start": 245.61,
+    "end": 245.8
+  },
+  {
+    "text": "activation,",
+    "start": 245.8,
+    "end": 246.91
+  },
+  {
+    "text": "gated",
+    "start": 246.96,
+    "end": 247.24
+  },
+  {
+    "text": "by",
+    "start": 247.24,
+    "end": 248.04
+  },
+  {
+    "text": "approval,",
+    "start": 248.04,
+    "end": 248.56
+  },
+  {
+    "text": "gone",
+    "start": 248.59,
+    "end": 248.82
+  },
+  {
+    "text": "when",
+    "start": 248.93,
+    "end": 249.2
+  },
+  {
+    "text": "the",
+    "start": 249.2,
+    "end": 249.44
+  },
+  {
+    "text": "time",
+    "start": 249.44,
+    "end": 249.76
+  },
+  {
+    "text": "box",
+    "start": 249.76,
+    "end": 250
+  },
+  {
+    "text": "expires.",
+    "start": 250,
+    "end": 250.79
+  },
+  {
+    "text": "The",
+    "start": 250.83,
+    "end": 251.02
+  },
+  {
+    "text": "empty",
+    "start": 251.02,
+    "end": 251.39
+  },
+  {
+    "text": "approver",
+    "start": 251.39,
+    "end": 251.98
+  },
+  {
+    "text": "puzzle",
+    "start": 251.98,
+    "end": 252.34
+  },
+  {
+    "text": "isn't",
+    "start": 252.48,
+    "end": 252.77
+  },
+  {
+    "text": "magic.",
+    "start": 252.78,
+    "end": 253.2
+  },
+  {
+    "text": "It's",
+    "start": 253.23,
+    "end": 253.46
+  },
+  {
+    "text": "a",
+    "start": 253.46,
+    "end": 253.57
+  },
+  {
+    "text": "fallback",
+    "start": 253.57,
+    "end": 254.04
+  },
+  {
+    "text": "you",
+    "start": 254.04,
+    "end": 254.23
+  },
+  {
+    "text": "plan",
+    "start": 254.23,
+    "end": 254.49
+  },
+  {
+    "text": "around",
+    "start": 254.49,
+    "end": 254.92
+  },
+  {
+    "text": "with",
+    "start": 254.95,
+    "end": 255.18
+  },
+  {
+    "text": "an",
+    "start": 255.29,
+    "end": 255.37
+  },
+  {
+    "text": "emergency",
+    "start": 255.37,
+    "end": 256.04
+  },
+  {
+    "text": "access",
+    "start": 256.04,
+    "end": 256.46
+  },
+  {
+    "text": "account.",
+    "start": 256.54,
+    "end": 257.19
+  },
+  {
+    "text": "That's",
+    "start": 257.31,
+    "end": 257.54
+  },
+  {
+    "text": "the",
+    "start": 257.65,
+    "end": 257.75
+  },
+  {
+    "text": "governance",
+    "start": 257.75,
+    "end": 258.29
+  },
+  {
+    "text": "model",
+    "start": 258.29,
+    "end": 258.58
+  },
+  {
+    "text": "this",
+    "start": 258.58,
+    "end": 258.82
+  },
+  {
+    "text": "module",
+    "start": 258.91,
+    "end": 259.28
+  },
+  {
+    "text": "builds",
+    "start": 259.28,
+    "end": 259.58
+  },
+  {
+    "text": "towards.",
+    "start": 260.38,
+    "end": 260.73
+  },
+  {
+    "text": "Next",
+    "start": 260.83,
+    "end": 260.99
+  },
+  {
+    "text": "you'll",
+    "start": 261,
+    "end": 261.28
+  },
+  {
+    "text": "configure",
+    "start": 261.34,
+    "end": 261.76
+  },
+  {
+    "text": "this",
+    "start": 261.76,
+    "end": 261.91
+  },
+  {
+    "text": "exact",
+    "start": 261.91,
+    "end": 262.34
+  },
+  {
+    "text": "approval",
+    "start": 262.42,
+    "end": 262.77
+  },
+  {
+    "text": "workflow",
+    "start": 262.81,
+    "end": 263.09
+  },
+  {
+    "text": "yourself.",
+    "start": 263.9,
+    "end": 264.72
+  },
+  {
+    "text": "Assign",
+    "start": 264.75,
+    "end": 265.16
+  },
+  {
+    "text": "an",
+    "start": 265.16,
+    "end": 265.3
+  },
+  {
+    "text": "eligible",
+    "start": 265.3,
+    "end": 265.89
+  },
+  {
+    "text": "role,",
+    "start": 265.89,
+    "end": 266.26
+  },
+  {
+    "text": "require",
+    "start": 266.35,
+    "end": 266.9
+  },
+  {
+    "text": "approval,",
+    "start": 267.81,
+    "end": 267.88
+  },
+  {
+    "text": "and",
+    "start": 267.91,
+    "end": 268.09
+  },
+  {
+    "text": "see",
+    "start": 268.09,
+    "end": 268.3
+  },
+  {
+    "text": "who",
+    "start": 268.3,
+    "end": 268.51
+  },
+  {
+    "text": "ends",
+    "start": 268.51,
+    "end": 268.79
+  },
+  {
+    "text": "up",
+    "start": 268.79,
+    "end": 268.93
+  },
+  {
+    "text": "approving",
+    "start": 268.93,
+    "end": 269.42
+  },
+  {
+    "text": "it.",
+    "start": 269.56,
+    "end": 269.85
+  },
+  {
+    "text": "To",
+    "start": 269.99,
+    "end": 270.1
+  },
+  {
+    "text": "go",
+    "start": 270.1,
+    "end": 270.22
+  },
+  {
+    "text": "deeper",
+    "start": 270.33,
+    "end": 270.66
+  },
+  {
+    "text": "on",
+    "start": 270.66,
+    "end": 270.8
+  },
+  {
+    "text": "role",
+    "start": 270.8,
+    "end": 271.08
+  },
+  {
+    "text": "settings",
+    "start": 271.08,
+    "end": 271.68
+  },
+  {
+    "text": "and",
+    "start": 271.68,
+    "end": 271.92
+  },
+  {
+    "text": "the",
+    "start": 271.92,
+    "end": 272.14
+  },
+  {
+    "text": "fallback,",
+    "start": 272.15,
+    "end": 272.84
+  },
+  {
+    "text": "follow",
+    "start": 272.87,
+    "end": 273.09
+  },
+  {
+    "text": "the",
+    "start": 273.21,
+    "end": 273.39
+  },
+  {
+    "text": "Microsoft",
+    "start": 273.39,
+    "end": 273.95
+  },
+  {
+    "text": "Learn",
+    "start": 273.95,
+    "end": 274.26
+  },
+  {
+    "text": "links",
+    "start": 274.26,
+    "end": 274.57
+  },
+  {
+    "text": "in",
+    "start": 274.57,
+    "end": 274.69
+  },
+  {
+    "text": "this",
+    "start": 274.69,
+    "end": 274.81
+  },
+  {
+    "text": "unit.",
+    "start": 274.86,
+    "end": 275.4
+  }
+]
