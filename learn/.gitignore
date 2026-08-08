@@ -29,3 +29,15 @@ assets/icon-index.json
 # Python bytecode cache, and the audition_voices.py voice cache.
 __pycache__/
 .voice-catalog.json
+
+# --- published videos: source tracked on main, MP4/thumbnail go to a Release ---
+!output/
+output/*
+
+# published: Require-MFA-With-A-Conditional-Access-Policy
+!output/Require-MFA-With-A-Conditional-Access-Policy/
+!output/Require-MFA-With-A-Conditional-Access-Policy/**
+output/Require-MFA-With-A-Conditional-Access-Policy/fonts/
+output/Require-MFA-With-A-Conditional-Access-Policy/renders/
+output/Require-MFA-With-A-Conditional-Access-Policy/Require-MFA-With-A-Conditional-Access-Policy.mp4
+output/Require-MFA-With-A-Conditional-Access-Policy/Require-MFA-With-A-Conditional-Access-Policy_thumbnail.png

@@ -1,0 +1,101 @@
+{
+  "title": "Require MFA with a Conditional Access policy",
+  "composition_id": "root",
+  "width": 1920,
+  "height": 1080,
+  "root_background": "#fff8f3",
+  "gsap": "assets/vendor/gsap.min.js",
+  "anchors": "anchors.js",
+  "fonts": [
+    {
+      "family": "Segoe UI",
+      "weight": 400,
+      "style": "normal",
+      "src": "fonts/segoeui-regular.woff2"
+    },
+    {
+      "family": "Segoe UI Semibold",
+      "weight": 600,
+      "style": "normal",
+      "src": "fonts/segoeui-semibold.woff2"
+    }
+  ],
+  "narration": {
+    "src": "narration.wav",
+    "start": 3.0,
+    "duration": 168.95,
+    "track": 10
+  },
+  "endcard": {
+    "src": "assets/AI_End_Card.mp4",
+    "duration": 10.667,
+    "track": 11
+  },
+  "bookend": {
+    "intro": 0.5,
+    "outro": 0.7,
+    "color": "#000"
+  },
+  "scenes": [
+    {
+      "id": "01-bumper",
+      "src": "scenes/01-bumper.html",
+      "duration": 3.0,
+      "seam": "hard"
+    },
+    {
+      "id": "02-title",
+      "src": "scenes/02-title.html",
+      "duration": 14.51,
+      "seam": "hard"
+    },
+    {
+      "id": "03-objectives",
+      "src": "scenes/03-objectives.html",
+      "duration": 13.96,
+      "seam": "cut-left"
+    },
+    {
+      "id": "04-concept",
+      "src": "scenes/04-concept.html",
+      "duration": 21.64,
+      "seam": "cut-left"
+    },
+    {
+      "id": "05-new-policy",
+      "src": "scenes/05-new-policy.html",
+      "duration": 22.44,
+      "seam": "cut-left"
+    },
+    {
+      "id": "06-select-app",
+      "src": "scenes/06-select-app.html",
+      "duration": 23.6,
+      "seam": "cut-left"
+    },
+    {
+      "id": "07-require-mfa",
+      "src": "scenes/07-require-mfa.html",
+      "duration": 20.52,
+      "seam": "cut-left"
+    },
+    {
+      "id": "08-enable-on",
+      "src": "scenes/08-enable-on.html",
+      "duration": 16.94,
+      "seam": "cut-left"
+    },
+    {
+      "id": "90-recap",
+      "src": "scenes/90-recap.html",
+      "duration": 19.3,
+      "seam": "cut-up"
+    },
+    {
+      "id": "91-cta",
+      "src": "scenes/91-cta.html",
+      "duration": 16.44,
+      "seam": "cut-left"
+    }
+  ]
+}

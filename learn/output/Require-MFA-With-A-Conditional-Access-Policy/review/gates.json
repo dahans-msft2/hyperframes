@@ -1,0 +1,98 @@
+[
+  {
+    "gate": 1,
+    "name": "Concept and source",
+    "status": "passed",
+    "artifact": null,
+    "note": "Source: https://learn.microsoft.com/entra/identity/authentication/tutorial-enable-azure-mfa",
+    "at": "2026-08-06T15:24:51"
+  },
+  {
+    "gate": 2,
+    "name": "Video type and profile",
+    "status": "passed",
+    "artifact": null,
+    "note": "Profile LOCKED: demo-walkthrough (~300s, 726 words, ~10 scenes, 12.0s static). Scaffolded by new_project.py.",
+    "at": "2026-08-06T15:24:51"
+  },
+  {
+    "gate": 3,
+    "name": "Look",
+    "status": "passed",
+    "artifact": null,
+    "note": "Look: learn-ilt, demo-walkthrough; 5 real Entra portal screenshots reused via media-screenshot blocks (assets/media/ca-*.png); portal-capture dead-zone exempt.",
+    "at": "2026-08-06T15:26:39"
+  },
+  {
+    "gate": 4,
+    "name": "Voice",
+    "status": "passed",
+    "artifact": null,
+    "note": "Voice LOCKED: en-US-Ava:DragonHDLatestNeural (~153 wpm, reused from prior audition; no re-audition for speed).",
+    "at": "2026-08-06T15:36:47"
+  },
+  {
+    "gate": 5,
+    "name": "Script",
+    "status": "passed",
+    "artifact": null,
+    "note": "Script approved (simplified label reads accepted). 433 words, 10 scenes, 5 real portal screenshots.",
+    "at": "2026-08-06T15:36:48"
+  },
+  {
+    "gate": 6,
+    "name": "Fact-check QA",
+    "status": "passed",
+    "artifact": null,
+    "note": "Fact-check QA SHIP 19/20, 0 disqualifiers. C3=3 (beat5 name/assign blade absent from stills; designer uses authored chips). Both label simplifications ruled acceptable. Cleared for render.",
+    "at": "2026-08-06T15:46:20"
+  },
+  {
+    "gate": 3,
+    "name": "Look",
+    "status": "passed",
+    "artifact": "design-plan.md",
+    "note": "Design: 5 media-screenshot body beats over real portal stills w/ callout regions; object-fit contain (stills crop under cover); callout=spotlight/ring (stills have baked red boxes); labels on white ink chips AAA; recap dark-field optional.",
+    "at": "2026-08-06T15:49:21"
+  },
+  {
+    "gate": 7,
+    "name": "Snapshot QA",
+    "status": "passed",
+    "artifact": "snapshots/contact-sheet.jpg",
+    "note": "Snapshot QA: all 5 stills fully in-frame (object-fit contain), callouts clean (red box + blue ring), captions legible, no collisions/dead zones; check 10/10 AA. Visual review + builder check = SHIP.",
+    "at": "2026-08-06T16:14:32"
+  },
+  {
+    "gate": 8,
+    "name": "Render",
+    "status": "authorized",
+    "artifact": null,
+    "note": "User pre-authorized back half; run deterministic render_and_package wrapper.",
+    "at": "2026-08-06T16:14:32"
+  },
+  {
+    "gate": 8,
+    "name": "Render",
+    "status": "passed",
+    "artifact": "Require-MFA-With-A-Conditional-Access-Policy.mp4",
+    "note": "Rendered + packaged via render_and_package.py (deterministic wrapper). 183.03s, video+audio, ends on AI card.",
+    "at": "2026-08-06T16:26:23"
+  },
+  {
+    "gate": 9,
+    "name": "Delivery",
+    "status": "passed",
+    "artifact": "manifest.json",
+    "note": "Delivered: MP4 + VTT + thumbnail + narration + manifest. 19/20, 0 disqualifiers. 5 real Entra portal screenshots reused.",
+    "at": "2026-08-06T16:26:23"
+  },
+  {
+    "gate": 8,
+    "name": "Render",
+    "status": "passed",
+    "artifact": "Require-MFA-With-A-Conditional-Access-Policy.mp4",
+    "note": "Re-rendered after removing off-target/redundant callout overlays from screenshot beats 05-08 (source stills already carry baked-in red highlight boxes). 183.03s, 34MB, video+audio, streaming-progress wrapper.",
+    "at": "2026-08-07T09:07:57"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "_comment": "cue name -> exact spoken phrase the callout lands on. Resolve with tools/word_anchors.py transcript.json --spec anchors.json. Phrases are hyphen-free so they match ASR tokens (if-then -> 'if' 'then').",
+  "conceptIfThen": "asks for more proof before it grants access",
+  "newPolicy": "select New policy",
+  "policyName": "Give it a clear name",
+  "assignGroup": "choose your test group",
+  "selectApp": "the Windows Azure Service Management API",
+  "grantAccess": "select Grant access",
+  "requireMfa": "check Require multifactor authentication",
+  "enableOn": "flip it to On",
+  "createPolicy": "Then select Create"
+}

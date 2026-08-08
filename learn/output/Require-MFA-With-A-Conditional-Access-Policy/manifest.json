@@ -1,0 +1,30 @@
+{
+  "title": "Require MFA with a Conditional Access policy",
+  "type": "demo-walkthrough",
+  "profile": "demo-walkthrough",
+  "status": "rendered",
+  "voice": "en-US-Ava:DragonHDLatestNeural",
+  "source": "https://learn.microsoft.com/entra/identity/authentication/tutorial-enable-azure-mfa",
+  "deliverables": {
+    "mp4": "Require-MFA-With-A-Conditional-Access-Policy.mp4",
+    "captions_vtt": "Require-MFA-With-A-Conditional-Access-Policy.vtt",
+    "transcript": "transcript.json",
+    "thumbnail": "Require-MFA-With-A-Conditional-Access-Policy_thumbnail.png",
+    "narration_wav": "narration.wav"
+  },
+  "video": {
+    "file": "Require-MFA-With-A-Conditional-Access-Policy.mp4",
+    "duration_seconds": 183.03
+  },
+  "release": {
+    "tag": "Require-MFA-With-A-Conditional-Access-Policy",
+    "url": "https://github.com/dahans-msft2/hyperframes/releases/tag/Require-MFA-With-A-Conditional-Access-Policy",
+    "repo": "dahans-msft2/hyperframes",
+    "published": "2026-08-08",
+    "assets": [
+      "Require-MFA-With-A-Conditional-Access-Policy.mp4",
+      "Require-MFA-With-A-Conditional-Access-Policy.vtt",
+      "Require-MFA-With-A-Conditional-Access-Policy_thumbnail.png"
+    ]
+  }
+}

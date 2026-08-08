@@ -1,0 +1,101 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Review — Require-MFA-With-A-Conditional-Access-Policy</title>
+<style>
+  body { font: 15px/1.55 "Segoe UI", system-ui, sans-serif; color: #091F2E; margin: 0;
+         padding: 44px 48px;
+         background: radial-gradient(120% 90% at 18% 8%, #FFFCFA, #FFF9F5 42%, #FFFAEF 68%, #F7F2F9 100%); }
+  h1 { font-size: 24px; font-weight: 600; margin: 0 0 2px; letter-spacing: -.01em; }
+  p.sub { color: #4a5b68; margin: 0 0 28px; }
+  table { border-collapse: collapse; width: 100%; max-width: 1100px;
+           background: rgba(255,255,255,.62); backdrop-filter: blur(20px);
+           border-radius: 10px; overflow: hidden; }
+  th { text-align: left; font-size: 11px; letter-spacing: .08em; text-transform: uppercase;
+        color: #4a5b68; padding: 12px 16px; border-bottom: 1px solid #eadfd8; font-weight: 600; }
+  td { padding: 12px 16px; border-bottom: 1px solid #f0e7e1; vertical-align: top; }
+  td.g { font-variant-numeric: tabular-nums; color: #8891a0; width: 34px; }
+  td.note { color: #4a5b68; }
+  td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .dim { color: #9aa5b1; }
+  .pill { display: inline-block; padding: 2px 10px; border-radius: 99px; font-size: 12px;
+           font-weight: 600; color: #fff; background: var(--c); }
+  a { color: #0078D4; }
+</style>
+<h1>Require-MFA-With-A-Conditional-Access-Policy</h1>
+<p class="sub">9 of 9 gates passed &middot; newest attempt shown, full history in
+<code>review/gates.json</code> &middot; <a href="stage-timing-summary.md">stage timing summary</a></p>
+<table>
+  <tr><th>#</th><th>Gate</th><th>Status</th><th>Artifact</th><th>Note</th><th>When</th></tr>
+    <tr>
+      <td class="g">1</td>
+      <td>Concept and source</td>
+      <td><span class="pill" style="--c:#389A91">passed</span></td>
+      <td><span class=dim>—</span></td>
+      <td class="note">Source: https://learn.microsoft.com/entra/identity/authentication/tutorial-enable-azure-mfa</td>
+      <td class="dim n">2026-08-06 15:24:51</td>
+    </tr>
+    <tr>
+      <td class="g">2</td>
+      <td>Video type and profile</td>
+      <td><span class="pill" style="--c:#389A91">passed</span></td>
+      <td><span class=dim>—</span></td>
+      <td class="note">Profile LOCKED: demo-walkthrough (~300s, 726 words, ~10 scenes, 12.0s static). Scaffolded by new_project.py.</td>
+      <td class="dim n">2026-08-06 15:24:51</td>
+    </tr>
+    <tr>
+      <td class="g">3</td>
+      <td>Look <span class="dim">×2</span></td>
+      <td><span class="pill" style="--c:#389A91">passed</span></td>
+      <td><a href="../design-plan.md">open</a></td>
+      <td class="note">Design: 5 media-screenshot body beats over real portal stills w/ callout regions; object-fit contain (stills crop under cover); callout=spotlight/ring (stills have baked red boxes); labels on white ink chips AAA; recap dark-field optional.</td>
+      <td class="dim n">2026-08-06 15:49:21</td>
+    </tr>
+    <tr>
+      <td class="g">4</td>
+      <td>Voice</td>
+      <td><span class="pill" style="--c:#389A91">passed</span></td>
+      <td><span class=dim>—</span></td>
+      <td class="note">Voice LOCKED: en-US-Ava:DragonHDLatestNeural (~153 wpm, reused from prior audition; no re-audition for speed).</td>
+      <td class="dim n">2026-08-06 15:36:47</td>
+    </tr>
+    <tr>
+      <td class="g">5</td>
+      <td>Script</td>
+      <td><span class="pill" style="--c:#389A91">passed</span></td>
+      <td><span class=dim>—</span></td>
+      <td class="note">Script approved (simplified label reads accepted). 433 words, 10 scenes, 5 real portal screenshots.</td>
+      <td class="dim n">2026-08-06 15:36:48</td>
+    </tr>
+    <tr>
+      <td class="g">6</td>
+      <td>Fact-check QA</td>
+      <td><span class="pill" style="--c:#389A91">passed</span></td>
+      <td><span class=dim>—</span></td>
+      <td class="note">Fact-check QA SHIP 19/20, 0 disqualifiers. C3=3 (beat5 name/assign blade absent from stills; designer uses authored chips). Both label simplifications ruled acceptable. Cleared for render.</td>
+      <td class="dim n">2026-08-06 15:46:20</td>
+    </tr>
+    <tr>
+      <td class="g">7</td>
+      <td>Snapshot QA</td>
+      <td><span class="pill" style="--c:#389A91">passed</span></td>
+      <td><a href="../snapshots/contact-sheet.jpg">open</a></td>
+      <td class="note">Snapshot QA: all 5 stills fully in-frame (object-fit contain), callouts clean (red box + blue ring), captions legible, no collisions/dead zones; check 10/10 AA. Visual review + builder check = SHIP.</td>
+      <td class="dim n">2026-08-06 16:14:32</td>
+    </tr>
+    <tr>
+      <td class="g">8</td>
+      <td>Render <span class="dim">×3</span></td>
+      <td><span class="pill" style="--c:#389A91">passed</span></td>
+      <td><a href="../Require-MFA-With-A-Conditional-Access-Policy.mp4">open</a></td>
+      <td class="note">Re-rendered after removing off-target/redundant callout overlays from screenshot beats 05-08 (source stills already carry baked-in red highlight boxes). 183.03s, 34MB, video+audio, streaming-progress wrapper.</td>
+      <td class="dim n">2026-08-07 09:07:57</td>
+    </tr>
+    <tr>
+      <td class="g">9</td>
+      <td>Delivery</td>
+      <td><span class="pill" style="--c:#389A91">passed</span></td>
+      <td><a href="../manifest.json">open</a></td>
+      <td class="note">Delivered: MP4 + VTT + thumbnail + narration + manifest. 19/20, 0 disqualifiers. 5 real Entra portal screenshots reused.</td>
+      <td class="dim n">2026-08-06 16:26:23</td>
+    </tr>
+</table>

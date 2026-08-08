@@ -1,0 +1,92 @@
+[
+  {
+    "kind": "start",
+    "stage": "orchestrator",
+    "run_id": "mfa-ca-demo-202608061400",
+    "at": "2026-08-06T22:26:39+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "start",
+    "stage": "script-writer",
+    "run_id": "mfa-ca-demo-202608061400",
+    "at": "2026-08-06T22:26:39+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "script-writer",
+    "run_id": "mfa-ca-demo-202608061400",
+    "at": "2026-08-06T22:33:04+00:00",
+    "status": "passed",
+    "note": "433 words, 10 scenes, 5 real screenshots, grounded w/ fidelity flags",
+    "meta": {}
+  },
+  {
+    "kind": "start",
+    "stage": "designer",
+    "run_id": "mfa-ca-demo-202608061400",
+    "at": "2026-08-06T22:43:48+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "designer",
+    "run_id": "mfa-ca-demo-202608061400",
+    "at": "2026-08-06T22:45:12+00:00",
+    "status": "passed",
+    "note": "5 body beats, all media-screenshot on content-wash; object-fit:contain required (ratios 0.29-5.36:1 crop controls under cover); callout regions computed for contain; stills carry baked red boxes so callout = vignette+reveal; beat5 name/assign as authored chips (blade uncaptured); ink-on-white chip labels AAA",
+    "meta": {}
+  },
+  {
+    "kind": "start",
+    "stage": "builder",
+    "run_id": "mfa-ca-demo-202608061400",
+    "at": "2026-08-06T22:49:21+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "builder",
+    "run_id": "mfa-ca-demo-202608061400",
+    "at": "2026-08-06T23:12:12+00:00",
+    "status": "passed",
+    "note": "10 scenes (5 chrome filled + 5 media-screenshot body over real stills). object-fit:contain + white letterbox (findings actioned); callouts = vignette spotlight + blue ring reveal fired on real word anchors (scene-relative via window.__anchors + fallbacks), NOT competing boxes; beats 7/8 spotlight travels control->control; beat5 name/assign as 2 authored ink-on-paper chips. lint 0/0, check pass (runtime0/layout0/motion0/contrast 10/10 AA), subcomps OK, no __FILL__. total 183.017s.",
+    "meta": {}
+  },
+  {
+    "kind": "start",
+    "stage": "renderer",
+    "run_id": "mfa-ca-demo-202608061400",
+    "at": "2026-08-06T23:14:32+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "renderer",
+    "run_id": "mfa-ca-demo-202608061400",
+    "at": "2026-08-06T23:26:22+00:00",
+    "status": "passed",
+    "note": "render_and_package.py one-shot: 183.03s MP4 + VTT + thumbnail, verified. First real run of the #5 wrapper (after npx-cmd fix).",
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "orchestrator",
+    "run_id": "mfa-ca-demo-202608061400",
+    "at": "2026-08-06T23:26:24+00:00",
+    "status": "passed",
+    "note": "MFA Conditional Access demo-walkthrough delivered 19/20.",
+    "meta": {}
+  }
+]

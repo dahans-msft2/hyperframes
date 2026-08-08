@@ -1,0 +1,23 @@
+{
+  "_comment": "Combined anchor spec: per-beat VO start times (for scene tiling + scene-relative cue math) plus the 9 callout cues from anchors.json. Resolve with tools/word_anchors.py transcript.json --spec anchors.build.json -o anchors.js. Phrases are hyphen-free to match ASR tokens.",
+
+  "beatTitleStart": "A stolen password",
+  "beatObjectivesStart": "You'll do four things",
+  "beatConceptStart": "First what Conditional Access",
+  "beatNewPolicyStart": "So let's build one",
+  "beatSelectAppStart": "Next the what",
+  "beatGrantStart": "This is the part that matters",
+  "beatEnableStart": "The policy is built",
+  "beatRecapStart": "So four steps",
+  "beatCtaStart": "Try it with a test user",
+
+  "conceptIfThen": "asks for more proof before it grants access",
+  "newPolicy": "select New policy",
+  "policyName": "Give it a clear name",
+  "assignGroup": "choose your test group",
+  "selectApp": "the Windows Azure Service Management API",
+  "grantAccess": "select Grant access",
+  "requireMfa": "check Require multifactor authentication",
+  "enableOn": "flip it to On",
+  "createPolicy": "Then select Create"
+}
