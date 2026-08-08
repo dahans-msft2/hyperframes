@@ -63,7 +63,7 @@
           background: var(--ground);
         }
         #root[data-ground="content-wash"] {
-          --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+          --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
         }
         #root[data-ground="section-field"] {
           --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
@@ -181,7 +181,7 @@
             kicker,
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
-            W.thirty_days_recap,
+            W.thirty_days_recap + 0.25,
           );
 
           // 2) the two title lines arrive on a short stagger.
@@ -189,7 +189,7 @@
             [line1, line2],
             { opacity: 0, y: 44 },
             { opacity: 1, y: 0, duration: 0.85, ease: "power3.out", stagger: 0.14 },
-            W.thirty_days_recap,
+            W.thirty_days_recap + 0.75,
           );
 
           // 3) the accent rule wipes in left→right (a graphic).
@@ -197,7 +197,7 @@
             rule,
             { scaleX: 0 },
             { scaleX: 1, duration: 0.7, ease: "power2.out" },
-            W.thirty_days_recap,
+            W.thirty_days_recap + 1.55,
           );
 
           // 4) the subtitle fades up last, then we hold on stillness.
@@ -205,7 +205,7 @@
             subtitle,
             { opacity: 0, y: 22 },
             { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-            W.thirty_days_recap,
+            W.thirty_days_recap + 1.95,
           );
 
           window.__timelines["90-recap"] = tl;

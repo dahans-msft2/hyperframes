@@ -181,7 +181,7 @@
             kicker,
             { opacity: 0, y: 24 },
             { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
-            W.next_unit_cta,
+            W.next_unit_cta + 0.25,
           );
 
           // 2) the two title lines arrive on a short stagger.
@@ -189,7 +189,7 @@
             [line1, line2],
             { opacity: 0, y: 44 },
             { opacity: 1, y: 0, duration: 0.85, ease: "power3.out", stagger: 0.14 },
-            W.next_unit_cta,
+            W.next_unit_cta + 0.75,
           );
 
           // 3) the accent rule wipes in left→right (a graphic).
@@ -197,7 +197,7 @@
             rule,
             { scaleX: 0 },
             { scaleX: 1, duration: 0.7, ease: "power2.out" },
-            W.next_unit_cta,
+            W.next_unit_cta + 1.55,
           );
 
           // 4) the subtitle fades up last, then we hold on stillness.
@@ -205,7 +205,7 @@
             subtitle,
             { opacity: 0, y: 22 },
             { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-            W.next_unit_cta,
+            W.next_unit_cta + 1.95,
           );
 
           window.__timelines["91-cta"] = tl;
