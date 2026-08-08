@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+  </head>
+  <body>
+    <template>
+      <style>
+        /* === Custom scene: callback flow (waiting caller drops off queue audio, callback path to freed agent). ===
+           Built on the Learn-ILT foundation: text stays ink; teal is used only as a graphic
+           mark for the callback path, switch, and rings. */
+
+        /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+        #root,
+        #root *,
+        #root *::before,
+        #root *::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size; /* 1cqw = 1% of width = 19.2px at 1920 */
+
+          /* palette — content-wash (default ground). data-ground overrides below. */
+          --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
+          --ink: #091f2e; /* all text */
+          --ink-soft: #59636e; /* secondary text */
+          --paper: #ffffff; /* panel / card fill */
+          --paper-veil: rgba(255, 255, 255, 0.9); /* translucent panel on a busy ground */
+          --border: rgba(9, 31, 46, 0.16);
+          --border-soft: rgba(9, 31, 46, 0.12);
+          --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
+
+          /* accents — GRAPHICS ONLY, never text */
+          --accent: #8661c5; /* purple  (primary)   */
+          --accent-2: #0078d4; /* blue    (secondary) */
+          --accent-3: #389a91; /* teal    (tertiary)  */
+          --accent-4: #bf3ac4; /* magenta (quaternary)*/
+          --accent-ink: #ffffff; /* text that sits ON an accent fill (chips/badges)   */
+
+          /* type — cqw scale (never px in a block). ~value at 1920 wide in comments.  */
+          --fs-display: 11cqw; /* ~211px  hero stat / count-up                        */
+          --fs-h1: 4.6cqw; /* ~88px   title-card headline                         */
+          --fs-h2: 3.4cqw; /* ~65px   scene title / subject                       */
+          --fs-h3: 2.4cqw; /* ~46px   block headline                              */
+          --fs-lead: 2cqw; /* ~38px   lead / large label                          */
+          --fs-body: 1.75cqw; /* ~34px   body / row label                           */
+          --fs-caption: 1.5cqw; /* ~29px   caption / value                            */
+          --fs-kicker: 1.55cqw; /* ~30px   eyebrow / kicker                           */
+          --fs-micro: 1.25cqw; /* ~24px   FLOOR — nothing smaller than this          */
+
+          /* rhythm */
+          --radius: 16px;
+          --radius-sm: 10px;
+          --radius-pill: 999px;
+          --stroke: 5px; /* chart line / connector weight */
+          --rule: 3px; /* accent underline weight       */
+
+          font-family: "Segoe UI", system-ui, sans-serif;
+          color: var(--ink);
+          background: var(--ground);
+        }
+
+        #root[data-ground="hero-swoosh"] {
+          /* warm paper with a stronger purple sweep — css fallback of the PNG swoosh */
+          --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+        }
+        #root[data-ground="section-field"] {
+          /* the deck's pale "background-gradient" export — cool blue wash */
+          --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
+        }
+        #root[data-ground="dark-field"] {
+          /* the dramatic exception: near-black navy, WHITE ink. css-only (no PNG). */
+          --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
+          --ink: #ffffff;
+          --ink-soft: rgba(255, 255, 255, 0.72);
+          --paper: rgba(255, 255, 255, 0.08);
+          --paper-veil: rgba(255, 255, 255, 0.1);
+          --border: rgba(255, 255, 255, 0.24);
+          --border-soft: rgba(255, 255, 255, 0.14);
+          --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+
+        /* ---- shared primitives ---------------------------------------------------- */
+        /* Type roles — a block composes these instead of inventing a size each time.  */
+        .ilt-kicker {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-kicker);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+        .ilt-title {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h2);
+          line-height: 1.08;
+          letter-spacing: -0.02em;
+          color: var(--ink);
+        }
+        .ilt-headline {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h3);
+          line-height: 1.12;
+          letter-spacing: -0.015em;
+          color: var(--ink);
+        }
+        .ilt-body {
+          font-weight: 400;
+          font-size: var(--fs-body);
+          line-height: 1.3;
+          color: var(--ink);
+        }
+        .ilt-caption {
+          font-weight: 400;
+          font-size: var(--fs-caption);
+          line-height: 1.3;
+          color: var(--ink-soft);
+        }
+        .ilt-value {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-caption);
+          letter-spacing: -0.01em;
+          color: var(--ink);
+          font-variant-numeric: tabular-nums;
+        }
+        .ilt-display {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-display);
+          line-height: 0.95;
+          letter-spacing: -0.03em;
+          color: var(--ink);
+          font-variant-numeric: tabular-nums;
+        }
+
+        /* Surfaces */
+        .ilt-panel {
+          background: var(--paper);
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow);
+        }
+        .ilt-panel--veil {
+          background: var(--paper-veil);
+        }
+        .ilt-chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6em;
+          padding: 0.5em 1.1em;
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius-pill);
+          font-size: var(--fs-micro);
+          font-weight: 600;
+          color: var(--ink);
+          background: var(--paper-veil);
+        }
+
+        /* Accents-as-graphics */
+        .ilt-rule {
+          /* accent underline bar — a graphic, never text colour */
+          height: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent);
+        }
+        .ilt-tab {
+          /* vertical accent tab (lower-thirds, callouts) */
+          width: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent);
+        }
+        /* SVG helpers: stroke:var(--accent) for lines, stroke:var(--border-soft) for axes */
+        .ilt-axis {
+          stroke: var(--border-soft);
+          stroke-width: 2;
+          fill: none;
+        }
+        /* ==== END _foundation.css ==== */
+
+        #cb-stage {
+          position: absolute;
+          inset: 0;
+        }
+
+        #cb-title {
+          position: absolute;
+          left: 7.4cqw;
+          top: 6.2cqw;
+          width: 54cqw;
+        }
+
+        #cb-subtitle {
+          position: absolute;
+          left: 7.6cqw;
+          top: 13.8cqw;
+          width: 45cqw;
+        }
+
+        #cb-switch-panel {
+          position: absolute;
+          right: 7.5cqw;
+          top: 6.6cqw;
+          display: flex;
+          align-items: center;
+          gap: 1.2cqw;
+          padding: 1.05cqw 1.25cqw;
+          border-radius: var(--radius);
+        }
+
+        .cb-switch-copy {
+          display: flex;
+          flex-direction: column;
+          gap: 0.25cqw;
+        }
+
+        #cb-switch-state {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-caption);
+          line-height: 1.1;
+          color: var(--ink);
+          display: grid;
+        }
+
+        #cb-switch-state span {
+          grid-area: 1 / 1;
+        }
+
+        #cb-switch-track {
+          position: relative;
+          width: 5.8cqw;
+          height: 2.9cqw;
+          border-radius: var(--radius-pill);
+          border: 1.5px solid var(--border);
+          background: var(--border-soft);
+          overflow: hidden;
+        }
+
+        #cb-switch-fill {
+          position: absolute;
+          inset: 0;
+          background: var(--accent-3);
+          transform: scaleX(0);
+          transform-origin: left center;
+        }
+
+        #cb-switch-knob {
+          position: absolute;
+          left: 0.34cqw;
+          top: 0.34cqw;
+          width: 2.2cqw;
+          height: 2.2cqw;
+          border-radius: var(--radius-pill);
+          background: var(--paper);
+          border: 1.5px solid var(--border);
+          box-shadow: 0 0.25cqw 0.85cqw rgba(9, 31, 46, 0.18);
+        }
+
+        #cb-diagram {
+          position: absolute;
+          left: 7.2cqw;
+          top: 18.8cqw;
+          width: 85.6cqw;
+          height: 35.5cqw;
+        }
+
+        .cb-node {
+          position: absolute;
+          border-radius: var(--radius);
+          background: var(--paper-veil);
+          border: 1.5px solid var(--border);
+          box-shadow: var(--shadow);
+        }
+
+        #cb-caller-card {
+          left: 1.1cqw;
+          top: 12.8cqw;
+          width: 17.2cqw;
+          padding: 1.25cqw 1.35cqw 1.35cqw;
+        }
+
+        #cb-caller-card .cb-node-title,
+        #cb-agent-free .cb-node-title,
+        #cb-agent-busy .cb-node-title {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-body);
+          line-height: 1.08;
+          letter-spacing: -0.015em;
+          color: var(--ink);
+        }
+
+        .cb-node-detail {
+          margin-top: 0.45cqw;
+        }
+
+        .cb-avatar-row {
+          display: flex;
+          align-items: center;
+          gap: 0.8cqw;
+          margin-bottom: 0.7cqw;
+        }
+
+        .cb-avatar {
+          width: 3.2cqw;
+          height: 3.2cqw;
+          border-radius: var(--radius-pill);
+          border: 1.5px solid var(--border);
+          background: var(--paper);
+          display: grid;
+          place-items: center;
+        }
+
+        .cb-avatar svg {
+          width: 1.85cqw;
+          height: 1.85cqw;
+        }
+
+        .cb-avatar path,
+        .cb-avatar circle {
+          stroke: var(--ink);
+          fill: none;
+          stroke-width: 2;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+
+        #cb-wait-lane {
+          position: absolute;
+          left: 18.8cqw;
+          top: 18.2cqw;
+          width: 29.2cqw;
+          height: 0;
+          border-top: 0.28cqw dashed var(--border);
+          transform-origin: left center;
+        }
+
+        #cb-wait-dots {
+          position: absolute;
+          left: 27.8cqw;
+          top: 16.65cqw;
+          display: flex;
+          gap: 0.7cqw;
+        }
+
+        .cb-wait-dot {
+          width: 0.95cqw;
+          height: 0.95cqw;
+          border-radius: var(--radius-pill);
+          background: var(--border);
+        }
+
+        #cb-drop-line {
+          position: absolute;
+          left: 20.15cqw;
+          top: 19.2cqw;
+          width: 0;
+          height: 6.7cqw;
+          border-left: 0.22cqw solid var(--accent-3);
+          transform-origin: top center;
+        }
+
+        #cb-drop-dot {
+          position: absolute;
+          left: 19.55cqw;
+          top: 17.55cqw;
+          width: 1.45cqw;
+          height: 1.45cqw;
+          border-radius: var(--radius-pill);
+          background: var(--accent-3);
+          box-shadow: 0 0 0 0.45cqw color-mix(in srgb, var(--accent-3) 18%, transparent);
+        }
+
+        #cb-hangup {
+          position: absolute;
+          left: 19.2cqw;
+          top: 25.15cqw;
+          display: flex;
+          align-items: center;
+          gap: 0.55cqw;
+          padding: 0.65cqw 0.85cqw;
+          border-radius: var(--radius-pill);
+          border: 1.5px solid var(--border);
+          background: var(--paper);
+          box-shadow: var(--shadow);
+        }
+
+        #cb-hangup svg {
+          width: 1.55cqw;
+          height: 1.55cqw;
+        }
+
+        #cb-hangup path {
+          stroke: var(--ink);
+          fill: none;
+          stroke-width: 2;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+
+        .cb-micro-label {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-micro);
+          line-height: 1.1;
+          color: var(--ink);
+          white-space: nowrap;
+        }
+
+        #cb-agent-busy,
+        #cb-agent-free {
+          right: 1.1cqw;
+          width: 18.3cqw;
+          padding: 1.15cqw 1.25cqw;
+        }
+
+        #cb-agent-busy {
+          top: 8.4cqw;
+          opacity: 0.72;
+        }
+
+        #cb-agent-free {
+          top: 21.2cqw;
+          border-color: var(--border);
+        }
+
+        #cb-agent-free-ring {
+          position: absolute;
+          inset: -0.55cqw;
+          border-radius: calc(var(--radius) + 0.55cqw);
+          border: 0.28cqw solid var(--accent-3);
+          pointer-events: none;
+        }
+
+        #cb-agent-free-tab {
+          position: absolute;
+          left: 0;
+          top: 16%;
+          bottom: 16%;
+          width: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent-3);
+          transform-origin: center;
+        }
+
+        #cb-agent-status {
+          margin-top: 0.5cqw;
+          display: flex;
+          align-items: center;
+          gap: 0.45cqw;
+        }
+
+        .cb-status-light {
+          width: 0.85cqw;
+          height: 0.85cqw;
+          border-radius: var(--radius-pill);
+          background: var(--accent-3);
+        }
+
+        #cb-flow-svg {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          overflow: visible;
+          pointer-events: none;
+        }
+
+        #cb-callback-path,
+        #cb-callback-path-echo {
+          fill: none;
+          stroke: var(--accent-3);
+          stroke-width: 8;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+
+        #cb-callback-path-echo {
+          stroke-width: 18;
+          opacity: 0.18;
+        }
+
+        #cb-path-label {
+          position: absolute;
+          left: 43.2cqw;
+          top: 5.9cqw;
+          display: flex;
+          align-items: center;
+          gap: 0.6cqw;
+          padding: 0.78cqw 1.05cqw;
+          border-radius: var(--radius-pill);
+          border: 1.5px solid var(--border);
+          background: var(--paper);
+          box-shadow: var(--shadow);
+        }
+
+        #cb-path-label .cb-return-mark {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-caption);
+          color: var(--ink);
+          line-height: 1;
+        }
+
+        #cb-no-hold-mark {
+          position: absolute;
+          left: 32.2cqw;
+          top: 28.7cqw;
+          display: flex;
+          align-items: center;
+          gap: 0.75cqw;
+          padding: 0.9cqw 1.05cqw;
+          border-radius: var(--radius);
+          border: 1.5px solid var(--border);
+          background: var(--paper-veil);
+          box-shadow: var(--shadow);
+        }
+
+        #cb-no-hold-icon {
+          width: 2.6cqw;
+          height: 2.6cqw;
+          flex: none;
+        }
+
+        #cb-no-hold-icon path,
+        #cb-no-hold-icon circle {
+          fill: none;
+          stroke: var(--ink);
+          stroke-width: 2.2;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+
+        #cb-no-hold-slash {
+          stroke: var(--accent-3);
+          stroke-width: 3.2;
+        }
+
+        .cb-lane-fade {
+          opacity: 0.54;
+        }
+      </style>
+
+      <div id="root" data-composition-id="11-callback" data-width="1920" data-height="1080" data-ground="content-wash">
+        <div id="cb-stage" data-keep-in-frame>
+          <div id="cb-title" class="ilt-title">Callback handles callers still waiting</div>
+          <div id="cb-subtitle" class="ilt-caption">They leave the line; the callback reconnects when an agent opens up.</div>
+
+          <div id="cb-switch-panel" class="ilt-panel ilt-panel--veil">
+            <div class="cb-switch-copy">
+              <div class="ilt-kicker">Callback</div>
+              <div id="cb-switch-state">
+                <span id="cb-state-off">Off</span>
+                <span id="cb-state-on">On</span>
+              </div>
+            </div>
+            <div id="cb-switch-track" aria-hidden="true">
+              <div id="cb-switch-fill"></div>
+              <div id="cb-switch-knob"></div>
+            </div>
+          </div>
+
+          <div id="cb-diagram">
+            <svg id="cb-flow-svg" viewBox="0 0 1644 682" aria-hidden="true">
+              <defs>
+                <marker id="cb-arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+                  <path d="M 1 1 L 10 6 L 1 11 z" fill="var(--accent-3)"></path>
+                </marker>
+              </defs>
+              <path
+                id="cb-callback-path-echo"
+                data-reveal-after="#cb-caller-card #cb-agent-free"
+                d="M 388 498 C 565 282 875 108 1226 408"
+              ></path>
+              <path
+                id="cb-callback-path"
+                data-reveal-after="#cb-caller-card #cb-agent-free"
+                d="M 388 498 C 565 282 875 108 1226 408"
+                marker-end="url(#cb-arrow)"
+              ></path>
+            </svg>
+
+            <div id="cb-caller-card" class="cb-node">
+              <div class="cb-avatar-row">
+                <div class="cb-avatar" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="7" r="3.5"></circle>
+                    <path d="M5 21c1.5-4 12.5-4 14 0"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="cb-node-title">Eligible caller</div>
+                  <div class="ilt-caption cb-node-detail">still waiting</div>
+                </div>
+              </div>
+            </div>
+
+            <div id="cb-wait-lane" class="cb-lane-fade"></div>
+            <div id="cb-wait-dots" aria-hidden="true">
+              <div class="cb-wait-dot"></div>
+              <div class="cb-wait-dot"></div>
+              <div class="cb-wait-dot"></div>
+            </div>
+            <div id="cb-drop-line" data-reveal-after="#cb-caller-card"></div>
+            <div id="cb-drop-dot" data-reveal-after="#cb-caller-card"></div>
+
+            <div id="cb-hangup" data-reveal-after="#cb-caller-card">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 9c4-2 8-2 12 0"></path>
+                <path d="M8 10l-2 4 3 1 1.2-2.2c1.1-.35 2.5-.35 3.6 0L15 15l3-1-2-4"></path>
+              </svg>
+              <div class="cb-micro-label">hang up</div>
+            </div>
+
+            <div id="cb-agent-busy" class="cb-node">
+              <div class="cb-avatar-row">
+                <div class="cb-avatar" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="7" r="3.5"></circle>
+                    <path d="M5 21c1.5-4 12.5-4 14 0"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="cb-node-title">Agent</div>
+                  <div class="ilt-caption cb-node-detail">on a call</div>
+                </div>
+              </div>
+            </div>
+
+            <div id="cb-agent-free" class="cb-node">
+              <div id="cb-agent-free-ring" data-reveal-after="#cb-agent-free"></div>
+              <div id="cb-agent-free-tab"></div>
+              <div class="cb-avatar-row">
+                <div class="cb-avatar" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="7" r="3.5"></circle>
+                    <path d="M5 21c1.5-4 12.5-4 14 0"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="cb-node-title">Freed agent</div>
+                  <div id="cb-agent-status">
+                    <span class="cb-status-light" aria-hidden="true"></span>
+                    <span class="ilt-caption">available now</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="cb-path-label" data-reveal-after="#cb-caller-card #cb-agent-free">
+              <span class="cb-return-mark">↩</span>
+              <span class="cb-micro-label">we’ll call you back</span>
+            </div>
+
+            <div id="cb-no-hold-mark" data-reveal-after="#cb-callback-path">
+              <svg id="cb-no-hold-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="8"></circle>
+                <path d="M12 7v5l3 2"></path>
+                <path id="cb-no-hold-slash" d="M4 20L20 4"></path>
+              </svg>
+              <div>
+                <div class="cb-micro-label">caller is off the line</div>
+                <div class="ilt-caption">the queue reconnects them</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <script>
+          (function () {
+            window.__timelines = window.__timelines || {};
+
+            var W = window.__anchors || {};
+            var SCENE_START = typeof W.b11_start === "number" ? W.b11_start : 113.95;
+            function cue(name, fallbackAbsolute) {
+              return (typeof W[name] === "number" ? W[name] : fallbackAbsolute) - SCENE_START;
+            }
+
+            var CALLBACK_ON = cue("callback_on", 119.39);
+            var CALLBACK_PATH = cue("callback_path", 121.15);
+            var NO_HOLD = cue("no_hold", 123.83);
+
+            var tl = gsap.timeline({ paused: true });
+
+            tl.set("#cb-title", { opacity: 0 }, 0);
+            tl.set("#cb-subtitle", { opacity: 0 }, 0);
+            tl.set("#cb-switch-panel", { opacity: 0 }, 0);
+            tl.set("#cb-state-on", { opacity: 0 }, 0);
+            tl.set("#cb-diagram", { opacity: 0 }, 0);
+            tl.set("#cb-caller-card", { opacity: 0 }, 0);
+            tl.set("#cb-wait-lane", { opacity: 0 }, 0);
+            tl.set("#cb-wait-dots", { opacity: 0 }, 0);
+            tl.set("#cb-drop-line", { opacity: 0 }, 0);
+            tl.set("#cb-drop-dot", { opacity: 0 }, 0);
+            tl.set("#cb-hangup", { opacity: 0 }, 0);
+            tl.set("#cb-agent-busy", { opacity: 0 }, 0);
+            tl.set("#cb-agent-free", { opacity: 0 }, 0);
+            tl.set("#cb-agent-free-ring", { opacity: 0 }, 0);
+            tl.set("#cb-agent-free-tab", { opacity: 0 }, 0);
+            tl.set("#cb-callback-path", { opacity: 0 }, 0);
+            tl.set("#cb-callback-path-echo", { opacity: 0 }, 0);
+            tl.set("#cb-path-label", { opacity: 0 }, 0);
+            tl.set("#cb-no-hold-mark", { opacity: 0 }, 0);
+            tl.set("#cb-switch-fill", { scaleX: 0, transformOrigin: "left center" }, 0);
+            tl.set("#cb-switch-knob", { x: 0 }, 0);
+            tl.set("#cb-drop-line", { scaleY: 0, transformOrigin: "top center" }, 0);
+            tl.set("#cb-agent-free-tab", { scaleY: 0, transformOrigin: "center center" }, 0);
+            tl.set("#cb-agent-free-ring", { scale: 0.88, transformOrigin: "50% 50%" }, 0);
+
+            var callbackPath = document.getElementById("cb-callback-path");
+            var callbackEcho = document.getElementById("cb-callback-path-echo");
+            var pathLen = callbackPath ? callbackPath.getTotalLength() : 1120;
+            [callbackPath, callbackEcho].forEach(function (path) {
+              if (!path) return;
+              path.style.strokeDasharray = String(pathLen);
+              path.style.strokeDashoffset = String(pathLen);
+            });
+
+            tl.fromTo("#cb-title", { opacity: 0, x: -54 }, { opacity: 1, x: 0, duration: 0.58, ease: "power3.out" }, 0.08);
+            tl.fromTo("#cb-subtitle", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.58, ease: "power3.out" }, 0.22);
+            tl.fromTo("#cb-switch-panel", { opacity: 0, x: -32, scale: 0.98 }, { opacity: 1, x: 0, scale: 1, duration: 0.56, ease: "power3.out" }, 0.34);
+            tl.fromTo("#cb-diagram", { opacity: 0, x: -58 }, { opacity: 1, x: 0, duration: 0.68, ease: "power3.out" }, 0.18);
+            tl.fromTo("#cb-caller-card", { opacity: 0, x: -74, scale: 0.96 }, { opacity: 1, x: 0, scale: 1, duration: 0.72, ease: "power3.out" }, 0.52);
+            tl.fromTo("#cb-wait-lane", { opacity: 0, scaleX: 0 }, { opacity: 0.54, scaleX: 1, duration: 0.72, ease: "power2.out" }, 0.78);
+            tl.fromTo("#cb-wait-dots", { opacity: 0, x: -28 }, { opacity: 1, x: 0, duration: 0.42, ease: "power2.out" }, 0.96);
+            tl.fromTo("#cb-agent-busy", { opacity: 0, x: -46, scale: 0.97 }, { opacity: 0.72, x: 0, scale: 1, duration: 0.62, ease: "power3.out" }, 0.88);
+            tl.fromTo("#cb-agent-free", { opacity: 0, x: -46, scale: 0.97 }, { opacity: 1, x: 0, scale: 1, duration: 0.62, ease: "power3.out" }, 0.98);
+
+            tl.fromTo("#cb-state-off", { opacity: 1, y: 0 }, { opacity: 0, y: -6, duration: 0.18, ease: "power1.out" }, CALLBACK_ON + 0.12);
+            tl.fromTo("#cb-state-on", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.22, ease: "power2.out" }, CALLBACK_ON + 0.18);
+            tl.fromTo("#cb-switch-fill", { scaleX: 0 }, { scaleX: 1, duration: 0.36, ease: "power2.out" }, CALLBACK_ON);
+            tl.fromTo("#cb-switch-knob", { x: 0 }, { x: 55, duration: 0.36, ease: "power3.out" }, CALLBACK_ON);
+            tl.fromTo("#cb-switch-panel", { scale: 1 }, { scale: 1.035, duration: 0.14, yoyo: true, repeat: 1, ease: "power1.inOut" }, CALLBACK_ON + 0.05);
+
+            tl.fromTo("#cb-drop-line", { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.42, ease: "power2.out" }, CALLBACK_ON + 0.45);
+            tl.fromTo("#cb-drop-dot", { opacity: 0, y: -8, scale: 0.75 }, { opacity: 1, y: 128, scale: 1, duration: 0.6, ease: "power2.inOut" }, CALLBACK_ON + 0.5);
+            tl.fromTo("#cb-hangup", { opacity: 0, y: -18, scale: 0.92 }, { opacity: 1, y: 0, scale: 1, duration: 0.42, ease: "power3.out" }, CALLBACK_ON + 0.72);
+            tl.fromTo("#cb-caller-card", { y: 0 }, { y: 48, duration: 0.56, ease: "power2.inOut" }, CALLBACK_ON + 0.7);
+
+            tl.fromTo("#cb-agent-free-tab", { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.32, ease: "power2.out" }, CALLBACK_PATH - 0.18);
+            tl.fromTo("#cb-agent-free-ring", { opacity: 0, scale: 0.88 }, { opacity: 1, scale: 1, duration: 0.42, ease: "power2.out" }, CALLBACK_PATH - 0.12);
+            tl.fromTo("#cb-agent-free", { scale: 1 }, { scale: 1.045, duration: 0.16, yoyo: true, repeat: 1, ease: "power1.inOut" }, CALLBACK_PATH);
+            tl.fromTo("#cb-callback-path-echo", { opacity: 0, strokeDashoffset: pathLen }, { opacity: 0.18, strokeDashoffset: 0, duration: 0.92, ease: "none" }, CALLBACK_PATH);
+            tl.fromTo("#cb-callback-path", { opacity: 0, strokeDashoffset: pathLen }, { opacity: 1, strokeDashoffset: 0, duration: 0.92, ease: "none" }, CALLBACK_PATH);
+            tl.fromTo("#cb-path-label", { opacity: 0, y: 20, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.48, ease: "power3.out" }, CALLBACK_PATH + 0.62);
+
+            tl.fromTo("#cb-wait-dots", { opacity: 1, scale: 1 }, { opacity: 0.18, scale: 0.82, duration: 0.42, ease: "power2.out" }, NO_HOLD);
+            tl.fromTo("#cb-wait-lane", { opacity: 0.54, scaleX: 1 }, { opacity: 0.18, scaleX: 0.28, duration: 0.52, ease: "power2.inOut" }, NO_HOLD);
+            tl.fromTo("#cb-no-hold-mark", { opacity: 0, y: 26, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "power3.out" }, NO_HOLD + 0.08);
+            tl.fromTo("#cb-callback-path-echo", { opacity: 0.18 }, { opacity: 0.08, duration: 0.45, ease: "power1.out" }, NO_HOLD + 0.35);
+
+            tl.fromTo("#cb-agent-free", { x: 0 }, { x: 16, duration: 0.45, ease: "power2.out" }, NO_HOLD + 0.9);
+            tl.fromTo("#cb-path-label", { x: 0 }, { x: 12, duration: 0.45, ease: "power2.out" }, NO_HOLD + 0.9);
+            window.__timelines["11-callback"] = tl;
+          })();
+        </script>
+    </template>
+  </body>
+</html>

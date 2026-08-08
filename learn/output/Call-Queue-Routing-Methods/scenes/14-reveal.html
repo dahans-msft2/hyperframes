@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+  </head>
+  <body>
+    <template>
+      <style>
+        /* === Learn-ILT custom scene: timeout reveal clock (nearest stat-spotlight). ===
+           Built on the kit foundation: no hardcoded fonts/px type — tokens only.
+           Runs on the DRAMATIC EXCEPTION ground (dark-field): ink auto-inverts to WHITE.
+           Accents colour graphics only, except the required display stamp on an accent chip. */
+
+        /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+        #root,
+        #root *,
+        #root *::before,
+        #root *::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size;
+
+          --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
+          --ink: #091f2e;
+          --ink-soft: #59636e;
+          --paper: #ffffff;
+          --paper-veil: rgba(255, 255, 255, 0.9);
+          --border: rgba(9, 31, 46, 0.16);
+          --border-soft: rgba(9, 31, 46, 0.12);
+          --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
+
+          --accent: #8661c5;
+          --accent-2: #0078d4;
+          --accent-3: #389a91;
+          --accent-4: #bf3ac4;
+          --accent-ink: #ffffff;
+
+          --fs-display: 11cqw;
+          --fs-h1: 4.6cqw;
+          --fs-h2: 3.4cqw;
+          --fs-h3: 2.4cqw;
+          --fs-lead: 2cqw;
+          --fs-body: 1.75cqw;
+          --fs-caption: 1.5cqw;
+          --fs-kicker: 1.55cqw;
+          --fs-micro: 1.25cqw;
+
+          --radius: 16px;
+          --radius-sm: 10px;
+          --radius-pill: 999px;
+          --stroke: 5px;
+          --rule: 3px;
+
+          font-family: "Segoe UI", system-ui, sans-serif;
+          color: var(--ink);
+          background: var(--ground);
+        }
+        #root[data-ground="hero-swoosh"] {
+          --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+        }
+        #root[data-ground="section-field"] {
+          --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
+        }
+        #root[data-ground="dark-field"] {
+          --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
+          --ink: #ffffff;
+          --ink-soft: rgba(255, 255, 255, 0.72);
+          --paper: rgba(255, 255, 255, 0.08);
+          --paper-veil: rgba(255, 255, 255, 0.1);
+          --border: rgba(255, 255, 255, 0.24);
+          --border-soft: rgba(255, 255, 255, 0.14);
+          --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+        .ilt-kicker {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-kicker);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+        .ilt-title {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h2);
+          line-height: 1.08;
+          letter-spacing: -0.02em;
+          color: var(--ink);
+        }
+        .ilt-headline {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h3);
+          line-height: 1.12;
+          letter-spacing: -0.015em;
+          color: var(--ink);
+        }
+        .ilt-body {
+          font-weight: 400;
+          font-size: var(--fs-body);
+          line-height: 1.3;
+          color: var(--ink);
+        }
+        .ilt-caption {
+          font-weight: 400;
+          font-size: var(--fs-caption);
+          line-height: 1.3;
+          color: var(--ink-soft);
+        }
+        .ilt-value {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-caption);
+          letter-spacing: -0.01em;
+          color: var(--ink);
+          font-variant-numeric: tabular-nums;
+        }
+        .ilt-display {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-display);
+          line-height: 0.95;
+          letter-spacing: -0.03em;
+          color: var(--ink);
+          font-variant-numeric: tabular-nums;
+        }
+        .ilt-panel {
+          background: var(--paper);
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow);
+        }
+        .ilt-panel--veil {
+          background: var(--paper-veil);
+        }
+        .ilt-chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6em;
+          padding: 0.5em 1.1em;
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius-pill);
+          font-size: var(--fs-micro);
+          font-weight: 600;
+          color: var(--ink);
+          background: var(--paper-veil);
+        }
+        .ilt-rule {
+          height: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent);
+        }
+        /* ==== END _foundation.css ==== */
+
+        /* ---- custom reveal scene: clock bar + timeout gate ---- */
+        #root {
+          --eligible-mark: #65e6d7;
+          --timeout-mark: var(--accent-4);
+          --warn-veil: rgba(191, 58, 196, 0.22);
+          --glass: rgba(255, 255, 255, 0.07);
+          --glass-strong: rgba(255, 255, 255, 0.13);
+        }
+
+        #root .rf-stage {
+          position: absolute;
+          inset: 0;
+          will-change: transform, opacity;
+        }
+
+        #root .rf-grid {
+          position: absolute;
+          inset: -5cqw;
+          opacity: 0.18;
+          background:
+            linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px) 0 0 / 7cqw 7cqw,
+            linear-gradient(0deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px) 0 0 / 7cqw 7cqw;
+          transform: rotate(-2deg);
+        }
+
+        #root .rf-glow {
+          position: absolute;
+          width: 34cqw;
+          height: 34cqw;
+          border-radius: 50%;
+          filter: blur(42px);
+          opacity: 0.22;
+          pointer-events: none;
+        }
+        #root .rf-glow--teal {
+          left: 34cqw;
+          top: 31cqh;
+          background: radial-gradient(closest-side, var(--eligible-mark), transparent 76%);
+        }
+        #root .rf-glow--magenta {
+          right: 1cqw;
+          top: 34cqh;
+          background: radial-gradient(closest-side, var(--timeout-mark), transparent 78%);
+        }
+
+        #root .rf-head {
+          position: absolute;
+          left: 8cqw;
+          top: 8cqh;
+          width: 52cqw;
+          display: flex;
+          flex-direction: column;
+          gap: 0.7cqw;
+          will-change: transform, opacity;
+        }
+
+        #root .rf-title {
+          max-width: 46cqw;
+        }
+
+        #root .rf-clock {
+          position: absolute;
+          left: 8cqw;
+          right: 8cqw;
+          top: 35cqh;
+          height: 36cqh;
+          border: 1.5px solid var(--border);
+          border-radius: calc(var(--radius) * 1.35);
+          background: linear-gradient(180deg, var(--glass-strong), var(--glass));
+          box-shadow: var(--shadow);
+          overflow: visible;
+          will-change: transform, opacity;
+        }
+
+        #root .rf-axis-wrap {
+          position: absolute;
+          left: 8cqw;
+          right: 8cqw;
+          top: 18cqh;
+          height: 6cqh;
+        }
+
+        #root .rf-axis-track,
+        #root .rf-axis-fill,
+        #root .rf-music-track,
+        #root .rf-music-fill {
+          position: absolute;
+          left: 0;
+          right: 0;
+          border-radius: var(--radius-pill);
+          transform-origin: left center;
+        }
+
+        #root .rf-axis-track {
+          top: 3.1cqh;
+          height: 0.35cqw;
+          background: var(--border-soft);
+        }
+
+        #root .rf-axis-fill {
+          top: 3.1cqh;
+          height: 0.35cqw;
+          background: rgba(255, 255, 255, 0.92);
+        }
+
+        #root .rf-music-track {
+          top: 0.9cqh;
+          height: 1.05cqw;
+          border: 1.5px solid var(--border-soft);
+          background: rgba(255, 255, 255, 0.05);
+        }
+
+        #root .rf-music-fill {
+          top: 0.9cqh;
+          height: 1.05cqw;
+          background: linear-gradient(90deg, rgba(134, 97, 197, 0.72), rgba(134, 97, 197, 0.22));
+        }
+
+        #root .rf-tick {
+          position: absolute;
+          top: 4.6cqh;
+          transform: translateX(-50%);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.7cqh;
+        }
+
+        #root .rf-tick-line {
+          width: 0.18cqw;
+          height: 2.1cqh;
+          border-radius: var(--radius-pill);
+          background: var(--border);
+        }
+
+        #root .rf-tick-label {
+          white-space: nowrap;
+        }
+
+        #root .rf-tick--zero {
+          left: 0;
+        }
+        #root .rf-tick--sixty {
+          left: 50%;
+        }
+        #root .rf-tick--one-twenty {
+          left: 100%;
+        }
+
+        #root .rf-marker {
+          position: absolute;
+          top: -2.1cqh;
+          bottom: -7.3cqh;
+          transform: translateX(-50%);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1cqh;
+          will-change: transform, opacity;
+        }
+
+        #root .rf-marker-rail {
+          width: 0.42cqw;
+          height: 11.8cqh;
+          border-radius: var(--radius-pill);
+          background: var(--eligible-mark);
+          box-shadow: 0 0 28px rgba(101, 230, 215, 0.5);
+        }
+
+        #root .rf-marker-dot {
+          position: absolute;
+          top: 4.55cqh;
+          width: 2.25cqw;
+          height: 2.25cqw;
+          border-radius: 50%;
+          border: 0.25cqw solid rgba(255, 255, 255, 0.95);
+          background: var(--eligible-mark);
+          box-shadow: 0 0 34px rgba(101, 230, 215, 0.75);
+        }
+
+        #root .rf-marker-label {
+          position: absolute;
+          top: -5.2cqh;
+          min-width: 13cqw;
+          justify-content: center;
+          border-color: rgba(101, 230, 215, 0.62);
+          background: rgba(101, 230, 215, 0.15);
+        }
+
+        #root .rf-timeout {
+          position: absolute;
+          left: 100%;
+          top: -3.5cqh;
+          bottom: -9cqh;
+          transform: translateX(-50%);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          will-change: transform, opacity;
+        }
+
+        #root .rf-timeout-rail {
+          width: 0.72cqw;
+          height: 17cqh;
+          border-radius: var(--radius-pill);
+          background: var(--timeout-mark);
+          box-shadow: 0 0 32px rgba(191, 58, 196, 0.72);
+          transform-origin: 50% 0%;
+        }
+
+        #root .rf-timeout-cap {
+          position: absolute;
+          top: 5.35cqh;
+          width: 4.2cqw;
+          height: 1cqw;
+          border-radius: var(--radius-pill);
+          background: var(--timeout-mark);
+          box-shadow: 0 0 24px rgba(191, 58, 196, 0.65);
+          transform-origin: 50% 50%;
+        }
+
+        #root .rf-timeout-label {
+          position: absolute;
+          top: -5.4cqh;
+          min-width: 14cqw;
+          justify-content: center;
+          border-color: rgba(191, 58, 196, 0.72);
+          background: var(--warn-veil);
+        }
+
+        #root .rf-fires {
+          position: absolute;
+          top: -10.6cqh;
+          left: 100%;
+          transform: translateX(-50%);
+          color: var(--ink);
+          background: var(--warn-veil);
+          border-color: rgba(191, 58, 196, 0.72);
+          will-change: transform, opacity;
+        }
+
+        #root .rf-flash {
+          position: absolute;
+          left: 100%;
+          top: -3.2cqh;
+          width: 10cqw;
+          height: 10cqw;
+          transform: translate(-50%, -50%);
+          border-radius: 50%;
+          border: 0.25cqw solid var(--timeout-mark);
+          box-shadow: 0 0 54px rgba(191, 58, 196, 0.72);
+          will-change: transform, opacity;
+        }
+
+        #root .rf-music-label,
+        #root .rf-offer,
+        #root .rf-room {
+          position: absolute;
+          will-change: transform, opacity;
+        }
+
+        #root .rf-music-label {
+          left: 8cqw;
+          top: 5.6cqh;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.75cqw;
+        }
+
+        #root .rf-music-wave {
+          width: 3.2cqw;
+          height: 1.1cqw;
+          border-radius: var(--radius-pill);
+          background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.78) 0 0.18cqw, transparent 0.18cqw 0.45cqw);
+        }
+
+        #root .rf-offer {
+          right: -1.5cqw;
+          top: 9.2cqh;
+          width: 17cqw;
+          padding: 1.2cqw 1.35cqw;
+          border: 1.5px dashed var(--border);
+          border-radius: var(--radius);
+          background: rgba(255, 255, 255, 0.05);
+          text-align: center;
+        }
+
+        #root .rf-offer .ilt-caption {
+          color: var(--ink-soft);
+        }
+
+        #root .rf-stamp {
+          position: absolute;
+          right: 9cqw;
+          bottom: 6.5cqh;
+          padding: 1cqw 1.5cqw 1.1cqw;
+          border-radius: var(--radius);
+          background: var(--timeout-mark);
+          color: var(--accent-ink);
+          box-shadow: 0 20px 48px rgba(191, 58, 196, 0.36);
+          transform: rotate(-2deg);
+          will-change: transform, opacity;
+        }
+
+        #root .rf-stamp-text {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-size: var(--fs-h3);
+          line-height: 1;
+          letter-spacing: -0.02em;
+          color: var(--accent-ink);
+          white-space: nowrap;
+        }
+
+        #root .rf-room {
+          left: 100%;
+          bottom: -9.4cqh;
+          width: 7cqw;
+          height: 4.2cqh;
+          border-left: 0.25cqw solid var(--timeout-mark);
+          border-right: 0.25cqw solid var(--timeout-mark);
+          border-bottom: 0.25cqw solid var(--timeout-mark);
+          border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+          transform-origin: left center;
+        }
+
+        #root .rf-room-label {
+          position: absolute;
+          left: 50%;
+          top: 4.8cqh;
+          transform: translateX(-50%);
+          white-space: nowrap;
+        }
+      </style>
+
+      <div id="root" data-composition-id="14-reveal" data-width="1920" data-height="1080" data-ground="dark-field">
+        <div id="rf-stage" class="rf-stage" data-keep-in-frame>
+          <div class="rf-grid" aria-hidden="true"></div>
+          <div id="rf-glow-teal" class="rf-glow rf-glow--teal" aria-hidden="true"></div>
+          <div id="rf-glow-magenta" class="rf-glow rf-glow--magenta" aria-hidden="true"></div>
+
+          <div id="rf-head" class="rf-head">
+            <div class="ilt-kicker">Watch the clock</div>
+            <div class="ilt-title rf-title">Callback math, on a clock.</div>
+          </div>
+
+          <div id="rf-clock" class="rf-clock">
+            <div class="rf-axis-wrap">
+              <div id="rf-axis-track" class="rf-axis-track" aria-hidden="true"></div>
+              <div id="rf-axis-fill" class="rf-axis-fill" aria-hidden="true"></div>
+
+              <div id="rf-music-track" class="rf-music-track" aria-hidden="true"></div>
+              <div id="rf-music-fill" class="rf-music-fill" data-reveal-after="#rf-eligible-pin"></div>
+              <div id="rf-music-label" class="rf-music-label" data-layout-allow-overlap data-layout-allow-overflow data-reveal-after="#rf-music-fill">
+                <div class="rf-music-wave" aria-hidden="true"></div>
+                <div class="ilt-caption">default hold music · full two minutes</div>
+              </div>
+
+              <div class="rf-tick rf-tick--zero">
+                <div class="rf-tick-line" aria-hidden="true"></div>
+                <div class="rf-tick-label ilt-value">0s</div>
+              </div>
+              <div class="rf-tick rf-tick--sixty">
+                <div class="rf-tick-line" aria-hidden="true"></div>
+                <div class="rf-tick-label ilt-value">60s</div>
+              </div>
+              <div class="rf-tick rf-tick--one-twenty">
+                <div class="rf-tick-line" aria-hidden="true"></div>
+                <div class="rf-tick-label ilt-value">120s</div>
+              </div>
+
+              <div id="rf-eligible-pin" class="rf-marker" style="left: 50%">
+                <div id="rf-eligible-rail" class="rf-marker-rail" aria-hidden="true"></div>
+                <div id="rf-eligible-dot" class="rf-marker-dot" aria-hidden="true"></div>
+                <div id="rf-eligible-label" class="rf-marker-label ilt-chip">eligible @ 60s</div>
+              </div>
+
+              <div id="rf-timeout-gate" class="rf-timeout" data-reveal-after="#rf-music-fill #rf-eligible-pin">
+                <div id="rf-timeout-rail" class="rf-timeout-rail" aria-hidden="true"></div>
+                <div id="rf-timeout-cap" class="rf-timeout-cap" aria-hidden="true"></div>
+                <div id="rf-timeout-label" class="rf-timeout-label ilt-chip" data-layout-allow-overlap>timeout @ 120s</div>
+              </div>
+              <div id="rf-flash" class="rf-flash" data-reveal-after="#rf-timeout-gate"></div>
+              <div id="rf-fires" class="rf-fires ilt-chip" data-layout-allow-overlap data-reveal-after="#rf-timeout-gate">FIRES FIRST</div>
+
+              <div id="rf-offer" class="rf-offer" data-reveal-after="#rf-fires">
+                <div class="ilt-value">callback offer</div>
+                <div class="ilt-caption">would play next</div>
+              </div>
+
+              <div id="rf-room" class="rf-room" data-reveal-after="#rf-stamp">
+                <div class="rf-room-label ilt-caption">no room left</div>
+              </div>
+            </div>
+
+            <div id="rf-stamp" class="rf-stamp" data-reveal-after="#rf-offer">
+              <div class="rf-stamp-text">offer never plays</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          window.__timelines = window.__timelines || {};
+
+          var FALLBACK = {
+            b14_start: 152.29,
+            reveal_eligible: 156.57,
+            reveal_music_2min: 159.77,
+            reveal_timeout_120: 162.67,
+            reveal_fires: 164.98,
+            reveal_offer: 167.14,
+            room: 172.1,
+          };
+          var W = window.__anchors || FALLBACK;
+          var sceneStart = W.b14_start || FALLBACK.b14_start;
+          function cue(name) {
+            var value = typeof W[name] === "number" ? W[name] : FALLBACK[name];
+            return Math.max(0, value - sceneStart);
+          }
+
+          var tEligible = cue("reveal_eligible");
+          var tMusic = cue("reveal_music_2min");
+          var tTimeout = cue("reveal_timeout_120");
+          var tFires = cue("reveal_fires");
+          var tOffer = cue("reveal_offer");
+          var tRoom = cue("room");
+
+          var tl = gsap.timeline({ paused: true });
+
+          tl.set("#rf-stage", { opacity: 0, x: -64 }, 0);
+          tl.set("#rf-head", { opacity: 0, y: 20 }, 0);
+          tl.set("#rf-clock", { opacity: 0, x: -42, scale: 0.985, transformOrigin: "50% 50%" }, 0);
+          tl.set("#rf-axis-fill", { opacity: 0, scaleX: 0, transformOrigin: "0% 50%" }, 0);
+          tl.set("#rf-eligible-pin", { opacity: 0, y: 18, scale: 0.92, transformOrigin: "50% 50%" }, 0);
+          tl.set("#rf-eligible-label", { opacity: 0, y: -10 }, 0);
+          tl.set("#rf-glow-teal", { opacity: 0, scale: 0.75 }, 0);
+          tl.set("#rf-music-fill", { opacity: 0, scaleX: 0, transformOrigin: "0% 50%" }, 0);
+          tl.set("#rf-music-label", { opacity: 0, y: 14 }, 0);
+          tl.set("#rf-timeout-gate", { opacity: 0, y: -16, scale: 0.9, transformOrigin: "50% 50%" }, 0);
+          tl.set("#rf-timeout-label", { opacity: 0, y: -10 }, 0);
+          tl.set("#rf-glow-magenta", { opacity: 0, scale: 0.75 }, 0);
+          tl.set("#rf-flash", { opacity: 0, scale: 0.2 }, 0);
+          tl.set("#rf-fires", { opacity: 0, y: -12, scale: 0.9, transformOrigin: "50% 50%" }, 0);
+          tl.set("#rf-offer", { opacity: 0, x: 24, scale: 0.94, transformOrigin: "50% 50%" }, 0);
+          tl.set("#rf-stamp", { opacity: 0, y: 30, scale: 1.18, rotation: -2, transformOrigin: "50% 50%" }, 0);
+          tl.set("#rf-room", { opacity: 0, scaleX: 0, transformOrigin: "0% 50%" }, 0);
+
+          tl.fromTo(
+            "#rf-stage",
+            { opacity: 0, x: -64 },
+            { opacity: 1, x: 0, duration: 0.62, ease: "power3.out" },
+            0.08
+          );
+          tl.fromTo(
+            "#rf-head",
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.58, ease: "power3.out" },
+            0.18
+          );
+          tl.fromTo(
+            "#rf-clock",
+            { opacity: 0, x: -42, scale: 0.985 },
+            { opacity: 1, x: 0, scale: 1, duration: 0.72, ease: "power3.out" },
+            0.34
+          );
+          tl.fromTo(
+            "#rf-axis-fill",
+            { opacity: 0, scaleX: 0 },
+            { opacity: 1, scaleX: 1, duration: 0.86, ease: "power2.out" },
+            0.56
+          );
+
+          tl.fromTo(
+            "#rf-eligible-pin",
+            { opacity: 0, y: 18, scale: 0.92 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.55, ease: "back.out(1.7)" },
+            tEligible
+          );
+          tl.fromTo(
+            "#rf-eligible-label",
+            { opacity: 0, y: -10 },
+            { opacity: 1, y: 0, duration: 0.36, ease: "power2.out" },
+            tEligible + 0.16
+          );
+          tl.fromTo(
+            "#rf-glow-teal",
+            { opacity: 0, scale: 0.75 },
+            { opacity: 0.28, scale: 1, duration: 0.72, ease: "power2.out" },
+            tEligible + 0.05
+          );
+          tl.fromTo(
+            "#rf-eligible-dot",
+            { scale: 1 },
+            { scale: 1.28, duration: 0.18, ease: "power2.out", yoyo: true, repeat: 1 },
+            tEligible + 0.24
+          );
+
+          tl.fromTo(
+            "#rf-music-fill",
+            { opacity: 0, scaleX: 0 },
+            { opacity: 1, scaleX: 1, duration: 1.08, ease: "power2.inOut" },
+            tMusic
+          );
+          tl.fromTo(
+            "#rf-music-label",
+            { opacity: 0, y: 14 },
+            { opacity: 1, y: 0, duration: 0.44, ease: "power3.out" },
+            tMusic + 0.18
+          );
+
+          tl.fromTo(
+            "#rf-timeout-gate",
+            { opacity: 0, y: -16, scale: 0.9 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.48, ease: "back.out(1.9)" },
+            tTimeout
+          );
+          tl.fromTo(
+            "#rf-timeout-label",
+            { opacity: 0, y: -10 },
+            { opacity: 1, y: 0, duration: 0.34, ease: "power2.out" },
+            tTimeout + 0.13
+          );
+          tl.fromTo(
+            "#rf-glow-magenta",
+            { opacity: 0, scale: 0.75 },
+            { opacity: 0.34, scale: 1, duration: 0.62, ease: "power2.out" },
+            tTimeout + 0.05
+          );
+
+          tl.fromTo(
+            "#rf-timeout-rail",
+            { scaleY: 1 },
+            { scaleY: 1.18, duration: 0.16, ease: "power2.in" },
+            tFires
+          );
+          tl.fromTo(
+            "#rf-timeout-cap",
+            { scaleX: 1 },
+            { scaleX: 1.45, duration: 0.12, ease: "power2.in" },
+            tFires
+          );
+          tl.fromTo(
+            "#rf-flash",
+            { opacity: 0, scale: 0.2 },
+            { opacity: 0.72, scale: 1.35, duration: 0.22, ease: "power2.out", yoyo: true, repeat: 1 },
+            tFires + 0.03
+          );
+          tl.fromTo(
+            "#rf-fires",
+            { opacity: 0, y: -12, scale: 0.9 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.28, ease: "back.out(2)" },
+            tFires + 0.12
+          );
+          tl.fromTo(
+            "#rf-clock",
+            { x: 0 },
+            { x: -10, duration: 0.08, ease: "power1.inOut", yoyo: true, repeat: 3 },
+            tFires + 0.04
+          );
+
+          tl.fromTo(
+            "#rf-offer",
+            { opacity: 0, x: 24, scale: 0.94 },
+            { opacity: 0.48, x: 0, scale: 1, duration: 0.44, ease: "power3.out" },
+            tOffer
+          );
+          tl.fromTo(
+            "#rf-offer",
+            { x: 0 },
+            { x: 8, duration: 0.07, ease: "power1.inOut", yoyo: true, repeat: 5 },
+            tOffer + 0.38
+          );
+          tl.fromTo(
+            "#rf-stamp",
+            { opacity: 0, y: 30, scale: 1.18, rotation: -2 },
+            { opacity: 1, y: 0, scale: 1, rotation: -2, duration: 0.34, ease: "back.out(1.7)" },
+            tOffer + 0.52
+          );
+          tl.fromTo(
+            "#rf-offer",
+            { opacity: 0.48 },
+            { opacity: 0.18, duration: 0.28, ease: "power2.out" },
+            tOffer + 0.58
+          );
+
+          tl.fromTo(
+            "#rf-room",
+            { opacity: 0, scaleX: 0 },
+            { opacity: 1, scaleX: 1, duration: 0.38, ease: "power2.out" },
+            tRoom
+          );
+          tl.fromTo(
+            "#rf-stage",
+            { y: 0 },
+            { y: -28, duration: 0.42, ease: "power2.inOut" },
+            tRoom + 0.18
+          );
+
+          window.__timelines["14-reveal"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

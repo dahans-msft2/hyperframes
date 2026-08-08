@@ -55,7 +55,7 @@
         #bm-rule { width: 8cqw; transform-origin: center; }
       </style>
 
-      <div id="root" data-composition-id="01-bumper" data-ground="hero-swoosh" data-width="1920" data-height="1080">
+      <div id="root" data-composition-id="01-bumper" data-width="1920" data-height="1080" data-ground="hero-swoosh">
         <div id="bm-wrap">
           <div id="bm-mark" aria-hidden="true">
             <svg id="bm-ms" viewBox="0 0 100 100">
@@ -82,8 +82,9 @@
           // project-local product logo (e.g. "assets/media/scout.png") to override it. Only the
           // kicker sub-line and the logo vary; the "Microsoft Learn" wordmark is fixed.
           var CONFIG = {
-            "kicker": "__FILL__ skilling series (e.g. 'Skilling · Azure Quantum')"
-          };
+            "kicker": "TEAMS PHONE · CONFIGURE AUTO ATTENDANTS & CALL QUEUES",
+            "logoSrc": ""
+};
 
           var mark = document.getElementById("bm-mark");
           var ms = document.getElementById("bm-ms");

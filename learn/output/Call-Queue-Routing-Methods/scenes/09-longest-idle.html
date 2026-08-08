@@ -177,7 +177,7 @@
         }
       </style>
 
-      <div id="root" data-composition-id="90-recap" data-width="1920" data-height="1080" data-ground="content-wash">
+      <div id="root" data-composition-id="09-longest-idle" data-width="1920" data-height="1080" data-ground="content-wash">
         <!-- host may set data-ground="section-field" | "hero-swoosh" | "dark-field" on #root -->
         <div id="mk-ls-wrap">
           <div id="mk-ls-head">
@@ -196,26 +196,30 @@
              up to the total, then the selected row lifts with an accent tab as the rest recede
              — the "choose one from these" / compare-and-pick beat. */
           var CONFIG = {
-            "kicker": "RECAP",
+            "kicker": "LONGEST IDLE",
             "items": [
                         {
-                                    "label": "4 methods",
-                                    "detail": "Round robin + Longest idle are recommended."
+                                    "label": "Attendant",
+                                    "detail": "Broadcast to everyone."
                         },
                         {
-                                    "label": "Callback for waiters",
-                                    "detail": "Eligible callers can leave hold and get called back."
+                                    "label": "Serial",
+                                    "detail": "Follow the list order."
                         },
                         {
-                                    "label": "Timeout ≥ whole sequence",
-                                    "detail": "Long enough for eligibility, music, and callback reach."
+                                    "label": "Round robin",
+                                    "detail": "Recommended — even distribution."
+                        },
+                        {
+                                    "label": "Longest idle",
+                                    "detail": "Recommended — longest Available presence wins; presence-based routing snaps On."
                         }
             ],
-            "selectedIndex": 2,
-            "countLabel": "takeaways",
-            "x": 250,
-            "width": 1200,
-            "stagger": 0.18
+            "selectedIndex": 3,
+            "countLabel": "routing methods",
+            "x": 220,
+            "width": 1280,
+            "stagger": 0.16
 };
 
           var wrap = document.getElementById("mk-ls-wrap");
@@ -306,7 +310,7 @@
             tl.to(document.getElementById("mk-ls-tab-" + sel), { scaleY: 1, duration: 0.45, ease: "power2.out" }, lift + 0.05);
           }
 
-          window.__timelines["90-recap"] = tl;
+          window.__timelines["09-longest-idle"] = tl;
         })();
       </script>
     </template>

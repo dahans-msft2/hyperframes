@@ -88,5 +88,23 @@
     "status": "passed",
     "note": null,
     "meta": {}
+  },
+  {
+    "kind": "start",
+    "stage": "builder",
+    "run_id": "call-queue-routing-methods-202608071230",
+    "at": "2026-08-08T00:12:00+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "builder",
+    "run_id": "call-queue-routing-methods-202608071230",
+    "at": "2026-08-08T00:21:03+00:00",
+    "status": "passed",
+    "note": null,
+    "meta": {}
   }
 ]

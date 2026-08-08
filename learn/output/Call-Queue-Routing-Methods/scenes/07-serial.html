@@ -138,7 +138,7 @@
         }
       </style>
 
-      <div id="root" data-composition-id="03-objectives" data-width="1920" data-height="1080" data-ground="content-wash">
+      <div id="root" data-composition-id="07-serial" data-width="1920" data-height="1080" data-ground="content-wash">
         <!-- host may set data-ground="section-field" | "hero-swoosh" | "dark-field" on #root -->
         <div id="mk-st-col">
           <div id="mk-st-connector"></div>
@@ -154,24 +154,28 @@
           var CONFIG = {
             "steps": [
                         {
-                                    "title": "Who the queue rings",
-                                    "detail": "Compare the four routing methods and the two Microsoft recommends."
+                                    "title": "Agent 1",
+                                    "detail": "First in the listed order."
                         },
                         {
-                                    "title": "Callback vs. hold",
-                                    "detail": "See how eligible callers leave hold and get called back."
+                                    "title": "Agent 2",
+                                    "detail": "Only rings if Agent 1 dismisses or misses."
                         },
                         {
-                                    "title": "The timeout trap",
-                                    "detail": "Give callback enough time to be offered before the queue times out."
+                                    "title": "Agent 3",
+                                    "detail": "The call keeps moving down the list."
+                        },
+                        {
+                                    "title": "Answered or timeout",
+                                    "detail": "Serial stops when someone picks up — or the call times out."
                         }
             ],
             "connector": true,
-            "badge": 96,
+            "badge": 88,
             "gap": 34,
-            "rowGap": 58,
+            "rowGap": 40,
             "textWidth": 900,
-            "x": 210,
+            "x": 240,
             "stagger": 0.55
 };
 
@@ -254,7 +258,7 @@
             tl.to(badge, { scale: 1, duration: 0.55, ease: "back.out(2.2)" }, t0 + 0.05);
           });
 
-          window.__timelines["03-objectives"] = tl;
+          window.__timelines["07-serial"] = tl;
         })();
       </script>
     </template>
