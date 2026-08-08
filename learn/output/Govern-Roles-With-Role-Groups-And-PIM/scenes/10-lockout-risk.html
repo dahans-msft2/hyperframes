@@ -220,7 +220,10 @@
           var term = document.getElementById("cn-term");
           var bodyText = document.getElementById("cn-body-text");
           var fix = document.getElementById("cn-fix");
-          fix.innerHTML = "<b>Fix:</b>" + CONFIG.fix.replace(/^Fix:/, "");
+          var fixLead = document.createElement("b");
+          fixLead.textContent = "Fix:";
+          fix.appendChild(fixLead);
+          fix.appendChild(document.createTextNode(CONFIG.fix.replace(/^Fix:/, "")));
 
           var tl = gsap.timeline({ paused: true });
 
