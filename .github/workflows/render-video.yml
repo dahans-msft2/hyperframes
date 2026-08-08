@@ -15,9 +15,9 @@ on:
   workflow_dispatch:
     inputs:
       branch:
-        description: "Branch holding the project (e.g. video/<slug>, or videos)"
+        description: "Branch holding the project (e.g. video/<slug>, or main)"
         required: true
-        default: videos
+        default: main
       project:
         description: "Project dir (blank = auto-detect the one learn/output/<slug> on the branch)"
         required: false
@@ -156,7 +156,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: prNumber,
-              body: `🎬 **Render complete** — download the MP4 + captions + thumbnail from this run's artifacts (\`video-${context.runId}\`): ${runUrl}#artifacts\n\nReview it, then merge to \`videos\` to archive.`,
+              body: `🎬 **Render complete** — download the MP4 + captions + thumbnail from this run's artifacts (\`video-${context.runId}\`): ${runUrl}#artifacts\n\nReview it, then merge to \`main\`; run \`publish_video.py\` to cut the release.`,
             });
 
       # Tell the reviewer WHY a triggered render failed, right on the PR — so a failed render isn't

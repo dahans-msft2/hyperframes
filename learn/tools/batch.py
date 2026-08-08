@@ -121,11 +121,11 @@ def pr_body(row: dict, slug: str, issue_num: "str | None" = None, parent_num: "s
     if parent_num:
         lines += ["",
                   f"Part of #{parent_num} (the module tracking issue) — its checklist ticks this unit off "
-                  "when the PR merges into `videos`."]
+                  "when the PR merges into `main`."]
     elif issue_num:
         lines += ["",
-                  f"Resolves #{issue_num} on merge — the close-on-merge workflow closes it automatically "
-                  "when this PR lands in `videos`."]
+                  f"Resolves #{issue_num} — GitHub auto-closes it when this PR merges to `main` (the "
+                  "default branch). After merge, render locally and run `publish_video.py` to cut the release."]
     return "\n".join(lines)
 
 
@@ -154,7 +154,7 @@ def module_issue_body(module: dict, rows: list, checklist: "list | None" = None)
         pr = pr_by_title.get(row.get("title"))
         lines.append(f"- [ ] {row.get('title')} — #{pr}" if pr else f"- [ ] {row.get('title')}")
     lines += ["",
-              "_Each box checks itself when that unit's PR merges into `videos`. Close this issue when the "
+              "_Each box checks itself when that unit's PR merges into `main`. Close this issue when the "
               "module is fully delivered._"]
     return "\n".join(lines)
 
@@ -212,7 +212,7 @@ def main() -> int:
     ap.add_argument("--assign", action="store_true",
                     help="handoff: auto-kick the cloud agent by @copilot-commenting each PR (Auto model). "
                          "Omit to @copilot each PR manually with Opus 5.")
-    ap.add_argument("--base", default="videos", help="handoff: PR base branch (default: videos archive)")
+    ap.add_argument("--base", default="main", help="handoff: PR base branch (default: main)")
     ap.add_argument("--repo", default="dahans-msft2/hyperframes", help="handoff: owner/repo for gh")
     args = ap.parse_args()
 
