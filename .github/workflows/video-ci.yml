@@ -14,8 +14,42 @@ on:
 
 permissions:
   contents: read
+  pull-requests: read
 
 jobs:
+  # Fail fast if a video branch touched anything outside its own project. A cloud build should only
+  # ever add/edit learn/output/<slug>/** (plus the per-slug learn/.gitignore negation block the
+  # scaffolder writes). Edits to shared tools (learn/tools/**) or accidental LFS-pointer rewrites of
+  # packages/producer/tests/** fixtures are the two real contamination modes seen in practice — both
+  # are caught here before they can reach the `videos` archive.
+  scope:
+    if: startsWith(github.head_ref, 'video/')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: A video PR may only touch its own project
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              per_page: 100,
+            });
+            const allowed = /^(learn\/output\/|learn\/\.gitignore$)/;
+            const bad = files.map(f => f.filename).filter(n => !allowed.test(n));
+            if (bad.length) {
+              for (const f of bad) core.error("out-of-scope change on a video branch", { file: f });
+              core.setFailed(
+                "A video branch must change ONLY learn/output/<slug>/** (plus learn/.gitignore). " +
+                `Out-of-scope files (${bad.length}):\n` + bad.join("\n") +
+                "\n\nShared tools and test fixtures are off-limits — fix the tool on main, then rebase."
+              );
+            } else {
+              core.info(`Scope OK — ${files.length} file(s), all within this video's project.`);
+            }
+
   gate:
     if: startsWith(github.head_ref, 'video/')   # only video/<slug> PRs
     runs-on: ubuntu-latest
@@ -49,6 +83,16 @@ jobs:
           n=$(ls -d learn/output/*/ 2>/dev/null | wc -l)
           if [ "$n" != "1" ]; then echo "::error::expected exactly one learn/output/<slug>, found $n"; exit 1; fi
           echo "dir=$(ls -d learn/output/*/ | head -1 | sed 's:/*$::')" >> "$GITHUB_OUTPUT"
+
+      - name: Require an assembled index.html (the composition must be built)
+        shell: bash
+        run: |
+          idx="${{ steps.proj.outputs.dir }}/index.html"
+          if [ ! -f "$idx" ]; then
+            echo "::error file=$idx::index.html is missing — the composition was never assembled. Run assemble_scenes.py and commit index.html before marking the PR ready."
+            exit 1
+          fi
+          echo "Found $idx"
 
       - name: Cross-file mount contract
         run: python learn/tools/check_subcomps.py --project "${{ steps.proj.outputs.dir }}"

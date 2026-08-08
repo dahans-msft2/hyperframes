@@ -23,9 +23,12 @@ on:
         required: false
         default: ""
   # Auto: the Copilot coding agent takes its PR out of draft when its session ends -> render it.
-  #       Or add the `render` label to a video PR to (re-)render on demand. Both render pre-merge.
+  #       Or add the `render` label to a video PR to (re-)render on demand (the label is removed after
+  #       each run so it re-arms as a one-click button), or comment `/render` on the PR. All pre-merge.
   pull_request:
     types: [labeled, ready_for_review]
+  issue_comment:
+    types: [created]
   # Called by the batch matrix (render-batch.yml) to fan a module's videos out in parallel.
   workflow_call:
     inputs:
@@ -43,19 +46,34 @@ permissions:
 
 jobs:
   render:
-    # dispatch always; on a video PR when the agent marks it ready (session done) or you add `render`
+    # dispatch/call always; on a video PR when the agent marks it ready (session done), when you add
+    # the `render` label, or when you comment `/render` on the PR.
     if: >-
       github.event_name == 'workflow_dispatch'
+      || github.event_name == 'workflow_call'
       || github.event.label.name == 'render'
       || (github.event.action == 'ready_for_review' && startsWith(github.event.pull_request.head.ref, 'video/'))
+      || (github.event_name == 'issue_comment' && github.event.issue.pull_request != null && startsWith(github.event.comment.body, '/render'))
     runs-on: windows-latest
     timeout-minutes: 120
     steps:
       - name: Resolve the branch to render
         id: br
         shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          $b = if ($env:GITHUB_EVENT_NAME -eq 'workflow_dispatch') { '${{ inputs.branch }}' } else { '${{ github.event.pull_request.head.ref }}' }
+          switch ($env:GITHUB_EVENT_NAME) {
+            'workflow_dispatch' { $b = '${{ inputs.branch }}' }
+            'workflow_call'     { $b = '${{ inputs.branch }}' }
+            'issue_comment'     {
+              $b = gh pr view ${{ github.event.issue.number }} --repo ${{ github.repository }} --json headRefName -q .headRefName
+              if (-not $b.StartsWith('video/')) { throw "comment /render is only allowed on video/<slug> PRs (got '$b')" }
+            }
+            default             { $b = '${{ github.event.pull_request.head.ref }}' }
+          }
+          if (-not $b) { throw 'could not resolve the branch to render' }
+          Write-Host "Rendering branch: $b"
           "branch=$b" | Out-File $env:GITHUB_OUTPUT -Append
 
       - name: Checkout the video branch (with LFS media)
@@ -76,6 +94,18 @@ jobs:
           }
           "dir=$p" | Out-File $env:GITHUB_OUTPUT -Append
           Write-Host "Rendering project: $p"
+
+      # Fail in seconds with a clear message if the composition was never assembled, instead of
+      # dying deep inside packaging. A half-built branch (scenes authored, index.html never built)
+      # is the common cause of a render that "fails to kick off".
+      - name: Require an assembled index.html
+        shell: pwsh
+        run: |
+          $idx = Join-Path '${{ steps.proj.outputs.dir }}' 'index.html'
+          if (-not (Test-Path $idx)) {
+            throw "$idx is missing — the composition was never assembled. Run assemble_scenes.py and commit index.html, then re-render (add the 'render' label or comment /render)."
+          }
+          Write-Host "Found $idx"
 
       - uses: actions/setup-node@v4
         with:
@@ -116,14 +146,50 @@ jobs:
 
       # Pre-merge review: drop the watch/download link right on the PR that triggered the render.
       - name: Comment the artifact link on the PR
-        if: github.event_name == 'pull_request'
+        if: success() && (github.event_name == 'pull_request' || github.event_name == 'issue_comment')
         uses: actions/github-script@v7
         with:
           script: |
+            const prNumber = context.payload.pull_request?.number ?? context.payload.issue?.number;
             const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number,
+              issue_number: prNumber,
               body: `🎬 **Render complete** — download the MP4 + captions + thumbnail from this run's artifacts (\`video-${context.runId}\`): ${runUrl}#artifacts\n\nReview it, then merge to \`videos\` to archive.`,
             });
+
+      # Tell the reviewer WHY a triggered render failed, right on the PR — so a failed render isn't
+      # a silent dead end.
+      - name: Comment on a failed render
+        if: failure() && (github.event_name == 'pull_request' || github.event_name == 'issue_comment')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prNumber = context.payload.pull_request?.number ?? context.payload.issue?.number;
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              body: `⚠️ **Render failed** — see the log: ${runUrl}\n\nFix the branch, then re-render: add the \`render\` label again, or comment \`/render\`.`,
+            });
+
+      # Make the `render` label a reusable button: remove it after every run (success OR failure) so
+      # re-adding it fires a fresh render. Without this, the label is a one-shot — the exact gap that
+      # made a failed render impossible to retry.
+      - name: Re-arm the render label
+        if: always() && github.event_name == 'pull_request' && github.event.label.name == 'render'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            try {
+              await github.rest.issues.removeLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.pull_request.number,
+                name: 'render',
+              });
+            } catch (e) {
+              core.info(`label re-arm skipped: ${e.message}`);
+            }

@@ -76,6 +76,16 @@ Log stage timing at entry/exit:
   not receive, or any `*.woff2` (Segoe is licensed and git-ignored; the cloud gate uses the
   fallback font by design).
 - **Do not change** narration or palette; both are approved upstream.
+- **`learn/tools/**` is READ-ONLY. Never edit the shared tools** (`assemble_scenes.py`,
+  `check_*.py`, etc.) to make a gate pass — they are shared across every video and an edit here
+  collides with every other branch. If a gate looks wrong, the composition is wrong, not the tool:
+  fix your scene/`scenes.json`. A genuine tool bug is an escalation to the human, not a per-video
+  patch. (The seam/bookend lines are already `// anchor-exempt` and the font `@font-face` is skipped
+  when the woff2 is absent — you do not need to touch the tool for either.)
+- **Touch ONLY your own project.** The only files a video build may add or change are under
+  `learn/output/<slug>/` (plus the per-slug `learn/.gitignore` block the scaffolder wrote). Never
+  stage anything under `packages/producer/tests/**` — those fixtures can appear "modified" as an
+  LFS artifact; leave them alone. A CI scope gate fails any PR that reaches outside its project.
 - **No scene-writer fan-out here.** The parallel `@hyperframes-scene-writer` path in the builder
   doctrine is a local VS Code feature — in the cloud you author every scene yourself, sequentially.
 - **Stay on the `video/<slug>` branch.** One video per branch; never touch `main` or another
