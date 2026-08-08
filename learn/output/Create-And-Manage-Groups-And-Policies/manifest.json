@@ -1,0 +1,13 @@
+{
+  "title": "Create and Manage Groups and Policies",
+  "type": "unit-video",
+  "profile": "unit-video",
+  "status": "scaffolded",
+  "voice": "en-US-Ava:DragonHDLatestNeural",
+  "source": "C:\\learn-pr\\learn-m365-pr\\learn-m365-pr\\wwl\\provision-govern-identities-entra\\includes\\6-create-manage-groups-policies.md",
+  "deliverables": {
+    "mp4": "Create-And-Manage-Groups-And-Policies.mp4",
+    "captions_vtt": "Create-And-Manage-Groups-And-Policies.vtt",
+    "thumbnail": "Create-And-Manage-Groups-And-Policies_thumbnail.png"
+  }
+}

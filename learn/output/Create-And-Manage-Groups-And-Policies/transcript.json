@@ -1,0 +1,3147 @@
+[
+  {
+    "text": "Scene",
+    "start": 0.13,
+    "end": 0.35
+  },
+  {
+    "text": "one",
+    "start": 0.35,
+    "end": 0.55
+  },
+  {
+    "text": "bumper",
+    "start": 0.55,
+    "end": 0.96
+  },
+  {
+    "text": "is",
+    "start": 0.98,
+    "end": 1.12
+  },
+  {
+    "text": "the",
+    "start": 1.12,
+    "end": 1.33
+  },
+  {
+    "text": "silent",
+    "start": 1.34,
+    "end": 1.72
+  },
+  {
+    "text": "Microsoft",
+    "start": 1.79,
+    "end": 2.51
+  },
+  {
+    "text": "Learn",
+    "start": 2.51,
+    "end": 2.93
+  },
+  {
+    "text": "brand",
+    "start": 2.93,
+    "end": 3.36
+  },
+  {
+    "text": "Sting.",
+    "start": 3.36,
+    "end": 3.8
+  },
+  {
+    "text": "No",
+    "start": 3.93,
+    "end": 4
+  },
+  {
+    "text": "narration.",
+    "start": 4,
+    "end": 5.24
+  },
+  {
+    "text": "The",
+    "start": 5.37,
+    "end": 5.5
+  },
+  {
+    "text": "voice",
+    "start": 5.5,
+    "end": 5.94
+  },
+  {
+    "text": "begins",
+    "start": 5.94,
+    "end": 6.36
+  },
+  {
+    "text": "on",
+    "start": 6.47,
+    "end": 6.64
+  },
+  {
+    "text": "the",
+    "start": 6.66,
+    "end": 6.9
+  },
+  {
+    "text": "title.",
+    "start": 6.9,
+    "end": 7.56
+  },
+  {
+    "text": "An",
+    "start": 7.76,
+    "end": 7.78
+  },
+  {
+    "text": "admin",
+    "start": 7.78,
+    "end": 8.13
+  },
+  {
+    "text": "at",
+    "start": 8.13,
+    "end": 8.27
+  },
+  {
+    "text": "Relek",
+    "start": 8.27,
+    "end": 8.61
+  },
+  {
+    "text": "Cloud",
+    "start": 8.62,
+    "end": 8.96
+  },
+  {
+    "text": "is",
+    "start": 9,
+    "end": 9.11
+  },
+  {
+    "text": "standing",
+    "start": 9.11,
+    "end": 9.72
+  },
+  {
+    "text": "at",
+    "start": 9.72,
+    "end": 9.87
+  },
+  {
+    "text": "a",
+    "start": 9.87,
+    "end": 9.94
+  },
+  {
+    "text": "whiteboard,",
+    "start": 9.94,
+    "end": 10.72
+  },
+  {
+    "text": "planning",
+    "start": 10.85,
+    "end": 11.29
+  },
+  {
+    "text": "access",
+    "start": 11.29,
+    "end": 11.71
+  },
+  {
+    "text": "for",
+    "start": 11.75,
+    "end": 11.84
+  },
+  {
+    "text": "a",
+    "start": 11.95,
+    "end": 12.01
+  },
+  {
+    "text": "new",
+    "start": 12.06,
+    "end": 12.22
+  },
+  {
+    "text": "office",
+    "start": 12.22,
+    "end": 12.65
+  },
+  {
+    "text": "full",
+    "start": 12.65,
+    "end": 12.94
+  },
+  {
+    "text": "of",
+    "start": 12.94,
+    "end": 13.04
+  },
+  {
+    "text": "engineers.",
+    "start": 13.14,
+    "end": 13.99
+  },
+  {
+    "text": "They",
+    "start": 14.13,
+    "end": 14.25
+  },
+  {
+    "text": "need",
+    "start": 14.25,
+    "end": 14.5
+  },
+  {
+    "text": "the",
+    "start": 14.5,
+    "end": 14.69
+  },
+  {
+    "text": "same",
+    "start": 14.69,
+    "end": 14.94
+  },
+  {
+    "text": "policy",
+    "start": 14.94,
+    "end": 15.36
+  },
+  {
+    "text": "and",
+    "start": 15.36,
+    "end": 15.59
+  },
+  {
+    "text": "the",
+    "start": 15.59,
+    "end": 15.82
+  },
+  {
+    "text": "same",
+    "start": 15.82,
+    "end": 16.12
+  },
+  {
+    "text": "licenses",
+    "start": 16.21,
+    "end": 16.75
+  },
+  {
+    "text": "the",
+    "start": 16.89,
+    "end": 17
+  },
+  {
+    "text": "existing",
+    "start": 17,
+    "end": 17.65
+  },
+  {
+    "text": "engineering",
+    "start": 17.65,
+    "end": 18.48
+  },
+  {
+    "text": "team",
+    "start": 18.55,
+    "end": 18.87
+  },
+  {
+    "text": "already",
+    "start": 18.87,
+    "end": 19.44
+  },
+  {
+    "text": "has.",
+    "start": 19.44,
+    "end": 19.85
+  },
+  {
+    "text": "Two",
+    "start": 20.09,
+    "end": 20.18
+  },
+  {
+    "text": "options",
+    "start": 20.18,
+    "end": 20.7
+  },
+  {
+    "text": "go",
+    "start": 20.7,
+    "end": 20.85
+  },
+  {
+    "text": "up",
+    "start": 20.85,
+    "end": 20.99
+  },
+  {
+    "text": "on",
+    "start": 21.01,
+    "end": 21.08
+  },
+  {
+    "text": "the",
+    "start": 21.19,
+    "end": 21.35
+  },
+  {
+    "text": "board,",
+    "start": 21.38,
+    "end": 21.76
+  },
+  {
+    "text": "and",
+    "start": 21.89,
+    "end": 21.98
+  },
+  {
+    "text": "one",
+    "start": 21.98,
+    "end": 22.2
+  },
+  {
+    "text": "of",
+    "start": 22.2,
+    "end": 22.31
+  },
+  {
+    "text": "them",
+    "start": 22.36,
+    "end": 22.65
+  },
+  {
+    "text": "doesn't",
+    "start": 22.65,
+    "end": 23.15
+  },
+  {
+    "text": "work",
+    "start": 23.18,
+    "end": 23.46
+  },
+  {
+    "text": "the",
+    "start": 23.47,
+    "end": 23.69
+  },
+  {
+    "text": "way",
+    "start": 23.69,
+    "end": 23.88
+  },
+  {
+    "text": "it",
+    "start": 23.91,
+    "end": 24.06
+  },
+  {
+    "text": "looks.",
+    "start": 24.06,
+    "end": 24.72
+  },
+  {
+    "text": "Get",
+    "start": 24.85,
+    "end": 24.97
+  },
+  {
+    "text": "that",
+    "start": 24.97,
+    "end": 25.29
+  },
+  {
+    "text": "choice",
+    "start": 25.29,
+    "end": 25.8
+  },
+  {
+    "text": "wrong,",
+    "start": 25.8,
+    "end": 26.24
+  },
+  {
+    "text": "and",
+    "start": 26.37,
+    "end": 26.44
+  },
+  {
+    "text": "the",
+    "start": 26.44,
+    "end": 26.64
+  },
+  {
+    "text": "new",
+    "start": 26.64,
+    "end": 26.79
+  },
+  {
+    "text": "hires",
+    "start": 26.84,
+    "end": 27.18
+  },
+  {
+    "text": "either",
+    "start": 27.18,
+    "end": 27.58
+  },
+  {
+    "text": "lose",
+    "start": 27.6,
+    "end": 27.86
+  },
+  {
+    "text": "access",
+    "start": 27.86,
+    "end": 28.32
+  },
+  {
+    "text": "they",
+    "start": 28.32,
+    "end": 28.56
+  },
+  {
+    "text": "need",
+    "start": 28.66,
+    "end": 28.84
+  },
+  {
+    "text": "or",
+    "start": 28.96,
+    "end": 29
+  },
+  {
+    "text": "gain",
+    "start": 29,
+    "end": 29.32
+  },
+  {
+    "text": "access",
+    "start": 29.32,
+    "end": 29.8
+  },
+  {
+    "text": "they",
+    "start": 29.8,
+    "end": 30.12
+  },
+  {
+    "text": "shouldn't.",
+    "start": 30.12,
+    "end": 31.12
+  },
+  {
+    "text": "So",
+    "start": 31.24,
+    "end": 31.27
+  },
+  {
+    "text": "you'll",
+    "start": 31.27,
+    "end": 31.68
+  },
+  {
+    "text": "pick",
+    "start": 31.72,
+    "end": 32.04
+  },
+  {
+    "text": "the",
+    "start": 32.04,
+    "end": 32.24
+  },
+  {
+    "text": "right",
+    "start": 32.35,
+    "end": 32.66
+  },
+  {
+    "text": "group",
+    "start": 32.66,
+    "end": 33.05
+  },
+  {
+    "text": "type,",
+    "start": 33.05,
+    "end": 33.56
+  },
+  {
+    "text": "decide",
+    "start": 33.69,
+    "end": 34.05
+  },
+  {
+    "text": "how",
+    "start": 34.05,
+    "end": 34.29
+  },
+  {
+    "text": "people",
+    "start": 34.29,
+    "end": 34.68
+  },
+  {
+    "text": "become",
+    "start": 34.79,
+    "end": 35.26
+  },
+  {
+    "text": "members,",
+    "start": 35.27,
+    "end": 36.04
+  },
+  {
+    "text": "and",
+    "start": 36.17,
+    "end": 36.24
+  },
+  {
+    "text": "set",
+    "start": 36.24,
+    "end": 36.44
+  },
+  {
+    "text": "the",
+    "start": 36.44,
+    "end": 36.59
+  },
+  {
+    "text": "policies",
+    "start": 36.64,
+    "end": 37.16
+  },
+  {
+    "text": "that",
+    "start": 37.27,
+    "end": 37.4
+  },
+  {
+    "text": "keep",
+    "start": 37.4,
+    "end": 37.6
+  },
+  {
+    "text": "the",
+    "start": 37.6,
+    "end": 37.74
+  },
+  {
+    "text": "group",
+    "start": 37.75,
+    "end": 38
+  },
+  {
+    "text": "estate",
+    "start": 38.11,
+    "end": 38.52
+  },
+  {
+    "text": "from",
+    "start": 38.65,
+    "end": 38.84
+  },
+  {
+    "text": "sliding",
+    "start": 38.84,
+    "end": 39.39
+  },
+  {
+    "text": "into",
+    "start": 39.39,
+    "end": 39.64
+  },
+  {
+    "text": "clutter.",
+    "start": 39.75,
+    "end": 40.48
+  },
+  {
+    "text": "Start",
+    "start": 40.65,
+    "end": 41.01
+  },
+  {
+    "text": "with",
+    "start": 41.01,
+    "end": 41.4
+  },
+  {
+    "text": "the",
+    "start": 41.4,
+    "end": 41.64
+  },
+  {
+    "text": "type.",
+    "start": 41.75,
+    "end": 42.4
+  },
+  {
+    "text": "Two",
+    "start": 42.53,
+    "end": 42.68
+  },
+  {
+    "text": "kinds",
+    "start": 42.68,
+    "end": 43.15
+  },
+  {
+    "text": "of",
+    "start": 43.15,
+    "end": 43.34
+  },
+  {
+    "text": "group",
+    "start": 43.34,
+    "end": 43.84
+  },
+  {
+    "text": "solve",
+    "start": 43.84,
+    "end": 44.26
+  },
+  {
+    "text": "two",
+    "start": 44.26,
+    "end": 44.51
+  },
+  {
+    "text": "different",
+    "start": 44.51,
+    "end": 45.28
+  },
+  {
+    "text": "problems.",
+    "start": 45.28,
+    "end": 46.24
+  },
+  {
+    "text": "A",
+    "start": 46.24,
+    "end": 46.37
+  },
+  {
+    "text": "security",
+    "start": 46.37,
+    "end": 47.01
+  },
+  {
+    "text": "group",
+    "start": 47.01,
+    "end": 47.36
+  },
+  {
+    "text": "manages",
+    "start": 47.47,
+    "end": 48.05
+  },
+  {
+    "text": "access,",
+    "start": 48.05,
+    "end": 48.76
+  },
+  {
+    "text": "apps,",
+    "start": 48.76,
+    "end": 49.28
+  },
+  {
+    "text": "files,",
+    "start": 49.28,
+    "end": 49.81
+  },
+  {
+    "text": "conditional",
+    "start": 50.01,
+    "end": 50.87
+  },
+  {
+    "text": "access,",
+    "start": 50.87,
+    "end": 51.58
+  },
+  {
+    "text": "licenses,",
+    "start": 51.59,
+    "end": 52.32
+  },
+  {
+    "text": "and",
+    "start": 52.45,
+    "end": 52.53
+  },
+  {
+    "text": "it",
+    "start": 52.53,
+    "end": 52.67
+  },
+  {
+    "text": "can",
+    "start": 52.67,
+    "end": 52.87
+  },
+  {
+    "text": "hold",
+    "start": 52.87,
+    "end": 53.16
+  },
+  {
+    "text": "users,",
+    "start": 53.16,
+    "end": 53.63
+  },
+  {
+    "text": "devices,",
+    "start": 53.66,
+    "end": 54.28
+  },
+  {
+    "text": "even",
+    "start": 54.28,
+    "end": 54.6
+  },
+  {
+    "text": "service",
+    "start": 54.6,
+    "end": 55.16
+  },
+  {
+    "text": "principles.",
+    "start": 55.16,
+    "end": 56.2
+  },
+  {
+    "text": "A",
+    "start": 56.2,
+    "end": 56.33
+  },
+  {
+    "text": "Microsoft",
+    "start": 56.33,
+    "end": 56.96
+  },
+  {
+    "text": "365",
+    "start": 56.96,
+    "end": 57.65
+  },
+  {
+    "text": "group",
+    "start": 57.65,
+    "end": 58.03
+  },
+  {
+    "text": "is",
+    "start": 58.03,
+    "end": 58.16
+  },
+  {
+    "text": "for",
+    "start": 58.27,
+    "end": 58.32
+  },
+  {
+    "text": "collaboration",
+    "start": 58.41,
+    "end": 59.29
+  },
+  {
+    "text": "instead,",
+    "start": 59.39,
+    "end": 60
+  },
+  {
+    "text": "a",
+    "start": 60,
+    "end": 60.13
+  },
+  {
+    "text": "shared",
+    "start": 60.13,
+    "end": 60.58
+  },
+  {
+    "text": "mailbox",
+    "start": 60.6,
+    "end": 61.12
+  },
+  {
+    "text": "calendar",
+    "start": 61.23,
+    "end": 61.89
+  },
+  {
+    "text": "and",
+    "start": 61.89,
+    "end": 62.12
+  },
+  {
+    "text": "site,",
+    "start": 62.21,
+    "end": 62.52
+  },
+  {
+    "text": "and",
+    "start": 62.65,
+    "end": 62.87
+  },
+  {
+    "text": "it",
+    "start": 62.87,
+    "end": 63.07
+  },
+  {
+    "text": "holds",
+    "start": 63.09,
+    "end": 63.64
+  },
+  {
+    "text": "only",
+    "start": 63.75,
+    "end": 64.16
+  },
+  {
+    "text": "users.",
+    "start": 64.16,
+    "end": 65.12
+  },
+  {
+    "text": "Relek",
+    "start": 65.25,
+    "end": 65.59
+  },
+  {
+    "text": "Cloud's",
+    "start": 65.59,
+    "end": 66.24
+  },
+  {
+    "text": "job",
+    "start": 66.35,
+    "end": 66.52
+  },
+  {
+    "text": "is",
+    "start": 66.54,
+    "end": 66.72
+  },
+  {
+    "text": "access,",
+    "start": 66.72,
+    "end": 67.32
+  },
+  {
+    "text": "so",
+    "start": 67.45,
+    "end": 67.53
+  },
+  {
+    "text": "a",
+    "start": 67.53,
+    "end": 67.64
+  },
+  {
+    "text": "security",
+    "start": 67.64,
+    "end": 68.44
+  },
+  {
+    "text": "group",
+    "start": 68.55,
+    "end": 69.04
+  },
+  {
+    "text": "it",
+    "start": 69.11,
+    "end": 69.26
+  },
+  {
+    "text": "is.",
+    "start": 69.26,
+    "end": 69.84
+  },
+  {
+    "text": "Next,",
+    "start": 69.97,
+    "end": 70.29
+  },
+  {
+    "text": "how",
+    "start": 70.29,
+    "end": 70.52
+  },
+  {
+    "text": "do",
+    "start": 70.52,
+    "end": 70.61
+  },
+  {
+    "text": "people",
+    "start": 70.67,
+    "end": 71.12
+  },
+  {
+    "text": "get",
+    "start": 71.18,
+    "end": 71.36
+  },
+  {
+    "text": "in?",
+    "start": 71.36,
+    "end": 71.76
+  },
+  {
+    "text": "With",
+    "start": 71.76,
+    "end": 72.77
+  },
+  {
+    "text": "assigned",
+    "start": 72.77,
+    "end": 73.02
+  },
+  {
+    "text": "membership,",
+    "start": 73.02,
+    "end": 74.08
+  },
+  {
+    "text": "an",
+    "start": 74.21,
+    "end": 74.26
+  },
+  {
+    "text": "admin",
+    "start": 74.26,
+    "end": 74.71
+  },
+  {
+    "text": "adds",
+    "start": 74.71,
+    "end": 75.07
+  },
+  {
+    "text": "and",
+    "start": 75.07,
+    "end": 75.34
+  },
+  {
+    "text": "removes",
+    "start": 75.34,
+    "end": 75.97
+  },
+  {
+    "text": "each",
+    "start": 75.97,
+    "end": 76.33
+  },
+  {
+    "text": "person",
+    "start": 76.33,
+    "end": 76.83
+  },
+  {
+    "text": "by",
+    "start": 76.89,
+    "end": 77.05
+  },
+  {
+    "text": "hand.",
+    "start": 77.05,
+    "end": 77.65
+  },
+  {
+    "text": "With",
+    "start": 77.85,
+    "end": 78.03
+  },
+  {
+    "text": "dynamic",
+    "start": 78.03,
+    "end": 78.57
+  },
+  {
+    "text": "membership,",
+    "start": 78.57,
+    "end": 79.36
+  },
+  {
+    "text": "Enter",
+    "start": 79.49,
+    "end": 79.86
+  },
+  {
+    "text": "ID",
+    "start": 79.86,
+    "end": 80.06
+  },
+  {
+    "text": "reads",
+    "start": 80.06,
+    "end": 80.48
+  },
+  {
+    "text": "user",
+    "start": 80.59,
+    "end": 80.96
+  },
+  {
+    "text": "attributes,",
+    "start": 80.96,
+    "end": 82
+  },
+  {
+    "text": "like",
+    "start": 82.13,
+    "end": 82.35
+  },
+  {
+    "text": "office",
+    "start": 82.35,
+    "end": 82.88
+  },
+  {
+    "text": "location,",
+    "start": 82.88,
+    "end": 83.6
+  },
+  {
+    "text": "and",
+    "start": 83.73,
+    "end": 83.81
+  },
+  {
+    "text": "updates",
+    "start": 83.81,
+    "end": 84.3
+  },
+  {
+    "text": "the",
+    "start": 84.3,
+    "end": 84.51
+  },
+  {
+    "text": "group",
+    "start": 84.51,
+    "end": 84.86
+  },
+  {
+    "text": "automatically",
+    "start": 84.86,
+    "end": 85.72
+  },
+  {
+    "text": "as",
+    "start": 85.92,
+    "end": 85.96
+  },
+  {
+    "text": "people",
+    "start": 85.96,
+    "end": 86.46
+  },
+  {
+    "text": "join",
+    "start": 86.46,
+    "end": 86.79
+  },
+  {
+    "text": "and",
+    "start": 86.79,
+    "end": 87.04
+  },
+  {
+    "text": "leave.",
+    "start": 87.04,
+    "end": 87.72
+  },
+  {
+    "text": "For",
+    "start": 87.85,
+    "end": 87.93
+  },
+  {
+    "text": "an",
+    "start": 87.93,
+    "end": 88.07
+  },
+  {
+    "text": "office",
+    "start": 88.07,
+    "end": 88.48
+  },
+  {
+    "text": "that's",
+    "start": 88.48,
+    "end": 88.84
+  },
+  {
+    "text": "still",
+    "start": 88.95,
+    "end": 89.23
+  },
+  {
+    "text": "hiring,",
+    "start": 89.23,
+    "end": 89.68
+  },
+  {
+    "text": "nobody",
+    "start": 89.81,
+    "end": 90.1
+  },
+  {
+    "text": "has",
+    "start": 90.1,
+    "end": 90.31
+  },
+  {
+    "text": "to",
+    "start": 90.31,
+    "end": 90.45
+  },
+  {
+    "text": "remember",
+    "start": 90.45,
+    "end": 91
+  },
+  {
+    "text": "to",
+    "start": 91.04,
+    "end": 91.15
+  },
+  {
+    "text": "add",
+    "start": 91.15,
+    "end": 91.36
+  },
+  {
+    "text": "the",
+    "start": 91.36,
+    "end": 91.57
+  },
+  {
+    "text": "next",
+    "start": 91.57,
+    "end": 91.8
+  },
+  {
+    "text": "starter.",
+    "start": 91.89,
+    "end": 92.56
+  },
+  {
+    "text": "Back",
+    "start": 92.69,
+    "end": 92.84
+  },
+  {
+    "text": "to",
+    "start": 92.84,
+    "end": 92.98
+  },
+  {
+    "text": "that",
+    "start": 92.98,
+    "end": 93.26
+  },
+  {
+    "text": "whiteboard.",
+    "start": 93.26,
+    "end": 94.2
+  },
+  {
+    "text": "The",
+    "start": 94.33,
+    "end": 94.41
+  },
+  {
+    "text": "tidy",
+    "start": 94.41,
+    "end": 94.69
+  },
+  {
+    "text": "option",
+    "start": 94.69,
+    "end": 95.12
+  },
+  {
+    "text": "is",
+    "start": 95.12,
+    "end": 95.26
+  },
+  {
+    "text": "a",
+    "start": 95.26,
+    "end": 95.33
+  },
+  {
+    "text": "small",
+    "start": 95.43,
+    "end": 95.68
+  },
+  {
+    "text": "new",
+    "start": 95.68,
+    "end": 95.89
+  },
+  {
+    "text": "office",
+    "start": 95.89,
+    "end": 96.32
+  },
+  {
+    "text": "group",
+    "start": 96.32,
+    "end": 96.72
+  },
+  {
+    "text": "nested",
+    "start": 96.85,
+    "end": 97.23
+  },
+  {
+    "text": "inside",
+    "start": 97.23,
+    "end": 97.71
+  },
+  {
+    "text": "all",
+    "start": 97.75,
+    "end": 97.99
+  },
+  {
+    "text": "engineering,",
+    "start": 97.99,
+    "end": 98.96
+  },
+  {
+    "text": "so",
+    "start": 99.08,
+    "end": 99.09
+  },
+  {
+    "text": "it",
+    "start": 99.09,
+    "end": 99.22
+  },
+  {
+    "text": "inherits",
+    "start": 99.22,
+    "end": 99.73
+  },
+  {
+    "text": "the",
+    "start": 99.78,
+    "end": 99.95
+  },
+  {
+    "text": "parents",
+    "start": 100.01,
+    "end": 100.43
+  },
+  {
+    "text": "licenses",
+    "start": 100.43,
+    "end": 100.91
+  },
+  {
+    "text": "and",
+    "start": 101.03,
+    "end": 101.28
+  },
+  {
+    "text": "access",
+    "start": 101.38,
+    "end": 101.91
+  },
+  {
+    "text": "for",
+    "start": 101.91,
+    "end": 102.05
+  },
+  {
+    "text": "free.",
+    "start": 102.23,
+    "end": 102.96
+  },
+  {
+    "text": "Before",
+    "start": 103.09,
+    "end": 103.31
+  },
+  {
+    "text": "I",
+    "start": 103.31,
+    "end": 103.36
+  },
+  {
+    "text": "tell",
+    "start": 103.36,
+    "end": 103.59
+  },
+  {
+    "text": "you",
+    "start": 103.59,
+    "end": 103.73
+  },
+  {
+    "text": "what",
+    "start": 103.78,
+    "end": 103.95
+  },
+  {
+    "text": "happens,",
+    "start": 103.99,
+    "end": 104.56
+  },
+  {
+    "text": "take",
+    "start": 104.56,
+    "end": 105.08
+  },
+  {
+    "text": "a",
+    "start": 105.08,
+    "end": 105.21
+  },
+  {
+    "text": "guess.",
+    "start": 105.21,
+    "end": 106.28
+  },
+  {
+    "text": "Do",
+    "start": 106.4,
+    "end": 106.41
+  },
+  {
+    "text": "the",
+    "start": 106.41,
+    "end": 106.6
+  },
+  {
+    "text": "people",
+    "start": 106.6,
+    "end": 106.99
+  },
+  {
+    "text": "inside",
+    "start": 106.99,
+    "end": 107.38
+  },
+  {
+    "text": "that",
+    "start": 107.38,
+    "end": 107.64
+  },
+  {
+    "text": "nested",
+    "start": 107.64,
+    "end": 108
+  },
+  {
+    "text": "group",
+    "start": 108.07,
+    "end": 108.4
+  },
+  {
+    "text": "actually",
+    "start": 108.53,
+    "end": 109.14
+  },
+  {
+    "text": "pick",
+    "start": 109.14,
+    "end": 109.51
+  },
+  {
+    "text": "those",
+    "start": 109.51,
+    "end": 109.97
+  },
+  {
+    "text": "up?",
+    "start": 109.97,
+    "end": 110.36
+  },
+  {
+    "text": "Most",
+    "start": 110.57,
+    "end": 110.72
+  },
+  {
+    "text": "of",
+    "start": 110.72,
+    "end": 110.86
+  },
+  {
+    "text": "us",
+    "start": 110.86,
+    "end": 110.99
+  },
+  {
+    "text": "expect",
+    "start": 110.99,
+    "end": 111.4
+  },
+  {
+    "text": "nesting",
+    "start": 111.42,
+    "end": 111.92
+  },
+  {
+    "text": "to",
+    "start": 111.92,
+    "end": 112.06
+  },
+  {
+    "text": "work",
+    "start": 112.06,
+    "end": 112.34
+  },
+  {
+    "text": "like",
+    "start": 112.34,
+    "end": 112.56
+  },
+  {
+    "text": "folders",
+    "start": 112.65,
+    "end": 113.16
+  },
+  {
+    "text": "where",
+    "start": 113.29,
+    "end": 113.42
+  },
+  {
+    "text": "everything",
+    "start": 113.42,
+    "end": 113.93
+  },
+  {
+    "text": "on",
+    "start": 113.99,
+    "end": 114.05
+  },
+  {
+    "text": "the",
+    "start": 114.05,
+    "end": 114.19
+  },
+  {
+    "text": "parent",
+    "start": 114.21,
+    "end": 114.56
+  },
+  {
+    "text": "flows",
+    "start": 114.69,
+    "end": 114.96
+  },
+  {
+    "text": "down",
+    "start": 114.96,
+    "end": 115.28
+  },
+  {
+    "text": "to",
+    "start": 115.28,
+    "end": 115.44
+  },
+  {
+    "text": "whatever's",
+    "start": 115.44,
+    "end": 116.25
+  },
+  {
+    "text": "inside.",
+    "start": 116.25,
+    "end": 117
+  },
+  {
+    "text": "Groups",
+    "start": 117.13,
+    "end": 117.43
+  },
+  {
+    "text": "don't",
+    "start": 117.43,
+    "end": 117.77
+  },
+  {
+    "text": "behave",
+    "start": 117.78,
+    "end": 118.12
+  },
+  {
+    "text": "that",
+    "start": 118.23,
+    "end": 118.5
+  },
+  {
+    "text": "way.",
+    "start": 118.5,
+    "end": 118.95
+  },
+  {
+    "text": "Nesting",
+    "start": 119.09,
+    "end": 119.4
+  },
+  {
+    "text": "makes",
+    "start": 119.4,
+    "end": 119.72
+  },
+  {
+    "text": "the",
+    "start": 119.72,
+    "end": 119.91
+  },
+  {
+    "text": "child",
+    "start": 119.91,
+    "end": 120.23
+  },
+  {
+    "text": "group",
+    "start": 120.23,
+    "end": 120.56
+  },
+  {
+    "text": "a",
+    "start": 120.56,
+    "end": 120.64
+  },
+  {
+    "text": "member",
+    "start": 120.64,
+    "end": 121.08
+  },
+  {
+    "text": "of",
+    "start": 121.14,
+    "end": 121.28
+  },
+  {
+    "text": "the",
+    "start": 121.38,
+    "end": 121.58
+  },
+  {
+    "text": "parent,",
+    "start": 121.58,
+    "end": 122.12
+  },
+  {
+    "text": "but",
+    "start": 122.25,
+    "end": 122.33
+  },
+  {
+    "text": "a",
+    "start": 122.33,
+    "end": 122.4
+  },
+  {
+    "text": "license",
+    "start": 122.4,
+    "end": 122.88
+  },
+  {
+    "text": "or",
+    "start": 122.88,
+    "end": 123.03
+  },
+  {
+    "text": "an",
+    "start": 123.03,
+    "end": 123.15
+  },
+  {
+    "text": "assigned",
+    "start": 123.17,
+    "end": 123.73
+  },
+  {
+    "text": "resource",
+    "start": 123.73,
+    "end": 124.24
+  },
+  {
+    "text": "only",
+    "start": 124.45,
+    "end": 124.56
+  },
+  {
+    "text": "reaches",
+    "start": 124.56,
+    "end": 124.99
+  },
+  {
+    "text": "the",
+    "start": 124.99,
+    "end": 125.17
+  },
+  {
+    "text": "parent's",
+    "start": 125.17,
+    "end": 125.66
+  },
+  {
+    "text": "direct",
+    "start": 125.66,
+    "end": 126.02
+  },
+  {
+    "text": "members.",
+    "start": 126.03,
+    "end": 126.64
+  },
+  {
+    "text": "The",
+    "start": 126.8,
+    "end": 126.85
+  },
+  {
+    "text": "people",
+    "start": 126.85,
+    "end": 127.2
+  },
+  {
+    "text": "inside",
+    "start": 127.2,
+    "end": 127.55
+  },
+  {
+    "text": "the",
+    "start": 127.55,
+    "end": 127.71
+  },
+  {
+    "text": "nested",
+    "start": 127.73,
+    "end": 128.07
+  },
+  {
+    "text": "group",
+    "start": 128.07,
+    "end": 128.4
+  },
+  {
+    "text": "are",
+    "start": 128.4,
+    "end": 128.6
+  },
+  {
+    "text": "two",
+    "start": 128.6,
+    "end": 128.8
+  },
+  {
+    "text": "steps",
+    "start": 128.8,
+    "end": 129.14
+  },
+  {
+    "text": "removed,",
+    "start": 129.14,
+    "end": 129.64
+  },
+  {
+    "text": "so",
+    "start": 129.76,
+    "end": 129.79
+  },
+  {
+    "text": "nothing",
+    "start": 129.79,
+    "end": 130.32
+  },
+  {
+    "text": "reaches",
+    "start": 130.32,
+    "end": 130.76
+  },
+  {
+    "text": "them.",
+    "start": 130.87,
+    "end": 131.34
+  },
+  {
+    "text": "And",
+    "start": 131.53,
+    "end": 131.62
+  },
+  {
+    "text": "this",
+    "start": 131.62,
+    "end": 131.92
+  },
+  {
+    "text": "isn't",
+    "start": 131.92,
+    "end": 132.29
+  },
+  {
+    "text": "a",
+    "start": 132.29,
+    "end": 132.36
+  },
+  {
+    "text": "one-off",
+    "start": 132.36,
+    "end": 132.87
+  },
+  {
+    "text": "quirk.",
+    "start": 132.87,
+    "end": 133.52
+  },
+  {
+    "text": "Group-based",
+    "start": 133.65,
+    "end": 134.28
+  },
+  {
+    "text": "licensing",
+    "start": 134.28,
+    "end": 134.91
+  },
+  {
+    "text": "resolves",
+    "start": 134.94,
+    "end": 135.47
+  },
+  {
+    "text": "direct",
+    "start": 135.59,
+    "end": 135.84
+  },
+  {
+    "text": "members",
+    "start": 135.94,
+    "end": 136.43
+  },
+  {
+    "text": "only.",
+    "start": 136.43,
+    "end": 136.95
+  },
+  {
+    "text": "A",
+    "start": 136.95,
+    "end": 137.09
+  },
+  {
+    "text": "user",
+    "start": 137.09,
+    "end": 137.41
+  },
+  {
+    "text": "buried",
+    "start": 137.41,
+    "end": 137.95
+  },
+  {
+    "text": "a",
+    "start": 137.95,
+    "end": 138.04
+  },
+  {
+    "text": "level",
+    "start": 138.04,
+    "end": 138.49
+  },
+  {
+    "text": "down",
+    "start": 138.49,
+    "end": 138.88
+  },
+  {
+    "text": "is",
+    "start": 138.88,
+    "end": 139.06
+  },
+  {
+    "text": "invisible",
+    "start": 139.06,
+    "end": 139.87
+  },
+  {
+    "text": "to",
+    "start": 139.87,
+    "end": 140.05
+  },
+  {
+    "text": "it.",
+    "start": 140.05,
+    "end": 140.51
+  },
+  {
+    "text": "So",
+    "start": 140.64,
+    "end": 140.65
+  },
+  {
+    "text": "whenever",
+    "start": 140.65,
+    "end": 141.19
+  },
+  {
+    "text": "something",
+    "start": 141.19,
+    "end": 141.79
+  },
+  {
+    "text": "is",
+    "start": 141.79,
+    "end": 141.91
+  },
+  {
+    "text": "assigned",
+    "start": 141.94,
+    "end": 142.46
+  },
+  {
+    "text": "to",
+    "start": 142.46,
+    "end": 142.48
+  },
+  {
+    "text": "a",
+    "start": 142.59,
+    "end": 142.65
+  },
+  {
+    "text": "group,",
+    "start": 142.73,
+    "end": 143.16
+  },
+  {
+    "text": "ask",
+    "start": 143.29,
+    "end": 143.49
+  },
+  {
+    "text": "one",
+    "start": 143.49,
+    "end": 143.82
+  },
+  {
+    "text": "question,",
+    "start": 143.82,
+    "end": 144.86
+  },
+  {
+    "text": "who",
+    "start": 144.96,
+    "end": 145.12
+  },
+  {
+    "text": "are",
+    "start": 145.23,
+    "end": 145.46
+  },
+  {
+    "text": "this",
+    "start": 145.46,
+    "end": 145.79
+  },
+  {
+    "text": "group's",
+    "start": 145.79,
+    "end": 146.25
+  },
+  {
+    "text": "direct",
+    "start": 146.35,
+    "end": 146.73
+  },
+  {
+    "text": "members?",
+    "start": 147,
+    "end": 147.72
+  },
+  {
+    "text": "That's",
+    "start": 147.85,
+    "end": 148.15
+  },
+  {
+    "text": "the",
+    "start": 148.15,
+    "end": 148.37
+  },
+  {
+    "text": "only",
+    "start": 148.37,
+    "end": 148.66
+  },
+  {
+    "text": "population",
+    "start": 148.66,
+    "end": 149.4
+  },
+  {
+    "text": "the",
+    "start": 149.4,
+    "end": 149.62
+  },
+  {
+    "text": "assignment",
+    "start": 149.62,
+    "end": 150.36
+  },
+  {
+    "text": "reaches.",
+    "start": 150.36,
+    "end": 151.15
+  },
+  {
+    "text": "So",
+    "start": 151.28,
+    "end": 151.32
+  },
+  {
+    "text": "nesting",
+    "start": 151.32,
+    "end": 151.89
+  },
+  {
+    "text": "won't",
+    "start": 151.89,
+    "end": 152.28
+  },
+  {
+    "text": "rescue",
+    "start": 152.39,
+    "end": 152.78
+  },
+  {
+    "text": "this",
+    "start": 152.78,
+    "end": 153.11
+  },
+  {
+    "text": "plan,",
+    "start": 153.11,
+    "end": 153.48
+  },
+  {
+    "text": "but",
+    "start": 153.61,
+    "end": 153.74
+  },
+  {
+    "text": "structure",
+    "start": 153.74,
+    "end": 154.47
+  },
+  {
+    "text": "still",
+    "start": 154.53,
+    "end": 154.95
+  },
+  {
+    "text": "matters",
+    "start": 154.95,
+    "end": 155.43
+  },
+  {
+    "text": "as",
+    "start": 155.55,
+    "end": 155.72
+  },
+  {
+    "text": "RelentCloud",
+    "start": 155.72,
+    "end": 156.57
+  },
+  {
+    "text": "grows.",
+    "start": 156.65,
+    "end": 157.4
+  },
+  {
+    "text": "Once",
+    "start": 157.53,
+    "end": 157.69
+  },
+  {
+    "text": "people",
+    "start": 157.69,
+    "end": 158.12
+  },
+  {
+    "text": "create",
+    "start": 158.12,
+    "end": 158.52
+  },
+  {
+    "text": "their",
+    "start": 158.63,
+    "end": 158.91
+  },
+  {
+    "text": "own",
+    "start": 158.91,
+    "end": 159.1
+  },
+  {
+    "text": "Microsoft",
+    "start": 159.11,
+    "end": 159.72
+  },
+  {
+    "text": "365",
+    "start": 159.82,
+    "end": 160.42
+  },
+  {
+    "text": "groups,",
+    "start": 160.42,
+    "end": 160.97
+  },
+  {
+    "text": "names",
+    "start": 161.17,
+    "end": 161.49
+  },
+  {
+    "text": "drift",
+    "start": 161.49,
+    "end": 161.94
+  },
+  {
+    "text": "into",
+    "start": 161.94,
+    "end": 162.3
+  },
+  {
+    "text": "chaos.",
+    "start": 162.3,
+    "end": 163
+  },
+  {
+    "text": "A",
+    "start": 163,
+    "end": 163.17
+  },
+  {
+    "text": "group",
+    "start": 163.17,
+    "end": 163.61
+  },
+  {
+    "text": "naming",
+    "start": 163.61,
+    "end": 164.16
+  },
+  {
+    "text": "policy",
+    "start": 164.27,
+    "end": 164.74
+  },
+  {
+    "text": "fixes",
+    "start": 164.75,
+    "end": 165.16
+  },
+  {
+    "text": "that.",
+    "start": 165.25,
+    "end": 165.92
+  },
+  {
+    "text": "It",
+    "start": 166.04,
+    "end": 166.07
+  },
+  {
+    "text": "enforces",
+    "start": 166.07,
+    "end": 166.67
+  },
+  {
+    "text": "a",
+    "start": 166.67,
+    "end": 166.69
+  },
+  {
+    "text": "required",
+    "start": 166.74,
+    "end": 167.35
+  },
+  {
+    "text": "prefix",
+    "start": 167.35,
+    "end": 167.84
+  },
+  {
+    "text": "or",
+    "start": 167.84,
+    "end": 168.03
+  },
+  {
+    "text": "suffix",
+    "start": 168.03,
+    "end": 168.6
+  },
+  {
+    "text": "on",
+    "start": 168.6,
+    "end": 168.84
+  },
+  {
+    "text": "every",
+    "start": 168.84,
+    "end": 169.44
+  },
+  {
+    "text": "new",
+    "start": 169.45,
+    "end": 169.81
+  },
+  {
+    "text": "name,",
+    "start": 169.81,
+    "end": 170.32
+  },
+  {
+    "text": "and",
+    "start": 170.45,
+    "end": 170.56
+  },
+  {
+    "text": "it",
+    "start": 170.56,
+    "end": 170.72
+  },
+  {
+    "text": "blocks",
+    "start": 170.72,
+    "end": 171.21
+  },
+  {
+    "text": "words",
+    "start": 171.21,
+    "end": 171.61
+  },
+  {
+    "text": "you",
+    "start": 171.68,
+    "end": 171.86
+  },
+  {
+    "text": "don't",
+    "start": 171.86,
+    "end": 172.26
+  },
+  {
+    "text": "want",
+    "start": 172.26,
+    "end": 172.59
+  },
+  {
+    "text": "in",
+    "start": 172.59,
+    "end": 172.75
+  },
+  {
+    "text": "the",
+    "start": 172.75,
+    "end": 172.99
+  },
+  {
+    "text": "directory.",
+    "start": 172.99,
+    "end": 173.89
+  },
+  {
+    "text": "It",
+    "start": 174.17,
+    "end": 174.3
+  },
+  {
+    "text": "needs",
+    "start": 174.3,
+    "end": 174.96
+  },
+  {
+    "text": "Microsoft",
+    "start": 174.96,
+    "end": 176.15
+  },
+  {
+    "text": "Enter",
+    "start": 176.15,
+    "end": 176.8
+  },
+  {
+    "text": "ID",
+    "start": 176.85,
+    "end": 177.07
+  },
+  {
+    "text": "P1.",
+    "start": 177.07,
+    "end": 178.04
+  },
+  {
+    "text": "Naming",
+    "start": 178.11,
+    "end": 178.49
+  },
+  {
+    "text": "keeps",
+    "start": 178.49,
+    "end": 178.88
+  },
+  {
+    "text": "names",
+    "start": 178.88,
+    "end": 179.16
+  },
+  {
+    "text": "tidy,",
+    "start": 179.27,
+    "end": 179.6
+  },
+  {
+    "text": "but",
+    "start": 179.72,
+    "end": 179.77
+  },
+  {
+    "text": "it",
+    "start": 179.77,
+    "end": 179.88
+  },
+  {
+    "text": "doesn't",
+    "start": 179.88,
+    "end": 180.28
+  },
+  {
+    "text": "stop",
+    "start": 180.28,
+    "end": 180.51
+  },
+  {
+    "text": "groups",
+    "start": 180.51,
+    "end": 180.88
+  },
+  {
+    "text": "from",
+    "start": 180.88,
+    "end": 181.21
+  },
+  {
+    "text": "outliving",
+    "start": 181.21,
+    "end": 181.92
+  },
+  {
+    "text": "their",
+    "start": 182.02,
+    "end": 182.35
+  },
+  {
+    "text": "purpose.",
+    "start": 182.41,
+    "end": 183.17
+  },
+  {
+    "text": "A",
+    "start": 183.17,
+    "end": 183.37
+  },
+  {
+    "text": "six-month",
+    "start": 183.37,
+    "end": 183.81
+  },
+  {
+    "text": "project",
+    "start": 183.84,
+    "end": 184.23
+  },
+  {
+    "text": "group",
+    "start": 184.27,
+    "end": 184.6
+  },
+  {
+    "text": "is",
+    "start": 184.72,
+    "end": 184.75
+  },
+  {
+    "text": "often",
+    "start": 184.75,
+    "end": 185.13
+  },
+  {
+    "text": "still",
+    "start": 185.13,
+    "end": 185.51
+  },
+  {
+    "text": "around",
+    "start": 185.51,
+    "end": 185.97
+  },
+  {
+    "text": "two",
+    "start": 186.02,
+    "end": 186.2
+  },
+  {
+    "text": "years",
+    "start": 186.2,
+    "end": 186.55
+  },
+  {
+    "text": "later.",
+    "start": 186.67,
+    "end": 187.24
+  },
+  {
+    "text": "Owner",
+    "start": 187.37,
+    "end": 187.65
+  },
+  {
+    "text": "gone,",
+    "start": 187.65,
+    "end": 188.14
+  },
+  {
+    "text": "members",
+    "start": 188.14,
+    "end": 188.71
+  },
+  {
+    "text": "unsure",
+    "start": 188.71,
+    "end": 189.19
+  },
+  {
+    "text": "why",
+    "start": 189.2,
+    "end": 189.36
+  },
+  {
+    "text": "they're",
+    "start": 189.45,
+    "end": 189.99
+  },
+  {
+    "text": "there.",
+    "start": 190.05,
+    "end": 190.72
+  },
+  {
+    "text": "A",
+    "start": 190.72,
+    "end": 190.85
+  },
+  {
+    "text": "group",
+    "start": 190.85,
+    "end": 191.14
+  },
+  {
+    "text": "expiration",
+    "start": 191.14,
+    "end": 191.84
+  },
+  {
+    "text": "policy",
+    "start": 191.84,
+    "end": 192.28
+  },
+  {
+    "text": "gives",
+    "start": 192.28,
+    "end": 192.67
+  },
+  {
+    "text": "each",
+    "start": 192.67,
+    "end": 192.96
+  },
+  {
+    "text": "Microsoft",
+    "start": 192.96,
+    "end": 193.64
+  },
+  {
+    "text": "365",
+    "start": 193.64,
+    "end": 194.28
+  },
+  {
+    "text": "group",
+    "start": 194.55,
+    "end": 194.68
+  },
+  {
+    "text": "a",
+    "start": 194.68,
+    "end": 194.81
+  },
+  {
+    "text": "lifetime",
+    "start": 194.81,
+    "end": 195.63
+  },
+  {
+    "text": "in",
+    "start": 195.63,
+    "end": 195.8
+  },
+  {
+    "text": "days.",
+    "start": 195.91,
+    "end": 196.6
+  },
+  {
+    "text": "As",
+    "start": 196.72,
+    "end": 196.77
+  },
+  {
+    "text": "it",
+    "start": 196.77,
+    "end": 196.94
+  },
+  {
+    "text": "nears",
+    "start": 196.94,
+    "end": 197.36
+  },
+  {
+    "text": "the",
+    "start": 197.36,
+    "end": 197.59
+  },
+  {
+    "text": "end,",
+    "start": 197.63,
+    "end": 198.05
+  },
+  {
+    "text": "Enter",
+    "start": 198.05,
+    "end": 198.48
+  },
+  {
+    "text": "ID",
+    "start": 198.48,
+    "end": 198.56
+  },
+  {
+    "text": "asks",
+    "start": 198.67,
+    "end": 198.92
+  },
+  {
+    "text": "the",
+    "start": 199.02,
+    "end": 199.25
+  },
+  {
+    "text": "owners",
+    "start": 199.25,
+    "end": 199.69
+  },
+  {
+    "text": "to",
+    "start": 199.77,
+    "end": 199.94
+  },
+  {
+    "text": "renew,",
+    "start": 199.94,
+    "end": 200.44
+  },
+  {
+    "text": "and",
+    "start": 200.57,
+    "end": 200.69
+  },
+  {
+    "text": "a",
+    "start": 200.69,
+    "end": 200.77
+  },
+  {
+    "text": "group",
+    "start": 200.77,
+    "end": 201.18
+  },
+  {
+    "text": "still",
+    "start": 201.18,
+    "end": 201.56
+  },
+  {
+    "text": "in",
+    "start": 201.67,
+    "end": 201.75
+  },
+  {
+    "text": "use",
+    "start": 201.8,
+    "end": 202
+  },
+  {
+    "text": "renews",
+    "start": 202,
+    "end": 202.49
+  },
+  {
+    "text": "itself",
+    "start": 202.51,
+    "end": 202.99
+  },
+  {
+    "text": "automatically.",
+    "start": 202.99,
+    "end": 204.36
+  },
+  {
+    "text": "Anything",
+    "start": 204.49,
+    "end": 205.03
+  },
+  {
+    "text": "nobody",
+    "start": 205.03,
+    "end": 205.48
+  },
+  {
+    "text": "renews",
+    "start": 205.59,
+    "end": 206.02
+  },
+  {
+    "text": "gets",
+    "start": 206.02,
+    "end": 206.31
+  },
+  {
+    "text": "deleted,",
+    "start": 206.43,
+    "end": 206.96
+  },
+  {
+    "text": "but",
+    "start": 207.09,
+    "end": 207.23
+  },
+  {
+    "text": "it",
+    "start": 207.23,
+    "end": 207.41
+  },
+  {
+    "text": "stays",
+    "start": 207.41,
+    "end": 207.87
+  },
+  {
+    "text": "restorable",
+    "start": 207.87,
+    "end": 208.78
+  },
+  {
+    "text": "for",
+    "start": 208.78,
+    "end": 209.05
+  },
+  {
+    "text": "30",
+    "start": 209.05,
+    "end": 209.6
+  },
+  {
+    "text": "days.",
+    "start": 209.6,
+    "end": 210.28
+  },
+  {
+    "text": "Three",
+    "start": 210.41,
+    "end": 210.61
+  },
+  {
+    "text": "details",
+    "start": 210.61,
+    "end": 211.05
+  },
+  {
+    "text": "worth",
+    "start": 211.1,
+    "end": 211.4
+  },
+  {
+    "text": "keeping",
+    "start": 211.4,
+    "end": 211.86
+  },
+  {
+    "text": "straight.",
+    "start": 211.86,
+    "end": 212.6
+  },
+  {
+    "text": "A",
+    "start": 212.6,
+    "end": 212.73
+  },
+  {
+    "text": "tenant",
+    "start": 212.73,
+    "end": 213.23
+  },
+  {
+    "text": "gets",
+    "start": 213.23,
+    "end": 213.59
+  },
+  {
+    "text": "exactly",
+    "start": 213.59,
+    "end": 214.22
+  },
+  {
+    "text": "one",
+    "start": 214.22,
+    "end": 214.49
+  },
+  {
+    "text": "expiration",
+    "start": 214.49,
+    "end": 215.36
+  },
+  {
+    "text": "policy,",
+    "start": 215.41,
+    "end": 216.12
+  },
+  {
+    "text": "it",
+    "start": 216.24,
+    "end": 216.27
+  },
+  {
+    "text": "covers",
+    "start": 216.27,
+    "end": 216.69
+  },
+  {
+    "text": "all",
+    "start": 216.73,
+    "end": 216.96
+  },
+  {
+    "text": "your",
+    "start": 216.96,
+    "end": 217.24
+  },
+  {
+    "text": "Microsoft",
+    "start": 217.35,
+    "end": 217.97
+  },
+  {
+    "text": "365",
+    "start": 217.97,
+    "end": 218.67
+  },
+  {
+    "text": "groups",
+    "start": 218.67,
+    "end": 219.16
+  },
+  {
+    "text": "or",
+    "start": 219.29,
+    "end": 219.35
+  },
+  {
+    "text": "a",
+    "start": 219.35,
+    "end": 219.44
+  },
+  {
+    "text": "selected",
+    "start": 219.44,
+    "end": 220.15
+  },
+  {
+    "text": "subset,",
+    "start": 220.21,
+    "end": 221
+  },
+  {
+    "text": "and",
+    "start": 221.13,
+    "end": 221.25
+  },
+  {
+    "text": "it",
+    "start": 221.25,
+    "end": 221.42
+  },
+  {
+    "text": "needs",
+    "start": 221.42,
+    "end": 221.84
+  },
+  {
+    "text": "P1",
+    "start": 221.84,
+    "end": 222.12
+  },
+  {
+    "text": "or",
+    "start": 222.23,
+    "end": 222.34
+  },
+  {
+    "text": "P2",
+    "start": 222.34,
+    "end": 222.67
+  },
+  {
+    "text": "for",
+    "start": 222.67,
+    "end": 222.92
+  },
+  {
+    "text": "the",
+    "start": 222.92,
+    "end": 223.12
+  },
+  {
+    "text": "members",
+    "start": 223.21,
+    "end": 223.75
+  },
+  {
+    "text": "it",
+    "start": 223.81,
+    "end": 223.93
+  },
+  {
+    "text": "covers.",
+    "start": 223.93,
+    "end": 224.57
+  },
+  {
+    "text": "The",
+    "start": 224.87,
+    "end": 225.02
+  },
+  {
+    "text": "same",
+    "start": 225.02,
+    "end": 225.39
+  },
+  {
+    "text": "tier,",
+    "start": 225.39,
+    "end": 225.86
+  },
+  {
+    "text": "the",
+    "start": 225.97,
+    "end": 226.22
+  },
+  {
+    "text": "naming",
+    "start": 226.22,
+    "end": 226.69
+  },
+  {
+    "text": "policy",
+    "start": 226.81,
+    "end": 227.32
+  },
+  {
+    "text": "relies",
+    "start": 227.32,
+    "end": 227.83
+  },
+  {
+    "text": "on.",
+    "start": 227.94,
+    "end": 228.31
+  },
+  {
+    "text": "So",
+    "start": 228.51,
+    "end": 228.64
+  },
+  {
+    "text": "to",
+    "start": 228.64,
+    "end": 228.9
+  },
+  {
+    "text": "recap,",
+    "start": 228.9,
+    "end": 229.84
+  },
+  {
+    "text": "security",
+    "start": 229.84,
+    "end": 230.5
+  },
+  {
+    "text": "groups",
+    "start": 230.59,
+    "end": 231.1
+  },
+  {
+    "text": "for",
+    "start": 231.1,
+    "end": 231.37
+  },
+  {
+    "text": "access,",
+    "start": 231.37,
+    "end": 232
+  },
+  {
+    "text": "Microsoft",
+    "start": 232.25,
+    "end": 232.89
+  },
+  {
+    "text": "365",
+    "start": 232.94,
+    "end": 233.76
+  },
+  {
+    "text": "groups",
+    "start": 233.76,
+    "end": 234.24
+  },
+  {
+    "text": "for",
+    "start": 234.33,
+    "end": 234.58
+  },
+  {
+    "text": "collaboration,",
+    "start": 234.58,
+    "end": 235.98
+  },
+  {
+    "text": "dynamic",
+    "start": 236.11,
+    "end": 236.52
+  },
+  {
+    "text": "membership",
+    "start": 236.52,
+    "end": 237.26
+  },
+  {
+    "text": "to",
+    "start": 237.32,
+    "end": 237.44
+  },
+  {
+    "text": "keep",
+    "start": 237.44,
+    "end": 237.68
+  },
+  {
+    "text": "a",
+    "start": 237.77,
+    "end": 237.82
+  },
+  {
+    "text": "growing",
+    "start": 237.82,
+    "end": 238.3
+  },
+  {
+    "text": "group",
+    "start": 238.4,
+    "end": 238.73
+  },
+  {
+    "text": "current.",
+    "start": 238.74,
+    "end": 239.55
+  },
+  {
+    "text": "Nesting",
+    "start": 239.69,
+    "end": 240.03
+  },
+  {
+    "text": "that",
+    "start": 240.03,
+    "end": 240.3
+  },
+  {
+    "text": "reaches",
+    "start": 240.3,
+    "end": 240.68
+  },
+  {
+    "text": "direct",
+    "start": 240.79,
+    "end": 241.19
+  },
+  {
+    "text": "members",
+    "start": 241.19,
+    "end": 241.67
+  },
+  {
+    "text": "only,",
+    "start": 241.67,
+    "end": 242
+  },
+  {
+    "text": "never",
+    "start": 242.13,
+    "end": 242.54
+  },
+  {
+    "text": "a",
+    "start": 242.54,
+    "end": 242.65
+  },
+  {
+    "text": "cascade,",
+    "start": 242.65,
+    "end": 243.42
+  },
+  {
+    "text": "and",
+    "start": 243.55,
+    "end": 243.64
+  },
+  {
+    "text": "naming",
+    "start": 243.64,
+    "end": 244.08
+  },
+  {
+    "text": "and",
+    "start": 244.08,
+    "end": 244.3
+  },
+  {
+    "text": "expiration",
+    "start": 244.3,
+    "end": 245.04
+  },
+  {
+    "text": "policies",
+    "start": 245.04,
+    "end": 245.66
+  },
+  {
+    "text": "keeping",
+    "start": 245.79,
+    "end": 246.18
+  },
+  {
+    "text": "the",
+    "start": 246.18,
+    "end": 246.4
+  },
+  {
+    "text": "estate",
+    "start": 246.4,
+    "end": 246.78
+  },
+  {
+    "text": "clean",
+    "start": 246.89,
+    "end": 247.24
+  },
+  {
+    "text": "as",
+    "start": 247.24,
+    "end": 247.36
+  },
+  {
+    "text": "Relate",
+    "start": 247.44,
+    "end": 248.03
+  },
+  {
+    "text": "Cloud",
+    "start": 248.08,
+    "end": 248.55
+  },
+  {
+    "text": "scales,",
+    "start": 248.55,
+    "end": 249.2
+  },
+  {
+    "text": "that",
+    "start": 249.33,
+    "end": 249.48
+  },
+  {
+    "text": "handles",
+    "start": 249.48,
+    "end": 249.96
+  },
+  {
+    "text": "the",
+    "start": 249.96,
+    "end": 250.16
+  },
+  {
+    "text": "groups",
+    "start": 250.18,
+    "end": 250.59
+  },
+  {
+    "text": "themselves.",
+    "start": 250.62,
+    "end": 251.52
+  },
+  {
+    "text": "Next,",
+    "start": 252.57,
+    "end": 252.87
+  },
+  {
+    "text": "see",
+    "start": 252.87,
+    "end": 253.09
+  },
+  {
+    "text": "how",
+    "start": 253.09,
+    "end": 253.31
+  },
+  {
+    "text": "an",
+    "start": 253.31,
+    "end": 253.43
+  },
+  {
+    "text": "administrative",
+    "start": 253.47,
+    "end": 254.4
+  },
+  {
+    "text": "unit",
+    "start": 254.51,
+    "end": 254.76
+  },
+  {
+    "text": "scopes",
+    "start": 254.92,
+    "end": 255.22
+  },
+  {
+    "text": "an",
+    "start": 255.22,
+    "end": 255.35
+  },
+  {
+    "text": "admin's",
+    "start": 255.35,
+    "end": 255.86
+  },
+  {
+    "text": "reach",
+    "start": 255.86,
+    "end": 256.24
+  },
+  {
+    "text": "to",
+    "start": 256.24,
+    "end": 256.42
+  },
+  {
+    "text": "just",
+    "start": 256.42,
+    "end": 256.75
+  },
+  {
+    "text": "one",
+    "start": 256.87,
+    "end": 257.07
+  },
+  {
+    "text": "slice",
+    "start": 257.07,
+    "end": 257.55
+  },
+  {
+    "text": "of",
+    "start": 257.61,
+    "end": 257.73
+  },
+  {
+    "text": "the",
+    "start": 257.73,
+    "end": 257.89
+  },
+  {
+    "text": "directory.",
+    "start": 258,
+    "end": 259.04
+  },
+  {
+    "text": "Find",
+    "start": 259.17,
+    "end": 259.35
+  },
+  {
+    "text": "the",
+    "start": 259.35,
+    "end": 259.58
+  },
+  {
+    "text": "full",
+    "start": 259.58,
+    "end": 259.89
+  },
+  {
+    "text": "unit",
+    "start": 259.89,
+    "end": 260.16
+  },
+  {
+    "text": "on",
+    "start": 260.27,
+    "end": 260.35
+  },
+  {
+    "text": "Microsoft",
+    "start": 260.36,
+    "end": 261
+  },
+  {
+    "text": "Learn.",
+    "start": 261.11,
+    "end": 261.72
+  }
+]
