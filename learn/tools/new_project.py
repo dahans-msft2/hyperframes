@@ -97,33 +97,42 @@ def _git(*args: str) -> subprocess.CompletedProcess:
 
 
 def emit_gitignore_negation(slug: str) -> bool:
-    """Append a per-slug negation to learn/.gitignore so THIS one project's source is trackable
-    (renders + heavy artifacts stay ignored). Idempotent. Lives on the video branch, never merged
-    to main — so main's blanket `output/` ignore, and every other local-only video, stay untouched."""
+    """Track THIS video's source + render INPUTS on the branch (and, after merge, on main) so the
+    cloud renderer has them; keep render OUTPUTS + QA artifacts out of git. Idempotent: a one-time
+    output header, then a per-slug block. Matches publish_video.py's negation exactly."""
     gi = LEARN / ".gitignore"
-    marker = f"# --- cloud handoff: {slug} ---"
     text = gi.read_text(encoding="utf-8") if gi.exists() else ""
-    if marker in text:
-        return False
-    block = "\n".join([
-        "",
-        marker,
-        "# Source of this video's composition is tracked so the cloud builder can hand it back;",
-        "# renders + heavy artifacts stay local-only. Never merged to main.",
-        "!output/",
-        "output/*",
-        f"!output/{slug}/",
-        f"!output/{slug}/**",
-        "# never the licensed Segoe woff2 (regenerable locally; cloud renders on fallback fonts)",
-        f"output/{slug}/fonts/",
-        "# ignore render OUTPUTS only — keep input media (end card, screen recordings) tracked",
-        f"output/{slug}/renders/",
-        f"output/{slug}/{slug}.mp4",
-        f"output/{slug}/{slug}_thumbnail.png",
-        "",
-    ])
-    gi.write_text(text.rstrip("\n") + "\n" + block, encoding="utf-8")
-    return True
+    changed = False
+
+    header = "# --- videos: source + render inputs tracked, outputs go to a Release ---"
+    if header not in text:
+        # ONE re-include of output/, re-ignoring direct children, so per-slug blocks below (all
+        # appended AFTER this) re-include only their own slug without shadowing each other.
+        text = text.rstrip("\n") + "\n\n" + "\n".join([header, "!output/", "output/*", ""])
+        changed = True
+
+    marker = f"# video: {slug}"
+    if marker not in text:
+        text = text.rstrip("\n") + "\n\n" + "\n".join([
+            marker,
+            f"!output/{slug}/",
+            f"!output/{slug}/**",
+            "# INPUTS (narration.wav, end card, grounds — LFS-tracked) stay so the renderer has them;",
+            "# OUTPUTS + QA artifacts never enter git (the deliverable MP4/captions/thumbnail -> Release).",
+            f"output/{slug}/fonts/",
+            f"output/{slug}/renders/",
+            f"output/{slug}/_snap*/",
+            f"output/{slug}/snapshots/",
+            f"output/{slug}/anchors.js",
+            f"output/{slug}/{slug}.mp4",
+            f"output/{slug}/{slug}_thumbnail.png",
+            "",
+        ])
+        changed = True
+
+    if changed:
+        gi.write_text(text, encoding="utf-8")
+    return changed
 
 
 def ensure_video_branch(slug: str, warnings: list) -> str:

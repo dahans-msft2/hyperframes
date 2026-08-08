@@ -58,3 +58,12 @@ registry/**/*.html linguist-vendored
 # Retires the local `git update-index --skip-worktree` workaround. Appended (not edited inline) to
 # minimise merge friction on upstream sync.
 packages/producer/tests/**/output/compiled.html -filter -diff -merge -text
+
+# --- Learn video render inputs: LFS so the cloud renderer gets them without bloating the pack ----
+# A delivered video's source lives on main; the Windows renderer checks it out and muxes these heavy
+# INPUTS. LFS keeps clones lean (pointers), the runner fetches on demand, and the identical AI end
+# card copied into every project dedupes to a single content-addressed object. Deliverable outputs
+# (<slug>.mp4, thumbnail) never enter git — they are Release assets (see learn/.gitignore).
+learn/output/**/*.wav filter=lfs diff=lfs merge=lfs -text
+learn/output/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+learn/output/**/assets/grounds/*.png filter=lfs diff=lfs merge=lfs -text

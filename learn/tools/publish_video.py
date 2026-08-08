@@ -42,38 +42,34 @@ def run(cmd: list[str], *, dry: bool, what: str, cwd: Path | None = None) -> "su
 
 
 def emit_gitignore_negation(slug: str, dry: bool) -> bool:
-    """Track THIS published video's source on main; keep the MP4/thumbnail/render-scratch/fonts local
-    (the MP4 + thumbnail become Release assets). narration.wav + captions stay tracked as masters so
-    the folder re-renders from a clone. Idempotent — a one-time output header, then a per-slug block."""
+    """Track THIS video's source + render INPUTS on main; keep render OUTPUTS + QA artifacts out
+    (the deliverable MP4/captions/thumbnail become Release assets). narration.wav + the end card +
+    grounds are LFS-tracked so the cloud renderer has them. Idempotent, and byte-identical to
+    new_project.emit_gitignore_negation so a scaffolded project needs no change at publish."""
     gi = LEARN / ".gitignore"
     text = gi.read_text(encoding="utf-8") if gi.exists() else ""
     changed = False
 
-    header = "# --- published videos: source tracked on main, MP4/thumbnail go to a Release ---"
+    header = "# --- videos: source + render inputs tracked, outputs go to a Release ---"
     if header not in text:
-        # ONE re-include of the output dir, re-ignoring its direct children, so per-slug blocks below
-        # (all appended AFTER this) can re-include only their own slug without shadowing each other.
         text = text.rstrip("\n") + "\n\n" + "\n".join([header, "!output/", "output/*", ""])
         changed = True
 
-    marker = f"# published: {slug}"
+    marker = f"# video: {slug}"
     if marker not in text:
         text = text.rstrip("\n") + "\n\n" + "\n".join([
             marker,
             f"!output/{slug}/",
             f"!output/{slug}/**",
-            "# Keep only source text + this video's own media screenshots. Everything below is a",
-            "# Release asset, a shared repo asset (re-copied at build), or a regenerable artifact.",
-            f"output/{slug}/_snap*/",                # QA snapshot contact sheets
-            f"output/{slug}/snapshots/",             # QA snapshots
-            f"output/{slug}/renders/",               # render scratch
-            f"output/{slug}/fonts/",                 # licensed Segoe woff2, regenerable
-            f"output/{slug}/anchors.js",             # generated from anchors.json
-            f"output/{slug}/**/*.mp4",               # deliverable + shared end card
-            f"output/{slug}/**/*.wav",               # narration master -> Release asset
-            f"output/{slug}/*_thumbnail.png",        # -> Release asset
-            f"output/{slug}/assets/grounds/",        # shared ground PNGs, re-copied at build
-            f"output/{slug}/assets/vendor/",         # vendored gsap, re-copied at build
+            "# INPUTS (narration.wav, end card, grounds — LFS-tracked) stay so the renderer has them;",
+            "# OUTPUTS + QA artifacts never enter git (the deliverable MP4/captions/thumbnail -> Release).",
+            f"output/{slug}/fonts/",
+            f"output/{slug}/renders/",
+            f"output/{slug}/_snap*/",
+            f"output/{slug}/snapshots/",
+            f"output/{slug}/anchors.js",
+            f"output/{slug}/{slug}.mp4",
+            f"output/{slug}/{slug}_thumbnail.png",
             "",
         ])
         changed = True
@@ -111,12 +107,12 @@ def main() -> int:
     mp4 = proj / f"{slug}.mp4"
     vtt = proj / f"{slug}.vtt"
     thumb = proj / f"{slug}_thumbnail.png"
-    wav = proj / "narration.wav"
     missing = [p.name for p in (mp4, vtt, thumb) if not p.exists()]
     if missing:
         die(f"missing deliverable(s): {', '.join(missing)} — re-render")
-    # narration.wav is the audio master — ship it with the release so the source re-renders from a clone.
-    assets = [mp4, vtt, thumb] + ([wav] if wav.exists() else [])
+    # The release carries the deliverables a viewer downloads; narration.wav is the audio master
+    # and lives on main via LFS, so it is not duplicated here.
+    assets = [mp4, vtt, thumb]
 
     duration = float((manifest.get("video") or {}).get("duration_seconds", 0))
     release_url = f"https://github.com/{args.repo}/releases/tag/{tag}"
@@ -154,7 +150,8 @@ def main() -> int:
         f"**{title}** — Microsoft Learn companion video ({duration:.0f}s).\n\n"
         f"Source: [`learn/output/{slug}/`](https://github.com/{args.repo}/tree/{sha}/learn/output/{slug}) "
         f"on `{args.branch}` @ `{sha[:8]}`.\n\n"
-        f"Assets: MP4 (video+audio), WebVTT captions, thumbnail, narration.wav (audio master).\n\n"
+        f"Assets: MP4 (video+audio), WebVTT captions, thumbnail. The audio master (narration.wav) "
+        f"is tracked on `{args.branch}` via LFS.\n\n"
         f"_This video was produced with AI assistance and carries the required AI-disclosure end card._"
     )
     run(["gh", "release", "create", tag, "--repo", args.repo, "--target", sha,

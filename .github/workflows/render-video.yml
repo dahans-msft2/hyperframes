@@ -41,8 +41,8 @@ on:
         default: ""
 
 permissions:
-  contents: read
-  pull-requests: write   # comment the artifact link back on the PR
+  contents: write        # create the per-video Release from the render
+  pull-requests: write   # comment the release link back on the PR
 
 jobs:
   render:
@@ -117,6 +117,19 @@ jobs:
       - name: Python deps for font generation
         run: python -m pip install --upgrade pip fonttools brotli
 
+      # Cache the predictable render toolchain so we don't re-download chrome-headless-shell and
+      # re-install ffmpeg every run. On a cache hit the install steps below are fast no-ops
+      # (browser ensure sees the cached browser; the ffmpeg check finds it already present).
+      - name: Cache render toolchain (chrome-headless-shell + ffmpeg)
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~\.cache\puppeteer
+            ~\AppData\Local\hyperframes
+            C:\ProgramData\chocolatey\lib\ffmpeg
+            C:\ProgramData\chocolatey\bin\ffmpeg.exe
+          key: render-toolchain-windows-hf0.7.77-v1
+
       # Windows Server ships Segoe UI in C:\Windows\Fonts — regenerate the project's brand woff2
       # from the runner's own licensed system fonts. This is the whole reason for a Windows runner.
       - name: Generate real Segoe woff2 from the runner's system fonts
@@ -131,6 +144,31 @@ jobs:
 
       - name: Render + package (MP4 + VTT + thumbnail)
         run: python learn/tools/render_and_package.py --project "${{ steps.proj.outputs.dir }}"
+
+      # Cloud publish: cut the per-video Release straight from the render. tag = slug; assets are the
+      # deliverables a viewer downloads. narration.wav stays the LFS master on the branch/main.
+      - name: Create the per-video Release
+        id: release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $dir  = '${{ steps.proj.outputs.dir }}'
+          $slug = Split-Path $dir -Leaf
+          $mp4  = Join-Path $dir "$slug.mp4"
+          $vtt  = Join-Path $dir "$slug.vtt"
+          $thumb = Join-Path $dir "${slug}_thumbnail.png"
+          $m = Get-Content (Join-Path $dir 'manifest.json') -Raw | ConvertFrom-Json
+          $title = if ($m.title) { "$($m.title)" } else { $slug }
+          $dur = [math]::Round([double]$m.video.duration_seconds)
+          $notes = "**$title** — Microsoft Learn companion video ($dur s).`n`nSource: ``learn/output/$slug/`` on ``main``.`n`n_AI-produced, carries the required AI-disclosure end card._"
+          gh release view $slug --repo ${{ github.repository }} 1>$null 2>$null
+          if ($LASTEXITCODE -eq 0) {
+            gh release upload $slug $mp4 $vtt $thumb --repo ${{ github.repository }} --clobber
+          } else {
+            gh release create $slug --repo ${{ github.repository }} --target '${{ steps.br.outputs.branch }}' --title $title --notes $notes $mp4 $vtt $thumb
+          }
+          "url=https://github.com/${{ github.repository }}/releases/tag/$slug" | Out-File $env:GITHUB_OUTPUT -Append
 
       - name: Upload the deliverables
         id: art
@@ -156,7 +194,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: prNumber,
-              body: `🎬 **Render complete** — download the MP4 + captions + thumbnail from this run's artifacts (\`video-${context.runId}\`): ${runUrl}#artifacts\n\nReview it, then merge to \`main\`; run \`publish_video.py\` to cut the release.`,
+              body: `🎬 **Render complete — [Release published](${{ steps.release.outputs.url }})**. Watch/download the MP4 + captions + thumbnail there (also uploaded as run artifact \`video-${context.runId}\`).\n\nMerge this PR to land the source on \`main\` — the gallery updates automatically.`,
             });
 
       # Tell the reviewer WHY a triggered render failed, right on the PR — so a failed render isn't
