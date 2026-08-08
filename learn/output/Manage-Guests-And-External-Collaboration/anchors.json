@@ -42,6 +42,7 @@
   "b4Themselves": "invite analysts themselves",
   "b4UserAdmin": "The obvious move is user administrator",
   "b4CanInvite": "It can invite, but it can also",
+  "b4CanInviteEnd": "reset passwords",
   "b4TooBroad": "manage licenses across the tenant",
   "b4FarMore": "That's far more than",
   "_section_b5": "B5 08-delegate-two-pieces",
