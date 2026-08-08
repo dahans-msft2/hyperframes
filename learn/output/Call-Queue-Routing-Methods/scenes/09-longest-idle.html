@@ -181,6 +181,7 @@
         <!-- host may set data-ground="section-field" | "hero-swoosh" | "dark-field" on #root -->
         <div id="mk-ls-wrap">
           <div id="mk-ls-head">
+            <span id="mk-ls-kicker" class="ilt-kicker"></span>
             <span id="mk-ls-count">0</span>
             <span id="mk-ls-count-label"></span>
           </div>
@@ -224,10 +225,12 @@
 
           var wrap = document.getElementById("mk-ls-wrap");
           var rowsHost = document.getElementById("mk-ls-rows");
+          var kickerEl = document.getElementById("mk-ls-kicker");
           var countEl = document.getElementById("mk-ls-count");
           var countLabelEl = document.getElementById("mk-ls-count-label");
           var items = CONFIG.items;
 
+          kickerEl.textContent = CONFIG.kicker;
           countLabelEl.textContent = CONFIG.countLabel;
 
           items.forEach(function (it, i) {
