@@ -1,0 +1,23 @@
+Relecloud just opened an overseas office, and it needs one regional admin to reset passwords and update profiles there — and nowhere else. But hand that person the User Administrator role, and you've handed them every user in the company. So how do you give a role real power over *one slice* of the directory, and none over the rest?
+
+In the next few minutes, you'll see how an administrative unit draws that boundary, how a scoped role stays inside it, and how one tempting shortcut quietly leaves people unprotected. Get it right, and least privilege holds.
+
+Start with what goes wrong. Assign User Administrator at the tenant level, and it resets passwords and edits profiles — but its reach doesn't stop at the new office. That admin can now reach *every* user in the directory, including the executives back at headquarters.
+
+An administrative unit is the boundary that fixes this — a container in Microsoft Entra ID that holds users, groups, or devices. Assign a role scoped to the unit instead of the whole tenant, and its permissions apply only to the objects that unit contains. Scope the User Administrator role to a unit holding just the office's users, and that's exactly who the admin can reach.
+
+So how do you fill the unit? The same two ways a group gets members. Add people one at a time with assigned membership, or write a rule on attributes like office location and let Entra populate it automatically — dynamic membership. With new hires arriving weekly, that saves you adding each one by hand.
+
+But first, a shortcut that looks easier. Relecloud already has a group — New Office, All Staff — holding everyone at the location. Add that group to the unit, and you've seemingly scoped the admin to the whole office in one click. So: can that admin now reset passwords for the people in the group? [[pause:600ms]]
+
+The answer is no. Adding a group brings the group object into scope — not the users inside it. The admin can rename the group or edit its membership, because the group is a direct member. But they can't reset a password for anyone in it: those users are *two steps removed* — members of a group that's a member of the unit, not of the unit itself.
+
+It's the same rule nested groups follow, just relocated: Entra resolves permissions against direct membership only. The shortcut never reaches two levels down. The fix — add the users to the unit directly, or let a dynamic rule do it as each new hire joins.
+
+Dynamic membership has a catch, though. A dynamic unit supports exactly one object type — users, or devices, never both in the same unit. Need the office's accounts *and* their devices? That's two units, not one. And a dynamic unit can't hold a group at all — only individual users or devices.
+
+One last factor: cost. Dynamic rules require a Microsoft Entra ID P1 license for every user or device the rule covers. Assigned membership doesn't — a Free license covers members you add by hand. For an office still ramping up, that's part of deciding whether the convenience is worth it.
+
+So the regional admin's reach is scoped correctly now — to the office's people, and only them. An administrative unit drew the boundary, a scoped assignment held the role inside it, and you know why a group would've quietly left everyone else unprotected.
+
+A hands-on exercise right after this has you build one of these units yourself. To go deeper on group scoping and dynamic rules, follow the administrative units links in the module.
