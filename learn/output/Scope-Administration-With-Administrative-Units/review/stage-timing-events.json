@@ -1,0 +1,20 @@
+[
+  {
+    "kind": "start",
+    "stage": "designer",
+    "run_id": "scope-administrative-units-202608071310",
+    "at": "2026-08-08T01:39:12+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "designer",
+    "run_id": "scope-administrative-units-202608071310",
+    "at": "2026-08-08T01:48:27+00:00",
+    "status": "passed",
+    "note": null,
+    "meta": {}
+  }
+]

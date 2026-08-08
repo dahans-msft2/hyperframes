@@ -1,0 +1,13 @@
+{
+  "title": "Scope Administration with Administrative Units",
+  "type": "unit-video",
+  "profile": "unit-video",
+  "status": "scaffolded",
+  "voice": "en-US-Ava:DragonHDLatestNeural",
+  "source": "C:\\learn-pr\\learn-m365-pr\\learn-m365-pr\\wwl\\provision-govern-identities-entra\\includes\\7-scope-administrative-units.md",
+  "deliverables": {
+    "mp4": "Scope-Administration-With-Administrative-Units.mp4",
+    "captions_vtt": "Scope-Administration-With-Administrative-Units.vtt",
+    "thumbnail": "Scope-Administration-With-Administrative-Units_thumbnail.png"
+  }
+}
