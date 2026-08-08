@@ -29,5 +29,17 @@
   "_scene_90_recap": "recap payoff",
   "recap_scoped": "scoped correctly now",
   "_scene_91_cta": "call to action",
-  "cta_exercise": "build one of these units yourself"
+  "cta_exercise": "build one of these units yourself",
+  "_beat04_builder_cues": "builder cues for the custom over-privilege scene",
+  "op_tenant_level": "at the tenant level",
+  "op_resets_profiles": "resets passwords and edits profiles",
+  "op_no_stop": "doesn't stop at the new office",
+  "op_reach_every": "reach every user in the directory",
+  "_beat08_builder_cues": "builder cues for the custom two-hop reveal scene",
+  "reveal_answer_no": "the answer is no",
+  "reveal_not_inside": "not the users inside it",
+  "reveal_rename_group": "rename the group or edit its membership",
+  "reveal_direct_member": "because the group is a direct member",
+  "reveal_cant_reset": "reset a password for anyone in it",
+  "reveal_not_unit_itself": "not of the unit itself"
 }

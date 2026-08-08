@@ -5,7 +5,9 @@
   "height": 1080,
   "root_background": "#fff8f3",
   "gsap": "assets/vendor/gsap.min.js",
-  "fonts": [
+  "fonts_note": "Segoe UI is licensed and gitignored, so fonts/*.woff2 is absent on a cloud checkout and every @font-face rule 404s in the browser gate. 'fonts' is therefore empty and the kit's \"Segoe UI\", system-ui, sans-serif fallback stack applies (it resolves to real Segoe on a Windows render host). To embed them for a local hermetic render: run tools/sync_fonts.py, then move 'fonts_when_available' back to 'fonts' and re-assemble.",
+  "fonts": [],
+  "fonts_when_available": [
     {
       "family": "Segoe UI",
       "weight": 400,
@@ -29,6 +31,13 @@
     "outro": 0.7,
     "color": "#000"
   },
+  "anchors": "anchors.js",
+  "narration": {
+    "src": "narration.wav",
+    "start": 3.0,
+    "duration": 230.073,
+    "track": 10
+  },
   "scenes": [
     {
       "id": "01-bumper",
@@ -39,33 +48,74 @@
     {
       "id": "02-title",
       "src": "scenes/02-title.html",
-      "duration": 24.0,
+      "duration": 22.25,
       "seam": "hard"
     },
     {
       "id": "03-objectives",
       "src": "scenes/03-objectives.html",
-      "duration": 16.8,
+      "duration": 15.81,
+      "seam": "cut-left"
+    },
+    {
+      "id": "04-over-privilege",
+      "src": "scenes/04-over-privilege.html",
+      "duration": 17.59,
+      "seam": "cut-left"
+    },
+    {
+      "id": "05-boundary",
+      "src": "scenes/05-boundary.html",
+      "duration": 25.2,
+      "seam": "cut-up"
+    },
+    {
+      "id": "06-populate",
+      "src": "scenes/06-populate.html",
+      "duration": 20.03,
+      "seam": "cut-down"
+    },
+    {
+      "id": "07-shortcut",
+      "src": "scenes/07-shortcut.html",
+      "duration": 18.76,
+      "seam": "cut-left"
+    },
+    {
+      "id": "08-reveal",
+      "src": "scenes/08-reveal.html",
+      "duration": 23.69,
+      "seam": "cut-right"
+    },
+    {
+      "id": "09-rule",
+      "src": "scenes/09-rule.html",
+      "duration": 17.19,
+      "seam": "cut-left"
+    },
+    {
+      "id": "10-constraint",
+      "src": "scenes/10-constraint.html",
+      "duration": 21.02,
+      "seam": "cut-left"
+    },
+    {
+      "id": "11-licensing",
+      "src": "scenes/11-licensing.html",
+      "duration": 20.49,
       "seam": "cut-left"
     },
     {
       "id": "90-recap",
       "src": "scenes/90-recap.html",
-      "duration": 24.0,
+      "duration": 17.1,
       "seam": "cut-up"
     },
     {
       "id": "91-cta",
       "src": "scenes/91-cta.html",
-      "duration": 16.8,
+      "duration": 14.07,
       "seam": "cut-left"
     }
-  ],
-  "body_slot": {
-    "insert_after": "03-objectives",
-    "before": "90-recap",
-    "target_scene_count": 5,
-    "max_scene_count": 16,
-    "note": "Author the teaching-body scenes here (each on the kit foundation), then insert them into 'scenes' between the opening and closing chrome. The builder re-times all durations to real narration word anchors."
-  }
+  ]
 }

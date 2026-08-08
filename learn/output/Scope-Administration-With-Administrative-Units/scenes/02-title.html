@@ -155,9 +155,9 @@
           // Edit per use. Opening title card: eyebrow kicker + two-line title + one-line subtitle.
           var CONFIG = {
             "kicker": "MICROSOFT LEARN",
-            "titleLine1": "__FILL__ title line 1",
-            "titleLine2": "__FILL__ title line 2",
-            "subtitle": "__FILL__ one-line subtitle for the video."
+            "titleLine1": "Scope administration",
+            "titleLine2": "with administrative units",
+            "subtitle": "Give a role power over one slice of the directory \u2014 not all of it."
           };
 
           var kicker = document.getElementById("mk-th-kicker");
@@ -172,6 +172,11 @@
           subtitle.textContent = CONFIG.subtitle;
 
           var tl = gsap.timeline({ paused: true });
+          // Deterministic t=0 pin. The host seeks into this scene when its slot opens, so the
+          // scene's own root is stated explicitly at t=0 rather than inheriting whatever the
+          // previous seek left behind. State is a pure function of timeline time.
+          var __sceneRoot = document.getElementById("root");
+          if (__sceneRoot) tl.set(__sceneRoot, { opacity: 1 }, 0);
 
           // Waterfall entrance — scene-relative, seek-safe. Calm cadence for the opener.
           // 1) kicker fades + rises first.

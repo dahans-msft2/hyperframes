@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+    <script src="../anchors.js"></script>
+  </head>
+  <body>
+    <template>
+      <style>
+        /* === Custom scene: 08-reveal (the two-hop path that stops at hop two). ===
+           The design plan named the diagram-flow block, but that block is a fixed,
+           non-configurable decision-tree demo (its nodes and copy are hardcoded), so it
+           cannot carry this content without rewriting its markup and timeline — which is
+           hand-authoring. Authored here on the kit foundation instead: same tokens, same
+           --fs-* scale, same ground-swap, verbatim. */
+
+        /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+        /* =============================================================================
+           Learn-ILT KIT FOUNDATION  —  single source of truth for every kit block.
+           -----------------------------------------------------------------------------
+           Every block in templates/blocks/ opens its <style> with a VERBATIM copy of
+           this file (between the two BEGIN/END markers), then adds only block-specific
+           rules that REFERENCE these tokens + primitives. That is what makes a chart, a
+           spec list, a flowchart and a lower-third feel like one kit instead of seven
+           islands: shared tokens, one type scale, one ground-swap, shared primitives.
+
+           NAMING (every kit block file + its data-composition-id + its __timelines key
+           share ONE name):  <category>-<variant>  — lowercase, hyphen-separated.
+             category = the scene archetype (what kind of scene it is)
+             variant  = the specific style within that archetype
+           Current categories: stat- (single big number/count-up), chart- (multi-point
+           data viz), list- (enumerated rows), diagram- (nodes + relationships),
+           title- (title card), section- (segment divider), code- (code window),
+           callout- (key-point card), media- (screenshot / screen recording in a window),
+           lower-third- (name/role overlay). Reserved: quote-, compare-.
+           e.g. stat-progress, stat-count, chart-bar, chart-line, list-specs,
+           diagram-flow, media-screenshot, lower-third-bar.
+
+           AUTHORING RULES (the "one consistent approach"):
+             1. Never hardcode a brand colour, font, radius, or ground gradient in a
+                block. Read a token. If you need a value that isn't here, add it here.
+             2. Never size text in px. Use the --fs-* scale (cqw) so type scales with the
+                mount container and can never regress below the --fs-micro floor (~24px).
+             3. CONTRAST LAW: text is ALWAYS var(--ink) or var(--ink-soft). Accents
+                (var(--accent*)) colour GRAPHICS only — bars, lines, fills, borders,
+                chips, rules — never text.
+             4. Ground is chosen by the host via  #root[data-ground="…"]  (default
+                content-wash). Each ground layers the deck's real exported PNG
+                (assets/grounds/ground-<name>.png, copied into the project like fonts)
+                OVER a CSS-gradient fallback — if the PNG is absent (standalone preview),
+                the gradient shows. dark-field is CSS-only (no PNG) and flips ink to white
+                automatically — do not special-case it in a block.
+             5. The host owns scene lifetime. A block never hides/fades its own #root on
+                exit; register the paused timeline on window.__timelines[<id>] and stop.
+           ============================================================================= */
+
+        /* ---- reset ---------------------------------------------------------------- */
+        #root,
+        #root *,
+        #root *::before,
+        #root *::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+
+        /* ---- #root: tokens + container ------------------------------------------- */
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size; /* 1cqw = 1% of width = 19.2px at 1920 */
+
+          /* palette — content-wash (default ground). data-ground overrides below. */
+          --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
+          --ink: #091f2e; /* all text */
+          --ink-soft: #59636e; /* secondary text */
+          --paper: #ffffff; /* panel / card fill */
+          --paper-veil: rgba(255, 255, 255, 0.9); /* translucent panel on a busy ground */
+          --border: rgba(9, 31, 46, 0.16);
+          --border-soft: rgba(9, 31, 46, 0.12);
+          --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
+
+          /* accents — GRAPHICS ONLY, never text */
+          --accent: #8661c5; /* purple  (primary)   */
+          --accent-2: #0078d4; /* blue    (secondary) */
+          --accent-3: #389a91; /* teal    (tertiary)  */
+          --accent-4: #bf3ac4; /* magenta (quaternary)*/
+          --accent-ink: #ffffff; /* text that sits ON an accent fill (chips/badges)   */
+
+          /* type — cqw scale (never px in a block). ~value at 1920 wide in comments.  */
+          --fs-display: 11cqw; /* ~211px  hero stat / count-up                        */
+          --fs-h1: 4.6cqw; /* ~88px   title-card headline                         */
+          --fs-h2: 3.4cqw; /* ~65px   scene title / subject                       */
+          --fs-h3: 2.4cqw; /* ~46px   block headline                              */
+          --fs-lead: 2cqw; /* ~38px   lead / large label                          */
+          --fs-body: 1.75cqw; /* ~34px   body / row label                           */
+          --fs-caption: 1.5cqw; /* ~29px   caption / value                            */
+          --fs-kicker: 1.55cqw; /* ~30px   eyebrow / kicker                           */
+          --fs-micro: 1.25cqw; /* ~24px   FLOOR — nothing smaller than this          */
+
+          /* rhythm */
+          --radius: 16px;
+          --radius-sm: 10px;
+          --radius-pill: 999px;
+          --stroke: 5px; /* chart line / connector weight */
+          --rule: 3px; /* accent underline weight       */
+
+          font-family: "Segoe UI", system-ui, sans-serif;
+          color: var(--ink);
+          background: var(--ground);
+        }
+
+        #root[data-ground="hero-swoosh"] {
+          /* warm paper with a stronger purple sweep — css fallback of the PNG swoosh */
+          --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+        }
+        #root[data-ground="section-field"] {
+          /* the deck's pale "background-gradient" export — cool blue wash */
+          --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
+        }
+        #root[data-ground="dark-field"] {
+          /* the dramatic exception: near-black navy, WHITE ink. css-only (no PNG). */
+          --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
+          --ink: #ffffff;
+          --ink-soft: rgba(255, 255, 255, 0.72);
+          --paper: rgba(255, 255, 255, 0.08);
+          --paper-veil: rgba(255, 255, 255, 0.1);
+          --border: rgba(255, 255, 255, 0.24);
+          --border-soft: rgba(255, 255, 255, 0.14);
+          --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+
+        /* ---- shared primitives ---------------------------------------------------- */
+        /* Type roles — a block composes these instead of inventing a size each time.  */
+        .ilt-kicker {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-kicker);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+        .ilt-title {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h2);
+          line-height: 1.08;
+          letter-spacing: -0.02em;
+          color: var(--ink);
+        }
+        .ilt-headline {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h3);
+          line-height: 1.12;
+          letter-spacing: -0.015em;
+          color: var(--ink);
+        }
+        .ilt-body {
+          font-weight: 400;
+          font-size: var(--fs-body);
+          line-height: 1.3;
+          color: var(--ink);
+        }
+        .ilt-caption {
+          font-weight: 400;
+          font-size: var(--fs-caption);
+          line-height: 1.3;
+          color: var(--ink-soft);
+        }
+        .ilt-value {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-caption);
+          letter-spacing: -0.01em;
+          color: var(--ink);
+          font-variant-numeric: tabular-nums;
+        }
+        .ilt-display {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-display);
+          line-height: 0.95;
+          letter-spacing: -0.03em;
+          color: var(--ink);
+          font-variant-numeric: tabular-nums;
+        }
+
+        /* Surfaces */
+        .ilt-panel {
+          background: var(--paper);
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius);
+          box-shadow: var(--shadow);
+        }
+        .ilt-panel--veil {
+          background: var(--paper-veil);
+        }
+        .ilt-chip {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6em;
+          padding: 0.5em 1.1em;
+          border: 1.5px solid var(--border);
+          border-radius: var(--radius-pill);
+          font-size: var(--fs-micro);
+          font-weight: 600;
+          color: var(--ink);
+          background: var(--paper-veil);
+        }
+
+        /* Accents-as-graphics */
+        .ilt-rule {
+          /* accent underline bar — a graphic, never text colour */
+          height: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent);
+        }
+        .ilt-tab {
+          /* vertical accent tab (lower-thirds, callouts) */
+          width: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent);
+        }
+        /* SVG helpers: stroke:var(--accent) for lines, stroke:var(--border-soft) for axes */
+        .ilt-axis {
+          stroke: var(--border-soft);
+          stroke-width: 2;
+          fill: none;
+        }
+        /* ==== END _foundation.css ==== */
+
+        /* ---- scene-local: the two-hop path that hits a wall ----------------------
+           Semantic accents outrank brand accents here and encode meaning:
+             --positive (teal) = in scope / reachable
+             --incident (coral) = out of reach / the break
+           Both are used only as fills, borders, glyph marks and rules — never as
+           text colour on the wash (contrast law). All labels stay ink / ink-soft. */
+        #root {
+          --positive: #2f7d74;
+          --positive-wash: rgba(56, 154, 145, 0.16);
+          --positive-edge: rgba(47, 125, 116, 0.6);
+          --incident: #c43e1c;
+          --incident-wash: rgba(196, 62, 28, 0.14);
+          --incident-edge: rgba(196, 62, 28, 0.55);
+        }
+
+        #rv-stage {
+          position: absolute;
+          inset: 0;
+        }
+        #rv-col {
+          position: absolute;
+          left: 110px;
+          top: 150px;
+          width: 1180px;
+        }
+        #rv-kicker { margin-bottom: 16px; }
+        #rv-headline { max-width: 1150px; }
+
+        /* the node lane — the ground plane the path is walked on */
+        #rv-lane {
+          position: absolute;
+          left: 110px;
+          top: 470px;
+          width: 1690px;
+          height: 200px;
+        }
+        .rv-node {
+          position: absolute;
+          top: 0;
+          height: 200px;
+          padding: 30px 34px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 12px;
+          border-radius: var(--radius);
+          border: 2.5px solid var(--border);
+          background: var(--paper);
+          box-shadow: var(--shadow);
+        }
+        #rv-node-unit { left: 0; width: 420px; }
+        #rv-node-group { left: 530px; width: 480px; }
+        #rv-node-members { left: 1120px; width: 570px; }
+        .rv-node-title {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-lead);
+          line-height: 1.12;
+          letter-spacing: -0.015em;
+          color: var(--ink);
+        }
+        /* the unreachable node reads recessed via SURFACE, not by dropping opacity —
+           its text stays a full-contrast ink-soft. */
+        #rv-node-members {
+          background: rgba(9, 31, 46, 0.045);
+          box-shadow: none;
+        }
+        #rv-node-members .rv-node-title { color: var(--ink-soft); }
+
+        /* connectors live in the 110px gaps between nodes */
+        .rv-link {
+          position: absolute;
+          top: 96px;
+          height: 8px;
+          border-radius: 8px;
+          transform-origin: left center;
+          transform: scaleX(0);
+        }
+        #rv-link-1 { left: 420px; width: 110px; background: var(--positive); }
+        #rv-link-2 { left: 1010px; width: 110px; background: rgba(9, 31, 46, 0.22); }
+        #rv-link-2-break {
+          position: absolute;
+          left: 1010px;
+          top: 78px;
+          width: 110px;
+          height: 44px;
+          border-radius: 6px;
+          background: var(--incident-wash);
+          border: 2.5px solid var(--incident);
+          opacity: 0;
+        }
+        #rv-link-2-strike {
+          position: absolute;
+          left: 1044px;
+          top: 76px;
+          width: 6px;
+          height: 48px;
+          border-radius: 6px;
+          background: var(--incident);
+          transform: rotate(38deg) scaleY(0);
+          transform-origin: center center;
+        }
+        /* the hop label sits BELOW the node band so it can be read at full width without
+           ever sliding under a node panel. */
+        .rv-link-label {
+          position: absolute;
+          top: 216px;
+          width: 300px;
+          text-align: center;
+          opacity: 0;
+        }
+        #rv-link-1-label { left: 325px; }
+
+        /* verdict chips under the two reachable/unreachable nodes */
+        .rv-chip-row {
+          position: absolute;
+          top: 706px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 14px;
+        }
+        #rv-chips-group { left: 640px; }
+        #rv-chips-members { left: 1230px; }
+        .rv-chip { opacity: 0; }
+        .rv-chip--yes {
+          border-color: var(--positive-edge);
+          background: var(--positive-wash);
+        }
+        .rv-chip--no {
+          border-color: var(--incident-edge);
+          background: var(--incident-wash);
+        }
+        .rv-glyph {
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          flex: 0 0 auto;
+        }
+        .rv-glyph--yes { background: var(--positive); }
+        .rv-glyph--no { background: var(--incident); }
+
+        /* the measure that names the failure: two steps removed */
+        #rv-measure {
+          position: absolute;
+          left: 300px;
+          top: 872px;
+          width: 1240px;
+          height: 96px;
+        }
+        #rv-measure-bar {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 1240px;
+          height: 5px;
+          border-radius: 5px;
+          background: var(--incident);
+          transform-origin: left center;
+          transform: scaleX(0);
+        }
+        .rv-measure-tick {
+          position: absolute;
+          top: 0;
+          width: 5px;
+          height: 26px;
+          border-radius: 5px;
+          background: var(--incident);
+          transform-origin: top center;
+          transform: scaleY(0);
+        }
+        #rv-tick-a { left: 0; }
+        #rv-tick-b { left: 1235px; }
+        #rv-measure-label {
+          position: absolute;
+          left: 0;
+          top: 40px;
+          width: 1240px;
+          text-align: center;
+          opacity: 0;
+        }
+        #rv-footnote {
+          position: absolute;
+          left: 300px;
+          top: 976px;
+          width: 1240px;
+          text-align: center;
+          opacity: 0;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="08-reveal"
+        data-width="1920"
+        data-height="1080"
+      >
+        <div id="rv-stage" data-keep-in-frame>
+          <div id="rv-col">
+            <div id="rv-kicker" class="ilt-kicker">The answer</div>
+            <div id="rv-headline" class="ilt-title">
+              No &mdash; adding a group scopes the group, not its members
+            </div>
+          </div>
+
+          <div id="rv-lane">
+            <div id="rv-node-unit" class="rv-node">
+              <div class="ilt-kicker">Administrative unit</div>
+              <div class="rv-node-title">New Office</div>
+            </div>
+
+            <div id="rv-link-1"></div>
+            <div id="rv-link-1-label" class="rv-link-label ilt-caption">Direct member</div>
+
+            <div id="rv-node-group" class="rv-node" data-reveal-after="#rv-node-unit">
+              <div class="ilt-kicker">Group &middot; in scope</div>
+              <div class="rv-node-title">New Office, All Staff</div>
+            </div>
+
+            <div id="rv-link-2"></div>
+            <div id="rv-link-2-break"></div>
+            <div id="rv-link-2-strike"></div>
+
+            <div id="rv-node-members" class="rv-node" data-reveal-after="#rv-node-group">
+              <div class="ilt-kicker">Members of that group</div>
+              <div class="rv-node-title">The office&rsquo;s users &mdash; out of reach</div>
+            </div>
+          </div>
+
+          <div id="rv-chips-group" class="rv-chip-row">
+            <div id="rv-chip-rename" class="rv-chip rv-chip--yes ilt-chip">
+              <span class="rv-glyph rv-glyph--yes"></span>Rename the group
+            </div>
+            <div id="rv-chip-membership" class="rv-chip rv-chip--yes ilt-chip">
+              <span class="rv-glyph rv-glyph--yes"></span>Edit its membership
+            </div>
+          </div>
+
+          <div id="rv-chips-members" class="rv-chip-row">
+            <div id="rv-chip-reset" class="rv-chip rv-chip--no ilt-chip">
+              <span class="rv-glyph rv-glyph--no"></span>Reset a password
+            </div>
+          </div>
+
+          <div id="rv-measure" data-reveal-after="#rv-node-members">
+            <div id="rv-measure-bar"></div>
+            <div id="rv-tick-a" class="rv-measure-tick"></div>
+            <div id="rv-tick-b" class="rv-measure-tick"></div>
+            <div id="rv-measure-label" class="ilt-caption">Two steps removed</div>
+          </div>
+
+          <div id="rv-footnote" class="ilt-caption">
+            Members of a group that is a member of the unit &mdash; not of the unit itself.
+          </div>
+        </div>
+      </div>
+
+
+      <script>
+        (function () {
+          window.__timelines = window.__timelines || {};
+
+          // Scene-relative cue times, every one a REAL spoken-word time from
+          // transcript.json (anchors.js, generated by tools/word_anchors.py), rebased to
+          // this scene's start. No words-per-second estimate anywhere in this file.
+          var A = window.__anchors || {};
+          var SCENE_START = 122.64; // "The answer is no" — this scene opens on the payoff
+          function at(name) {
+            return Math.max(0, (A[name] || 0) - SCENE_START);
+          }
+          var W = {
+            groupScope: at("reveal_group_scope"), // "the group object into scope"
+            notInside: at("reveal_not_inside"), // "not the users inside it"
+            rename: at("reveal_rename_group"), // "rename the group or edit its membership"
+            directMember: at("reveal_direct_member"), // "because the group is a direct member"
+            cantReset: at("reveal_cant_reset"), // "reset a password for anyone in it"
+            twoSteps: at("reveal_two_steps"), // "two steps removed"
+            notUnitItself: at("reveal_not_unit_itself"), // "not of the unit itself"
+          };
+
+          var d = document;
+          var kicker = d.getElementById("rv-kicker");
+          var headline = d.getElementById("rv-headline");
+          var nodeUnit = d.getElementById("rv-node-unit");
+          var nodeGroup = d.getElementById("rv-node-group");
+          var nodeMembers = d.getElementById("rv-node-members");
+          var link1 = d.getElementById("rv-link-1");
+          var link1Label = d.getElementById("rv-link-1-label");
+          var link2 = d.getElementById("rv-link-2");
+          var link2Break = d.getElementById("rv-link-2-break");
+          var link2Strike = d.getElementById("rv-link-2-strike");
+          var chipRename = d.getElementById("rv-chip-rename");
+          var chipMembership = d.getElementById("rv-chip-membership");
+          var chipReset = d.getElementById("rv-chip-reset");
+          var measureBar = d.getElementById("rv-measure-bar");
+          var tickA = d.getElementById("rv-tick-a");
+          var tickB = d.getElementById("rv-tick-b");
+          var measureLabel = d.getElementById("rv-measure-label");
+          var footnote = d.getElementById("rv-footnote");
+
+          var tl = gsap.timeline({ paused: true });
+
+          // t=0 pins — every arrival is hidden until its own cue (check_initial_state).
+          tl.set([kicker, headline], { opacity: 0, y: 26 }, 0);
+          tl.set(nodeUnit, { opacity: 0, scale: 0.94 }, 0);
+          tl.set(nodeGroup, { opacity: 0, scale: 0.94 }, 0);
+          tl.set(nodeMembers, { opacity: 0, scale: 0.94 }, 0);
+          tl.set([link1, link2], { scaleX: 0 }, 0);
+          tl.set(link1Label, { opacity: 0 }, 0);
+          tl.set(link2Break, { opacity: 0 }, 0);
+          tl.set(link2Strike, { scaleY: 0 }, 0);
+          tl.set([chipRename, chipMembership, chipReset], { opacity: 0, y: 16 }, 0);
+          tl.set(measureBar, { scaleX: 0 }, 0);
+          tl.set([tickA, tickB], { scaleY: 0 }, 0);
+          tl.set([measureLabel, footnote], { opacity: 0, y: 14 }, 0);
+
+          // 1) The cut IS the answer — scene 7 held the question across the seam.
+          //    Headline and the unit (the boundary we already drew in beat 5) land together.
+          tl.fromTo(
+            [kicker, headline],
+            { opacity: 0, y: 26 },
+            { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", stagger: 0.12 },
+            0,
+          );
+          tl.fromTo(
+            nodeUnit,
+            { opacity: 0, scale: 0.94 },
+            { opacity: 1, scale: 1, duration: 0.6, ease: "back.out(1.5)" },
+            0,
+          );
+
+          // 2) "the group object into scope" — hop one completes: the link draws, THEN the
+          //    group node arrives (a link never precedes the things it links; the group
+          //    node is what the link is about, so it lands on the word).
+          tl.fromTo(
+            link1,
+            { scaleX: 0 },
+            { scaleX: 1, duration: 0.45, ease: "power2.out" },
+            W.groupScope,
+          );
+          tl.fromTo(
+            nodeGroup,
+            { opacity: 0, scale: 0.94 },
+            { opacity: 1, scale: 1, duration: 0.55, ease: "back.out(1.6)" },
+            W.groupScope,
+          );
+
+          // 3) "not the users inside it" — hop two exists, but arrives recessed.
+          tl.fromTo(
+            link2,
+            { scaleX: 0 },
+            { scaleX: 1, duration: 0.5, ease: "power2.out" },
+            W.notInside,
+          );
+          tl.fromTo(
+            nodeMembers,
+            { opacity: 0, scale: 0.94 },
+            { opacity: 1, scale: 1, duration: 0.6, ease: "power3.out" },
+            W.notInside,
+          );
+
+          // 4) "rename the group or edit its membership" — what the admin CAN do.
+          tl.fromTo(
+            [chipRename, chipMembership],
+            { opacity: 0, y: 16 },
+            { opacity: 1, y: 0, duration: 0.42, ease: "power3.out", stagger: 0.26 },
+            W.rename,
+          );
+
+          // 5) "because the group is a direct member" — hop one is named and emphasised.
+          tl.fromTo(
+            link1Label,
+            { opacity: 0 },
+            { opacity: 1, duration: 0.4, ease: "power2.out" },
+            W.directMember,
+          );
+          tl.to(link1, { scaleY: 1.6, duration: 0.35, ease: "power2.out" }, W.directMember);
+          tl.to(nodeGroup, { scale: 1.03, duration: 0.4, ease: "power2.out" }, W.directMember);
+
+          // 6) "reset a password for anyone in it" — what the admin CAN'T do.
+          tl.fromTo(
+            chipReset,
+            { opacity: 0, y: 16 },
+            { opacity: 1, y: 0, duration: 0.42, ease: "back.out(1.6)" },
+            W.cantReset,
+          );
+
+          // 7) "two steps removed" — the wall. Hop two breaks, the members shake against
+          //    it, and the measure spans the whole distance that scope does not cross.
+          tl.fromTo(
+            link2Break,
+            { opacity: 0 },
+            { opacity: 1, duration: 0.3, ease: "power2.out" },
+            W.twoSteps,
+          );
+          tl.fromTo(
+            link2Strike,
+            { scaleY: 0 },
+            { scaleY: 1, duration: 0.35, ease: "power3.out" },
+            W.twoSteps,
+          );
+          tl.to(
+            nodeMembers,
+            { x: -14, duration: 0.09, ease: "none", yoyo: true, repeat: 5 },
+            W.twoSteps,
+          );
+          tl.fromTo(
+            measureBar,
+            { scaleX: 0 },
+            { scaleX: 1, duration: 0.8, ease: "power2.inOut" },
+            W.twoSteps,
+          );
+          tl.fromTo(
+            [tickA, tickB],
+            { scaleY: 0 },
+            { scaleY: 1, duration: 0.3, ease: "power2.out", stagger: 0.5 },
+            W.twoSteps,
+          );
+          tl.fromTo(
+            measureLabel,
+            { opacity: 0, y: 14 },
+            { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
+            W.twoSteps,
+          );
+
+          // 8) "not of the unit itself" — the sentence that closes the reveal.
+          tl.fromTo(
+            footnote,
+            { opacity: 0, y: 14 },
+            { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+            W.notUnitItself,
+          );
+
+          window.__timelines["08-reveal"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

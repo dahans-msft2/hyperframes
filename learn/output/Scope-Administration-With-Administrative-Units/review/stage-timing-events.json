@@ -16,5 +16,23 @@
     "status": "passed",
     "note": null,
     "meta": {}
+  },
+  {
+    "kind": "start",
+    "stage": "builder",
+    "run_id": "scope-administrative-units-cloudbuild",
+    "at": "2026-08-08T07:15:46+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "builder",
+    "run_id": "scope-administrative-units-cloudbuild",
+    "at": "2026-08-08T07:37:15+00:00",
+    "status": "passed",
+    "note": null,
+    "meta": {}
   }
 ]

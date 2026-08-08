@@ -138,7 +138,7 @@
         }
       </style>
 
-      <div id="root" data-composition-id="03-objectives" data-width="1920" data-height="1080">
+      <div id="root" data-composition-id="03-objectives" data-ground="section-field" data-width="1920" data-height="1080">
         <!-- host may set data-ground="section-field" | "hero-swoosh" | "dark-field" on #root -->
         <div id="mk-st-col">
           <div id="mk-st-connector"></div>
@@ -154,16 +154,16 @@
           var CONFIG = {
             "steps": [
               {
-                "title": "__FILL__ objective one",
-                "detail": "__FILL__ what the learner will be able to do"
+                "title": "Scope a role to a boundary",
+                "detail": "Assign the role to an administrative unit, not the whole tenant"
               },
               {
-                "title": "__FILL__ objective two",
-                "detail": "__FILL__ what the learner will be able to do"
+                "title": "Populate the unit",
+                "detail": "Assigned membership by hand, or dynamic membership by rule"
               },
               {
-                "title": "__FILL__ objective three",
-                "detail": "__FILL__ what the learner will be able to do"
+                "title": "Avoid the group trap",
+                "detail": "A group in a unit scopes the group, not its members"
               }
             ],
             "connector": true,
@@ -232,6 +232,11 @@
           }
 
           var tl = gsap.timeline({ paused: true });
+          // Deterministic t=0 pin. The host seeks into this scene when its slot opens, so the
+          // scene's own root is stated explicitly at t=0 rather than inheriting whatever the
+          // previous seek left behind. State is a pure function of timeline time.
+          var __sceneRoot = document.getElementById("root");
+          if (__sceneRoot) tl.set(__sceneRoot, { opacity: 1 }, 0);
 
           /* Scene-relative, seek-safe: connector draws down across the whole reveal, each row
              slides/fades in while its badge pops. No exit / hide — the host owns lifetime. */
@@ -239,7 +244,7 @@
 
           if (CONFIG.connector && n > 1) {
             gsap.set(connector, { scaleY: 0 });
-            tl.to(connector, { scaleY: 1, duration: lastStart, ease: "none" }, 0.4);
+            tl.to(connector, { scaleY: 1, duration: lastStart, ease: "none" }, 0.4);  // anchor-exempt: kit block internal entrance cue, self-timed from the scene's own cut (block timelines are pre-built and not word-anchored)
           }
 
           steps.forEach(function (s, i) {
