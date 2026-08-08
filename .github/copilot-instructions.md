@@ -15,11 +15,12 @@ rewrite narration and do not re-decide the palette. You turn an approved plan + 
 project into a render-ready composition that passes every gate. You do **not** render (that happens
 locally, on licensed fonts + ffmpeg).
 
-**Read `.github/agents/hyperframes-builder.agent.md` first — it is the authoritative builder
-doctrine.** This file is the cloud-agent summary of it; the `.agent.md` carries the full craft
-(scene density, modular sub-composition contract, seams, cue-anchoring). Also load the skills it
-names: `hyperframes-core` (composition contract) and `motion-doctrine` (motion law), plus the
-`learn-*` doctrine skills under `.github/skills/`.
+**This file is self-contained — everything you need to build is here or in the skills it names.**
+Load the skills `hyperframes-core` (composition contract) and `motion-doctrine` (motion law), plus
+the `learn-*` doctrine skills under `.github/skills/`. A fuller VS Code-only doctrine exists at
+`.github/agents/hyperframes-builder.agent.md`, but the **cloud sandbox blocks `.github/agents/**`
+and you do NOT need it** — the craft that used to live only there (especially the cue-anchoring
+convention) is reproduced below. **Never stop or block a build for lack of access to that file.**
 
 ## What arrives on the branch
 
@@ -65,6 +66,67 @@ Run every command from the project dir (`learn/output/<slug>/`), CLI pinned to t
 
 Log stage timing at entry/exit:
 `python ../../tools/stage_timing.py start|end --project . --stage builder --run-id <id> --status <passed|failed>`.
+
+## Anchoring cues — the exact convention (this is where builds fail)
+
+`transcript.json` is the clock. Every cue lands on the spoken word it belongs to — never on an
+assumed words-per-second offset. The mechanism:
+
+1. Write `anchors.json` in the project: a map of cue name -> the exact spoken phrase it lands on,
+   e.g. `{ "gateApproval": "approve the request", "softDelete30": "for 30 days" }`. **Match the
+   words as the transcript actually has them** — Dragon HD transcribes numbers as DIGITS, so
+   "thirty days" in the script is `"30 days"` in `transcript.json`. A phrase that does not match a
+   transcript word leaves the cue UNRESOLVED (this is a real, recurring prep bug — fix the phrase in
+   `anchors.json`, do not invent a numeric time).
+2. Generate real times (an ambiguous phrase is an ERROR, not a silent first match — disambiguate
+   with `"phrase #2"`):
+   `python ../../tools/word_anchors.py transcript.json --spec anchors.json -o anchors.js --lead-in <lead>`
+3. Load it before the timeline: `<script src="anchors.js"></script>`, then `const W = window.__anchors;`
+4. Use `W.gateApproval` as a cue's position. **NEVER `B.b6 + 7.4`.**
+
+`check_cue_anchors.py` classifies the POSITION ARGUMENT of every timeline call (switching to a raw
+numeric literal does not fool it). It passes ONLY:
+- `W.<name>` — a word-anchored time (use this for content cues)
+- `B.b<n>` — a beat start (itself transcript-derived)
+- an offset **<= 1s** off a beat/boundary — seam mechanics, relative to a boundary not to speech
+- `0` — a t=0 pin
+
+Anything larger is a DEFECT. If a line genuinely needs a bigger offset, justify it inline:
+`// anchor-exempt: <reason>`. (The seam/bookend lines `assemble_scenes.py` generates already carry
+that marker — you never add it to those, and you never edit the tool to add it.) Anchoring is
+**per scene** in a modular build: a scene's cues anchor to words within that scene's window,
+relative to the scene's own start.
+
+## Custom scene contract (block scenes skip all of this — they are pre-built)
+
+A `custom` body beat is authored on `templates/blocks/_foundation.css` as a SUB-COMPOSITION:
+- root wrapped in `<template>`, styled via `#root` (never a class the stylesheet scopes away), with
+  `data-width` / `data-height` on the root; all of `<style>`, `<script>`, markup live INSIDE the
+  `<template>`;
+- register its OWN scene-relative timeline on `window.__timelines["<scene-id>"]` — times measured
+  from the scene's start, `fromTo` never `from` (the host re-seeks each scene when its slot shows);
+- the slot's `data-composition-id`, the scene root's `data-composition-id`, and the timeline key
+  must be IDENTICAL — a mismatch is invisible to lint/check, silently stalls the render, and only
+  `check_subcomps.py` catches it;
+- seams are HOST-owned: set the scene's `seam` field in `scenes.json`
+  (`cut-left` default, `cut-right`, `cut-up`, `cut-down`, or `hard`) and re-assemble — never
+  hand-author a cross-scene transition inside a scene file.
+
+## Two failures lint/check CANNOT see — pin and verify
+
+- **Initial state (`check_initial_state.py`).** Children inherit `opacity:1` and
+  `immediateRender:false` defers the from-state, so an element is fully drawn the moment its beat
+  opens — long before its cue — and beats ACCUMULATE (a recap never subtracts) while lint+check
+  stay green. Pin every arriving element hidden at t=0:
+  `["#a","#b"].forEach(s => tl.set(s,{opacity:0},0));` (use `{scaleX:0}` for bars/wipes).
+- **Cue anchors (`check_cue_anchors.py`)** — the convention above.
+
+## Scene density — fewer, richer scenes, never many thin ones
+
+Resolve the numbers from the profile (`python ../../tools/profile.py <PROFILE>`), do not guess. Aim
+for the profile's scene-count target (companion-short ~5 - unit-video ~10 - skilling-session ~23),
+floor every scene at `scene_seconds.min` (fold a too-thin beat into its neighbour, do not cut to a
+3-5s near-empty beat), and if the plan exceeds the cap, send it back rather than building it as is.
 
 ## Hard rules
 
