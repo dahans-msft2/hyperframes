@@ -43,6 +43,22 @@ PLAYER_JS = """
 })();
 """
 
+# Set the saved theme before first paint (avoids a flash), then wire the toggle after load.
+THEME_INIT = "try{var t=localStorage.getItem('hf-gallery-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}"
+THEME_JS = """
+(function () {
+  const KEY = 'hf-gallery-theme';
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle');
+  const mq = matchMedia('(prefers-color-scheme: dark)');
+  function current() { return root.getAttribute('data-theme') || (mq.matches ? 'dark' : 'light'); }
+  function label() { const d = current() === 'dark'; btn.textContent = d ? '\u2600' : '\u263e'; btn.setAttribute('aria-label', d ? 'Switch to light mode' : 'Switch to dark mode'); }
+  btn.addEventListener('click', function () { const next = current() === 'dark' ? 'light' : 'dark'; root.setAttribute('data-theme', next); localStorage.setItem(KEY, next); label(); });
+  mq.addEventListener('change', label);
+  label();
+})();
+"""
+
 
 def gh_json(args: list[str]) -> object:
     r = subprocess.run(["gh"] + args, capture_output=True, text=True)
@@ -123,13 +139,26 @@ def render_html(releases: list[dict], repo: str) -> str:
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Microsoft Learn — Companion Video Gallery</title>
+  <script>{THEME_INIT}</script>
   <style>
-    :root {{ --ink:#1b1a19; --muted:#605e5c; --accent:#0f6cbd; --line:#e1dfdd; --bg:#faf9f8; --card:#fff; }}
+    :root {{ --ink:#1b1a19; --muted:#605e5c; --accent:#0f6cbd; --accent-ink:#0f6cbd; --line:#e1dfdd;
+             --bg:#faf9f8; --card:#fff; --hover:#f8f7f6; }}
+    :root[data-theme="dark"] {{ --ink:#f3f2f1; --muted:#a19f9d; --accent-ink:#6cb2e8; --line:#3b3a39;
+                                --bg:#1b1a19; --card:#292827; --hover:#323130; }}
+    @media (prefers-color-scheme: dark) {{
+      :root:not([data-theme="light"]) {{ --ink:#f3f2f1; --muted:#a19f9d; --accent-ink:#6cb2e8; --line:#3b3a39;
+                                         --bg:#1b1a19; --card:#292827; --hover:#323130; }}
+    }}
     * {{ box-sizing:border-box; }}
     body {{ margin:0; font:15px/1.5 "Segoe UI",system-ui,sans-serif; color:var(--ink); background:var(--bg); }}
-    header {{ padding:36px 24px 12px; max-width:1100px; margin:0 auto; }}
+    header {{ position:relative; padding:36px 24px 12px; max-width:1100px; margin:0 auto; }}
     header h1 {{ margin:0 0 6px; font-size:26px; letter-spacing:-.01em; }}
     header p {{ margin:0; color:var(--muted); font-size:14px; }}
+    header a, footer a {{ color:var(--accent-ink); }}
+    .theme-toggle {{ position:absolute; top:34px; right:24px; width:38px; height:38px; border-radius:8px;
+                     border:1px solid var(--line); background:var(--card); color:var(--ink); font-size:18px;
+                     line-height:1; cursor:pointer; }}
+    .theme-toggle:hover {{ border-color:var(--accent-ink); }}
     main {{ max-width:1100px; margin:0 auto; padding:12px 24px 64px; }}
     .tbl {{ width:100%; table-layout:fixed; border-collapse:separate; border-spacing:0; background:var(--card);
             border:1px solid var(--line); border-radius:12px; overflow:hidden;
@@ -137,7 +166,7 @@ def render_html(releases: list[dict], repo: str) -> str:
     .col-thumb {{ width:132px; }} .col-act {{ width:112px; }}
     .tbl tbody td {{ padding:9px 14px; border-bottom:1px solid var(--line); vertical-align:middle; }}
     .tbl tbody tr:last-child td {{ border-bottom:0; }}
-    .tbl tbody tr:hover td {{ background:#f8f7f6; }}
+    .tbl tbody tr:hover td {{ background:var(--hover); }}
     .c-thumb {{ width:132px; }}
     .thumb {{ width:120px; aspect-ratio:16/9; background:#000; display:block; object-fit:cover;
               border:0; border-radius:6px; }}
@@ -166,7 +195,7 @@ def render_html(releases: list[dict], repo: str) -> str:
     .c-act {{ white-space:nowrap; text-align:right; }}
     .c-act a {{ text-decoration:none; font-size:13px; font-weight:600; color:#fff; background:var(--accent);
                 padding:6px 12px; border-radius:6px; display:block; text-align:center; }}
-    .c-act a.ghost {{ color:var(--accent); background:transparent; border:1px solid var(--line);
+    .c-act a.ghost {{ color:var(--accent-ink); background:transparent; border:1px solid var(--line);
                       font-weight:500; margin-top:6px; }}
     .empty {{ color:var(--muted); }}
     footer {{ max-width:1100px; margin:0 auto; padding:0 24px 48px; color:var(--muted); font-size:13px; }}
@@ -178,6 +207,7 @@ def render_html(releases: list[dict], repo: str) -> str:
 </head>
 <body>
   <header>
+    <button id="theme-toggle" class="theme-toggle" type="button"></button>
     <h1>Microsoft Learn — Companion Videos</h1>
     <p>{count} published · AI-produced with the required disclosure end card · sourced from
        <a href="https://github.com/{repo}/tree/main/learn/output">learn/output</a></p>
@@ -195,6 +225,7 @@ def render_html(releases: list[dict], repo: str) -> str:
   </div>
   <footer>Generated from GitHub Releases. Click a thumbnail or Watch to play; Source links to main.</footer>
   <script>{PLAYER_JS}</script>
+  <script>{THEME_JS}</script>
 </body>
 </html>
 """
