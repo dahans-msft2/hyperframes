@@ -16,5 +16,23 @@
     "status": "passed",
     "note": null,
     "meta": {}
+  },
+  {
+    "kind": "start",
+    "stage": "builder",
+    "run_id": "scope-admin-20260808-1",
+    "at": "2026-08-08T03:06:55+00:00",
+    "status": null,
+    "note": null,
+    "meta": {}
+  },
+  {
+    "kind": "end",
+    "stage": "builder",
+    "run_id": "scope-admin-20260808-1",
+    "at": "2026-08-08T03:12:01+00:00",
+    "status": "passed",
+    "note": null,
+    "meta": {}
   }
 ]

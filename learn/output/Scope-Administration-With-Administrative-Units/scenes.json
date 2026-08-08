@@ -5,20 +5,6 @@
   "height": 1080,
   "root_background": "#fff8f3",
   "gsap": "assets/vendor/gsap.min.js",
-  "fonts": [
-    {
-      "family": "Segoe UI",
-      "weight": 400,
-      "style": "normal",
-      "src": "fonts/segoeui-regular.woff2"
-    },
-    {
-      "family": "Segoe UI Semibold",
-      "weight": 600,
-      "style": "normal",
-      "src": "fonts/segoeui-semibold.woff2"
-    }
-  ],
   "endcard": {
     "src": "assets/AI_End_Card.mp4",
     "duration": 10.667,
@@ -45,19 +31,67 @@
     {
       "id": "03-objectives",
       "src": "scenes/03-objectives.html",
-      "duration": 16.8,
+      "duration": 14.06,
+      "seam": "cut-left"
+    },
+    {
+      "id": "04-over-privilege",
+      "src": "scenes/04-over-privilege.html",
+      "duration": 17.59,
+      "seam": "cut-left"
+    },
+    {
+      "id": "05-boundary",
+      "src": "scenes/05-boundary.html",
+      "duration": 25.2,
+      "seam": "cut-left"
+    },
+    {
+      "id": "06-populate",
+      "src": "scenes/06-populate.html",
+      "duration": 20.03,
+      "seam": "cut-left"
+    },
+    {
+      "id": "07-shortcut-predict",
+      "src": "scenes/07-shortcut-predict.html",
+      "duration": 18.76,
+      "seam": "cut-left"
+    },
+    {
+      "id": "08-reveal-group-scope",
+      "src": "scenes/08-reveal-group-scope.html",
+      "duration": 23.69,
+      "seam": "cut-left"
+    },
+    {
+      "id": "09-rule-fix",
+      "src": "scenes/09-rule-fix.html",
+      "duration": 17.19,
+      "seam": "cut-left"
+    },
+    {
+      "id": "10-dynamic-constraint",
+      "src": "scenes/10-dynamic-constraint.html",
+      "duration": 21.02,
+      "seam": "cut-left"
+    },
+    {
+      "id": "11-licensing",
+      "src": "scenes/11-licensing.html",
+      "duration": 20.49,
       "seam": "cut-left"
     },
     {
       "id": "90-recap",
       "src": "scenes/90-recap.html",
-      "duration": 24.0,
+      "duration": 17.1,
       "seam": "cut-up"
     },
     {
       "id": "91-cta",
       "src": "scenes/91-cta.html",
-      "duration": 16.8,
+      "duration": 10.943,
       "seam": "cut-left"
     }
   ],
@@ -67,5 +101,12 @@
     "target_scene_count": 5,
     "max_scene_count": 16,
     "note": "Author the teaching-body scenes here (each on the kit foundation), then insert them into 'scenes' between the opening and closing chrome. The builder re-times all durations to real narration word anchors."
+  },
+  "anchors": "anchors.js",
+  "narration": {
+    "src": "narration.wav",
+    "start": 3.0,
+    "duration": 230.073,
+    "track": 10
   }
 }
