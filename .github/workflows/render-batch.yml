@@ -1,0 +1,33 @@
+# Batch render — fan a whole module / learning-path's videos out to parallel Windows-runner renders.
+# Each item calls the reusable render-video.yml (one render implementation, no duplication). Renders
+# run in parallel up to GitHub's concurrency limit, so a module renders at once instead of serially —
+# this is what removes the local one-machine bottleneck at module scale.
+#
+# Dispatch with a JSON array of {branch, project} objects, e.g.:
+#   [{"branch":"video/intro-to-scout","project":"learn/output/Intro-To-Scout"},
+#    {"branch":"video/scout-in-teams","project":"learn/output/Scout-In-Teams"}]
+
+name: Render Learn videos (batch)
+
+on:
+  workflow_dispatch:
+    inputs:
+      projects:
+        description: 'JSON array of {branch, project} objects to render in parallel'
+        required: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  fan-out:
+    strategy:
+      fail-fast: false   # one video failing must not cancel the rest of the module
+      max-parallel: 6
+      matrix:
+        item: ${{ fromJSON(inputs.projects) }}
+    uses: ./.github/workflows/render-video.yml
+    with:
+      branch: ${{ matrix.item.branch }}
+      project: ${{ matrix.item.project }}

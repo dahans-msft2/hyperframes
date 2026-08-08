@@ -1,0 +1,129 @@
+# Renders a Learn video in GitHub Actions on a Windows runner — where Segoe UI is a system font,
+# so `sync_fonts.py` regenerates the REAL brand woff2 on the runner (no Selawik, no committed fonts,
+# pixel-identical to a local render). Same OS as the local pipeline, so render_and_package.py runs
+# unchanged. Standard windows-latest is free on this public fork.
+#
+# Render PRE-MERGE, on the video branch: the MP4 is what you approve, so watch it (as an uploaded
+# artifact) before merging the PR into `videos`. Two triggers: add the `render` label to a video PR
+# (auto-resolves branch + project, comments the link back), or dispatch manually with branch/project.
+# A batch render matrix (fan module PRs out in parallel) is the natural next addition.
+
+name: Render Learn video
+
+on:
+  # Manual: render any branch's project on demand.
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: "Branch holding the project (e.g. video/<slug>, or videos)"
+        required: true
+        default: videos
+      project:
+        description: "Project dir (blank = auto-detect the one learn/output/<slug> on the branch)"
+        required: false
+        default: ""
+  # Auto: the Copilot coding agent takes its PR out of draft when its session ends -> render it.
+  #       Or add the `render` label to a video PR to (re-)render on demand. Both render pre-merge.
+  pull_request:
+    types: [labeled, ready_for_review]
+  # Called by the batch matrix (render-batch.yml) to fan a module's videos out in parallel.
+  workflow_call:
+    inputs:
+      branch:
+        required: true
+        type: string
+      project:
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+  pull-requests: write   # comment the artifact link back on the PR
+
+jobs:
+  render:
+    # dispatch always; on a video PR when the agent marks it ready (session done) or you add `render`
+    if: >-
+      github.event_name == 'workflow_dispatch'
+      || github.event.label.name == 'render'
+      || (github.event.action == 'ready_for_review' && startsWith(github.event.pull_request.head.ref, 'video/'))
+    runs-on: windows-latest
+    timeout-minutes: 120
+    steps:
+      - name: Resolve the branch to render
+        id: br
+        shell: pwsh
+        run: |
+          $b = if ($env:GITHUB_EVENT_NAME -eq 'workflow_dispatch') { '${{ inputs.branch }}' } else { '${{ github.event.pull_request.head.ref }}' }
+          "branch=$b" | Out-File $env:GITHUB_OUTPUT -Append
+
+      - name: Checkout the video branch (with LFS media)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.br.outputs.branch }}
+          lfs: true
+
+      - name: Resolve the project dir
+        id: proj
+        shell: pwsh
+        run: |
+          $p = '${{ inputs.project }}'
+          if (-not $p) {
+            $dirs = @(Get-ChildItem learn/output -Directory -ErrorAction SilentlyContinue)
+            if ($dirs.Count -ne 1) { throw "Expected exactly one learn/output/<slug> project on this branch, found $($dirs.Count) — pass --project via dispatch." }
+            $p = "learn/output/$($dirs[0].Name)"
+          }
+          "dir=$p" | Out-File $env:GITHUB_OUTPUT -Append
+          Write-Host "Rendering project: $p"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Python deps for font generation
+        run: python -m pip install --upgrade pip fonttools brotli
+
+      # Windows Server ships Segoe UI in C:\Windows\Fonts — regenerate the project's brand woff2
+      # from the runner's own licensed system fonts. This is the whole reason for a Windows runner.
+      - name: Generate real Segoe woff2 from the runner's system fonts
+        run: python learn/tools/sync_fonts.py --out "${{ steps.proj.outputs.dir }}/fonts" --css
+
+      - name: Ensure ffmpeg is available
+        shell: pwsh
+        run: if (-not (Get-Command ffmpeg -ErrorAction SilentlyContinue)) { choco install ffmpeg -y --no-progress }
+
+      - name: Provision chrome-headless-shell for the render
+        run: npx --yes hyperframes@0.7.77 browser ensure
+
+      - name: Render + package (MP4 + VTT + thumbnail)
+        run: python learn/tools/render_and_package.py --project "${{ steps.proj.outputs.dir }}"
+
+      - name: Upload the deliverables
+        id: art
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-${{ github.run_id }}
+          path: |
+            ${{ steps.proj.outputs.dir }}/*.mp4
+            ${{ steps.proj.outputs.dir }}/*.vtt
+            ${{ steps.proj.outputs.dir }}/*_thumbnail.png
+          if-no-files-found: error
+          retention-days: 30
+
+      # Pre-merge review: drop the watch/download link right on the PR that triggered the render.
+      - name: Comment the artifact link on the PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: `🎬 **Render complete** — download the MP4 + captions + thumbnail from this run's artifacts (\`video-${context.runId}\`): ${runUrl}#artifacts\n\nReview it, then merge to \`videos\` to archive.`,
+            });

@@ -1,0 +1,13 @@
+{
+  "title": "Call Queue Routing Methods",
+  "type": "unit-video",
+  "profile": "unit-video",
+  "status": "scaffolded",
+  "voice": "en-US-Ava:DragonHDLatestNeural",
+  "source": "C:\\learn-pr\\learn-m365-pr\\learn-m365-pr\\wwl\\configure-auto-attendants-call-queues\\includes\\8-interpret-call-queue-routing-methods.md",
+  "deliverables": {
+    "mp4": "Call-Queue-Routing-Methods.mp4",
+    "captions_vtt": "Call-Queue-Routing-Methods.vtt",
+    "thumbnail": "Call-Queue-Routing-Methods_thumbnail.png"
+  }
+}

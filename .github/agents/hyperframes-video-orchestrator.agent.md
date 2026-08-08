@@ -300,9 +300,10 @@ dispatching `@hyperframes-builder`:**
 
 1. Push the branch: `git push -u origin video/<slug>`.
 2. Open the build issue from the `build-video` form (slug, profile, project dir, source).
-3. Open a draft PR from `video/<slug>` → `main`. **Embed the ready-to-paste `@copilot` kickoff
-   prompt in the PR body itself**, templated for this video, so the operator copies it straight
-   from the PR:
+3. Open a draft PR from `video/<slug>` → **`videos`** (the long-lived archive branch — create it
+   once: `git branch videos origin/main && git push origin videos`). **Embed the ready-to-paste
+   `@copilot` kickoff prompt in the PR body itself**, templated for this video, so the operator
+   copies it straight from the PR:
 
    > `@copilot` Build the **&lt;Title&gt;** &lt;profile&gt; in `learn/output/&lt;slug&gt;/`. Follow
    > `.github/copilot-instructions.md` and the builder doctrine in
@@ -321,8 +322,14 @@ dispatching `@hyperframes-builder`:**
    what/where). The agent authors onto this branch and pushes to the PR.
 4. When the PR's gates are green, review it (Gate 7 input), then pull:
    `git checkout video/<slug> && git pull`.
-5. Render locally on real Segoe (Gate 8) and deliver (Gate 9).
-6. After delivery, close the PR + issue and delete the branch: `git push origin --delete video/<slug>`.
+5. Render locally on real Segoe (Gate 8) and deliver (Gate 9). Commit the delivery record
+   (`review/gates.json`, `manifest.json`) to the branch and push.
+6. **Resolve by MERGING the PR into `videos`** — a merge (not a close) gives the "complete" state
+   and archives the source: `gh pr ready <n>` → `gh pr merge <n> --merge --delete-branch`.
+   Then **close the issue explicitly** — GitHub's `Closes #n` auto-close only fires on merges to the
+   DEFAULT branch (`main`), NOT `videos`: `gh issue close <n> --reason completed`. Delete the local
+   branch. The rendered MP4 stays local (git-ignored); `videos` archives the source and never merges
+   back to `main`.
 
 The slug names the branch, issue, PR, and folder — never mix two videos on one branch. The
 renderer's slug guard aborts if the project folder doesn't match the checked-out video branch.

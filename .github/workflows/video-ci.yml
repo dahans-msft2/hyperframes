@@ -1,0 +1,67 @@
+# Independent gate for cloud-built video PRs — runs OUR checks so a video PR earns a real green
+# check, not just the agent's self-report. Runs on Linux: these gates are structure/color-based
+# (no Segoe needed), so ubuntu-latest is fast and free. The brand-accurate render is separate
+# (render-video.yml, Windows). Checks out the PR HEAD so learn/output holds exactly this one video.
+#
+# NOTE: on a Copilot-agent PR the first run waits for the "approve workflows" click (GitHub's
+# safety gate for bot-authored commits) — same as any workflow on those PRs.
+
+name: Video gate
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    if: startsWith(github.head_ref, 'video/')   # only video/<slug> PRs
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout the PR head (this video's branch tip)
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Headless-browser libs + fallback fonts (Segoe not needed for the gates)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends chromium fontconfig fonts-liberation fonts-noto-core fonts-dejavu-core
+          sudo fc-cache -f
+
+      - name: Provision chrome-headless-shell for `check`
+        run: npx --yes hyperframes@0.7.77 browser ensure
+
+      - name: Resolve the one project on this branch
+        id: proj
+        shell: bash
+        run: |
+          n=$(ls -d learn/output/*/ 2>/dev/null | wc -l)
+          if [ "$n" != "1" ]; then echo "::error::expected exactly one learn/output/<slug>, found $n"; exit 1; fi
+          echo "dir=$(ls -d learn/output/*/ | head -1 | sed 's:/*$::')" >> "$GITHUB_OUTPUT"
+
+      - name: Cross-file mount contract
+        run: python learn/tools/check_subcomps.py --project "${{ steps.proj.outputs.dir }}"
+      - name: No __FILL__ placeholders survive
+        run: python learn/tools/check_placeholders.py --project "${{ steps.proj.outputs.dir }}"
+      - name: Every arriving element pinned at t=0
+        run: python learn/tools/check_initial_state.py "${{ steps.proj.outputs.dir }}/index.html"
+      - name: Cue-anchor coverage (advisory — host seams are legitimately literal)
+        continue-on-error: true
+        run: python learn/tools/check_cue_anchors.py "${{ steps.proj.outputs.dir }}/index.html"
+      - name: Lint (static structure)
+        working-directory: ${{ steps.proj.outputs.dir }}
+        run: npx --yes hyperframes@0.7.77 lint
+      - name: Check (headless browser — runtime, layout, WCAG)
+        working-directory: ${{ steps.proj.outputs.dir }}
+        run: npx --yes hyperframes@0.7.77 check

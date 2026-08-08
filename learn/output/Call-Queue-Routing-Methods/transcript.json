@@ -1,0 +1,3002 @@
+[
+  {
+    "text": "Here's",
+    "start": 0.03,
+    "end": 0.29
+  },
+  {
+    "text": "a",
+    "start": 0.32,
+    "end": 0.36
+  },
+  {
+    "text": "call",
+    "start": 0.36,
+    "end": 0.47
+  },
+  {
+    "text": "queue",
+    "start": 0.61,
+    "end": 0.82
+  },
+  {
+    "text": "setup",
+    "start": 0.83,
+    "end": 1.04
+  },
+  {
+    "text": "that",
+    "start": 1.13,
+    "end": 1.28
+  },
+  {
+    "text": "looks",
+    "start": 1.28,
+    "end": 1.41
+  },
+  {
+    "text": "completely",
+    "start": 1.48,
+    "end": 2.01
+  },
+  {
+    "text": "correct",
+    "start": 2.04,
+    "end": 2.35
+  },
+  {
+    "text": "and",
+    "start": 2.71,
+    "end": 2.86
+  },
+  {
+    "text": "quietly",
+    "start": 2.86,
+    "end": 3.24
+  },
+  {
+    "text": "fails.",
+    "start": 3.38,
+    "end": 4.7
+  },
+  {
+    "text": "This",
+    "start": 4.73,
+    "end": 4.92
+  },
+  {
+    "text": "is",
+    "start": 4.97,
+    "end": 5.07
+  },
+  {
+    "text": "how",
+    "start": 5.07,
+    "end": 5.17
+  },
+  {
+    "text": "call",
+    "start": 5.31,
+    "end": 5.5
+  },
+  {
+    "text": "queue",
+    "start": 5.5,
+    "end": 5.74
+  },
+  {
+    "text": "routing",
+    "start": 5.83,
+    "end": 6.25
+  },
+  {
+    "text": "works",
+    "start": 6.25,
+    "end": 6.56
+  },
+  {
+    "text": "in",
+    "start": 6.56,
+    "end": 6.68
+  },
+  {
+    "text": "Microsoft",
+    "start": 6.68,
+    "end": 7.05
+  },
+  {
+    "text": "Teams",
+    "start": 7.41,
+    "end": 7.55
+  },
+  {
+    "text": "Phone,",
+    "start": 7.55,
+    "end": 7.96
+  },
+  {
+    "text": "and",
+    "start": 7.96,
+    "end": 8.07
+  },
+  {
+    "text": "how",
+    "start": 8.07,
+    "end": 8.25
+  },
+  {
+    "text": "to",
+    "start": 8.25,
+    "end": 8.39
+  },
+  {
+    "text": "keep",
+    "start": 8.39,
+    "end": 8.67
+  },
+  {
+    "text": "it",
+    "start": 8.67,
+    "end": 8.81
+  },
+  {
+    "text": "from",
+    "start": 8.81,
+    "end": 9.08
+  },
+  {
+    "text": "tripping",
+    "start": 9.17,
+    "end": 9.65
+  },
+  {
+    "text": "you",
+    "start": 9.65,
+    "end": 9.86
+  },
+  {
+    "text": "up.",
+    "start": 9.86,
+    "end": 10.24
+  },
+  {
+    "text": "By",
+    "start": 10.27,
+    "end": 10.35
+  },
+  {
+    "text": "the",
+    "start": 10.36,
+    "end": 10.53
+  },
+  {
+    "text": "end,",
+    "start": 10.55,
+    "end": 10.84
+  },
+  {
+    "text": "you'll",
+    "start": 10.85,
+    "end": 11.19
+  },
+  {
+    "text": "know",
+    "start": 11.19,
+    "end": 11.43
+  },
+  {
+    "text": "three",
+    "start": 11.43,
+    "end": 11.73
+  },
+  {
+    "text": "things,",
+    "start": 11.73,
+    "end": 12.22
+  },
+  {
+    "text": "how",
+    "start": 12.22,
+    "end": 12.32
+  },
+  {
+    "text": "the",
+    "start": 12.35,
+    "end": 12.48
+  },
+  {
+    "text": "four",
+    "start": 12.48,
+    "end": 12.58
+  },
+  {
+    "text": "routing",
+    "start": 12.68,
+    "end": 12.98
+  },
+  {
+    "text": "methods",
+    "start": 12.98,
+    "end": 13.32
+  },
+  {
+    "text": "hand",
+    "start": 13.32,
+    "end": 13.48
+  },
+  {
+    "text": "out",
+    "start": 13.62,
+    "end": 13.7
+  },
+  {
+    "text": "calls,",
+    "start": 13.7,
+    "end": 14.52
+  },
+  {
+    "text": "and",
+    "start": 14.55,
+    "end": 14.73
+  },
+  {
+    "text": "which",
+    "start": 14.73,
+    "end": 14.99
+  },
+  {
+    "text": "two",
+    "start": 15.13,
+    "end": 15.29
+  },
+  {
+    "text": "Microsoft",
+    "start": 15.29,
+    "end": 15.92
+  },
+  {
+    "text": "recommends.",
+    "start": 15.92,
+    "end": 16.84
+  },
+  {
+    "text": "How",
+    "start": 16.87,
+    "end": 17.01
+  },
+  {
+    "text": "callback",
+    "start": 17.01,
+    "end": 17.47
+  },
+  {
+    "text": "offers",
+    "start": 17.47,
+    "end": 17.81
+  },
+  {
+    "text": "a",
+    "start": 17.81,
+    "end": 17.86
+  },
+  {
+    "text": "waiting",
+    "start": 17.86,
+    "end": 18.25
+  },
+  {
+    "text": "call",
+    "start": 18.25,
+    "end": 18.49
+  },
+  {
+    "text": "or",
+    "start": 18.49,
+    "end": 18.64
+  },
+  {
+    "text": "a",
+    "start": 18.64,
+    "end": 18.71
+  },
+  {
+    "text": "callback",
+    "start": 18.71,
+    "end": 19.18
+  },
+  {
+    "text": "instead",
+    "start": 19.55,
+    "end": 19.87
+  },
+  {
+    "text": "of",
+    "start": 19.87,
+    "end": 20.02
+  },
+  {
+    "text": "hold",
+    "start": 20.02,
+    "end": 20.33
+  },
+  {
+    "text": "music,",
+    "start": 20.33,
+    "end": 20.9
+  },
+  {
+    "text": "and",
+    "start": 20.9,
+    "end": 20.96
+  },
+  {
+    "text": "the",
+    "start": 20.99,
+    "end": 21.15
+  },
+  {
+    "text": "timing",
+    "start": 21.15,
+    "end": 21.43
+  },
+  {
+    "text": "trap",
+    "start": 21.57,
+    "end": 21.78
+  },
+  {
+    "text": "that",
+    "start": 21.78,
+    "end": 22
+  },
+  {
+    "text": "stops",
+    "start": 22.09,
+    "end": 22.3
+  },
+  {
+    "text": "callback",
+    "start": 22.35,
+    "end": 22.86
+  },
+  {
+    "text": "from",
+    "start": 22.86,
+    "end": 23.11
+  },
+  {
+    "text": "ever",
+    "start": 23.11,
+    "end": 23.3
+  },
+  {
+    "text": "being",
+    "start": 23.4,
+    "end": 23.68
+  },
+  {
+    "text": "offered.",
+    "start": 23.68,
+    "end": 24.4
+  },
+  {
+    "text": "Picture",
+    "start": 24.43,
+    "end": 24.87
+  },
+  {
+    "text": "that",
+    "start": 25.01,
+    "end": 25.24
+  },
+  {
+    "text": "broken",
+    "start": 25.26,
+    "end": 25.72
+  },
+  {
+    "text": "setup.",
+    "start": 25.72,
+    "end": 26.36
+  },
+  {
+    "text": "Callback",
+    "start": 26.39,
+    "end": 27.09
+  },
+  {
+    "text": "is",
+    "start": 27.12,
+    "end": 27.28
+  },
+  {
+    "text": "on,",
+    "start": 27.28,
+    "end": 27.68
+  },
+  {
+    "text": "a",
+    "start": 27.68,
+    "end": 27.76
+  },
+  {
+    "text": "caller",
+    "start": 27.76,
+    "end": 28.26
+  },
+  {
+    "text": "is",
+    "start": 28.27,
+    "end": 28.44
+  },
+  {
+    "text": "clearly",
+    "start": 28.44,
+    "end": 28.71
+  },
+  {
+    "text": "waiting.",
+    "start": 29.07,
+    "end": 29.64
+  },
+  {
+    "text": "An",
+    "start": 29.67,
+    "end": 29.82
+  },
+  {
+    "text": "agent",
+    "start": 29.82,
+    "end": 30.29
+  },
+  {
+    "text": "is",
+    "start": 30.29,
+    "end": 30.46
+  },
+  {
+    "text": "clearly",
+    "start": 30.47,
+    "end": 31.13
+  },
+  {
+    "text": "free,",
+    "start": 31.13,
+    "end": 31.65
+  },
+  {
+    "text": "and",
+    "start": 31.68,
+    "end": 31.95
+  },
+  {
+    "text": "the",
+    "start": 31.95,
+    "end": 32.12
+  },
+  {
+    "text": "callback",
+    "start": 32.35,
+    "end": 32.88
+  },
+  {
+    "text": "never",
+    "start": 33.02,
+    "end": 33.41
+  },
+  {
+    "text": "comes.",
+    "start": 33.41,
+    "end": 34.28
+  },
+  {
+    "text": "Nothing's",
+    "start": 34.31,
+    "end": 34.75
+  },
+  {
+    "text": "misconfigured.",
+    "start": 34.89,
+    "end": 35.95
+  },
+  {
+    "text": "To",
+    "start": 36.01,
+    "end": 36.17
+  },
+  {
+    "text": "see",
+    "start": 36.17,
+    "end": 36.45
+  },
+  {
+    "text": "why,",
+    "start": 36.59,
+    "end": 36.96
+  },
+  {
+    "text": "you",
+    "start": 36.96,
+    "end": 37.17
+  },
+  {
+    "text": "first",
+    "start": 37.17,
+    "end": 37.53
+  },
+  {
+    "text": "need",
+    "start": 37.53,
+    "end": 37.82
+  },
+  {
+    "text": "to",
+    "start": 37.82,
+    "end": 37.96
+  },
+  {
+    "text": "see",
+    "start": 37.96,
+    "end": 38.17
+  },
+  {
+    "text": "how",
+    "start": 38.17,
+    "end": 38.32
+  },
+  {
+    "text": "a",
+    "start": 38.42,
+    "end": 38.45
+  },
+  {
+    "text": "call",
+    "start": 38.45,
+    "end": 38.74
+  },
+  {
+    "text": "queue",
+    "start": 38.74,
+    "end": 39.09
+  },
+  {
+    "text": "handles",
+    "start": 39.1,
+    "end": 39.59
+  },
+  {
+    "text": "a",
+    "start": 39.59,
+    "end": 39.67
+  },
+  {
+    "text": "call.",
+    "start": 39.67,
+    "end": 40.24
+  },
+  {
+    "text": "It",
+    "start": 40.27,
+    "end": 40.41
+  },
+  {
+    "text": "starts",
+    "start": 40.41,
+    "end": 40.92
+  },
+  {
+    "text": "with",
+    "start": 40.92,
+    "end": 41.26
+  },
+  {
+    "text": "one",
+    "start": 41.26,
+    "end": 41.51
+  },
+  {
+    "text": "decision,",
+    "start": 41.51,
+    "end": 42.37
+  },
+  {
+    "text": "who",
+    "start": 42.37,
+    "end": 42.58
+  },
+  {
+    "text": "to",
+    "start": 42.68,
+    "end": 42.72
+  },
+  {
+    "text": "ring.",
+    "start": 42.95,
+    "end": 43.43
+  },
+  {
+    "text": "That",
+    "start": 43.47,
+    "end": 43.66
+  },
+  {
+    "text": "decision",
+    "start": 43.7,
+    "end": 44.17
+  },
+  {
+    "text": "is",
+    "start": 44.2,
+    "end": 44.31
+  },
+  {
+    "text": "the",
+    "start": 44.31,
+    "end": 44.48
+  },
+  {
+    "text": "routing",
+    "start": 44.57,
+    "end": 44.93
+  },
+  {
+    "text": "method,",
+    "start": 44.96,
+    "end": 45.44
+  },
+  {
+    "text": "and",
+    "start": 45.44,
+    "end": 45.63
+  },
+  {
+    "text": "you",
+    "start": 45.63,
+    "end": 45.78
+  },
+  {
+    "text": "get",
+    "start": 45.88,
+    "end": 45.92
+  },
+  {
+    "text": "four",
+    "start": 46.15,
+    "end": 46.26
+  },
+  {
+    "text": "of",
+    "start": 46.28,
+    "end": 46.3
+  },
+  {
+    "text": "them.",
+    "start": 46.38,
+    "end": 46.88
+  },
+  {
+    "text": "Each",
+    "start": 46.91,
+    "end": 47.1
+  },
+  {
+    "text": "hands",
+    "start": 47.14,
+    "end": 47.35
+  },
+  {
+    "text": "out",
+    "start": 47.49,
+    "end": 47.64
+  },
+  {
+    "text": "calls",
+    "start": 47.64,
+    "end": 47.92
+  },
+  {
+    "text": "differently,",
+    "start": 48.01,
+    "end": 48.8
+  },
+  {
+    "text": "so",
+    "start": 48.8,
+    "end": 48.96
+  },
+  {
+    "text": "your",
+    "start": 48.99,
+    "end": 49.24
+  },
+  {
+    "text": "choice",
+    "start": 49.24,
+    "end": 49.69
+  },
+  {
+    "text": "decides",
+    "start": 49.69,
+    "end": 50.21
+  },
+  {
+    "text": "how",
+    "start": 50.21,
+    "end": 50.37
+  },
+  {
+    "text": "the",
+    "start": 50.44,
+    "end": 50.63
+  },
+  {
+    "text": "work",
+    "start": 50.72,
+    "end": 50.94
+  },
+  {
+    "text": "is",
+    "start": 50.94,
+    "end": 51.08
+  },
+  {
+    "text": "shared",
+    "start": 51.08,
+    "end": 51.43
+  },
+  {
+    "text": "across",
+    "start": 51.67,
+    "end": 51.96
+  },
+  {
+    "text": "agents.",
+    "start": 51.96,
+    "end": 52.68
+  },
+  {
+    "text": "The",
+    "start": 52.71,
+    "end": 52.9
+  },
+  {
+    "text": "default",
+    "start": 52.94,
+    "end": 53.44
+  },
+  {
+    "text": "on",
+    "start": 53.44,
+    "end": 53.6
+  },
+  {
+    "text": "every",
+    "start": 53.6,
+    "end": 53.99
+  },
+  {
+    "text": "queue,",
+    "start": 53.99,
+    "end": 54.53
+  },
+  {
+    "text": "new",
+    "start": 54.53,
+    "end": 54.76
+  },
+  {
+    "text": "or",
+    "start": 54.76,
+    "end": 54.96
+  },
+  {
+    "text": "existing,",
+    "start": 54.96,
+    "end": 55.68
+  },
+  {
+    "text": "is",
+    "start": 55.68,
+    "end": 55.81
+  },
+  {
+    "text": "attendant",
+    "start": 55.82,
+    "end": 56.45
+  },
+  {
+    "text": "routing.",
+    "start": 56.45,
+    "end": 57.24
+  },
+  {
+    "text": "The",
+    "start": 57.27,
+    "end": 57.45
+  },
+  {
+    "text": "call",
+    "start": 57.45,
+    "end": 57.71
+  },
+  {
+    "text": "comes",
+    "start": 57.85,
+    "end": 58.06
+  },
+  {
+    "text": "in,",
+    "start": 58.1,
+    "end": 58.38
+  },
+  {
+    "text": "every",
+    "start": 58.38,
+    "end": 58.73
+  },
+  {
+    "text": "agent's",
+    "start": 58.75,
+    "end": 59.24
+  },
+  {
+    "text": "phone",
+    "start": 59.24,
+    "end": 59.58
+  },
+  {
+    "text": "rings",
+    "start": 59.69,
+    "end": 59.96
+  },
+  {
+    "text": "at",
+    "start": 59.96,
+    "end": 60.1
+  },
+  {
+    "text": "once,",
+    "start": 60.1,
+    "end": 60.48
+  },
+  {
+    "text": "and",
+    "start": 60.62,
+    "end": 60.72
+  },
+  {
+    "text": "whoever",
+    "start": 60.75,
+    "end": 61.37
+  },
+  {
+    "text": "answers",
+    "start": 61.37,
+    "end": 62.02
+  },
+  {
+    "text": "first",
+    "start": 62.02,
+    "end": 62.38
+  },
+  {
+    "text": "gets",
+    "start": 62.48,
+    "end": 62.85
+  },
+  {
+    "text": "it,",
+    "start": 62.85,
+    "end": 63.19
+  },
+  {
+    "text": "fast,",
+    "start": 63.43,
+    "end": 63.76
+  },
+  {
+    "text": "but",
+    "start": 63.76,
+    "end": 63.96
+  },
+  {
+    "text": "it",
+    "start": 64.1,
+    "end": 64.27
+  },
+  {
+    "text": "leans",
+    "start": 64.27,
+    "end": 64.5
+  },
+  {
+    "text": "on",
+    "start": 64.7,
+    "end": 64.87
+  },
+  {
+    "text": "the",
+    "start": 65.09,
+    "end": 65.1
+  },
+  {
+    "text": "same",
+    "start": 65.42,
+    "end": 65.48
+  },
+  {
+    "text": "quick",
+    "start": 65.48,
+    "end": 65.89
+  },
+  {
+    "text": "hands.",
+    "start": 65.94,
+    "end": 66.63
+  },
+  {
+    "text": "Serial",
+    "start": 66.67,
+    "end": 67.09
+  },
+  {
+    "text": "rings",
+    "start": 67.09,
+    "end": 67.46
+  },
+  {
+    "text": "agents",
+    "start": 67.47,
+    "end": 67.92
+  },
+  {
+    "text": "one",
+    "start": 67.92,
+    "end": 68.13
+  },
+  {
+    "text": "at",
+    "start": 68.14,
+    "end": 68.29
+  },
+  {
+    "text": "a",
+    "start": 68.29,
+    "end": 68.3
+  },
+  {
+    "text": "time,",
+    "start": 68.4,
+    "end": 68.81
+  },
+  {
+    "text": "in",
+    "start": 68.81,
+    "end": 68.96
+  },
+  {
+    "text": "the",
+    "start": 68.96,
+    "end": 69.11
+  },
+  {
+    "text": "exact",
+    "start": 69.35,
+    "end": 69.52
+  },
+  {
+    "text": "order",
+    "start": 69.58,
+    "end": 69.88
+  },
+  {
+    "text": "you",
+    "start": 70.02,
+    "end": 70.16
+  },
+  {
+    "text": "list",
+    "start": 70.16,
+    "end": 70.41
+  },
+  {
+    "text": "them.",
+    "start": 70.76,
+    "end": 71.02
+  },
+  {
+    "text": "If",
+    "start": 71.11,
+    "end": 71.21
+  },
+  {
+    "text": "one",
+    "start": 71.22,
+    "end": 71.41
+  },
+  {
+    "text": "dismisses",
+    "start": 71.41,
+    "end": 72.01
+  },
+  {
+    "text": "the",
+    "start": 72.01,
+    "end": 72.12
+  },
+  {
+    "text": "call",
+    "start": 72.21,
+    "end": 72.48
+  },
+  {
+    "text": "or",
+    "start": 72.48,
+    "end": 72.64
+  },
+  {
+    "text": "doesn't",
+    "start": 72.64,
+    "end": 73.08
+  },
+  {
+    "text": "answer,",
+    "start": 73.08,
+    "end": 73.56
+  },
+  {
+    "text": "it",
+    "start": 73.56,
+    "end": 73.79
+  },
+  {
+    "text": "moves",
+    "start": 73.79,
+    "end": 74.15
+  },
+  {
+    "text": "to",
+    "start": 74.15,
+    "end": 74.31
+  },
+  {
+    "text": "the",
+    "start": 74.31,
+    "end": 74.55
+  },
+  {
+    "text": "next,",
+    "start": 74.55,
+    "end": 74.89
+  },
+  {
+    "text": "and",
+    "start": 74.89,
+    "end": 75.07
+  },
+  {
+    "text": "keeps",
+    "start": 75.07,
+    "end": 75.39
+  },
+  {
+    "text": "going",
+    "start": 75.39,
+    "end": 75.74
+  },
+  {
+    "text": "until",
+    "start": 75.74,
+    "end": 76.08
+  },
+  {
+    "text": "someone",
+    "start": 76.17,
+    "end": 76.58
+  },
+  {
+    "text": "picks",
+    "start": 76.58,
+    "end": 76.93
+  },
+  {
+    "text": "up",
+    "start": 76.93,
+    "end": 77.05
+  },
+  {
+    "text": "or",
+    "start": 77.09,
+    "end": 77.21
+  },
+  {
+    "text": "the",
+    "start": 77.21,
+    "end": 77.38
+  },
+  {
+    "text": "call",
+    "start": 77.48,
+    "end": 77.52
+  },
+  {
+    "text": "times",
+    "start": 77.75,
+    "end": 78.05
+  },
+  {
+    "text": "out.",
+    "start": 78.05,
+    "end": 78.52
+  },
+  {
+    "text": "Round",
+    "start": 78.55,
+    "end": 78.89
+  },
+  {
+    "text": "robin",
+    "start": 78.89,
+    "end": 79.25
+  },
+  {
+    "text": "evens",
+    "start": 79.28,
+    "end": 79.56
+  },
+  {
+    "text": "things",
+    "start": 79.65,
+    "end": 80.08
+  },
+  {
+    "text": "out,",
+    "start": 80.08,
+    "end": 80.48
+  },
+  {
+    "text": "so",
+    "start": 80.48,
+    "end": 80.76
+  },
+  {
+    "text": "every",
+    "start": 80.76,
+    "end": 80.99
+  },
+  {
+    "text": "agent",
+    "start": 81.23,
+    "end": 81.5
+  },
+  {
+    "text": "gets",
+    "start": 81.5,
+    "end": 81.76
+  },
+  {
+    "text": "the",
+    "start": 81.9,
+    "end": 82.02
+  },
+  {
+    "text": "same",
+    "start": 82.02,
+    "end": 82.29
+  },
+  {
+    "text": "number",
+    "start": 82.29,
+    "end": 82.33
+  },
+  {
+    "text": "of",
+    "start": 82.89,
+    "end": 82.9
+  },
+  {
+    "text": "calls.",
+    "start": 83.22,
+    "end": 83.56
+  },
+  {
+    "text": "That's",
+    "start": 83.59,
+    "end": 83.78
+  },
+  {
+    "text": "the",
+    "start": 83.83,
+    "end": 83.93
+  },
+  {
+    "text": "one",
+    "start": 83.93,
+    "end": 84.03
+  },
+  {
+    "text": "for",
+    "start": 84.17,
+    "end": 84.2
+  },
+  {
+    "text": "inbound",
+    "start": 84.2,
+    "end": 84.75
+  },
+  {
+    "text": "sales,",
+    "start": 84.75,
+    "end": 85.23
+  },
+  {
+    "text": "where",
+    "start": 85.35,
+    "end": 85.66
+  },
+  {
+    "text": "each",
+    "start": 85.66,
+    "end": 85.79
+  },
+  {
+    "text": "rep",
+    "start": 85.93,
+    "end": 86.13
+  },
+  {
+    "text": "should",
+    "start": 86.13,
+    "end": 86.53
+  },
+  {
+    "text": "get",
+    "start": 86.53,
+    "end": 86.73
+  },
+  {
+    "text": "an",
+    "start": 86.73,
+    "end": 86.86
+  },
+  {
+    "text": "equal",
+    "start": 86.86,
+    "end": 87.2
+  },
+  {
+    "text": "shot",
+    "start": 87.2,
+    "end": 87.47
+  },
+  {
+    "text": "at",
+    "start": 87.47,
+    "end": 87.6
+  },
+  {
+    "text": "the",
+    "start": 87.6,
+    "end": 87.67
+  },
+  {
+    "text": "next",
+    "start": 87.76,
+    "end": 88.07
+  },
+  {
+    "text": "lead.",
+    "start": 88.07,
+    "end": 88.56
+  },
+  {
+    "text": "Longest",
+    "start": 88.63,
+    "end": 89.04
+  },
+  {
+    "text": "idle",
+    "start": 89.04,
+    "end": 89.29
+  },
+  {
+    "text": "sends",
+    "start": 89.29,
+    "end": 89.61
+  },
+  {
+    "text": "the",
+    "start": 89.61,
+    "end": 89.8
+  },
+  {
+    "text": "next",
+    "start": 89.8,
+    "end": 90.01
+  },
+  {
+    "text": "call",
+    "start": 90.08,
+    "end": 90.27
+  },
+  {
+    "text": "to",
+    "start": 90.36,
+    "end": 90.43
+  },
+  {
+    "text": "whoever's",
+    "start": 90.43,
+    "end": 90.94
+  },
+  {
+    "text": "been",
+    "start": 91.04,
+    "end": 91.09
+  },
+  {
+    "text": "free",
+    "start": 91.31,
+    "end": 91.48
+  },
+  {
+    "text": "the",
+    "start": 91.54,
+    "end": 91.69
+  },
+  {
+    "text": "longest,",
+    "start": 91.69,
+    "end": 92.36
+  },
+  {
+    "text": "and",
+    "start": 92.36,
+    "end": 92.41
+  },
+  {
+    "text": "free",
+    "start": 92.51,
+    "end": 92.7
+  },
+  {
+    "text": "means",
+    "start": 92.74,
+    "end": 92.95
+  },
+  {
+    "text": "their",
+    "start": 93.09,
+    "end": 93.35
+  },
+  {
+    "text": "presence",
+    "start": 93.35,
+    "end": 93.82
+  },
+  {
+    "text": "is",
+    "start": 93.87,
+    "end": 93.97
+  },
+  {
+    "text": "set",
+    "start": 93.97,
+    "end": 94.15
+  },
+  {
+    "text": "to",
+    "start": 94.24,
+    "end": 94.28
+  },
+  {
+    "text": "available.",
+    "start": 94.28,
+    "end": 94.96
+  },
+  {
+    "text": "Choosing",
+    "start": 95.11,
+    "end": 95.55
+  },
+  {
+    "text": "it",
+    "start": 95.69,
+    "end": 95.75
+  },
+  {
+    "text": "flips",
+    "start": 95.75,
+    "end": 96.09
+  },
+  {
+    "text": "presence",
+    "start": 96.09,
+    "end": 96.64
+  },
+  {
+    "text": "based",
+    "start": 96.64,
+    "end": 96.98
+  },
+  {
+    "text": "routing",
+    "start": 96.98,
+    "end": 97.41
+  },
+  {
+    "text": "on",
+    "start": 97.52,
+    "end": 97.56
+  },
+  {
+    "text": "automatically,",
+    "start": 97.79,
+    "end": 98.56
+  },
+  {
+    "text": "even",
+    "start": 98.59,
+    "end": 98.78
+  },
+  {
+    "text": "when",
+    "start": 98.83,
+    "end": 99.03
+  },
+  {
+    "text": "that",
+    "start": 99.17,
+    "end": 99.37
+  },
+  {
+    "text": "toggle",
+    "start": 99.37,
+    "end": 99.77
+  },
+  {
+    "text": "looks",
+    "start": 99.77,
+    "end": 100.1
+  },
+  {
+    "text": "off.",
+    "start": 100.1,
+    "end": 100.52
+  },
+  {
+    "text": "These",
+    "start": 100.55,
+    "end": 100.86
+  },
+  {
+    "text": "two,",
+    "start": 100.86,
+    "end": 101.19
+  },
+  {
+    "text": "round",
+    "start": 101.19,
+    "end": 101.53
+  },
+  {
+    "text": "robin",
+    "start": 101.53,
+    "end": 101.86
+  },
+  {
+    "text": "and",
+    "start": 101.86,
+    "end": 102.12
+  },
+  {
+    "text": "longest",
+    "start": 102.12,
+    "end": 102.65
+  },
+  {
+    "text": "idle,",
+    "start": 102.65,
+    "end": 103.02
+  },
+  {
+    "text": "are",
+    "start": 103.23,
+    "end": 103.33
+  },
+  {
+    "text": "the",
+    "start": 103.36,
+    "end": 103.6
+  },
+  {
+    "text": "ones",
+    "start": 103.6,
+    "end": 103.92
+  },
+  {
+    "text": "Microsoft",
+    "start": 103.92,
+    "end": 104.3
+  },
+  {
+    "text": "recommends.",
+    "start": 105.22,
+    "end": 105.68
+  },
+  {
+    "text": "One",
+    "start": 105.71,
+    "end": 105.96
+  },
+  {
+    "text": "catch,",
+    "start": 105.96,
+    "end": 106.64
+  },
+  {
+    "text": "when",
+    "start": 106.64,
+    "end": 106.86
+  },
+  {
+    "text": "fewer",
+    "start": 106.86,
+    "end": 107.09
+  },
+  {
+    "text": "calls",
+    "start": 107.16,
+    "end": 107.38
+  },
+  {
+    "text": "are",
+    "start": 107.44,
+    "end": 107.58
+  },
+  {
+    "text": "waiting",
+    "start": 107.59,
+    "end": 107.98
+  },
+  {
+    "text": "than",
+    "start": 107.98,
+    "end": 108.15
+  },
+  {
+    "text": "there",
+    "start": 108.39,
+    "end": 108.49
+  },
+  {
+    "text": "are",
+    "start": 108.49,
+    "end": 108.66
+  },
+  {
+    "text": "available",
+    "start": 108.66,
+    "end": 109.16
+  },
+  {
+    "text": "agents,",
+    "start": 109.16,
+    "end": 109.68
+  },
+  {
+    "text": "only",
+    "start": 109.71,
+    "end": 110.01
+  },
+  {
+    "text": "the",
+    "start": 110.01,
+    "end": 110.15
+  },
+  {
+    "text": "first",
+    "start": 110.29,
+    "end": 110.68
+  },
+  {
+    "text": "two",
+    "start": 110.68,
+    "end": 110.93
+  },
+  {
+    "text": "longest",
+    "start": 110.93,
+    "end": 111.52
+  },
+  {
+    "text": "idle",
+    "start": 111.52,
+    "end": 111.85
+  },
+  {
+    "text": "agents",
+    "start": 111.85,
+    "end": 112.15
+  },
+  {
+    "text": "get",
+    "start": 112.39,
+    "end": 112.56
+  },
+  {
+    "text": "offered",
+    "start": 112.62,
+    "end": 113.19
+  },
+  {
+    "text": "calls.",
+    "start": 113.19,
+    "end": 113.92
+  },
+  {
+    "text": "So,",
+    "start": 113.95,
+    "end": 114.2
+  },
+  {
+    "text": "that's",
+    "start": 114.2,
+    "end": 114.63
+  },
+  {
+    "text": "who",
+    "start": 114.63,
+    "end": 114.84
+  },
+  {
+    "text": "the",
+    "start": 114.84,
+    "end": 114.96
+  },
+  {
+    "text": "queue",
+    "start": 115.05,
+    "end": 115.41
+  },
+  {
+    "text": "rings.",
+    "start": 115.41,
+    "end": 116.04
+  },
+  {
+    "text": "Callback",
+    "start": 116.07,
+    "end": 116.51
+  },
+  {
+    "text": "handles",
+    "start": 116.65,
+    "end": 116.95
+  },
+  {
+    "text": "the",
+    "start": 116.95,
+    "end": 117.08
+  },
+  {
+    "text": "people",
+    "start": 117.17,
+    "end": 117.45
+  },
+  {
+    "text": "still",
+    "start": 117.52,
+    "end": 117.81
+  },
+  {
+    "text": "waiting,",
+    "start": 117.81,
+    "end": 118.38
+  },
+  {
+    "text": "turn",
+    "start": 118.49,
+    "end": 118.52
+  },
+  {
+    "text": "it",
+    "start": 118.75,
+    "end": 118.92
+  },
+  {
+    "text": "on,",
+    "start": 118.98,
+    "end": 119.27
+  },
+  {
+    "text": "and",
+    "start": 119.27,
+    "end": 119.29
+  },
+  {
+    "text": "an",
+    "start": 119.39,
+    "end": 119.47
+  },
+  {
+    "text": "eligible",
+    "start": 119.48,
+    "end": 119.98
+  },
+  {
+    "text": "caller",
+    "start": 119.98,
+    "end": 120.35
+  },
+  {
+    "text": "can",
+    "start": 120.35,
+    "end": 120.53
+  },
+  {
+    "text": "hang",
+    "start": 120.53,
+    "end": 120.77
+  },
+  {
+    "text": "up",
+    "start": 120.77,
+    "end": 120.9
+  },
+  {
+    "text": "and",
+    "start": 120.9,
+    "end": 121.06
+  },
+  {
+    "text": "get",
+    "start": 121.15,
+    "end": 121.32
+  },
+  {
+    "text": "called",
+    "start": 121.32,
+    "end": 121.59
+  },
+  {
+    "text": "back",
+    "start": 121.73,
+    "end": 121.96
+  },
+  {
+    "text": "the",
+    "start": 121.98,
+    "end": 122.16
+  },
+  {
+    "text": "moment",
+    "start": 122.25,
+    "end": 122.53
+  },
+  {
+    "text": "an",
+    "start": 122.6,
+    "end": 122.71
+  },
+  {
+    "text": "agent",
+    "start": 122.71,
+    "end": 123.04
+  },
+  {
+    "text": "frees",
+    "start": 123.04,
+    "end": 123.37
+  },
+  {
+    "text": "up,",
+    "start": 123.37,
+    "end": 123.6
+  },
+  {
+    "text": "instead",
+    "start": 123.83,
+    "end": 124.1
+  },
+  {
+    "text": "of",
+    "start": 124.1,
+    "end": 124.23
+  },
+  {
+    "text": "sitting",
+    "start": 124.23,
+    "end": 124.7
+  },
+  {
+    "text": "on",
+    "start": 124.7,
+    "end": 124.83
+  },
+  {
+    "text": "hold.",
+    "start": 124.83,
+    "end": 125.36
+  },
+  {
+    "text": "A",
+    "start": 125.39,
+    "end": 125.42
+  },
+  {
+    "text": "caller",
+    "start": 125.42,
+    "end": 125.81
+  },
+  {
+    "text": "becomes",
+    "start": 125.81,
+    "end": 126.27
+  },
+  {
+    "text": "eligible",
+    "start": 126.27,
+    "end": 126.77
+  },
+  {
+    "text": "the",
+    "start": 126.84,
+    "end": 126.98
+  },
+  {
+    "text": "moment",
+    "start": 126.98,
+    "end": 127.37
+  },
+  {
+    "text": "any",
+    "start": 127.41,
+    "end": 127.56
+  },
+  {
+    "text": "one",
+    "start": 127.56,
+    "end": 127.7
+  },
+  {
+    "text": "of",
+    "start": 127.8,
+    "end": 127.84
+  },
+  {
+    "text": "three",
+    "start": 128.07,
+    "end": 128.21
+  },
+  {
+    "text": "conditions",
+    "start": 128.21,
+    "end": 128.86
+  },
+  {
+    "text": "comes",
+    "start": 128.86,
+    "end": 129.13
+  },
+  {
+    "text": "true.",
+    "start": 129.45,
+    "end": 129.72
+  },
+  {
+    "text": "They",
+    "start": 129.75,
+    "end": 130
+  },
+  {
+    "text": "wait",
+    "start": 130,
+    "end": 130.19
+  },
+  {
+    "text": "past",
+    "start": 130.33,
+    "end": 130.55
+  },
+  {
+    "text": "your",
+    "start": 130.55,
+    "end": 130.76
+  },
+  {
+    "text": "set",
+    "start": 130.85,
+    "end": 131.05
+  },
+  {
+    "text": "time,",
+    "start": 131.05,
+    "end": 131.52
+  },
+  {
+    "text": "the",
+    "start": 131.52,
+    "end": 131.71
+  },
+  {
+    "text": "queue",
+    "start": 131.71,
+    "end": 132.02
+  },
+  {
+    "text": "grows",
+    "start": 132.02,
+    "end": 132.19
+  },
+  {
+    "text": "past",
+    "start": 132.43,
+    "end": 132.6
+  },
+  {
+    "text": "a",
+    "start": 132.6,
+    "end": 132.66
+  },
+  {
+    "text": "set",
+    "start": 132.66,
+    "end": 132.85
+  },
+  {
+    "text": "number",
+    "start": 132.85,
+    "end": 133.23
+  },
+  {
+    "text": "of",
+    "start": 133.23,
+    "end": 133.38
+  },
+  {
+    "text": "calls,",
+    "start": 133.38,
+    "end": 134.1
+  },
+  {
+    "text": "or",
+    "start": 134.1,
+    "end": 134.35
+  },
+  {
+    "text": "the",
+    "start": 134.35,
+    "end": 134.53
+  },
+  {
+    "text": "calls",
+    "start": 134.53,
+    "end": 134.79
+  },
+  {
+    "text": "to",
+    "start": 134.93,
+    "end": 135.02
+  },
+  {
+    "text": "agent",
+    "start": 135.02,
+    "end": 135.36
+  },
+  {
+    "text": "ratio",
+    "start": 135.45,
+    "end": 135.72
+  },
+  {
+    "text": "crosses",
+    "start": 135.72,
+    "end": 136.22
+  },
+  {
+    "text": "your",
+    "start": 136.22,
+    "end": 136.5
+  },
+  {
+    "text": "limit.",
+    "start": 136.5,
+    "end": 137.12
+  },
+  {
+    "text": "Their",
+    "start": 137.15,
+    "end": 137.41
+  },
+  {
+    "text": "number",
+    "start": 137.42,
+    "end": 137.8
+  },
+  {
+    "text": "just",
+    "start": 137.8,
+    "end": 138.04
+  },
+  {
+    "text": "has",
+    "start": 138.04,
+    "end": 138.16
+  },
+  {
+    "text": "to",
+    "start": 138.25,
+    "end": 138.34
+  },
+  {
+    "text": "be",
+    "start": 138.34,
+    "end": 138.46
+  },
+  {
+    "text": "publicly",
+    "start": 138.46,
+    "end": 138.95
+  },
+  {
+    "text": "dialable,",
+    "start": 138.95,
+    "end": 139.59
+  },
+  {
+    "text": "non-premium,",
+    "start": 139.59,
+    "end": 140.68
+  },
+  {
+    "text": "and",
+    "start": 140.68,
+    "end": 140.78
+  },
+  {
+    "text": "in",
+    "start": 140.83,
+    "end": 140.99
+  },
+  {
+    "text": "standard",
+    "start": 140.99,
+    "end": 141.76
+  },
+  {
+    "text": "E164",
+    "start": 141.76,
+    "end": 142.7
+  },
+  {
+    "text": "format.",
+    "start": 142.71,
+    "end": 143.6
+  },
+  {
+    "text": "So,",
+    "start": 143.63,
+    "end": 143.96
+  },
+  {
+    "text": "back",
+    "start": 143.96,
+    "end": 144.32
+  },
+  {
+    "text": "to",
+    "start": 144.32,
+    "end": 144.5
+  },
+  {
+    "text": "our",
+    "start": 144.5,
+    "end": 144.77
+  },
+  {
+    "text": "mystery.",
+    "start": 144.77,
+    "end": 145.72
+  },
+  {
+    "text": "Callbacks",
+    "start": 145.75,
+    "end": 146.37
+  },
+  {
+    "text": "on,",
+    "start": 146.37,
+    "end": 146.65
+  },
+  {
+    "text": "eligibility",
+    "start": 146.65,
+    "end": 147.38
+  },
+  {
+    "text": "set",
+    "start": 147.48,
+    "end": 147.67
+  },
+  {
+    "text": "to",
+    "start": 147.67,
+    "end": 147.8
+  },
+  {
+    "text": "60",
+    "start": 147.8,
+    "end": 148.07
+  },
+  {
+    "text": "seconds,",
+    "start": 148.43,
+    "end": 148.95
+  },
+  {
+    "text": "everything",
+    "start": 148.95,
+    "end": 149.49
+  },
+  {
+    "text": "looks",
+    "start": 149.49,
+    "end": 149.53
+  },
+  {
+    "text": "right.",
+    "start": 150.09,
+    "end": 150.28
+  },
+  {
+    "text": "Will",
+    "start": 150.31,
+    "end": 150.48
+  },
+  {
+    "text": "this",
+    "start": 150.48,
+    "end": 150.68
+  },
+  {
+    "text": "caller",
+    "start": 150.68,
+    "end": 150.98
+  },
+  {
+    "text": "ever",
+    "start": 150.98,
+    "end": 151.18
+  },
+  {
+    "text": "get",
+    "start": 151.18,
+    "end": 151.32
+  },
+  {
+    "text": "offered",
+    "start": 151.41,
+    "end": 151.68
+  },
+  {
+    "text": "a",
+    "start": 151.68,
+    "end": 151.69
+  },
+  {
+    "text": "callback?",
+    "start": 151.76,
+    "end": 152.29
+  },
+  {
+    "text": "Watch",
+    "start": 152.29,
+    "end": 153.12
+  },
+  {
+    "text": "the",
+    "start": 153.12,
+    "end": 153.95
+  },
+  {
+    "text": "clock.",
+    "start": 153.95,
+    "end": 155.41
+  },
+  {
+    "text": "At",
+    "start": 155.47,
+    "end": 155.57
+  },
+  {
+    "text": "60",
+    "start": 155.57,
+    "end": 155.91
+  },
+  {
+    "text": "seconds,",
+    "start": 156.05,
+    "end": 156.48
+  },
+  {
+    "text": "the",
+    "start": 156.57,
+    "end": 156.77
+  },
+  {
+    "text": "caller",
+    "start": 156.77,
+    "end": 157.1
+  },
+  {
+    "text": "becomes",
+    "start": 157.2,
+    "end": 157.64
+  },
+  {
+    "text": "eligible,",
+    "start": 157.64,
+    "end": 158.32
+  },
+  {
+    "text": "but",
+    "start": 158.38,
+    "end": 158.44
+  },
+  {
+    "text": "the",
+    "start": 158.47,
+    "end": 158.65
+  },
+  {
+    "text": "default",
+    "start": 158.65,
+    "end": 159.14
+  },
+  {
+    "text": "hold",
+    "start": 159.14,
+    "end": 159.42
+  },
+  {
+    "text": "music",
+    "start": 159.42,
+    "end": 159.77
+  },
+  {
+    "text": "runs",
+    "start": 159.77,
+    "end": 160.05
+  },
+  {
+    "text": "a",
+    "start": 160.05,
+    "end": 160.11
+  },
+  {
+    "text": "full",
+    "start": 160.2,
+    "end": 160.4
+  },
+  {
+    "text": "two",
+    "start": 160.4,
+    "end": 160.61
+  },
+  {
+    "text": "minutes,",
+    "start": 160.61,
+    "end": 161.25
+  },
+  {
+    "text": "and",
+    "start": 161.28,
+    "end": 161.3
+  },
+  {
+    "text": "the",
+    "start": 161.39,
+    "end": 161.58
+  },
+  {
+    "text": "timeout",
+    "start": 161.62,
+    "end": 162.14
+  },
+  {
+    "text": "is",
+    "start": 162.14,
+    "end": 162.29
+  },
+  {
+    "text": "set",
+    "start": 162.29,
+    "end": 162.52
+  },
+  {
+    "text": "to",
+    "start": 162.52,
+    "end": 162.67
+  },
+  {
+    "text": "120",
+    "start": 162.67,
+    "end": 163.37
+  },
+  {
+    "text": "seconds.",
+    "start": 163.37,
+    "end": 164.17
+  },
+  {
+    "text": "The",
+    "start": 164.23,
+    "end": 164.42
+  },
+  {
+    "text": "timeout",
+    "start": 164.46,
+    "end": 164.98
+  },
+  {
+    "text": "fires",
+    "start": 164.98,
+    "end": 165.37
+  },
+  {
+    "text": "before",
+    "start": 165.37,
+    "end": 165.82
+  },
+  {
+    "text": "the",
+    "start": 165.84,
+    "end": 166.07
+  },
+  {
+    "text": "music",
+    "start": 166.07,
+    "end": 166.46
+  },
+  {
+    "text": "ends,",
+    "start": 166.46,
+    "end": 166.92
+  },
+  {
+    "text": "so",
+    "start": 166.92,
+    "end": 167.08
+  },
+  {
+    "text": "the",
+    "start": 167.14,
+    "end": 167.31
+  },
+  {
+    "text": "offer",
+    "start": 167.32,
+    "end": 167.66
+  },
+  {
+    "text": "never",
+    "start": 167.66,
+    "end": 167.97
+  },
+  {
+    "text": "plays.",
+    "start": 167.97,
+    "end": 168.56
+  },
+  {
+    "text": "Callback",
+    "start": 168.59,
+    "end": 169.03
+  },
+  {
+    "text": "wasn't",
+    "start": 169.17,
+    "end": 169.54
+  },
+  {
+    "text": "broken,",
+    "start": 169.54,
+    "end": 170.12
+  },
+  {
+    "text": "the",
+    "start": 170.12,
+    "end": 170.36
+  },
+  {
+    "text": "timeout",
+    "start": 170.36,
+    "end": 170.9
+  },
+  {
+    "text": "just",
+    "start": 170.9,
+    "end": 171.04
+  },
+  {
+    "text": "never",
+    "start": 171.27,
+    "end": 171.62
+  },
+  {
+    "text": "gave",
+    "start": 171.62,
+    "end": 171.8
+  },
+  {
+    "text": "it",
+    "start": 171.94,
+    "end": 172.1
+  },
+  {
+    "text": "room.",
+    "start": 172.1,
+    "end": 172.68
+  },
+  {
+    "text": "So",
+    "start": 172.71,
+    "end": 172.81
+  },
+  {
+    "text": "here's",
+    "start": 172.81,
+    "end": 173.15
+  },
+  {
+    "text": "the",
+    "start": 173.29,
+    "end": 173.41
+  },
+  {
+    "text": "rule",
+    "start": 173.41,
+    "end": 173.68
+  },
+  {
+    "text": "to",
+    "start": 173.68,
+    "end": 173.72
+  },
+  {
+    "text": "keep.",
+    "start": 173.81,
+    "end": 174.3
+  },
+  {
+    "text": "Your",
+    "start": 174.35,
+    "end": 174.54
+  },
+  {
+    "text": "call",
+    "start": 174.59,
+    "end": 174.79
+  },
+  {
+    "text": "timeout",
+    "start": 174.93,
+    "end": 175.33
+  },
+  {
+    "text": "has",
+    "start": 175.33,
+    "end": 175.53
+  },
+  {
+    "text": "to",
+    "start": 175.53,
+    "end": 175.66
+  },
+  {
+    "text": "outlast",
+    "start": 175.66,
+    "end": 176.13
+  },
+  {
+    "text": "the",
+    "start": 176.13,
+    "end": 176.33
+  },
+  {
+    "text": "whole",
+    "start": 176.33,
+    "end": 176.65
+  },
+  {
+    "text": "sequence.",
+    "start": 176.66,
+    "end": 177.43
+  },
+  {
+    "text": "Time",
+    "start": 177.47,
+    "end": 177.66
+  },
+  {
+    "text": "to",
+    "start": 177.71,
+    "end": 177.8
+  },
+  {
+    "text": "become",
+    "start": 177.8,
+    "end": 178.17
+  },
+  {
+    "text": "eligible,",
+    "start": 178.17,
+    "end": 178.78
+  },
+  {
+    "text": "time",
+    "start": 178.78,
+    "end": 179.02
+  },
+  {
+    "text": "for",
+    "start": 179.02,
+    "end": 179.24
+  },
+  {
+    "text": "the",
+    "start": 179.24,
+    "end": 179.43
+  },
+  {
+    "text": "music",
+    "start": 179.43,
+    "end": 179.74
+  },
+  {
+    "text": "to",
+    "start": 179.75,
+    "end": 179.79
+  },
+  {
+    "text": "finish,",
+    "start": 179.88,
+    "end": 180.42
+  },
+  {
+    "text": "and",
+    "start": 180.42,
+    "end": 180.55
+  },
+  {
+    "text": "time",
+    "start": 180.59,
+    "end": 180.78
+  },
+  {
+    "text": "for",
+    "start": 180.83,
+    "end": 181.02
+  },
+  {
+    "text": "the",
+    "start": 181.02,
+    "end": 181.22
+  },
+  {
+    "text": "callback",
+    "start": 181.22,
+    "end": 181.75
+  },
+  {
+    "text": "to",
+    "start": 181.75,
+    "end": 181.88
+  },
+  {
+    "text": "reach",
+    "start": 181.88,
+    "end": 182.21
+  },
+  {
+    "text": "a",
+    "start": 182.21,
+    "end": 182.22
+  },
+  {
+    "text": "free",
+    "start": 182.32,
+    "end": 182.53
+  },
+  {
+    "text": "agent.",
+    "start": 182.53,
+    "end": 183.03
+  },
+  {
+    "text": "Get",
+    "start": 183.15,
+    "end": 183.34
+  },
+  {
+    "text": "that",
+    "start": 183.38,
+    "end": 183.59
+  },
+  {
+    "text": "one",
+    "start": 183.73,
+    "end": 183.96
+  },
+  {
+    "text": "value",
+    "start": 183.96,
+    "end": 184.38
+  },
+  {
+    "text": "right,",
+    "start": 184.38,
+    "end": 184.96
+  },
+  {
+    "text": "and",
+    "start": 184.96,
+    "end": 185.2
+  },
+  {
+    "text": "callback",
+    "start": 185.2,
+    "end": 185.88
+  },
+  {
+    "text": "finally",
+    "start": 185.88,
+    "end": 186.36
+  },
+  {
+    "text": "works.",
+    "start": 186.5,
+    "end": 186.93
+  },
+  {
+    "text": "So,",
+    "start": 187.23,
+    "end": 187.49
+  },
+  {
+    "text": "four",
+    "start": 187.51,
+    "end": 187.67
+  },
+  {
+    "text": "routing",
+    "start": 187.81,
+    "end": 188.24
+  },
+  {
+    "text": "methods",
+    "start": 188.33,
+    "end": 188.86
+  },
+  {
+    "text": "deciding",
+    "start": 188.86,
+    "end": 189.46
+  },
+  {
+    "text": "who",
+    "start": 189.46,
+    "end": 189.55
+  },
+  {
+    "text": "rings.",
+    "start": 189.66,
+    "end": 190.31
+  },
+  {
+    "text": "Attendant,",
+    "start": 190.35,
+    "end": 191.23
+  },
+  {
+    "text": "serial,",
+    "start": 191.23,
+    "end": 191.89
+  },
+  {
+    "text": "round",
+    "start": 191.89,
+    "end": 192.31
+  },
+  {
+    "text": "robin,",
+    "start": 192.31,
+    "end": 192.81
+  },
+  {
+    "text": "and",
+    "start": 193.03,
+    "end": 193.2
+  },
+  {
+    "text": "longest",
+    "start": 193.2,
+    "end": 193.8
+  },
+  {
+    "text": "idle.",
+    "start": 193.8,
+    "end": 194.4
+  },
+  {
+    "text": "The",
+    "start": 194.43,
+    "end": 194.6
+  },
+  {
+    "text": "last",
+    "start": 194.6,
+    "end": 194.87
+  },
+  {
+    "text": "two",
+    "start": 194.87,
+    "end": 195.07
+  },
+  {
+    "text": "recommended.",
+    "start": 195.07,
+    "end": 196.02
+  },
+  {
+    "text": "Callback",
+    "start": 196.07,
+    "end": 196.51
+  },
+  {
+    "text": "for",
+    "start": 196.65,
+    "end": 196.77
+  },
+  {
+    "text": "the",
+    "start": 196.8,
+    "end": 196.97
+  },
+  {
+    "text": "callers",
+    "start": 196.98,
+    "end": 197.45
+  },
+  {
+    "text": "still",
+    "start": 197.45,
+    "end": 197.71
+  },
+  {
+    "text": "on",
+    "start": 197.8,
+    "end": 197.92
+  },
+  {
+    "text": "hold.",
+    "start": 197.92,
+    "end": 198.39
+  },
+  {
+    "text": "And",
+    "start": 198.51,
+    "end": 198.67
+  },
+  {
+    "text": "one",
+    "start": 198.67,
+    "end": 198.86
+  },
+  {
+    "text": "timing",
+    "start": 198.86,
+    "end": 199.24
+  },
+  {
+    "text": "rule",
+    "start": 199.24,
+    "end": 199.51
+  },
+  {
+    "text": "tying",
+    "start": 199.51,
+    "end": 199.82
+  },
+  {
+    "text": "it",
+    "start": 199.87,
+    "end": 199.89
+  },
+  {
+    "text": "together.",
+    "start": 199.96,
+    "end": 200.72
+  },
+  {
+    "text": "Set",
+    "start": 200.75,
+    "end": 200.94
+  },
+  {
+    "text": "the",
+    "start": 200.98,
+    "end": 201.18
+  },
+  {
+    "text": "timeout",
+    "start": 201.18,
+    "end": 201.72
+  },
+  {
+    "text": "long",
+    "start": 201.72,
+    "end": 202.03
+  },
+  {
+    "text": "enough,",
+    "start": 202.03,
+    "end": 202.65
+  },
+  {
+    "text": "or",
+    "start": 202.65,
+    "end": 202.8
+  },
+  {
+    "text": "callback",
+    "start": 202.8,
+    "end": 203.07
+  },
+  {
+    "text": "never",
+    "start": 203.43,
+    "end": 203.81
+  },
+  {
+    "text": "gets",
+    "start": 203.81,
+    "end": 204.12
+  },
+  {
+    "text": "its",
+    "start": 204.12,
+    "end": 204.34
+  },
+  {
+    "text": "turn.",
+    "start": 204.34,
+    "end": 204.96
+  },
+  {
+    "text": "Want",
+    "start": 204.99,
+    "end": 205.18
+  },
+  {
+    "text": "to",
+    "start": 205.23,
+    "end": 205.33
+  },
+  {
+    "text": "set",
+    "start": 205.33,
+    "end": 205.43
+  },
+  {
+    "text": "one",
+    "start": 205.57,
+    "end": 205.69
+  },
+  {
+    "text": "up",
+    "start": 205.72,
+    "end": 205.83
+  },
+  {
+    "text": "yourself?",
+    "start": 205.83,
+    "end": 206.56
+  },
+  {
+    "text": "Head",
+    "start": 206.59,
+    "end": 206.78
+  },
+  {
+    "text": "to",
+    "start": 206.83,
+    "end": 206.92
+  },
+  {
+    "text": "the",
+    "start": 206.92,
+    "end": 207.03
+  },
+  {
+    "text": "call",
+    "start": 207.17,
+    "end": 207.34
+  },
+  {
+    "text": "queue",
+    "start": 207.34,
+    "end": 207.6
+  },
+  {
+    "text": "setup",
+    "start": 207.69,
+    "end": 207.9
+  },
+  {
+    "text": "guide",
+    "start": 207.94,
+    "end": 208.22
+  },
+  {
+    "text": "on",
+    "start": 208.32,
+    "end": 208.36
+  },
+  {
+    "text": "Microsoft",
+    "start": 208.36,
+    "end": 208.89
+  },
+  {
+    "text": "Learn,",
+    "start": 208.9,
+    "end": 209.36
+  },
+  {
+    "text": "and",
+    "start": 209.36,
+    "end": 209.42
+  },
+  {
+    "text": "walk",
+    "start": 209.51,
+    "end": 209.7
+  },
+  {
+    "text": "through",
+    "start": 209.74,
+    "end": 210.11
+  },
+  {
+    "text": "routing",
+    "start": 210.11,
+    "end": 210.51
+  },
+  {
+    "text": "and",
+    "start": 210.51,
+    "end": 210.68
+  },
+  {
+    "text": "callback",
+    "start": 210.68,
+    "end": 211.14
+  },
+  {
+    "text": "end",
+    "start": 211.14,
+    "end": 211.31
+  },
+  {
+    "text": "to",
+    "start": 211.31,
+    "end": 211.42
+  },
+  {
+    "text": "end.",
+    "start": 211.42,
+    "end": 211.8
+  }
+]

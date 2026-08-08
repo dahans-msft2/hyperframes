@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- head is preview-only; the runtime clones ONLY the <template> below. -->
+    <script src="../assets/vendor/gsap.min.js"></script>
+  </head>
+  <body>
+    <template>
+      <style>
+        /* === Learn-ILT custom scene: Attendant routing fan-out. ===
+           One inbound call broadcasts to every agent at once; the first answer wins.
+           Built on the kit foundation: text stays ink, accents are graphic marks only. */
+
+        /* ==== BEGIN _foundation.css (verbatim; edit the source, not this copy) ==== */
+        #root,
+        #root *,
+        #root *::before,
+        #root *::after {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          overflow: hidden;
+          container-type: size;
+
+          --ground: url("../assets/grounds/ground-content-wash.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #fffcfa 0%, #fff9f5 42%, #fffaef 68%, #f7f2f9 100%);
+          --ink: #091f2e;
+          --ink-soft: #59636e;
+          --paper: #ffffff;
+          --paper-veil: rgba(255, 255, 255, 0.9);
+          --border: rgba(9, 31, 46, 0.16);
+          --border-soft: rgba(9, 31, 46, 0.12);
+          --shadow: 0 8px 28px rgba(9, 31, 46, 0.1);
+
+          --accent: #8661c5;
+          --accent-2: #0078d4;
+          --accent-3: #389a91;
+          --accent-4: #bf3ac4;
+          --accent-ink: #ffffff;
+
+          --fs-display: 11cqw;
+          --fs-h1: 4.6cqw;
+          --fs-h2: 3.4cqw;
+          --fs-h3: 2.4cqw;
+          --fs-lead: 2cqw;
+          --fs-body: 1.75cqw;
+          --fs-caption: 1.5cqw;
+          --fs-kicker: 1.55cqw;
+          --fs-micro: 1.25cqw;
+
+          --radius: 16px;
+          --radius-sm: 10px;
+          --radius-pill: 999px;
+          --stroke: 5px;
+          --rule: 3px;
+
+          font-family: "Segoe UI", system-ui, sans-serif;
+          color: var(--ink);
+          background: var(--ground);
+        }
+        #root[data-ground="hero-swoosh"] {
+          --ground: url("../assets/grounds/ground-hero-swoosh.png") center / cover no-repeat, radial-gradient(130% 100% at 82% 6%, #f4edf9 0%, #fbf6f2 40%, #fffaf4 70%, #fff9f5 100%);
+        }
+        #root[data-ground="section-field"] {
+          --ground: url("../assets/grounds/ground-section-field.png") center / cover no-repeat, radial-gradient(120% 90% at 18% 8%, #f6f9fd 0%, #eef4fb 44%, #e9f1fa 70%, #eef3f7 100%);
+        }
+        #root[data-ground="dark-field"] {
+          --ground: radial-gradient(90% 120% at 6% 4%, #365f7d 0%, #121f42 38%, #0a142d 66%, #050d1a 100%);
+          --ink: #ffffff;
+          --ink-soft: rgba(255, 255, 255, 0.72);
+          --paper: rgba(255, 255, 255, 0.08);
+          --paper-veil: rgba(255, 255, 255, 0.1);
+          --border: rgba(255, 255, 255, 0.24);
+          --border-soft: rgba(255, 255, 255, 0.14);
+          --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+        }
+        /* ==== END _foundation.css ==== */
+
+        .ilt-kicker {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-kicker);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          color: var(--ink-soft);
+        }
+        .ilt-title {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-h2);
+          line-height: 1.08;
+          letter-spacing: -0.02em;
+          color: var(--ink);
+        }
+        .ilt-caption {
+          font-weight: 400;
+          font-size: var(--fs-caption);
+          line-height: 1.3;
+          color: var(--ink-soft);
+        }
+
+        #att-scene-frame {
+          position: absolute;
+          inset: 0;
+        }
+
+        #att-queue-panel {
+          position: absolute;
+          left: 180px;
+          top: 118px;
+          width: 1560px;
+          height: 835px;
+          border-radius: calc(var(--radius) * 1.4);
+          border: 1.5px solid var(--border);
+          background: var(--paper-veil);
+          box-shadow: var(--shadow);
+          overflow: hidden;
+        }
+
+        #att-queue-panel::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: var(--rule);
+          background: var(--accent);
+          border-radius: var(--rule);
+        }
+
+        .header {
+          position: absolute;
+          left: 82px;
+          top: 70px;
+          width: 620px;
+        }
+
+        #att-default-tag {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.65em;
+          padding: 0.45em 1em;
+          border-radius: var(--radius-pill);
+          border: 1.5px solid var(--border);
+          background: var(--paper);
+          box-shadow: 0 6px 18px rgba(9, 31, 46, 0.08);
+          color: var(--ink);
+        }
+
+        #att-default-tag .dot {
+          width: 0.78em;
+          height: 0.78em;
+          border-radius: var(--radius-pill);
+          background: var(--accent-2);
+          flex: none;
+        }
+
+        #att-attendant-title {
+          margin-top: 1.2cqw;
+        }
+
+        #att-title-rule {
+          width: 8.5cqw;
+          height: var(--rule);
+          border-radius: var(--rule);
+          background: var(--accent-2);
+          transform: scaleX(0);
+          transform-origin: left center;
+          margin-top: 0.9cqw;
+        }
+
+        #att-subtitle {
+          margin-top: 1cqw;
+          max-width: 34cqw;
+        }
+
+        #att-flow-board {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        #att-call-token {
+          position: absolute;
+          left: 250px;
+          top: 512px;
+          width: 250px;
+          height: 122px;
+          border-radius: var(--radius-pill);
+          border: 1.5px solid var(--border);
+          background: var(--paper);
+          box-shadow: 0 10px 24px rgba(9, 31, 46, 0.11);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.8cqw;
+          color: var(--ink);
+          z-index: 20;
+        }
+
+        .phone-mark {
+          width: 2.8cqw;
+          height: 2.8cqw;
+          border-radius: var(--radius-pill);
+          border: 2px solid var(--accent-2);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex: none;
+          color: var(--ink);
+        }
+
+        .phone-mark svg {
+          width: 58%;
+          height: 58%;
+          stroke: var(--ink);
+          stroke-width: 2.2;
+          fill: none;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+
+        .token-label {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-caption);
+          color: var(--ink);
+          line-height: 1;
+        }
+
+        #att-broadcast-hub {
+          position: absolute;
+          left: 610px;
+          top: 558px;
+          width: 76px;
+          height: 76px;
+          border-radius: var(--radius-pill);
+          border: 2px solid var(--accent-2);
+          background: var(--paper);
+          box-shadow: 0 8px 22px rgba(9, 31, 46, 0.1);
+          z-index: 14;
+        }
+
+        #att-broadcast-hub::after {
+          content: "";
+          position: absolute;
+          inset: 19px;
+          border-radius: var(--radius-pill);
+          background: var(--accent-2);
+        }
+
+        #att-fan-lines {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 1560px;
+          height: 835px;
+          z-index: 8;
+          pointer-events: none;
+        }
+
+        .fan-line {
+          fill: none;
+          stroke: var(--accent-2);
+          stroke-width: 5;
+          stroke-linecap: round;
+          stroke-dasharray: 1;
+          stroke-dashoffset: 1;
+          opacity: 0;
+        }
+
+        .agent-tile {
+          position: absolute;
+          width: 330px;
+          height: 188px;
+          border-radius: var(--radius);
+          border: 1.5px solid var(--border);
+          background: var(--paper);
+          box-shadow: 0 8px 22px rgba(9, 31, 46, 0.09);
+          padding: 1.25cqw 1.35cqw;
+          color: var(--ink);
+          z-index: 16;
+        }
+
+        #att-agent-a {
+          left: 875px;
+          top: 298px;
+        }
+        #att-agent-b {
+          left: 1235px;
+          top: 298px;
+        }
+        #att-agent-c {
+          left: 875px;
+          top: 528px;
+        }
+        #att-agent-d {
+          left: 1235px;
+          top: 528px;
+        }
+
+        .agent-head {
+          display: flex;
+          align-items: center;
+          gap: 1cqw;
+        }
+
+        .avatar {
+          width: 4.05cqw;
+          height: 4.05cqw;
+          border-radius: var(--radius-pill);
+          border: 1.5px solid var(--border);
+          background: linear-gradient(180deg, var(--paper) 0%, rgba(9, 31, 46, 0.04) 100%);
+          position: relative;
+          flex: none;
+        }
+
+        .avatar::before,
+        .avatar::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          background: var(--border);
+        }
+
+        .avatar::before {
+          top: 20%;
+          width: 30%;
+          height: 30%;
+          border-radius: var(--radius-pill);
+        }
+
+        .avatar::after {
+          bottom: 18%;
+          width: 54%;
+          height: 28%;
+          border-radius: var(--radius-pill) var(--radius-pill) 0 0;
+        }
+
+        .agent-name {
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-body);
+          line-height: 1.1;
+          letter-spacing: -0.015em;
+          color: var(--ink);
+        }
+
+        .att-agent-detail {
+          margin-top: 0.25cqw;
+        }
+
+        .ring-wrap {
+          position: absolute;
+          right: 1.4cqw;
+          top: 1.25cqw;
+          width: 3.9cqw;
+          height: 3.9cqw;
+          border-radius: var(--radius-pill);
+        }
+
+        .ring-dot {
+          position: absolute;
+          inset: 1.05cqw;
+          border-radius: var(--radius-pill);
+          background: var(--accent-3);
+        }
+
+        .ring-halo {
+          position: absolute;
+          inset: 0.2cqw;
+          border-radius: var(--radius-pill);
+          border: 3px solid var(--accent-3);
+          opacity: 0;
+          transform: scale(0.55);
+        }
+
+        .agent-status {
+          position: absolute;
+          left: 1.35cqw;
+          right: 1.35cqw;
+          bottom: 1.1cqw;
+          padding-top: 0.7cqw;
+          border-top: 1.5px solid var(--border-soft);
+          font-size: var(--fs-micro);
+          color: var(--ink-soft);
+        }
+
+        #att-all-ring-label,
+        #att-answer-chip,
+        #att-speed-note,
+        #att-same-hands-note {
+          position: absolute;
+          border-radius: var(--radius-pill);
+          border: 1.5px solid var(--border);
+          background: var(--paper);
+          box-shadow: 0 8px 22px rgba(9, 31, 46, 0.08);
+          color: var(--ink);
+          font-family: "Segoe UI Semibold", "Segoe UI", sans-serif;
+          font-weight: 600;
+          font-size: var(--fs-caption);
+          line-height: 1;
+          z-index: 24;
+        }
+
+        #att-all-ring-label {
+          left: 860px;
+          top: 214px;
+          padding: 0.62em 1.1em;
+        }
+
+        #att-answer-chip {
+          left: 1242px;
+          top: 252px;
+          padding: 0.58em 1em;
+        }
+
+        #att-speed-note {
+          left: 912px;
+          top: 770px;
+          padding: 0.62em 1.05em;
+        }
+
+        #att-same-hands-note {
+          left: 1124px;
+          top: 770px;
+          padding: 0.62em 1.05em;
+        }
+
+        #att-win-badge {
+          position: absolute;
+          left: 1408px;
+          top: 418px;
+          width: 76px;
+          height: 76px;
+          border-radius: var(--radius-pill);
+          border: 2px solid var(--accent-3);
+          background: var(--paper);
+          box-shadow: 0 8px 22px rgba(9, 31, 46, 0.1);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 26;
+        }
+
+        #att-win-badge svg {
+          width: 52%;
+          height: 52%;
+          stroke: var(--ink);
+          stroke-width: 2.5;
+          fill: none;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+
+        #att-handoff-mark {
+          position: absolute;
+          left: 214px;
+          top: 792px;
+          width: 152px;
+          height: 96px;
+          z-index: 6;
+        }
+
+        #att-handoff-mark path {
+          fill: none;
+          stroke: var(--border-soft);
+          stroke-width: 5;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+        }
+      </style>
+
+      <div
+        id="root"
+        data-composition-id="06-attendant"
+        data-width="1920"
+        data-height="1080"
+        data-ground="content-wash"
+        data-keep-in-frame
+      >
+        <div id="att-scene-frame">
+          <section id="att-queue-panel" data-keep-in-frame>
+            <div class="header">
+              <div id="att-default-tag" class="ilt-kicker">
+                <span class="dot"></span>
+                <span>Default</span>
+              </div>
+              <h1 id="att-attendant-title" class="ilt-title">Attendant routing</h1>
+              <div id="att-title-rule"></div>
+              <p id="att-subtitle" class="ilt-caption">Every available agent hears the same inbound call.</p>
+            </div>
+
+            <div id="att-flow-board">
+              <svg id="att-fan-lines" width="1560" height="835" viewBox="0 0 1560 835" aria-hidden="true">
+                <path
+                  id="att-line-a"
+                  class="fan-line"
+                  pathLength="1"
+                  d="M 648 596 C 735 500, 790 405, 875 392"
+                  data-reveal-after="#att-call-token #att-agent-a"
+                />
+                <path
+                  id="att-line-b"
+                  class="fan-line"
+                  pathLength="1"
+                  d="M 648 596 C 825 475, 1010 394, 1235 392"
+                  data-reveal-after="#att-call-token #att-agent-b"
+                />
+                <path
+                  id="att-line-c"
+                  class="fan-line"
+                  pathLength="1"
+                  d="M 648 596 C 750 610, 794 622, 875 622"
+                  data-reveal-after="#att-call-token #att-agent-c"
+                />
+                <path
+                  id="att-line-d"
+                  class="fan-line"
+                  pathLength="1"
+                  d="M 648 596 C 850 648, 1042 625, 1235 622"
+                  data-reveal-after="#att-call-token #att-agent-d"
+                />
+              </svg>
+
+              <div id="att-call-token">
+                <div class="phone-mark">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M6.6 4.8c.8-.8 2-.8 2.8 0l1.2 1.2c.7.7.8 1.8.2 2.6l-.6.8c1 1.9 2.5 3.4 4.4 4.4l.8-.6c.8-.6 1.9-.5 2.6.2l1.2 1.2c.8.8.8 2 0 2.8l-.9.9c-.8.8-2 1.1-3.1.8-5-1.4-8.9-5.3-10.3-10.3-.3-1.1 0-2.3.8-3.1l.9-.9Z" />
+                  </svg>
+                </div>
+                <div class="token-label" data-layout-allow-overlap>Incoming call</div>
+              </div>
+
+              <div id="att-broadcast-hub"></div>
+
+              <article id="att-agent-a" class="agent-tile">
+                <div class="agent-head">
+                  <div class="avatar"></div>
+                  <div>
+                    <div class="agent-name">Agent 1</div>
+                    <div class="ilt-caption att-agent-detail">Available</div>
+                  </div>
+                </div>
+                <div class="ring-wrap">
+                  <div class="ring-halo"></div>
+                  <div class="ring-dot"></div>
+                </div>
+                <div class="agent-status">Ringing</div>
+              </article>
+
+              <article id="att-agent-b" class="agent-tile">
+                <div class="agent-head">
+                  <div class="avatar"></div>
+                  <div>
+                    <div class="agent-name">Agent 2</div>
+                    <div class="ilt-caption att-agent-detail">Available</div>
+                  </div>
+                </div>
+                <div class="ring-wrap">
+                  <div class="ring-halo"></div>
+                  <div class="ring-dot"></div>
+                </div>
+                <div class="agent-status">Ringing</div>
+              </article>
+
+              <article id="att-agent-c" class="agent-tile">
+                <div class="agent-head">
+                  <div class="avatar"></div>
+                  <div>
+                    <div class="agent-name">Agent 3</div>
+                    <div class="ilt-caption att-agent-detail">Available</div>
+                  </div>
+                </div>
+                <div class="ring-wrap">
+                  <div class="ring-halo"></div>
+                  <div class="ring-dot"></div>
+                </div>
+                <div class="agent-status">Ringing</div>
+              </article>
+
+              <article id="att-agent-d" class="agent-tile">
+                <div class="agent-head">
+                  <div class="avatar"></div>
+                  <div>
+                    <div class="agent-name">Agent 4</div>
+                    <div class="ilt-caption att-agent-detail">Available</div>
+                  </div>
+                </div>
+                <div class="ring-wrap">
+                  <div class="ring-halo"></div>
+                  <div class="ring-dot"></div>
+                </div>
+                <div class="agent-status">Ringing</div>
+              </article>
+
+              <div id="att-all-ring-label" data-reveal-after="#att-line-a #att-line-b #att-line-c #att-line-d">All phones ring</div>
+              <div id="att-answer-chip" data-reveal-after="#att-agent-b">First answer</div>
+              <div id="att-win-badge" data-reveal-after="#att-agent-b #att-call-token">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M5 12.8l4.1 4.1L19.5 6.5" />
+                </svg>
+              </div>
+              <div id="att-speed-note" data-reveal-after="#att-win-badge">Fast</div>
+              <div id="att-same-hands-note" data-reveal-after="#att-speed-note">Same quick hands</div>
+              <svg id="att-handoff-mark" width="152" height="96" viewBox="0 0 152 96" aria-hidden="true" data-reveal-after="#att-same-hands-note">
+                <path d="M126 20 C 94 24, 76 42, 54 72" />
+                <path d="M54 72 L54 47" />
+                <path d="M54 72 L80 69" />
+              </svg>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          window.__timelines = window.__timelines || {};
+
+          var W = window.__anchors || {
+            b06_start: 52.71,
+            attendant_default: 52.71,
+            m_attendant: 55.82,
+            attendant_all_ring: 59.69
+          };
+          var sceneStart = typeof W.b06_start === "number" ? W.b06_start : 52.71;
+          var cue = function (name) {
+            return Math.max(0, (typeof W[name] === "number" ? W[name] : sceneStart) - sceneStart);
+          };
+          var wordAt = function (absoluteSeconds) {
+            return Math.max(0, absoluteSeconds - sceneStart);
+          };
+
+          var defaultAt = cue("attendant_default");
+          var attendantAt = cue("m_attendant");
+          /* Transcript word starts from anchors/transcript, converted to scene-relative time. */
+          var callAt = wordAt(57.45);
+          var ringAt = cue("attendant_all_ring");
+          var whoeverAt = wordAt(60.75);
+          var answersAt = wordAt(61.37);
+          var firstAt = wordAt(62.02);
+          var fastAt = wordAt(63.43);
+          var quickAt = wordAt(65.48);
+
+          var tl = gsap.timeline({ paused: true });
+
+          tl.set("#att-queue-panel", { opacity: 0 }, 0);
+          tl.set("#att-default-tag", { opacity: 0 }, 0);
+          tl.set("#att-attendant-title", { opacity: 0 }, 0);
+          tl.set("#att-subtitle", { opacity: 0 }, 0);
+          tl.set("#att-call-token", { opacity: 0 }, 0);
+          tl.set("#att-broadcast-hub", { opacity: 0 }, 0);
+          tl.set("#att-agent-a", { opacity: 0 }, 0);
+          tl.set("#att-agent-b", { opacity: 0 }, 0);
+          tl.set("#att-agent-c", { opacity: 0 }, 0);
+          tl.set("#att-agent-d", { opacity: 0 }, 0);
+          tl.set("#att-line-a", { opacity: 0 }, 0);
+          tl.set("#att-line-b", { opacity: 0 }, 0);
+          tl.set("#att-line-c", { opacity: 0 }, 0);
+          tl.set("#att-line-d", { opacity: 0 }, 0);
+          tl.set("#att-all-ring-label", { opacity: 0 }, 0);
+          tl.set("#att-answer-chip", { opacity: 0 }, 0);
+          tl.set("#att-win-badge", { opacity: 0 }, 0);
+          tl.set("#att-speed-note", { opacity: 0 }, 0);
+          tl.set("#att-same-hands-note", { opacity: 0 }, 0);
+          tl.set("#att-handoff-mark", { opacity: 0 }, 0);
+          tl.set("#att-title-rule", { scaleX: 0 }, 0);
+          tl.set("#att-flow-board", { x: 0, y: 0 }, 0);
+          tl.set(".ring-halo", { opacity: 0, scale: 0.55 }, 0);
+          tl.set(".fan-line", { strokeDashoffset: 1 }, 0);
+          tl.set("#att-broadcast-hub", { scale: 0.6 }, 0);
+
+          /* Opening honours cut-left: the panel and default tag arrive from the left. */
+          tl.fromTo(
+            "#att-queue-panel",
+            { opacity: 0, x: -145 },
+            { opacity: 1, x: 0, duration: 0.72, ease: "power3.out" },
+            defaultAt
+          );
+          tl.fromTo(
+            "#att-default-tag",
+            { opacity: 0, x: -60 },
+            { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" },
+            defaultAt + 0.08
+          );
+          tl.fromTo(
+            "#att-attendant-title",
+            { opacity: 0, x: -50 },
+            { opacity: 1, x: 0, duration: 0.58, ease: "power3.out" },
+            defaultAt + 0.2
+          );
+          tl.fromTo(
+            "#att-subtitle",
+            { opacity: 0, x: -38 },
+            { opacity: 1, x: 0, duration: 0.54, ease: "power3.out" },
+            defaultAt + 0.42
+          );
+
+          /* "Attendant routing" — identify the method and bring the full agent set online. */
+          tl.fromTo(
+            "#att-title-rule",
+            { scaleX: 0 },
+            { scaleX: 1, duration: 0.52, ease: "power2.out" },
+            attendantAt
+          );
+          tl.fromTo(
+            "#att-agent-a",
+            { opacity: 0, x: -70, scale: 0.96 },
+            { opacity: 1, x: 0, scale: 1, duration: 0.56, ease: "power3.out" },
+            attendantAt + 0.08
+          );
+          tl.fromTo(
+            "#att-agent-b",
+            { opacity: 0, x: -70, scale: 0.96 },
+            { opacity: 1, x: 0, scale: 1, duration: 0.56, ease: "power3.out" },
+            attendantAt + 0.16
+          );
+          tl.fromTo(
+            "#att-agent-c",
+            { opacity: 0, x: -70, scale: 0.96 },
+            { opacity: 1, x: 0, scale: 1, duration: 0.56, ease: "power3.out" },
+            attendantAt + 0.24
+          );
+          tl.fromTo(
+            "#att-agent-d",
+            { opacity: 0, x: -70, scale: 0.96 },
+            { opacity: 1, x: 0, scale: 1, duration: 0.56, ease: "power3.out" },
+            attendantAt + 0.32
+          );
+
+          /* "A call comes in" — the call token enters from the left and lands on the hub. */
+          tl.fromTo(
+            "#att-call-token",
+            { opacity: 0, x: -185, scale: 0.96 },
+            { opacity: 1, x: 0, scale: 1, duration: 0.68, ease: "power3.out" },
+            callAt
+          );
+          tl.fromTo(
+            "#att-broadcast-hub",
+            { opacity: 0, scale: 0.6 },
+            { opacity: 1, scale: 1, duration: 0.42, ease: "back.out(2)" },
+            callAt + 0.48
+          );
+
+          /* "Rings at once" — all connectors and all phone marks fire simultaneously. */
+          ["#att-line-a", "#att-line-b", "#att-line-c", "#att-line-d"].forEach(function (sel) {
+            tl.fromTo(
+              sel,
+              { opacity: 0, strokeDashoffset: 1 },
+              { opacity: 1, strokeDashoffset: 0, duration: 0.48, ease: "none" },
+              ringAt
+            );
+          });
+          tl.fromTo(
+            "#att-all-ring-label",
+            { opacity: 0, y: -16, scale: 0.94 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.36, ease: "back.out(1.8)" },
+            ringAt + 0.08
+          );
+          tl.fromTo(
+            ".ring-halo",
+            { opacity: 0.8, scale: 0.55 },
+            { opacity: 0, scale: 1.55, duration: 0.55, ease: "power2.out", repeat: 3 },
+            ringAt
+          );
+          tl.to("#att-broadcast-hub", { scale: 1.18, duration: 0.16, yoyo: true, repeat: 1, ease: "power1.inOut" }, ringAt);
+
+          /* "Whoever answers first gets it" — Agent 2 wins the broadcast race. */
+          tl.to("#att-agent-b", { y: -18, scale: 1.045, duration: 0.34, ease: "power2.out" }, whoeverAt);
+          tl.to("#att-agent-a, #att-agent-c, #att-agent-d", { opacity: 0.58, duration: 0.38, ease: "power1.out" }, answersAt);
+          tl.fromTo(
+            "#att-answer-chip",
+            { opacity: 0, y: -16, scale: 0.94 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.32, ease: "back.out(1.8)" },
+            firstAt
+          );
+          tl.to("#att-line-a, #att-line-c, #att-line-d", { opacity: 0.25, duration: 0.32, ease: "power1.out" }, firstAt);
+          tl.to("#att-call-token", { x: 994, y: -232, scale: 0.72, duration: 0.62, ease: "power3.inOut" }, firstAt + 0.08);
+          tl.fromTo(
+            "#att-win-badge",
+            { opacity: 0, scale: 0.45 },
+            { opacity: 1, scale: 1, duration: 0.34, ease: "back.out(2.2)" },
+            firstAt + 0.28
+          );
+
+          /* "Fast — but it leans on the same quick hands." */
+          tl.fromTo(
+            "#att-speed-note",
+            { opacity: 0, y: 18, scale: 0.94 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.34, ease: "back.out(1.8)" },
+            fastAt
+          );
+          tl.fromTo(
+            "#att-same-hands-note",
+            { opacity: 0, y: 18, scale: 0.94 },
+            { opacity: 1, y: 0, scale: 1, duration: 0.38, ease: "back.out(1.8)" },
+            quickAt
+          );
+          tl.to("#att-agent-b", { y: -24, scale: 1.065, duration: 0.2, yoyo: true, repeat: 1, ease: "power1.inOut" }, quickAt);
+          tl.fromTo(
+            "#att-handoff-mark",
+            { opacity: 0, x: 26, y: -22 },
+            { opacity: 1, x: 0, y: 0, duration: 0.52, ease: "power2.out" },
+            quickAt + 0.12
+          );
+
+          /* Resolve the held final frame down-left without authoring the cross-scene seam. */
+          tl.to("#att-flow-board", { x: -34, y: 28, duration: 0.82, ease: "power2.inOut" }, quickAt + 0.28);
+
+          window.__timelines["06-attendant"] = tl;
+        })();
+      </script>
+    </template>
+  </body>
+</html>

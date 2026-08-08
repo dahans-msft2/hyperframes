@@ -1,0 +1,39 @@
+<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="https://www.w3.org/2001/mstts" xml:lang="en-US">
+  <voice name="en-US-Andrew:DragonHDLatestNeural">
+    <prosody rate="-3%">
+      <p>Here's a call queue setup that looks completely correct — and quietly fails.</p>
+      <break time="400ms"/>
+      <p>This is how call queue routing works in Microsoft Teams Phone, and how to keep it from tripping you up.</p>
+      <break time="400ms"/>
+      <p>By the end, you'll know three things: how the four routing methods hand out calls, and which two Microsoft recommends; how callback offers a waiting caller a call back instead of hold music; and the timing trap that stops callback from ever being offered.</p>
+      <break time="400ms"/>
+      <p>Picture that broken setup. Callback is on, a caller is clearly waiting, an agent is clearly free — and the callback never comes. Nothing's misconfigured. To see why, you first need to see how a call queue handles a call. It starts with one decision: who to ring.</p>
+      <break time="400ms"/>
+      <p>That decision is the routing method — and you get four of them. Each hands out calls differently, so your choice decides how the work is shared across agents.</p>
+      <break time="400ms"/>
+      <p>The default on every queue, new or existing, is Attendant routing. A call comes in, every agent's phone rings at once, and whoever answers first gets it. Fast — but it leans on the same quick hands.</p>
+      <break time="400ms"/>
+      <p>Serial rings agents one at a time, in the exact order you list them. If one dismisses the call or doesn't answer, it moves to the next, and keeps going until someone picks up or the call times out.</p>
+      <break time="400ms"/>
+      <p>Round robin evens things out, so every agent gets the same number of calls. That's the one for inbound sales, where each rep should get an equal shot at the next lead.</p>
+      <break time="400ms"/>
+      <p>Longest idle sends the next call to whoever's been free the longest — and free means their presence is set to <emphasis level="moderate">Available</emphasis>. Choosing it flips presence-based routing on automatically, even when that toggle looks off. These two — Round robin and Longest idle — are the ones Microsoft recommends.</p>
+      <break time="400ms"/>
+      <p>One catch: when fewer calls are waiting than there are available agents, only the first two longest-idle agents get offered calls.</p>
+      <break time="400ms"/>
+      <p>So that's who the queue rings. Callback handles the people still waiting: turn it on, and an eligible caller can hang up and get called back the moment an agent frees up — instead of sitting on hold.</p>
+      <break time="400ms"/>
+      <p>A caller becomes eligible the moment any one of three conditions comes true: they wait past your set time, the queue grows past a set number of calls, or the calls-to-agent ratio crosses your limit. Their number just has to be publicly dialable, non-premium, and in standard E one six four format.</p>
+      <break time="400ms"/>
+      <p>So — back to our mystery. Callback's on, eligibility's set to sixty seconds, everything looks right. Will this caller ever get offered a callback? <break time="800ms"/></p>
+      <break time="400ms"/>
+      <p>Watch the clock. At sixty seconds, the caller becomes eligible — but the default hold music runs a full two minutes, and the timeout is set to one hundred and twenty seconds. The timeout fires before the music ends, so the offer never plays. Callback wasn't broken — the timeout just never gave it <emphasis level="moderate">room</emphasis>.</p>
+      <break time="400ms"/>
+      <p>So here's the rule to keep: your Call timeout has to outlast the whole sequence — time to become eligible, time for the music to finish, and time for the callback to reach a free agent. Get that one value right, and callback finally works.</p>
+      <break time="400ms"/>
+      <p>So, four routing methods deciding who rings: Attendant, Serial, Round robin, and Longest idle — the last two recommended. Callback for the callers still on hold. And one timing rule tying it together: set the timeout long enough, or callback never gets its turn.</p>
+      <break time="400ms"/>
+      <p>Want to set one up yourself? Head to the call queue setup guide on Microsoft Learn and walk through routing and callback end to end.</p>
+    </prosody>
+  </voice>
+</speak>
