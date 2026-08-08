@@ -53,28 +53,24 @@ jobs:
   gate:
     if: startsWith(github.head_ref, 'video/')   # only video/<slug> PRs
     runs-on: ubuntu-latest
+    # Pre-baked image (built + smoke-tested by build-ci-image.yml): node + python + chromium + fonts
+    # + the pinned hyperframes CLI + chrome-headless-shell are all baked in, so this job just runs the
+    # checks instead of re-downloading predictable deps every push. Bump the tag in lockstep with
+    # learn/config.json -> cli.published_version (and re-run build-ci-image first).
+    container:
+      image: ghcr.io/dahans-msft2/hyperframes-learn-ci:0.7.77
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: read
+      packages: read
     timeout-minutes: 30
     steps:
       - name: Checkout the PR head (this video's branch tip)
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Headless-browser libs + fallback fonts (Segoe not needed for the gates)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends chromium fontconfig fonts-liberation fonts-noto-core fonts-dejavu-core
-          sudo fc-cache -f
-
-      - name: Provision chrome-headless-shell for `check`
-        run: npx --yes hyperframes@0.7.77 browser ensure
 
       - name: Resolve the one project on this branch
         id: proj
@@ -105,7 +101,7 @@ jobs:
         run: python learn/tools/check_cue_anchors.py "${{ steps.proj.outputs.dir }}/index.html"
       - name: Lint (static structure)
         working-directory: ${{ steps.proj.outputs.dir }}
-        run: npx --yes hyperframes@0.7.77 lint
+        run: hyperframes lint
       - name: Check (headless browser — runtime, layout, WCAG)
         working-directory: ${{ steps.proj.outputs.dir }}
-        run: npx --yes hyperframes@0.7.77 check
+        run: hyperframes check
