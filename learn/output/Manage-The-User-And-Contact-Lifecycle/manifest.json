@@ -1,0 +1,13 @@
+{
+  "title": "Manage the User and Contact Lifecycle",
+  "type": "unit-video",
+  "profile": "unit-video",
+  "status": "scaffolded",
+  "voice": "en-US-Ava:DragonHDLatestNeural",
+  "source": "C:\\learn-pr\\learn-m365-pr\\learn-m365-pr\\wwl\\provision-govern-identities-entra\\includes\\2-manage-user-contact-lifecycle.md",
+  "deliverables": {
+    "mp4": "Manage-The-User-And-Contact-Lifecycle.mp4",
+    "captions_vtt": "Manage-The-User-And-Contact-Lifecycle.vtt",
+    "thumbnail": "Manage-The-User-And-Contact-Lifecycle_thumbnail.png"
+  }
+}
