@@ -57,7 +57,7 @@ jobs:
       - name: Build (load locally first for the smoke test)
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: .github/docker
           file: .github/docker/learn-ci.Dockerfile
           build-args: HYPERFRAMES_VERSION=${{ steps.v.outputs.version }}
           load: true
@@ -77,7 +77,7 @@ jobs:
       - name: Push the validated image (version tag + latest)
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: .github/docker
           file: .github/docker/learn-ci.Dockerfile
           build-args: HYPERFRAMES_VERSION=${{ steps.v.outputs.version }}
           push: true
