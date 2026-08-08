@@ -1,0 +1,25 @@
+*(Scene 01-bumper is the silent Microsoft Learn brand sting — no narration. The voice begins on the title.)*
+
+An admin at Relecloud is standing at a whiteboard, planning access for a new office full of engineers. They need the same policy and the same licenses the existing engineering team already has. Two options go up on the board — and one of them *doesn't* work the way it looks.
+
+Get that choice wrong and the new hires either lose access they need or gain access they shouldn't. So you'll pick the right group type, decide how people become members, and set the policies that keep the group estate from sliding into clutter.
+
+Start with the type — two kinds of group solve two different problems. A security group manages access — apps, files, Conditional Access, licenses — and it can hold users, devices, even service principals. A Microsoft 365 group is for collaboration instead: a shared mailbox, calendar, and site, and it holds only users. Relecloud's job is access, so a security group it is.
+
+Next, how do people get in? With assigned membership, an admin adds and removes each person by hand. With dynamic membership, Entra ID reads user attributes — like office location — and updates the group automatically as people join and leave. For an office that's still hiring, nobody has to remember to add the next starter.
+
+Back to that whiteboard. The tidy option is a small New Office group nested inside All Engineering, so it inherits the parent's licenses and access for free. Before I tell you what happens, take a guess: [[pause:600ms]] do the people inside that nested group actually pick those up?
+
+Most of us expect nesting to work like folders, where everything on the parent flows down to whatever's inside. Groups *don't* behave that way. Nesting makes the child group a member of the parent — but a license or an assigned resource only reaches the parent's direct members. The people inside the nested group are two steps removed, so nothing reaches them.
+
+And this isn't a one-off quirk. Group-based licensing resolves direct members only — a user buried a level down is invisible to it. So whenever something is assigned to a group, ask one question: who are this group's direct members? That's the only population the assignment reaches.
+
+So nesting won't rescue this plan — but structure still matters as Relecloud grows. Once people create their own Microsoft 365 groups, names drift into chaos. A group naming policy fixes that: it enforces a required prefix or suffix on every new name, and it blocks words you don't want in the directory. It needs Microsoft Entra ID P1.
+
+Naming keeps names tidy, but it doesn't stop groups from outliving their purpose. A six-month project group is often still around two years later — owner gone, members unsure why they're there. A group expiration policy gives each Microsoft 365 group a lifetime in days. As it nears the end, Entra ID asks the owners to renew, and a group still in use renews itself automatically. Anything nobody renews gets deleted — but it stays restorable for thirty days.
+
+Three details worth keeping straight: a tenant gets exactly one expiration policy, it covers all your Microsoft 365 groups or a selected subset, and it needs P1 or P2 for the members it covers — the same tier the naming policy relies on.
+
+So, to recap: security groups for access, Microsoft 365 groups for collaboration. Dynamic membership to keep a growing group current. Nesting that reaches direct members only — never a cascade. And naming and expiration policies keeping the estate clean as Relecloud scales.
+
+That handles the groups themselves. Next, see how an administrative unit scopes an admin's reach to just one slice of the directory. Find the full unit on Microsoft Learn.

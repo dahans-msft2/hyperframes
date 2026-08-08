@@ -1,0 +1,44 @@
+{
+  "_about": "Cue name -> exact spoken phrase from narration. Resolved to real audio times by tools/word_anchors.py against transcript.json. Phrases are contiguous, unambiguous runs of narration tokens (punctuation- and case-insensitive).",
+  "_note_p1p2": "naming_p1 and expire_license depend on ASR keeping 'P1'/'P2' as single tokens. If transcribe splits them, re-anchor on neighboring words or spell 'P One'/'P Two' in narration.",
+
+  "title_hook": "planning access for a new office",
+  "hook_two_options": "Two options go up on the board",
+  "obj_choices": "pick the right group type",
+
+  "types_security": "A security group manages access",
+  "types_m365": "A Microsoft 365 group is for collaboration",
+  "types_verdict": "so a security group it is",
+
+  "member_assigned": "With assigned membership",
+  "member_dynamic": "reads user attributes",
+  "member_verdict": "the next starter",
+
+  "nest_structure": "nested inside All Engineering",
+  "nest_predict": "take a guess",
+
+  "nest_folders": "work like folders",
+  "nest_direct": "the parent's direct members",
+  "nest_removed": "two steps removed",
+
+  "rule_licensing": "Group-based licensing resolves direct members only",
+  "rule_question": "who are this group's direct members",
+
+  "naming_policy": "A group naming policy fixes that",
+  "naming_prefix": "a required prefix or suffix",
+  "naming_blocks": "it blocks words you don't want",
+  "naming_p1": "Microsoft Entra ID P1",
+
+  "expire_lifetime": "a lifetime in days",
+  "expire_renew": "renews itself automatically",
+  "expire_restore": "restorable for thirty days",
+
+  "expire_one": "exactly one expiration policy",
+  "expire_scope": "or a selected subset",
+  "expire_license": "it needs P1 or P2",
+
+  "recap_start": "security groups for access",
+
+  "cta_admin_unit": "an administrative unit scopes",
+  "cta_learn": "the full unit on Microsoft Learn"
+}
