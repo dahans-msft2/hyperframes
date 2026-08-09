@@ -142,6 +142,25 @@ jobs:
       - name: Provision chrome-headless-shell for the render
         run: npx --yes hyperframes@0.7.77 browser ensure
 
+      # anchors.js is a gitignored BUILD ARTIFACT (resolved from anchors.json + transcript.json).
+      # The composition's scene timelines read window.__anchors, so the render host must regenerate
+      # it — otherwise a build whose scenes lack numeric fallbacks renders with broken timing.
+      - name: Regenerate word anchors (the render needs them)
+        shell: pwsh
+        run: |
+          $dir = '${{ steps.proj.outputs.dir }}'
+          if ((Test-Path "$dir/anchors.json") -and (Test-Path "$dir/transcript.json")) {
+            $lead = 0.0
+            if (Test-Path "$dir/scenes.json") {
+              $n = (Get-Content "$dir/scenes.json" -Raw | ConvertFrom-Json).narration
+              if ($n -and $n.start) { $lead = [double]$n.start }
+            }
+            python learn/tools/word_anchors.py "$dir/transcript.json" --spec "$dir/anchors.json" -o "$dir/anchors.js" --lead-in $lead
+            Write-Host "Regenerated anchors.js (lead-in $lead s)"
+          } else {
+            Write-Host "No anchors.json/transcript.json — skipping (composition bakes literal times)."
+          }
+
       - name: Render + package (MP4 + VTT + thumbnail)
         run: python learn/tools/render_and_package.py --project "${{ steps.proj.outputs.dir }}"
 
