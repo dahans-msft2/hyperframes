@@ -26,7 +26,22 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # A `release` run's ref is the TAG, and the github-pages environment only accepts allowed
+  # branches — so deploying directly from a release run is always rejected. Re-dispatch onto main
+  # (workflow_dispatch is exempt from the GITHUB_TOKEN no-recursion rule) and let that run deploy.
+  redispatch-on-main:
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Re-run this workflow on main (tag refs cannot deploy to Pages)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy-gallery.yml --repo "${{ github.repository }}" --ref main
+
   build-deploy:
+    if: github.event_name != 'release'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
