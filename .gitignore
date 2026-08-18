@@ -135,6 +135,15 @@ packages/studio/data/
 !.agents/skills/seam-craft
 !.agents/skills/captions-overlay
 !.agents/skills/oversized-cursor
+# Learn pipeline: domain skills the learn-* doctrine cites by name. The cloud agent sees only
+# the repo, so these must be installed here, not left to a user-level `skills update`.
+!.agents/skills/hyperframes-core
+!.agents/skills/hyperframes-animation
+!.agents/skills/hyperframes-creative
+!.agents/skills/hyperframes-cli
+!.agents/skills/hyperframes-registry
+!.agents/skills/hyperframes-keyframes
+!.agents/skills/figma
 skills-lock.json
 
 # Skills from other PRs (not managed here)
