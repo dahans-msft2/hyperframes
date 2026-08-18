@@ -26,9 +26,11 @@ supersede upstream **motion** guidance — see the routing table.
 | Animation runtimes, adapters, scene blueprints, transitions, seek-safe keyframes | `hyperframes-animation` (vendored) |
 | `frame.md` handling, composition patterns, beat planning | `hyperframes-creative` (vendored) |
 | Scene components | the **Learn-ILT kit** — `templates/blocks/catalog.json`; upstream mechanics in `hyperframes-registry` (vendored) |
+| **No kit block fits the shape** | **`learn-block-adoption`** — adopt one of the 382 upstream registry blocks and re-brand it. Read this BEFORE hand-authoring a custom scene |
 | TTS + SSML + transcription + icons | repo tools: `tools/azure_tts.py`, `tools/make_ssml.py`, `npx hyperframes transcribe`, `tools/icon_index.py` (voice selection: `learn-narration-doctrine`) |
 | Source grounding & fact-check against **current** Learn docs | **Docs MCP — a core tool**: `microsoft_docs_search` / `microsoft_docs_fetch` (server `microsoft_docs_mcp`, configured in `.vscode/mcp.json`). Ground every drift-prone claim here; the local source clone is the fallback only when the server is genuinely unreachable. |
 | CLI, lint, check, render | `hyperframes-cli` (vendored) |
+| Prompting craft — how much to specify, which words change output, recurring failure modes | **`learn/docs/prompting/`** (33 vendored guides). Start at `specification-dial.mdx` + `vocabulary.mdx`; read `data-and-maps.mdx` before ANY map or data scene. Craft only — `learn-*` doctrine still wins on brand |
 
 **`motion-doctrine` is adopted whole and unmodified.** Its vector law, vector ledger,
 carriers, causal motion, `seam-gate.mjs` build gate and no-idle-wobble rules are the motion
@@ -97,6 +99,38 @@ Thread it to every downstream agent, exactly like a template lock. **A mismatch 
 routed profile and the profile on the scorecard is a hard error, not a warning.**
 
 Profiles live in `learn/profiles/`.
+
+---
+
+## Reach for the right command
+
+The CLI ships ~30 commands. A pipeline that only ever calls `lint`, `check`, `render` and
+`transcribe` ends up **rebuilding things that shipped in the box** — hand-rolled comparison sheets,
+eyeballed layout audits, guessed render settings. Match the *situation*, not the habit. Pin every
+call to `learn/config.json` → `cli.published_version`.
+
+| Situation | Command |
+|---|---|
+| No kit block fits — what else exists? | `catalog`, `catalog --search <term>` → then **`learn-block-adoption`** |
+| Render is slow; is the config wrong? | **`benchmark`** — sweeps fps/quality/worker configs and compares speed *and* file size. Run this **before** arguing for different infrastructure |
+| Two design options, need to choose | **`compare`** — renders variants into one labelled sheet. Do not export twice and squint |
+| Choosing a colour grade / LUT | `grade-compare` |
+| "Does anything overlap / sit off-frame?" | **`inspect`** — rendered layout across the whole timeline. Cheaper and more reliable than estimating geometry by hand |
+| Motion looks wrong and the timeline reads fine | **`keyframes`** — onion-shot diagnostics of what actually moved |
+| Cutting to music or a beat grid | `beats` |
+| Need a real product UI on screen | `capture` (offer it — never silently mock a UI; see `learn-brand-doctrine`) |
+| Footage looks flat / wrong tone | `media-treatment` |
+| Environment is misbehaving before a render | `doctor`, `browser` |
+| Unsure of an option's contract | `docs` — inline, version-matched to the pinned CLI |
+| Render exceeds one machine (long formats) | `lambda` / `cloudrun` are the reference distributed-render adapters — read them before designing a new one |
+
+**Two rules.**
+
+1. **Measure before you migrate.** `benchmark` and `inspect` answer questions that otherwise get
+   answered with infrastructure changes or guesswork. Wall-clock and layout are measurable — treat a
+   claim about either as unproven until a command has produced it.
+2. **Prefer a command over a hand-rolled equivalent.** If you find yourself writing a script to
+   compare frames, measure text widths, or sweep render settings, check this table first.
 
 ---
 
