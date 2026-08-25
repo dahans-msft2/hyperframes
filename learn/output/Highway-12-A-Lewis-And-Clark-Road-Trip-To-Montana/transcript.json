@@ -1,0 +1,4857 @@
+[
+  {
+    "text": "Before",
+    "start": 0.03,
+    "end": 0.39
+  },
+  {
+    "text": "there",
+    "start": 0.39,
+    "end": 0.7
+  },
+  {
+    "text": "was",
+    "start": 0.71,
+    "end": 0.92
+  },
+  {
+    "text": "a",
+    "start": 0.92,
+    "end": 0.98
+  },
+  {
+    "text": "highway,",
+    "start": 0.98,
+    "end": 1.6
+  },
+  {
+    "text": "before",
+    "start": 1.62,
+    "end": 2.15
+  },
+  {
+    "text": "there",
+    "start": 2.15,
+    "end": 2.61
+  },
+  {
+    "text": "was",
+    "start": 2.61,
+    "end": 2.69
+  },
+  {
+    "text": "a",
+    "start": 2.85,
+    "end": 2.97
+  },
+  {
+    "text": "map,",
+    "start": 2.97,
+    "end": 3.46
+  },
+  {
+    "text": "this",
+    "start": 3.49,
+    "end": 3.9
+  },
+  {
+    "text": "land",
+    "start": 3.9,
+    "end": 4.34
+  },
+  {
+    "text": "was",
+    "start": 4.34,
+    "end": 4.59
+  },
+  {
+    "text": "home.",
+    "start": 5.07,
+    "end": 5.48
+  },
+  {
+    "text": "For",
+    "start": 5.51,
+    "end": 5.57
+  },
+  {
+    "text": "thousands",
+    "start": 5.71,
+    "end": 6.2
+  },
+  {
+    "text": "of",
+    "start": 6.29,
+    "end": 6.41
+  },
+  {
+    "text": "years,",
+    "start": 6.41,
+    "end": 6.81
+  },
+  {
+    "text": "the",
+    "start": 6.81,
+    "end": 7.1
+  },
+  {
+    "text": "mountains",
+    "start": 7.1,
+    "end": 7.48
+  },
+  {
+    "text": "and",
+    "start": 7.48,
+    "end": 7.68
+  },
+  {
+    "text": "rivers",
+    "start": 7.68,
+    "end": 8.08
+  },
+  {
+    "text": "of",
+    "start": 8.11,
+    "end": 8.17
+  },
+  {
+    "text": "the",
+    "start": 8.31,
+    "end": 8.43
+  },
+  {
+    "text": "Northwest",
+    "start": 8.43,
+    "end": 9.08
+  },
+  {
+    "text": "belonged",
+    "start": 9.08,
+    "end": 9.22
+  },
+  {
+    "text": "to",
+    "start": 9.69,
+    "end": 9.82
+  },
+  {
+    "text": "nations",
+    "start": 9.82,
+    "end": 10.32
+  },
+  {
+    "text": "who",
+    "start": 10.35,
+    "end": 10.56
+  },
+  {
+    "text": "had",
+    "start": 10.56,
+    "end": 10.8
+  },
+  {
+    "text": "always",
+    "start": 10.8,
+    "end": 11.27
+  },
+  {
+    "text": "been",
+    "start": 11.27,
+    "end": 11.45
+  },
+  {
+    "text": "here.",
+    "start": 11.91,
+    "end": 12.07
+  },
+  {
+    "text": "Among",
+    "start": 12.19,
+    "end": 12.54
+  },
+  {
+    "text": "them,",
+    "start": 12.54,
+    "end": 12.99
+  },
+  {
+    "text": "the",
+    "start": 12.99,
+    "end": 13.22
+  },
+  {
+    "text": "Nez",
+    "start": 13.22,
+    "end": 13.38
+  },
+  {
+    "text": "Perce,",
+    "start": 13.43,
+    "end": 13.9
+  },
+  {
+    "text": "the",
+    "start": 14.05,
+    "end": 14.28
+  },
+  {
+    "text": "Salish,",
+    "start": 14.28,
+    "end": 14.85
+  },
+  {
+    "text": "the",
+    "start": 15.07,
+    "end": 15.13
+  },
+  {
+    "text": "Shoshone,",
+    "start": 15.27,
+    "end": 15.98
+  },
+  {
+    "text": "and",
+    "start": 15.98,
+    "end": 16.16
+  },
+  {
+    "text": "the",
+    "start": 16.2,
+    "end": 16.22
+  },
+  {
+    "text": "Blackfeet.",
+    "start": 16.65,
+    "end": 17.29
+  },
+  {
+    "text": "As",
+    "start": 17.35,
+    "end": 17.41
+  },
+  {
+    "text": "the",
+    "start": 17.55,
+    "end": 17.78
+  },
+  {
+    "text": "Nez",
+    "start": 17.78,
+    "end": 18.04
+  },
+  {
+    "text": "Perce",
+    "start": 18.13,
+    "end": 18.45
+  },
+  {
+    "text": "put",
+    "start": 18.45,
+    "end": 18.54
+  },
+  {
+    "text": "it",
+    "start": 18.93,
+    "end": 18.97
+  },
+  {
+    "text": "today,",
+    "start": 18.97,
+    "end": 19.68
+  },
+  {
+    "text": "we",
+    "start": 19.71,
+    "end": 19.77
+  },
+  {
+    "text": "did",
+    "start": 19.91,
+    "end": 20.07
+  },
+  {
+    "text": "not",
+    "start": 20.11,
+    "end": 20.35
+  },
+  {
+    "text": "travel",
+    "start": 20.35,
+    "end": 20.8
+  },
+  {
+    "text": "here.",
+    "start": 20.83,
+    "end": 21.44
+  },
+  {
+    "text": "We",
+    "start": 21.51,
+    "end": 21.57
+  },
+  {
+    "text": "are",
+    "start": 21.71,
+    "end": 21.87
+  },
+  {
+    "text": "of",
+    "start": 21.91,
+    "end": 22.07
+  },
+  {
+    "text": "this",
+    "start": 22.07,
+    "end": 22.43
+  },
+  {
+    "text": "land.",
+    "start": 22.43,
+    "end": 23.08
+  },
+  {
+    "text": "We",
+    "start": 23.11,
+    "end": 23.17
+  },
+  {
+    "text": "did",
+    "start": 23.31,
+    "end": 23.44
+  },
+  {
+    "text": "not",
+    "start": 23.44,
+    "end": 23.66
+  },
+  {
+    "text": "declare",
+    "start": 23.66,
+    "end": 24.17
+  },
+  {
+    "text": "our",
+    "start": 24.17,
+    "end": 24.24
+  },
+  {
+    "text": "independence.",
+    "start": 24.7,
+    "end": 25.52
+  },
+  {
+    "text": "We",
+    "start": 25.55,
+    "end": 25.61
+  },
+  {
+    "text": "have",
+    "start": 25.75,
+    "end": 26.06
+  },
+  {
+    "text": "always",
+    "start": 26.06,
+    "end": 26.6
+  },
+  {
+    "text": "been",
+    "start": 26.6,
+    "end": 26.68
+  },
+  {
+    "text": "free.",
+    "start": 27.13,
+    "end": 27.6
+  },
+  {
+    "text": "Hold",
+    "start": 27.63,
+    "end": 27.84
+  },
+  {
+    "text": "on",
+    "start": 27.84,
+    "end": 27.96
+  },
+  {
+    "text": "to",
+    "start": 27.96,
+    "end": 28.08
+  },
+  {
+    "text": "that,",
+    "start": 28.08,
+    "end": 28.44
+  },
+  {
+    "text": "because",
+    "start": 28.44,
+    "end": 28.74
+  },
+  {
+    "text": "the",
+    "start": 28.74,
+    "end": 29.04
+  },
+  {
+    "text": "road",
+    "start": 29.21,
+    "end": 29.28
+  },
+  {
+    "text": "we're",
+    "start": 29.28,
+    "end": 29.58
+  },
+  {
+    "text": "about",
+    "start": 29.58,
+    "end": 29.86
+  },
+  {
+    "text": "to",
+    "start": 29.92,
+    "end": 30.1
+  },
+  {
+    "text": "drive",
+    "start": 30.1,
+    "end": 30.29
+  },
+  {
+    "text": "is",
+    "start": 30.59,
+    "end": 30.65
+  },
+  {
+    "text": "stunningly",
+    "start": 30.79,
+    "end": 31.68
+  },
+  {
+    "text": "beautiful,",
+    "start": 32.18,
+    "end": 32.6
+  },
+  {
+    "text": "and",
+    "start": 32.63,
+    "end": 32.84
+  },
+  {
+    "text": "its",
+    "start": 32.84,
+    "end": 33.08
+  },
+  {
+    "text": "story",
+    "start": 33.08,
+    "end": 33.47
+  },
+  {
+    "text": "is",
+    "start": 33.47,
+    "end": 33.63
+  },
+  {
+    "text": "more",
+    "start": 33.63,
+    "end": 33.74
+  },
+  {
+    "text": "complicated",
+    "start": 34.22,
+    "end": 34.84
+  },
+  {
+    "text": "than",
+    "start": 34.87,
+    "end": 35.17
+  },
+  {
+    "text": "the",
+    "start": 35.17,
+    "end": 35.41
+  },
+  {
+    "text": "names",
+    "start": 35.41,
+    "end": 35.82
+  },
+  {
+    "text": "on",
+    "start": 35.82,
+    "end": 35.96
+  },
+  {
+    "text": "the",
+    "start": 35.96,
+    "end": 36.02
+  },
+  {
+    "text": "map",
+    "start": 36.45,
+    "end": 36.46
+  },
+  {
+    "text": "suggest.",
+    "start": 36.46,
+    "end": 37.32
+  },
+  {
+    "text": "In",
+    "start": 37.35,
+    "end": 37.41
+  },
+  {
+    "text": "1803,",
+    "start": 37.55,
+    "end": 38.52
+  },
+  {
+    "text": "President",
+    "start": 38.94,
+    "end": 39.24
+  },
+  {
+    "text": "Thomas",
+    "start": 39.24,
+    "end": 39.58
+  },
+  {
+    "text": "Jefferson",
+    "start": 39.63,
+    "end": 40
+  },
+  {
+    "text": "bought",
+    "start": 40.23,
+    "end": 40.59
+  },
+  {
+    "text": "the",
+    "start": 40.63,
+    "end": 40.79
+  },
+  {
+    "text": "vast",
+    "start": 40.84,
+    "end": 41.08
+  },
+  {
+    "text": "Louisiana",
+    "start": 41.08,
+    "end": 41.34
+  },
+  {
+    "text": "territory",
+    "start": 41.82,
+    "end": 42.36
+  },
+  {
+    "text": "from",
+    "start": 42.36,
+    "end": 42.77
+  },
+  {
+    "text": "France.",
+    "start": 42.77,
+    "end": 43.72
+  },
+  {
+    "text": "Land",
+    "start": 43.75,
+    "end": 44.06
+  },
+  {
+    "text": "France",
+    "start": 44.06,
+    "end": 44.57
+  },
+  {
+    "text": "did",
+    "start": 44.57,
+    "end": 44.83
+  },
+  {
+    "text": "not",
+    "start": 44.83,
+    "end": 44.88
+  },
+  {
+    "text": "truly",
+    "start": 45.33,
+    "end": 45.48
+  },
+  {
+    "text": "own,",
+    "start": 45.61,
+    "end": 45.8
+  },
+  {
+    "text": "and",
+    "start": 45.83,
+    "end": 45.89
+  },
+  {
+    "text": "that",
+    "start": 46.03,
+    "end": 46.32
+  },
+  {
+    "text": "was",
+    "start": 46.32,
+    "end": 46.53
+  },
+  {
+    "text": "already",
+    "start": 46.54,
+    "end": 46.93
+  },
+  {
+    "text": "home",
+    "start": 46.93,
+    "end": 47.41
+  },
+  {
+    "text": "to",
+    "start": 47.41,
+    "end": 47.52
+  },
+  {
+    "text": "dozens",
+    "start": 47.52,
+    "end": 47.94
+  },
+  {
+    "text": "of",
+    "start": 47.94,
+    "end": 48.06
+  },
+  {
+    "text": "native",
+    "start": 48.12,
+    "end": 48.45
+  },
+  {
+    "text": "peoples.",
+    "start": 48.47,
+    "end": 49.24
+  },
+  {
+    "text": "Then",
+    "start": 49.27,
+    "end": 49.51
+  },
+  {
+    "text": "he",
+    "start": 49.51,
+    "end": 49.63
+  },
+  {
+    "text": "sent",
+    "start": 49.67,
+    "end": 49.91
+  },
+  {
+    "text": "Meriwether",
+    "start": 49.91,
+    "end": 50.38
+  },
+  {
+    "text": "Lewis",
+    "start": 50.85,
+    "end": 50.91
+  },
+  {
+    "text": "and",
+    "start": 50.91,
+    "end": 50.98
+  },
+  {
+    "text": "William",
+    "start": 51.13,
+    "end": 51.58
+  },
+  {
+    "text": "Clark",
+    "start": 51.58,
+    "end": 51.92
+  },
+  {
+    "text": "and",
+    "start": 51.99,
+    "end": 52.05
+  },
+  {
+    "text": "a",
+    "start": 52.19,
+    "end": 52.24
+  },
+  {
+    "text": "party",
+    "start": 52.24,
+    "end": 52.55
+  },
+  {
+    "text": "of",
+    "start": 52.6,
+    "end": 52.68
+  },
+  {
+    "text": "soldiers",
+    "start": 52.77,
+    "end": 53.1
+  },
+  {
+    "text": "they",
+    "start": 53.1,
+    "end": 53.58
+  },
+  {
+    "text": "called",
+    "start": 53.58,
+    "end": 53.88
+  },
+  {
+    "text": "the",
+    "start": 53.88,
+    "end": 54.1
+  },
+  {
+    "text": "Corps",
+    "start": 54.1,
+    "end": 54.47
+  },
+  {
+    "text": "of",
+    "start": 54.47,
+    "end": 54.61
+  },
+  {
+    "text": "Discovery",
+    "start": 54.62,
+    "end": 54.66
+  },
+  {
+    "text": "to",
+    "start": 55.35,
+    "end": 55.42
+  },
+  {
+    "text": "chart",
+    "start": 55.55,
+    "end": 55.79
+  },
+  {
+    "text": "a",
+    "start": 55.79,
+    "end": 55.85
+  },
+  {
+    "text": "route",
+    "start": 55.85,
+    "end": 56.19
+  },
+  {
+    "text": "to",
+    "start": 56.19,
+    "end": 56.32
+  },
+  {
+    "text": "the",
+    "start": 56.32,
+    "end": 56.45
+  },
+  {
+    "text": "Pacific.",
+    "start": 56.93,
+    "end": 57.26
+  },
+  {
+    "text": "It",
+    "start": 57.29,
+    "end": 57.35
+  },
+  {
+    "text": "was",
+    "start": 57.49,
+    "end": 57.65
+  },
+  {
+    "text": "a",
+    "start": 57.69,
+    "end": 57.75
+  },
+  {
+    "text": "genuine",
+    "start": 57.75,
+    "end": 58.34
+  },
+  {
+    "text": "feat",
+    "start": 58.34,
+    "end": 58.42
+  },
+  {
+    "text": "of",
+    "start": 58.42,
+    "end": 58.88
+  },
+  {
+    "text": "endurance",
+    "start": 58.88,
+    "end": 59.57
+  },
+  {
+    "text": "and",
+    "start": 59.58,
+    "end": 59.83
+  },
+  {
+    "text": "courage.",
+    "start": 59.83,
+    "end": 60.72
+  },
+  {
+    "text": "It",
+    "start": 60.75,
+    "end": 60.81
+  },
+  {
+    "text": "was",
+    "start": 60.95,
+    "end": 61.1
+  },
+  {
+    "text": "also",
+    "start": 61.1,
+    "end": 61.41
+  },
+  {
+    "text": "a",
+    "start": 61.41,
+    "end": 61.45
+  },
+  {
+    "text": "military",
+    "start": 61.53,
+    "end": 61.86
+  },
+  {
+    "text": "reconnaissance,",
+    "start": 62.34,
+    "end": 63.37
+  },
+  {
+    "text": "the",
+    "start": 63.45,
+    "end": 63.51
+  },
+  {
+    "text": "opening",
+    "start": 63.65,
+    "end": 64.07
+  },
+  {
+    "text": "move",
+    "start": 64.07,
+    "end": 64.33
+  },
+  {
+    "text": "in",
+    "start": 64.33,
+    "end": 64.46
+  },
+  {
+    "text": "claiming",
+    "start": 64.46,
+    "end": 64.58
+  },
+  {
+    "text": "a",
+    "start": 65.03,
+    "end": 65.07
+  },
+  {
+    "text": "continent",
+    "start": 65.07,
+    "end": 65.76
+  },
+  {
+    "text": "that",
+    "start": 65.79,
+    "end": 66.15
+  },
+  {
+    "text": "was",
+    "start": 66.19,
+    "end": 66.46
+  },
+  {
+    "text": "never",
+    "start": 66.46,
+    "end": 66.88
+  },
+  {
+    "text": "empty.",
+    "start": 67.37,
+    "end": 67.76
+  },
+  {
+    "text": "They",
+    "start": 67.79,
+    "end": 68.04
+  },
+  {
+    "text": "could",
+    "start": 68.04,
+    "end": 68.35
+  },
+  {
+    "text": "not",
+    "start": 68.4,
+    "end": 68.6
+  },
+  {
+    "text": "have",
+    "start": 68.6,
+    "end": 68.88
+  },
+  {
+    "text": "done",
+    "start": 68.88,
+    "end": 68.92
+  },
+  {
+    "text": "it",
+    "start": 68.92,
+    "end": 69.38
+  },
+  {
+    "text": "alone.",
+    "start": 69.38,
+    "end": 69.88
+  },
+  {
+    "text": "The",
+    "start": 69.91,
+    "end": 69.97
+  },
+  {
+    "text": "expedition's",
+    "start": 70.11,
+    "end": 70.88
+  },
+  {
+    "text": "most",
+    "start": 70.88,
+    "end": 71.02
+  },
+  {
+    "text": "famous",
+    "start": 71.49,
+    "end": 71.54
+  },
+  {
+    "text": "member",
+    "start": 71.54,
+    "end": 71.96
+  },
+  {
+    "text": "is",
+    "start": 71.99,
+    "end": 72.05
+  },
+  {
+    "text": "a",
+    "start": 72.19,
+    "end": 72.2
+  },
+  {
+    "text": "young",
+    "start": 72.2,
+    "end": 72.61
+  },
+  {
+    "text": "woman",
+    "start": 72.61,
+    "end": 73.02
+  },
+  {
+    "text": "named",
+    "start": 73.02,
+    "end": 73.12
+  },
+  {
+    "text": "Sacagawea,",
+    "start": 73.57,
+    "end": 74.2
+  },
+  {
+    "text": "and",
+    "start": 74.23,
+    "end": 74.44
+  },
+  {
+    "text": "the",
+    "start": 74.44,
+    "end": 74.68
+  },
+  {
+    "text": "story",
+    "start": 74.68,
+    "end": 75.09
+  },
+  {
+    "text": "is",
+    "start": 75.09,
+    "end": 75.25
+  },
+  {
+    "text": "usually",
+    "start": 75.25,
+    "end": 75.82
+  },
+  {
+    "text": "told",
+    "start": 75.82,
+    "end": 76.14
+  },
+  {
+    "text": "as",
+    "start": 76.14,
+    "end": 76.3
+  },
+  {
+    "text": "romance.",
+    "start": 76.3,
+    "end": 76.89
+  },
+  {
+    "text": "The",
+    "start": 77.19,
+    "end": 77.25
+  },
+  {
+    "text": "facts",
+    "start": 77.39,
+    "end": 77.7
+  },
+  {
+    "text": "are",
+    "start": 77.7,
+    "end": 77.88
+  },
+  {
+    "text": "harder.",
+    "start": 77.97,
+    "end": 78.34
+  },
+  {
+    "text": "She",
+    "start": 78.57,
+    "end": 78.84
+  },
+  {
+    "text": "was",
+    "start": 78.84,
+    "end": 79.13
+  },
+  {
+    "text": "Lemhi",
+    "start": 79.13,
+    "end": 79.64
+  },
+  {
+    "text": "Shoshone,",
+    "start": 79.64,
+    "end": 80.48
+  },
+  {
+    "text": "taken",
+    "start": 80.51,
+    "end": 80.81
+  },
+  {
+    "text": "captive",
+    "start": 80.81,
+    "end": 81.18
+  },
+  {
+    "text": "around",
+    "start": 81.29,
+    "end": 81.61
+  },
+  {
+    "text": "the",
+    "start": 81.67,
+    "end": 81.71
+  },
+  {
+    "text": "age",
+    "start": 81.71,
+    "end": 82.09
+  },
+  {
+    "text": "of",
+    "start": 82.09,
+    "end": 82.21
+  },
+  {
+    "text": "12",
+    "start": 82.21,
+    "end": 82.64
+  },
+  {
+    "text": "in",
+    "start": 82.64,
+    "end": 82.84
+  },
+  {
+    "text": "a",
+    "start": 82.84,
+    "end": 82.94
+  },
+  {
+    "text": "raid,",
+    "start": 82.94,
+    "end": 83.36
+  },
+  {
+    "text": "and",
+    "start": 83.39,
+    "end": 83.45
+  },
+  {
+    "text": "married",
+    "start": 83.59,
+    "end": 84.08
+  },
+  {
+    "text": "while",
+    "start": 84.17,
+    "end": 84.47
+  },
+  {
+    "text": "still",
+    "start": 84.47,
+    "end": 84.54
+  },
+  {
+    "text": "a",
+    "start": 84.54,
+    "end": 84.98
+  },
+  {
+    "text": "girl",
+    "start": 84.98,
+    "end": 85.11
+  },
+  {
+    "text": "to",
+    "start": 85.25,
+    "end": 85.31
+  },
+  {
+    "text": "a",
+    "start": 85.45,
+    "end": 85.46
+  },
+  {
+    "text": "French-Canadian",
+    "start": 85.46,
+    "end": 86.36
+  },
+  {
+    "text": "fur",
+    "start": 86.83,
+    "end": 86.91
+  },
+  {
+    "text": "trader",
+    "start": 86.91,
+    "end": 87.39
+  },
+  {
+    "text": "decades",
+    "start": 87.39,
+    "end": 87.87
+  },
+  {
+    "text": "older.",
+    "start": 87.99,
+    "end": 88.64
+  },
+  {
+    "text": "She",
+    "start": 88.67,
+    "end": 88.91
+  },
+  {
+    "text": "was",
+    "start": 88.91,
+    "end": 89.18
+  },
+  {
+    "text": "just",
+    "start": 89.18,
+    "end": 89.54
+  },
+  {
+    "text": "16",
+    "start": 89.54,
+    "end": 89.78
+  },
+  {
+    "text": "or",
+    "start": 90.25,
+    "end": 90.26
+  },
+  {
+    "text": "17,",
+    "start": 90.26,
+    "end": 90.84
+  },
+  {
+    "text": "carrying",
+    "start": 90.87,
+    "end": 91.4
+  },
+  {
+    "text": "a",
+    "start": 91.4,
+    "end": 91.44
+  },
+  {
+    "text": "two-month-old",
+    "start": 91.48,
+    "end": 92.38
+  },
+  {
+    "text": "son",
+    "start": 92.45,
+    "end": 92.6
+  },
+  {
+    "text": "when",
+    "start": 92.73,
+    "end": 92.88
+  },
+  {
+    "text": "she",
+    "start": 92.88,
+    "end": 93.09
+  },
+  {
+    "text": "crossed",
+    "start": 93.09,
+    "end": 93.49
+  },
+  {
+    "text": "the",
+    "start": 93.61,
+    "end": 93.63
+  },
+  {
+    "text": "continent,",
+    "start": 94.3,
+    "end": 94.42
+  },
+  {
+    "text": "digging",
+    "start": 94.45,
+    "end": 94.89
+  },
+  {
+    "text": "roots,",
+    "start": 94.89,
+    "end": 95.35
+  },
+  {
+    "text": "interpreting,",
+    "start": 95.35,
+    "end": 96.32
+  },
+  {
+    "text": "and",
+    "start": 96.35,
+    "end": 96.41
+  },
+  {
+    "text": "when",
+    "start": 96.55,
+    "end": 96.84
+  },
+  {
+    "text": "the",
+    "start": 96.84,
+    "end": 97.05
+  },
+  {
+    "text": "Corps",
+    "start": 97.13,
+    "end": 97.44
+  },
+  {
+    "text": "reached",
+    "start": 97.44,
+    "end": 97.97
+  },
+  {
+    "text": "her",
+    "start": 97.97,
+    "end": 98.06
+  },
+  {
+    "text": "own",
+    "start": 98.21,
+    "end": 98.41
+  },
+  {
+    "text": "Shoshone",
+    "start": 98.41,
+    "end": 98.97
+  },
+  {
+    "text": "people,",
+    "start": 98.99,
+    "end": 99.52
+  },
+  {
+    "text": "helping",
+    "start": 99.55,
+    "end": 100.02
+  },
+  {
+    "text": "win",
+    "start": 100.02,
+    "end": 100.23
+  },
+  {
+    "text": "the",
+    "start": 100.23,
+    "end": 100.44
+  },
+  {
+    "text": "horses",
+    "start": 100.44,
+    "end": 100.66
+  },
+  {
+    "text": "that",
+    "start": 101.13,
+    "end": 101.14
+  },
+  {
+    "text": "got",
+    "start": 101.14,
+    "end": 101.27
+  },
+  {
+    "text": "them",
+    "start": 101.41,
+    "end": 101.63
+  },
+  {
+    "text": "over",
+    "start": 101.63,
+    "end": 101.91
+  },
+  {
+    "text": "the",
+    "start": 101.91,
+    "end": 102.12
+  },
+  {
+    "text": "Rockies.",
+    "start": 102.12,
+    "end": 102.75
+  },
+  {
+    "text": "Her",
+    "start": 102.91,
+    "end": 102.97
+  },
+  {
+    "text": "descendants'",
+    "start": 103.11,
+    "end": 103.89
+  },
+  {
+    "text": "nations",
+    "start": 103.89,
+    "end": 104.04
+  },
+  {
+    "text": "say",
+    "start": 104.49,
+    "end": 104.57
+  },
+  {
+    "text": "it",
+    "start": 104.57,
+    "end": 104.63
+  },
+  {
+    "text": "plainly,",
+    "start": 104.77,
+    "end": 105.36
+  },
+  {
+    "text": "history",
+    "start": 105.39,
+    "end": 105.95
+  },
+  {
+    "text": "got",
+    "start": 106,
+    "end": 106.26
+  },
+  {
+    "text": "her",
+    "start": 106.26,
+    "end": 106.48
+  },
+  {
+    "text": "story",
+    "start": 106.97,
+    "end": 106.98
+  },
+  {
+    "text": "wrong.",
+    "start": 106.98,
+    "end": 107.72
+  },
+  {
+    "text": "On",
+    "start": 107.75,
+    "end": 107.81
+  },
+  {
+    "text": "a",
+    "start": 107.81,
+    "end": 107.95
+  },
+  {
+    "text": "trip",
+    "start": 107.95,
+    "end": 108.22
+  },
+  {
+    "text": "like",
+    "start": 108.22,
+    "end": 108.44
+  },
+  {
+    "text": "this,",
+    "start": 108.53,
+    "end": 108.86
+  },
+  {
+    "text": "it's",
+    "start": 108.93,
+    "end": 109.27
+  },
+  {
+    "text": "worth",
+    "start": 109.34,
+    "end": 109.67
+  },
+  {
+    "text": "getting",
+    "start": 109.67,
+    "end": 110.22
+  },
+  {
+    "text": "it",
+    "start": 110.22,
+    "end": 110.37
+  },
+  {
+    "text": "right.",
+    "start": 110.38,
+    "end": 111.04
+  },
+  {
+    "text": "Now,",
+    "start": 111.07,
+    "end": 111.63
+  },
+  {
+    "text": "the",
+    "start": 111.68,
+    "end": 112.02
+  },
+  {
+    "text": "drive.",
+    "start": 112.02,
+    "end": 113.04
+  },
+  {
+    "text": "It",
+    "start": 113.07,
+    "end": 113.13
+  },
+  {
+    "text": "begins",
+    "start": 113.27,
+    "end": 113.63
+  },
+  {
+    "text": "eastbound",
+    "start": 113.63,
+    "end": 114.17
+  },
+  {
+    "text": "on",
+    "start": 114.17,
+    "end": 114.46
+  },
+  {
+    "text": "Interstate",
+    "start": 114.66,
+    "end": 115.23
+  },
+  {
+    "text": "90,",
+    "start": 115.23,
+    "end": 115.72
+  },
+  {
+    "text": "climbing",
+    "start": 115.75,
+    "end": 116.26
+  },
+  {
+    "text": "out",
+    "start": 116.26,
+    "end": 116.44
+  },
+  {
+    "text": "of",
+    "start": 116.53,
+    "end": 116.59
+  },
+  {
+    "text": "Washington's",
+    "start": 116.59,
+    "end": 117.39
+  },
+  {
+    "text": "Cascades",
+    "start": 117.39,
+    "end": 117.96
+  },
+  {
+    "text": "onto",
+    "start": 117.99,
+    "end": 118.33
+  },
+  {
+    "text": "the",
+    "start": 118.33,
+    "end": 118.55
+  },
+  {
+    "text": "wide,",
+    "start": 118.6,
+    "end": 119.09
+  },
+  {
+    "text": "sunlit",
+    "start": 119.09,
+    "end": 119.69
+  },
+  {
+    "text": "shrubstep.",
+    "start": 119.69,
+    "end": 120.65
+  },
+  {
+    "text": "Advantage,",
+    "start": 120.87,
+    "end": 121.67
+  },
+  {
+    "text": "the",
+    "start": 121.67,
+    "end": 121.9
+  },
+  {
+    "text": "road",
+    "start": 121.9,
+    "end": 122
+  },
+  {
+    "text": "meets",
+    "start": 122.45,
+    "end": 122.58
+  },
+  {
+    "text": "the",
+    "start": 122.58,
+    "end": 122.81
+  },
+  {
+    "text": "Columbia,",
+    "start": 122.81,
+    "end": 123.52
+  },
+  {
+    "text": "a",
+    "start": 123.63,
+    "end": 123.66
+  },
+  {
+    "text": "river",
+    "start": 123.66,
+    "end": 123.99
+  },
+  {
+    "text": "at",
+    "start": 124.03,
+    "end": 124.13
+  },
+  {
+    "text": "the",
+    "start": 124.13,
+    "end": 124.32
+  },
+  {
+    "text": "center",
+    "start": 124.32,
+    "end": 124.72
+  },
+  {
+    "text": "of",
+    "start": 124.72,
+    "end": 124.76
+  },
+  {
+    "text": "plateau",
+    "start": 125.21,
+    "end": 125.35
+  },
+  {
+    "text": "life",
+    "start": 125.49,
+    "end": 125.68
+  },
+  {
+    "text": "for",
+    "start": 125.71,
+    "end": 125.77
+  },
+  {
+    "text": "thousands",
+    "start": 125.91,
+    "end": 126.4
+  },
+  {
+    "text": "of",
+    "start": 126.49,
+    "end": 126.61
+  },
+  {
+    "text": "years",
+    "start": 126.61,
+    "end": 126.81
+  },
+  {
+    "text": "before",
+    "start": 126.99,
+    "end": 127.35
+  },
+  {
+    "text": "it",
+    "start": 127.39,
+    "end": 127.5
+  },
+  {
+    "text": "ever",
+    "start": 127.5,
+    "end": 127.68
+  },
+  {
+    "text": "carried",
+    "start": 127.77,
+    "end": 128.1
+  },
+  {
+    "text": "the",
+    "start": 128.1,
+    "end": 128.4
+  },
+  {
+    "text": "Corps",
+    "start": 128.57,
+    "end": 128.72
+  },
+  {
+    "text": "toward",
+    "start": 128.85,
+    "end": 129.19
+  },
+  {
+    "text": "the",
+    "start": 129.19,
+    "end": 129.39
+  },
+  {
+    "text": "sea.",
+    "start": 129.39,
+    "end": 129.65
+  },
+  {
+    "text": "Stop",
+    "start": 129.87,
+    "end": 130.16
+  },
+  {
+    "text": "at",
+    "start": 130.16,
+    "end": 130.32
+  },
+  {
+    "text": "the",
+    "start": 130.32,
+    "end": 130.56
+  },
+  {
+    "text": "Ginkgo",
+    "start": 130.56,
+    "end": 130.98
+  },
+  {
+    "text": "Petrified",
+    "start": 131.03,
+    "end": 131.76
+  },
+  {
+    "text": "Forest,",
+    "start": 131.76,
+    "end": 132.28
+  },
+  {
+    "text": "where",
+    "start": 132.31,
+    "end": 132.67
+  },
+  {
+    "text": "stone",
+    "start": 132.67,
+    "end": 132.98
+  },
+  {
+    "text": "logs",
+    "start": 133.09,
+    "end": 133.37
+  },
+  {
+    "text": "15",
+    "start": 133.37,
+    "end": 133.44
+  },
+  {
+    "text": "million",
+    "start": 133.9,
+    "end": 134.39
+  },
+  {
+    "text": "years",
+    "start": 134.39,
+    "end": 134.78
+  },
+  {
+    "text": "old",
+    "start": 134.78,
+    "end": 134.96
+  },
+  {
+    "text": "lie",
+    "start": 135.07,
+    "end": 135.3
+  },
+  {
+    "text": "beside",
+    "start": 135.3,
+    "end": 135.75
+  },
+  {
+    "text": "the",
+    "start": 135.85,
+    "end": 136.09
+  },
+  {
+    "text": "water",
+    "start": 136.09,
+    "end": 136.2
+  },
+  {
+    "text": "and",
+    "start": 136.66,
+    "end": 136.79
+  },
+  {
+    "text": "then",
+    "start": 136.93,
+    "end": 137.3
+  },
+  {
+    "text": "turn",
+    "start": 137.3,
+    "end": 137.69
+  },
+  {
+    "text": "south.",
+    "start": 137.71,
+    "end": 138.6
+  },
+  {
+    "text": "Follow",
+    "start": 138.63,
+    "end": 138.98
+  },
+  {
+    "text": "the",
+    "start": 138.98,
+    "end": 139.17
+  },
+  {
+    "text": "river",
+    "start": 139.17,
+    "end": 139.49
+  },
+  {
+    "text": "down",
+    "start": 139.49,
+    "end": 139.72
+  },
+  {
+    "text": "to",
+    "start": 139.72,
+    "end": 139.76
+  },
+  {
+    "text": "two",
+    "start": 139.76,
+    "end": 140.04
+  },
+  {
+    "text": "towns",
+    "start": 140.21,
+    "end": 140.36
+  },
+  {
+    "text": "that",
+    "start": 140.45,
+    "end": 140.66
+  },
+  {
+    "text": "face",
+    "start": 140.66,
+    "end": 140.9
+  },
+  {
+    "text": "each",
+    "start": 140.9,
+    "end": 141.14
+  },
+  {
+    "text": "other",
+    "start": 141.14,
+    "end": 141.44
+  },
+  {
+    "text": "across",
+    "start": 141.44,
+    "end": 141.56
+  },
+  {
+    "text": "the",
+    "start": 141.56,
+    "end": 142.04
+  },
+  {
+    "text": "current.",
+    "start": 142.04,
+    "end": 142.6
+  },
+  {
+    "text": "Clarkston,",
+    "start": 142.63,
+    "end": 143.28
+  },
+  {
+    "text": "Washington,",
+    "start": 143.28,
+    "end": 144.04
+  },
+  {
+    "text": "and",
+    "start": 144.21,
+    "end": 144.33
+  },
+  {
+    "text": "Lewiston,",
+    "start": 144.33,
+    "end": 145.25
+  },
+  {
+    "text": "Idaho,",
+    "start": 145.27,
+    "end": 145.8
+  },
+  {
+    "text": "named,",
+    "start": 145.83,
+    "end": 146.19
+  },
+  {
+    "text": "of",
+    "start": 146.23,
+    "end": 146.34
+  },
+  {
+    "text": "course,",
+    "start": 146.34,
+    "end": 146.83
+  },
+  {
+    "text": "for",
+    "start": 146.83,
+    "end": 146.94
+  },
+  {
+    "text": "the",
+    "start": 147,
+    "end": 147.05
+  },
+  {
+    "text": "explorers.",
+    "start": 147.42,
+    "end": 147.96
+  },
+  {
+    "text": "But",
+    "start": 147.99,
+    "end": 148.21
+  },
+  {
+    "text": "this",
+    "start": 148.21,
+    "end": 148.55
+  },
+  {
+    "text": "is",
+    "start": 148.55,
+    "end": 148.68
+  },
+  {
+    "text": "the",
+    "start": 148.77,
+    "end": 148.97
+  },
+  {
+    "text": "heart",
+    "start": 148.97,
+    "end": 149.1
+  },
+  {
+    "text": "of",
+    "start": 149.1,
+    "end": 149.58
+  },
+  {
+    "text": "the",
+    "start": 149.58,
+    "end": 149.71
+  },
+  {
+    "text": "Nemepu,",
+    "start": 149.85,
+    "end": 150.52
+  },
+  {
+    "text": "the",
+    "start": 150.55,
+    "end": 150.81
+  },
+  {
+    "text": "Nez",
+    "start": 150.81,
+    "end": 151.09
+  },
+  {
+    "text": "Perce",
+    "start": 151.09,
+    "end": 151.57
+  },
+  {
+    "text": "homeland,",
+    "start": 151.57,
+    "end": 152.4
+  },
+  {
+    "text": "where",
+    "start": 152.43,
+    "end": 152.69
+  },
+  {
+    "text": "the",
+    "start": 152.69,
+    "end": 152.86
+  },
+  {
+    "text": "snake",
+    "start": 152.86,
+    "end": 153.12
+  },
+  {
+    "text": "meets",
+    "start": 153.21,
+    "end": 153.44
+  },
+  {
+    "text": "the",
+    "start": 153.44,
+    "end": 153.54
+  },
+  {
+    "text": "clear",
+    "start": 153.6,
+    "end": 153.66
+  },
+  {
+    "text": "water",
+    "start": 154.01,
+    "end": 154.15
+  },
+  {
+    "text": "at",
+    "start": 154.27,
+    "end": 154.33
+  },
+  {
+    "text": "the",
+    "start": 154.47,
+    "end": 154.61
+  },
+  {
+    "text": "mouth",
+    "start": 154.61,
+    "end": 154.94
+  },
+  {
+    "text": "of",
+    "start": 155.05,
+    "end": 155.13
+  },
+  {
+    "text": "Hell's",
+    "start": 155.13,
+    "end": 155.44
+  },
+  {
+    "text": "Canyon,",
+    "start": 155.85,
+    "end": 156.2
+  },
+  {
+    "text": "the",
+    "start": 156.23,
+    "end": 156.44
+  },
+  {
+    "text": "deepest",
+    "start": 156.44,
+    "end": 156.92
+  },
+  {
+    "text": "gorge",
+    "start": 157.01,
+    "end": 157.33
+  },
+  {
+    "text": "in",
+    "start": 157.4,
+    "end": 157.45
+  },
+  {
+    "text": "North",
+    "start": 157.81,
+    "end": 157.97
+  },
+  {
+    "text": "America.",
+    "start": 158.09,
+    "end": 158.82
+  },
+  {
+    "text": "The",
+    "start": 158.85,
+    "end": 159.07
+  },
+  {
+    "text": "names",
+    "start": 159.07,
+    "end": 159.48
+  },
+  {
+    "text": "honor",
+    "start": 159.48,
+    "end": 159.89
+  },
+  {
+    "text": "two",
+    "start": 159.89,
+    "end": 159.98
+  },
+  {
+    "text": "visitors.",
+    "start": 160.44,
+    "end": 161.07
+  },
+  {
+    "text": "The",
+    "start": 161.11,
+    "end": 161.17
+  },
+  {
+    "text": "land",
+    "start": 161.31,
+    "end": 161.58
+  },
+  {
+    "text": "belongs",
+    "start": 161.58,
+    "end": 162.09
+  },
+  {
+    "text": "to",
+    "start": 162.09,
+    "end": 162.2
+  },
+  {
+    "text": "a",
+    "start": 162.2,
+    "end": 162.69
+  },
+  {
+    "text": "people",
+    "start": 162.69,
+    "end": 162.76
+  },
+  {
+    "text": "who",
+    "start": 162.76,
+    "end": 162.82
+  },
+  {
+    "text": "were",
+    "start": 162.97,
+    "end": 163.18
+  },
+  {
+    "text": "here",
+    "start": 163.18,
+    "end": 163.44
+  },
+  {
+    "text": "long",
+    "start": 163.44,
+    "end": 163.76
+  },
+  {
+    "text": "before",
+    "start": 163.76,
+    "end": 164.54
+  },
+  {
+    "text": "them",
+    "start": 164.54,
+    "end": 164.96
+  },
+  {
+    "text": "and",
+    "start": 164.99,
+    "end": 165.26
+  },
+  {
+    "text": "who",
+    "start": 165.26,
+    "end": 165.55
+  },
+  {
+    "text": "are",
+    "start": 165.55,
+    "end": 165.86
+  },
+  {
+    "text": "here",
+    "start": 165.86,
+    "end": 166.1
+  },
+  {
+    "text": "still.",
+    "start": 166.57,
+    "end": 167.06
+  },
+  {
+    "text": "From",
+    "start": 167.09,
+    "end": 167.43
+  },
+  {
+    "text": "here,",
+    "start": 167.43,
+    "end": 168
+  },
+  {
+    "text": "U.S.",
+    "start": 168,
+    "end": 168.31
+  },
+  {
+    "text": "Highway",
+    "start": 168.67,
+    "end": 168.84
+  },
+  {
+    "text": "12,",
+    "start": 168.95,
+    "end": 169.32
+  },
+  {
+    "text": "the",
+    "start": 169.32,
+    "end": 169.53
+  },
+  {
+    "text": "Lewis",
+    "start": 169.53,
+    "end": 169.74
+  },
+  {
+    "text": "and",
+    "start": 169.89,
+    "end": 170.1
+  },
+  {
+    "text": "Clark",
+    "start": 170.1,
+    "end": 170.52
+  },
+  {
+    "text": "Highway,",
+    "start": 170.52,
+    "end": 171.14
+  },
+  {
+    "text": "climbs",
+    "start": 171.17,
+    "end": 171.5
+  },
+  {
+    "text": "into",
+    "start": 171.5,
+    "end": 171.73
+  },
+  {
+    "text": "the",
+    "start": 171.73,
+    "end": 171.86
+  },
+  {
+    "text": "mountains",
+    "start": 171.95,
+    "end": 172.28
+  },
+  {
+    "text": "along",
+    "start": 172.75,
+    "end": 172.77
+  },
+  {
+    "text": "the",
+    "start": 172.77,
+    "end": 172.89
+  },
+  {
+    "text": "Clearwater,",
+    "start": 173.03,
+    "end": 173.6
+  },
+  {
+    "text": "and",
+    "start": 173.63,
+    "end": 173.92
+  },
+  {
+    "text": "then",
+    "start": 173.92,
+    "end": 174.3
+  },
+  {
+    "text": "the",
+    "start": 174.41,
+    "end": 174.67
+  },
+  {
+    "text": "Loxa,",
+    "start": 174.67,
+    "end": 175.32
+  },
+  {
+    "text": "Roughwater,",
+    "start": 175.32,
+    "end": 176.29
+  },
+  {
+    "text": "in",
+    "start": 176.43,
+    "end": 176.54
+  },
+  {
+    "text": "the",
+    "start": 176.54,
+    "end": 176.74
+  },
+  {
+    "text": "Nez",
+    "start": 176.74,
+    "end": 176.93
+  },
+  {
+    "text": "Perce",
+    "start": 177.06,
+    "end": 177.25
+  },
+  {
+    "text": "language.",
+    "start": 177.32,
+    "end": 178.08
+  },
+  {
+    "text": "It's",
+    "start": 178.11,
+    "end": 178.38
+  },
+  {
+    "text": "one",
+    "start": 178.38,
+    "end": 178.61
+  },
+  {
+    "text": "of",
+    "start": 178.61,
+    "end": 178.76
+  },
+  {
+    "text": "the",
+    "start": 178.76,
+    "end": 178.99
+  },
+  {
+    "text": "wildest",
+    "start": 178.99,
+    "end": 179.34
+  },
+  {
+    "text": "drives",
+    "start": 179.7,
+    "end": 180
+  },
+  {
+    "text": "left",
+    "start": 180,
+    "end": 180.31
+  },
+  {
+    "text": "in",
+    "start": 180.31,
+    "end": 180.46
+  },
+  {
+    "text": "America,",
+    "start": 180.46,
+    "end": 181.23
+  },
+  {
+    "text": "nearly",
+    "start": 181.27,
+    "end": 181.72
+  },
+  {
+    "text": "100",
+    "start": 181.72,
+    "end": 182.36
+  },
+  {
+    "text": "roadless",
+    "start": 182.36,
+    "end": 183
+  },
+  {
+    "text": "miles",
+    "start": 183.13,
+    "end": 183.46
+  },
+  {
+    "text": "of",
+    "start": 183.46,
+    "end": 183.62
+  },
+  {
+    "text": "forest,",
+    "start": 183.62,
+    "end": 184.28
+  },
+  {
+    "text": "whitewater,",
+    "start": 184.66,
+    "end": 185.24
+  },
+  {
+    "text": "and",
+    "start": 185.27,
+    "end": 185.33
+  },
+  {
+    "text": "hot",
+    "start": 185.47,
+    "end": 185.68
+  },
+  {
+    "text": "springs",
+    "start": 185.68,
+    "end": 186.21
+  },
+  {
+    "text": "steaming",
+    "start": 186.21,
+    "end": 186.84
+  },
+  {
+    "text": "right",
+    "start": 186.86,
+    "end": 187.18
+  },
+  {
+    "text": "at",
+    "start": 187.18,
+    "end": 187.32
+  },
+  {
+    "text": "the",
+    "start": 187.32,
+    "end": 187.49
+  },
+  {
+    "text": "edge",
+    "start": 187.56,
+    "end": 187.83
+  },
+  {
+    "text": "of",
+    "start": 187.83,
+    "end": 187.92
+  },
+  {
+    "text": "the",
+    "start": 188.01,
+    "end": 188.03
+  },
+  {
+    "text": "pavement.",
+    "start": 188.7,
+    "end": 188.82
+  },
+  {
+    "text": "And",
+    "start": 188.85,
+    "end": 189.08
+  },
+  {
+    "text": "it",
+    "start": 189.08,
+    "end": 189.21
+  },
+  {
+    "text": "follows",
+    "start": 189.25,
+    "end": 189.86
+  },
+  {
+    "text": "the",
+    "start": 189.86,
+    "end": 189.96
+  },
+  {
+    "text": "expedition's",
+    "start": 190.44,
+    "end": 191.16
+  },
+  {
+    "text": "hardest",
+    "start": 191.16,
+    "end": 191.51
+  },
+  {
+    "text": "chapter.",
+    "start": 192.28,
+    "end": 192.66
+  },
+  {
+    "text": "In",
+    "start": 192.69,
+    "end": 192.75
+  },
+  {
+    "text": "September",
+    "start": 192.89,
+    "end": 193.5
+  },
+  {
+    "text": "of",
+    "start": 193.5,
+    "end": 193.65
+  },
+  {
+    "text": "1805,",
+    "start": 193.65,
+    "end": 194.76
+  },
+  {
+    "text": "crossing",
+    "start": 194.76,
+    "end": 195.16
+  },
+  {
+    "text": "the",
+    "start": 195.16,
+    "end": 195.31
+  },
+  {
+    "text": "Bitterroots",
+    "start": 195.31,
+    "end": 195.88
+  },
+  {
+    "text": "on",
+    "start": 195.91,
+    "end": 195.97
+  },
+  {
+    "text": "the",
+    "start": 196.11,
+    "end": 196.27
+  },
+  {
+    "text": "ancient",
+    "start": 196.31,
+    "end": 196.93
+  },
+  {
+    "text": "Lolo",
+    "start": 196.93,
+    "end": 197.06
+  },
+  {
+    "text": "Trail,",
+    "start": 197.49,
+    "end": 197.92
+  },
+  {
+    "text": "the",
+    "start": 197.95,
+    "end": 198.19
+  },
+  {
+    "text": "Corps",
+    "start": 198.19,
+    "end": 198.63
+  },
+  {
+    "text": "hit",
+    "start": 198.63,
+    "end": 198.91
+  },
+  {
+    "text": "early",
+    "start": 198.91,
+    "end": 199.06
+  },
+  {
+    "text": "snow,",
+    "start": 199.53,
+    "end": 199.92
+  },
+  {
+    "text": "lost",
+    "start": 199.95,
+    "end": 200.3
+  },
+  {
+    "text": "the",
+    "start": 200.3,
+    "end": 200.58
+  },
+  {
+    "text": "path,",
+    "start": 200.58,
+    "end": 201.06
+  },
+  {
+    "text": "and",
+    "start": 201.13,
+    "end": 201.18
+  },
+  {
+    "text": "nearly",
+    "start": 201.54,
+    "end": 201.99
+  },
+  {
+    "text": "starved,",
+    "start": 201.99,
+    "end": 202.68
+  },
+  {
+    "text": "eating",
+    "start": 202.71,
+    "end": 203.13
+  },
+  {
+    "text": "candle",
+    "start": 203.13,
+    "end": 203.58
+  },
+  {
+    "text": "wax",
+    "start": 203.58,
+    "end": 203.8
+  },
+  {
+    "text": "and",
+    "start": 203.8,
+    "end": 203.84
+  },
+  {
+    "text": "their",
+    "start": 204.29,
+    "end": 204.42
+  },
+  {
+    "text": "own",
+    "start": 204.42,
+    "end": 204.65
+  },
+  {
+    "text": "horses.",
+    "start": 204.65,
+    "end": 205.33
+  },
+  {
+    "text": "When",
+    "start": 205.39,
+    "end": 205.6
+  },
+  {
+    "text": "they",
+    "start": 205.6,
+    "end": 205.84
+  },
+  {
+    "text": "finally",
+    "start": 205.84,
+    "end": 206.25
+  },
+  {
+    "text": "staggered",
+    "start": 206.25,
+    "end": 206.5
+  },
+  {
+    "text": "down",
+    "start": 206.97,
+    "end": 207.04
+  },
+  {
+    "text": "to",
+    "start": 207.04,
+    "end": 207.11
+  },
+  {
+    "text": "the",
+    "start": 207.25,
+    "end": 207.39
+  },
+  {
+    "text": "Waite",
+    "start": 207.39,
+    "end": 207.74
+  },
+  {
+    "text": "Prairie,",
+    "start": 207.74,
+    "end": 208.42
+  },
+  {
+    "text": "it",
+    "start": 208.45,
+    "end": 208.51
+  },
+  {
+    "text": "was",
+    "start": 208.65,
+    "end": 208.81
+  },
+  {
+    "text": "the",
+    "start": 208.85,
+    "end": 209.01
+  },
+  {
+    "text": "Nez",
+    "start": 209.06,
+    "end": 209.3
+  },
+  {
+    "text": "Perce",
+    "start": 209.3,
+    "end": 209.58
+  },
+  {
+    "text": "who",
+    "start": 209.58,
+    "end": 209.86
+  },
+  {
+    "text": "chose",
+    "start": 210.03,
+    "end": 210.16
+  },
+  {
+    "text": "to",
+    "start": 210.16,
+    "end": 210.31
+  },
+  {
+    "text": "feed",
+    "start": 210.31,
+    "end": 210.55
+  },
+  {
+    "text": "them",
+    "start": 210.55,
+    "end": 210.82
+  },
+  {
+    "text": "rather",
+    "start": 210.85,
+    "end": 211.21
+  },
+  {
+    "text": "than",
+    "start": 211.25,
+    "end": 211.48
+  },
+  {
+    "text": "let",
+    "start": 211.48,
+    "end": 211.68
+  },
+  {
+    "text": "them",
+    "start": 211.68,
+    "end": 211.94
+  },
+  {
+    "text": "die,",
+    "start": 211.94,
+    "end": 212.16
+  },
+  {
+    "text": "and",
+    "start": 212.19,
+    "end": 212.25
+  },
+  {
+    "text": "who",
+    "start": 212.39,
+    "end": 212.54
+  },
+  {
+    "text": "helped",
+    "start": 212.54,
+    "end": 212.86
+  },
+  {
+    "text": "them",
+    "start": 212.97,
+    "end": 213.17
+  },
+  {
+    "text": "carve",
+    "start": 213.17,
+    "end": 213.3
+  },
+  {
+    "text": "the",
+    "start": 213.48,
+    "end": 213.6
+  },
+  {
+    "text": "canoes",
+    "start": 213.77,
+    "end": 214.08
+  },
+  {
+    "text": "that",
+    "start": 214.11,
+    "end": 214.39
+  },
+  {
+    "text": "carried",
+    "start": 214.39,
+    "end": 214.94
+  },
+  {
+    "text": "them",
+    "start": 214.94,
+    "end": 215.2
+  },
+  {
+    "text": "on",
+    "start": 215.2,
+    "end": 215.69
+  },
+  {
+    "text": "toward",
+    "start": 215.69,
+    "end": 215.85
+  },
+  {
+    "text": "the",
+    "start": 215.97,
+    "end": 216.1
+  },
+  {
+    "text": "ocean.",
+    "start": 216.1,
+    "end": 216.76
+  },
+  {
+    "text": "Hold",
+    "start": 216.81,
+    "end": 217.14
+  },
+  {
+    "text": "that",
+    "start": 217.14,
+    "end": 217.48
+  },
+  {
+    "text": "mercy",
+    "start": 217.48,
+    "end": 217.9
+  },
+  {
+    "text": "in",
+    "start": 217.95,
+    "end": 217.96
+  },
+  {
+    "text": "mind",
+    "start": 218.39,
+    "end": 218.49
+  },
+  {
+    "text": "at",
+    "start": 218.49,
+    "end": 218.67
+  },
+  {
+    "text": "the",
+    "start": 218.67,
+    "end": 218.94
+  },
+  {
+    "text": "summit",
+    "start": 218.94,
+    "end": 219.43
+  },
+  {
+    "text": "of",
+    "start": 219.47,
+    "end": 219.48
+  },
+  {
+    "text": "Lolo",
+    "start": 219.63,
+    "end": 220.01
+  },
+  {
+    "text": "Pass,",
+    "start": 220.24,
+    "end": 220.4
+  },
+  {
+    "text": "because",
+    "start": 220.43,
+    "end": 220.96
+  },
+  {
+    "text": "the",
+    "start": 220.96,
+    "end": 221.12
+  },
+  {
+    "text": "story",
+    "start": 221.21,
+    "end": 221.53
+  },
+  {
+    "text": "does",
+    "start": 221.59,
+    "end": 221.63
+  },
+  {
+    "text": "not",
+    "start": 222.01,
+    "end": 222.16
+  },
+  {
+    "text": "end",
+    "start": 222.29,
+    "end": 222.4
+  },
+  {
+    "text": "there.",
+    "start": 222.4,
+    "end": 223.06
+  },
+  {
+    "text": "72",
+    "start": 223.11,
+    "end": 223.64
+  },
+  {
+    "text": "years",
+    "start": 223.64,
+    "end": 224.1
+  },
+  {
+    "text": "later,",
+    "start": 224.1,
+    "end": 224.76
+  },
+  {
+    "text": "in",
+    "start": 224.76,
+    "end": 224.97
+  },
+  {
+    "text": "1877,",
+    "start": 224.97,
+    "end": 226.46
+  },
+  {
+    "text": "after",
+    "start": 226.49,
+    "end": 226.8
+  },
+  {
+    "text": "gold",
+    "start": 226.8,
+    "end": 227.05
+  },
+  {
+    "text": "and",
+    "start": 227.1,
+    "end": 227.18
+  },
+  {
+    "text": "settlers",
+    "start": 227.27,
+    "end": 227.6
+  },
+  {
+    "text": "had",
+    "start": 227.6,
+    "end": 228.08
+  },
+  {
+    "text": "taken",
+    "start": 228.08,
+    "end": 228.35
+  },
+  {
+    "text": "their",
+    "start": 228.35,
+    "end": 228.69
+  },
+  {
+    "text": "land",
+    "start": 228.69,
+    "end": 229
+  },
+  {
+    "text": "and",
+    "start": 229.03,
+    "end": 229.09
+  },
+  {
+    "text": "the",
+    "start": 229.23,
+    "end": 229.39
+  },
+  {
+    "text": "treaties",
+    "start": 229.43,
+    "end": 229.95
+  },
+  {
+    "text": "had",
+    "start": 229.95,
+    "end": 230.12
+  },
+  {
+    "text": "been",
+    "start": 230.12,
+    "end": 230.18
+  },
+  {
+    "text": "broken,",
+    "start": 230.61,
+    "end": 231
+  },
+  {
+    "text": "the",
+    "start": 231.03,
+    "end": 231.24
+  },
+  {
+    "text": "non-treaty",
+    "start": 231.24,
+    "end": 232
+  },
+  {
+    "text": "Nez",
+    "start": 232,
+    "end": 232.16
+  },
+  {
+    "text": "Perce",
+    "start": 232.21,
+    "end": 232.68
+  },
+  {
+    "text": "were",
+    "start": 232.68,
+    "end": 232.92
+  },
+  {
+    "text": "driven",
+    "start": 232.92,
+    "end": 233.26
+  },
+  {
+    "text": "from",
+    "start": 233.32,
+    "end": 233.48
+  },
+  {
+    "text": "that",
+    "start": 233.48,
+    "end": 233.68
+  },
+  {
+    "text": "same",
+    "start": 233.74,
+    "end": 234.05
+  },
+  {
+    "text": "homeland.",
+    "start": 234.46,
+    "end": 235.04
+  },
+  {
+    "text": "More",
+    "start": 235.07,
+    "end": 235.32
+  },
+  {
+    "text": "than",
+    "start": 235.32,
+    "end": 235.6
+  },
+  {
+    "text": "800",
+    "start": 235.6,
+    "end": 236.16
+  },
+  {
+    "text": "people",
+    "start": 236.65,
+    "end": 236.67
+  },
+  {
+    "text": "with",
+    "start": 236.67,
+    "end": 236.95
+  },
+  {
+    "text": "2,000",
+    "start": 236.95,
+    "end": 237.72
+  },
+  {
+    "text": "horses",
+    "start": 237.94,
+    "end": 238.26
+  },
+  {
+    "text": "fled",
+    "start": 238.45,
+    "end": 238.8
+  },
+  {
+    "text": "over",
+    "start": 238.8,
+    "end": 239.12
+  },
+  {
+    "text": "this",
+    "start": 239.23,
+    "end": 239.54
+  },
+  {
+    "text": "very",
+    "start": 239.54,
+    "end": 239.6
+  },
+  {
+    "text": "pass",
+    "start": 240.04,
+    "end": 240.32
+  },
+  {
+    "text": "into",
+    "start": 240.32,
+    "end": 240.68
+  },
+  {
+    "text": "Montana,",
+    "start": 240.73,
+    "end": 241.44
+  },
+  {
+    "text": "believing",
+    "start": 241.47,
+    "end": 242.02
+  },
+  {
+    "text": "the",
+    "start": 242.02,
+    "end": 242.16
+  },
+  {
+    "text": "army",
+    "start": 242.25,
+    "end": 242.46
+  },
+  {
+    "text": "would",
+    "start": 242.46,
+    "end": 242.58
+  },
+  {
+    "text": "not",
+    "start": 242.58,
+    "end": 243.06
+  },
+  {
+    "text": "follow",
+    "start": 243.06,
+    "end": 243.35
+  },
+  {
+    "text": "them.",
+    "start": 243.35,
+    "end": 243.84
+  },
+  {
+    "text": "It",
+    "start": 243.87,
+    "end": 243.93
+  },
+  {
+    "text": "did.",
+    "start": 244.07,
+    "end": 244.76
+  },
+  {
+    "text": "At",
+    "start": 244.79,
+    "end": 244.85
+  },
+  {
+    "text": "the",
+    "start": 244.99,
+    "end": 245.13
+  },
+  {
+    "text": "Big",
+    "start": 245.13,
+    "end": 245.35
+  },
+  {
+    "text": "Hole,",
+    "start": 245.35,
+    "end": 245.8
+  },
+  {
+    "text": "just",
+    "start": 245.8,
+    "end": 245.9
+  },
+  {
+    "text": "south",
+    "start": 246.37,
+    "end": 246.47
+  },
+  {
+    "text": "of",
+    "start": 246.47,
+    "end": 246.5
+  },
+  {
+    "text": "here,",
+    "start": 246.65,
+    "end": 247.1
+  },
+  {
+    "text": "soldiers",
+    "start": 247.13,
+    "end": 247.66
+  },
+  {
+    "text": "attacked",
+    "start": 247.66,
+    "end": 248.22
+  },
+  {
+    "text": "a",
+    "start": 248.22,
+    "end": 248.24
+  },
+  {
+    "text": "sleeping",
+    "start": 248.71,
+    "end": 248.85
+  },
+  {
+    "text": "village",
+    "start": 248.99,
+    "end": 249.34
+  },
+  {
+    "text": "before",
+    "start": 249.34,
+    "end": 249.75
+  },
+  {
+    "text": "dawn.",
+    "start": 249.76,
+    "end": 250.25
+  },
+  {
+    "text": "Between",
+    "start": 250.29,
+    "end": 250.82
+  },
+  {
+    "text": "60",
+    "start": 250.82,
+    "end": 251.3
+  },
+  {
+    "text": "and",
+    "start": 251.3,
+    "end": 251.4
+  },
+  {
+    "text": "90,",
+    "start": 251.87,
+    "end": 252.18
+  },
+  {
+    "text": "Nez",
+    "start": 252.18,
+    "end": 252.42
+  },
+  {
+    "text": "Perce",
+    "start": 252.42,
+    "end": 252.82
+  },
+  {
+    "text": "were",
+    "start": 252.82,
+    "end": 252.95
+  },
+  {
+    "text": "killed,",
+    "start": 253.14,
+    "end": 253.84
+  },
+  {
+    "text": "most",
+    "start": 253.87,
+    "end": 254.11
+  },
+  {
+    "text": "of",
+    "start": 254.11,
+    "end": 254.23
+  },
+  {
+    "text": "them",
+    "start": 254.27,
+    "end": 254.51
+  },
+  {
+    "text": "women",
+    "start": 254.51,
+    "end": 254.85
+  },
+  {
+    "text": "and",
+    "start": 254.85,
+    "end": 254.97
+  },
+  {
+    "text": "children.",
+    "start": 255.45,
+    "end": 255.84
+  },
+  {
+    "text": "The",
+    "start": 255.87,
+    "end": 255.93
+  },
+  {
+    "text": "people",
+    "start": 256.07,
+    "end": 256.33
+  },
+  {
+    "text": "who",
+    "start": 256.33,
+    "end": 256.49
+  },
+  {
+    "text": "once",
+    "start": 256.49,
+    "end": 256.71
+  },
+  {
+    "text": "saved",
+    "start": 256.71,
+    "end": 256.96
+  },
+  {
+    "text": "the",
+    "start": 256.96,
+    "end": 257
+  },
+  {
+    "text": "Corps",
+    "start": 257.45,
+    "end": 257.48
+  },
+  {
+    "text": "of",
+    "start": 257.48,
+    "end": 257.6
+  },
+  {
+    "text": "Discovery",
+    "start": 257.73,
+    "end": 258.2
+  },
+  {
+    "text": "were",
+    "start": 258.23,
+    "end": 258.52
+  },
+  {
+    "text": "answered",
+    "start": 258.52,
+    "end": 259.15
+  },
+  {
+    "text": "with",
+    "start": 259.15,
+    "end": 259.33
+  },
+  {
+    "text": "a",
+    "start": 259.33,
+    "end": 259.53
+  },
+  {
+    "text": "war",
+    "start": 259.53,
+    "end": 259.83
+  },
+  {
+    "text": "and",
+    "start": 259.83,
+    "end": 259.89
+  },
+  {
+    "text": "a",
+    "start": 260.03,
+    "end": 260.05
+  },
+  {
+    "text": "flight",
+    "start": 260.05,
+    "end": 260.39
+  },
+  {
+    "text": "of",
+    "start": 260.44,
+    "end": 260.53
+  },
+  {
+    "text": "more",
+    "start": 260.61,
+    "end": 260.8
+  },
+  {
+    "text": "than",
+    "start": 260.8,
+    "end": 260.94
+  },
+  {
+    "text": "1,000",
+    "start": 261.05,
+    "end": 261.93
+  },
+  {
+    "text": "miles.",
+    "start": 261.93,
+    "end": 262.45
+  },
+  {
+    "text": "Drive",
+    "start": 262.51,
+    "end": 262.97
+  },
+  {
+    "text": "Lolo",
+    "start": 262.97,
+    "end": 263.35
+  },
+  {
+    "text": "Pass,",
+    "start": 263.35,
+    "end": 263.76
+  },
+  {
+    "text": "knowing",
+    "start": 263.79,
+    "end": 264.15
+  },
+  {
+    "text": "that",
+    "start": 264.19,
+    "end": 264.35
+  },
+  {
+    "text": "both",
+    "start": 264.4,
+    "end": 264.63
+  },
+  {
+    "text": "of",
+    "start": 264.63,
+    "end": 264.74
+  },
+  {
+    "text": "those",
+    "start": 264.74,
+    "end": 264.89
+  },
+  {
+    "text": "crossings",
+    "start": 265.37,
+    "end": 265.52
+  },
+  {
+    "text": "happened",
+    "start": 265.65,
+    "end": 266.38
+  },
+  {
+    "text": "right",
+    "start": 266.38,
+    "end": 266.45
+  },
+  {
+    "text": "here.",
+    "start": 267.22,
+    "end": 267.6
+  },
+  {
+    "text": "Just",
+    "start": 267.63,
+    "end": 267.96
+  },
+  {
+    "text": "over",
+    "start": 267.96,
+    "end": 268.3
+  },
+  {
+    "text": "the",
+    "start": 268.31,
+    "end": 268.59
+  },
+  {
+    "text": "pass",
+    "start": 268.59,
+    "end": 268.74
+  },
+  {
+    "text": "lies",
+    "start": 269.21,
+    "end": 269.31
+  },
+  {
+    "text": "a",
+    "start": 269.31,
+    "end": 269.35
+  },
+  {
+    "text": "quiet",
+    "start": 269.49,
+    "end": 269.85
+  },
+  {
+    "text": "meadow.",
+    "start": 269.85,
+    "end": 270.44
+  },
+  {
+    "text": "Travelers",
+    "start": 270.47,
+    "end": 271.16
+  },
+  {
+    "text": "rest",
+    "start": 271.25,
+    "end": 271.56
+  },
+  {
+    "text": "near",
+    "start": 271.56,
+    "end": 271.62
+  },
+  {
+    "text": "Lolo,",
+    "start": 272.01,
+    "end": 272.44
+  },
+  {
+    "text": "Montana,",
+    "start": 272.44,
+    "end": 273.13
+  },
+  {
+    "text": "one",
+    "start": 273.31,
+    "end": 273.37
+  },
+  {
+    "text": "of",
+    "start": 273.51,
+    "end": 273.63
+  },
+  {
+    "text": "the",
+    "start": 273.63,
+    "end": 273.84
+  },
+  {
+    "text": "only",
+    "start": 273.84,
+    "end": 274.13
+  },
+  {
+    "text": "sites",
+    "start": 274.13,
+    "end": 274.41
+  },
+  {
+    "text": "where",
+    "start": 274.49,
+    "end": 274.58
+  },
+  {
+    "text": "hard",
+    "start": 274.9,
+    "end": 275.22
+  },
+  {
+    "text": "archeological",
+    "start": 275.22,
+    "end": 275.93
+  },
+  {
+    "text": "evidence",
+    "start": 275.98,
+    "end": 276.07
+  },
+  {
+    "text": "of",
+    "start": 276.51,
+    "end": 276.57
+  },
+  {
+    "text": "the",
+    "start": 276.71,
+    "end": 276.93
+  },
+  {
+    "text": "expedition",
+    "start": 276.93,
+    "end": 277.6
+  },
+  {
+    "text": "has",
+    "start": 278.09,
+    "end": 278.1
+  },
+  {
+    "text": "ever",
+    "start": 278.1,
+    "end": 278.46
+  },
+  {
+    "text": "been",
+    "start": 278.46,
+    "end": 278.82
+  },
+  {
+    "text": "found.",
+    "start": 278.82,
+    "end": 279.53
+  },
+  {
+    "text": "Lewis",
+    "start": 279.59,
+    "end": 279.88
+  },
+  {
+    "text": "and",
+    "start": 279.88,
+    "end": 280.07
+  },
+  {
+    "text": "Clark",
+    "start": 280.07,
+    "end": 280.39
+  },
+  {
+    "text": "camped",
+    "start": 280.39,
+    "end": 280.7
+  },
+  {
+    "text": "here",
+    "start": 280.75,
+    "end": 280.81
+  },
+  {
+    "text": "going",
+    "start": 281.18,
+    "end": 281.45
+  },
+  {
+    "text": "west",
+    "start": 281.45,
+    "end": 281.78
+  },
+  {
+    "text": "and",
+    "start": 281.78,
+    "end": 282.02
+  },
+  {
+    "text": "coming",
+    "start": 282.02,
+    "end": 282.25
+  },
+  {
+    "text": "home.",
+    "start": 282.41,
+    "end": 283.08
+  },
+  {
+    "text": "A",
+    "start": 283.11,
+    "end": 283.15
+  },
+  {
+    "text": "short",
+    "start": 283.15,
+    "end": 283.53
+  },
+  {
+    "text": "run",
+    "start": 283.53,
+    "end": 283.76
+  },
+  {
+    "text": "beyond",
+    "start": 283.76,
+    "end": 284.2
+  },
+  {
+    "text": "it",
+    "start": 284.2,
+    "end": 284.24
+  },
+  {
+    "text": "is",
+    "start": 284.24,
+    "end": 284.52
+  },
+  {
+    "text": "Missoula,",
+    "start": 284.69,
+    "end": 285.32
+  },
+  {
+    "text": "a",
+    "start": 285.35,
+    "end": 285.4
+  },
+  {
+    "text": "river",
+    "start": 285.4,
+    "end": 285.8
+  },
+  {
+    "text": "town",
+    "start": 285.8,
+    "end": 286.04
+  },
+  {
+    "text": "ringed",
+    "start": 286.13,
+    "end": 286.48
+  },
+  {
+    "text": "by",
+    "start": 286.48,
+    "end": 286.76
+  },
+  {
+    "text": "mountains",
+    "start": 286.94,
+    "end": 287.52
+  },
+  {
+    "text": "where",
+    "start": 287.55,
+    "end": 287.99
+  },
+  {
+    "text": "the",
+    "start": 287.99,
+    "end": 288.24
+  },
+  {
+    "text": "valley",
+    "start": 288.27,
+    "end": 288.66
+  },
+  {
+    "text": "finally",
+    "start": 289.14,
+    "end": 289.51
+  },
+  {
+    "text": "opens",
+    "start": 289.51,
+    "end": 289.98
+  },
+  {
+    "text": "wide.",
+    "start": 289.98,
+    "end": 290.66
+  },
+  {
+    "text": "Turn",
+    "start": 290.71,
+    "end": 291.05
+  },
+  {
+    "text": "north",
+    "start": 291.05,
+    "end": 291.52
+  },
+  {
+    "text": "and",
+    "start": 291.52,
+    "end": 291.78
+  },
+  {
+    "text": "you",
+    "start": 291.78,
+    "end": 291.84
+  },
+  {
+    "text": "enter",
+    "start": 292.29,
+    "end": 292.45
+  },
+  {
+    "text": "the",
+    "start": 292.57,
+    "end": 292.73
+  },
+  {
+    "text": "Flathead",
+    "start": 292.73,
+    "end": 293.36
+  },
+  {
+    "text": "Valley",
+    "start": 293.4,
+    "end": 293.47
+  },
+  {
+    "text": "and",
+    "start": 293.99,
+    "end": 294.2
+  },
+  {
+    "text": "the",
+    "start": 294.2,
+    "end": 294.44
+  },
+  {
+    "text": "Flathead",
+    "start": 294.44,
+    "end": 295.07
+  },
+  {
+    "text": "Indian",
+    "start": 295.07,
+    "end": 295.12
+  },
+  {
+    "text": "Reservation,",
+    "start": 295.58,
+    "end": 296.44
+  },
+  {
+    "text": "home",
+    "start": 296.47,
+    "end": 296.77
+  },
+  {
+    "text": "today",
+    "start": 296.77,
+    "end": 297.14
+  },
+  {
+    "text": "to",
+    "start": 297.25,
+    "end": 297.35
+  },
+  {
+    "text": "the",
+    "start": 297.35,
+    "end": 297.56
+  },
+  {
+    "text": "Confederated",
+    "start": 297.6,
+    "end": 298.6
+  },
+  {
+    "text": "Salish",
+    "start": 298.6,
+    "end": 299.09
+  },
+  {
+    "text": "and",
+    "start": 299.1,
+    "end": 299.13
+  },
+  {
+    "text": "Kootenay",
+    "start": 299.29,
+    "end": 300
+  },
+  {
+    "text": "Tries.",
+    "start": 300,
+    "end": 300.72
+  },
+  {
+    "text": "Flathead",
+    "start": 300.79,
+    "end": 301.3
+  },
+  {
+    "text": "Lake",
+    "start": 301.3,
+    "end": 301.48
+  },
+  {
+    "text": "shines",
+    "start": 301.57,
+    "end": 301.89
+  },
+  {
+    "text": "beneath",
+    "start": 302.37,
+    "end": 302.46
+  },
+  {
+    "text": "the",
+    "start": 302.46,
+    "end": 302.66
+  },
+  {
+    "text": "Mission",
+    "start": 302.66,
+    "end": 303.14
+  },
+  {
+    "text": "Mountains,",
+    "start": 303.14,
+    "end": 303.91
+  },
+  {
+    "text": "the",
+    "start": 303.95,
+    "end": 304.01
+  },
+  {
+    "text": "largest",
+    "start": 304.15,
+    "end": 304.64
+  },
+  {
+    "text": "natural",
+    "start": 304.73,
+    "end": 305.05
+  },
+  {
+    "text": "freshwater",
+    "start": 305.54,
+    "end": 305.97
+  },
+  {
+    "text": "lake",
+    "start": 305.97,
+    "end": 306.27
+  },
+  {
+    "text": "in",
+    "start": 306.27,
+    "end": 306.42
+  },
+  {
+    "text": "the",
+    "start": 306.42,
+    "end": 306.6
+  },
+  {
+    "text": "west,",
+    "start": 306.69,
+    "end": 307
+  },
+  {
+    "text": "clear",
+    "start": 307.03,
+    "end": 307.32
+  },
+  {
+    "text": "enough",
+    "start": 307.32,
+    "end": 307.7
+  },
+  {
+    "text": "to",
+    "start": 307.7,
+    "end": 307.84
+  },
+  {
+    "text": "see",
+    "start": 307.84,
+    "end": 308.03
+  },
+  {
+    "text": "30",
+    "start": 308.03,
+    "end": 308.16
+  },
+  {
+    "text": "feet",
+    "start": 308.61,
+    "end": 308.68
+  },
+  {
+    "text": "down.",
+    "start": 308.68,
+    "end": 309.16
+  },
+  {
+    "text": "Beyond",
+    "start": 309.19,
+    "end": 309.67
+  },
+  {
+    "text": "it",
+    "start": 309.67,
+    "end": 309.84
+  },
+  {
+    "text": "waits",
+    "start": 309.84,
+    "end": 310.27
+  },
+  {
+    "text": "the",
+    "start": 310.27,
+    "end": 310.32
+  },
+  {
+    "text": "finale,",
+    "start": 310.78,
+    "end": 311.24
+  },
+  {
+    "text": "Glacier",
+    "start": 311.24,
+    "end": 311.78
+  },
+  {
+    "text": "National",
+    "start": 311.78,
+    "end": 311.85
+  },
+  {
+    "text": "Park,",
+    "start": 312.62,
+    "end": 312.72
+  },
+  {
+    "text": "whose",
+    "start": 312.75,
+    "end": 313.09
+  },
+  {
+    "text": "eastern",
+    "start": 313.09,
+    "end": 313.61
+  },
+  {
+    "text": "peaks",
+    "start": 313.61,
+    "end": 313.85
+  },
+  {
+    "text": "rise",
+    "start": 313.85,
+    "end": 314.34
+  },
+  {
+    "text": "along",
+    "start": 314.34,
+    "end": 314.65
+  },
+  {
+    "text": "the",
+    "start": 314.65,
+    "end": 314.87
+  },
+  {
+    "text": "Blackfeet",
+    "start": 314.87,
+    "end": 315.4
+  },
+  {
+    "text": "Nation.",
+    "start": 315.54,
+    "end": 316.04
+  },
+  {
+    "text": "On",
+    "start": 316.07,
+    "end": 316.13
+  },
+  {
+    "text": "land,",
+    "start": 316.27,
+    "end": 316.63
+  },
+  {
+    "text": "the",
+    "start": 316.63,
+    "end": 316.85
+  },
+  {
+    "text": "Blackfeet",
+    "start": 316.85,
+    "end": 317.27
+  },
+  {
+    "text": "gave",
+    "start": 317.65,
+    "end": 317.8
+  },
+  {
+    "text": "up",
+    "start": 317.93,
+    "end": 317.98
+  },
+  {
+    "text": "under",
+    "start": 317.98,
+    "end": 318.3
+  },
+  {
+    "text": "hard",
+    "start": 318.36,
+    "end": 318.65
+  },
+  {
+    "text": "pressure.",
+    "start": 318.65,
+    "end": 319.52
+  },
+  {
+    "text": "Drive",
+    "start": 319.55,
+    "end": 319.81
+  },
+  {
+    "text": "the",
+    "start": 319.81,
+    "end": 319.98
+  },
+  {
+    "text": "Going",
+    "start": 319.98,
+    "end": 320.24
+  },
+  {
+    "text": "to",
+    "start": 320.33,
+    "end": 320.38
+  },
+  {
+    "text": "the",
+    "start": 320.38,
+    "end": 320.55
+  },
+  {
+    "text": "Sun",
+    "start": 320.55,
+    "end": 320.66
+  },
+  {
+    "text": "Road",
+    "start": 320.71,
+    "end": 320.77
+  },
+  {
+    "text": "as",
+    "start": 321.03,
+    "end": 321.09
+  },
+  {
+    "text": "it",
+    "start": 321.23,
+    "end": 321.32
+  },
+  {
+    "text": "climbs",
+    "start": 321.32,
+    "end": 321.7
+  },
+  {
+    "text": "to",
+    "start": 321.81,
+    "end": 321.98
+  },
+  {
+    "text": "Logan",
+    "start": 321.98,
+    "end": 322.14
+  },
+  {
+    "text": "Pass,",
+    "start": 322.61,
+    "end": 322.92
+  },
+  {
+    "text": "past",
+    "start": 322.95,
+    "end": 323.21
+  },
+  {
+    "text": "waterfalls",
+    "start": 323.21,
+    "end": 323.93
+  },
+  {
+    "text": "and",
+    "start": 323.93,
+    "end": 324.06
+  },
+  {
+    "text": "the",
+    "start": 324.13,
+    "end": 324.21
+  },
+  {
+    "text": "last",
+    "start": 324.53,
+    "end": 324.66
+  },
+  {
+    "text": "of",
+    "start": 324.66,
+    "end": 324.81
+  },
+  {
+    "text": "the",
+    "start": 324.81,
+    "end": 325.02
+  },
+  {
+    "text": "glaciers",
+    "start": 325.02,
+    "end": 325.57
+  },
+  {
+    "text": "and",
+    "start": 325.67,
+    "end": 325.88
+  },
+  {
+    "text": "let",
+    "start": 325.88,
+    "end": 326.12
+  },
+  {
+    "text": "yourself",
+    "start": 326.12,
+    "end": 326.75
+  },
+  {
+    "text": "see",
+    "start": 326.75,
+    "end": 326.8
+  },
+  {
+    "text": "that",
+    "start": 326.8,
+    "end": 327.26
+  },
+  {
+    "text": "this",
+    "start": 327.26,
+    "end": 327.39
+  },
+  {
+    "text": "beauty",
+    "start": 327.53,
+    "end": 327.9
+  },
+  {
+    "text": "has",
+    "start": 327.95,
+    "end": 328.25
+  },
+  {
+    "text": "both",
+    "start": 328.25,
+    "end": 328.62
+  },
+  {
+    "text": "an",
+    "start": 328.73,
+    "end": 328.92
+  },
+  {
+    "text": "owner",
+    "start": 328.92,
+    "end": 329.06
+  },
+  {
+    "text": "and",
+    "start": 329.54,
+    "end": 329.81
+  },
+  {
+    "text": "a",
+    "start": 329.81,
+    "end": 329.92
+  },
+  {
+    "text": "history.",
+    "start": 329.92,
+    "end": 330.97
+  },
+  {
+    "text": "So",
+    "start": 331.11,
+    "end": 331.18
+  },
+  {
+    "text": "there's",
+    "start": 331.31,
+    "end": 331.66
+  },
+  {
+    "text": "the",
+    "start": 331.66,
+    "end": 331.8
+  },
+  {
+    "text": "route.",
+    "start": 331.89,
+    "end": 332.2
+  },
+  {
+    "text": "From",
+    "start": 332.23,
+    "end": 332.47
+  },
+  {
+    "text": "the",
+    "start": 332.47,
+    "end": 332.67
+  },
+  {
+    "text": "Columbia",
+    "start": 332.67,
+    "end": 333.21
+  },
+  {
+    "text": "Advantage",
+    "start": 333.21,
+    "end": 333.84
+  },
+  {
+    "text": "through",
+    "start": 333.84,
+    "end": 334.24
+  },
+  {
+    "text": "Nez",
+    "start": 334.24,
+    "end": 334.4
+  },
+  {
+    "text": "Perce",
+    "start": 334.4,
+    "end": 334.68
+  },
+  {
+    "text": "Country",
+    "start": 334.68,
+    "end": 334.89
+  },
+  {
+    "text": "and",
+    "start": 335.15,
+    "end": 335.41
+  },
+  {
+    "text": "over",
+    "start": 335.41,
+    "end": 335.8
+  },
+  {
+    "text": "Lolo",
+    "start": 335.8,
+    "end": 336.18
+  },
+  {
+    "text": "Pass",
+    "start": 336.18,
+    "end": 336.28
+  },
+  {
+    "text": "to",
+    "start": 336.73,
+    "end": 336.74
+  },
+  {
+    "text": "Missoula,",
+    "start": 336.74,
+    "end": 337.48
+  },
+  {
+    "text": "the",
+    "start": 337.48,
+    "end": 337.74
+  },
+  {
+    "text": "Flathead",
+    "start": 337.74,
+    "end": 338.43
+  },
+  {
+    "text": "and",
+    "start": 338.58,
+    "end": 338.69
+  },
+  {
+    "text": "Glacier,",
+    "start": 338.69,
+    "end": 339.32
+  },
+  {
+    "text": "you'll",
+    "start": 339.35,
+    "end": 339.58
+  },
+  {
+    "text": "have",
+    "start": 339.58,
+    "end": 339.76
+  },
+  {
+    "text": "driven",
+    "start": 339.76,
+    "end": 340.03
+  },
+  {
+    "text": "the",
+    "start": 340.03,
+    "end": 340.16
+  },
+  {
+    "text": "length",
+    "start": 340.16,
+    "end": 340.44
+  },
+  {
+    "text": "of",
+    "start": 340.44,
+    "end": 340.48
+  },
+  {
+    "text": "the",
+    "start": 340.48,
+    "end": 340.76
+  },
+  {
+    "text": "Lewis",
+    "start": 340.93,
+    "end": 341.08
+  },
+  {
+    "text": "and",
+    "start": 341.21,
+    "end": 341.4
+  },
+  {
+    "text": "Clark",
+    "start": 341.4,
+    "end": 341.86
+  },
+  {
+    "text": "Highway.",
+    "start": 341.86,
+    "end": 342.52
+  },
+  {
+    "text": "And",
+    "start": 342.55,
+    "end": 342.83
+  },
+  {
+    "text": "if",
+    "start": 342.83,
+    "end": 343.03
+  },
+  {
+    "text": "you",
+    "start": 343.03,
+    "end": 343.33
+  },
+  {
+    "text": "let",
+    "start": 343.33,
+    "end": 343.64
+  },
+  {
+    "text": "it,",
+    "start": 343.64,
+    "end": 344.08
+  },
+  {
+    "text": "come",
+    "start": 344.11,
+    "end": 344.38
+  },
+  {
+    "text": "away",
+    "start": 344.38,
+    "end": 344.67
+  },
+  {
+    "text": "with",
+    "start": 344.67,
+    "end": 344.98
+  },
+  {
+    "text": "a",
+    "start": 344.98,
+    "end": 345.05
+  },
+  {
+    "text": "fuller",
+    "start": 345.05,
+    "end": 345.22
+  },
+  {
+    "text": "story",
+    "start": 345.69,
+    "end": 345.85
+  },
+  {
+    "text": "than",
+    "start": 345.97,
+    "end": 346.17
+  },
+  {
+    "text": "the",
+    "start": 346.17,
+    "end": 346.34
+  },
+  {
+    "text": "road",
+    "start": 346.4,
+    "end": 346.69
+  },
+  {
+    "text": "signs",
+    "start": 346.69,
+    "end": 346.77
+  },
+  {
+    "text": "tell,",
+    "start": 346.93,
+    "end": 347.56
+  },
+  {
+    "text": "a",
+    "start": 347.59,
+    "end": 347.65
+  },
+  {
+    "text": "story",
+    "start": 347.65,
+    "end": 348.12
+  },
+  {
+    "text": "of",
+    "start": 348.12,
+    "end": 348.28
+  },
+  {
+    "text": "real",
+    "start": 348.37,
+    "end": 348.67
+  },
+  {
+    "text": "courage",
+    "start": 348.67,
+    "end": 349.32
+  },
+  {
+    "text": "and",
+    "start": 349.45,
+    "end": 349.6
+  },
+  {
+    "text": "endurance",
+    "start": 349.6,
+    "end": 350.21
+  },
+  {
+    "text": "and",
+    "start": 350.51,
+    "end": 350.72
+  },
+  {
+    "text": "of",
+    "start": 350.72,
+    "end": 350.87
+  },
+  {
+    "text": "a",
+    "start": 350.91,
+    "end": 350.96
+  },
+  {
+    "text": "homeland",
+    "start": 350.96,
+    "end": 351.59
+  },
+  {
+    "text": "that",
+    "start": 351.59,
+    "end": 351.66
+  },
+  {
+    "text": "was",
+    "start": 352.09,
+    "end": 352.15
+  },
+  {
+    "text": "taken,",
+    "start": 352.15,
+    "end": 352.72
+  },
+  {
+    "text": "defended",
+    "start": 352.75,
+    "end": 353.43
+  },
+  {
+    "text": "and",
+    "start": 353.43,
+    "end": 353.71
+  },
+  {
+    "text": "never",
+    "start": 353.71,
+    "end": 353.86
+  },
+  {
+    "text": "surrendered.",
+    "start": 354.34,
+    "end": 355.4
+  },
+  {
+    "text": "So",
+    "start": 355.47,
+    "end": 355.53
+  },
+  {
+    "text": "go",
+    "start": 355.67,
+    "end": 355.9
+  },
+  {
+    "text": "and",
+    "start": 355.9,
+    "end": 356.16
+  },
+  {
+    "text": "drive",
+    "start": 356.25,
+    "end": 356.58
+  },
+  {
+    "text": "it.",
+    "start": 357.04,
+    "end": 357.4
+  },
+  {
+    "text": "Fill",
+    "start": 357.43,
+    "end": 357.67
+  },
+  {
+    "text": "the",
+    "start": 357.67,
+    "end": 357.87
+  },
+  {
+    "text": "tank",
+    "start": 357.87,
+    "end": 358.12
+  },
+  {
+    "text": "in",
+    "start": 358.21,
+    "end": 358.27
+  },
+  {
+    "text": "Kooskia.",
+    "start": 358.27,
+    "end": 359
+  },
+  {
+    "text": "There",
+    "start": 359.03,
+    "end": 359.32
+  },
+  {
+    "text": "really",
+    "start": 359.32,
+    "end": 359.7
+  },
+  {
+    "text": "is",
+    "start": 359.7,
+    "end": 359.84
+  },
+  {
+    "text": "nothing",
+    "start": 359.84,
+    "end": 360.14
+  },
+  {
+    "text": "for",
+    "start": 360.14,
+    "end": 360.46
+  },
+  {
+    "text": "the",
+    "start": 360.61,
+    "end": 360.68
+  },
+  {
+    "text": "next",
+    "start": 360.68,
+    "end": 360.94
+  },
+  {
+    "text": "hundred",
+    "start": 360.94,
+    "end": 361.4
+  },
+  {
+    "text": "miles.",
+    "start": 361.4,
+    "end": 361.77
+  },
+  {
+    "text": "Bring",
+    "start": 361.99,
+    "end": 362.35
+  },
+  {
+    "text": "your",
+    "start": 362.35,
+    "end": 362.66
+  },
+  {
+    "text": "curiosity",
+    "start": 362.66,
+    "end": 363.1
+  },
+  {
+    "text": "and",
+    "start": 363.57,
+    "end": 363.59
+  },
+  {
+    "text": "bring",
+    "start": 363.59,
+    "end": 363.98
+  },
+  {
+    "text": "your",
+    "start": 363.98,
+    "end": 364.29
+  },
+  {
+    "text": "respect.",
+    "start": 364.29,
+    "end": 365.06
+  },
+  {
+    "text": "The",
+    "start": 365.11,
+    "end": 365.39
+  },
+  {
+    "text": "land",
+    "start": 365.39,
+    "end": 365.79
+  },
+  {
+    "text": "is",
+    "start": 365.89,
+    "end": 366.02
+  },
+  {
+    "text": "breathtaking.",
+    "start": 366.02,
+    "end": 367.6
+  },
+  {
+    "text": "It",
+    "start": 367.63,
+    "end": 367.86
+  },
+  {
+    "text": "is",
+    "start": 367.86,
+    "end": 368.12
+  },
+  {
+    "text": "also",
+    "start": 368.12,
+    "end": 368.65
+  },
+  {
+    "text": "still",
+    "start": 368.65,
+    "end": 369.31
+  },
+  {
+    "text": "someone's",
+    "start": 369.31,
+    "end": 370.29
+  },
+  {
+    "text": "home.",
+    "start": 371.03,
+    "end": 371.48
+  },
+  {
+    "text": "Travel",
+    "start": 371.51,
+    "end": 371.86
+  },
+  {
+    "text": "it",
+    "start": 371.86,
+    "end": 371.98
+  },
+  {
+    "text": "that",
+    "start": 371.98,
+    "end": 372.2
+  },
+  {
+    "text": "way.",
+    "start": 372.29,
+    "end": 372.6
+  }
+]

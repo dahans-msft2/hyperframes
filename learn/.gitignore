@@ -52,3 +52,33 @@ output/Require-MFA-With-A-Conditional-Access-Policy/**/*.wav
 output/Require-MFA-With-A-Conditional-Access-Policy/*_thumbnail.png
 output/Require-MFA-With-A-Conditional-Access-Policy/assets/grounds/
 output/Require-MFA-With-A-Conditional-Access-Policy/assets/vendor/
+
+# --- videos: source + render inputs tracked, outputs go to a Release ---
+!output/
+output/*
+
+# video: What-Is-A-Container
+!output/What-Is-A-Container/
+!output/What-Is-A-Container/**
+# INPUTS (narration.wav, end card, grounds — LFS-tracked) stay so the renderer has them;
+# OUTPUTS + QA artifacts never enter git (the deliverable MP4/captions/thumbnail -> Release).
+output/What-Is-A-Container/fonts/
+output/What-Is-A-Container/renders/
+output/What-Is-A-Container/_snap*/
+output/What-Is-A-Container/snapshots/
+output/What-Is-A-Container/anchors.js
+output/What-Is-A-Container/What-Is-A-Container.mp4
+output/What-Is-A-Container/What-Is-A-Container_thumbnail.png
+
+# video: Highway-12-A-Lewis-And-Clark-Road-Trip-To-Montana
+!output/Highway-12-A-Lewis-And-Clark-Road-Trip-To-Montana/
+!output/Highway-12-A-Lewis-And-Clark-Road-Trip-To-Montana/**
+# INPUTS (narration.wav, end card, grounds — LFS-tracked) stay so the renderer has them;
+# OUTPUTS + QA artifacts never enter git (the deliverable MP4/captions/thumbnail -> Release).
+output/Highway-12-A-Lewis-And-Clark-Road-Trip-To-Montana/fonts/
+output/Highway-12-A-Lewis-And-Clark-Road-Trip-To-Montana/renders/
+output/Highway-12-A-Lewis-And-Clark-Road-Trip-To-Montana/_snap*/
+output/Highway-12-A-Lewis-And-Clark-Road-Trip-To-Montana/snapshots/
+output/Highway-12-A-Lewis-And-Clark-Road-Trip-To-Montana/anchors.js
+output/Highway-12-A-Lewis-And-Clark-Road-Trip-To-Montana/Highway-12-A-Lewis-And-Clark-Road-Trip-To-Montana.mp4
+output/Highway-12-A-Lewis-And-Clark-Road-Trip-To-Montana/Highway-12-A-Lewis-And-Clark-Road-Trip-To-Montana_thumbnail.png

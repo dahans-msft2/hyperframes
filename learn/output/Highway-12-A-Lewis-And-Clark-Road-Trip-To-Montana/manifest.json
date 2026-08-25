@@ -1,0 +1,13 @@
+{
+  "title": "Highway 12: A Lewis and Clark Road Trip to Montana",
+  "type": "skilling-session",
+  "profile": "skilling-session",
+  "status": "scaffolded",
+  "voice": "en-US-Ava:DragonHDLatestNeural",
+  "source": "NPS Lewis & Clark National Historic Trail (nps.gov/lecl); US-12 Northwest Passage Scenic Byway / Lewis-Clark Highway; NPS Glacier NP; historical route WA I-90 to Vantage, south to Lewiston-Clarkston, US-12 over Lolo Pass to Missoula, Flathead Lake, Glacier",
+  "deliverables": {
+    "mp4": "Highway-12-A-Lewis-And-Clark-Road-Trip-To-Montana.mp4",
+    "captions_vtt": "Highway-12-A-Lewis-And-Clark-Road-Trip-To-Montana.vtt",
+    "thumbnail": "Highway-12-A-Lewis-And-Clark-Road-Trip-To-Montana_thumbnail.png"
+  }
+}
