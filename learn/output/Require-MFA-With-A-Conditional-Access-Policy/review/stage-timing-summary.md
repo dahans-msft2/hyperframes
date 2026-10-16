@@ -1,6 +1,6 @@
 # Stage timing summary
 
-- Project: C:\Repos\hyperframes\learn\output\Require-MFA-With-A-Conditional-Access-Policy
+- Project: C:\Dev\repos\hyperframes\learn\output\Require-MFA-With-A-Conditional-Access-Policy
 - Run ID: mfa-ca-demo-202608061400
 - Generated (UTC): 2026-08-06T23:26:24+00:00
 
